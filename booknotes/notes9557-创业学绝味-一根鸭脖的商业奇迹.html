@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x521b;&#x4e1a;&#x5b66;&#x7edd;&#x5473;&#xff1a;&#x4e00;&#x6839;&#x9e2d;&#x8116;&#x7684;&#x5546;&#x4e1a;&#x5947;&#x8ff9;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="创业学绝味一根鸭脖的商业奇迹">创业学绝味：一根鸭脖的商业奇迹</h1>
+<h2 id="郭宇宽-著">郭宇宽 著</h2>
+<p>题记</p>
+<p>序二</p>
+<p>序三</p>
+<p>前言</p>
+<p>第一章　从自花授粉到优势杂交——学不会与学得会的商学思想</p>
+<p>学不会的就别学了
+先天条件太优越，我们学不会
+后天条件太独特，我们也学不会
+野蛮成长的，你学不会
+不想学的，你就学不会
+绝味是一株“杂交水稻”
+精英点评
+第二章　“想通了，就能赚到钱”</p>
+<p>中国人不重视理论思维是一种很大的文化缺憾
+想不通害死人
+研究的本质就是要把现象再往深究
+精英点评
+第三章　科学管理和社会学想象力</p>
+<p>艺术是管理的锦上添花
+审视管理的科学性
+想象力与科学的结合
+第四章　一个创业者是怎样炼成的——老戴是谁</p>
+<p>放养出来的孩子
+因为信任而努力
+从小练创业
+在黑暗中寻找曙光
+找一份稳定的工作
+发小广告的冠军
+以学习的心态打工
+到真正的大公司学习
+邂逅“鸭脖王”——好口味加上“看不见的管理”
+看得见的管理与看不见的管理
+精英点评
+第五章　食品连锁是一种高科技行业</p>
+<p>用造飞机的智慧和专注做美食
+绝味的口味挑战
+供应链和物流的挑战
+工艺的挑战
+精英点评
+第六章　流水不争先——绝味营销的定位和实现</p>
+<p>保健品营销的启蒙
+绝味营销的发展历程和营销渠道的变革
+大胆探索，兼听则明
+口号背后的理性
+步步为营的品牌积累
+精英点评
+第七章　食品企业也是IT企业</p>
+<p>IT是什么
+谋定而后动——首战SAP
+运筹帷幄——进行信息化规划
+融会贯通——OA协同办公平台建设
+决胜千里——绝味要打造一个智慧的食品企业
+自我革命——绝味O2O转型实践
+精英点评
+第八章　从子弟兵文化到职业经理人制度</p>
+<p>从“鸿门宴”看楚汉双方的团队建设
+缺乏开放力的子弟兵文化传统
+中国商业传统的真问题
+传统餐饮的师徒制和绝味的职业经理人制度
+传统餐饮的瓶颈和绝味的大扩张
+绝味的“班子”和“队伍”
+绝味版桃园结义
+36岁真正立山头，以能力服人
+老板也有屈膝时——礼贤下士揽人才
+做一个靠谱的团队领袖
+领袖搭台，人才唱戏
+用人格魅力留住人才
+第九章　干净的企业才会有干净的产品——打造一个干净的采购体系</p>
+<p>原料的品质是口味的关键
+路人皆知的潜规则
+第十章　共创双赢——推动产业上游发展</p>
+<p>社会化大分工背景下的生产模式
+社会化分工背景下的大企业胸怀
+绝味对产业上游的推动力
+投资再造“中国鸭”
+精英点评
+第十一章　商业宪政实践——一项了不起的实践</p>
+<p>淘宝商城的企业生态困境
+绝味的加盟商宪政实践
+加盟商委员会的人事安排
+加盟商委员会选举制度
+加盟商委员会的运行
+精英点评
+第十二章　“不想当经理的店员不是好店员”</p>
+<p>基层员工的福利待遇与成长
+初入绝味
+弹性的工资和多元化的福利
+以激励的方式引导员工
+跋</p>
+<p>后记一</p>
+<p>后记二</p>
+<p>致谢</p>
+
+        
+        
+    </body>
+    </html>

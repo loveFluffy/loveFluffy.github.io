@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x5fae;&#x4e60;&#x60ef;&#xff1a;&#x7b80;&#x5355;&#x5230;&#x4e0d;&#x53ef;&#x80fd;&#x5931;&#x8d25;&#x7684;&#x81ea;&#x6211;&#x7ba1;&#x7406;&#x6cd5;&#x5219;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <div class="content">
+<h1 id="微习惯简单到不可能失败的自我管理法则">微习惯：简单到不可能失败的自我管理法则</h1>
+<h2 id="美斯蒂芬盖斯stephen-guise-著桂君-译">[美]斯蒂芬·盖斯(Stephen Guise) 著|桂君 译</h2>
+<p>情绪要么顺服你，要么支配你，这要看谁说了算。 ——吉米·罗恩</p>
+<h3 id="微习惯是什么">微习惯是什么</h3>
+<h4 id="一切的源头挑战1个俯卧撑">一切的源头：挑战1个俯卧撑</h4>
+<p>请思考下列事实对你来说意味着什么：</p>
+<ol>
+<li>如果没有产出什么结果，再大的决心也毫无价值。比如，我可以“说”我要每天锻炼两小时，可根本就没这么做，决心再大也就没有意义了。实际上，脱离行动的决心反而会有损自信。</li>
+<li>人们总会习惯性地高估自己的自控力。
+这两点虽然道理浅显，却揭示了很多人难以改变的原因。他们雄心勃勃，却高估了自己的能力，为求改变而勉强自己做超出自己能力的事情。这就是欲望和能力不匹配。</li>
+</ol>
+<p>你还应考虑下面两个事实：</p>
+<ol>
+<li>哪怕是一点点行动，也比毫不作为强无数倍（在数学意义上如此，实际生活中也是如此）。</li>
+<li>相比某一天做很多事，每天做一点儿事的影响力会更大。能大多少？答案是惊人的。因为每天完成一点儿事，积累起来就形成了一辈子的固定习惯。很快，你将看到它的影响到底有多大。</li>
+</ol>
+<p>我们总是急于责怪自己没什么进步，却无法及时意识到是策略出了问题。之后，我们又会重蹈覆辙，还幻想着能看到一些成效。可是问题在于，如果一种策略已经失败好几次，那就该试试别的了。如果它不适合你，就算适合别人，那也没有价值。</p>
+<h4 id="只为培养好习惯">只为培养好习惯</h4>
+<h4 id="微习惯简介">微习惯简介</h4>
+<p>微习惯就是你强迫自己每天做的微不足道的积极行为。微步骤每次都能有效果，而习惯来自坚持，所以它俩注定要在一起。</p>
+<h4 id="习惯和大脑探秘">习惯和大脑探秘</h4>
+<p>可能改变你一生的习惯还有：</p>
+<ol>
+<li>习惯每天锻炼20分钟，足够改变你的体格。</li>
+<li>习惯吃更加健康的食物，可能延长你的寿命，而且会让你的精力更充沛。</li>
+<li>习惯每天早上早起1小时，每年就会多阅读365小时。按照平均每分钟阅读300字算，利用这些额外的阅读时间，你每年能多读657万字，或131本5万字的书。</li>
+<li>当你做事缺乏动力时，意志力的消耗量就会猛涨。意志力消耗量较高时，你会难以长期维持一个行为并将其培养成习惯。</li>
+<li>只有在精力充沛、思维模式健康而且没有受到强烈诱惑时，我们才能依靠动力成功。可到该行动的时候，局面似乎远没有那么有利，我们就会决定“明天再做吧”。</li>
+<li>刚开始做一件事的兴奋在最初会有很大帮助，可是等到这股劲头渐渐消失，你开始怀疑有什么地方出了什么问题的时候，它又会成为强大的敌人。如果最开始就选择不依赖动力和感受，就能有效降低这种风险。</li>
+</ol>
+<h3 id="大脑的工作原理">大脑的工作原理</h3>
+<h4 id="变化缓慢状态稳定的大脑">变化缓慢、状态稳定的大脑</h4>
+<h4 id="愚蠢的重复者与聪明的管理者">愚蠢的重复者与聪明的管理者</h4>
+<h4 id="前额皮层对抗自动行为的防御武器">前额皮层——对抗自动行为的防御武器</h4>
+<h4 id="基底神经节模式探测器">基底神经节——模式探测器</h4>
+<h3 id="动力-vs-意志力">动力 v.s. 意志力</h3>
+<h4 id="激发动力策略的诸多问题">“激发动力”策略的诸多问题</h4>
+<h4 id="为什么意志力能打败动力">为什么意志力能打败动力？</h4>
+<h4 id="意志力的工作原理">意志力的工作原理</h4>
+<h3 id="微习惯策略">微习惯策略</h3>
+<h4 id="以微习惯方式运用意志力">以微习惯方式运用意志力</h4>
+<h4 id="微习惯如何拓宽你的舒适区">微习惯如何拓宽你的舒适区</h4>
+<h4 id="出现阻力的两个时间节点">出现阻力的两个时间节点</h4>
+<h4 id="跨越障碍的微习惯">跨越障碍的微习惯</h4>
+<h3 id="微习惯的独特之处">微习惯的独特之处</h3>
+<h4 id="微习惯能与现有习惯一较高下">微习惯能与现有习惯一较高下</h4>
+<h4 id="微步骤意志力是必胜组合">微步骤+意志力是必胜组合</h4>
+<h4 id="微习惯没有截止时间">微习惯没有截止时间</h4>
+<h4 id="微习惯能提升自我效能感">微习惯能提升自我效能感</h4>
+<h4 id="微习惯能给予你自主权">微习惯能给予你自主权</h4>
+<h4 id="抽象和具体目标与微习惯相结合">抽象和具体目标与微习惯相结合</h4>
+<h4 id="远离恐惧怀疑胆怯或犹豫">远离恐惧、怀疑、胆怯或犹豫</h4>
+<h4 id="微习惯增强正念和意志力给你超乎想象的惊喜">微习惯增强正念和意志力，给你超乎想象的惊喜</h4>
+<h3 id="彻底改变只需八步">彻底改变只需八步</h3>
+<h4 id="第1步选择适合你的微习惯和计划">第1步：选择适合你的微习惯和计划</h4>
+<h4 id="第2步挖掘每个微习惯的内在价值">第2步：挖掘每个微习惯的内在价值</h4>
+<h4 id="第3步明确习惯依据将其纳入日程">第3步：明确习惯依据，将其纳入日程</h4>
+<h4 id="第4步创建回报机制以奖励提升成就感">第4步：创建回报机制，以奖励提升成就感</h4>
+<h4 id="第5步记录与追踪完成情况">第5步：记录与追踪完成情况</h4>
+<h4 id="第6步微量开始超额完成">第6步：微量开始，超额完成</h4>
+<h4 id="第7步服从计划安排摆脱高期待值">第7步：服从计划安排，摆脱高期待值</h4>
+<h4 id="第8步留意习惯养成的标志">第8步：留意习惯养成的标志</h4>
+<h3 id="微习惯策略的八大规则">微习惯策略的八大规则</h3>
+<h4 id="1-绝不要自欺欺人">1. 绝不要自欺欺人</h4>
+<h4 id="2-满意每一个进步">2. 满意每一个进步</h4>
+<h4 id="3-经常回报自己尤其在完成微习惯之后">3. 经常回报自己，尤其在完成微习惯之后</h4>
+<h4 id="4-保持头脑清醒">4. 保持头脑清醒</h4>
+<h4 id="5-感到强烈抵触时后退并缩小目标">5. 感到强烈抵触时，后退并缩小目标</h4>
+<h4 id="6-提醒自己这件事很轻松">6. 提醒自己这件事很轻松</h4>
+<h4 id="7-绝不要小看微步骤">7. 绝不要小看微步骤</h4>
+<h4 id="8-用多余精力超额完成任务而不是制定更大目标">8. 用多余精力超额完成任务，而不是制定更大目标</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BE%AE%E4%B9%A0%E6%83%AF%E7%AE%80%E5%8D%95%E5%88%B0%E4%B8%8D%E5%8F%AF%E8%83%BD%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86%E6%B3%95%E5%88%99">微习惯：简单到不可能失败的自我管理法则</a>
+<ul>
+<li><a href="#%E7%BE%8E%E6%96%AF%E8%92%82%E8%8A%AC%E7%9B%96%E6%96%AFstephen-guise-%E8%91%97%E6%A1%82%E5%90%9B-%E8%AF%91">[美]斯蒂芬·盖斯(Stephen Guise) 著|桂君 译</a>
+<ul>
+<li><a href="#%E5%BE%AE%E4%B9%A0%E6%83%AF%E6%98%AF%E4%BB%80%E4%B9%88">微习惯是什么</a>
+<ul>
+<li><a href="#%E4%B8%80%E5%88%87%E7%9A%84%E6%BA%90%E5%A4%B4%E6%8C%91%E6%88%981%E4%B8%AA%E4%BF%AF%E5%8D%A7%E6%92%91">一切的源头：挑战1个俯卧撑</a></li>
+<li><a href="#%E5%8F%AA%E4%B8%BA%E5%9F%B9%E5%85%BB%E5%A5%BD%E4%B9%A0%E6%83%AF">只为培养好习惯</a></li>
+<li><a href="#%E5%BE%AE%E4%B9%A0%E6%83%AF%E7%AE%80%E4%BB%8B">微习惯简介</a></li>
+<li><a href="#%E4%B9%A0%E6%83%AF%E5%92%8C%E5%A4%A7%E8%84%91%E6%8E%A2%E7%A7%98">习惯和大脑探秘</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%A7%E8%84%91%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">大脑的工作原理</a>
+<ul>
+<li><a href="#%E5%8F%98%E5%8C%96%E7%BC%93%E6%85%A2%E7%8A%B6%E6%80%81%E7%A8%B3%E5%AE%9A%E7%9A%84%E5%A4%A7%E8%84%91">变化缓慢、状态稳定的大脑</a></li>
+<li><a href="#%E6%84%9A%E8%A0%A2%E7%9A%84%E9%87%8D%E5%A4%8D%E8%80%85%E4%B8%8E%E8%81%AA%E6%98%8E%E7%9A%84%E7%AE%A1%E7%90%86%E8%80%85">愚蠢的重复者与聪明的管理者</a></li>
+<li><a href="#%E5%89%8D%E9%A2%9D%E7%9A%AE%E5%B1%82%E5%AF%B9%E6%8A%97%E8%87%AA%E5%8A%A8%E8%A1%8C%E4%B8%BA%E7%9A%84%E9%98%B2%E5%BE%A1%E6%AD%A6%E5%99%A8">前额皮层——对抗自动行为的防御武器</a></li>
+<li><a href="#%E5%9F%BA%E5%BA%95%E7%A5%9E%E7%BB%8F%E8%8A%82%E6%A8%A1%E5%BC%8F%E6%8E%A2%E6%B5%8B%E5%99%A8">基底神经节——模式探测器</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8A%A8%E5%8A%9B-vs-%E6%84%8F%E5%BF%97%E5%8A%9B">动力 v.s. 意志力</a>
+<ul>
+<li><a href="#%E6%BF%80%E5%8F%91%E5%8A%A8%E5%8A%9B%E7%AD%96%E7%95%A5%E7%9A%84%E8%AF%B8%E5%A4%9A%E9%97%AE%E9%A2%98">“激发动力”策略的诸多问题</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%84%8F%E5%BF%97%E5%8A%9B%E8%83%BD%E6%89%93%E8%B4%A5%E5%8A%A8%E5%8A%9B">为什么意志力能打败动力？</a></li>
+<li><a href="#%E6%84%8F%E5%BF%97%E5%8A%9B%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">意志力的工作原理</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BE%AE%E4%B9%A0%E6%83%AF%E7%AD%96%E7%95%A5">微习惯策略</a>
+<ul>
+<li><a href="#%E4%BB%A5%E5%BE%AE%E4%B9%A0%E6%83%AF%E6%96%B9%E5%BC%8F%E8%BF%90%E7%94%A8%E6%84%8F%E5%BF%97%E5%8A%9B">以微习惯方式运用意志力</a></li>
+<li><a href="#%E5%BE%AE%E4%B9%A0%E6%83%AF%E5%A6%82%E4%BD%95%E6%8B%93%E5%AE%BD%E4%BD%A0%E7%9A%84%E8%88%92%E9%80%82%E5%8C%BA">微习惯如何拓宽你的舒适区</a></li>
+<li><a href="#%E5%87%BA%E7%8E%B0%E9%98%BB%E5%8A%9B%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%97%B6%E9%97%B4%E8%8A%82%E7%82%B9">出现阻力的两个时间节点</a></li>
+<li><a href="#%E8%B7%A8%E8%B6%8A%E9%9A%9C%E7%A2%8D%E7%9A%84%E5%BE%AE%E4%B9%A0%E6%83%AF">跨越障碍的微习惯</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BE%AE%E4%B9%A0%E6%83%AF%E7%9A%84%E7%8B%AC%E7%89%B9%E4%B9%8B%E5%A4%84">微习惯的独特之处</a>
+<ul>
+<li><a href="#%E5%BE%AE%E4%B9%A0%E6%83%AF%E8%83%BD%E4%B8%8E%E7%8E%B0%E6%9C%89%E4%B9%A0%E6%83%AF%E4%B8%80%E8%BE%83%E9%AB%98%E4%B8%8B">微习惯能与现有习惯一较高下</a></li>
+<li><a href="#%E5%BE%AE%E6%AD%A5%E9%AA%A4%E6%84%8F%E5%BF%97%E5%8A%9B%E6%98%AF%E5%BF%85%E8%83%9C%E7%BB%84%E5%90%88">微步骤+意志力是必胜组合</a></li>
+<li><a href="#%E5%BE%AE%E4%B9%A0%E6%83%AF%E6%B2%A1%E6%9C%89%E6%88%AA%E6%AD%A2%E6%97%B6%E9%97%B4">微习惯没有截止时间</a></li>
+<li><a href="#%E5%BE%AE%E4%B9%A0%E6%83%AF%E8%83%BD%E6%8F%90%E5%8D%87%E8%87%AA%E6%88%91%E6%95%88%E8%83%BD%E6%84%9F">微习惯能提升自我效能感</a></li>
+<li><a href="#%E5%BE%AE%E4%B9%A0%E6%83%AF%E8%83%BD%E7%BB%99%E4%BA%88%E4%BD%A0%E8%87%AA%E4%B8%BB%E6%9D%83">微习惯能给予你自主权</a></li>
+<li><a href="#%E6%8A%BD%E8%B1%A1%E5%92%8C%E5%85%B7%E4%BD%93%E7%9B%AE%E6%A0%87%E4%B8%8E%E5%BE%AE%E4%B9%A0%E6%83%AF%E7%9B%B8%E7%BB%93%E5%90%88">抽象和具体目标与微习惯相结合</a></li>
+<li><a href="#%E8%BF%9C%E7%A6%BB%E6%81%90%E6%83%A7%E6%80%80%E7%96%91%E8%83%86%E6%80%AF%E6%88%96%E7%8A%B9%E8%B1%AB">远离恐惧、怀疑、胆怯或犹豫</a></li>
+<li><a href="#%E5%BE%AE%E4%B9%A0%E6%83%AF%E5%A2%9E%E5%BC%BA%E6%AD%A3%E5%BF%B5%E5%92%8C%E6%84%8F%E5%BF%97%E5%8A%9B%E7%BB%99%E4%BD%A0%E8%B6%85%E4%B9%8E%E6%83%B3%E8%B1%A1%E7%9A%84%E6%83%8A%E5%96%9C">微习惯增强正念和意志力，给你超乎想象的惊喜</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BD%BB%E5%BA%95%E6%94%B9%E5%8F%98%E5%8F%AA%E9%9C%80%E5%85%AB%E6%AD%A5">彻底改变只需八步</a>
+<ul>
+<li><a href="#%E7%AC%AC1%E6%AD%A5%E9%80%89%E6%8B%A9%E9%80%82%E5%90%88%E4%BD%A0%E7%9A%84%E5%BE%AE%E4%B9%A0%E6%83%AF%E5%92%8C%E8%AE%A1%E5%88%92">第1步：选择适合你的微习惯和计划</a></li>
+<li><a href="#%E7%AC%AC2%E6%AD%A5%E6%8C%96%E6%8E%98%E6%AF%8F%E4%B8%AA%E5%BE%AE%E4%B9%A0%E6%83%AF%E7%9A%84%E5%86%85%E5%9C%A8%E4%BB%B7%E5%80%BC">第2步：挖掘每个微习惯的内在价值</a></li>
+<li><a href="#%E7%AC%AC3%E6%AD%A5%E6%98%8E%E7%A1%AE%E4%B9%A0%E6%83%AF%E4%BE%9D%E6%8D%AE%E5%B0%86%E5%85%B6%E7%BA%B3%E5%85%A5%E6%97%A5%E7%A8%8B">第3步：明确习惯依据，将其纳入日程</a></li>
+<li><a href="#%E7%AC%AC4%E6%AD%A5%E5%88%9B%E5%BB%BA%E5%9B%9E%E6%8A%A5%E6%9C%BA%E5%88%B6%E4%BB%A5%E5%A5%96%E5%8A%B1%E6%8F%90%E5%8D%87%E6%88%90%E5%B0%B1%E6%84%9F">第4步：创建回报机制，以奖励提升成就感</a></li>
+<li><a href="#%E7%AC%AC5%E6%AD%A5%E8%AE%B0%E5%BD%95%E4%B8%8E%E8%BF%BD%E8%B8%AA%E5%AE%8C%E6%88%90%E6%83%85%E5%86%B5">第5步：记录与追踪完成情况</a></li>
+<li><a href="#%E7%AC%AC6%E6%AD%A5%E5%BE%AE%E9%87%8F%E5%BC%80%E5%A7%8B%E8%B6%85%E9%A2%9D%E5%AE%8C%E6%88%90">第6步：微量开始，超额完成</a></li>
+<li><a href="#%E7%AC%AC7%E6%AD%A5%E6%9C%8D%E4%BB%8E%E8%AE%A1%E5%88%92%E5%AE%89%E6%8E%92%E6%91%86%E8%84%B1%E9%AB%98%E6%9C%9F%E5%BE%85%E5%80%BC">第7步：服从计划安排，摆脱高期待值</a></li>
+<li><a href="#%E7%AC%AC8%E6%AD%A5%E7%95%99%E6%84%8F%E4%B9%A0%E6%83%AF%E5%85%BB%E6%88%90%E7%9A%84%E6%A0%87%E5%BF%97">第8步：留意习惯养成的标志</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BE%AE%E4%B9%A0%E6%83%AF%E7%AD%96%E7%95%A5%E7%9A%84%E5%85%AB%E5%A4%A7%E8%A7%84%E5%88%99">微习惯策略的八大规则</a>
+<ul>
+<li><a href="#1-%E7%BB%9D%E4%B8%8D%E8%A6%81%E8%87%AA%E6%AC%BA%E6%AC%BA%E4%BA%BA">1. 绝不要自欺欺人</a></li>
+<li><a href="#2-%E6%BB%A1%E6%84%8F%E6%AF%8F%E4%B8%80%E4%B8%AA%E8%BF%9B%E6%AD%A5">2. 满意每一个进步</a></li>
+<li><a href="#3-%E7%BB%8F%E5%B8%B8%E5%9B%9E%E6%8A%A5%E8%87%AA%E5%B7%B1%E5%B0%A4%E5%85%B6%E5%9C%A8%E5%AE%8C%E6%88%90%E5%BE%AE%E4%B9%A0%E6%83%AF%E4%B9%8B%E5%90%8E">3. 经常回报自己，尤其在完成微习惯之后</a></li>
+<li><a href="#4-%E4%BF%9D%E6%8C%81%E5%A4%B4%E8%84%91%E6%B8%85%E9%86%92">4. 保持头脑清醒</a></li>
+<li><a href="#5-%E6%84%9F%E5%88%B0%E5%BC%BA%E7%83%88%E6%8A%B5%E8%A7%A6%E6%97%B6%E5%90%8E%E9%80%80%E5%B9%B6%E7%BC%A9%E5%B0%8F%E7%9B%AE%E6%A0%87">5. 感到强烈抵触时，后退并缩小目标</a></li>
+<li><a href="#6-%E6%8F%90%E9%86%92%E8%87%AA%E5%B7%B1%E8%BF%99%E4%BB%B6%E4%BA%8B%E5%BE%88%E8%BD%BB%E6%9D%BE">6. 提醒自己这件事很轻松</a></li>
+<li><a href="#7-%E7%BB%9D%E4%B8%8D%E8%A6%81%E5%B0%8F%E7%9C%8B%E5%BE%AE%E6%AD%A5%E9%AA%A4">7. 绝不要小看微步骤</a></li>
+<li><a href="#8-%E7%94%A8%E5%A4%9A%E4%BD%99%E7%B2%BE%E5%8A%9B%E8%B6%85%E9%A2%9D%E5%AE%8C%E6%88%90%E4%BB%BB%E5%8A%A1%E8%80%8C%E4%B8%8D%E6%98%AF%E5%88%B6%E5%AE%9A%E6%9B%B4%E5%A4%A7%E7%9B%AE%E6%A0%87">8. 用多余精力超额完成任务，而不是制定更大目标</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        
+        
+    </body>
+    </html>

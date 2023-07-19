@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pro Git</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	margin: 0;
+	padding: 0 1% 0 1%;
+}
+
+h1 {
+	font-size: 2.2em;
+	font-weight: 700;
+	line-height: 1.1;
+	padding-top: 16px;
+	margin-bottom: 4px;
+	text-align: center;
+}
+
+h2, h3, h4, h5, h6 {
+	line-height: 1.5em;
+	margin-top: 2.2em;
+	margin-bottom: 4px;
+}
+
+h2 {
+	font-size: 1.8em;
+	margin: 40px 10px 20px 0;
+	font-weight: 700;
+	line-height: 1.4;
+	text-align: center;
+}
+
+h3 {
+	font-weight: 700;
+	font-size: 1.4em;
+	line-height: 1.4;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 1.2em;
+	line-height: 1.4;
+	margin: 10px 0 5px;
+	padding-top: 10px
+}
+
+h5 {
+	font-size: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+h6 {
+	font-size: 1em;
+	font-weight: normal;
+	color: #AAA;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl, ol, ul {
+	margin-top: 12px;
+	margin-bottom: 20px;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 20px;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a {
+	color: #f22f27;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #f55852;
+	text-decoration: underline;
+}
+
+a:focus {
+	outline-offset: -2px;
+}
+
+blockquote {
+	font-size: 1em;
+	font-style: normal;
+	padding: 30px 38px;
+	margin: 0 0 15px;
+	position: relative;
+	line-height: 1.8;
+	text-indent: 0;
+	border: none;
+	color: #888;
+}
+
+blockquote:before {
+	content: "“";
+	left: 0px;
+	top: 0;
+	color: #E0E0E0;
+	font-size: 4em;
+	font-family: Arial, serif;
+	line-height: 1em;
+	font-weight: 700;
+	position: absolute;
+}
+
+blockquote:after {
+	content: "”";
+	right: 0px;
+	color: #E0E0E0;
+	font-size: 4em;
+	font-family: Arial, serif;
+	line-height: 1em;
+	font-weight: 700;
+	position: absolute;
+	bottom: -61px;
+}
+
+strong, dfn {
+	font-weight: 700;
+}
+
+em, dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+/*code {font-size:90%;}*/
+
+/*pre {text-align:left; overflow-x: scroll; color: #257fa0; background: #f6f6f6; padding: 10pt 15pt; border-radius: 3px; border: solid 1px #e2e2e2;}*/
+
+pre {
+	margin: 0 0 10px;
+	font-size: 13px;
+	line-height: 1.42857;
+	word-break: break-all;
+	word-wrap: break-word;
+	border-radius: 4px;
+	white-space: pre-wrap;
+	display: block;
+	background: #f8f8f8;
+	padding: 10px 20px;
+	border: none;
+	margin-bottom: 25px;
+	color: #666;
+	font-family: Courier, sans-serif;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 0;
+	border-top: 1px solid #eee;
+}
+
+ol p, ul p {
+	margin-bottom: 0px;
+}
+
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+	20% {
+		background-color: yellow;
+	}
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+	20% {
+		background-color: yellow;
+	}
+	100% {
+		background-color: none;
+	}
+}
+
+a:target, ol#footnotes li:target, sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="pro-git">Pro Git</h1>
+<h2 id="scott-chacon-ben-straub">Scott Chacon, Ben Straub</h2>
+<h3 id="scott-chacon序">SCOTT CHACON序</h3>
+<p>自从上次出版以来另一个重大变革是 Git 网络传输 HTTP 协议的开发与崛起。书中的大多数例子都已经从 SSH 切换到 HTTP，因为它更简单。</p>
+<h3 id="起步">起步</h3>
+<h4 id="关于版本控制">关于版本控制</h4>
+<h5 id="本地版本控制系统">本地版本控制系统</h5>
+<p>人们很久以前就开发了许多种本地版本控制系统，大多都是采用某种简单的数据库来记录文件的历次更新差异。</p>
+<p>其中最流行的一种叫做 RCS，现今许多计算机系统上都还看得到它的踪影。 甚至在流行的 Mac OS X 系统上安装了开发者工具包之后，也可以使用 rcs 命令。 它的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。</p>
+<h5 id="集中化的版本控制系统">集中化的版本控制系统</h5>
+<p>接下来人们又遇到一个问题，如何让在不同系统上的开发者协同工作？ 于是，集中化的版本控制系统（Centralized Version Control Systems，简称 CVCS）应运而生。 这类系统，诸如 CVS、Subversion 以及 Perforce 等，都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。 多年以来，这已成为版本控制系统的标准做法。</p>
+<p>这么做最显而易见的缺点是中央服务器的单点故障。 如果宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。 如果中心数据库所在的磁盘发生损坏，又没有做恰当备份，毫无疑问你将丢失所有数据——包括项目的整个变更历史，只剩下人们在各自机器上保留的单独快照。 本地版本控制系统也存在类似问题，只要整个项目的历史记录被保存在单一位置，就有丢失所有历史更新记录的风险。</p>
+<h5 id="分布式版本控制系统">分布式版本控制系统</h5>
+<p>于是分布式版本控制系统（Distributed Version Control System，简称 DVCS）面世了。 在这类系统中，像 Git、Mercurial、Bazaar 以及 Darcs 等，客户端并不只提取最新版本的文件快照，而是把代码仓库完整地镜像下来。 这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。 因为每一次的克隆操作，实际上都是一次对代码仓库的完整备份。</p>
+<p>更进一步，许多这类系统都可以指定和若干不同的远端代码仓库进行交互。籍此，你就可以在同一个项目中，分别和不同工作小组的人相互协作。 你可以根据需要设定不同的协作流程，比如层次模型式的工作流，而这在以前的集中式系统中是无法实现的。</p>
+<h4 id="git-简史">Git 简史</h4>
+<p>Linux 内核开源项目有着为数众多的参与者。 绝大多数的 Linux 内核维护工作都花在了提交补丁和保存归档的繁琐事务上（1991－2002年间）。 到 2002 年，整个项目组开始启用一个专有的分布式版本控制系统 BitKeeper 来管理和维护代码。</p>
+<p>到了 2005 年，开发 BitKeeper 的商业公司同 Linux 内核开源社区的合作关系结束，他们收回了 Linux 内核社区免费使用 BitKeeper 的权力。 这就迫使 Linux 开源社区（特别是 Linux 的缔造者 Linus Torvalds）基于使用 BitKeeper 时的经验教训，开发出自己的版本系统。</p>
+<p>自诞生于 2005 年以来，Git 日臻成熟完善，在高度易用的同时，仍然保留着初期设定的目标。它的速度飞快，极其适合管理大项目，有着令人难以置信的非线性分支管理系统（参见 Git 分支）。</p>
+<h4 id="git-基础">Git 基础</h4>
+<p>在开始学习 Git 的时候，请努力分清你对其它版本管理系统的已有认识，如 Subversion 和 Perforce 等；这么做能帮助你使用工具时避免发生混淆。 Git 在保存和对待各种信息的时候与其它版本控制系统有很大差异，尽管操作起来的命令形式非常相近，理解这些差异将有助于防止你使用中的困惑。</p>
+<h5 id="直接记录快照而非差异比较">直接记录快照，而非差异比较</h5>
+<p>Git 和其它版本控制系统（包括 Subversion 和近似工具）的主要差别在于 Git 对待数据的方法。 概念上来区分，其它大部分系统以文件变更列表的方式存储信息。 这类系统（CVS、Subversion、Perforce、Bazaar 等等）将它们保存的信息看作是一组基本文件和每个文件随时间逐步累积的差异。</p>
+<p>Git 不按照以上方式对待或保存数据。 反之，Git 更像是把数据看作是对小型文件系统的一组快照。 每次你提交更新，或在 Git 中保存项目状态时，它主要对当时的全部文件制作一个快照并保存这个快照的索引。 为了高效，如果文件没有修改，Git 不再重新存储该文件，而是只保留一个链接指向之前存储的文件。 Git 对待数据更像是一个 快照流。</p>
+<p>这是 Git 与几乎所有其它版本控制系统的重要区别。 因此 Git 重新考虑了以前每一代版本控制系统延续下来的诸多方面。 Git 更像是一个小型的文件系统，提供了许多以此为基础构建的超强工具，而不只是一个简单的 VCS。 稍后我们在Git 分支讨论 Git 分支管理时，将探究这种方式对待数据所能获得的益处。</p>
+<h5 id="近乎所有操作都是本地执行">近乎所有操作都是本地执行</h5>
+<p>举个例子，要浏览项目的历史，Git 不需外连到服务器去获取历史，然后再显示出来——它只需直接从本地数据库中读取。 你能立即看到项目历史。 如果你想查看当前版本与一个月前的版本之间引入的修改，Git 会查找到一个月前的文件做一次本地的差异计算，而不是由远程服务器处理或从远程服务器拉回旧版本文件再来本地处理。</p>
+<p>这也意味着你离线或者没有 VPN 时，几乎可以进行任何操作。 如你在飞机或火车上想做些工作，你能愉快地提交，直到有网络连接时再上传。 如你回家后 VPN 客户端不正常，你仍能工作。 使用其它系统，做到如此是不可能或很费力的。 比如，用 Perforce，你没有连接服务器时几乎不能做什么事；用 Subversion 和 CVS，你能修改文件，但不能向数据库提交修改（因为你的本地数据库离线了）。 这看起来不是大问题，但是你可能会惊喜地发现它带来的巨大的不同。</p>
+<h5 id="git-保证完整性">Git 保证完整性</h5>
+<p>Git 中所有数据在存储前都计算校验和，然后以校验和来引用。 这意味着不可能在 Git 不知情时更改任何文件内容或目录内容。 这个功能建构在 Git 底层，是构成 Git 哲学不可或缺的部分。 若你在传送过程中丢失信息或损坏文件，Git 就能发现。</p>
+<p>Git 用以计算校验和的机制叫做 SHA-1 散列（hash，哈希）。 这是一个由 40 个十六进制字符（0-9 和 a-f）组成字符串，基于 Git 中文件的内容或目录结构计算出来。 SHA-1 哈希看起来是这样：24b9da6552252987aa493b52f8696cd6d3b00373</p>
+<p>Git 中使用这种哈希值的情况很多，你将经常看到这种哈希值。 实际上，Git 数据库中保存的信息都是以文件内容的哈希值来索引，而不是文件名。</p>
+<h5 id="git-一般只添加数据">Git 一般只添加数据</h5>
+<p>你执行的 Git 操作，几乎只往 Git 数据库中增加数据。 很难让 Git 执行任何不可逆操作，或者让它以任何方式清除数据。 同别的 VCS 一样，未提交更新时有可能丢失或弄乱修改的内容；但是一旦你提交快照到 Git 中，就难以再丢失数据，特别是如果你定期的推送数据库到其它仓库的话。</p>
+<h5 id="三种状态">三种状态</h5>
+<p>Git 有三种状态，你的文件可能处于其中之一：已提交（committed）、已修改（modified）和已暂存（staged）。 已提交表示数据已经安全的保存在本地数据库中。 已修改表示修改了文件，但还没保存到数据库中。 已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</p>
+<p><img src="file:///d:\loveFluffy\myBlog\csbooknotes\img\notes0006-1.jpeg" alt="工作目录、暂存区域以及 Git 仓库"></p>
+<p>Git 仓库目录是 Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。</p>
+<p>工作目录是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</p>
+<p>暂存区域是一个文件，保存了下次将提交的文件列表信息，一般在 Git 仓库目录中。 有时候也被称作`‘索引’'，不过一般说法还是叫暂存区域。</p>
+<p>基本的 Git 工作流程如下：</p>
+<ol>
+<li>在工作目录中修改文件。</li>
+<li>暂存文件，将文件的快照放入暂存区域。</li>
+<li>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。</li>
+</ol>
+<h4 id="命令行">命令行</h4>
+<h4 id="安装-git">安装 Git</h4>
+<h5 id="在-windows-上安装">在 Windows 上安装</h5>
+<p>在 Windows 上安装 Git 也有几种安装方法。 官方版本可以在 Git 官方网站下载。 打开 <a href="http://git-scm.com/download/win%EF%BC%8C%E4%B8%8B%E8%BD%BD%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%BC%80%E5%A7%8B%E3%80%82">http://git-scm.com/download/win，下载会自动开始。</a> 要注意这是一个名为 Git for Windows的项目（也叫做 msysGit），和 Git 是分别独立的项目；更多信息请访问 <a href="http://msysgit.github.io/%E3%80%82">http://msysgit.github.io/。</a></p>
+<p>另一个简单的方法是安装 GitHub for Windows。 该安装程序包含图形化和命令行版本的 Git。 它也能支持 Powershell，提供了稳定的凭证缓存和健全的 CRLF 设置。 稍后我们会对这方面有更多了解，现在只要一句话就够了，这些都是你所需要的。 你可以在 GitHub for Windows 网站下载，网址为 <a href="http://windows.github.com">http://windows.github.com</a>。</p>
+<h4 id="初次运行-git-前的配置">初次运行 Git 前的配置</h4>
+<p>Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：</p>
+<ol>
+<li>/etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果使用带有 --system 选项的 git config 时，它会从此文件读写配置变量。</li>
+<li>~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 可以传递 --global 选项让 Git 读写此文件。</li>
+<li>当前使用仓库的 Git 目录中的 config 文件（就是 .git/config）：针对该仓库。</li>
+</ol>
+<p>每一个级别覆盖上一级别的配置，所以 .git/config 的配置变量会覆盖 /etc/gitconfig 中的配置变量。</p>
+<p>在 Windows 系统中，Git 会查找 $HOME 目录下（一般情况下是 C:\Users$USER）的 .gitconfig 文件。 Git 同样也会寻找 /etc/gitconfig 文件，但只限于 MSys 的根目录下，即安装 Git 时所选的目标位置。</p>
+<h5 id="用户信息">用户信息</h5>
+<p>当安装完 Git 应该做的第一件事就是设置你的用户名称与邮件地址。 这样做很重要，因为每一个 Git 的提交都会使用这些信息，并且它会写入到你的每一次提交中，不可更改：<br>
+<code>$ git config --global user.name &quot;John Doe&quot;</code><br>
+<code>$ git config --global user.email</code><br>
+<code>johndoe@example.com</code></p>
+<p>再次强调，如果使用了 --global 选项，那么该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。 当你想针对特定项目使用不同的用户名称与邮件地址时，可以在那个项目目录下运行没有 --global 选项的命令来配置。</p>
+<p>很多 GUI 工具都会在第一次运行时帮助你配置这些信息。</p>
+<h5 id="文本编辑器">文本编辑器</h5>
+<p>既然用户信息已经设置完毕，你可以配置默认文本编辑器了，当 Git 需要你输入信息时会调用它。 如果未配置，Git 会使用操作系统默认的文本编辑器，通常是 Vim。 如果你想使用不同的文本编辑器，例如 Emacs，可以这样做：<br>
+<code>$ git config --global core.editor emacs</code></p>
+<h5 id="检查配置信息">检查配置信息</h5>
+<p>如果想要检查你的配置，可以使用 git config --list 命令来列出所有 Git 当时能找到的配置。<br>
+<code>$ git config --list</code><br>
+<code>user.name=John Doe</code><br>
+<code>user.email=johndoe@example.com</code><br>
+<code>color.status=auto</code><br>
+<code>color.branch=auto</code><br>
+<code>color.interactive=auto</code><br>
+<code>color.diff=auto</code><br>
+<code>...</code></p>
+<p>你可能会看到重复的变量名，因为 Git 会从不同的文件中读取同一个配置（例如：/etc/gitconfig 与 ~/.gitconfig）。 这种情况下，Git 会使用它找到的每一个变量的最后一个配置。</p>
+<p>你可以通过输入 git config <key>： 来检查 Git 的某一项配置<br>
+<code>$ git config user.name</code><br>
+<code>John Doe</code></p>
+<h4 id="获取帮助">获取帮助</h4>
+<p>若你使用 Git 时需要获取帮助，有三种方法可以找到 Git 命令的使用手册：
+<code>$ git help &lt;verb&gt;</code><br>
+<code>$ git &lt;verb&gt; --help</code><br>
+<code>$ man git-&lt;verb&gt;</code></p>
+<p>例如，要想获得 config 命令的手册，执行<br>
+<code>$ git help config</code></p>
+<p>这些命令很棒，因为你随时随地可以使用而无需联网。 如果你觉得手册或者本书的内容还不够用，你可以尝试在 Freenode IRC 服务器（ <a href="http://irc.freenode.net">irc.freenode.net</a> ）的 #git 或 #github 频道寻求帮助。 这些频道经常有上百人在线，他们都精通 Git 并且乐于助人。</p>
+<h4 id="总结">总结</h4>
+<h3 id="git-基础-1">Git 基础</h3>
+<h4 id="获取-git-仓库">获取 Git 仓库</h4>
+<h5 id="在现有目录中初始化仓库">在现有目录中初始化仓库</h5>
+<p>如果你打算使用 Git 来对现有的项目进行管理，你只需要进入该项目目录并输入：<br>
+<code>$ git init</code></p>
+<p>该命令将创建一个名为 .git 的子目录，这个子目录含有你初始化的 Git 仓库中所有的必须文件，这些文件是 Git 仓库的骨干。 但是，在这个时候，我们仅仅是做了一个初始化的操作，你的项目里的文件还没有被跟踪。 (参见 Git 内部原理 来了解更多关于到底 .git 文件夹中包含了哪些文件的信息。)</p>
+<p>如果你是在一个已经存在文件的文件夹（而不是空文件夹）中初始化 Git 仓库来进行版本控制的话，你应该开始跟踪这些文件并提交。 你可通过 git add 命令来实现对指定文件的跟踪，然后执行 git commit 提交：<br>
+<code>$ git add *.c</code><br>
+<code>$ git add LICENSE</code><br>
+<code>$ git commit -m 'initial project version'</code></p>
+<p>稍后我们再逐一解释每一条指令的意思。 现在，你已经得到了一个实际维护（或者说是跟踪）着若干个文件的 Git 仓库。</p>
+<h5 id="克隆现有的仓库">克隆现有的仓库</h5>
+<p>如果你想获得一份已经存在了的 Git 仓库的拷贝，比如说，你想为某个开源项目贡献自己的一份力，这时就要用到 git clone 命令。 如果你对其它的 VCS 系统（比如说Subversion）很熟悉，请留心一下你所使用的命令是&quot;clone&quot;而不是&quot;checkout&quot;。 这是 Git 区别于其它版本控制系统的一个重要特性，Git 克隆的是该 Git 仓库服务器上的几乎所有数据，而不是仅仅复制完成你的工作所需要文件。 当你执行 git clone 命令的时候，默认配置下远程 Git 仓库中的每一个文件的每一个版本都将被拉取下来。 事实上，如果你的服务器的磁盘坏掉了，你通常可以使用任何一个克隆下来的用户端来重建服务器上的仓库（虽然可能会丢失某些服务器端的挂钩设置，但是所有版本的数据仍在，详见 在服务器上搭建 Git ）。</p>
+<p>克隆仓库的命令格式是 <code>git clone [url]</code> 。 比如，要克隆 Git 的可链接库 libgit2，可以用下面的命令：<br>
+<code>$ git clone https://github.com/libgit2/libgit2</code></p>
+<p>这会在当前目录下创建一个名为 “libgit2” 的目录，并在这个目录下初始化一个 .git 文件夹，从远程仓库拉取下所有数据放入 .git 文件夹，然后从中读取最新版本的文件的拷贝。 如果你进入到这个新建的 libgit2 文件夹，你会发现所有的项目文件已经在里面了，准备就绪等待后续的开发和使用。 如果你想在克隆远程仓库的时候，自定义本地仓库的名字，你可以使用如下命令：<br>
+<code>$ git clone https://github.com/libgit2/libgit2 mylibgit</code></p>
+<p>这将执行与上一个命令相同的操作，不过在本地创建的仓库名字变为 mylibgit。</p>
+<p>Git 支持多种数据传输协议。 上面的例子使用的是 https:// 协议，不过你也可以使用 git:// 协议或者使用 SSH 传输协议，比如 user@server:path/to/repo.git 。 在服务器上搭建 Git 将会介绍所有这些协议在服务器端如何配置使用，以及各种方式之间的利弊。</p>
+<h4 id="记录每次更新到仓库">记录每次更新到仓库</h4>
+<p>你工作目录下的每一个文件都不外乎这两种状态：已跟踪或未跟踪。 已跟踪的文件是指那些被纳入了版本控制的文件，在上一次快照中有它们的记录，在工作一段时间后，它们的状态可能处于未修改，已修改或已放入暂存区。 工作目录中除已跟踪文件以外的所有其它文件都属于未跟踪文件，它们既不存在于上次快照的记录中，也没有放入暂存区。 初次克隆某个仓库的时候，工作目录中的所有文件都属于已跟踪文件，并处于未修改状态。</p>
+<p>编辑过某些文件之后，由于自上次提交后你对它们做了修改，Git 将它们标记为已修改文件。 我们逐步将这些修改过的文件放入暂存区，然后提交所有暂存了的修改，如此反复。所以使用 Git 时文件的生命周期如下：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\csbooknotes\img\notes0006-2.jpeg" alt="文件的状态变化周期"></p>
+<h5 id="检查当前文件状态">检查当前文件状态</h5>
+<p><code>git status</code></p>
+<h5 id="跟踪新文件">跟踪新文件</h5>
+<p><code>git add README</code></p>
+<p>此时再运行 git status 命令，会看到 README 文件已被跟踪，并处于暂存状态。</p>
+<p>只要在 Changes to be committed 这行下面的，就说明是已暂存状态。 如果此时提交，那么该文件此时此刻的版本将被留存在历史记录中。 你可能会想起之前我们使用 git init 后就运行了 git add (files) 命令，开始跟踪当前目录下的文件。 git add 命令使用文件或目录的路径作为参数；如果参数是目录的路径，该命令将递归地跟踪该目录下的所有文件。</p>
+<h5 id="暂存已修改文件">暂存已修改文件</h5>
+<p><code>git add CONTRIBUTING.md</code></p>
+<p>git add 命令是个多功能命令：可以用它开始跟踪新文件，或者把已跟踪的文件放到暂存区，还能用于合并时把有冲突的文件标记为已解决状态等。 将这个命令理解为“<strong>添加内容到下一次提交中</strong>”而不是“将一个文件添加到项目中”要更加合适。</p>
+<p>运行了 git add 之后又作了修订的文件，需要重新运行 git add 把最新版本重新暂存起来。</p>
+<h5 id="状态简览">状态简览</h5>
+<p>git status 命令的输出十分详细，但其用语有些繁琐。 如果你使用 git status -s 命令或 git status --short 命令，你将得到一种更为紧凑的格式输出。</p>
+<p>新添加的未跟踪文件前面有 ?? 标记，新添加到暂存区中的文件前面有 A 标记，修改过的文件前面有 M 标记。 你可能注意到了 M 有两个可以出现的位置，出现在右边的 M 表示该文件被修改了但是还没放入暂存区，出现在靠左边的 M 表示该文件被修改了并放入了暂存区。 例如，上面的状态报告显示： README 文件在工作区被修改了但是还没有将修改后的文件放入暂存区,lib/simplegit.rb 文件被修改了并将修改后的文件放入了暂存区。 而 Rakefile 在工作区被修改并提交到暂存区后又在工作区中被修改了，所以在暂存区和工作区都有该文件被修改了的记录。</p>
+<h5 id="忽略文件">忽略文件</h5>
+<p>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。 通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。 在这种情况下，我们可以创建一个名为 .gitignore 的文件，列出要忽略的文件模式。</p>
+<p><code>*.[oa]</code><br>
+<code>*~</code></p>
+<p>第一行告诉 Git 忽略所有以 .o 或 .a 结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的。 第二行告诉 Git 忽略所有以波浪符（~）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副本。 此外，你可能还需要忽略 log，tmp 或者 pid 目录，以及自动生成的文档等等。 要养成一开始就设置好 .gitignore 文件的习惯，以免将来误提交这类无用的文件。</p>
+<p>文件 .gitignore 的格式规范如下：</p>
+<ol>
+<li>所有空行或者以 ＃ 开头的行都会被 Git 忽略。</li>
+<li>可以使用标准的 glob 模式匹配。</li>
+<li>匹配模式可以以（/）开头防止递归。</li>
+<li>匹配模式可以以（/）结尾指定目录。</li>
+<li>要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。</li>
+</ol>
+<p>所谓的 glob 模式是指 shell 所使用的简化了的正则表达式。 星号（*）匹配零个或多个任意字符；[abc] 匹配任何一个列在方括号中的字符（这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）；问号（?）只匹配一个任意字符；如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配（比如 [0-9] 表示匹配所有 0 到 9 的数字）。 使用两个星号（*) 表示匹配任意中间目录，比如<code>a/**/z</code> 可以匹配 <code>a/z</code>, <code>a/b/z</code> 或 <code>a/b/c/z</code>等。</p>
+<blockquote>
+<p># no .a files<br>
+<code>*.a</code></p>
+<p># but do track lib.a, even though you're ignoring .a files above<br>
+<code>!lib.a</code></p>
+<p># only ignore the TODO file in the current directory, not subdir/TODO<br>
+<code>/TODO</code></p>
+<p># ignore all files in the build/ directory<br>
+<code>build/</code></p>
+<p># ignore doc/notes.txt, but not doc/server/arch.txt<br>
+<code>doc/*.txt</code></p>
+<p># ignore all .pdf files in the doc/ directory<br>
+<code>doc/**/*.pdf</code></p>
+</blockquote>
+<p>GitHub 有一个十分详细的针对数十种项目及语言的 .gitignore 文件列表，你可以在 <a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a> 找到它.</p>
+<h5 id="查看已暂存和未暂存的修改">查看已暂存和未暂存的修改</h5>
+<p>如果 <code>git status</code> 命令的输出对于你来说过于模糊，你想知道具体修改了什么地方，可以用 <code>git diff</code> 命令。 你可能通常会用它来回答这两个问题：当前做的哪些更新还没有暂存？ 有哪些更新已经暂存起来准备好了下次提交？ 尽管 <code>git status</code> 已经通过在相应栏下列出文件名的方式回答了这个问题，<code>git diff</code> 将通过文件补丁的格式显示具体哪些行发生了改变。</p>
+<p>此命令比较的是工作目录中当前文件和暂存区域快照之间的差异， 也就是修改之后还没有暂存起来的变化内容。</p>
+<p>若要查看已暂存的将要添加到下次提交里的内容，可以用 git diff --cached 命令。（Git 1.6.1 及更高版本还允许使用 git diff --staged，效果是相同的，但更好记些。）</p>
+<p><strong>Git Diff 的插件版本</strong><br>
+在本书中，我们使用 git diff 来分析文件差异。 但是，如果你喜欢通过图形化的方式或其它格式输出方式的话，可以使用 git difftool 命令来用 Araxis ，emerge 或 vimdiff 等软件输出 diff 分析结果。 使用 git difftool --tool-help 命令来看你的系统支持哪些 Git Diff 插件。</p>
+<h5 id="提交更新">提交更新</h5>
+<p><code>git commit</code></p>
+<p>这种方式会启动文本编辑器以便输入本次提交的说明。 (默认会启用 shell 的环境变量 $EDITOR 所指定的软件，一般都是 vim 或 emacs。当然也可以按照 起步 介绍的方式，使用 git config --global core.editor 命令设定你喜欢的编辑软件。）</p>
+<p>可以看到，默认的提交消息包含最后一次运行 git status 的输出，放在注释行里，另外开头还有一空行，供你输入提交说明。 你完全可以去掉这些注释行，不过留着也没关系，多少能帮你回想起这次更新的内容有哪些。 (如果想要更详细的对修改了哪些内容的提示，可以用 -v 选项，这会将你所做的改变的 diff 输出放到编辑器中从而使你知道本次提交具体做了哪些修改。） 退出编辑器时，Git 会丢掉注释行，用你输入提交附带信息生成一次提交。</p>
+<p>另外，你也可以在 commit 命令后添加 -m 选项，将提交信息与命令放在同一行，如下所示：<br>
+<code>$ git commit -m &quot;Story 182: Fix benchmarks for speed&quot;</code><br>
+<code>[master 463dc4f] Story 182: Fix benchmarks for speed</code><br>
+<code>2 files changed, 2 insertions(+)</code><br>
+<code>create mode 100644 README</code></p>
+<p>好，现在你已经创建了第一个提交！ 可以看到，提交后它会告诉你，当前是在哪个分支（master）提交的，本次提交的完整 SHA-1 校验和是什么（463dc4f），以及在本次提交中，有多少文件修订过，多少行添加和删改过。</p>
+<p>请记住，提交时记录的是放在暂存区域的快照。 任何还未暂存的仍然保持已修改状态，可以在下次提交时纳入版本管理。 每一次运行提交操作，都是对你项目作一次快照，以后可以回到这个状态，或者进行比较。</p>
+<h5 id="跳过使用暂存区域">跳过使用暂存区域</h5>
+<p>尽管使用暂存区域的方式可以精心准备要提交的细节，但有时候这么做略显繁琐。 Git 提供了一个跳过使用暂存区域的方式， 只要在提交的时候，给 git commit 加上 -a 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤。</p>
+<h5 id="移除文件">移除文件</h5>
+<p>要从 Git 中移除某个文件，就必须要从已跟踪文件清单中移除（确切地说，是从暂存区域移除），然后提交。 可以<strong>用 <code>git rm</code> 命令完成此项工作，并连带从工作目录中删除指定的文件</strong>，这样以后就不会出现在未跟踪文件清单中了。</p>
+<p><strong>如果只是简单地从工作目录中手工删除文件，运行 <code>git status</code> 时就会在 “Changes not staged for commit” 部分（也就是 未暂存清单）看到</strong>。</p>
+<p>然后再运行 <code>git rm</code> 记录此次移除文件的操作。</p>
+<p>下一次提交时，该文件就不再纳入版本管理了。 <strong>如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f（译注：即 force 的首字母）</strong>。 这是一种安全特性，用于防止误删还没有添加到快照的数据，这样的数据不能被 Git 恢复。</p>
+<p>另外一种情况是，我们想把文件从 Git 仓库中删除（亦即从暂存区域移除），但仍然希望保留在当前工作目录中。 换句话说，你想让文件保留在磁盘，但是并不想让 Git 继续跟踪。 当你忘记添加 .gitignore 文件，不小心把一个很大的日志文件或一堆 .a 这样的编译生成文件添加到暂存区时，这一做法尤其有用。 为达到这一目的，使用 --cached 选项：<br>
+<code>git rm --cached README</code></p>
+<p><code>git rm</code> 命令后面可以列出文件或者目录的名字，也可以使用 glob 模式。 比方说：<br>
+<code>git rm log/\*.log</code></p>
+<p>注意到星号 * 之前的反斜杠 \， 因为 Git 有它自己的文件模式扩展匹配方式，所以我们不用 shell 来帮忙展开。 此命令删除 log/ 目录下扩展名为 .log 的所有文件。 类似的比如：<br>
+<code>git rm \*~</code></p>
+<p>该命令为删除以 ~ 结尾的所有文件。</p>
+<h5 id="移动文件">移动文件</h5>
+<p>不像其它的 VCS 系统，Git 并不显式跟踪文件移动操作。 如果在 Git 中重命名了某个文件，仓库中存储的元数据并不会体现出这是一次改名操作。 不过 Git 非常聪明，它会推断出究竟发生了什么，至于具体是如何做到的，我们稍后再谈。</p>
+<p>既然如此，当你看到 Git 的 mv 命令时一定会困惑不已。 要在 Git 中对文件改名，可以这么做：<br>
+<code>git mv file_from file_to</code></p>
+<p>它会恰如预期般正常工作。 实际上，即便此时查看状态信息，也会明白无误地看到关于重命名操作的说明：<br>
+<code>renamed: README.md -&gt; README</code></p>
+<p>其实，运行 git mv 就相当于运行了下面三条命令：<br>
+<code>mv README.md README</code><br>
+<code>git rm README.md</code><br>
+<code>git add README</code></p>
+<p>如此分开操作，Git 也会意识到这是一次改名，所以不管何种方式结果都一样。 两者唯一的区别是，mv 是一条命令而另一种方式需要三条命令，直接用 <code>git mv</code> 轻便得多。 <strong>不过有时候用其他工具批处理改名的话，要记得在提交前删除老的文件名，再添加新的文件名</strong>。</p>
+<h4 id="查看提交历史">查看提交历史</h4>
+<p>在提交了若干更新，又或者克隆了某个项目之后，你也许想回顾下提交历史。 完成这个任务最简单而又有效的工具是 git log 命令。</p>
+<p>默认不用任何参数的话，git log 会按提交时间列出所有的更新，最近的更新排在最上面。 正如你所看到的，这个命令会列出每个提交的 SHA-1 校验和、作者的名字和电子邮件地址、提交时间以及提交说明。</p>
+<p>git log 有许多选项可以帮助你搜寻你所要找的提交， 接下来我们介绍些最常用的。</p>
+<p>一个常用的选项是 -p，用来显示每次提交的内容差异。 你也可以加上 -2 来仅显示最近两次提交。</p>
+<h4 id="撤消操作">撤消操作</h4>
+<h4 id="远程仓库的使用">远程仓库的使用</h4>
+<h4 id="打标签">打标签</h4>
+<h4 id="git-别名">Git 别名</h4>
+<h4 id="总结-1">总结</h4>
+<h3 id="git-分支">Git 分支</h3>
+<h4 id="分支简介">分支简介</h4>
+<h4 id="分支的新建与合并">分支的新建与合并</h4>
+<h4 id="分支管理">分支管理</h4>
+<h4 id="分支开发工作流">分支开发工作流</h4>
+<h4 id="远程分支">远程分支</h4>
+<h4 id="变基">变基</h4>
+<h4 id="总结-2">总结</h4>
+<h3 id="服务器上的-git">服务器上的 Git</h3>
+<h4 id="协议">协议</h4>
+<h4 id="在服务器上搭建-git">在服务器上搭建 Git</h4>
+<h4 id="生成-ssh-公钥">生成 SSH 公钥</h4>
+<h4 id="配置服务器">配置服务器</h4>
+<h4 id="git-守护进程">Git 守护进程</h4>
+<h4 id="smart-http">Smart HTTP</h4>
+<h4 id="gitweb">GitWeb</h4>
+<h4 id="gitlab">GitLab</h4>
+<h4 id="第三方托管的选择">第三方托管的选择</h4>
+<h4 id="总结-3">总结</h4>
+<h3 id="分布式-git">分布式 Git</h3>
+<h4 id="分布式工作流程">分布式工作流程</h4>
+<h4 id="向一个项目贡献">向一个项目贡献</h4>
+<h4 id="维护项目">维护项目</h4>
+<h4 id="总结-4">总结</h4>
+<h3 id="github">GitHub</h3>
+<h4 id="账户的创建和配置">账户的创建和配置</h4>
+<h4 id="对项目做出贡献">对项目做出贡献</h4>
+<h4 id="维护项目-1">维护项目</h4>
+<h4 id="管理组织">管理组织</h4>
+<h4 id="脚本-github">脚本 GitHub</h4>
+<h4 id="总结-5">总结</h4>
+<h3 id="git-工具">Git 工具</h3>
+<h4 id="选择修订版本">选择修订版本</h4>
+<h4 id="交互式暂存">交互式暂存</h4>
+<h4 id="储藏与清理">储藏与清理</h4>
+<h4 id="签署工作">签署工作</h4>
+<h4 id="搜索">搜索</h4>
+<h4 id="重写历史">重写历史</h4>
+<h4 id="重置揭密">重置揭密</h4>
+<h4 id="高级合并">高级合并</h4>
+<h4 id="rerere">Rerere</h4>
+<h4 id="使用-git-调试">使用 Git 调试</h4>
+<h4 id="子模块">子模块</h4>
+<h4 id="打包">打包</h4>
+<h4 id="替换">替换</h4>
+<h4 id="凭证存储">凭证存储</h4>
+<h4 id="总结-6">总结</h4>
+<h3 id="自定义-git">自定义 Git</h3>
+<h4 id="配置-git">配置 Git</h4>
+<h4 id="git-属性">Git 属性</h4>
+<h4 id="git-钩子">Git 钩子</h4>
+<h4 id="使用强制策略的一个例子">使用强制策略的一个例子</h4>
+<h4 id="总结-7">总结</h4>
+<h3 id="git-与其他系统">Git 与其他系统</h3>
+<h4 id="作为客户端的-git">作为客户端的 Git</h4>
+<h4 id="迁移到-git">迁移到 Git</h4>
+<h4 id="总结-8">总结</h4>
+<h3 id="git-内部原理">Git 内部原理</h3>
+<h4 id="底层命令和高层命令">底层命令和高层命令</h4>
+<h4 id="git-对象">Git 对象</h4>
+<h4 id="git-引用">Git 引用</h4>
+<h4 id="包文件">包文件</h4>
+<h4 id="引用规格">引用规格</h4>
+<h4 id="传输协议">传输协议</h4>
+<h4 id="维护与数据恢复">维护与数据恢复</h4>
+<h4 id="环境变量">环境变量</h4>
+<h4 id="总结-9">总结</h4>
+<h3 id="appendix-a-其它环境中的-git">Appendix A: 其它环境中的 Git</h3>
+<h4 id="图形界面">图形界面</h4>
+<h4 id="visual-studio-中的-git">Visual Studio 中的 Git</h4>
+<h4 id="eclipse-中的-git">Eclipse 中的 Git</h4>
+<h4 id="bash-中的-git">Bash 中的 Git</h4>
+<h4 id="zsh-中的-git">Zsh 中的 Git</h4>
+<h4 id="powershell-中的-git">Powershell 中的 Git</h4>
+<h4 id="总结-10">总结</h4>
+<h3 id="appendix-b-将-git-嵌入你的应用">Appendix B: 将 Git 嵌入你的应用</h3>
+<h4 id="命令行-git-方式">命令行 Git 方式</h4>
+<h4 id="libgit2">Libgit2</h4>
+<h4 id="jgit">JGit</h4>
+<h3 id="appendix-c-git-命令">Appendix C: Git 命令</h3>
+<h4 id="设置与配置">设置与配置</h4>
+<h4 id="获取与创建项目">获取与创建项目</h4>
+<h4 id="快照基础">快照基础</h4>
+<h4 id="分支与合并">分支与合并</h4>
+<h4 id="项目分享与更新">项目分享与更新</h4>
+<h4 id="检查与比较">检查与比较</h4>
+<h4 id="调试">调试</h4>
+<h4 id="补丁">补丁</h4>
+<h4 id="邮件">邮件</h4>
+<h4 id="外部系统">外部系统</h4>
+<h4 id="管理">管理</h4>
+<h4 id="底层命令">底层命令</h4>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

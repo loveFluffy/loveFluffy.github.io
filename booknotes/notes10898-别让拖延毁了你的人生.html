@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x522b;&#x8ba9;&#x62d6;&#x5ef6;&#x6bc1;&#x4e86;&#x4f60;&#x7684;&#x4eba;&#x751f;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
+		z-index: 1;
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="别让拖延毁了你的人生">别让拖延毁了你的人生</h1>
+<h2 id="张乐-编著">张乐 编著</h2>
+<h3 id="第一章-拖延让你在人生的沼泽里痛苦挣扎">第一章 拖延让你在人生的沼泽里痛苦挣扎</h3>
+<h4 id="拖延是人性的弱点">拖延是人性的弱点</h4>
+<h4 id="拖延常常是一个人失败的主因">拖延常常是一个人失败的主因</h4>
+<h4 id="不要让拖延成为你徘徊不前的借口">不要让拖延成为你徘徊不前的借口</h4>
+<h4 id="做事时不可犹豫不决">做事时不可犹豫不决</h4>
+<h4 id="不要相信情况会好转的鬼话">不要相信情况会好转的“鬼话”</h4>
+<h4 id="习惯性的拖延让人一事无成">习惯性的拖延让人一事无成</h4>
+<h4 id="赶快行动莫拖延">赶快行动，莫拖延</h4>
+<h4 id="拖延就是在纵容我们身上的惰性">拖延就是在纵容我们身上的惰性</h4>
+<h4 id="下定决心抛弃拖延的恶习">下定决心，抛弃拖延的恶习</h4>
+<h3 id="第二章-挖出拖延者内心隐藏的奥秘">第二章 挖出拖延者内心隐藏的奥秘</h3>
+<h4 id="延迟决定是最大的错误">延迟决定是最大的错误</h4>
+<h4 id="现在就去做最需要做的事情">现在就去做最需要做的事情</h4>
+<h4 id="用持之以恒的态度去完成每件事">用持之以恒的态度去完成每件事</h4>
+<h4 id="必须学会每天和自己竞争">必须学会每天和自己竞争</h4>
+<h4 id="别让恐惧占据你的内心">别让恐惧占据你的内心</h4>
+<h4 id="今天的事情不可以拖到明天再做">今天的事情不可以拖到明天再做</h4>
+<h4 id="不要轻易给自己留退路">不要轻易给自己留退路</h4>
+<h4 id="下定决心告别懒惰的自己">下定决心，告别懒惰的自己</h4>
+<h4 id="改变那些多年形成的行为方式">改变那些多年形成的行为方式</h4>
+<h3 id="第三章-有些时候一定要快一点儿">第三章 有些时候，一定要快一点儿</h3>
+<h4 id="先人一步就能赢定大局">先人一步，就能赢定大局</h4>
+<h4 id="没有速度很多时候就没有主动权">没有速度，很多时候就没有主动权</h4>
+<h4 id="小心夜长梦多">小心夜长梦多</h4>
+<h4 id="千万不要找借口而拖延时间">千万不要找借口而拖延时间</h4>
+<h4 id="及时抓住机会">及时抓住机会</h4>
+<h4 id="想到就要做到">想到就要做到</h4>
+<h4 id="犹疑不决几乎是你能犯得最坏的错误">犹疑不决几乎是你能犯得最坏的错误</h4>
+<h3 id="第四章-聪明人都会找到自己的方向">第四章 聪明人都会找到自己的方向</h3>
+<h4 id="想成功就要设定明确目标">想成功就要设定明确目标</h4>
+<h4 id="设定目标有利于成功">设定目标有利于成功</h4>
+<h4 id="远大的目标从来不是一蹴而就的">远大的目标从来不是一蹴而就的</h4>
+<h4 id="从认识现在开始我们就不会迷失自己">从认识现在开始，我们就不会迷失自己</h4>
+<h4 id="有什么样的目标就有什么样的人生">有什么样的目标就有什么样的人生</h4>
+<h4 id="饭要一口一口吃目标也要逐一实现">饭要一口一口吃，目标也要逐一实现</h4>
+<h4 id="每一个坚持都是未来成功的资本">每一个坚持都是未来成功的资本</h4>
+<h4 id="不要轻易放弃">不要轻易放弃</h4>
+<h4 id="进步与成功是一点一滴的努力得来的">进步与成功是一点一滴的努力得来的</h4>
+<h4 id="做出最正确的判断选择最正确的方向">做出最正确的判断，选择最正确的方向</h4>
+<h3 id="第五章-别让机遇迎面而来擦肩而过">第五章 别让机遇迎面而来，擦肩而过</h3>
+<h4 id="拖延让你在关键时刻充满遗憾">拖延让你在“关键时刻”充满遗憾</h4>
+<h4 id="不要坐待自己命运之舟的到来">不要坐待自己“命运之舟”的到来</h4>
+<h4 id="很多时候迈出人生的第一步再说">很多时候，迈出人生的第一步再说</h4>
+<h4 id="不行动你就不会知道自己的力量">不行动，你就不会知道自己的力量</h4>
+<h4 id="拒绝拖延还需要你勇于面对风险">拒绝拖延还需要你勇于面对风险</h4>
+<h4 id="勇于尝试才能抓住机遇">勇于尝试才能抓住机遇</h4>
+<h4 id="抓住机遇就是抓住了成功之门的把手">抓住机遇就是抓住了成功之门的把手</h4>
+<h4 id="灵活善断将机遇牢牢抓在手中">灵活善断，将机遇牢牢抓在手中</h4>
+<h4 id="别让你成为自己最难击败的对手">别让你成为自己最难击败的对手</h4>
+<h3 id="第六章-一样的时间不一样的生活">第六章 一样的时间，不一样的生活</h3>
+<h4 id="成功与失败的界限在于分配时间">成功与失败的界限在于分配时间</h4>
+<h4 id="珍惜时间最重要的是珍惜现在">珍惜时间最重要的是珍惜现在</h4>
+<h4 id="赢得时间就要立刻动手">赢得时间就要立刻动手</h4>
+<h4 id="成功的人都会时间管理">成功的人都会时间管理</h4>
+<h4 id="一段时间内集中精力去做一件事情">一段时间内集中精力去做一件事情</h4>
+<h4 id="利用现在的时光不要放过一分一秒">利用现在的时光，不要放过一分一秒</h4>
+<h4 id="时间管理让有限的时间产生更重要的意义">时间管理让有限的时间产生更重要的意义</h4>
+<h3 id="第七章-主动的人不会为拖延找借口">第七章 主动的人不会为拖延找借口</h3>
+<h4 id="敢为就是要告诫自己去做事敢做事">敢为就是要告诫自己去做事、敢做事</h4>
+<h4 id="成功者总在做事">成功者总在做事</h4>
+<h4 id="现在就做那么我们将在顶峰相会">现在就做，那么我们将在顶峰相会</h4>
+<h4 id="奖赏都是给那些比别人干得多的人">奖赏都是给那些比别人干得多的人</h4>
+<h4 id="这个世上最害怕丧失的就是勇气">这个世上，最害怕丧失的就是勇气</h4>
+<h4 id="想到就要去做到">想到，就要去做到</h4>
+<h4 id="借口会拖延我们的行动让我们一事无成">借口会拖延我们的行动，让我们一事无成</h4>
+<h4 id="与其被动地等待不如主动地出击">与其被动地等待，不如主动地出击</h4>
+<h4 id="不做境遇的牺牲品要成为它的主人">不做境遇的牺牲品，要成为它的主人</h4>
+<h3 id="第八章-激励是人在逆境中前进的马达">第八章 激励是人在逆境中前进的马达</h3>
+<h4 id="人生最大的敌人就是自己的消极心态">人生最大的敌人就是自己的消极心态</h4>
+<h4 id="相信自己不要让自己打败自己">相信自己，不要让自己打败自己</h4>
+<h4 id="依赖自己才能得到最后的胜利">依赖自己，才能得到最后的胜利</h4>
+<h4 id="勇敢积极就有机会找到新出路">勇敢积极，就有机会找到新出路</h4>
+<h4 id="没什么能永远囚禁意志坚强的人">没什么能永远囚禁意志坚强的人</h4>
+<h4 id="人生没有真正的失败">人生没有真正的失败</h4>
+<h4 id="把自己逼到墙角何尝不是一种策略">把自己逼到墙角何尝不是一种策略</h4>
+<h4 id="想要生活有希望就要克服恐惧心理">想要生活有希望，就要克服恐惧心理</h4>
+<h3 id="第九章-把那些成功所必需的事情坚持下来">第九章 把那些成功所必需的事情坚持下来</h3>
+<h4 id="坚持现在就去做">坚持“现在就去做”</h4>
+<h4 id="习惯影响着人的成功与失败">习惯影响着人的成功与失败</h4>
+<h4 id="良好的秩序是成功的基础">良好的秩序是成功的基础</h4>
+<h4 id="什么事情都要先做起来">什么事情都要先做起来</h4>
+<h4 id="好的工作习惯为我们搭建更好的舞台">好的工作习惯为我们搭建更好的舞台</h4>
+<h4 id="做好一件事从认真开始">做好一件事从认真开始</h4>
+<h4 id="成功不是偶然它更青睐专一的人">成功不是偶然，它更青睐专一的人</h4>
+<h4 id="不要因外界的纷纷扰扰而自坏阵脚">不要因外界的纷纷扰扰而自坏阵脚</h4>
+<h3 id="第十章-与其坐而论道不如起而行之">第十章 与其坐而论道，不如起而行之</h3>
+<h4 id="烦恼是不敢立即采取行动的借口">烦恼是不敢立即采取行动的借口</h4>
+<h4 id="十个空洞的幻想也不如一个实际的行动">十个空洞的幻想也不如一个实际的行动</h4>
+<h4 id="看准事后迅速行动才是最好的成功之法">看准事后迅速行动，才是最好的成功之法</h4>
+<h4 id="只有行动才能决定我们的价值">只有行动才能决定我们的价值</h4>
+<h4 id="世界上所有的成功都是行动的结果">世界上所有的成功都是行动的结果</h4>
+<h4 id="不仅要行动还要有信念">不仅要“行动”，还要有“信念”</h4>
+<h4 id="生涯规划对人的成功很重要">生涯规划对人的成功很重要</h4>
+<h4 id="成功在于敢想更在于你的行动">成功在于敢想，更在于你的行动</h4>
+
+        
+        
+    </body>
+    </html>

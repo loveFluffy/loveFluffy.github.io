@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x80a1;&#x5e02;&#x8fdb;&#x9636;&#x4e4b;&#x9053;&#xff1a;&#x4e00;&#x4e2a;&#x6563;&#x6237;&#x7684;&#x81ea;&#x6211;&#x4fee;&#x517b;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="股市进阶之道一个散户的自我修养">股市进阶之道：一个散户的自我修养</h1>
+<h2 id="李杰-著">李杰 著</h2>
+<h3 id="序">序</h3>
+<h3 id="前言">前言</h3>
+<h2 id="第一部分正视投资">第一部分　正视投资</h2>
+<h3 id="第1章有关股市的事实">第1章　有关股市的事实</h3>
+<h4 id="11低门槛与高壁垒">1.1　低门槛与高壁垒</h4>
+<h5 id="111少数人获胜的游戏">1.1.1　少数人获胜的游戏</h5>
+<h5 id="112三重困难四种层次">1.1.2　三重困难、四种层次</h5>
+<h5 id="113糊涂赚还是明白亏">1.1.3　糊涂赚还是明白亏</h5>
+<h4 id="12股市也没那么可怕">1.2　股市也没那么可怕</h4>
+<h5 id="121小概率中的大概率">1.2.1　小概率中的大概率</h5>
+<h5 id="122虚假的安全感">1.2.2　虚假的安全感</h5>
+<h4 id="13远离大多数人">1.3　远离“大多数人”</h4>
+<h3 id="第2章你其实也有优势">第2章　你其实也有优势</h3>
+<h4 id="21学会扬长避短">2.1　学会扬长避短</h4>
+<h5 id="211专注也是竞争力">2.1.1　专注也是竞争力</h5>
+<h5 id="212时间与长期利益">2.1.2　时间与长期利益</h5>
+<h5 id="213不必随大流">2.1.3　不必随大流</h5>
+<h4 id="22专业知识是天堑吗">2.2　专业知识是天堑吗</h4>
+<h4 id="23宏观到底怎样研究">2.3　宏观到底怎样研究</h4>
+<h3 id="第3章捅破投资的窗户纸">第3章　捅破投资的“窗户纸”</h3>
+<h4 id="31投资投机与赌博">3.1　投资、投机与赌博</h4>
+<h4 id="32易学难精的价值投资">3.2　易学难精的价值投资</h4>
+<h4 id="33不可动摇的基石">3.3　不可动摇的基石</h4>
+<h5 id="331从企业视角看投资">3.3.1　从企业视角看投资</h5>
+<h5 id="332谨守安全边际">3.3.2　谨守安全边际</h5>
+<h5 id="333确定自己的能力圈">3.3.3　确定自己的能力圈</h5>
+<h5 id="334了解市场先生">3.3.4　了解“市场先生”</h5>
+<h5 id="335有效的自控能力">3.3.5　有效的自控能力</h5>
+<h4 id="34把预测留给神仙">3.4　把预测留给神仙</h4>
+<h4 id="35跨过投资的万人坑">3.5　跨过“投资的万人坑”</h4>
+<h4 id="36投资修炼的进阶之路">3.6　投资修炼的进阶之路</h4>
+<h5 id="361投资素养的进阶之路">3.6.1　投资素养的进阶之路</h5>
+<h5 id="362四个阶段的关注点">3.6.2　四个阶段的关注点</h5>
+<h3 id="第4章像胜出者一样思考">第4章　像胜出者一样思考</h3>
+<h4 id="41制造你的核武器">4.1　制造你的“核武器”</h4>
+<h4 id="42下注大概率与高赔率">4.2　下注大概率与高赔率</h4>
+<h4 id="43聪明的承担风险">4.3　聪明的承担风险</h4>
+<h4 id="44深人骨髓的逆向思维">4.4　深人骨髓的逆向思维</h4>
+<h4 id="45以退为进的长期持有">4.5　以退为进的长期持有</h4>
+<h5 id="451小聪明和智慧的区别">4.5.1　小聪明和智慧的区别</h5>
+<h5 id="452抗压性与自控力">4.5.2　抗压性与自控力</h5>
+<h4 id="46会买的才是师傅">4.6　会买的才是师傅</h4>
+<h3 id="第5章认知偏差与决策链">第5章　认知偏差与决策链</h3>
+<h4 id="51隐形的决策链">5.1　隐形的决策链</h4>
+<h4 id="52让大脑有效运作">5.2　让大脑有效运作</h4>
+<h5 id="521先入为主的想当然">5.2.1　先入为主的想当然</h5>
+<h5 id="522屁股决定脑袋">5.2.2　屁股决定脑袋</h5>
+<h5 id="523真实的偏颇">5.2.3　真实的偏颇</h5>
+<h5 id="524超出能力圈的复杂判断">5.2.4　超出能力圈的复杂判断</h5>
+<h5 id="525专业自负与灯下黑">5.2.5　专业自负与“灯下黑”</h5>
+<h5 id="526顽固的心理弱点">5.2.6　顽固的心理弱点</h5>
+<h4 id="53跨过信息的罗生门">5.3　跨过信息的罗生门</h4>
+<h5 id="531利益与立场的干扰">5.3.1　利益与立场的干扰</h5>
+<h5 id="532保持信息的客观完整">5.3.2　保持信息的客观完整</h5>
+<h5 id="533解读能力的天壤之别">5.3.3　解读能力的天壤之别</h5>
+<h5 id="534从信息碎片到框架分析">5.3.4　从信息碎片到框架分析</h5>
+<h3 id="投资感悟微博摘录一">投资感悟：微博摘录（一）</h3>
+<h2 id="第二部分发现价值">第二部分　发现价值</h2>
+<h3 id="第6章揭开价值的面纱">第6章　揭开价值的面纱</h3>
+<h4 id="61透视内在价值">6.1　透视内在价值</h4>
+<h5 id="611不同语境下的价值">6.1.1　不同语境下的价值</h5>
+<h5 id="612职场与现金流折现">6.1.2　职场与现金流折现</h5>
+<h4 id="62dcf三要素">6.2　DCF三要素</h4>
+<h5 id="621经营存续期">6.2.1　经营存续期</h5>
+<h5 id="622现金创造力">6.2.2　现金创造力</h5>
+<h5 id="623经营周期定位">6.2.3　经营周期定位</h5>
+<h5 id="624总结和心得">6.2.4　总结和心得</h5>
+<h4 id="63有价值的增长">6.3　有价值的增长</h4>
+<h5 id="631价值创造的内涵">6.3.1　价值创造的内涵</h5>
+<h5 id="632资本回报率">6.3.2　资本回报率</h5>
+<h5 id="633净资产收益率">6.3.3　净资产收益率</h5>
+<h5 id="634增长的导向">6.3.4　增长的导向</h5>
+<h4 id="64其他影响价值的因素">6.4　其他影响价值的因素</h4>
+<h3 id="第7章让视角回归本质">第7章　让视角回归本质</h3>
+<h4 id="71透过供需看市场">7.1　透过供需看市场</h4>
+<h5 id="711六种供需格局">7.1.1　六种供需格局</h5>
+<h5 id="712典型问题和误解">7.1.2　典型问题和误解</h5>
+<h4 id="72商业竞争定生死">7.2　商业竞争定生死</h4>
+<h5 id="721竞争的烈度差异">7.2.1　竞争的烈度差异</h5>
+<h5 id="722不同类别的护城河">7.2.2　不同类别的护城河</h5>
+<h5 id="723护城河的宽与窄">7.2.3　护城河的宽与窄</h5>
+<h5 id="724行业和个股哪个优先">7.2.4　行业和个股哪个优先</h5>
+<h4 id="73前瞻把握未来">7.3　前瞻把握未来</h4>
+<h3 id="第8章高价值企业的奥秘">第8章　高价值企业的奥秘</h3>
+<h4 id="81巨大的商业价值">8.1　巨大的商业价值</h4>
+<h4 id="82优良的生意特性">8.2　优良的生意特性</h4>
+<h5 id="821生意的三六九等">8.2.1　生意的三六九等</h5>
+<h5 id="822寻找印钞机">8.2.2　寻找“印钞机”</h5>
+<h4 id="83处于价值扩张期">8.3　处于价值扩张期</h4>
+<h4 id="84高重置成本及定价权">8.4　高重置成本及定价权</h4>
+<h5 id="841无形胜有形">8.4.1　无形胜有形</h5>
+<h5 id="842定价权的层次">8.4.2　定价权的层次</h5>
+<h4 id="85优秀可信赖的管理层">8.5　优秀可信赖的管理层</h4>
+<h5 id="851企业家精神及产业抱负">8.5.1　企业家精神及产业抱负</h5>
+<h5 id="852卓越的战略视野及规划">8.5.2　卓越的战略视野及规划</h5>
+<h5 id="853坚强有力的组织">8.5.3　坚强有力的组织</h5>
+<h5 id="854创新的魄力和活力">8.5.4　创新的魄力和活力</h5>
+<h5 id="855值得信赖的商业道德">8.5.5　值得信赖的商业道德</h5>
+<h5 id="856好管理和好生意的选择">8.5.6　好管理和好生意的选择</h5>
+<h4 id="86放下傲慢与偏见">8.6　放下傲慢与偏见</h4>
+<h3 id="第9章经营观测与守候">第9章　经营观测与守候</h3>
+<h4 id="91建立逻辑支点">9.1　建立逻辑支点</h4>
+<h5 id="911先找树干再看树叶">9.1.1　先找树干再看树叶</h5>
+<h5 id="912长期投资的层次">9.1.2　长期投资的层次</h5>
+<h4 id="92经营特性分析">9.2　经营特性分析</h4>
+<h5 id="921三种经营特性">9.2.1　三种经营特性</h5>
+<h5 id="922定位主要矛盾">9.2.2　定位主要矛盾</h5>
+<h5 id="923财务不仅仅是数字">9.2.3　财务不仅仅是数字</h5>
+<h5 id="924财务与业务的结合">9.2.4　财务与业务的结合</h5>
+<h5 id="925警惕这些业务特征">9.2.5　警惕这些业务特征</h5>
+<h4 id="93成长来自哪里">9.3　成长来自哪里</h4>
+<h5 id="931内部驱动还是外部驱动">9.3.1　内部驱动还是外部驱动</h5>
+<h5 id="932收入扩张还是利润率提升">9.3.2　收入扩张还是利润率提升</h5>
+<h5 id="933梳理逻辑及测算弹性">9.3.3　梳理逻辑及测算弹性</h5>
+<h5 id="934对前景的理解和把握">9.3.4　对前景的理解和把握</h5>
+<h4 id="94几个实用小贴士">9.4　几个实用小贴士</h4>
+<h5 id="941如何看年报">9.4.1　如何看年报</h5>
+<h5 id="942现场调研经验谈">9.4.2　现场调研经验谈</h5>
+<h5 id="943建立认识卡片">9.4.3　建立“认识卡片”</h5>
+<h4 id="95重点和总结">9.5　重点和总结</h4>
+<h3 id="第10章从雪球到雪崩">第10章　从雪球到雪崩</h3>
+<h4 id="101那些蛛丝马迹">10.1　那些蛛丝马迹</h4>
+<h5 id="1011行为总会留下痕迹">10.1.1　行为总会留下痕迹</h5>
+<h5 id="1012投资不是法庭辩论">10.1.2　投资不是法庭辩论</h5>
+<h4 id="102穿越财务迷宫">10.2　穿越财务迷宫</h4>
+<h5 id="1021主观与客观条件">10.2.1　主观与客观条件</h5>
+<h5 id="1022业绩调节的把戏">10.2.2　业绩调节的把戏</h5>
+<h5 id="1023瞪大眼睛看资产">10.2.3　瞪大眼睛看资产</h5>
+<h5 id="1024亮起黄灯的信号">10.2.4　亮起黄灯的信号</h5>
+<h5 id="1025养成投资的洁癖">10.2.5　养成投资的洁癖</h5>
+<h5 id="1026财报无用论很危险">10.2.6　财报无用论很危险</h5>
+<h4 id="103失败者档案">10.3　失败者档案</h4>
+<h5 id="1031可控性因素是关键">10.3.1　可控性因素是关键</h5>
+<h5 id="1032伟大也有时效性">10.3.2　“伟大”也有时效性</h5>
+<h5 id="1033错误的战略假设">10.3.3　错误的战略假设</h5>
+<h5 id="1034创新之殇">10.3.4　创新之殇</h5>
+<h5 id="1035慎言市场饱和">10.3.5　慎言市场“饱和”</h5>
+<h5 id="1036教训和启发">10.3.6　教训和启发</h5>
+<h4 id="104认识失败的价值">10.4　认识失败的价值</h4>
+<h3 id="第11章对象时机力度">第11章　对象、时机、力度</h3>
+<h4 id="111对象和态势">11.1　对象和态势</h4>
+<h5 id="1111当前优势型">11.1.1　当前优势型</h5>
+<h5 id="1112高峰拐点型">11.1.2　高峰拐点型</h5>
+<h5 id="1113持续低迷型">11.1.3　持续低迷型</h5>
+<h5 id="1114低谷拐点型">11.1.4　低谷拐点型</h5>
+<h5 id="1115未来优势型">11.1.5　未来优势型</h5>
+<h5 id="1116难以辨认型">11.1.6　难以辨认型</h5>
+<h5 id="1117态势与转化">11.1.7　态势与转化</h5>
+<h5 id="1118对象的辨别">11.1.8　对象的辨别</h5>
+<h4 id="112时机与周期">11.2　时机与周期</h4>
+<h5 id="1121买入和卖出的原则">11.2.1　买入和卖出的原则</h5>
+<h5 id="1122当前优势型的时机">11.2.2　当前优势型的时机</h5>
+<h5 id="1123高峰拐点型的时机">11.2.3　高峰拐点型的时机</h5>
+<h5 id="1124持续低谷型的时机">11.2.4　持续低谷型的时机</h5>
+<h5 id="1125低谷拐点型的时机">11.2.5　低谷拐点型的时机</h5>
+<h5 id="1126未来优势型的时机">11.2.6　未来优势型的时机</h5>
+<h4 id="113力度和仓位">11.3　力度和仓位</h4>
+<h5 id="1131力度的影响">11.3.1　力度的影响</h5>
+<h5 id="1132形成投资策略">11.3.2　形成投资策略</h5>
+<h4 id="114我的总结与选择">11.4　我的总结与选择</h4>
+<h3 id="投资感悟微博摘录二">投资感悟：微博摘录（二）</h3>
+<h2 id="第三部分理解市场">第三部分　理解市场</h2>
+<h3 id="第12章市场定价的逻辑">第12章　市场定价的逻辑</h3>
+<h4 id="121有效还是无效">12.1　有效还是无效</h4>
+<h5 id="1211矛盾和争吵">12.1.1　矛盾和争吵</h5>
+<h5 id="1212捡钞票还是鉴宝">12.1.2　捡钞票还是鉴宝</h5>
+<h5 id="1213最后谁说了算">12.1.3　最后谁说了算</h5>
+<h5 id="1214发现错误定价">12.1.4　发现错误定价</h5>
+<h4 id="122折价溢价与泡沫">12.2　折价、溢价与泡沫</h4>
+<h5 id="1221三个影响因素">12.2.1　三个影响因素</h5>
+<h5 id="1222四种溢价程度的处理">12.2.2　四种溢价程度的处理</h5>
+<h5 id="1223溢价与安全边际">12.2.3　溢价与安全边际</h5>
+<h4 id="123估值差的影响">12.3　估值差的影响</h4>
+<h5 id="1231弹簧总是有极限的">12.3.1　弹簧总是有极限的</h5>
+<h5 id="1232从偏离到回归">12.3.2　从偏离到回归</h5>
+<h5 id="1233不稳定性和复杂性">12.3.3　不稳定性和复杂性</h5>
+<h3 id="第13章预期与回报">第13章　预期与回报</h3>
+<h4 id="131企业与股票的和而不同">13.1　企业与股票的和而不同</h4>
+<h5 id="1311增长率陷阱与戴维斯效应">13.1.1　增长率陷阱与戴维斯效应</h5>
+<h5 id="1312强大而危险的武器">13.1.2　强大而危险的武器</h5>
+<h5 id="1313预期的发展和转化">13.1.3　预期的发展和转化</h5>
+<h5 id="1314关键现象的投资启示">13.1.4　关键现象的投资启示</h5>
+<h5 id="1315估值波动对持股的影响">13.1.5　估值波动对持股的影响</h5>
+<h4 id="132低风险高不确定性的启示">13.2　低风险高不确定性的启示</h4>
+<h5 id="1321不确定性与预期的时间差">13.2.1　不确定性与预期的时间差</h5>
+<h5 id="1322大桥建成之前的评估">13.2.2　大桥建成之前的评估</h5>
+<h5 id="1323四种局面的选择">13.2.3　四种局面的选择</h5>
+<h4 id="133回报率数据的密码">13.3　回报率数据的密码</h4>
+<h5 id="1331回报率与市值有关联">13.3.1　回报率与市值有关联</h5>
+<h5 id="1332估值也具有决定性">13.3.2　估值也具有决定性</h5>
+<h5 id="1333统计与经验的矛盾">13.3.3　统计与经验的矛盾</h5>
+<h5 id="1334将规模和估值结合">13.3.4　将规模和估值结合</h5>
+<h3 id="第14章永远的周期轮回">第14章　永远的周期轮回</h3>
+<h4 id="141周期背后的推手">14.1　周期背后的推手</h4>
+<h4 id="142资本的环境温度">14.2　资本的环境温度</h4>
+<h5 id="1421利率与通胀">14.2.1　利率与通胀</h5>
+<h5 id="1422供求关系">14.2.2　供求关系</h5>
+<h4 id="143市场情绪与心理">14.3　市场情绪与心理</h4>
+<h3 id="第15章估值的困与惑">第15章　估值的困与惑</h3>
+<h4 id="151指标背后的故事">15.1　“指标”背后的故事</h4>
+<h5 id="1511市盈率pe">15.1.1　市盈率（PE）</h5>
+<h5 id="1512市销率ps">15.1.2　市销率（PS）</h5>
+<h5 id="1513市现率pcf">15.1.3　市现率（PCF）</h5>
+<h5 id="1514市净率pb">15.1.4　市净率（PB）</h5>
+<h4 id="152pe与pb组合的暗示">15.2　PE与PB组合的暗示</h4>
+<h5 id="1521低pb低pe">15.2.1　低PB，低PE</h5>
+<h5 id="1522低pb高pe">15.2.2　低PB，高PE</h5>
+<h5 id="1523高pb低pe">15.2.3　高PB，低PE</h5>
+<h5 id="1524高pb高pe">15.2.4　高PB，高PE</h5>
+<h4 id="153扩展估值的思维边界">15.3　扩展估值的思维边界</h4>
+<h5 id="1531存在万能指标吗">15.3.1　存在“万能指标”吗</h5>
+<h5 id="1532多维视角下的称重">15.3.2　多维视角下的“称重”</h5>
+<h5 id="1533市值冗余与市值差">15.3.3　市值冗余与市值差</h5>
+<h4 id="154估值的本质指向">15.4　估值的本质指向</h4>
+<h3 id="第16章客观理性看a股">第16章　客观理性看A股</h3>
+<h4 id="161最好的投资市场之一">16.1　最好的投资市场之一</h4>
+<h5 id="1611毫不逊色的回报率">16.1.1　毫不逊色的回报率</h5>
+<h5 id="1612天堂只在梦里有">16.1.2　天堂只在梦里有</h5>
+<h5 id="1613监管是个伪命题">16.1.3　监管是个伪命题</h5>
+<h4 id="162看好未来的逻辑">16.2　看好未来的逻辑</h4>
+<h5 id="1621历史的借鉴">16.2.1　历史的借鉴</h5>
+<h5 id="1622现实的潜力">16.2.2　现实的潜力</h5>
+<h4 id="163该听谁的呢">16.3　该听谁的呢</h4>
+<h3 id="投资感悟微博摘录三">投资感悟：微博摘录（三）</h3>
+<h3 id="总结篇好生意好企业好投资">总结篇　好生意，好企业，好投资</h3>
+
+        
+        
+    </body>
+    </html>

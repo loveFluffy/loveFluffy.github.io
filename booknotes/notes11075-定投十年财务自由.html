@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x5b9a;&#x6295;&#x5341;&#x5e74;&#x8d22;&#x52a1;&#x81ea;&#x7531;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="定投十年财务自由">定投十年财务自由</h1>
+<h2 id="银行螺丝钉-著">银行螺丝钉 著</h2>
+<h3 id="第1章-定投前的准备">第1章 定投前的准备</h3>
+<h4 id="30岁之前要不要买房买车">30岁之前，要不要买房、买车</h4>
+<p>时间很重要。节约下来的时间，不能浪费，如果用来学习，会加速我们的成长。</p>
+<p>住得离工作近一点，住得离钱近一点。在你觉得最重要的事情上，全力以赴！这，就是螺丝钉眼中租房的秘诀。</p>
+<h4 id="人到中年如何规划好家庭消费">人到中年，如何规划好家庭消费</h4>
+<h4 id="穷人思维和富人思维决定你一生的财富">穷人思维和富人思维，决定你一生的财富</h4>
+<h3 id="第2章-定投做一个聪明的懒人">第2章 定投，做一个聪明的“懒人”</h3>
+<h4 id="什么是定投">什么是定投</h4>
+<h4 id="定投的好处">定投的好处</h4>
+<h4 id="定投的心态就像还房贷">定投的心态，就像还房贷</h4>
+<h3 id="第3章-要多少钱才能实现财务自由">第3章 要多少钱，才能实现财务自由</h3>
+<h4 id="我们自己值多少钱">我们自己值多少钱</h4>
+<h4 id="延迟退休你准备好了吗">延迟退休，你准备好了吗</h4>
+<h4 id="攒多少资产才能实现财务自由">攒多少资产，才能实现财务自由</h4>
+<h4 id="财务自由不等于什么都不做">财务自由，不等于什么都不做</h4>
+<h3 id="第4章-投资必备的基础知识">第4章 投资必备的基础知识</h3>
+<h4 id="银行系理财工具都有哪些">银行系理财工具都有哪些</h4>
+<h4 id="基金最适合普通投资者的工具">基金，最适合普通投资者的工具</h4>
+<h4 id="b类货币基金长期收益更高">B类货币基金，长期收益更高</h4>
+<h4 id="如何判断债券基金是否值得投资">如何判断债券基金是否值得投资</h4>
+<h4 id="长期来看股票基金的收益可以抵抗通货膨胀">长期来看，股票基金的收益可以抵抗通货膨胀</h4>
+<h4 id="指数基金定投的主力">指数基金，定投的主力</h4>
+<h3 id="第5章-常见的宽基指数有哪些">第5章 常见的宽基指数有哪些</h3>
+<h4 id="指数的分类方式">指数的分类方式</h4>
+<h4 id="a股常见的宽基指数沪深300中证500和创业板指数">A股常见的宽基指数：沪深300、中证500和创业板指数</h4>
+<h4 id="港股常见的宽基指数恒生指数h股指数和香港中小指数">港股常见的宽基指数：恒生指数、H股指数和香港中小指数</h4>
+<h4 id="美股常见的宽基指数纳斯达克100指数标普500指数">美股常见的宽基指数：纳斯达克100指数、标普500指数</h4>
+<h3 id="第6章-策略加权指数基金小众收益更好">第6章 策略加权指数基金：小众、收益更好</h3>
+<h4 id="红利指数持股收息的最优选择">红利指数：持股收息的最优选择</h4>
+<h4 id="基本面指数从四个维度挑选股票">基本面指数：从四个维度挑选股票</h4>
+<h4 id="价值指数用四个指标来挑选成份股">价值指数：用四个指标来挑选成份股</h4>
+<h4 id="低波动指数波动率越低的股票收益越好">低波动指数：波动率越低的股票，收益越好</h4>
+<h4 id="策略加权指数基金该如何选择">策略加权指数基金该如何选择</h4>
+<h3 id="第7章-掌握优秀的行业指数基金">第7章 掌握优秀的行业指数基金</h3>
+<h4 id="哪类行业天生更容易赚钱">哪类行业天生更容易赚钱</h4>
+<h4 id="必需消费行业最容易出现大牛股的行业之一">必需消费行业：最容易出现大牛股的行业之一</h4>
+<h4 id="医药行业经济危机中的避险板块">医药行业：经济危机中的避险板块</h4>
+<h4 id="可选消费行业升级换代快有周期性">可选消费行业：升级换代快，有周期性</h4>
+<h4 id="行业指数基金该如何选择">行业指数基金该如何选择</h4>
+<h3 id="第8章-挑选指数基金的三个秘诀">第8章 挑选指数基金的三个秘诀</h3>
+<h4 id="秘诀一基金规模小于1亿元不要选">秘诀一：基金规模小于1亿元不要选</h4>
+<h4 id="秘诀二挑选费用较低的基金">秘诀二：挑选费用较低的基金</h4>
+<h4 id="秘诀三选择追踪误差较小的基金">秘诀三：选择追踪误差较小的基金</h4>
+<h3 id="第9章-结合估值的定投让你赚钱更容易">第9章 结合估值的定投，让你赚钱更容易</h3>
+<h4 id="为什么指数基金长期收益不错但投资者不赚钱">为什么指数基金长期收益不错，但投资者不赚钱</h4>
+<h4 id="什么是估值">什么是估值</h4>
+<h4 id="相对估值法和绝对估值法">相对估值法和绝对估值法</h4>
+<h4 id="在估值过程中我们要关注哪些因素">在估值过程中，我们要关注哪些因素</h4>
+<h4 id="估值指标一把手市盈率">估值指标一把手——市盈率</h4>
+<h4 id="估值指标二把手市净率">估值指标二把手——市净率</h4>
+<h4 id="衡量现金分红收益率的指标股息率">衡量现金分红收益率的指标——股息率</h4>
+<h4 id="股息率的神奇之处">股息率的神奇之处</h4>
+<h4 id="不同的估值方法">不同的估值方法</h4>
+<h4 id="盈利保持不变看现金流收益率高低">盈利保持不变：看现金流收益率高低</h4>
+<h4 id="盈利稳定增长盈利收益率法">盈利稳定增长：盈利收益率法</h4>
+<h4 id="盈利快速增长博格公式法">盈利快速增长：博格公式法</h4>
+<h4 id="改进后的定投法收益更好风险更低">改进后的定投法：收益更好、风险更低</h4>
+<h3 id="第10章-四种定投方法哪种更适合你">第10章 四种定投方法，哪种更适合你</h3>
+<h4 id="定期定额的定投在a股并不适用">定期定额的定投，在A股并不适用</h4>
+<h4 id="定期不定额收益才更好">定期不定额，收益才更好</h4>
+<h4 id="慧定投基于均线的定期不定额">慧定投：基于均线的定期不定额</h4>
+<h4 id="价值平均策略基于市值的定期不定额">价值平均策略：基于市值的定期不定额</h4>
+<h4 id="估值定投策略基于估值的定期不定额">估值定投策略：基于估值的定期不定额</h4>
+<h3 id="第11章-基金定投什么时候卖出">第11章 基金定投，什么时候卖出</h3>
+<h4 id="止盈的三种思路">止盈的三种思路</h4>
+<h4 id="按照收益率来止盈赚多少才能卖">按照收益率来止盈，赚多少才能卖</h4>
+<h4 id="按照估值来止盈">按照估值来止盈</h4>
+<h4 id="不止盈长期持有">不止盈，长期持有</h4>
+<h4 id="不同止盈方法适合不同的品种和需求">不同止盈方法，适合不同的品种和需求</h4>
+<h3 id="第12章-手把手教你做定投">第12章 手把手教你做定投</h3>
+<h4 id="制订一份完整的定投计划">制订一份完整的定投计划</h4>
+<h4 id="一个真实的定投案例">一个真实的定投案例</h4>
+<h4 id="如何帮父母更好地养老">如何帮父母更好地养老</h4>
+<h4 id="如何给子女准备教育金">如何给子女准备教育金</h4>
+<h4 id="如何用定投为自己加薪">如何用定投为自己加薪</h4>
+<h3 id="第13章-新手定投常见的10个问题">第13章 新手定投常见的10个问题</h3>
+<h4 id="基金净值的高低对收益有影响吗">基金净值的高低，对收益有影响吗</h4>
+<h4 id="指数基金的abc类有什么区别">指数基金的ABC类，有什么区别</h4>
+<h4 id="场内基金和场外基金哪个更划算">场内基金和场外基金，哪个更划算</h4>
+<h4 id="已经有一笔资金要分批投入吗">已经有一笔资金，要分批投入吗</h4>
+<h4 id="日定投周定投和月定投哪种频率更好">日定投、周定投和月定投，哪种频率更好</h4>
+<h4 id="定投一定能够降低成本吗">定投一定能够降低成本吗</h4>
+<h4 id="定投多久才能开始赢利">定投多久，才能开始赢利</h4>
+<h4 id="看点数来买基金靠谱吗">看点数来买基金，靠谱吗</h4>
+<h4 id="有没有完美的高抛低吸投资方法">有没有完美的“高抛低吸”投资方法</h4>
+<h4 id="定投低估的指数基金最大浮亏是多少">定投低估的指数基金，最大浮亏是多少</h4>
+
+        
+        
+    </body>
+    </html>

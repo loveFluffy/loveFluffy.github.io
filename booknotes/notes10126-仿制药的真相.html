@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x4eff;&#x5236;&#x836f;&#x7684;&#x771f;&#x76f8;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="仿制药的真相">仿制药的真相</h1>
+<h2 id="美凯瑟琳埃班katherine-eban-著高天羽-译">[美]凯瑟琳·埃班（Katherine Eban） 著|高天羽 译</h2>
+<h3 id="前言">前言</h3>
+<p>本书源于我无法解答的一个困惑。</p>
+<p>2008年春天，国家公共广播电台《人民药房》（The People’s Pharmacy）节目的主持人乔·格莱登（Joe Graedon）联系了我。我在报道制药业的10年里，曾多次到他的节目做客。但这一次，他是来求我帮忙的。他说不断有患者给他的节目打电话或写信，对仿制药提出强烈的投诉，他们说这些药要么没用，要么会引起极严重的不良反应。这些药物由不同的厂家生产，治疗从抑郁症到心脏病的各种疾病，共同之处在于它们都是仿制药，也就是在品牌药的专利过期之后，合法仿制出来的廉价版本。</p>
+<p>格莱登将这些患者的投诉信转发给了美国食品药品管理局（U.S. Food and Drug Administration，缩写FDA，以下简称为美国药监局）的高层官员。但那些官员坚称仿制药和品牌药的效果完全相同，患者的反应太主观了。在格莱登看来，他们更像是在辩解，没有拿出实事求是的科学态度。在美国，仿制药在平衡预算方面功不可没。如果没有它们，任何一个大规模的政府卫生项目，比如平价医疗法案、联邦医疗保险处方药计划、退伍军人健康管理局以及各种援助非洲和发展中国家的慈善项目，都将变得难以负担。格莱登本人一直在提倡扩大仿制药的适用范围，但是这些投诉不容忽视，而且性质都相似。他感觉这些药物出现了什么重大问题，但他也不知道问题是什么。他希望找一个拥有调研实力的人去查一查那些患者的投诉。</p>
+<p>多年来，我一直在对药物和公共卫生问题进行调查报道。我曾揭露过品牌制药公司的不良行径，比如生产阿片类药物的厂家为了增加销量而隐瞒成瘾的风险。在我的第一本书《危险剂量》（Dangerous Doses）中，我揭露了在隐蔽的灰市上，药物批发商们如何对我们的药物一再转售，以此隐藏药物的源头，为假药制造者敞开了方便之门。说起仿制药，我只知道它们在我们的药物供应中占比超过六成（现在已占到九成），对价格不断上涨的品牌药起到了必不可少的平衡作用。</p>
+<h3 id="关于这次报道">关于这次报道</h3>
+<h3 id="重要人物及地点">重要人物及地点</h3>
+<h3 id="序">序</h3>
+<h2 id="第一部-形势转变">第一部 形势转变</h2>
+<h3 id="第一章-眼光长远的男人">第一章 眼光长远的男人</h3>
+<h3 id="第二章-药海淘金">第二章 药海淘金</h3>
+<h3 id="第三章-富人的贫民窟">第三章 富人的贫民窟</h3>
+<h3 id="第四章-品质的语言">第四章 品质的语言</h3>
+<h3 id="第五章-警灯亮起">第五章 警灯亮起</h3>
+<h2 id="第二部-印度崛起">第二部 印度崛起</h2>
+<h3 id="第六章-自由战士">第六章 自由战士</h3>
+<h3 id="第七章-每天一美元">第七章 每天一美元</h3>
+<h3 id="第八章-用聪明的方法做事">第八章 用聪明的方法做事</h3>
+<h3 id="第九章-萨库尔的任务">第九章 萨库尔的任务</h3>
+<h2 id="第三部-猫鼠游戏">第三部 猫鼠游戏</h2>
+<h3 id="第十章-对全世界隐瞒">第十章 对全世界隐瞒</h3>
+<h3 id="第十一章-世界地图">第十一章 世界地图</h3>
+<h3 id="第十二章-制药界的法老">第十二章 制药界的法老</h3>
+<h2 id="第四部-立案调查">第四部 立案调查</h2>
+<h3 id="第十三章-从阴影中现身">第十三章 从阴影中现身</h3>
+<h3 id="第十四章-不要交给美国药监局">第十四章 “不要交给美国药监局”</h3>
+<h3 id="第十五章-问题有多严重">第十五章 “问题有多严重？”</h3>
+<h3 id="第十六章-钻石和红宝石">第十六章 钻石和红宝石</h3>
+<h3 id="第十七章-你怎么就不明白">第十七章 “你怎么就不明白”</h3>
+<h2 id="第五部-黑暗中的侦探">第五部 黑暗中的侦探</h2>
+<h3 id="第十八章-国会觉醒了">第十八章 国会觉醒了</h3>
+<h3 id="第十九章-寻找未知变量">第十九章 寻找未知变量</h3>
+<h3 id="第二十章-一次考验耐力的检测">第二十章 一次考验耐力的检测</h3>
+<h3 id="第二十一章-一口黑暗的深井">第二十一章 一口黑暗的深井</h3>
+<h3 id="第二十二章-价值6亿美元的封套">第二十二章 价值6亿美元的封套</h3>
+<h2 id="第六部-分水岭">第六部 分水岭</h2>
+<h3 id="第二十三章-电灯开关">第二十三章 电灯开关</h3>
+<h3 id="第二十四章-我们是冠军">第二十四章 我们是冠军</h3>
+<h3 id="第二十五章-崩溃的文件">第二十五章 崩溃的文件</h3>
+<h3 id="第二十六章-终极检测实验室">第二十六章 终极检测实验室</h3>
+<h2 id="第七部-清算">第七部 清算</h2>
+<h3 id="第二十七章-苍蝇太多数不过来">第二十七章 苍蝇太多，数不过来</h3>
+<h3 id="第二十八章-立场问题">第二十八章 立场问题</h3>
+<h3 id="尾声">尾声</h3>
+<h3 id="致谢">致谢</h3>
+
+        
+        
+    </body>
+    </html>

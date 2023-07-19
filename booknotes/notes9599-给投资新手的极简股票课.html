@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x7ed9;&#x6295;&#x8d44;&#x65b0;&#x624b;&#x7684;&#x6781;&#x7b80;&#x80a1;&#x7968;&#x8bfe;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="给投资新手的极简股票课">给投资新手的极简股票课</h1>
+<h2 id="lip师兄-著">lip师兄 著</h2>
+<h3 id="序">序</h3>
+<p>长期而言，股票是收益最高的资产。提供这些证据的不是统计专家，就是投资大师，其准确性和真实性毋庸置疑。即使在股票市场不那么成熟的中国，其最大的股票指数——上证指数，27年来同样上涨了31倍，年化收益率超过13%，但是余额宝等货币基金只有3%~4%。</p>
+<h3 id="赵铁柱和王小花">赵铁柱和王小花</h3>
+<h3 id="穿越">穿越</h3>
+<h3 id="重生">重生</h3>
+<h3 id="有钱人的一个重要衡量指标被动收入">有钱人的一个重要衡量指标：被动收入</h3>
+<h3 id="怎样让你的钱不躺在银行睡大觉">怎样让你的钱不躺在银行睡大觉？</h3>
+<p>所谓基金，本质上就是筹集一大笔钱，用于投资到各种资产。货币基金主要投资的是银行存款和国债等非常安全的品种，所以买入货币基金，几乎等于是买了银行存款和国债，自然是安全的。</p>
+<p>可以想象一下，铁柱你拿着3万去银行，和马云拿着3亿去银行，待遇会是一样吗？除了走VIP通道不用排队之外，更关键的一点是，银行给马云这样的大额存单的利息会比铁柱的更高。原因很简单，因为人家钱多啊！货币基金由于就是一大笔钱，所以让资金少的散户们也享受了大额存单的高级待遇，收益自然就更高。</p>
+<p>你有支付宝吧，里面的余额宝就是货币基金。当然，余额宝算是收益很低的货基，你也可以在微信的理财通里买到货基。除此之外，下载基金公司的App，比如华夏基金、易方达等，直接在手机上开户之后就能购买。</p>
+<h3 id="假如印第安人没有卖掉曼哈顿岛">假如印第安人没有卖掉曼哈顿岛</h3>
+<h3 id="投资的核心竟然隐藏在一道小学题里">投资的核心竟然隐藏在一道小学题里！</h3>
+<p>偶尔的亏损也会对整体收益带来巨大的伤害。而如果能始终保持不亏损，即便是看起来‘不起眼’的收益率，也能积累大量的财富。</p>
+<p>你在投资生涯里可以赚几万倍，无数次100%，但只要有一次-100%，你就资产清零，破产了。</p>
+<p>无数次历史证明，到了全民炒股的时候，也就是股票崩盘的时候。</p>
+<h3 id="牛市是投资者亏损的主要原因">牛市是投资者亏损的主要原因！</h3>
+<p>股民们以为自己总是能在低点的时候买入，然后在股票高点的时候卖出，从中大赚一笔。</p>
+<p>可实际上，当股市在熊市低点的时候，非常便宜，大有上涨潜力，却无人问津；而当股票大涨几波，被推到高点，他们却突然匆忙入场，而等待他们的往往不是继续上涨，而是疯狂下跌，于是新手股民被市场无情打脸，瞬间学会做人。</p>
+<h3 id="股票的本质是什么">股票的本质是什么？</h3>
+<h3 id="股票你永远也避不开的日常生活">股票，你永远也避不开的日常生活</h3>
+<h3 id="股票投资中最重要的环节是什么">股票投资中，最重要的环节是什么？</h3>
+<p>债券投资中，最重要的是评估利息，以及债券发行人的还款能力。</p>
+<p>你知道拥有巨额股票财产的人，最害怕什么吗？最害怕经济倒退，文明崩坏，比如战争啊什么的。</p>
+<h3 id="股市是谁的赌场又是谁的提款机">股市是谁的赌场？又是谁的“提款机”？</h3>
+<h3 id="是什么力量驱使着股票上涨或下跌">是什么力量驱使着股票上涨或下跌？</h3>
+<p>一般申请公司上市比较常见的理由，都是寻求资金以支持进一步的发展。当然，也存在一些公司，根本不缺钱，也申请上市，即便募得了好几亿资金，也没地方给扩张投资，那么他为什么要上市呢？说白了，就是想借上市圈钱而已。</p>
+<p>港股很容易理解，就是在香港证券市场上市的公司，其历史比中国内地更久，也更加成熟和开放。‘恒生指数’是香港非常著名的指数。此外，香港还有一个H股，是在中国内地注册经营，但在香港上市的企业，取‘HongKong’的首字母为缩写。</p>
+<h3 id="股票体检指标之市盈率">股票体检指标之市盈率</h3>
+<h3 id="股票体检指标之市净率">股票体检指标之市净率</h3>
+<h3 id="股票体检指标之股息率">股票体检指标之股息率</h3>
+<h3 id="什么时候是进场的最佳时机">什么时候是进场的最佳时机?</h3>
+<h3 id="如何构建一个便宜的股票组合">如何构建一个便宜的股票组合</h3>
+<h3 id="知易行难">知易行难</h3>
+<h3 id="与时间做朋友">与时间做朋友</h3>
+<h3 id="坚持自己">坚持自己</h3>
+<h3 id="故事结尾">故事结尾</h3>
+<h3 id="附时间表">附：时间表</h3>
+
+        
+        
+    </body>
+    </html>

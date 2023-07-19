@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x6700;&#x6015;&#x4f60;&#x4e00;&#x751f;&#x788c;&#x788c;&#x65e0;&#x4e3a;&#xff0c;&#x8fd8;&#x5b89;&#x6170;&#x81ea;&#x5df1;&#x5e73;&#x51e1;&#x53ef;&#x8d35;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="最怕你一生碌碌无为还安慰自己平凡可贵">最怕你一生碌碌无为，还安慰自己平凡可贵</h1>
+<h2 id="老杨的猫头鹰-著">老杨的猫头鹰 著</h2>
+<h3 id="01说得那么体面为何活得那么敷衍">01．说得那么体面，为何活得那么敷衍</h3>
+<p>李嘉诚对体面的生活有过这样的阐述：“当年，我只用一分钟的时间就算出了去那个体面的地方上班的结果，于是我离开了。现在，很多人用一生的时间去证实我算的是对的。很多人有体面的工作，但是，并没过上体面的生活！因为体面的工作并不能保证给你体面生活的资本！”</p>
+<h3 id="02这个社会不分男女只分强弱">02．这个社会不分男女，只分强弱</h3>
+<p>有一个残酷的事实是：勤奋可以弥补聪明的不足，但聪明却是无法弥补懒惰的缺陷。</p>
+<h3 id="03悄悄毁掉你的是退而求其次">03．悄悄毁掉你的，是退而求其次</h3>
+<p>一个人真的不能轻易对生活妥协，你以为是妥协一次，很可能就妥协了一生。而你退缩得越多，能让你喘息的空间就越有限；你表现得越将就，一些幸福的东西就会离你越远。有些时候退一步可以海阔天空，有些时候退一 步可能是万丈深渊。</p>
+<p>我想说的是，如果你想买一样东西，钱富裕就买，没钱就努力挣够钱再去买。千万不要退而求其次，那个“次”的东西就算买回家了，还是会看不顺眼，还是会嫌弃，下次看到原本想要买的东西时还是会想买。</p>
+<p>你所设定的底限决定了你不会失去什么。一旦你丧失了底限，很快就会溃不成军，你所在乎的东西，也会跟着一样样地失去。</p>
+<p>在2008年的哈佛毕业典礼上，校长福斯特对毕业生们说过这样一段话：“我听过你们谈论未来，知道你们的烦恼。我也知道你们担心收入，担心职业选择，担心人生的意义能不能实现。我要对你说的是，只有试过了才知道。不论是绘画、生物还是金融，如果你不去尝试做你喜欢的事，如果你不去追求你认为最有意义的东西，你会后悔的。人生的路很长，总有时间去实施备选方案，但不要一开始就退而求其次。”</p>
+<p>她还将“退而求其次”的心理比喻为“停车位理论”。大意是说，不要因为觉得肯定没有停车位了，就把车停在距离目的地二十个街区远的地方。直接去你想去的地方，如果车位已满，再绕回来。</p>
+<p>不要轻言放弃，但凡有了第一次，你的人生就会习惯性地知难而退，可是如果你克服了，你的人生则会习惯于迎风破浪。这看着只是一个简单的选择，其实影响非常大，它带来的是截然不同的人生。</p>
+<h3 id="04自己不能展露光芒就不要怪别人没眼光">04．自己不能展露光芒，就不要怪别人没眼光</h3>
+<h3 id="05你只是看起来很努力">05．你只是看起来很努力</h3>
+<h3 id="06sorry这个世界本来就不公平">06．Sorry，这个世界本来就不公平</h3>
+<p>这是我没有睡觉的连续第四十九个小时。出版社的截稿日悬在头顶，我看了看电脑右下角的时间两点十分，然后继续开始工作。如果从楼下的草坪望上来，可以看见我房间孤独的灯，亮在一整栋漆黑的楼里。但是，他们不会看见的，他们这个时候，正在享受甜美的睡眠和梦境。他们看见的，只是你清早提着LV，走到楼下，司机拉开了车门，你坐进去的背影。他们嫉妒的眼光把你的后背戳得血肉模糊。</p>
+<h3 id="07你想要的别人凭什么给你">07．你想要的，别人凭什么给你</h3>
+<h3 id="08比你优秀的人往往都比你更努力">08．比你优秀的人，往往都比你更努力</h3>
+<h3 id="09硬实力不行才会假情怀泛滥">09．硬实力不行，才会假情怀泛滥</h3>
+<h3 id="10不怕被人利用就怕你没用">10．不怕被人利用，就怕你没用</h3>
+<p>你不优秀，认识谁都没用</p>
+<h3 id="11自己过得毫无尊严还对别人的努力嗤之以鼻">11．自己过得毫无尊严，还对别人的努力嗤之以鼻</h3>
+<p>我努力赚钱，不是因为我爱钱，而是这辈子我不想因为钱和谁在一起，也不想因为钱而离开谁。如果问我在爱情和面包之间选择什么，我会说：‘你给我爱情就好，面包我自己买</p>
+<p>我爱钱，爱那种来路清白、干干净净的钞票，带有一点踏实的辛苦味道，可以让我在和男人约会时，一把抢过账单，潇洒地说‘我来付’；可以让我在伤心难过的时候，去最贵的餐馆大吃一顿，不必对着菜单上的价格斤斤计较；也可以让我在失恋后，依旧住得起两室一厅的房子。</p>
+<h3 id="12你以为是重在参与但总有人在偷偷使劲">12．你以为是重在参与，但总有人在偷偷使劲</h3>
+<h3 id="13收起你的玻璃心碎给谁看呢">13．收起你的玻璃心，碎给谁看呢</h3>
+<h3 id="14就怕你懒还把懒当时尚">14．就怕你懒，还把懒当时尚</h3>
+<h3 id="15逞强很累但是不强更累">15．逞强很累，但是不强更累</h3>
+<h3 id="16没有功劳凭什么谈苦劳">16．没有功劳，凭什么谈苦劳</h3>
+<h3 id="17觉得他在炫耀是因为你不曾拥有">17．觉得他在炫耀，是因为你不曾拥有</h3>
+<p>不要在苍蝇面前拉屎，因为对于它来说，会觉得你是在炫富。</p>
+<h3 id="18为什么你那么忙却还是那么穷">18．为什么你那么忙，却还是那么穷</h3>
+<h3 id="19哪有什么岁月静好只是有人替你负重前行">19．哪有什么岁月静好，只是有人替你负重前行</h3>
+<h3 id="20允许别人指点但谢绝指指点点">20．允许别人指点，但谢绝指指点点</h3>
+<h3 id="21过自己想要的生活是需要付出代价的">21．过自己想要的生活，是需要付出代价的</h3>
+<h3 id="22在一无所有的年纪里且轮不到你来云淡风轻">22．在一无所有的年纪里，且轮不到你来云淡风轻</h3>
+<h3 id="23你弱爆了才会借口多多">23．你弱爆了，才会借口多多</h3>
+<h3 id="24在笼子里长大的小鸟会以为飞翔是一种病">24．在笼子里长大的小鸟，会以为飞翔是一种病</h3>
+<h3 id="25你可以爱慕虚荣但一定要靠自己">25．你可以爱慕虚荣，但一定要靠自己</h3>
+<h3 id="26心若没有栖息的地方到哪里都是流浪">26．心若没有栖息的地方，到哪里都是流浪</h3>
+<h3 id="27你想要的安稳可能是在否定生活">27．你想要的安稳，可能是在否定生活</h3>
+<h3 id="28所有的悔不当初都是自食其果">28．所有的悔不当初，都是自食其果</h3>
+<h3 id="29你所谓的迷茫只是清醒地看着自己沉沦">29．你所谓的迷茫，只是清醒地看着自己沉沦</h3>
+<h3 id="30在最容易了不起的年代你怎么敢甘于平凡">30．在最容易了不起的年代，你怎么敢甘于平凡</h3>
+
+        
+        
+    </body>
+    </html>

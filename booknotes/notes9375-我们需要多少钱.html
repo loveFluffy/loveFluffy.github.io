@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x6211;&#x4eec;&#x9700;&#x8981;&#x591a;&#x5c11;&#x94b1;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <div class="content">
+<h1 id="我们需要多少钱">我们需要多少钱</h1>
+<h2 id="美大卫克鲁格david-krueger-约翰大卫曼john-david-mann-著马惠-等译">[美]大卫·克鲁格（David Krueger） 约翰·大卫·曼（John David Mann） 著|马惠 等译</h2>
+<h2 id="第一部分-你的金钱故事">第一部分 你的金钱故事</h2>
+<h3 id="第1章-钱说了算可它到底说了什么">第1章 钱说了算，可它到底说了什么</h3>
+<h4 id="金钱金钱满天飞">金钱、金钱满天飞</h4>
+<p>令人困惑的是，为什么钱越多，越觉得不够花？为什么物质水平提高了，生活质量反而下降了？金钱的重要，相信没人会怀疑，可它却让我们的行为变得不可理喻：今天花明天的钱；为了钱，苦闷、争吵、离婚；为了钱，尔虞我诈，一错再错；为了钱，豪赌千金，倾家荡产也在所不惜。健康不再，家庭受累，前途堪忧，所有这些都是钱闹的。</p>
+<p>我们为什么要这样折腾呢？显然，从数量上说，我们并不缺钱。实际上，反过来说可能还更靠谱些：那玩意儿我们挣得越多，麻烦事出现得也就越多。如果真是这样，我们是不是已经没救了？财富与幸福果真无法兼得吗？</p>
+<p>要找到这条路，我们得先回答一个很简单的问题：钱是什么？</p>
+<h4 id="未曾发现的冰山">未曾发现的冰山</h4>
+<p>真正的难题在于金钱所代表的意义并不是一目了然。我们可能有足够的理由（或者从表面上来看我们有足够的理由）买或者说需要一辆新车。但在表象之下，实际上我们内心正在进行着一场看不见，也听不到的思想斗争，我们会想如果买了这辆车（或不买这辆车）后，我们到底向外界传达了怎样的信息。</p>
+<h3 id="第2章-钱意味着什么">第2章 钱意味着什么</h3>
+<h4 id="可能的答案">可能的答案</h4>
+<h4 id="金钱意味着占上风">金钱意味着占上风</h4>
+<h4 id="金钱意味着任何东西">金钱意味着任何东西</h4>
+<h4 id="你的金钱等式">你的金钱等式</h4>
+<h3 id="第3章-钱的成本">第3章 钱的成本</h3>
+<h4 id="昂贵的爱好">昂贵的爱好</h4>
+<h4 id="钱的成本">钱的成本</h4>
+<h4 id="金钱金钱告诉我">金钱金钱告诉我</h4>
+<h4 id="钱之密语从何而来">钱之密语从何而来</h4>
+<h4 id="再读昂贵的爱好">再读“昂贵的爱好”</h4>
+<h4 id="尽在不言中">尽在不言中</h4>
+<h3 id="第4章-生活就是一个故事">第4章 生活就是一个故事</h3>
+<h4 id="两个故事">两个故事</h4>
+<h4 id="我们的故事影响着我们的人生">我们的故事影响着我们的人生</h4>
+<h4 id="事实上故事成就人生">事实上，故事成就人生</h4>
+<h4 id="你的故事是什么">你的故事是什么</h4>
+<h4 id="你的角色">你的角色</h4>
+<h4 id="仍在继续工作">仍在继续工作</h4>
+<h3 id="第5章-金钱的故事">第5章 金钱的故事</h3>
+<h4 id="你的金钱故事">你的金钱故事</h4>
+<h4 id="不为人知的秘密">不为人知的秘密</h4>
+<p>我们总是故意忘记到底信用卡里刷了多少现金，并把每一次购物都单独分开记在心里，这样一来，我们就不记得购物总额是多少。下次再购物时，就会对自己说：“这东西确实有点贵，但偶尔买一次也无大碍。”我们可能忘了就在最近一段时间，这样的话我们已经对自己说过很多次了，并且不久，我们还会对自己重复相同的话。</p>
+<h4 id="秘密的解剖">秘密的解剖</h4>
+<h4 id="故事的真相">故事的真相</h4>
+<h4 id="三个灵魂的到访">三个灵魂的到访</h4>
+<h2 id="第二部分-故事情节跌宕起伏">第二部分 故事情节跌宕起伏</h2>
+<h3 id="第6章-你对金钱的感知">第6章 你对金钱的感知</h3>
+<h4 id="同质化的大脑">同质化的大脑</h4>
+<h4 id="理性的金钱和感性的金钱">理性的金钱和感性的金钱</h4>
+<h4 id="放逐在右脑">放逐在右脑</h4>
+<h4 id="金钱大脑和满足感">金钱、大脑和满足感</h4>
+<h4 id="金钱大脑风险">金钱、大脑、风险</h4>
+<h4 id="得与失的化学作用">得与失的化学作用</h4>
+<p>研究表明，期待奖励比获得奖励能得到更多的满足感。因为一旦实现目标，期待就会偃旗息鼓，同时与之相伴的亢奋感也就减弱了。</p>
+<p>换句话说，成为赢家的梦想比成为赢家的现实更令人激动。</p>
+<p>如果说胜利感与多巴胺密切相关的话，那么挫败感则与另一种化学递质血清素关系密切。科学发现，长期抑郁的人体内血清素水平低（许多抗抑郁剂的作用是提高血清素含量）。研究发现，投资屡屡失败的人的体内也表现出相同的血清素水平。失败的经历会造成血清素水平的急剧下降，其程度远大于满足感所能带来的上升水平。这就是为什么短期投资对于投资者来说具有内在的自我破坏性。医学博士理查德·皮特森总结道：为了避免出现这样的结果，投资者必须“渴望获利，投资者必须努力经营好已有的2/3以上的生意，而不是习惯性地去发展可能会成功的项目——不要寄希望于‘可能’成功的领域”。</p>
+<p>大脑中血清素的降低会导致我们注意力和精力相应下降、睡眠紊乱以及生物机能减弱。对此，我们会用咖啡因、安非他命以及期待高回报的高风险投资来进行自我治疗。但是数据表明，它们无一能够产生积极的效果。</p>
+<h4 id="管理你的精神状态">管理你的精神状态</h4>
+<p>征服金钱需要原则、毅力和战略，还需要你在进行决策时的最佳状态。大多数投资损失都是感性决策胜过正确的信息、建议或战略造成的。学会训练自己掌控状态的能力，能够帮助大脑充分发挥作用。不管是理性分析和直觉反应功能，还是远期思考和近期观察的能力，你都能为手头的事情做出最佳判断。</p>
+<h4 id="身体训练基本指南">身体训练基本指南</h4>
+<h4 id="六条建议做出切实可行的理财决策">六条建议：做出切实可行的理财决策</h4>
+<p>1.不要在情绪化的时候做出与钱有关的重大决策<br>
+2.不要在紧张或疲倦的时候做出与钱有关的重大决策<br>
+3.有意识地将决定暂时搁置，第二天再做出终裁<br>
+4.拟定一个深思熟虑、结构合理的计划<br>
+5.坚持计划<br>
+6.心思花在正确的事情上</p>
+<h3 id="第7章-泡沫和泡泡浴">第7章 泡沫和泡泡浴</h3>
+<p>你只需要把故事中的“郁金香”换成“搔痒娃娃”、“芭比娃娃”、“网络公司公开上市”，或更贴近的“信用违约交换”，你就会恍然大悟。原来近来不断出现的“投机泡沫”可以追溯到16世纪在荷兰早就发生过的“郁金香热”。毫无根据的信心，无视实际价值而膨胀的价格，兴冲冲地一头扎进市场的中产阶层，以及最终的幻灭……这些都是这种淘金泡沫剧里永恒的特点，并周而复始地出现。</p>
+<h4 id="框架效应">框架效应</h4>
+<h4 id="损失厌恶倾向">损失厌恶倾向</h4>
+<h4 id="外推误差">外推误差</h4>
+<h4 id="不可征服感">不可征服感</h4>
+<h4 id="锚定效应">锚定效应</h4>
+<h4 id="确认偏见">确认偏见</h4>
+<h4 id="主观价值">主观价值</h4>
+<h4 id="沉淀成本效应">沉淀成本效应</h4>
+<h4 id="投资辩证效应">投资辩证效应</h4>
+<h4 id="投资合理化作用">投资合理化作用</h4>
+<h4 id="自我协商">自我协商</h4>
+<h4 id="怀旧倾向">怀旧倾向</h4>
+<h4 id="乐观主义倾向">乐观主义倾向</h4>
+<h4 id="移情效应">移情效应</h4>
+<h4 id="亲和力倾向">亲和力倾向</h4>
+<h4 id="模式偏见">模式偏见</h4>
+<h4 id="可得性偏见">可得性偏见</h4>
+<h4 id="群体动力从众心理">群体动力（从众心理）</h4>
+<h4 id="17种常见的投资陷阱">17种常见的投资陷阱</h4>
+<h3 id="第8章-宝贝放手花钱吧">第8章 宝贝，放手花钱吧！</h3>
+<h4 id="恶性循环的强迫消费">恶性循环的强迫消费</h4>
+<h4 id="攀比型消费和表现型消费">攀比型消费和表现型消费</h4>
+<h4 id="报复型消费">报复型消费</h4>
+<h4 id="病态低消费">病态低消费</h4>
+<h4 id="矛盾的金钱">矛盾的金钱</h4>
+<h4 id="他的钱和她的钱">他的钱和她的钱</h4>
+<h4 id="金钱欺骗">金钱欺骗</h4>
+<h3 id="第9章-债务密语">第9章 债务密语</h3>
+<h4 id="摇钱树和大骗局">摇钱树和大骗局</h4>
+<h4 id="虚拟的金钱">虚拟的金钱</h4>
+<h4 id="大错特错的幻象">大错特错的幻象</h4>
+<h4 id="卡瘾剖析">“卡瘾”剖析</h4>
+<h4 id="债务循环">债务循环</h4>
+<h4 id="说出真相的力量">说出真相的力量</h4>
+<h4 id="感受还款">感受还款</h4>
+<h4 id="切实面对财务现实的七条箴言">切实面对财务现实的七条箴言</h4>
+<h4 id="建立健康的金融生活的七条箴言">建立健康的金融生活的七条箴言</h4>
+<h3 id="第10章-骗局密语">第10章 骗局密语</h3>
+<h4 id="卡罗的优惠券和山姆大叔的汉堡包">卡罗的优惠券和山姆大叔的汉堡包</h4>
+<h4 id="我们为什么会落入骗局">我们为什么会落入骗局</h4>
+<h4 id="人类脆弱的大脑">人类脆弱的大脑</h4>
+<h4 id="信仰的需要">信仰的需要</h4>
+<h4 id="证明自我价值的需要">证明自我价值的需要</h4>
+<h4 id="专属的需要">专属的需要</h4>
+<h4 id="归属的需要">归属的需要</h4>
+<h4 id="被照顾的需要">被照顾的需要</h4>
+<h4 id="容易冲动">容易冲动</h4>
+<h4 id="花言巧语的企图">花言巧语的企图</h4>
+<h4 id="骗局中套重蹈覆辙">骗局、中套、重蹈覆辙</h4>
+<h4 id="同一主题不同变体">同一主题，不同变体</h4>
+<h4 id="反诈骗的七条箴言">反诈骗的七条箴言</h4>
+<h2 id="第三部分-新的金钱故事">第三部分 新的金钱故事</h2>
+<h3 id="第11章-赚多少才够">第11章 赚多少才够</h3>
+<h4 id="再一次一次就好">“再一次，一次就好……”</h4>
+<h4 id="先生再给我一点吧">“先生，再给我一点吧……”</h4>
+<h4 id="中年危机">中年危机</h4>
+<h4 id="来来来来工作">来来来，来工作</h4>
+<h4 id="优秀的黑暗一面">“优秀”的黑暗一面</h4>
+<h4 id="健康工作六法则">健康工作六法则</h4>
+<h4 id="书写一个全新的故事">书写一个全新的故事</h4>
+<h3 id="第12章-什么是根本">第12章 什么是根本</h3>
+<h4 id="热情之火">热情之火</h4>
+<h4 id="幸福之路">幸福之路</h4>
+<h4 id="六大法宝助你找到热情">六大法宝助你找到热情</h4>
+<h4 id="理想需要愿望对齐的力量">理想、需要、愿望：对齐的力量</h4>
+<h4 id="了解你的理想">了解你的理想</h4>
+<h4 id="四大法宝帮你实现理想">四大法宝帮你实现理想</h4>
+<h4 id="了解你的需要">了解你的需要</h4>
+<h4 id="你的愿望">你的愿望</h4>
+<h4 id="如何根据理想需要来决策和衡量目标">如何根据理想、需要来决策和衡量目标</h4>
+<h4 id="功败垂成的教训">功败垂成的教训</h4>
+<h4 id="成功是一种心态">成功是一种心态</h4>
+<h3 id="第13章-书写新的金钱故事">第13章 书写新的金钱故事</h3>
+<h4 id="人生故事尽在掌握">人生故事，尽在掌握</h4>
+<h4 id="因为熟悉所以吸引">因为熟悉，所以吸引</h4>
+<h4 id="选择的力量">选择的力量</h4>
+<h4 id="你现在的故事是什么样子">你现在的故事是什么样子</h4>
+<h4 id="四大问题帮你写就完美新故事">四大问题帮你写就完美新故事</h4>
+<h4 id="创作金钱任务书">创作金钱任务书</h4>
+<h4 id="你的金钱任务书制定工作表">你的金钱任务书：制定工作表</h4>
+<h4 id="让你的故事成真">让你的故事成真</h4>
+<h4 id="怎么和自己讨论钱">怎么和自己讨论钱</h4>
+<h3 id="第14章-活出新的金钱故事">第14章 活出新的金钱故事</h3>
+<h4 id="财商">财商</h4>
+<h4 id="开口谈钱可以吗">开口谈钱，可以吗</h4>
+<h4 id="有效金钱沟通的七项指南">有效金钱沟通的七项指南</h4>
+<h4 id="25项法则助你演绎全新故事">25项法则助你演绎全新故事</h4>
+<h3 id="致谢">致谢</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E9%92%B1%E8%AF%B4%E4%BA%86%E7%AE%97%E5%8F%AF%E5%AE%83%E5%88%B0%E5%BA%95%E8%AF%B4%E4%BA%86%E4%BB%80%E4%B9%88">第1章 钱说了算，可它到底说了什么</a>
+<ul>
+<li><a href="#%E9%87%91%E9%92%B1%E9%87%91%E9%92%B1%E6%BB%A1%E5%A4%A9%E9%A3%9E">金钱、金钱满天飞</a></li>
+<li><a href="#%E6%9C%AA%E6%9B%BE%E5%8F%91%E7%8E%B0%E7%9A%84%E5%86%B0%E5%B1%B1">未曾发现的冰山</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E9%92%B1%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%80%E4%B9%88">第2章 钱意味着什么</a>
+<ul>
+<li><a href="#%E5%8F%AF%E8%83%BD%E7%9A%84%E7%AD%94%E6%A1%88">可能的答案</a></li>
+<li><a href="#%E9%87%91%E9%92%B1%E6%84%8F%E5%91%B3%E7%9D%80%E5%8D%A0%E4%B8%8A%E9%A3%8E">金钱意味着占上风</a></li>
+<li><a href="#%E9%87%91%E9%92%B1%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%BB%E4%BD%95%E4%B8%9C%E8%A5%BF">金钱意味着任何东西</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E9%87%91%E9%92%B1%E7%AD%89%E5%BC%8F">你的金钱等式</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E9%92%B1%E7%9A%84%E6%88%90%E6%9C%AC">第3章 钱的成本</a>
+<ul>
+<li><a href="#%E6%98%82%E8%B4%B5%E7%9A%84%E7%88%B1%E5%A5%BD">昂贵的爱好</a></li>
+<li><a href="#%E9%92%B1%E7%9A%84%E6%88%90%E6%9C%AC">钱的成本</a></li>
+<li><a href="#%E9%87%91%E9%92%B1%E9%87%91%E9%92%B1%E5%91%8A%E8%AF%89%E6%88%91">金钱金钱告诉我</a></li>
+<li><a href="#%E9%92%B1%E4%B9%8B%E5%AF%86%E8%AF%AD%E4%BB%8E%E4%BD%95%E8%80%8C%E6%9D%A5">钱之密语从何而来</a></li>
+<li><a href="#%E5%86%8D%E8%AF%BB%E6%98%82%E8%B4%B5%E7%9A%84%E7%88%B1%E5%A5%BD">再读“昂贵的爱好”</a></li>
+<li><a href="#%E5%B0%BD%E5%9C%A8%E4%B8%8D%E8%A8%80%E4%B8%AD">尽在不言中</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E7%94%9F%E6%B4%BB%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AA%E6%95%85%E4%BA%8B">第4章 生活就是一个故事</a>
+<ul>
+<li><a href="#%E4%B8%A4%E4%B8%AA%E6%95%85%E4%BA%8B">两个故事</a></li>
+<li><a href="#%E6%88%91%E4%BB%AC%E7%9A%84%E6%95%85%E4%BA%8B%E5%BD%B1%E5%93%8D%E7%9D%80%E6%88%91%E4%BB%AC%E7%9A%84%E4%BA%BA%E7%94%9F">我们的故事影响着我们的人生</a></li>
+<li><a href="#%E4%BA%8B%E5%AE%9E%E4%B8%8A%E6%95%85%E4%BA%8B%E6%88%90%E5%B0%B1%E4%BA%BA%E7%94%9F">事实上，故事成就人生</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E6%95%85%E4%BA%8B%E6%98%AF%E4%BB%80%E4%B9%88">你的故事是什么</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E8%A7%92%E8%89%B2">你的角色</a></li>
+<li><a href="#%E4%BB%8D%E5%9C%A8%E7%BB%A7%E7%BB%AD%E5%B7%A5%E4%BD%9C">仍在继续工作</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E9%87%91%E9%92%B1%E7%9A%84%E6%95%85%E4%BA%8B">第5章 金钱的故事</a>
+<ul>
+<li><a href="#%E4%BD%A0%E7%9A%84%E9%87%91%E9%92%B1%E6%95%85%E4%BA%8B">你的金钱故事</a></li>
+<li><a href="#%E4%B8%8D%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84%E7%A7%98%E5%AF%86">不为人知的秘密</a></li>
+<li><a href="#%E7%A7%98%E5%AF%86%E7%9A%84%E8%A7%A3%E5%89%96">秘密的解剖</a></li>
+<li><a href="#%E6%95%85%E4%BA%8B%E7%9A%84%E7%9C%9F%E7%9B%B8">故事的真相</a></li>
+<li><a href="#%E4%B8%89%E4%B8%AA%E7%81%B5%E9%AD%82%E7%9A%84%E5%88%B0%E8%AE%BF">三个灵魂的到访</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E4%BD%A0%E5%AF%B9%E9%87%91%E9%92%B1%E7%9A%84%E6%84%9F%E7%9F%A5">第6章 你对金钱的感知</a>
+<ul>
+<li><a href="#%E5%90%8C%E8%B4%A8%E5%8C%96%E7%9A%84%E5%A4%A7%E8%84%91">同质化的大脑</a></li>
+<li><a href="#%E7%90%86%E6%80%A7%E7%9A%84%E9%87%91%E9%92%B1%E5%92%8C%E6%84%9F%E6%80%A7%E7%9A%84%E9%87%91%E9%92%B1">理性的金钱和感性的金钱</a></li>
+<li><a href="#%E6%94%BE%E9%80%90%E5%9C%A8%E5%8F%B3%E8%84%91">放逐在右脑</a></li>
+<li><a href="#%E9%87%91%E9%92%B1%E5%A4%A7%E8%84%91%E5%92%8C%E6%BB%A1%E8%B6%B3%E6%84%9F">金钱、大脑和满足感</a></li>
+<li><a href="#%E9%87%91%E9%92%B1%E5%A4%A7%E8%84%91%E9%A3%8E%E9%99%A9">金钱、大脑、风险</a></li>
+<li><a href="#%E5%BE%97%E4%B8%8E%E5%A4%B1%E7%9A%84%E5%8C%96%E5%AD%A6%E4%BD%9C%E7%94%A8">得与失的化学作用</a></li>
+<li><a href="#%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E7%B2%BE%E7%A5%9E%E7%8A%B6%E6%80%81">管理你的精神状态</a></li>
+<li><a href="#%E8%BA%AB%E4%BD%93%E8%AE%AD%E7%BB%83%E5%9F%BA%E6%9C%AC%E6%8C%87%E5%8D%97">身体训练基本指南</a></li>
+<li><a href="#%E5%85%AD%E6%9D%A1%E5%BB%BA%E8%AE%AE%E5%81%9A%E5%87%BA%E5%88%87%E5%AE%9E%E5%8F%AF%E8%A1%8C%E7%9A%84%E7%90%86%E8%B4%A2%E5%86%B3%E7%AD%96">六条建议：做出切实可行的理财决策</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E6%B3%A1%E6%B2%AB%E5%92%8C%E6%B3%A1%E6%B3%A1%E6%B5%B4">第7章 泡沫和泡泡浴</a>
+<ul>
+<li><a href="#%E6%A1%86%E6%9E%B6%E6%95%88%E5%BA%94">框架效应</a></li>
+<li><a href="#%E6%8D%9F%E5%A4%B1%E5%8E%8C%E6%81%B6%E5%80%BE%E5%90%91">损失厌恶倾向</a></li>
+<li><a href="#%E5%A4%96%E6%8E%A8%E8%AF%AF%E5%B7%AE">外推误差</a></li>
+<li><a href="#%E4%B8%8D%E5%8F%AF%E5%BE%81%E6%9C%8D%E6%84%9F">不可征服感</a></li>
+<li><a href="#%E9%94%9A%E5%AE%9A%E6%95%88%E5%BA%94">锚定效应</a></li>
+<li><a href="#%E7%A1%AE%E8%AE%A4%E5%81%8F%E8%A7%81">确认偏见</a></li>
+<li><a href="#%E4%B8%BB%E8%A7%82%E4%BB%B7%E5%80%BC">主观价值</a></li>
+<li><a href="#%E6%B2%89%E6%B7%80%E6%88%90%E6%9C%AC%E6%95%88%E5%BA%94">沉淀成本效应</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E8%BE%A9%E8%AF%81%E6%95%88%E5%BA%94">投资辩证效应</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E5%90%88%E7%90%86%E5%8C%96%E4%BD%9C%E7%94%A8">投资合理化作用</a></li>
+<li><a href="#%E8%87%AA%E6%88%91%E5%8D%8F%E5%95%86">自我协商</a></li>
+<li><a href="#%E6%80%80%E6%97%A7%E5%80%BE%E5%90%91">怀旧倾向</a></li>
+<li><a href="#%E4%B9%90%E8%A7%82%E4%B8%BB%E4%B9%89%E5%80%BE%E5%90%91">乐观主义倾向</a></li>
+<li><a href="#%E7%A7%BB%E6%83%85%E6%95%88%E5%BA%94">移情效应</a></li>
+<li><a href="#%E4%BA%B2%E5%92%8C%E5%8A%9B%E5%80%BE%E5%90%91">亲和力倾向</a></li>
+<li><a href="#%E6%A8%A1%E5%BC%8F%E5%81%8F%E8%A7%81">模式偏见</a></li>
+<li><a href="#%E5%8F%AF%E5%BE%97%E6%80%A7%E5%81%8F%E8%A7%81">可得性偏见</a></li>
+<li><a href="#%E7%BE%A4%E4%BD%93%E5%8A%A8%E5%8A%9B%E4%BB%8E%E4%BC%97%E5%BF%83%E7%90%86">群体动力（从众心理）</a></li>
+<li><a href="#17%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8A%95%E8%B5%84%E9%99%B7%E9%98%B1">17种常见的投资陷阱</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E5%AE%9D%E8%B4%9D%E6%94%BE%E6%89%8B%E8%8A%B1%E9%92%B1%E5%90%A7">第8章 宝贝，放手花钱吧！</a>
+<ul>
+<li><a href="#%E6%81%B6%E6%80%A7%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%BC%BA%E8%BF%AB%E6%B6%88%E8%B4%B9">恶性循环的强迫消费</a></li>
+<li><a href="#%E6%94%80%E6%AF%94%E5%9E%8B%E6%B6%88%E8%B4%B9%E5%92%8C%E8%A1%A8%E7%8E%B0%E5%9E%8B%E6%B6%88%E8%B4%B9">攀比型消费和表现型消费</a></li>
+<li><a href="#%E6%8A%A5%E5%A4%8D%E5%9E%8B%E6%B6%88%E8%B4%B9">报复型消费</a></li>
+<li><a href="#%E7%97%85%E6%80%81%E4%BD%8E%E6%B6%88%E8%B4%B9">病态低消费</a></li>
+<li><a href="#%E7%9F%9B%E7%9B%BE%E7%9A%84%E9%87%91%E9%92%B1">矛盾的金钱</a></li>
+<li><a href="#%E4%BB%96%E7%9A%84%E9%92%B1%E5%92%8C%E5%A5%B9%E7%9A%84%E9%92%B1">他的钱和她的钱</a></li>
+<li><a href="#%E9%87%91%E9%92%B1%E6%AC%BA%E9%AA%97">金钱欺骗</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E5%80%BA%E5%8A%A1%E5%AF%86%E8%AF%AD">第9章 债务密语</a>
+<ul>
+<li><a href="#%E6%91%87%E9%92%B1%E6%A0%91%E5%92%8C%E5%A4%A7%E9%AA%97%E5%B1%80">摇钱树和大骗局</a></li>
+<li><a href="#%E8%99%9A%E6%8B%9F%E7%9A%84%E9%87%91%E9%92%B1">虚拟的金钱</a></li>
+<li><a href="#%E5%A4%A7%E9%94%99%E7%89%B9%E9%94%99%E7%9A%84%E5%B9%BB%E8%B1%A1">大错特错的幻象</a></li>
+<li><a href="#%E5%8D%A1%E7%98%BE%E5%89%96%E6%9E%90">“卡瘾”剖析</a></li>
+<li><a href="#%E5%80%BA%E5%8A%A1%E5%BE%AA%E7%8E%AF">债务循环</a></li>
+<li><a href="#%E8%AF%B4%E5%87%BA%E7%9C%9F%E7%9B%B8%E7%9A%84%E5%8A%9B%E9%87%8F">说出真相的力量</a></li>
+<li><a href="#%E6%84%9F%E5%8F%97%E8%BF%98%E6%AC%BE">感受还款</a></li>
+<li><a href="#%E5%88%87%E5%AE%9E%E9%9D%A2%E5%AF%B9%E8%B4%A2%E5%8A%A1%E7%8E%B0%E5%AE%9E%E7%9A%84%E4%B8%83%E6%9D%A1%E7%AE%B4%E8%A8%80">切实面对财务现实的七条箴言</a></li>
+<li><a href="#%E5%BB%BA%E7%AB%8B%E5%81%A5%E5%BA%B7%E7%9A%84%E9%87%91%E8%9E%8D%E7%94%9F%E6%B4%BB%E7%9A%84%E4%B8%83%E6%9D%A1%E7%AE%B4%E8%A8%80">建立健康的金融生活的七条箴言</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E9%AA%97%E5%B1%80%E5%AF%86%E8%AF%AD">第10章 骗局密语</a>
+<ul>
+<li><a href="#%E5%8D%A1%E7%BD%97%E7%9A%84%E4%BC%98%E6%83%A0%E5%88%B8%E5%92%8C%E5%B1%B1%E5%A7%86%E5%A4%A7%E5%8F%94%E7%9A%84%E6%B1%89%E5%A0%A1%E5%8C%85">卡罗的优惠券和山姆大叔的汉堡包</a></li>
+<li><a href="#%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E8%90%BD%E5%85%A5%E9%AA%97%E5%B1%80">我们为什么会落入骗局</a></li>
+<li><a href="#%E4%BA%BA%E7%B1%BB%E8%84%86%E5%BC%B1%E7%9A%84%E5%A4%A7%E8%84%91">人类脆弱的大脑</a></li>
+<li><a href="#%E4%BF%A1%E4%BB%B0%E7%9A%84%E9%9C%80%E8%A6%81">信仰的需要</a></li>
+<li><a href="#%E8%AF%81%E6%98%8E%E8%87%AA%E6%88%91%E4%BB%B7%E5%80%BC%E7%9A%84%E9%9C%80%E8%A6%81">证明自我价值的需要</a></li>
+<li><a href="#%E4%B8%93%E5%B1%9E%E7%9A%84%E9%9C%80%E8%A6%81">专属的需要</a></li>
+<li><a href="#%E5%BD%92%E5%B1%9E%E7%9A%84%E9%9C%80%E8%A6%81">归属的需要</a></li>
+<li><a href="#%E8%A2%AB%E7%85%A7%E9%A1%BE%E7%9A%84%E9%9C%80%E8%A6%81">被照顾的需要</a></li>
+<li><a href="#%E5%AE%B9%E6%98%93%E5%86%B2%E5%8A%A8">容易冲动</a></li>
+<li><a href="#%E8%8A%B1%E8%A8%80%E5%B7%A7%E8%AF%AD%E7%9A%84%E4%BC%81%E5%9B%BE">花言巧语的企图</a></li>
+<li><a href="#%E9%AA%97%E5%B1%80%E4%B8%AD%E5%A5%97%E9%87%8D%E8%B9%88%E8%A6%86%E8%BE%99">骗局、中套、重蹈覆辙</a></li>
+<li><a href="#%E5%90%8C%E4%B8%80%E4%B8%BB%E9%A2%98%E4%B8%8D%E5%90%8C%E5%8F%98%E4%BD%93">同一主题，不同变体</a></li>
+<li><a href="#%E5%8F%8D%E8%AF%88%E9%AA%97%E7%9A%84%E4%B8%83%E6%9D%A1%E7%AE%B4%E8%A8%80">反诈骗的七条箴言</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E8%B5%9A%E5%A4%9A%E5%B0%91%E6%89%8D%E5%A4%9F">第11章 赚多少才够</a>
+<ul>
+<li><a href="#%E5%86%8D%E4%B8%80%E6%AC%A1%E4%B8%80%E6%AC%A1%E5%B0%B1%E5%A5%BD">“再一次，一次就好……”</a></li>
+<li><a href="#%E5%85%88%E7%94%9F%E5%86%8D%E7%BB%99%E6%88%91%E4%B8%80%E7%82%B9%E5%90%A7">“先生，再给我一点吧……”</a></li>
+<li><a href="#%E4%B8%AD%E5%B9%B4%E5%8D%B1%E6%9C%BA">中年危机</a></li>
+<li><a href="#%E6%9D%A5%E6%9D%A5%E6%9D%A5%E6%9D%A5%E5%B7%A5%E4%BD%9C">来来来，来工作</a></li>
+<li><a href="#%E4%BC%98%E7%A7%80%E7%9A%84%E9%BB%91%E6%9A%97%E4%B8%80%E9%9D%A2">“优秀”的黑暗一面</a></li>
+<li><a href="#%E5%81%A5%E5%BA%B7%E5%B7%A5%E4%BD%9C%E5%85%AD%E6%B3%95%E5%88%99">健康工作六法则</a></li>
+<li><a href="#%E4%B9%A6%E5%86%99%E4%B8%80%E4%B8%AA%E5%85%A8%E6%96%B0%E7%9A%84%E6%95%85%E4%BA%8B">书写一个全新的故事</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0-%E4%BB%80%E4%B9%88%E6%98%AF%E6%A0%B9%E6%9C%AC">第12章 什么是根本</a>
+<ul>
+<li><a href="#%E7%83%AD%E6%83%85%E4%B9%8B%E7%81%AB">热情之火</a></li>
+<li><a href="#%E5%B9%B8%E7%A6%8F%E4%B9%8B%E8%B7%AF">幸福之路</a></li>
+<li><a href="#%E5%85%AD%E5%A4%A7%E6%B3%95%E5%AE%9D%E5%8A%A9%E4%BD%A0%E6%89%BE%E5%88%B0%E7%83%AD%E6%83%85">六大法宝助你找到热情</a></li>
+<li><a href="#%E7%90%86%E6%83%B3%E9%9C%80%E8%A6%81%E6%84%BF%E6%9C%9B%E5%AF%B9%E9%BD%90%E7%9A%84%E5%8A%9B%E9%87%8F">理想、需要、愿望：对齐的力量</a></li>
+<li><a href="#%E4%BA%86%E8%A7%A3%E4%BD%A0%E7%9A%84%E7%90%86%E6%83%B3">了解你的理想</a></li>
+<li><a href="#%E5%9B%9B%E5%A4%A7%E6%B3%95%E5%AE%9D%E5%B8%AE%E4%BD%A0%E5%AE%9E%E7%8E%B0%E7%90%86%E6%83%B3">四大法宝帮你实现理想</a></li>
+<li><a href="#%E4%BA%86%E8%A7%A3%E4%BD%A0%E7%9A%84%E9%9C%80%E8%A6%81">了解你的需要</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E6%84%BF%E6%9C%9B">你的愿望</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%A0%B9%E6%8D%AE%E7%90%86%E6%83%B3%E9%9C%80%E8%A6%81%E6%9D%A5%E5%86%B3%E7%AD%96%E5%92%8C%E8%A1%A1%E9%87%8F%E7%9B%AE%E6%A0%87">如何根据理想、需要来决策和衡量目标</a></li>
+<li><a href="#%E5%8A%9F%E8%B4%A5%E5%9E%82%E6%88%90%E7%9A%84%E6%95%99%E8%AE%AD">功败垂成的教训</a></li>
+<li><a href="#%E6%88%90%E5%8A%9F%E6%98%AF%E4%B8%80%E7%A7%8D%E5%BF%83%E6%80%81">成功是一种心态</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC13%E7%AB%A0-%E4%B9%A6%E5%86%99%E6%96%B0%E7%9A%84%E9%87%91%E9%92%B1%E6%95%85%E4%BA%8B">第13章 书写新的金钱故事</a>
+<ul>
+<li><a href="#%E4%BA%BA%E7%94%9F%E6%95%85%E4%BA%8B%E5%B0%BD%E5%9C%A8%E6%8E%8C%E6%8F%A1">人生故事，尽在掌握</a></li>
+<li><a href="#%E5%9B%A0%E4%B8%BA%E7%86%9F%E6%82%89%E6%89%80%E4%BB%A5%E5%90%B8%E5%BC%95">因为熟悉，所以吸引</a></li>
+<li><a href="#%E9%80%89%E6%8B%A9%E7%9A%84%E5%8A%9B%E9%87%8F">选择的力量</a></li>
+<li><a href="#%E4%BD%A0%E7%8E%B0%E5%9C%A8%E7%9A%84%E6%95%85%E4%BA%8B%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90">你现在的故事是什么样子</a></li>
+<li><a href="#%E5%9B%9B%E5%A4%A7%E9%97%AE%E9%A2%98%E5%B8%AE%E4%BD%A0%E5%86%99%E5%B0%B1%E5%AE%8C%E7%BE%8E%E6%96%B0%E6%95%85%E4%BA%8B">四大问题帮你写就完美新故事</a></li>
+<li><a href="#%E5%88%9B%E4%BD%9C%E9%87%91%E9%92%B1%E4%BB%BB%E5%8A%A1%E4%B9%A6">创作金钱任务书</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E9%87%91%E9%92%B1%E4%BB%BB%E5%8A%A1%E4%B9%A6%E5%88%B6%E5%AE%9A%E5%B7%A5%E4%BD%9C%E8%A1%A8">你的金钱任务书：制定工作表</a></li>
+<li><a href="#%E8%AE%A9%E4%BD%A0%E7%9A%84%E6%95%85%E4%BA%8B%E6%88%90%E7%9C%9F">让你的故事成真</a></li>
+<li><a href="#%E6%80%8E%E4%B9%88%E5%92%8C%E8%87%AA%E5%B7%B1%E8%AE%A8%E8%AE%BA%E9%92%B1">怎么和自己讨论钱</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC14%E7%AB%A0-%E6%B4%BB%E5%87%BA%E6%96%B0%E7%9A%84%E9%87%91%E9%92%B1%E6%95%85%E4%BA%8B">第14章 活出新的金钱故事</a>
+<ul>
+<li><a href="#%E8%B4%A2%E5%95%86">财商</a></li>
+<li><a href="#%E5%BC%80%E5%8F%A3%E8%B0%88%E9%92%B1%E5%8F%AF%E4%BB%A5%E5%90%97">开口谈钱，可以吗</a></li>
+<li><a href="#%E6%9C%89%E6%95%88%E9%87%91%E9%92%B1%E6%B2%9F%E9%80%9A%E7%9A%84%E4%B8%83%E9%A1%B9%E6%8C%87%E5%8D%97">有效金钱沟通的七项指南</a></li>
+<li><a href="#25%E9%A1%B9%E6%B3%95%E5%88%99%E5%8A%A9%E4%BD%A0%E6%BC%94%E7%BB%8E%E5%85%A8%E6%96%B0%E6%95%85%E4%BA%8B">25项法则助你演绎全新故事</a></li>
+</ul>
+</li>
+<li><a href="#%E8%87%B4%E8%B0%A2">致谢</a></li>
+</ul>
+</div>
+        
+        
+    </body>
+    </html>

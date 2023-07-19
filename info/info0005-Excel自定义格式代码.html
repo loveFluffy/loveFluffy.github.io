@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Excel&#x81ea;&#x5b9a;&#x4e49;&#x683c;&#x5f0f;&#x4ee3;&#x7801;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension vscode.markdown-math */
+@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(fonts/KaTeX_AMS-Regular.woff2) format("woff2"),url(fonts/KaTeX_AMS-Regular.woff) format("woff"),url(fonts/KaTeX_AMS-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Caligraphic-Bold.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Bold.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Caligraphic-Regular.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Regular.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Fraktur-Bold.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Bold.woff) format("woff"),url(fonts/KaTeX_Fraktur-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Fraktur-Regular.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Regular.woff) format("woff"),url(fonts/KaTeX_Fraktur-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Main-Bold.woff2) format("woff2"),url(fonts/KaTeX_Main-Bold.woff) format("woff"),url(fonts/KaTeX_Main-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Main-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Main-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Main-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Main-Italic.woff2) format("woff2"),url(fonts/KaTeX_Main-Italic.woff) format("woff"),url(fonts/KaTeX_Main-Italic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Main-Regular.woff2) format("woff2"),url(fonts/KaTeX_Main-Regular.woff) format("woff"),url(fonts/KaTeX_Main-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Math-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Math-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Math-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Math-Italic.woff2) format("woff2"),url(fonts/KaTeX_Math-Italic.woff) format("woff"),url(fonts/KaTeX_Math-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:700;src:url(fonts/KaTeX_SansSerif-Bold.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Bold.woff) format("woff"),url(fonts/KaTeX_SansSerif-Bold.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:italic;font-weight:400;src:url(fonts/KaTeX_SansSerif-Italic.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Italic.woff) format("woff"),url(fonts/KaTeX_SansSerif-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:400;src:url(fonts/KaTeX_SansSerif-Regular.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Regular.woff) format("woff"),url(fonts/KaTeX_SansSerif-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Script;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Script-Regular.woff2) format("woff2"),url(fonts/KaTeX_Script-Regular.woff) format("woff"),url(fonts/KaTeX_Script-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size1;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size1-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size1-Regular.woff) format("woff"),url(fonts/KaTeX_Size1-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size2;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size2-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size2-Regular.woff) format("woff"),url(fonts/KaTeX_Size2-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size3;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size3-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size3-Regular.woff) format("woff"),url(fonts/KaTeX_Size3-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size4;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size4-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size4-Regular.woff) format("woff"),url(fonts/KaTeX_Size4-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Typewriter;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Typewriter-Regular.woff2) format("woff2"),url(fonts/KaTeX_Typewriter-Regular.woff) format("woff"),url(fonts/KaTeX_Typewriter-Regular.ttf) format("truetype")}.katex{text-rendering:auto;font:normal 1.21em KaTeX_Main,Times New Roman,serif;line-height:1.2;text-indent:0}.katex *{-ms-high-contrast-adjust:none!important;border-color:currentColor}.katex .katex-version:after{content:"0.13.24"}.katex .katex-mathml{clip:rect(1px,1px,1px,1px);border:0;height:1px;overflow:hidden;padding:0;position:absolute;width:1px}.katex .katex-html>.newline{display:block}.katex .base{position:relative;white-space:nowrap;width:-webkit-min-content;width:-moz-min-content;width:min-content}.katex .base,.katex .strut{display:inline-block}.katex .textbf{font-weight:700}.katex .textit{font-style:italic}.katex .textrm{font-family:KaTeX_Main}.katex .textsf{font-family:KaTeX_SansSerif}.katex .texttt{font-family:KaTeX_Typewriter}.katex .mathnormal{font-family:KaTeX_Math;font-style:italic}.katex .mathit{font-family:KaTeX_Main;font-style:italic}.katex .mathrm{font-style:normal}.katex .mathbf{font-family:KaTeX_Main;font-weight:700}.katex .boldsymbol{font-family:KaTeX_Math;font-style:italic;font-weight:700}.katex .amsrm,.katex .mathbb,.katex .textbb{font-family:KaTeX_AMS}.katex .mathcal{font-family:KaTeX_Caligraphic}.katex .mathfrak,.katex .textfrak{font-family:KaTeX_Fraktur}.katex .mathtt{font-family:KaTeX_Typewriter}.katex .mathscr,.katex .textscr{font-family:KaTeX_Script}.katex .mathsf,.katex .textsf{font-family:KaTeX_SansSerif}.katex .mathboldsf,.katex .textboldsf{font-family:KaTeX_SansSerif;font-weight:700}.katex .mathitsf,.katex .textitsf{font-family:KaTeX_SansSerif;font-style:italic}.katex .mainrm{font-family:KaTeX_Main;font-style:normal}.katex .vlist-t{border-collapse:collapse;display:inline-table;table-layout:fixed}.katex .vlist-r{display:table-row}.katex .vlist{display:table-cell;position:relative;vertical-align:bottom}.katex .vlist>span{display:block;height:0;position:relative}.katex .vlist>span>span{display:inline-block}.katex .vlist>span>.pstrut{overflow:hidden;width:0}.katex .vlist-t2{margin-right:-2px}.katex .vlist-s{display:table-cell;font-size:1px;min-width:2px;vertical-align:bottom;width:2px}.katex .vbox{align-items:baseline;display:inline-flex;flex-direction:column}.katex .hbox{width:100%}.katex .hbox,.katex .thinbox{display:inline-flex;flex-direction:row}.katex .thinbox{max-width:0;width:0}.katex .msupsub{text-align:left}.katex .mfrac>span>span{text-align:center}.katex .mfrac .frac-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline,.katex .hline,.katex .mfrac .frac-line,.katex .overline .overline-line,.katex .rule,.katex .underline .underline-line{min-height:1px}.katex .mspace{display:inline-block}.katex .clap,.katex .llap,.katex .rlap{position:relative;width:0}.katex .clap>.inner,.katex .llap>.inner,.katex .rlap>.inner{position:absolute}.katex .clap>.fix,.katex .llap>.fix,.katex .rlap>.fix{display:inline-block}.katex .llap>.inner{right:0}.katex .clap>.inner,.katex .rlap>.inner{left:0}.katex .clap>.inner>span{margin-left:-50%;margin-right:50%}.katex .rule{border:0 solid;display:inline-block;position:relative}.katex .hline,.katex .overline .overline-line,.katex .underline .underline-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline{border-bottom-style:dashed;display:inline-block;width:100%}.katex .sqrt>.root{margin-left:.27777778em;margin-right:-.55555556em}.katex .fontsize-ensurer.reset-size1.size1,.katex .sizing.reset-size1.size1{font-size:1em}.katex .fontsize-ensurer.reset-size1.size2,.katex .sizing.reset-size1.size2{font-size:1.2em}.katex .fontsize-ensurer.reset-size1.size3,.katex .sizing.reset-size1.size3{font-size:1.4em}.katex .fontsize-ensurer.reset-size1.size4,.katex .sizing.reset-size1.size4{font-size:1.6em}.katex .fontsize-ensurer.reset-size1.size5,.katex .sizing.reset-size1.size5{font-size:1.8em}.katex .fontsize-ensurer.reset-size1.size6,.katex .sizing.reset-size1.size6{font-size:2em}.katex .fontsize-ensurer.reset-size1.size7,.katex .sizing.reset-size1.size7{font-size:2.4em}.katex .fontsize-ensurer.reset-size1.size8,.katex .sizing.reset-size1.size8{font-size:2.88em}.katex .fontsize-ensurer.reset-size1.size9,.katex .sizing.reset-size1.size9{font-size:3.456em}.katex .fontsize-ensurer.reset-size1.size10,.katex .sizing.reset-size1.size10{font-size:4.148em}.katex .fontsize-ensurer.reset-size1.size11,.katex .sizing.reset-size1.size11{font-size:4.976em}.katex .fontsize-ensurer.reset-size2.size1,.katex .sizing.reset-size2.size1{font-size:.83333333em}.katex .fontsize-ensurer.reset-size2.size2,.katex .sizing.reset-size2.size2{font-size:1em}.katex .fontsize-ensurer.reset-size2.size3,.katex .sizing.reset-size2.size3{font-size:1.16666667em}.katex .fontsize-ensurer.reset-size2.size4,.katex .sizing.reset-size2.size4{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size2.size5,.katex .sizing.reset-size2.size5{font-size:1.5em}.katex .fontsize-ensurer.reset-size2.size6,.katex .sizing.reset-size2.size6{font-size:1.66666667em}.katex .fontsize-ensurer.reset-size2.size7,.katex .sizing.reset-size2.size7{font-size:2em}.katex .fontsize-ensurer.reset-size2.size8,.katex .sizing.reset-size2.size8{font-size:2.4em}.katex .fontsize-ensurer.reset-size2.size9,.katex .sizing.reset-size2.size9{font-size:2.88em}.katex .fontsize-ensurer.reset-size2.size10,.katex .sizing.reset-size2.size10{font-size:3.45666667em}.katex .fontsize-ensurer.reset-size2.size11,.katex .sizing.reset-size2.size11{font-size:4.14666667em}.katex .fontsize-ensurer.reset-size3.size1,.katex .sizing.reset-size3.size1{font-size:.71428571em}.katex .fontsize-ensurer.reset-size3.size2,.katex .sizing.reset-size3.size2{font-size:.85714286em}.katex .fontsize-ensurer.reset-size3.size3,.katex .sizing.reset-size3.size3{font-size:1em}.katex .fontsize-ensurer.reset-size3.size4,.katex .sizing.reset-size3.size4{font-size:1.14285714em}.katex .fontsize-ensurer.reset-size3.size5,.katex .sizing.reset-size3.size5{font-size:1.28571429em}.katex .fontsize-ensurer.reset-size3.size6,.katex .sizing.reset-size3.size6{font-size:1.42857143em}.katex .fontsize-ensurer.reset-size3.size7,.katex .sizing.reset-size3.size7{font-size:1.71428571em}.katex .fontsize-ensurer.reset-size3.size8,.katex .sizing.reset-size3.size8{font-size:2.05714286em}.katex .fontsize-ensurer.reset-size3.size9,.katex .sizing.reset-size3.size9{font-size:2.46857143em}.katex .fontsize-ensurer.reset-size3.size10,.katex .sizing.reset-size3.size10{font-size:2.96285714em}.katex .fontsize-ensurer.reset-size3.size11,.katex .sizing.reset-size3.size11{font-size:3.55428571em}.katex .fontsize-ensurer.reset-size4.size1,.katex .sizing.reset-size4.size1{font-size:.625em}.katex .fontsize-ensurer.reset-size4.size2,.katex .sizing.reset-size4.size2{font-size:.75em}.katex .fontsize-ensurer.reset-size4.size3,.katex .sizing.reset-size4.size3{font-size:.875em}.katex .fontsize-ensurer.reset-size4.size4,.katex .sizing.reset-size4.size4{font-size:1em}.katex .fontsize-ensurer.reset-size4.size5,.katex .sizing.reset-size4.size5{font-size:1.125em}.katex .fontsize-ensurer.reset-size4.size6,.katex .sizing.reset-size4.size6{font-size:1.25em}.katex .fontsize-ensurer.reset-size4.size7,.katex .sizing.reset-size4.size7{font-size:1.5em}.katex .fontsize-ensurer.reset-size4.size8,.katex .sizing.reset-size4.size8{font-size:1.8em}.katex .fontsize-ensurer.reset-size4.size9,.katex .sizing.reset-size4.size9{font-size:2.16em}.katex .fontsize-ensurer.reset-size4.size10,.katex .sizing.reset-size4.size10{font-size:2.5925em}.katex .fontsize-ensurer.reset-size4.size11,.katex .sizing.reset-size4.size11{font-size:3.11em}.katex .fontsize-ensurer.reset-size5.size1,.katex .sizing.reset-size5.size1{font-size:.55555556em}.katex .fontsize-ensurer.reset-size5.size2,.katex .sizing.reset-size5.size2{font-size:.66666667em}.katex .fontsize-ensurer.reset-size5.size3,.katex .sizing.reset-size5.size3{font-size:.77777778em}.katex .fontsize-ensurer.reset-size5.size4,.katex .sizing.reset-size5.size4{font-size:.88888889em}.katex .fontsize-ensurer.reset-size5.size5,.katex .sizing.reset-size5.size5{font-size:1em}.katex .fontsize-ensurer.reset-size5.size6,.katex .sizing.reset-size5.size6{font-size:1.11111111em}.katex .fontsize-ensurer.reset-size5.size7,.katex .sizing.reset-size5.size7{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size5.size8,.katex .sizing.reset-size5.size8{font-size:1.6em}.katex .fontsize-ensurer.reset-size5.size9,.katex .sizing.reset-size5.size9{font-size:1.92em}.katex .fontsize-ensurer.reset-size5.size10,.katex .sizing.reset-size5.size10{font-size:2.30444444em}.katex .fontsize-ensurer.reset-size5.size11,.katex .sizing.reset-size5.size11{font-size:2.76444444em}.katex .fontsize-ensurer.reset-size6.size1,.katex .sizing.reset-size6.size1{font-size:.5em}.katex .fontsize-ensurer.reset-size6.size2,.katex .sizing.reset-size6.size2{font-size:.6em}.katex .fontsize-ensurer.reset-size6.size3,.katex .sizing.reset-size6.size3{font-size:.7em}.katex .fontsize-ensurer.reset-size6.size4,.katex .sizing.reset-size6.size4{font-size:.8em}.katex .fontsize-ensurer.reset-size6.size5,.katex .sizing.reset-size6.size5{font-size:.9em}.katex .fontsize-ensurer.reset-size6.size6,.katex .sizing.reset-size6.size6{font-size:1em}.katex .fontsize-ensurer.reset-size6.size7,.katex .sizing.reset-size6.size7{font-size:1.2em}.katex .fontsize-ensurer.reset-size6.size8,.katex .sizing.reset-size6.size8{font-size:1.44em}.katex .fontsize-ensurer.reset-size6.size9,.katex .sizing.reset-size6.size9{font-size:1.728em}.katex .fontsize-ensurer.reset-size6.size10,.katex .sizing.reset-size6.size10{font-size:2.074em}.katex .fontsize-ensurer.reset-size6.size11,.katex .sizing.reset-size6.size11{font-size:2.488em}.katex .fontsize-ensurer.reset-size7.size1,.katex .sizing.reset-size7.size1{font-size:.41666667em}.katex .fontsize-ensurer.reset-size7.size2,.katex .sizing.reset-size7.size2{font-size:.5em}.katex .fontsize-ensurer.reset-size7.size3,.katex .sizing.reset-size7.size3{font-size:.58333333em}.katex .fontsize-ensurer.reset-size7.size4,.katex .sizing.reset-size7.size4{font-size:.66666667em}.katex .fontsize-ensurer.reset-size7.size5,.katex .sizing.reset-size7.size5{font-size:.75em}.katex .fontsize-ensurer.reset-size7.size6,.katex .sizing.reset-size7.size6{font-size:.83333333em}.katex .fontsize-ensurer.reset-size7.size7,.katex .sizing.reset-size7.size7{font-size:1em}.katex .fontsize-ensurer.reset-size7.size8,.katex .sizing.reset-size7.size8{font-size:1.2em}.katex .fontsize-ensurer.reset-size7.size9,.katex .sizing.reset-size7.size9{font-size:1.44em}.katex .fontsize-ensurer.reset-size7.size10,.katex .sizing.reset-size7.size10{font-size:1.72833333em}.katex .fontsize-ensurer.reset-size7.size11,.katex .sizing.reset-size7.size11{font-size:2.07333333em}.katex .fontsize-ensurer.reset-size8.size1,.katex .sizing.reset-size8.size1{font-size:.34722222em}.katex .fontsize-ensurer.reset-size8.size2,.katex .sizing.reset-size8.size2{font-size:.41666667em}.katex .fontsize-ensurer.reset-size8.size3,.katex .sizing.reset-size8.size3{font-size:.48611111em}.katex .fontsize-ensurer.reset-size8.size4,.katex .sizing.reset-size8.size4{font-size:.55555556em}.katex .fontsize-ensurer.reset-size8.size5,.katex .sizing.reset-size8.size5{font-size:.625em}.katex .fontsize-ensurer.reset-size8.size6,.katex .sizing.reset-size8.size6{font-size:.69444444em}.katex .fontsize-ensurer.reset-size8.size7,.katex .sizing.reset-size8.size7{font-size:.83333333em}.katex .fontsize-ensurer.reset-size8.size8,.katex .sizing.reset-size8.size8{font-size:1em}.katex .fontsize-ensurer.reset-size8.size9,.katex .sizing.reset-size8.size9{font-size:1.2em}.katex .fontsize-ensurer.reset-size8.size10,.katex .sizing.reset-size8.size10{font-size:1.44027778em}.katex .fontsize-ensurer.reset-size8.size11,.katex .sizing.reset-size8.size11{font-size:1.72777778em}.katex .fontsize-ensurer.reset-size9.size1,.katex .sizing.reset-size9.size1{font-size:.28935185em}.katex .fontsize-ensurer.reset-size9.size2,.katex .sizing.reset-size9.size2{font-size:.34722222em}.katex .fontsize-ensurer.reset-size9.size3,.katex .sizing.reset-size9.size3{font-size:.40509259em}.katex .fontsize-ensurer.reset-size9.size4,.katex .sizing.reset-size9.size4{font-size:.46296296em}.katex .fontsize-ensurer.reset-size9.size5,.katex .sizing.reset-size9.size5{font-size:.52083333em}.katex .fontsize-ensurer.reset-size9.size6,.katex .sizing.reset-size9.size6{font-size:.5787037em}.katex .fontsize-ensurer.reset-size9.size7,.katex .sizing.reset-size9.size7{font-size:.69444444em}.katex .fontsize-ensurer.reset-size9.size8,.katex .sizing.reset-size9.size8{font-size:.83333333em}.katex .fontsize-ensurer.reset-size9.size9,.katex .sizing.reset-size9.size9{font-size:1em}.katex .fontsize-ensurer.reset-size9.size10,.katex .sizing.reset-size9.size10{font-size:1.20023148em}.katex .fontsize-ensurer.reset-size9.size11,.katex .sizing.reset-size9.size11{font-size:1.43981481em}.katex .fontsize-ensurer.reset-size10.size1,.katex .sizing.reset-size10.size1{font-size:.24108004em}.katex .fontsize-ensurer.reset-size10.size2,.katex .sizing.reset-size10.size2{font-size:.28929605em}.katex .fontsize-ensurer.reset-size10.size3,.katex .sizing.reset-size10.size3{font-size:.33751205em}.katex .fontsize-ensurer.reset-size10.size4,.katex .sizing.reset-size10.size4{font-size:.38572806em}.katex .fontsize-ensurer.reset-size10.size5,.katex .sizing.reset-size10.size5{font-size:.43394407em}.katex .fontsize-ensurer.reset-size10.size6,.katex .sizing.reset-size10.size6{font-size:.48216008em}.katex .fontsize-ensurer.reset-size10.size7,.katex .sizing.reset-size10.size7{font-size:.57859209em}.katex .fontsize-ensurer.reset-size10.size8,.katex .sizing.reset-size10.size8{font-size:.69431051em}.katex .fontsize-ensurer.reset-size10.size9,.katex .sizing.reset-size10.size9{font-size:.83317261em}.katex .fontsize-ensurer.reset-size10.size10,.katex .sizing.reset-size10.size10{font-size:1em}.katex .fontsize-ensurer.reset-size10.size11,.katex .sizing.reset-size10.size11{font-size:1.19961427em}.katex .fontsize-ensurer.reset-size11.size1,.katex .sizing.reset-size11.size1{font-size:.20096463em}.katex .fontsize-ensurer.reset-size11.size2,.katex .sizing.reset-size11.size2{font-size:.24115756em}.katex .fontsize-ensurer.reset-size11.size3,.katex .sizing.reset-size11.size3{font-size:.28135048em}.katex .fontsize-ensurer.reset-size11.size4,.katex .sizing.reset-size11.size4{font-size:.32154341em}.katex .fontsize-ensurer.reset-size11.size5,.katex .sizing.reset-size11.size5{font-size:.36173633em}.katex .fontsize-ensurer.reset-size11.size6,.katex .sizing.reset-size11.size6{font-size:.40192926em}.katex .fontsize-ensurer.reset-size11.size7,.katex .sizing.reset-size11.size7{font-size:.48231511em}.katex .fontsize-ensurer.reset-size11.size8,.katex .sizing.reset-size11.size8{font-size:.57877814em}.katex .fontsize-ensurer.reset-size11.size9,.katex .sizing.reset-size11.size9{font-size:.69453376em}.katex .fontsize-ensurer.reset-size11.size10,.katex .sizing.reset-size11.size10{font-size:.83360129em}.katex .fontsize-ensurer.reset-size11.size11,.katex .sizing.reset-size11.size11{font-size:1em}.katex .delimsizing.size1{font-family:KaTeX_Size1}.katex .delimsizing.size2{font-family:KaTeX_Size2}.katex .delimsizing.size3{font-family:KaTeX_Size3}.katex .delimsizing.size4{font-family:KaTeX_Size4}.katex .delimsizing.mult .delim-size1>span{font-family:KaTeX_Size1}.katex .delimsizing.mult .delim-size4>span{font-family:KaTeX_Size4}.katex .nulldelimiter{display:inline-block;width:.12em}.katex .delimcenter,.katex .op-symbol{position:relative}.katex .op-symbol.small-op{font-family:KaTeX_Size1}.katex .op-symbol.large-op{font-family:KaTeX_Size2}.katex .accent>.vlist-t,.katex .op-limits>.vlist-t{text-align:center}.katex .accent .accent-body{position:relative}.katex .accent .accent-body:not(.accent-full){width:0}.katex .overlay{display:block}.katex .mtable .vertical-separator{display:inline-block;min-width:1px}.katex .mtable .arraycolsep{display:inline-block}.katex .mtable .col-align-c>.vlist-t{text-align:center}.katex .mtable .col-align-l>.vlist-t{text-align:left}.katex .mtable .col-align-r>.vlist-t{text-align:right}.katex .svg-align{text-align:left}.katex svg{fill:currentColor;stroke:currentColor;fill-rule:nonzero;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;display:block;height:inherit;position:absolute;width:100%}.katex svg path{stroke:none}.katex img{border-style:none;max-height:none;max-width:none;min-height:0;min-width:0}.katex .stretchy{display:block;overflow:hidden;position:relative;width:100%}.katex .stretchy:after,.katex .stretchy:before{content:""}.katex .hide-tail{overflow:hidden;position:relative;width:100%}.katex .halfarrow-left{left:0;overflow:hidden;position:absolute;width:50.2%}.katex .halfarrow-right{overflow:hidden;position:absolute;right:0;width:50.2%}.katex .brace-left{left:0;overflow:hidden;position:absolute;width:25.1%}.katex .brace-center{left:25%;overflow:hidden;position:absolute;width:50%}.katex .brace-right{overflow:hidden;position:absolute;right:0;width:25.1%}.katex .x-arrow-pad{padding:0 .5em}.katex .cd-arrow-pad{padding:0 .55556em 0 .27778em}.katex .mover,.katex .munder,.katex .x-arrow{text-align:center}.katex .boxpad{padding:0 .3em}.katex .fbox,.katex .fcolorbox{border:.04em solid;box-sizing:border-box}.katex .cancel-pad{padding:0 .2em}.katex .cancel-lap{margin-left:-.2em;margin-right:-.2em}.katex .sout{border-bottom-style:solid;border-bottom-width:.08em}.katex .angl{border-right:.049em solid;border-top:.049em solid;box-sizing:border-box;margin-right:.03889em}.katex .anglpad{padding:0 .03889em}.katex .eqn-num:before{content:"(" counter(katexEqnNo) ")";counter-increment:katexEqnNo}.katex .mml-eqn-num:before{content:"(" counter(mmlEqnNo) ")";counter-increment:mmlEqnNo}.katex .mtr-glue{width:50%}.katex .cd-vert-arrow{display:inline-block;position:relative}.katex .cd-label-left{display:inline-block;position:absolute;right:calc(50% + .3em);text-align:left}.katex .cd-label-right{display:inline-block;left:calc(50% + .3em);position:absolute;text-align:right}.katex-display{display:block;margin:1em 0;text-align:center}.katex-display>.katex{display:block;text-align:center;white-space:nowrap}.katex-display>.katex>.katex-html{display:block;position:relative}.katex-display>.katex>.katex-html>.tag{position:absolute;right:0}.katex-display.leqno>.katex>.katex-html>.tag{left:0;right:auto}.katex-display.fleqn>.katex{padding-left:2em;text-align:left}body{counter-reset:katexEqnNo mmlEqnNo}
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.katex-error {
+	color: var(--vscode-editorError-foreground);
+}
+
+/* From extension ms-toolsai.jupyter */
+/* These classnames are inherited from bootstrap, but are present in most notebook renderers */
+
+.alert {
+    width: auto;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.alert > *:last-child {
+    margin-bottom: 0;
+}
+#preview > .alert:last-child {
+    /* Prevent this being set to zero by the default notebook stylesheet */
+    padding-bottom: 1em;
+}
+
+.alert-success {
+    /* Note there is no suitable color available, so we just copy "info" */
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-info {
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-warning {
+    background-color: var(--theme-warning-background);
+    color: var(--theme-warning-foreground);
+}
+.alert-danger {
+    background-color: var(--theme-error-background);
+    color: var(--theme-error-foreground);
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+body { font-size: 18pt; color: #333; background: #f1e5c9; font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif"; margin: 0; padding: 0 1% 0 1%; } h1 { font-size: 2.2em; font-weight: 700; line-height: 1.1; padding-top: 16px; margin-bottom: 4px; text-align: center; } h2, h3, h4, h5, h6 { line-height: 1.5em; margin-top: 2.2em; margin-bottom: 4px; } h2 { font-size: 1.8em; margin: 40px 10px 20px 0; font-weight: 700; line-height: 1.4; text-align: center; } h3 { font-weight: 700; font-size: 1.4em; line-height: 1.4; margin: 10px 0 5px; padding-left: 9px; border-left: 6px solid #ff7e79; border-bottom: 1px solid #ff7e79; } h4 { font-weight: 700; text-transform: uppercase; font-size: 1.2em; line-height: 1.4; margin: 10px 0 5px; padding-top: 10px } h5 { font-size: 1em; font-weight: bold; text-transform: uppercase; } h6 { font-size: 1em; font-weight: normal; color: #AAA; } img { width: 100%; border-radius: 5px; display: block; margin-bottom: 15px; height: auto; } dl, ol, ul { margin-top: 12px; margin-bottom: 20px; padding-left: 5%; line-height: 1.8; } p { margin: 0 0 20px; padding: 0; line-height: 1.8; } a { color: #f22f27; text-decoration: none; } a:hover { color: #f55852; text-decoration: underline; } a:focus { outline-offset: -2px; } blockquote { font-size: 1em; font-style: normal; padding: 30px 38px; margin: 0 0 15px; position: relative; line-height: 1.8; text-indent: 0; border: none; color: #888; } blockquote:before { content: "“"; left: 0px; top: 0; color: #E0E0E0; font-size: 4em; font-family: Arial, serif; line-height: 1em; font-weight: 700; position: absolute; } blockquote:after { content: "”"; right: 0px; color: #E0E0E0; font-size: 4em; font-family: Arial, serif; line-height: 1em; font-weight: 700; position: absolute; bottom: -61px; } strong, dfn { font-weight: 700; } em, dfn { font-style: italic; font-weight: 400; } del { text-decoration: line-through; } /*code {font-size:90%;}*/ /*pre {text-align:left; overflow-x: scroll; color: #257fa0; background: #f6f6f6; padding: 10pt 15pt; border-radius: 3px; border: solid 1px #e2e2e2;}*/ pre { margin: 0 0 10px; font-size: 13px; line-height: 1.42857; word-break: break-all; word-wrap: break-word; border-radius: 4px; white-space: pre-wrap; display: block; background: #f8f8f8; padding: 10px 20px; border: none; margin-bottom: 25px; color: #666; font-family: Courier, sans-serif; } code { color: #c7254e; background-color: #f9f2f4; border-radius: 4px; font-family: Menlo, Monaco, Consolas, "Courier New", monospace; padding: 2px 4px; font-size: 90%; } p>code { color: #c7264e; background-color: #f9f2f4; font-size: .95em; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; } figure { margin: 1em 0; } figcaption { font-size: 0.75em; padding: 0.5em 2em; margin-bottom: 2em; } figure img { margin-bottom: 0px; } hr { margin-top: 20px; margin-bottom: 20px; border: 0; border-top: 1px solid #eee; } ol p, ul p { margin-bottom: 0px; } li { margin-bottom: 0.75em; margin-top: 0.75em; } ol#footnotes { font-size: 0.95em; padding-top: 1em; margin-top: 1em; margin-left: 0; border-top: 1px solid #eaeaea; counter-reset: footer-counter; list-style: none; color: #555; padding-left: 5%; margin: 20px 0; } ol#footnotes li { margin-bottom: 10px; margin-left: 16px; font-weight: 400; line-height: 2; list-style-type: none; } ol#footnotes li:before { content: counter(footer-counter) ". "; counter-increment: footer-counter; font-weight: 800; font-size: .95em; } @keyframes highfade { 0% { background-color: none; } 20% { background-color: yellow; } 100% { background-color: none; } } @-webkit-keyframes highfade { 0% { background-color: none; } 20% { background-color: yellow; } 100% { background-color: none; } } a:target, ol#footnotes li:target, sup a:target { animation-name: highfade; animation-duration: 2s; animation-iteration-count: 1; animation-timing-function: ease-in-out; -webkit-animation-name: highfade; -webkit-animation-duration: 2s; -webkit-animation-iteration-count: 1; -webkit-animation-timing-function: ease-in-out; } a:target { border: 0; outline: 0; } table { align-self: center; } img { align-self: center; max-width: 1000px; width: 1000px; }
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="excel自定义格式代码">Excel自定义格式代码</h1>
+<p><a href="https://zhuanlan.zhihu.com/p/334303598">原文链接：花了20小时整理的Excel自定义格式代码大全</a></p>
+<h3 id="01-如何设置单元格格式">01 如何设置单元格格式</h3>
+<p>选中需要设置单元格格式的区域范围后，至少有三种方法可以设置单元格格式：</p>
+<h4 id="菜单栏按键法">菜单栏按键法</h4>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-1.jpg" alt=""></p>
+<p>或者点击单元格格式选型卡下面的三角形符号也可以。</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-2.jpg" alt=""></p>
+<h4 id="右键菜单法">右键菜单法</h4>
+<p>选中数据后右键单击：“设置单元格格式”。</p>
+<h4 id="快捷键法">快捷键法</h4>
+<p>选中数据后按Ctrl+1也会弹出设置单元格格式的对话框。</p>
+<p>左侧的【分类】列表中有常规、数值、货币等等选项，这里比较简单，此不赘述。我们需要重点学习的自定义格式是列表最后的【自定义】。</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-3.jpg" alt=""></p>
+<p>点击【自定义】就会出现【类型】编辑框,下面是系统预设的一些代码，不过这些预设代码远远不能满足我们实际的需要。</p>
+<p>注：【自定义】单元格格式允许用户创建符合一定规则的数字格式，应用自定义格式的数字并不会改变数值本身，仅仅只是改变数值的显示方式而已。事实上所有类型的单元格格式都只是改变了数值的显示方式。</p>
+<h3 id="02-自定义格式的代码规则">02 自定义格式的代码规则</h3>
+<p>自定义格式代码，共有四个区段，在代码中，用分号来分隔不同的区段，每个区段的代码作用于不同类型的数值。完整格式代码的组成结构为：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-4.jpg" alt=""></p>
+<p>在没有特别指定条件值的时候，默认的条件值为0，因此，格式代码的组成结构也可视作：</p>
+<p><code>正数格式;负数格式;零格式;文本格式</code></p>
+<p>自定义格式代码最多可以有四节，但并不是说每一个自定义代码都必须定义四节,少于四节的代码也是可以的：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-5.jpg" alt=""></p>
+<p>举例如下：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-6.jpg" alt=""></p>
+<h4 id="1-如果只定义一个节则该代码用于所有的数字上">1 如果只定义一个节，则该代码用于所有的数字上。</h4>
+<p>定义1 此区域的自定义代码为：0&quot;是数值&quot;<br>
+定义2 此区域的自定义代码为：[红色]0</p>
+<p>从例子里我们可以看到，定义的代码对&quot;Excel表哥&quot;文本所在的单元格并不起作用，只对数值型的单元格起作用。</p>
+<h4 id="2-如果只定义两个节则第一节用于0和正数第二节用于负数">2 如果只定义两个节，则第一节用于0和正数，第二节用于负数。</h4>
+<p>定义1 此区域的自定义代码为：0&quot;≥0&quot;;-0&quot;&lt;0&quot;<br>
+定义2 此区域的自定义代码为：[蓝色]0;[红色]-0</p>
+<h4 id="3-如果只定义三个节则第一区域用于正数第二区域用于负数第三区域用于0值">3 如果只定义三个节，则第一区域用于正数，第二区域用于负数，第三区域用于0值。</h4>
+<p>定义1 此区域的自定义代码为：0&quot;&gt;0&quot;;0&quot;&lt;0&quot;;0&quot;=0&quot;<br>
+定义2 此区域的自定义代码为：[蓝色]0;[红色]-0;[黄色]0</p>
+<p>从例子里我们可以看到，只定义2或者3节的代码对&quot;Excel表哥&quot;文本所在的单元格并不起作用，只对数值型的单元格起作用，且对数值型进行了正数、零、负数的区分。</p>
+<h4 id="4-如果定义满四节的代码则分别对正数负数零文本进行了定义">4 如果定义满四节的代码，则分别对正数、负数、零、文本进行了定义。</h4>
+<p>定义1 此区域的自定义代码为：0&quot;&gt;0&quot;;0&quot;&lt;0&quot;;0&quot;=0&quot;;@&quot;是文本&quot;<br>
+定义2 此区域的自定义代码为：[蓝色]0;[红色]-0;[黄色]0;[黑色]@</p>
+<p>自定义格式分为四个区间，每个区间用分号隔开，那么我们可以通过此规则来隐藏单元格里的内容。使用不同的格式代码，可以对数据区域的数值、文本或是全部内容进行隐藏。</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-7.jpg" alt=""></p>
+<h3 id="03-自定义格式代码占位符">03 自定义格式代码占位符</h3>
+<p>上一节中自定义格式代码中的数字0其实是一种占位符号。常见的占位符号含义如下：</p>
+<h4 id="0-占位符">0 占位符</h4>
+<p>0占位符是一种数字占位符，表示单元格中数字的实际最少位数，例如设置单元格自定义格式为00000，则表示单元格数字至少为5位。如果单元格内数字位数大于5位，则显示实际数字的位数；如果单元格内数字位数小于5位，则用数字0补齐。举例如下：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-8.jpg" alt=""></p>
+<h4 id="-占位符"># 占位符</h4>
+<p>#占位符也是一种数字占位符，与0占位符相比，单元格中数字只显示有意义的0，无意义的0则不显示。举例如下：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-9.jpg" alt=""></p>
+<p>也可以使用#与0组合来设置单元格格式，举例如下：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-10.jpg" alt=""></p>
+<h4 id="-占位符-1">? 占位符</h4>
+<p>?占位符(注意是英文的?)也是一种数字占位符，与0占位符相比，在单元格中为数字两边无意义的0自动添加空格，因此也称作空格占位符。此格式最大的用处在于：当按照固定宽度显示数字时，所有的单元格数字小数点可以对齐显示，还可以用于分数显示。举例如下：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-11.jpg" alt=""></p>
+<h4 id="-占位符-2">@ 占位符</h4>
+<p>@占位符是一种文本占位符，如果只使用单个@，作用是引用原始文本，如果使用多个@，则可以重复文本。和其他的文本内容结合在一起，可以不改变原始文本，从而扩展文本显示内容。举例如下：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-12.jpg" alt=""></p>
+<p>注：@文本占位符只对单元格内的文字有效，对纯数字无效。要想在数字后自动添加单位，则需要使用#或0&quot;单位&quot;格式。</p>
+<h4 id="-占位符-3">* 占位符</h4>
+<p>*占位符是一种文本占位符，表示重复*后的字符，直到填充满列宽显示。*占位符有很多有趣实用的举例：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-13.jpg" alt=""></p>
+<p>还可以用于在单元格内显示目录填充效果：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-14.jpg" alt=""></p>
+<h4 id="-占位符-4">, 占位符</h4>
+<p>&quot;,&quot;占位符是一种数字占位符，又称千位分隔符。配合#或者0，可以将数字以千为单位进行标示显示。举例如下：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-15.jpg" alt=""></p>
+<p>注：如果逗号在格式代码的最后，则表示将原始数字除以1000，并舍去小数部分。如果0或者#后面是两个逗号,,则表示除以两次1000，即百万。</p>
+<h4 id="-占位符-5">! 占位符</h4>
+<p>!占位符是一种字符转义占位符，这个转义字符用的不多，主要作用是在代码格式中，将代码字符中的#，0转变成文本内容。例如批量在编号前增加#符号：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-16.jpg" alt=""></p>
+<p>上面三种格式都可以在数字编号前增加#号，大家根据自己的喜好选择就可以。</p>
+<p>国外比较喜欢使用千位分隔，因此Thousand，Million，Billon是老外喜欢的单元格格式。针对国内，“万”才是我们常见的单位。</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-17.jpg" alt=""></p>
+<p>要以万为单位显示单元格内数字，可以将数字显示效果先÷1000按千位分隔显示，然后再在紧接着百位后的千位和万位之间强制增加一个小数点(!.)。效果就是再除以10。</p>
+<p>以万为单位显示数值由于日常使用较多，此处再多列举几种方式：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-18.jpg" alt=""></p>
+<p>如果要保留2位有效数字，则需要按照最后一种方式设置单元格格式。方法如下动图所示：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-19.gif" alt=""></p>
+<p>在输入单元格格式代码时候需要光标移动至%前，在键盘输入换行符号 Ctrl+J 之后按确定。自定义单元格格式代码完成后还需要设置单元格自动换行及顶端对齐并调整行高。</p>
+<p>其他关于转义字符占位符的应用，还可以参考下面的举例：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-20.jpg" alt=""></p>
+<p>上面的举例都是通过 !. 强制指定小数点的位置实现放大或者缩小的显示效果。例如÷100就是在0(!.)00十位和百位之间增加一个小数点。至于保留的小数位数，还是要看小数点后代码指定的0的位数。</p>
+<h4 id="ymd-占位符">YMD 占位符</h4>
+<p>YMD或者ymd占位符是日期占位符，日期代码非常简单，按照下面的举例设置就ok，还可以用任意字符诸如&quot;-&quot; &quot;:&quot; &quot;.&quot;等将年月日连接起来。例如2020-7-1，可以显示为如下格式：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-21.jpg" alt=""></p>
+<h4 id="-占位符-6">[] 占位符</h4>
+<p>英文[]是条件占位符，配套为满足不同条件的数字设置格式时使用，最多只能有三种条件结果，例如：</p>
+<p><code>[&gt;85]&quot;优秀&quot;;[&gt;=60]&quot;及格&quot;;&quot;不及格&quot;</code></p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-22.jpg" alt=""></p>
+<p>条件的判断按照从左至右的顺序进行判断，首先判断&gt;85的条件，如果不满足则判断&gt;=60的条件。</p>
+<p>[]条件占位符还可以用括号指定满足条件的颜色，常见的8种颜色是： [黑色] [蓝色] [蓝绿色] [绿色] [洋红色] [红色] [白色] [黄色]。除此之外，还可以使用[颜色#]，其中#为0到56的整数。若为0，则代表无颜色。其它56个数字与颜色的对应关系如下：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-23.jpg" alt=""></p>
+<p>举例如下：</p>
+<p><img src="file:///d:\loveFluffy\myBlog\info\img\info0005-24.jpg" alt=""></p>
+<p>对于达成率&gt;=1的指标，使用“绿色”显示；达成率&gt;=0.95的指标，使用“黄色”指标显示；低于0.95的用红色显示。只需要在自定义单元格格式中填入如下代码：</p>
+<p><code>[绿色][&gt;=1];[黄色][&gt;=0.95];[红色]</code></p>
+
+        
+        
+    </body>
+    </html>

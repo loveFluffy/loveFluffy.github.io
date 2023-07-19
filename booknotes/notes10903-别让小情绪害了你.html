@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x522b;&#x8ba9;&#x5c0f;&#x60c5;&#x7eea;&#x5bb3;&#x4e86;&#x4f60;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="别让小情绪害了你">别让小情绪害了你</h1>
+<h2 id="美弗雷德曼肖普friedemann-schaub-著于非-译">[美]弗雷德曼·肖普（Friedemann Schaub） 著|于非 译</h2>
+<h3 id="前言">前言</h3>
+<h4 id="心灵的力量">心灵的力量</h4>
+<h4 id="细胞的智慧">细胞的智慧</h4>
+<h4 id="对健康和自我康复的一种全新的观点">对健康和自我康复的一种全新的观点</h4>
+<h4 id="情感疗法">情感疗法</h4>
+<p>根据我的计划，在本书中，恐惧与焦虑将不再被视为问题或阻碍，而是潜意识所表现出的症状和发出的信息：你体内的平衡被打破了，请及时调整。当你踏上这段自我康复、自我强化和自我觉醒的旅程后，每一章讲到的过程和方法都会告诉你如何在意识和潜意识之间搭起桥梁。它们教你精确地找出和理解恐惧与焦虑的根本原因以及深层次的含义，指引你走出情感与情绪的困扰，帮你点亮内心中的火种，使你可以更加清楚地观察自己和整个世界。</p>
+<h2 id="第一部分-那些让人无法抗拒的心理问题寻找小情绪的根源">第一部分 那些让人无法抗拒的心理问题，寻找小情绪的根源</h2>
+<h3 id="第一章-恐惧与焦虑是怎么来的">第一章 恐惧与焦虑是怎么来的？</h3>
+<h4 id="理性是可以帮你解决焦虑的">理性是可以帮你解决焦虑的</h4>
+<h4 id="恐惧与焦虑什么时候成了一个问题呢">恐惧与焦虑什么时候成了一个问题呢？</h4>
+<h4 id="利用好情绪你能变成更强大真实的自己">利用好情绪，你能变成更强大真实的自己</h4>
+<h4 id="当初你是怎样陷入困境的">当初，你是怎样陷入困境的？</h4>
+<p>首先，正如你所知道的，恐惧与焦虑很容易就会让你感觉困顿和无奈。但这并不是让我们陷入困境的元凶，而是我们回应它们的方式。通常，我们不知道自己该做些什么，我们抗拒改变的发生，或者干脆对这样的情绪听之任之。下面，就让我们来进一步逐一分析这三个问题吧。</p>
+<p>·我们不知道该做些什么。</p>
+<p>感觉饥饿的时候，我们就知道吃饭的时间到了；感到口渴的时候，我们知道该去喝水了；感到劳累，我们知道是时候歇一会儿了。我们了解这些感觉的含义，并且知道该如何解决它们，问题解决了，它们自然就会消失。但是当感到焦虑的时候，我们该做些什么呢？我们通常会开始寻找潜在的危险，或者进入“要是……该怎么办”的状态，时刻准备着战斗、逃跑或躲藏起来。我们切换到这种“或战或逃或原地不动”的模式，是因为我们总是把焦虑理解为一个信号：要么是一些外在因素在威胁我们，要么是我们自己的身体出了什么问题。通过这种解释焦虑的方法，我们会更加确认自己的焦灼感并加速崩溃。这样愈演愈烈，反而无助于我们理解其真正的含义，更没办法恰当地解决它了。</p>
+<p>·我们抗拒改变的发生。</p>
+<p>最常见的一种恐惧就是对变化的恐惧，这使得对恐惧与焦虑的改变显得更加具有挑战性。改变往往需要人们远离自己感到舒适的区域，这就是为什么我们会觉得有一点不适和危险。舒适区域形成于我们的大脑，以便我们可以在一个安全、熟悉和可控制的区域里体验和掌控自己的生活。舒适区域的内部边界建立在精神、情感和行为的模式之上，区域的大小是由个人空间的半径、我们对情感距离的掌控以及我们与周围环境相互影响的程度决定的。</p>
+<p>人们的舒适区域之间存在着很大的差异。它取决于我们在各种生活环境下的亲身感受。比方说，我们在工作中的舒适区域可能会表现得非常狭小而固定，而与之对应的是，与亲人在一起时和在度假期间建立的舒适区域则更加广泛和灵活。舒适区域往往不固定，其边界的界定也十分灵活。随着成长，我们的信念和心态也会发生变化，我们不断扩展自己的舒适区域，以适应自身的改变。</p>
+<p>同健康的舒适区域相反的是，由焦虑主导的区域往往起到相反的作用。它的范围会逐渐缩小，而边界则像墙一样缺乏弹性。焦虑把舒适区域变成我们的保护区，庇护我们远离恐惧和不安。就这样，我们的生活圈子变得越来越小，对我们构成危险的人和事情却越来越多。结果，我们开始逃避生活。</p>
+<p>我们发现，在某种程度上，不再是我们决定舒适区域的大小，而是舒适区域在控制着我们，掌控着我们的生活圈子。一个狭隘的舒适区域是阻隔在我们和积极的改变之间最大的障碍。待在这个圈子里时间越长，就越会避免和抗拒离开它，即使我们在里面已经待腻了。</p>
+<p>·我们会对这样的情绪听之任之。</p>
+<p>当恐惧和焦虑成为我们自身的一部分时，问题变得尤为严重。我们会把自己当成一个焦虑或抑郁症患者，并且开始认同这些情绪。焦虑成为我们心情的默认设置，并且一步一步地限制我们的选择和行动。这种认同感会束缚我们的自我意识，削弱我们探索自身的能力，使我们看不到自己改变、成长和成功的真正潜力。最终，我们甚至无法想象在没有焦虑的环境下该怎样生活。基于此，我们认为，除了生存和安全，我们最大的愿望就是减少对这种情绪的依赖。</p>
+<p>听起来很耳熟吧？问题是，我们怎样才能结束与恐惧和焦虑的战斗呢？</p>
+<h4 id="如何开始从哪里开始">如何开始，从哪里开始？</h4>
+<h3 id="第二章-疗愈控制小情绪首先就要改变自我">第二章 疗愈、控制小情绪，首先就要改变自我</h3>
+<h4 id="找到自己内心的情感地图">找到自己内心的情感地图</h4>
+<p>我的病人比尔就是一个很好的例子，他也迷失在这些情绪当中。比尔是一名非常成功的企业高管，对自己有着极高的期许。每次成功地完成一项挑战之后，他都会立刻把目光投向下一个目标，而且一个比一个难度大。一家公司提供了一份很高的薪水想挖他过去，而他还在考虑的时候，现在的老板为了留住他也决定升他的职，条件优厚得完全超出他的想象。比尔觉得自己已经没有遗憾了。他刚刚四十出头，却已经完成了自己几乎所有的目标。</p>
+<p>恰恰在这个时候，一些难以预料的事情发生了。在新职位上做第一次业务报告时，比尔就在所有的生意伙伴和同事面前出了丑。起初，他只是把这次失误归结为睡眠不足或饮食不当。但在连续经历两次类似的尴尬局面之后，他才开始真正意识到有些事情出了问题。他的身体检查结果完全正常，医生诊断他患上了惊恐发作。</p>
+<p>这个诊断让比尔大吃一惊。“焦虑？我吗？怎么可能是现在？”这确实不太可能，因为就在几个月之前，他还曾经单枪匹马应对了公司历史上的最大挑战。在那段时间里，他给人的感觉是极其冷静和自信。那么，到底是什么改变了这一切呢？而又为什么是现在呢？这些疑问让他感到更加压抑和不安。比尔既不清楚下一次恐慌什么时候会到来，也不知道恐慌发作起来有多严重，这种不知如何是好的焦虑感令他寝食难安。</p>
+<p>我们治疗的第一步就是帮助比尔弄清楚自己的思维是如何工作的，以及恐惧与焦虑是如何产生的。他很快就意识到，自己的新职位正是引发焦虑的罪魁祸首。过去，他的成功和晋职都是建立在努力工作和百分之一百二的付出之上的。但这一次，他觉得自己能够得到这个位置，仅仅是因为他的老板不想放他去另一家公司。他下意识地开始感到不安，他认为这次成功靠的是老板的妥协，与自己的努力和贡献毫无关系。要是有一天他的地位一落千丈怎么办？一旦这种事情成为现实，他就只能把自己的一切拱手让出。</p>
+<p>比尔心中始终有一种根深蒂固的潜意识，那就是自己总是做得不够好。这种缺乏安全感的念头始于他的童年，并且一直持续到现在。只有不断的成功才能使他逃避潜意识中的不安。他希望通过自己的巨大成就，最终建立一个全新的、充满自信的自我。可不管这些成功多么令人难忘，他仍然认为自己差得很远。所以当比尔感觉自己不再被他的老板看好时，不自信的恐惧感便从潜意识深处爆发，进而形成那些看上去仿佛毫无道理的恐慌。</p>
+<p>比尔终于弄清了这种情绪的来龙去脉，也明白了正是过去的成就限制了自己的潜意识，他如释重负。焦虑也不再像潜伏的猛兽一样会随时毫无预兆地向他袭来。毕竟，我们只要意识到问题产生的原因，就有可能想办法解决它。明白了恐惧产生的深层次原因和根源后，比尔获得极大的安全感，从这以后，他可以主动采取措施来克服这些焦虑与不安，在了解自己的基础上建立真正的自信，重新找回属于自己的力量。</p>
+<h4 id="重新找回你充满灵活性的那些时光">重新找回你充满灵活性的那些时光</h4>
+<h4 id="想要得到真正的自由必须做出选择">想要得到真正的自由，必须做出选择</h4>
+<h4 id="说做就做行动永远走在前面">说做就做，行动永远走在前面</h4>
+<h4 id="合而为一">合而为一</h4>
+<h3 id="第三章-那些谁都难免的抑郁">第三章 那些谁都难免的抑郁</h3>
+<h4 id="焦虑从哪儿来">焦虑从哪儿来？</h4>
+<h4 id="我们在害怕什么">我们在害怕什么？</h4>
+<h4 id="焦虑保证了我们的安全这是真的吗">焦虑保证了我们的安全，这是真的吗？</h4>
+<h4 id="焦虑的真相">焦虑的真相</h4>
+<h4 id="在你的脑袋里发生了什么">在你的脑袋里发生了什么？</h4>
+<h4 id="吃药是治疗抑郁的第一步但绝不是全部">吃药是治疗抑郁的第一步，但绝不是全部</h4>
+<h2 id="第二部分-重新找回你充满灵活性的那些时光">第二部分 重新找回你充满灵活性的那些时光</h2>
+<h3 id="第四章-潜意识及焦虑产生的根本原因">第四章 潜意识及焦虑产生的根本原因</h3>
+<h4 id="潜意识我们的朋友还是敌人">潜意识：我们的朋友还是敌人？</h4>
+<h4 id="我们是怎样被潜意识吓住的">我们是怎样被潜意识吓住的？</h4>
+<h4 id="为什么会产生恐惧和焦虑等情绪">为什么会产生恐惧和焦虑等情绪？</h4>
+<h4 id="即将开始的旅程">即将开始的旅程</h4>
+<h4 id="第三部分-想要得到真正的自由必须做出选择掌控好情绪">第三部分 想要得到真正的自由，必须做出选择，掌控好情绪</h4>
+<h3 id="第五章-如何发现自己的目标怎样完成它">第五章 如何发现自己的目标，怎样完成它？</h3>
+<h4 id="动机左右改变的力量">动机：左右改变的力量</h4>
+<h4 id="可以帮你确立目标的一些基本问题">可以帮你确立目标的一些基本问题</h4>
+<h3 id="第六章-是谁在讲话消极的独白和纷乱的思绪">第六章 是谁在讲话？消极的独白和纷乱的思绪</h3>
+<h4 id="由焦虑引发的内心独白">由焦虑引发的内心独白</h4>
+<h4 id="消极的独白和负面的小情绪从哪儿来">消极的独白和负面的小情绪从哪儿来？</h4>
+<h4 id="找到消极情绪安抚它并消除它的疑虑">找到消极情绪，安抚它，并消除它的疑虑</h4>
+<h4 id="你怎样才能冲抵那些缥缈不定的焦虑呢">你怎样才能冲抵那些缥缈不定的焦虑呢？</h4>
+<h3 id="第七章-为了完善和超越自我解决内心的冲突">第七章 为了完善和超越自我：解决内心的冲突</h3>
+<h4 id="保卫者崛起">保卫者崛起</h4>
+<h4 id="摆脱陷在泥潭里的恐慌">摆脱陷在泥潭里的恐慌</h4>
+<h4 id="内心中的批评者好心办坏事">内心中的批评者——好心办坏事</h4>
+<h4 id="安静下来重新调整心态">安静下来，重新调整心态</h4>
+<h4 id="重新调整心态的过程六个步骤带来内心的平静">重新调整心态的过程：六个步骤带来内心的平静</h4>
+<h4 id="接下来我们该做些什么">接下来，我们该做些什么？</h4>
+<h3 id="第八章-是时候解放自己了如何释放堆积在潜意识当中的小情绪">第八章 是时候解放自己了：如何释放堆积在潜意识当中的小情绪？</h3>
+<h4 id="潜意识能抑制创伤性的记忆">潜意识能抑制创伤性的记忆</h4>
+<h4 id="回溯了解释放">回溯、了解、释放</h4>
+<h4 id="潜意识是如何储存记忆的">潜意识是如何储存记忆的？</h4>
+<h4 id="找出你的人生轨迹">找出你的人生轨迹</h4>
+<h4 id="模式解决程序的原则">模式解决程序的原则</h4>
+<h4 id="模式解决程序的七个步骤">模式解决程序的七个步骤</h4>
+<h4 id="一场畅快淋漓的体验">一场畅快淋漓的体验</h4>
+<h2 id="第四部分-重新调整平静从不会离开">第四部分 重新调整，平静从不会离开</h2>
+<h3 id="第九章-核心身份的定位">第九章 核心身份的定位</h3>
+<h4 id="细胞身份">细胞身份</h4>
+<h4 id="本质的真实面目">本质的真实面目</h4>
+<h4 id="冥想通往本质的桥梁">冥想：通往本质的桥梁</h4>
+<h4 id="重新调整自我指引型冥想">重新调整自我：指引型冥想</h4>
+<h3 id="第十章-向着自我强化突破">第十章 向着自我强化突破</h3>
+<h4 id="受制于一个局限性的信念">受制于一个局限性的信念</h4>
+<h4 id="为什么这些局限性的信念会如此顽固">为什么这些局限性的信念会如此顽固？</h4>
+<h4 id="你以为你是谁">你以为你是谁？</h4>
+<h4 id="局限版的自我">局限版的自我</h4>
+<h4 id="如何赋予自己强大的力量">如何赋予自己强大的力量？</h4>
+<h4 id="什么才是全新而强大的信念">什么才是全新而强大的信念？</h4>
+<h4 id="三个步骤为你建立全新的核心信念">三个步骤，为你建立全新的核心信念</h4>
+<h4 id="变成一个强大的自己">变成一个强大的自己</h4>
+<h4 id="潜意识的身份转换">潜意识的身份转换</h4>
+<h4 id="带着你的新身份走向自己的生活">带着你的新身份走向自己的生活</h4>
+<h3 id="第十一章-继续前进如何保持强大和平衡的状态">第十一章 继续前进：如何保持强大和平衡的状态？</h3>
+<h4 id="持续的挑战">持续的挑战</h4>
+<h4 id="承诺自信和自爱成长的沃土">承诺：自信和自爱成长的沃土</h4>
+<h4 id="一种协调的感觉对生活充满信心">一种协调的感觉：对生活充满信心</h4>
+<h4 id="care一个为期40天的自我强化的承诺">CARE：一个为期40天的自我强化的承诺</h4>
+<h4 id="关注">关注</h4>
+<h4 id="调整">调整</h4>
+<h4 id="巩固">巩固</h4>
+<h4 id="提高">提高</h4>
+<h4 id="care的总结">CARE的总结</h4>
+<h3 id="卷末语-同恐惧与焦虑等情绪重归于好">卷末语 同恐惧与焦虑等情绪重归于好</h3>
+<h4 id="恐惧与忧虑的备忘录">恐惧与忧虑的备忘录</h4>
+
+        
+        
+    </body>
+    </html>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x4e0d;&#x53ef;&#x4e0d;&#x77e5;&#x7684;&#x7ecf;&#x6d4e;&#x771f;&#x76f8;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <div class="content">
+<h1 id="不可不知的经济真相">不可不知的经济真相</h1>
+<h2 id="许树泽-著">许树泽 著</h2>
+<h2 id="推荐序">推荐序</h2>
+<p>在书中，作者能够紧扣时代脉搏，围绕当前市场热点，用最通俗的语言，选取古今中外的事例，感应大众悲喜，疾呼社会正义，表达人文关怀，阐述经济现象。将相对枯燥的经济学原理解释得生动有趣，可谓化复杂为简明，引高深入浅显。能够让读者在最短的时间里，粗通经济现象背后的原理，应该说是本书的最主要特色了。</p>
+<p>本书作者树泽，是一名有专业积累的主持人，同时也是一名出色的财经科技观察者和宣讲者。愿这位年轻的作者在为中国经济发展、社会进步服务的道路上走得更远！</p>
+<p>贾康（财政部财政科学研究所所长、研究员、博士生导师）</p>
+<h2 id="自序">自序</h2>
+<p>开始，我并不知道什么叫“精益创业”，只是出于好奇加傻傻的尝试，希望自己对经济和投资有更深一些的理解。后来经过摸索试错，我发现这引起了大家的共鸣，在自己寻求答案的过程中，也解决了大家的问题。</p>
+<h2 id="第一篇-周期轮回">第一篇 周期轮回</h2>
+<h3 id="中国创新经济学">中国创新经济学</h3>
+<h4 id="一">一</h4>
+<p>你还记得在中学课本上资本家倒牛奶的插画吗？在摄影专业中，有一个术语叫作“决定性瞬间”。一张传神的好照片，往往就具备这个效应。而倒牛奶这一幕，就是一个决定性瞬间，它是对1929年全球性经济大萧条的鲜明概括。那么，为什么经济萧条和倾倒牛奶二者之间会有关联呢？其实，它背后的原理很简单——过剩，经济危机的本质就是过剩危机。无论是百年前的企业主倒牛奶，还是千禧年之后互联网之花开遍全球，却终在2001年被这株带刺的玫瑰刺破手指，抑或是美国曼哈顿昂贵密集的高楼大厦，由房地产零首付和垃圾债直接引爆的经济危机，甚至之后2011年欧洲主权债务危机，历史的每一次轮回，都不一样，但它们总是有着相似的韵脚，这个韵脚就是需求不足导致的产品过剩。</p>
+<p>为什么过剩会导致经济危机呢？这是由资本逐利的天性决定的。为了获取利润，资本会不断投资扩大再生产。亨利·福特豪情壮志，要为全宇宙生产汽车，可是，人们的收入是有限的，地球村的人头是有限的，当没有更多的人能把产品消费掉，供需之间的平衡也就被打破，经济就会出现危机。历史不断轮回重演，太阳底下并无新鲜事。</p>
+<h4 id="二">二</h4>
+<p>其实真正的高手早就不看GDP（国内生产总值）了，李克强总理早在2007年在辽宁工作的时候，就提出过用一个模型来分析经济。这个模型非常简单，就三个因素：银行信贷、用电量和铁路货运量。</p>
+<p>这个极简的模型三笔勾勒出了中国经济的全貌，它就像是孙悟空画的那个圈，把一切妖怪挡在圈外。这个模型之所以管用，是因为当时经济的增长是靠投资拉动的。修路、造桥、盖房子、搞工程、建项目，这些统称为投资拉动。在这种发展模式下，首先需要消耗大量的资金。我们不同于欧美经济体，主要依靠资本市场直接融资。我们的资金来源都是向银行贷款，所以信贷数据是第一环重要证据。</p>
+<p>第二步，盖房子、修路、造桥要用到大量的水泥，以及钢铁、铜、铝等金属，制造这些工业品，要消耗大量电力，从发电的数据中，便能得到经济健康与否的第二环重要证据。而这些大宗物资和原材料的运输，基本全部依靠铁路运输，这是成本最低、效率最高的方式，所以铁路货运量也是一环重要的证据。这三个因素环环相扣，最终再现了整个中国经济的状况，完成最终的闭环。</p>
+<p>然而，随着全球经济深陷泥沼，中国经济也随之需要进行转型和升级，投资拉动的经济发展模式已经走到了路的尽头，我们不再需要扎堆的钢铁厂燃着浓浓黑烟的通天之塔，我们也害怕过剩的水泥厂区批量生产的PM2.5，我们更要提防呆账坏账对每个家庭金融安全的威胁。于是，发展模式改变了，用电量、铁路货运量这两个数据全面告急，呈现急速下滑；而反观另一边，破纪录的“双十一”网购数据、不断增长的通信设备销售，在互联网新经济模式之下的今天，风景这边独好。传统的经济数据和模型变得日益难看，但这并不意味着中国经济走进了死胡同，而正说明我们需要以全新的眼光和角度来看待经济，我们的思维方式也急需一次彻底的系统更新和软件升级。</p>
+<h4 id="三">三</h4>
+<p>过去，工厂炼钢，铁路运输钢铁，然后银行批钱，企业拿地，把这些东西拼在一起变成房子，中国经济涨，涨，涨！三个传统指标，就相当于中国经济的三围，瞅一眼便知高矮胖瘦，稍加分析便知健康与否。可是今天，这些数据不准了，因为我们的模式在变，这个时候“新克强指数”进入了人们的视野。相比过往，这里面引入的两个最重要的因素就是关注就业和居民的收入。</p>
+<p>做投资的没有人不知道“非农就业数据”，这是美联储制定货币政策最重要的参考数据之一。发达经济体都把关注点聚焦在就业之上，你很少听到他们说GDP保5、保3，还是保2，其实都没有，他们说的就是拉动就业。拉动就业有一个关键抓手——居民的收入，这是李总理最关心的东西。可是对于很多做投资的人来讲，大家似乎更加关心企业利润而非居民收入，大家觉得收入太普通了，太常识性了，以至于我们都陷入了“灯下黑”的尴尬，对身边的事情反倒无法感知，这恰恰是最要不得的。</p>
+<p>比如说房子，大家都很关心，很多二、三线城市的房价都在跌。大家基本上达成了一个共识：房地产作为一个行业，它的黄金十年已经过去了。就像当年菲戈领衔的葡萄牙足球队，已成昨日辉煌。但是同时，大家又达成了另外一个共识：行业整体没机会，但是北、上、广、深有机会。为什么唯独认为北、上、广、深有机会呢？他们会给你打这么一个比方：不同城市的房子就好比是市场里的公司和股票，就算是在熊市中，依然有好公司，依然有牛股可以上涨，那么北、上、广、深就好比是这些牛股，这些好公司，它们可以逆整个潮流而上，当一条逆流而上的大马哈鱼。听起来好像确实生动而又令人兴奋，可是证据在哪里？当你追问他们之后，他们会接着讲这样一个逻辑：决定房价最重要的一个因素是人口的净流入和净流出。虽然中国人口的增速在变缓，但是，假如一个城市或者一个地区，它的人口一直在往上增长，如果人们一直往北、上、广、深迁移，那么这些地区的房价也将继续上涨。如此高论征服了大多数人，有观点，有判断，有逻辑，似乎已经是无懈可击了，但是，真相却只有一个。</p>
+<p>日本曾经的经历，非常值得我们今天借鉴。从战后的1945年开始，东京都地区大概有300多万人口。2000年，这个地区的人口已经超过了1200万，直到今天东京圈的人口都在持续流入。可是在人口流入的背景之下，日本房价遭遇了暴跌。1990—1995年，日本东京都地区的平均土地价格近乎腰斩，从140万日元/平方米跌至60万日元/平方米。地价下跌的连锁反应使得房价也大幅下跌，直到今天，人们面对曾经的高点也只能望洋兴叹。</p>
+<p>为什么日本人都往东京涌，人口一直在增长，但是房价却下跌了呢？</p>
+<p>其实问题的核心并不是人口，而是收入。来自日本统计省总务局的数据，1990年日本家庭的可支配收入是44万日元，这在当时达到了一个很多年以来都不曾企及的高峰。但是时间来到2005年，这个数据竟然原地踏步，还是44万日元的可支配收入。到了2012年，他们竟然开了历史的倒车，家庭可支配收入降到了42万日元。事情的真相就是，日本家庭的可支配收入的下降，带来了楼市的崩溃和产业的萧条。</p>
+<p>打通所有环节，真相自然明了。这就是为什么作为管理层和政策决策者，总理最关心居民收入的原因。既然收入如此之重要，那么，它怎么才能提高呢？</p>
+<h4 id="四">四</h4>
+<p>收入应该怎么提高呢？对于大多数人来讲，收入主要来源于工资。工资是什么？它其实是一家企业的一笔支出，所以工资其实又来源于企业利润。当经济红火、企业赚钱时，你拿到的绩效和奖金一定会增加，你的收入就会上升。对于决策管理者来讲，他们考虑的是如何把经济搞活，让企业有钱赚，那时你的收入自然也会水涨船高。</p>
+<p>具体解决提高收入这个问题，一般有两种思路：第一种思路是从需求入手。例如，1929年大萧条，资本家倒牛奶，就是因为产品过剩，卖不出去。这是由于人们的收入已经停止了增长，但是工厂的产能还在扩大造成的。那么，怎么解决这个问题呢？当时一个叫凯恩斯的英国才子就横空出世了，他奏上一折：大家没钱不买没关系，政府出钱买啊，拿出财政资金，去市场上有啥买啥，还怕没需求？当时决策者一听，觉得这小子真聪明，于是拿出财政资金大手笔花钱刺激需求，果然就把经济救过来了。可是要知道，财政是会赤字的啊，寅吃卯粮把财政资金花完了，产品再卖给谁呢？</p>
+<p>这时候，又有聪明人凑上来说，钱怎么会花完呢？花完了印呀！这样，解决经济问题不就一劳永逸了吗？于是，需求派这一条路，走到最后就是量化宽松，就是印钞票开着直升机撒钱。但这是一条不归路。</p>
+<p>与之相对应的另一条路，是从供给入手。近段时间以来从新闻里常常听到一个财经热词——供给侧改革，管理层准备用改善供给的方式，让中国经济焕发新的活力。那么，供给侧改革到底是什么意思呢？举一个手机的例子。当年诺基亚手机的“大秦帝国”版图，可比今天苹果、三星、小米的三分天下要恢宏得多。诺基亚就是研究需求，花了很多的钱去搞调研，它试图摸透每个消费者心里的小九九，然后制造出各式各样的手机款式，满足消费者的需求。</p>
+<p>但是，苹果就完全相反，乔布斯本人的高冷气质和人格魅力，完全灌注进苹果的品牌之中：高高在上，才不去迎合市场喜欢什么！苹果的产品透露出这样的潜台词：你们都得听我的，大众的审美是有问题的，我来教你们什么是美的，什么是好的，你不用管那么多，我生产出来你买去用就好了。乔布斯没有做过任何调研，也没有遵循传统商学院教的波特五力和需求分析，他是完全凭空创造出了一个让人惊喜的产品。苹果就是供给派，今天，它通过创造需求，取得了更大的成功，成为当今世界市值最大的公司。还记得开篇“说文解字”中提到的“创”字的含义吗？苹果就是一个鲜活的典型案例。</p>
+<p>虽然政策制定者不会为你创造一个产品，但是政策制定者可以鼓励企业来创造产品。从大众创业创新、提高公共产品供给的双引擎驱动，到降准、降息、减税，李克强总理的整个思路是一脉相承的，这就是通过改善供给来创造新的需求。以上，就是一整套通过创新拉动经济增长的克强创新经济学。</p>
+<p>最后，从李总理的经济模型中，我们还能读出一点提高个人收入的启示：普通人满足需求，卓越者创造需求，That'sall（仅此而已）！</p>
+<h3 id="新大航海时代中国经济驶向何处">新大航海时代，中国经济驶向何处</h3>
+<p>2015年年初，瑞士央行宣布废除实行了三年多的1.2瑞郎对1欧元的最高汇率，恢复浮动汇率。与此同时，欧洲央行宣布实施月度购债计划，历史性地推出了欧洲版的量化宽松政策。</p>
+<h4 id="一-1">一</h4>
+<h4 id=""></h4>
+<h4 id="-1"></h4>
+<h4 id="-2"></h4>
+<h3 id="三分钟读懂中国经济">三分钟读懂中国经济</h3>
+<h3 id="gdp破7怎么办">GDP破7怎么办</h3>
+<h3 id="消费中国经济增长新引擎">消费：中国经济增长新引擎</h3>
+<h3 id="供给侧究竟是怎样撬动经济的">供给侧究竟是怎样撬动经济的</h3>
+<h3 id="失去的二十年日本失落之谜">失去的二十年：日本失落之谜</h3>
+<h2 id="第二篇-汹涌钱潮">第二篇 汹涌钱潮</h2>
+<h3 id="美元狂想曲">美元狂想曲</h3>
+<h3 id="卢布危机俄罗斯到底哪儿病了">卢布危机：俄罗斯到底哪儿病了</h3>
+<h3 id="谁才是导致货币风暴的幕后黑手">谁才是导致货币风暴的幕后黑手</h3>
+<h3 id="人民币保卫战">人民币保卫战</h3>
+<h3 id="七万亿的真相">“七万亿”的真相</h3>
+<h3 id="不可不知的量化宽松">不可不知的量化宽松</h3>
+<h2 id="第三篇-股市风云">第三篇 股市风云</h2>
+<h3 id="信心的秘密">信心的秘密</h3>
+<h3 id="把恐惧熔断">把恐惧熔断</h3>
+<h3 id="为什么6月市场总飞雪">为什么6月市场总飞雪</h3>
+<h3 id="救救香港市场">救救香港市场</h3>
+<h3 id="上涨下跌靠天气">上涨下跌靠天气？！</h3>
+<h3 id="惊心动魄的万科围猎战">惊心动魄的万科“围猎战”</h3>
+<h3 id="巴菲特的秘密">巴菲特的秘密</h3>
+<h3 id="与索罗斯一起走过的日子">与索罗斯一起走过的日子</h3>
+<h2 id="第四篇-楼市之谜">第四篇 楼市之谜</h2>
+<h3 id="房地产拯救中国经济">房地产拯救中国经济？</h3>
+<h3 id="李超人的抛售悬案">“李超人”的抛售悬案</h3>
+<h3 id="美国房地产的惊人答案2">美国房地产的惊人答案2</h3>
+<h3 id="根本停不下来的深圳房价">根本停不下来的深圳房价</h3>
+<h3 id="日本人为什么不买房">日本人为什么不买房</h3>
+<h2 id="第五篇-行业风口">第五篇 行业风口</h2>
+<h3 id="价值连城的地下三剑客">价值连城的“地下三剑客”</h3>
+<h3 id="失宠的羊贵妃">失宠的“羊贵妃”</h3>
+<h3 id="颠覆未来的共享经济">颠覆未来的共享经济</h3>
+<h3 id="数字时代的大航海">数字时代的大航海</h3>
+<h3 id="七年之痒的电商进化史">七年之痒的电商进化史</h3>
+<h3 id="别只盯着互联网">别只盯着互联网</h3>
+<h3 id="支付战争">支付战争</h3>
+<h3 id="一个投资人思考apple-pay的正确姿势">一个投资人思考Apple Pay的正确姿势</h3>
+<h3 id="手把手教你投资机器人">手把手教你投资机器人</h3>
+<h3 id="你该不该买点人工智能的股票">你该不该买点人工智能的股票</h3>
+<h2 id="第六篇-札记思考">第六篇 札记·思考</h2>
+<h3 id="坚持一万小时就能学会投资吗">坚持一万小时，就能学会投资吗</h3>
+<h3 id="有钱人更抠门吗">有钱人更抠门吗</h3>
+<h3 id="泡沫启示录">泡沫启示录</h3>
+<h3 id="日本动漫产业探秘">日本动漫产业探秘</h3>
+<h3 id="工匠精神和菊与刀">工匠精神和《菊与刀》</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E5%88%9B%E6%96%B0%E7%BB%8F%E6%B5%8E%E5%AD%A6">中国创新经济学</a>
+<ul>
+<li><a href="#%E4%B8%80">一</a></li>
+<li><a href="#%E4%BA%8C">二</a></li>
+<li><a href="#%E4%B8%89">三</a></li>
+<li><a href="#%E5%9B%9B">四</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%B0%E5%A4%A7%E8%88%AA%E6%B5%B7%E6%97%B6%E4%BB%A3%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E9%A9%B6%E5%90%91%E4%BD%95%E5%A4%84">新大航海时代，中国经济驶向何处</a>
+<ul>
+<li><a href="#%E4%B8%80-1">一</a></li>
+<li><a href="#"></a></li>
+<li><a href="#-1"></a></li>
+<li><a href="#-2"></a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89%E5%88%86%E9%92%9F%E8%AF%BB%E6%87%82%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E">三分钟读懂中国经济</a></li>
+<li><a href="#gdp%E7%A0%B47%E6%80%8E%E4%B9%88%E5%8A%9E">GDP破7怎么办</a></li>
+<li><a href="#%E6%B6%88%E8%B4%B9%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E5%A2%9E%E9%95%BF%E6%96%B0%E5%BC%95%E6%93%8E">消费：中国经济增长新引擎</a></li>
+<li><a href="#%E4%BE%9B%E7%BB%99%E4%BE%A7%E7%A9%B6%E7%AB%9F%E6%98%AF%E6%80%8E%E6%A0%B7%E6%92%AC%E5%8A%A8%E7%BB%8F%E6%B5%8E%E7%9A%84">供给侧究竟是怎样撬动经济的</a></li>
+<li><a href="#%E5%A4%B1%E5%8E%BB%E7%9A%84%E4%BA%8C%E5%8D%81%E5%B9%B4%E6%97%A5%E6%9C%AC%E5%A4%B1%E8%90%BD%E4%B9%8B%E8%B0%9C">失去的二十年：日本失落之谜</a></li>
+<li><a href="#%E7%BE%8E%E5%85%83%E7%8B%82%E6%83%B3%E6%9B%B2">美元狂想曲</a></li>
+<li><a href="#%E5%8D%A2%E5%B8%83%E5%8D%B1%E6%9C%BA%E4%BF%84%E7%BD%97%E6%96%AF%E5%88%B0%E5%BA%95%E5%93%AA%E5%84%BF%E7%97%85%E4%BA%86">卢布危机：俄罗斯到底哪儿病了</a></li>
+<li><a href="#%E8%B0%81%E6%89%8D%E6%98%AF%E5%AF%BC%E8%87%B4%E8%B4%A7%E5%B8%81%E9%A3%8E%E6%9A%B4%E7%9A%84%E5%B9%95%E5%90%8E%E9%BB%91%E6%89%8B">谁才是导致货币风暴的幕后黑手</a></li>
+<li><a href="#%E4%BA%BA%E6%B0%91%E5%B8%81%E4%BF%9D%E5%8D%AB%E6%88%98">人民币保卫战</a></li>
+<li><a href="#%E4%B8%83%E4%B8%87%E4%BA%BF%E7%9A%84%E7%9C%9F%E7%9B%B8">“七万亿”的真相</a></li>
+<li><a href="#%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84%E9%87%8F%E5%8C%96%E5%AE%BD%E6%9D%BE">不可不知的量化宽松</a></li>
+<li><a href="#%E4%BF%A1%E5%BF%83%E7%9A%84%E7%A7%98%E5%AF%86">信心的秘密</a></li>
+<li><a href="#%E6%8A%8A%E6%81%90%E6%83%A7%E7%86%94%E6%96%AD">把恐惧熔断</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%886%E6%9C%88%E5%B8%82%E5%9C%BA%E6%80%BB%E9%A3%9E%E9%9B%AA">为什么6月市场总飞雪</a></li>
+<li><a href="#%E6%95%91%E6%95%91%E9%A6%99%E6%B8%AF%E5%B8%82%E5%9C%BA">救救香港市场</a></li>
+<li><a href="#%E4%B8%8A%E6%B6%A8%E4%B8%8B%E8%B7%8C%E9%9D%A0%E5%A4%A9%E6%B0%94">上涨下跌靠天气？！</a></li>
+<li><a href="#%E6%83%8A%E5%BF%83%E5%8A%A8%E9%AD%84%E7%9A%84%E4%B8%87%E7%A7%91%E5%9B%B4%E7%8C%8E%E6%88%98">惊心动魄的万科“围猎战”</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E7%A7%98%E5%AF%86">巴菲特的秘密</a></li>
+<li><a href="#%E4%B8%8E%E7%B4%A2%E7%BD%97%E6%96%AF%E4%B8%80%E8%B5%B7%E8%B5%B0%E8%BF%87%E7%9A%84%E6%97%A5%E5%AD%90">与索罗斯一起走过的日子</a></li>
+<li><a href="#%E6%88%BF%E5%9C%B0%E4%BA%A7%E6%8B%AF%E6%95%91%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E">房地产拯救中国经济？</a></li>
+<li><a href="#%E6%9D%8E%E8%B6%85%E4%BA%BA%E7%9A%84%E6%8A%9B%E5%94%AE%E6%82%AC%E6%A1%88">“李超人”的抛售悬案</a></li>
+<li><a href="#%E7%BE%8E%E5%9B%BD%E6%88%BF%E5%9C%B0%E4%BA%A7%E7%9A%84%E6%83%8A%E4%BA%BA%E7%AD%94%E6%A1%882">美国房地产的惊人答案2</a></li>
+<li><a href="#%E6%A0%B9%E6%9C%AC%E5%81%9C%E4%B8%8D%E4%B8%8B%E6%9D%A5%E7%9A%84%E6%B7%B1%E5%9C%B3%E6%88%BF%E4%BB%B7">根本停不下来的深圳房价</a></li>
+<li><a href="#%E6%97%A5%E6%9C%AC%E4%BA%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E4%B9%B0%E6%88%BF">日本人为什么不买房</a></li>
+<li><a href="#%E4%BB%B7%E5%80%BC%E8%BF%9E%E5%9F%8E%E7%9A%84%E5%9C%B0%E4%B8%8B%E4%B8%89%E5%89%91%E5%AE%A2">价值连城的“地下三剑客”</a></li>
+<li><a href="#%E5%A4%B1%E5%AE%A0%E7%9A%84%E7%BE%8A%E8%B4%B5%E5%A6%83">失宠的“羊贵妃”</a></li>
+<li><a href="#%E9%A2%A0%E8%A6%86%E6%9C%AA%E6%9D%A5%E7%9A%84%E5%85%B1%E4%BA%AB%E7%BB%8F%E6%B5%8E">颠覆未来的共享经济</a></li>
+<li><a href="#%E6%95%B0%E5%AD%97%E6%97%B6%E4%BB%A3%E7%9A%84%E5%A4%A7%E8%88%AA%E6%B5%B7">数字时代的大航海</a></li>
+<li><a href="#%E4%B8%83%E5%B9%B4%E4%B9%8B%E7%97%92%E7%9A%84%E7%94%B5%E5%95%86%E8%BF%9B%E5%8C%96%E5%8F%B2">七年之痒的电商进化史</a></li>
+<li><a href="#%E5%88%AB%E5%8F%AA%E7%9B%AF%E7%9D%80%E4%BA%92%E8%81%94%E7%BD%91">别只盯着互联网</a></li>
+<li><a href="#%E6%94%AF%E4%BB%98%E6%88%98%E4%BA%89">支付战争</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E6%8A%95%E8%B5%84%E4%BA%BA%E6%80%9D%E8%80%83apple-pay%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF">一个投资人思考Apple Pay的正确姿势</a></li>
+<li><a href="#%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%8A%95%E8%B5%84%E6%9C%BA%E5%99%A8%E4%BA%BA">手把手教你投资机器人</a></li>
+<li><a href="#%E4%BD%A0%E8%AF%A5%E4%B8%8D%E8%AF%A5%E4%B9%B0%E7%82%B9%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E8%82%A1%E7%A5%A8">你该不该买点人工智能的股票</a></li>
+<li><a href="#%E5%9D%9A%E6%8C%81%E4%B8%80%E4%B8%87%E5%B0%8F%E6%97%B6%E5%B0%B1%E8%83%BD%E5%AD%A6%E4%BC%9A%E6%8A%95%E8%B5%84%E5%90%97">坚持一万小时，就能学会投资吗</a></li>
+<li><a href="#%E6%9C%89%E9%92%B1%E4%BA%BA%E6%9B%B4%E6%8A%A0%E9%97%A8%E5%90%97">有钱人更抠门吗</a></li>
+<li><a href="#%E6%B3%A1%E6%B2%AB%E5%90%AF%E7%A4%BA%E5%BD%95">泡沫启示录</a></li>
+<li><a href="#%E6%97%A5%E6%9C%AC%E5%8A%A8%E6%BC%AB%E4%BA%A7%E4%B8%9A%E6%8E%A2%E7%A7%98">日本动漫产业探秘</a></li>
+<li><a href="#%E5%B7%A5%E5%8C%A0%E7%B2%BE%E7%A5%9E%E5%92%8C%E8%8F%8A%E4%B8%8E%E5%88%80">工匠精神和《菊与刀》</a></li>
+</ul>
+</div>
+        
+        
+    </body>
+    </html>

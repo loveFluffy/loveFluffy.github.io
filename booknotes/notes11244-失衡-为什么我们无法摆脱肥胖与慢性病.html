@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x5931;&#x8861;&#xff1a;&#x4e3a;&#x4ec0;&#x4e48;&#x6211;&#x4eec;&#x65e0;&#x6cd5;&#x6446;&#x8131;&#x80a5;&#x80d6;&#x4e0e;&#x6162;&#x6027;&#x75c5;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="失衡为什么我们无法摆脱肥胖与慢性病">失衡：为什么我们无法摆脱肥胖与慢性病</h1>
+<h2 id="马胜学-著">马胜学 著</h2>
+<h3 id="自序-东方到西方我从食物的王国走过">自序 东方到西方，我从食物的王国走过</h3>
+<p>大概从45岁开始，不知不觉中，我的身体进入所谓的“亚健康”状态，去医院检查，没有任何毛病，却总是觉得哪里不舒服、浑身没劲儿。外在表现是，腰围越来越粗，我有了“成功人士”的大肚腩。</p>
+<p>低头看不到脚尖，令我相当困扰，在太太的逼迫下，我尝试了各种减肥方法，少吃多动，节食的同时坚持长跑，跑完气喘吁吁，大汗淋漓，一个月下来，腰围却不见缩小一厘米。</p>
+<p>我开始从营养学的角度来理解“我为什么是个胖子”这个事儿。既然是吃错了，想要从根本上解决问题，只能从吃对开始。我调整了自己的饮食，从节食变为合理膳食，增加某些有助于脂肪代谢的营养物质，同时适当运动，逐渐修复脂肪代谢。</p>
+<p>奇迹出现了，我的肚子越来越小，最终恢复到了二十多岁时的腰围。从此以后，这样的身材一直保持至今。一些后来认识的朋友，根本无法相信我曾经是个胖子。</p>
+<p>比较有代表性的三大慢性病分别为心脏病、脑血管疾病和肿瘤，它们是目前导致中国居民死亡的主要疾病。研究表明，植物性食物的摄入量与三大慢性病死亡率之间呈负相关，而动物性食物的消费量则与之呈正相关。</p>
+<p>除了慢性病，营养失衡还极容易带来肥胖问题，我本人就是一个例子。肥胖不但影响形体美，更是高血压、糖尿病、心血管病等并发症的引擎。前面讲到我到美国之后发现很多胖子，等我回国后，发现中国的超重和肥胖人口竟然超过了美国的总人口，这个数字实在非常惊人。2002年，中国肥胖和超重人口超过3亿，而这一年美国人口尚不足2.9亿。</p>
+<h3 id="第一章-平衡营养的作用">第一章 平衡：营养的作用</h3>
+<h4 id="营养学智慧诞生与生态新平衡">营养学、智慧诞生与生态新平衡</h4>
+<h4 id="营养革命当人类站在食物链的顶端">营养革命：当人类站在食物链的顶端</h4>
+<h4 id="人类营养的变迁">人类营养的变迁</h4>
+<h4 id="存在于基因内的高热量诱惑">存在于基因内的高热量诱惑</h4>
+<h4 id="丰饶之后开始失衡">丰饶之后，开始失衡</h4>
+<p>肥胖的身体，超常的运作，会带来更多的自由基。众所周知，自由基是不稳定的基础，累积到一定数量，炎症、代谢紊乱、免疫力低下、疾病、衰老……接踵而至。</p>
+<p>在肥胖导致的各种问题里，慢性炎症尤其值得关注。在看不见的地方，身体一点点损耗、崩盘，最终引发各种慢性病，甚至是癌症。</p>
+<p>肥胖还会带来一种特别奇特的现象——男人变得女性化，女性容易生病。这是因为脂肪细胞会分泌芳香酶，这种物质能够将睾酮转化为雌激素，结果，男性拥有了松软的胸部、柔媚的嗓音。为什么胖子看起来慈眉善目？是因为他们更像女人了呀！过多的雌激素对女性同样有害，因为女性身体里也有雄性激素睾酮，肥胖会导致睾酮转化为雌激素，而过多的雌激素会诱发乳腺癌、子宫癌等对雌激素敏感的癌症。</p>
+<p>对成人来说，肥胖是一场灾难，对儿童来说，肥胖的危害更大。儿童期肥胖让早逝和残疾的概率增大，未来患病风险增高。此外，肥胖儿童还面临着呼吸困难、骨折风险高等问题，甚至一些严重肥胖的儿童出现了高血压、心血管疾病的早期征兆。</p>
+<h4 id="平衡从节制开始">平衡，从节制开始</h4>
+<p>2016年，BBC（英国广播公司）制作了8集纪录片——《无节制消费的元凶》，探讨当下世界物欲横流、购买欲极度膨胀的始作俑者。我们为什么会买买买？竟然不是因为广告和市场推广的推波助澜，而是制造商首先改变了产品，然后再改变作为消费者的我们，这是一套层层递进的阴谋。</p>
+<p>长久以来，制造商在消费者的大脑中植入“升级”的概念，从而让无限消费成为现实。这相当于发生在生活中的“升级打怪”模式，我们无法成为传说中的英雄，却能通过购买商品达到心理上的满足。苹果手机是最直观的例子，从苹果一代到现在的八代，乃至以后的九代十代，产品不断升级，功能更多，屏幕更大，更易操作。如果你不购买最新款的苹果手机，就意味着被潮流抛弃，等同于在进化之路上停滞，没有谁愿意止步不前，买就成为一种必然。</p>
+<p>“升级”的概念只是消费策略的一种，甚至不是最重要的一种。能带来最大现金流的却是来自我们心中的恐惧。制造商通过挖掘消费者内心深处的恐惧，发现了一个对健康和安全有巨大需求的市场。为什么那么多中国人选择海外购，正是这种心理的真实体现，尤其是奶粉、食品、保健品、护肤品等与健康直接相关的商品，这并非完全因为欧美日韩等国有更严苛的生产标准、更优质的产品，而是国内不安全事件频发导致的信任丧失，加剧了人们内心的恐惧，所以才转向了自以为安全的地带。</p>
+<h3 id="第二章-营养生命的基础">第二章 营养：生命的基础</h3>
+<h4 id="生命的七大营养元素">生命的七大营养元素</h4>
+<h4 id="水70的滋润">水，70%的滋润</h4>
+<h4 id="蛋白质穿过身体的钢筋水泥">蛋白质：穿过身体的“钢筋水泥”</h4>
+<h4 id="脂肪生命的燃料">脂肪，生命的燃料</h4>
+<h4 id="碳水化合物多种多样无处不在">碳水化合物：多种多样，无处不在</h4>
+<h4 id="维生素庞大的微型家族">维生素：庞大的微型家族</h4>
+<h4 id="矿物质微量之重">矿物质：微量之重</h4>
+<h4 id="膳食纤维人体的清道夫">膳食纤维：人体的清道夫</h4>
+<h4 id="平衡营养的n个维度">平衡营养的N个维度</h4>
+<h4 id="卡路里当能量可以量化">卡路里：当能量可以量化</h4>
+<h4 id="每个人都独一无二">每个人都独一无二</h4>
+<h4 id="食物与营养一席流动的盛宴">食物与营养：一席流动的盛宴</h4>
+<h3 id="第三章-代谢存在的根本">第三章 代谢：存在的根本</h3>
+<h4 id="食物的奇幻漂流">食物的奇幻漂流</h4>
+<h4 id="你必须了解的基础代谢">你必须了解的基础代谢</h4>
+<h4 id="代谢的方式">代谢的方式</h4>
+<h4 id="脂肪无载体不燃烧">脂肪：无载体，不燃烧</h4>
+<h4 id="给自己补充点酶">给自己补充点酶？</h4>
+<h3 id="第四章-疾病紊乱的代价">第四章 疾病：紊乱的代价</h3>
+<h4 id="从传染病时代到慢性病时代">从传染病时代到慢性病时代</h4>
+<h4 id="富贵也是一种病">“富贵”也是一种病</h4>
+<h4 id="糖尿病是一种代谢失调病">糖尿病是一种代谢失调病</h4>
+<h4 id="血管里的白色恐怖">血管里的白色恐怖！</h4>
+<h4 id="日积月累而来的癌症">日积月累而来的癌症</h4>
+<h3 id="第五章-健康平衡的重塑">第五章 健康：平衡的重塑</h3>
+<h4 id="第一步改变你的生活方式">第一步：改变你的生活方式</h4>
+<h4 id="第二步远离亚健康">第二步：远离“亚健康”</h4>
+<h4 id="第三步树立正确的医学观">第三步：树立正确的医学观</h4>
+
+        
+        
+    </body>
+    </html>

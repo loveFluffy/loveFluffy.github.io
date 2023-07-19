@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x7a00;&#x7f3a;&#xff1a;&#x6211;&#x4eec;&#x662f;&#x5982;&#x4f55;&#x9677;&#x5165;&#x8d2b;&#x7a77;&#x4e0e;&#x5fd9;&#x788c;&#x7684;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="稀缺我们是如何陷入贫穷与忙碌的">稀缺：我们是如何陷入贫穷与忙碌的</h1>
+<h2 id="美塞德希尔穆来纳森sendhil-mullainathan-美埃尔德沙菲尔eldar-shafir-著魏薇-龙志勇-译">[美]塞德希尔·穆来纳森（Sendhil Mullainathan） [美]埃尔德·沙菲尔（Eldar Shafir） 著|魏薇 龙志勇 译</h2>
+<h3 id="引言-资源稀缺不可怕就怕有稀缺心态">引言 资源稀缺不可怕，就怕有稀缺心态</h3>
+<p>塞德希尔和肖恩有一点是相同的，他们都感受到了稀缺所造成的影响。稀缺，是“拥有”少于“需要”的感觉：塞德希尔感觉心烦意乱，觉得自己的时间太少，而要去做的事情又太多；肖恩感觉手头拮据，有永远都还不完的账单。这一点相似之处，是否可以用来解释他们的行为？我们是否可以认为，“稀缺”就是导致塞德希尔和肖恩有如此相似行事方式的根源？</p>
+<p>研究人员发现，长期挨饿的人，从体型上就能看出来：实验过程中，研究对象的臀部脂肪会大大减少，以至于坐着都会感觉到疼痛，他们不得不垫上坐垫。另外，实际的体重减轻情况，则因水肿而难以进行估算，有人还曾因为饥饿而在体内额外累积了多达6千克重的液体。研究对象新陈代谢的速度也减缓了40%。他们开始感觉到有气无力，缺乏耐性。一位实验对象说：“在淋浴头下洗头时，我感觉到手臂瘫软。仅是洗头这一件事情，就令我的双臂疲劳到了极点。”</p>
+<blockquote>
+<p>这辈子没有几件事情像这次实验那样，让我恨不得赶快结束。其实身体上的不适并没有多么严重，真正令人无法忍受的是，在实验过程中，食物成了人生中最重要的东西，成了人生的中心和唯一。而如果食物成了唯一，那么生活就会变得十分无趣。看电影时，男欢女爱的场面不会令你产生多大兴趣，而一旦那些男男女女开始吃东西，你就会眼前一亮。</p>
+</blockquote>
+<p>稀缺俘获大脑（scarcity captu-res the mind）：稀缺造成的后果不仅仅是因为我们会因拥有的太少而感到不悦，而是因为它会改变我们的思维方式，会强行侵入我们的思想之中。</p>
+<p>对注意力的俘获，会改变人的体验。在诸如车祸和抢劫等短暂而注意力高度集中的事件中，注意力的增强会引发研究人员所谓的“主观时间延展”现象——人们会感到这类事件的持续时间更长，因为在短时间内人们需要处理更大量的信息。同样，稀缺对注意力的俘获，不仅会影响我们的所见和所见的速度，而且也会影响我们对周遭世界的认识。一项针对孤独者的研究中，实验人员在实验对象面前用一秒钟时间展示了带有表情的人脸图片，然后要求实验对象描述出表情的含义。这些面孔表达的是愤怒、恐惧、快乐，还是悲伤？这一简单的任务可以对一项关键的社交技能进行衡量——理解他人感受的能力。有意思的是，孤独者的成绩更好。你也许会认为，孤独者无法回答这类问题，因为他们之所以会孤独，就是由不善于社交或缺乏社交经验所导致的。但当我们将稀缺心态考虑在内时，就能理解这一现象了：因为孤独者会去关注自身的稀缺状况，关注为数不多的亲人朋友；他们会对他人表情中所流露出来的情绪非常敏感。</p>
+<p>稀缺的感觉来自哪里？实质性的限制起到了一定的作用——有限的存款、欠下的债务、等待我们去完成的工作等。而同时，我们对事物重要性的主观理解也发挥了作用——我们需要完成多少工作？购买某件东西的意愿究竟有多急切？诸如此类的愿望，是由我们所处的文化环境、成长环境甚至遗传基因所决定的：我们可能会非常渴望得到某样东西，也许是出于生理原因，也许是因为看到了邻居的炫耀；我们对寒冷的感知，不仅取决于绝对温度，而且也与我们自身的新陈代谢有关。同样，对稀缺的感觉，取决于可用的资源和我们自身的体验。包括社会学家、心理学家、人类学家、神经学家、精神病学家和营销专家在内的各类学者，都曾尝试对这类体验进行解析。我们避开了对这一领域的讨论，将偏好置于一旁，转而去关注稀缺的内在逻辑及其带来的后果。当我们感觉自己拥有的太少时，大脑会发生什么样的变化？这种变化又会如何塑造我们的选择和行为？</p>
+<p>当稀缺俘获大脑时，我们的注意力就会变得更加集中，做事就会更有效率。在生活中的许多情况下，保持注意力高度集中都颇具挑战：工作上的拖延，是因为我们总会被杂七杂八的事情所干扰；从超市买回了标价过高的东西，是因为我们心不在焉。而当我们心神专注时，就不会那么容易犯下粗心的错误了。这一点很好理解：稀缺之所以会俘获我们，是因为稀缺很重要，值得我们投以关注。</p>
+<p>但究竟应该何时锁定心神，我们却无法完全自主选择。手头上那件尚未完成的工作，不仅让我们在工作时间内全情投入，而且也让我们在家辅导孩子做功课的时候心不在焉。这种不由自主的俘获，虽然会使我们集中注意力，但同时也是伴随一生的负担。因为我们总是将关注点放在稀缺上，思想总是围着稀缺打转，所以就没有那么多精力投入人生中的其他事物。这不仅仅是一个比喻说法。关于心智的容量，也就是我们所谓的“带宽”，是可以直接进行测量的。我们可以对影响自己处理信息、做出决策的“流体智力”进行测评，也可以对影响我们行为冲动与否的“执行控制力”进行测评。我们发现，稀缺会降低所有这些带宽的容量，致使我们缺乏洞察力和前瞻性，还会减弱我们的控制力。其影响力非常大。举例来说，贫穷状态会比彻夜不眠对人的认知能力产生的影响更大。产生这个问题的原因并不是穷人的带宽不及富人，而是因为贫困的经历会降低任何一个人的带宽。</p>
+<p>从某种角度来看，本书所要表达的观点十分简单。稀缺会俘获我们的注意力，并带来一点点好处：我们能够在应对迫切需求时，做得更好。但从长远的角度来看，我们的损失更大：我们会忽视其他需要关注的事项，在生活的其他方面变得不那么有成效。这一观点不仅有助于对稀缺塑造行为的现象进行解释，同时也可以让我们从中得出一些令人意想不到的结论，并对我们应如何对自身的稀缺状态进行管理这个问题提供新答案。</p>
+<h2 id="第一部分-稀缺心态是一切稀缺的根源">第一部分 稀缺心态是一切稀缺的根源</h2>
+<h3 id="第1章-专注的得与管窥的失">第1章 专注的“得”与管窥的“失”</h3>
+<blockquote>
+<p>在一项大规模的营销实验中，实验人员为一批客户邮寄了一张写有截止日期的礼券，而为另一批客户邮寄了不会过期的礼券。虽然不会过期的礼券一直都有效，但其使用率却很低。可见，如果没有时间稀缺的影响，礼券就不会吸引人们的注意力，甚至有可能会被丢弃在一旁，被人渐渐遗忘。在另一个领域中，组织研究者发现，在销售周期的最后几周（或几天）中，销售人员的工作努力程度达到了顶点。而我们进行的一项研究发现，距离发薪日越近，数据录入员工作得就会越卖力。</p>
+</blockquote>
+<h4 id="资源稀缺换来了专注与回报">资源稀缺换来了专注与回报</h4>
+<h4 id="专注红利">专注红利</h4>
+<h4 id="管窥">管窥</h4>
+<h4 id="管窥所导致的忽视">管窥所导致的忽视</h4>
+<h4 id="管窥负担">管窥负担</h4>
+<h3 id="第2章-带宽负担会降低人的智商">第2章 带宽负担会降低人的智商</h3>
+<h4 id="噪声干扰了我们的思想">“噪声”干扰了我们的思想</h4>
+<h4 id="带宽负担1认知能力">带宽负担1——认知能力</h4>
+<h4 id="带宽负担2执行控制力">带宽负担2——执行控制力</h4>
+<h4 id="收割前后的印度农民">收割前后的印度农民</h4>
+<h4 id="其他形式的稀缺">其他形式的稀缺</h4>
+<h4 id="稀缺完全不同于压力和忧虑">稀缺，完全不同于压力和忧虑</h4>
+<h4 id="稀缺让人变笨和更加冲动">稀缺让人变笨和更加冲动</h4>
+<h2 id="第二部分-贫穷和忙碌是如何让带宽变窄的">第二部分 贫穷和忙碌是如何让“带宽”变窄的</h2>
+<h3 id="第3章-装箱余闲和权衡式思维">第3章 装箱、余闲和权衡式思维</h3>
+<h4 id="权衡式思维">权衡式思维</h4>
+<h4 id="余闲">余闲</h4>
+<h4 id="穷蜜蜂与富泥蜂">穷蜜蜂与富泥蜂</h4>
+<h4 id="余闲心态下的购买行为">余闲心态下的购买行为</h4>
+<h4 id="没有余闲时犯错后果很严重">没有余闲时犯错，后果很严重</h4>
+<h4 id="稀缺的本质就是没有余闲">稀缺的本质就是没有余闲</h4>
+<h3 id="第4章-行为经济学告诉我们的道理">第4章 行为经济学告诉我们的道理</h3>
+<h4 id="50美元在穷人和富人眼中的价值不一">50美元，在穷人和富人眼中的价值不一</h4>
+<h4 id="知觉的相对性">知觉的相对性</h4>
+<h4 id="1美元的真正价值">1美元的真正价值</h4>
+<h4 id="识解">识解</h4>
+<h4 id="机会成本">机会成本</h4>
+<h3 id="第5章-借用与短视">第5章 借用与短视</h3>
+<h4 id="管窥与借用">管窥与借用</h4>
+<h4 id="家庭问答的启示">《家庭问答》的启示</h4>
+<h4 id="忽视未来">忽视未来</h4>
+<h4 id="无力规划">无力规划</h4>
+<h3 id="第6章-稀缺陷阱">第6章 稀缺陷阱</h3>
+<h4 id="停不下来的杂耍">停不下来的杂耍</h4>
+<h4 id="逃离">逃离</h4>
+<h4 id="问题的根源">问题的根源</h4>
+<h4 id="余闲应对突发事件的利器">余闲，应对突发事件的利器</h4>
+<h4 id="贫穷始于富足">贫穷始于富足</h4>
+<h4 id="孤独就是社交稀缺">孤独就是社交稀缺</h4>
+<h4 id="改变心态逃离稀缺陷阱的唯一希望">改变心态，逃离稀缺陷阱的唯一希望</h4>
+<h3 id="第7章-穷人为什么穷">第7章 穷人为什么穷</h3>
+<h4 id="最后一公里问题">“最后一公里”问题</h4>
+<h4 id="无能可以导致贫穷贫穷也可以导致无能">无能可以导致贫穷，贫穷也可以导致无能</h4>
+<h4 id="大脑自由才能成为合格家长">大脑自由才能成为合格家长</h4>
+<h4 id="穷人缺钱又缺带宽">穷人缺钱又缺带宽</h4>
+<h4 id="带宽负担导致智力下降">带宽负担导致智力下降</h4>
+<h2 id="第三部分-如何从稀缺走向富足">第三部分 如何从稀缺走向富足</h2>
+<h3 id="第8章-如何让穷人摆脱贫穷">第8章 如何让穷人摆脱贫穷</h3>
+<h4 id="包容穷人的不当行为">包容穷人的不当行为</h4>
+<h4 id="让警报来得更早些">让“警报”来得更早些</h4>
+<h4 id="节省带宽的方法才是好方法">节省带宽的方法才是好方法</h4>
+<h4 id="带宽可以构建">带宽可以构建</h4>
+<h4 id="扶贫是个长期项目">扶贫是个长期项目</h4>
+<h3 id="第9章-如何解决组织中的时间稀缺">第9章 如何解决组织中的时间稀缺</h3>
+<h4 id="余闲的重要作用">余闲的重要作用</h4>
+<h4 id="余闲不能太多也不能太少">余闲，不能太多也不能太少</h4>
+<h4 id="445倍火星探测器的教训">4.45倍！火星探测器的教训</h4>
+<h4 id="用余闲对抗救火陷阱">用余闲对抗救火陷阱</h4>
+<h4 id="亨利福特的时间管理智慧">亨利·福特的时间管理智慧</h4>
+<h4 id="红花日本料理的启示">“红花”日本料理的启示</h4>
+<h4 id="舍维斯的餐桌管理经验">“舍维斯”的餐桌管理经验</h4>
+<h3 id="第10章-如何应对日常生活中的稀缺">第10章 如何应对日常生活中的稀缺</h3>
+<h4 id="把重要事情拉入管子视野中">把重要事情拉入“管子”视野中</h4>
+<h4 id="让疏忽等同默许">让“疏忽”等同“默许”</h4>
+<h4 id="保持警觉">保持警觉</h4>
+<h4 id="找准关联行动时机">找准关联行动时机</h4>
+<h4 id="节约利用带宽">节约利用带宽</h4>
+<h4 id="在带宽充裕时行动">在带宽充裕时行动</h4>
+<h4 id="为带宽不足的人提供便利">为带宽不足的人提供便利</h4>
+<h4 id="从富足起步">从富足起步</h4>
+<h4 id="以余闲应对突发事件">以余闲应对突发事件</h4>
+<h3 id="结语-规划和管理好带宽稀缺问题就会迎刃而解">结语 规划和管理好“带宽”，稀缺问题就会迎刃而解</h3>
+<h3 id="译者后记">译者后记</h3>
+
+        
+        
+    </body>
+    </html>

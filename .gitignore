@@ -1,0 +1,13 @@
+# custom files
+books/
+## booknotes/*.md
+
+# temp files directories
+*.swp
+
+links/business.html
+links/finance.html
+links/jobs.html
+projects.html
+audio/
+tmp-my-book-list.html

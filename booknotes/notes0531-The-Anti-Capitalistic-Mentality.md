@@ -1,0 +1,4 @@
+# The Anti-Capitalistic Mentality
+
+## 
+

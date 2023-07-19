@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x7092;&#x80a1;&#xff0c;&#x522b;&#x8e29;&#x8fd9;8&#x5927;&#x96f7;&#x533a;&#xff1a;&#x6295;&#x8d44;&#x5927;&#x5e08;&#x4eec;&#x7684;&#x6b62;&#x635f;&#x5fe0;&#x544a;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="炒股别踩这8大雷区投资大师们的止损忠告">炒股，别踩这8大雷区：投资大师们的止损忠告</h1>
+<h2 id="邱恒明-著">邱恒明 著</h2>
+<h3 id="第1章-小道消息">第1章 小道消息</h3>
+<h4 id="内幕消息往往子虚乌有">内幕消息往往子虚乌有</h4>
+<p>我犯了一个愚蠢的错误，即使是最业余的人在股票市场上犯下这样的错误，也不容原谅。</p>
+<p>我听说美国烈酒酿造公司很不错，值得买进。托马斯·莱恩就表达过这样的观点，或者说，一个比我更接近莱恩先生的人告诉我，莱恩这样说过。我相信莱恩先生的判断，于是就买了这家公司的股票。</p>
+<p>买进时，这家公司是美国规模最大的烈性酒制造商和销售商。听说它与其他三大烈性酒酿造企业合并的举措正在酝酿之中，我便把所有的钱都投进去了。</p>
+<p>既然我没有留下一分钱的现金储备，为了弥补保证金不足，无奈之下我被迫卖掉持有的其他股票。事实证明，这次操作真是“赔了夫人又折兵”。</p>
+<p>这是我遭遇的最为挫败的一次失利，就损失占全部财力的比例而言，还是我一生中的最大损失。我之前给妻子买了一辆黑色的豪华折篷马车，车上装有用厚玻璃制作的几盏吊灯，还雇了两个身穿制服的男仆照顾她乘车出行。现在，我只好告诉她，我们只能放弃我们“在戏院包厢里的那两个座位”，其他的梦想也只能推迟实现了。</p>
+<p>炒股巨亏，不得不上班，灰头土脸的巴鲁克碰到了老板莱恩先生，他老实交代了自己为何变得如此落魄。</p>
+<p>“我叫你买那家公司的股票了吗？”莱恩问道。</p>
+<p>巴鲁克说：“没有，我从未问过您关于这只股票的事，但我听到过一个与您关系密切的人说您认为这只股票非常好。”</p>
+<p>“千万不要理会关于我向其他任何人讲了什么话的说辞。”莱恩以他一贯平静的语气回答。</p>
+<p>巴鲁克终于恍然大悟。他在自传中坦言：“关于内幕消息，这次挫败教会了我一点，即人们有时会不经意地露出一些话语，其实是蓄意把小米诺鱼引进网中，好来喂大鱼。我就当了一回小小的米诺鱼。”</p>
+<p>“我在华尔街做交易的时间越长，就越不相信各种各样的小道消息和内部信息。”</p>
+<h4 id="听信总裁的消息亏损一半">听信总裁的消息，亏损一半</h4>
+<p>罗杰斯在他的课堂上一再告诫，投资者最好避开内幕消息。</p>
+<p>我在这一行干时，每天都至少有9~10个所谓内幕消息传到我耳朵里，但无一例外都是错的。这是因为有些人一开始传递的消息事实就有误，或者他从某人那里得到了不少好处来传递这个所谓的内幕消息。如果你从上市公司总裁那里得到内幕消息，你的钱可能要亏掉一半；如果你是从上市公司董事长那里得到内幕消息，那你的钱就全没了。</p>
+<p>大投机家安德烈·科斯托拉尼也总结说：</p>
+<p>在我70年的交易所生涯中，我按内部消息行事受益了两次，与内部消息对着干也受益了两次。而不知多少次，我由于听信内部消息损失惨重。</p>
+<p>投机者的基本品质包括想象力、耐力、远见及经验，剩下的就是运气了，而不是所谓的内部消息。</p>
+<p>沃伦·巴菲特大学毕业之后就知道要培养自己的投资风格，本杰明·格雷厄姆通过回忆录讲述自己的巨亏经历，来提醒读者听从内幕消息有风险，可能会血本无归。</p>
+<p>世界上最伟大的证券投机商，有“华尔街巨熊”之称的杰西·利弗莫尔也提醒说：“远离小道消息。”最为中国人所熟知的炒股名著《股票作手回忆录》一书，正是以杰西·利弗莫尔为原形撰写的炒股小说，它已经成为了基金经理、散户必备的操作手册。</p>
+<p>杰西·利弗莫尔建议每个股民都要在笔记本的首页写上这句话：“小心内幕消息！一切内幕消息概不例外！”他说：“在股市交易中，小道消息是给我带来最大伤害的一种东西。正如我的一位朋友跟我所说的：‘我不相信任何小道消息，我宁可犯我自己的错误，也不犯别人的错误！’”</p>
+<h5 id="格雷厄姆的亏损">格雷厄姆的亏损</h5>
+<p>我非常成功地度过了1919-1921年这段危险期。有了1917年塔辛账户的坎坷经历，我没有被“愤怒的洪水”所吞没。我的操作几乎都是套利和保值，这使我得到了虽然有限但也很令人满意的利润，同时又避免了遭受严重亏损的风险。</p>
+<p>说我是套利保值领域的专家一点都不过分。但在华尔街的其他领域，有时我还会干些傻事。</p>
+<p>一天当我与一个熟人巴纳德·鲍尔斯闲聊时，他告诉我已准备辞职，因为在一家石油公司的股票上大赚了一笔。</p>
+<p>通过朋友的帮忙，作为原始认购者，他们买入股票时的价格是3美元，几天之后股票在场外开票价达10美元，这件事让我颇为心动，我说了几句妒忌的话，鲍尔斯允诺，下次有机会，也让我加入这一交易。</p>
+<p>不久之后，另一前景看好的交易机会到来了。有家新公司刚刚成立，它的名字叫萨吾奥尔德轮胎公司，该公司拥有生产可翻新轮胎的专利，那在当时可是新鲜事物。我有幸投入了一笔有限资金--5 000美元，认购价是10美元，几天之后，股票变戏法似的攀升到了35美元，那个星期结束前，本金5 000美元为我赚得了15 000美元。</p>
+<p>尽管我天生是个保守谨慎的人，而且我清楚地意识到这种操作实际上是虚幻的，但贪婪之心支配了我。我迫不及待地寻求这种交易机会，当我将盈利的消息告诉朋友们时，他们也热切期盼加入其中。</p>
+<p>不久后，哥伦布广场上出现了一个霓虹灯，霓虹灯先闪出“萨吾”，然后闪出“奥尔德”，最后将它们拼在一起组成了“萨吾奥尔德”。</p>
+<p>我很快又听到了激动人心的消息：萨吾奥尔德公司准备将生产专利授权给各州的分公司，这些分公司也将一一上市。</p>
+<p>巴纳德·鲍尔斯答应将我的钱与他的钱合在一起进行投资。</p>
+<p>母公司上市后不久，第二家公司宣告成立，我们投入了2万美元参加认购，认购价20美元，开盘价是50美元，很快就冲破了60美元，这一天正好是1919年我的生日，我在激动兴奋中庆祝了自己的25岁生日。</p>
+<p>第三家公司没有我们认购的份儿。</p>
+<p>我抓住了第4家公司的认购机会，准备好好赚上一笔，我投入了6万美元，就是把以前所挣的钱都投了进去。</p>
+<p>规定的上市日期到来了，但交易却没有开始，公司宣布“稍等片刻”，突然之间，所有萨吾奥尔德股票全线下跌，快到一个月了，他的股票还没有任何交易，整个萨吾奥尔德股票突然崩溃了。几个交易日后，致命的消息出现了：已经没有人愿意购买萨吾奥尔德的股票！前三家公司从记录上彻底地消失了，好像根本没有存在过一样。</p>
+<p>上文提到过的鲍尔斯，已经将自己的大部分钱和许多朋友的钱投入进去，还挪用了大笔的钱，数额多到足够把他送进监狱。</p>
+<p>1919年4月到9月这几个月中，这三家公司数以万计的股票在场外市场易手，这涉及投资者数以百万计、实实在在的资本。</p>
+<p>而整个事件中唯一真实的只是那座矗立在哥伦布广场上，闪烁着公司名字的霓虹灯。</p>
+<p>格雷厄姆仅把不多的钱用于此类投机。大家能预见，如果他完全信任倾囊而出，会有什么后果--和他的朋友一样彻底破产。</p>
+<h4 id="别理会分析师的喋喋不休">别理会分析师的喋喋不休</h4>
+<p>一位妇女要给她的小狗买一个喝水用的小碗。营业员问：“要不要帮你在碗上刻下‘狗’的字样？花费不多。”妇女答道：“哦，不用了，不是我丈夫要喝水，我的狗也不识字！”</p>
+<h4 id="散户的天然信息弱势">散户的天然信息弱势</h4>
+<h4 id="形成自己的炒股模式">形成自己的炒股模式</h4>
+<h4 id="你不可不知的投资经投机与投资">你不可不知的投资经：投机与投资</h4>
+<h3 id="第2章-不专业">第2章 不专业</h3>
+<h4 id="炒股赚钱不是小事一桩">炒股赚钱不是小事一桩</h4>
+<h4 id="业余投资者应坚守最熟悉领域">业余投资者应坚守最熟悉领域</h4>
+<h4 id="勤奋是专业之本">勤奋是专业之本</h4>
+<h4 id="勤奋有方法">勤奋有方法</h4>
+<h4 id="散户应遵循的基本原则">散户应遵循的基本原则</h4>
+<h4 id="你不可不知的投资经大师的投资起步">你不可不知的投资经：大师的投资起步</h4>
+<h3 id="第3章-不自信">第3章 不自信</h3>
+<h4 id="看空做多的亏损">“看空做多”的亏损</h4>
+<h4 id="自信是一种信仰">自信是一种信仰</h4>
+<h4 id="三个层次的赢家都信心满满">三个层次的赢家都信心满满</h4>
+<h4 id="要做一头勇敢的猪">要做一头勇敢的猪</h4>
+<h4 id="垃圾股中淘金的自信">垃圾股中淘金的自信</h4>
+<h4 id="自信力量1不迷信">自信力量1：不迷信</h4>
+<h4 id="自信力量2不要怕失去机会">自信力量2：不要怕失去机会</h4>
+<h4 id="自信力量3乐观精神">自信力量3：乐观精神</h4>
+<h4 id="你不可不知的投资经大师的启蒙读物">你不可不知的投资经：大师的启蒙读物</h4>
+<h3 id="第4章-熊市抄底">第4章 熊市抄底</h3>
+<h4 id="抄底抄在半空中">抄底抄在半空中</h4>
+<h4 id="香港股神的自杀绝境">香港股神的自杀绝境</h4>
+<h4 id="沦落2008">沦落2008</h4>
+<h4 id="风险比机会多">风险比机会多</h4>
+<h4 id="超越熊市步骤1最大涨幅在熊市">超越熊市步骤1：最大涨幅在熊市</h4>
+<h4 id="超越熊市步骤2要有大局观">超越熊市步骤2：要有大局观</h4>
+<h4 id="超越熊市步骤3专业炒股是必然">超越熊市步骤3：专业炒股是必然</h4>
+<h4 id="超越熊市步骤4赚钱在熊市">超越熊市步骤4：赚钱在熊市</h4>
+<h4 id="你不可不知的投资经股灾中的投资大师">你不可不知的投资经：股灾中的投资大师</h4>
+<h3 id="第5章-借钱炒股">第5章 借钱炒股</h3>
+<h4 id="心神难宁">心神难宁</h4>
+<h4 id="最易被逼上绝路">最易被逼上绝路</h4>
+<h4 id="扩大化亏损">扩大化亏损</h4>
+<h4 id="杠杆炒股的杀伤力">杠杆炒股的杀伤力</h4>
+<h4 id="控制在25以内">控制在25%以内</h4>
+<h4 id="巴菲特三不该建议">巴菲特三不该建议</h4>
+<h4 id="你不可不知的投资经生活面面观">你不可不知的投资经：生活面面观</h4>
+<h3 id="第6章-不止损">第6章 不止损</h3>
+<h4 id="证券交易所总裁毁灭记">证券交易所总裁毁灭记</h4>
+<h4 id="世纪炒股寿星有绝活">世纪炒股寿星有绝活</h4>
+<h4 id="索罗斯与巴菲特的唯一共性">索罗斯与巴菲特的唯一共性</h4>
+<h4 id="火鸡故事">火鸡故事</h4>
+<h4 id="鳄鱼原则">鳄鱼原则</h4>
+<h4 id="伟大的投资者都懂得止损">伟大的投资者都懂得止损</h4>
+<h4 id="止损违背人性">止损违背人性</h4>
+<h4 id="三大止损建议">三大止损建议</h4>
+<h4 id="一致性获利能力假想">一致性获利能力假想</h4>
+<h4 id="止损与不止赚">止损与不止赚</h4>
+<h4 id="你不可不知的投资经师徒关系">你不可不知的投资经：师徒关系</h4>
+<h3 id="第7章-不理性">第7章 不理性</h3>
+<h4 id="大脑天生不理性">大脑天生“不理性”</h4>
+<h4 id="群体盲动">群体盲动</h4>
+<h4 id="收获危机">“收获”危机</h4>
+<h4 id="克服近因律">克服“近因律”</h4>
+<h4 id="散户王的理性反思">散户王的理性反思</h4>
+<h4 id="心理学造就90的行情">心理学造就90％的行情</h4>
+<h4 id="理性炒股策略1遏制贪婪">理性炒股策略1：遏制贪婪</h4>
+<h4 id="理性炒股策略2耐心持股">理性炒股策略2：耐心持股</h4>
+<h4 id="理性炒股策略3截断亏损与只吃八分饱">理性炒股策略3：截断亏损与只吃八分饱</h4>
+<h4 id="理性炒股策略4多学科思维">理性炒股策略4：多学科思维</h4>
+<h4 id="你不可不知的投资经散户最好从指数基金起步">你不可不知的投资经：散户最好从指数基金起步</h4>
+<h3 id="第8章-不求变">第8章 不求变</h3>
+<h4 id="任何人都会犯错">任何人都会犯错</h4>
+<h4 id="亏损悟得求变真经">亏损悟得“求变”真经</h4>
+<h4 id="基金经理大洗牌">基金经理大洗牌</h4>
+<h4 id="多变的索罗斯">多变的索罗斯</h4>
+<h4 id="5类投资理念">5类投资理念</h4>
+<h4 id="炒股从来无定式">炒股从来无定式</h4>
+<h4 id="没有十全十美的炒股诀窍">没有十全十美的炒股诀窍</h4>
+<h4 id="不断试错">不断试错</h4>
+<h4 id="投资4阶段">投资4阶段</h4>
+<h4 id="投资全球紧跟变化的世界">投资全球，紧跟变化的世界</h4>
+<h4 id="你不可不知的投资经股票与女人">你不可不知的投资经：股票与女人</h4>
+
+        
+        
+    </body>
+    </html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x88ab;&#x62d2;&#x7edd;&#x7684;&#x52c7;&#x6c14;&#xff1a;&#x5199;&#x7ed9;&#x5e74;&#x8f7b;&#x4eba;&#x7684;&#x963f;&#x5fb7;&#x52d2;&#x5fc3;&#x7406;&#x5b66;&#x8bfe;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="被拒绝的勇气写给年轻人的阿德勒心理学课">被拒绝的勇气：写给年轻人的阿德勒心理学课</h1>
+<h2 id="日岸见一郎-著何慈毅-译">[日]岸见一郎 著|何慈毅 译</h2>
+<h3 id="第一章当你感觉自己离成功越来越远">第一章　当你感觉自己离成功越来越远</h3>
+<h4 id="现在让我们来谈谈幸福">现在，让我们来谈谈幸福</h4>
+<p>你觉得现在幸福吗？或许，没有人特意问过你这个问题。我想也是，沉浸在幸福之中的人是不会考虑这个问题的；而现在觉得不幸的人，反而会想方设法去探求什么才是幸福。</p>
+<p>最近我的女儿结婚了。我想，女儿当时一定认为自己已经到达了幸福的顶峰。若果真如此，那么今后会怎样呢？只能是越来越不幸福吧。当然，我女儿是不会这样想的。但是，有些人认为即便现在到达了幸福的顶峰，幸福也不可能永远持续下去。对于这些人而言，现在的幸福或许是不幸的开始。只有这样的人才会在幸福的时候，就开始思考“什么是幸福”这个问题。</p>
+<p>三木清说过幸福感与幸福不同。比如，使用了药物或者喝了酒以后处于酩酊状态，心情变得十分畅快，这不是幸福而是幸福感。</p>
+<p>认为达到了目标就会幸福的人，当他完成了某个目标，在完成此目标的同时又会制定出新的目标。正如海市蜃楼，无论怎么努力总是到达不了幸福。这样的人把幸福与成功混为一谈了。</p>
+<p>幸福关乎存在，成功关乎过程，若对于这两者的不同再做一点补充，那就是“成功是幸福的手段”。虽然三木清并没有这样说过，但由于许多人认为“成功就必然能幸福”，对这些人来说，成功并不只是幸福的手段。</p>
+<h4 id="怎样面对无人理解的绝望和痛苦">怎样面对无人理解的绝望和痛苦</h4>
+<p>我觉得你不能把与朋友和家人愉快的相处当作逃避空虚的手段。虽然一想到将来你就会感到不安，但是你不要为还没有发生的事情烦恼，尽情地享受与朋友或家人在一起度过的时光即可。你正玩得高兴时，去考虑将来的事情会很扫兴。</p>
+<p>空虚之所以会袭来，是因为你当时没能集中思想。娱乐也好工作也罢，都一样。包括对于死亡的问题在内，都是你因为未知的事情而不安。若是你思想集中的话，就不会去考虑未来的事情了。</p>
+<p>阿德勒说过：“人生虽然有限，但漫长得足够你去好好地活。”</p>
+<p>“人生的意义是你自己赋予的。”</p>
+<p>幸福的人生不会空虚，它能给我们带来充实的意义。我们不是因为成就了什么而变得幸福，也不是因为失去了什么而变得不幸。</p>
+<h4 id="模仿别人的幸福意味着深深的自卑">模仿别人的“幸福”，意味着深深的自卑</h4>
+<h4 id="让自己拥有直面人生的勇气">让自己拥有直面人生的勇气</h4>
+<p>独立是孩子的必修课，而处理好分离焦虑，却是父母的必修课。</p>
+<h4 id="如果你不愿接受过去的自己">如果你不愿接受过去的自己</h4>
+<p>你只是以过去的罪恶感为由，阻碍着现在的自己。</p>
+<p>阿德勒有一个理论，叫“外部因果律 ”，意思是，将原本不存在因果关系的事情，解释成似乎存在着重大的因果关系。</p>
+<p>你说因为年轻时不劳而获，所以现在工资很低，生活艰难。这种想法是走进了偏执的陷阱。你也不是自作自受，过去的经历与现在工资低、生活艰难之间，不存在任何因果关系。</p>
+<h4 id="当你的人生一直遭遇不顺">当你的人生，一直遭遇不顺</h4>
+<p>我的人生道路从未有过挫折。若用准确的词语来表述，那就是我从未使用“挫折”一词来回顾自己的人生。即便发生同样一件事情，结果也是因人而异的，有人把它看作挫折，有人却不认为是挫折。就拿我来说，哪怕遇到不顺利的事情，我也不会把它看作挫折。</p>
+<h5 id="因抚养孩子的苦恼而与阿德勒相遇">因抚养孩子的苦恼而与阿德勒相遇</h5>
+<p>精神科医生阿尔弗雷德·阿德勒1870年出生于奥地利，我与他相遇缘于抚养孩子。还在读研究生博士课程的三十岁的我，有了第一个孩子。当时我妻子也有正式的工作，所以也不用商量，我就担负起了接送孩子去托儿所的任务。我与孩子在一起的时间比较长，于是产生了种种烦恼。而且，无论做什么事情，我都处于不断失败的摸索状态。这时候，有一位朋友建议我说阿德勒心理学或许可以为我提供参考。</p>
+<p>经过多方查找，我了解到阿德勒是从学院派的世界脱离出来之后得到了重生。他曾提交了一份足以胜任维也纳大学教授的论文，可是被退了回来。我觉得似乎在某些地方，我们的经历重叠在了一起。</p>
+<p>最引起我共鸣的是，阿德勒的整个职业生涯基本上一直都在从事医生的工作。而且是在付不起医疗费的贫苦大众居住的地方，一心一意地从事着临床医疗。因此，他所阐述的不仅仅是理论和思想，还具有很强的实践性。并且拥有强大的力量，以至于立刻就可以使人改变人生的道路。但是，在当时的日本，他并未受到相应的关注，几乎没有人研究他的学术。因此只有我自己来做了，于是我就开始研究起阿德勒的心理学。</p>
+<p>不过，我并没有将此与自己之前的研究进行有意识的切断，还是按照哲学的流派来把握阿德勒的学术。因此，对我而言，阿德勒与其说是心理学家，不如说更像一位哲学家。这种认识我到现在也没有改变。在《被讨厌的勇气》一书中，我也是把阿德勒作为“哲学家”介绍给读者的。</p>
+<p>阿德勒与弗洛伊德、荣格等近代心理学的先驱不同，他之所以鲜为人知，坦率地说是因为在大学的课程里几乎没有讲过他的理论，也没有介绍过他。就连大学里专攻心理学的学生，很多人也只是听说过阿德勒的名字。</p>
+<p>就是在这样的状况下，1989年已经三十三岁的我开始研究起阿德勒来。最初我是一边阅读阿德勒的原著一边照顾孩子的，不久便取得了阿德勒心理学的心理辅导资格。我平时一边担任大学的外聘讲师，一边从事自己本专业的希腊哲学的研究，同时还研究阿德勒心理学，到了四十岁，总算有了专职工作，是在一家精神科医院做心理咨询顾问。虽然很迟才找到正式的工作，理应珍惜，但是我在那里工作了三年就辞职了。</p>
+<h3 id="第二章除了自己没有任何人能决定你的价值">第二章　除了自己，没有任何人能决定你的价值</h3>
+<p>生命是每个人自己的课题。如果随波逐流，依靠别人去做决定，那么无论长多少岁也不能算得上成熟。成熟是指：自己的课题自己做决定，自己的人生自己负责，自己的选择自己接受。自己的价值，也要由自己来诠释。哪怕被指责、被否定、被世俗的规则抛弃。</p>
+<h4 id="今后的人生如何度过致少年的你">今后的人生如何度过？——致少年的你</h4>
+<h4 id="自己的课题要自己负责">自己的课题，要自己负责</h4>
+<p>大多数父母都会习惯性地去干预孩子的课题，以至于我不得不进行如下说明：</p>
+<p>人际关系中的纷争，都是因为你入侵他人的领域，或者是自己的领域被他人入侵而引起的。不妨设想一下，如果你不怎么想学习，却突然被别人教训说“要好好学习”，你会有什么感觉？我想你一定会产生排斥心理。这是因为，这种事情别人不说你也明白，你也知道不学习是不行的，可就是不喜欢别人来告诉你。如果老师成天督促你，你反而会产生逆反心理。</p>
+<p>因此，我想告诉各位父亲或母亲，不要对孩子说“给我好好学习”。学不学习是孩子的课题，而你们有自己的课题。</p>
+<h4 id="培养自我价值感我决定我的价值">培养自我价值感：我决定我的价值</h4>
+<p>成为大人的第二个条件是能够自己决定自己的价值。</p>
+<p>阿德勒说过，“人只有在感觉自己有价值的时候，才可能获得勇气”。从这句话中我们可以知道，很多人认为自己没有价值。很多人对自己持否定态度，觉得自己并不是什么了不起的人，微不足道。前来找我咨询的人几乎都这样认为。</p>
+<h4 id="别人的评价你的自身价值">别人的评价≠你的自身价值</h4>
+<h4 id="丢弃以自我为中心的思维模式">丢弃以自我为中心的思维模式</h4>
+<h4 id="只要存在就有价值">只要存在，就有价值</h4>
+<h4 id="明天不能被设计先关注脚下才能看到远方">明天不能被设计，先关注脚下，才能看到远方</h4>
+<h4 id="当别人总是否定你指责你">当别人总是否定你、指责你</h4>
+<h4 id="为什么你在人际关系中总是感觉压抑">为什么你在人际关系中总是感觉压抑？</h4>
+<h3 id="第三章无法回应他人的期待那又怎样">第三章　无法回应他人的期待，那又怎样</h3>
+<h4 id="不必回应他人的期待">不必回应他人的期待</h4>
+<h4 id="我们一定要志存高远吗">我们一定要志存高远吗？</h4>
+<h4 id="即使是家人也别相互干涉">即使是家人，也别相互干涉</h4>
+<h4 id="敢于孤独的人才能肯定自己">敢于孤独的人，才能肯定自己</h4>
+<h4 id="他人眼里的精彩未必是真正的成功">他人眼里的精彩，未必是真正的成功</h4>
+<h3 id="第四章敢于活在当下是一种勇气">第四章　敢于活在当下，是一种勇气</h3>
+<h4 id="放下过去的勇气">放下过去的勇气</h4>
+<h4 id="看淡未来的勇气">看淡未来的勇气</h4>
+<h4 id="与其担心未来不如为今天全力以赴">与其担心未来，不如为今天全力以赴</h4>
+<h4 id="父母的课题不是干涉孩子的未来">父母的课题，不是干涉孩子的未来</h4>
+<h4 id="亲密关系中如何让对方愿意听你的">亲密关系中，如何让对方愿意听你的</h4>
+<h4 id="对他人的不满源于对自己的焦虑">对他人的不满，源于对自己的焦虑</h4>
+<h4 id="告别彷徨不安拒绝挑战的自己">告别彷徨不安、拒绝挑战的自己</h4>
+<h3 id="第五章在人际关系中展现自己的价值">第五章　在人际关系中展现自己的价值</h3>
+<h4 id="真正的幸福存在于摩擦之中">真正的幸福存在于摩擦之中</h4>
+<h4 id="如何向外展示自己">如何向外展示自己</h4>
+<h4 id="让自己拥有敢于进入人际关系的勇气">让自己拥有敢于进入人际关系的勇气</h4>
+<h4 id="无论何时相信自己是有价值的">无论何时，相信自己是有价值的</h4>
+<h4 id="怎样面对束手无策的未来">怎样面对束手无策的未来</h4>
+<h4 id="如何面对非理性的爱人">如何面对非理性的爱人</h4>
+<h4 id="活在当下但也要有打破现状的勇气">活在当下，但也要有打破现状的勇气</h4>
+<h3 id="后记">后记</h3>
+
+        
+        
+    </body>
+    </html>

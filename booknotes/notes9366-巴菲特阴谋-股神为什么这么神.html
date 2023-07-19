@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x5df4;&#x83f2;&#x7279;&#x9634;&#x8c0b;&#xff1a;&#x80a1;&#x795e;&#x4e3a;&#x4ec0;&#x4e48;&#x8fd9;&#x4e48;&#x795e;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <div class="content">
+<h1 id="巴菲特阴谋股神为什么这么神">巴菲特阴谋：股神为什么这么神</h1>
+<h2 id="余治国-著">余治国 著</h2>
+<p>2010年6月2日，“股神”巴菲特遭美国金融危机调查委员会传讯，巴菲特大神被请下了神坛。众说纷纭，巴菲特是“股神”还是“超级骗子”？巴菲特到底有没有操纵股票评级机构？</p>
+<p>随着美国国会的调查，关于巴菲特的疑问也越来越多，笼罩在“股神”头上的光环渐渐有了阴影。</p>
+<p>2010年9月，巴菲特和比尔·盖茨一起劝中国富豪行善，巴菲特真的是来中国搞慈善的吗？</p>
+<p>还有，巴菲特真的是出身贫寒，白手起家的吗？</p>
+<p>……</p>
+<p>本书讲述了一个不为人知的巴菲特，揭秘“巴菲特神话”背后的层层真相。</p>
+<h2 id="序言-巴菲特的倒下">序言 巴菲特的倒下</h2>
+<p>听证会在纽约举行，耗时整整一天，主题是为什么像穆迪、标准普尔和惠誉这样的证券评级机构，会将最高等级的AAA给予那些次级抵押债券——当住宅市场崩溃之后，这些债券迅速下滑到垃圾等级。而巴菲特是穆迪最大的股东，现拥有13％的股份，曾持股20％。</p>
+<p>巴菲特此前三次拒绝调查委员会“邀请”，使国会不得不用法律力量，迫使巴菲特站到了听证席上。在听证会上，他辩解道：“我根本就没去过穆迪……我甚至根本不知道那家公司在什么地方。我只知道他们的业务模式是非常出色的。”</p>
+<p>极其注重公众形象的巴菲特，竟在听证席上乱了阵脚，回答了跟他的投资理念——“在投资的时候，我们不要远离自己所了解的范围”所完全不符的话。这一理念是巴菲特几十年来一直号称在身体力行着，并作为自己的成功经验向普罗大众灌输的。他最为得意的杰作就是在互联网泡沫席卷股市时，毫不受诱惑，巍然不动地作壁上观。当时他解释说，因为他对该行业没有充分的了解。而他所持有的都是家喻户晓的股票，比如可口可乐、好市多和通用电气等等。如果说他真的不了解穆迪公司，那怎么可能在最多的时候持股20％呢！</p>
+<p>让巴菲特牢牢在神坛上待着的还有他投资中国的那些神来之笔。</p>
+<p>一贯坚称“只买不抛”的“股神”，2003年首次购进5亿美元中石油股。这的确是大手笔。消息一公布，成千上万的崇拜者相继跟进，全都攥紧中石油股票，死也不肯抛。人们太相信世界首富的投资策略，以为只要握紧“股神”选中的股票，就一定能发大财。</p>
+<p>“股神”果然不负众望，“苦苦”守候了4年，等他的信众差不多都进场了，便在2007年7月，悄悄抛售了首次投资的5亿美元中石油股，“收获”35亿美元；同年10月，“股神”出清中石油股。应该说，因为“股神”先买进，站在了金字塔的最顶端，而信奉“股神”的人们则在金字塔的底部“严防死守（Buy and hold）”；等“股神”脚底抹油抛掉股票，丢下的残局就由垫底的人去收拾了。</p>
+<p>巴菲特在2008年10月，以2.32亿美元投注中国比亚迪汽车公司，占其10％的公司股份。才过一年，巴菲特就已经从比亚迪公司的账面上赚得了高达7倍的投资回报率，超过16亿美元！可想而知，跟在“股神”身后进场的中国股民一定有成千上万。最近，虽然比亚迪股价有所下跌，但巴菲特特别强调他将带着比亚迪的股票进坟墓，但愿这一次“股神”坚守到底，脚底不抹油，那可就是中国股民的大幸了！</p>
+<p>此后，巴菲特在高盛集团这个虎口中拔牙。高盛亏损巨大，资金周转不灵，迫不得已在2008年9月23日宣布转成银行控股公司。第二天，巴菲特即向高盛伸出“援手”，以50亿美元购得高盛的优先股，用另外50亿美元换取了高盛普通股的认股权证。</p>
+<p>巴菲特之所以敢大胆出手，就好比打麻将，他将对方的底牌看得一清二楚。第一，“股神”透过政府间的层层关系，早已知道政府将救助美国国际集团（AIG）。只要美国国际集团不倒，高盛也必将屹立不倒。果不其然，当美国国际集团拿到1800亿美元的政府救助资金后，立刻赔偿给高盛129亿美元（高盛“下赌”40亿美元卖空抵押贷款相关证券）；第二，高盛也将从政府的救助资金里要到100亿美元。巴菲特深知，只要高盛喘过气来，市场这块蛋糕还在，而分割蛋糕的霸主却少了，高盛就完全可以稳坐钓鱼台。</p>
+<p>到2009年7月24日，这天高盛的收盘价每股为164美元，仅仅一年不到，“股神”便为此项投资赚足了111％的回报率。“股神”自己毫不掩饰对高盛的信心，他称“我和高盛的关系可以追溯到1940年……我关注这家公司很长时间了，我对高盛集团的状况和管理层的信心超过华尔街任何公司，他们对市场的时机把握最为出色”。当然啦，如果“股神”不了解高盛与政府上层之间的关系，他怎么会如此大胆？</p>
+<p>最近，高盛由于那些荒谬的衍生工具合约，被美国证券交易委员会指控诈骗，并正在接受司法部刑事调查。而巴菲特却罕见地公开为高盛担保，并对他一贯竭力反对的“大规模杀伤性武器”金融衍生品进行辩护。他一反常态地对投资者们说：“我很高兴我也持有这种衍生产品，因为它们能给我们带来巨大的回报……”</p>
+<p>只有上帝能够洞察人间的一切！巴菲特虽然不是上帝，却能够像上帝那样站在金字塔的顶端，来洞察他脚底下人们的一举一动，不称他为“股神”也难。因此，只要华尔街金字塔模式存在一天，这种血腥的掠夺就不会停止。</p>
+<h3 id="第一章-巴菲特股神还是超级骗子">第一章 巴菲特：股神还是超级骗子</h3>
+<h4 id="谁缔造了巴菲特神话">谁缔造了巴菲特神话</h4>
+<p>对巴菲特宗教般的崇拜，本质是一种金钱宗教。在这个以钱为本的社会中，金钱与资本渗透了整个社会的每个角落。金钱至上，一切向钱看，没有钱是万万不能的，每个人的脑海深处都积淀着这样的观念。人活在世上的唯一评价标准就是有没有钱，钱多或钱少。所有的兴趣，所有的爱好，所有的一切，都排在金钱之后。</p>
+<h4 id="掩人耳目的价值投资">掩人耳目的价值投资</h4>
+<p>所谓价值投资，即以低于股票内在价值的价格买入，股价与内在价值之间的差价就是安全边际。换句话讲，只要你买对了股票，长期持有就可以滚雪球般地增值，如果你亏了，那就是你选错了。一个股票有没有价值，价值的高低是多少，应该持有多长时间，那都是主观判断的结果，就像情人眼里出西施一样，任何一种资产都可能是某些人眼中值得投资的对象。有人问过巴菲特的搭档查理·芒格（Charles Thomas Munger），<strong>巴菲特有没有进行过投资价值的计算，他的回答是从未有过。看来即便是巴菲特本人，也无法对价值给予精确的计算。因此，在短期内，难以证明某个投资是否正确，而长期来看，任何资产总有人去持有，总有某种资产的价格会上涨。价值投资成了一种无法证明或证伪的投资方法</strong>（我并不同意作者的这番理论推导，“无法精确计算”是对的，但是也是不需要的。“短期内，不能证明投资是否正确”也是对的，没有任何人任何方法能够做到这种证明。“长期，任何资产总有人持有”，大概也是对的。“总有某种资产价格会上涨”，为什么作者不说“任何资产的价格总会上涨”呢？因为这是不对的。因为这个推导的问题就出在，长期来看，这些“任何资产总有人持有”的那些人，并不会每个人都慢慢变富。），任何投资者都可以宣称自己是价值投资者，任何投资都可以称作价值投资。说白了，价值投资在道理上永立不败之地，<strong>在操作上却是永远没用的废话与狗皮膏药</strong>（这本书看到这里不想看了）。可想而知，在各种公开场合中，巴菲特不过又是用价值投资的老调重弹作为遮羞布来掩人耳目。</p>
+<p>巴菲特有句名言：“别人贪婪时恐惧，别人恐惧时贪婪。”人们往往只看到了前半句，却总是遗漏后半句，资本人格化的巴菲特也和别人一样贪婪。19世纪英国经济学家登宁说过：“资本逃避动乱和纷争，它的本性是胆怯的。这是真的，但还不是全部真理。资本害怕没有利润或利润太少，就像自然害怕真空一样。一旦有适当的利润，资本就胆大起来。如果有10％的利润，它就保证到处被使用；有20％的利润，它就活跃起来；有50％的利润，它就铤而走险；为了100％的利润，它践踏一切人间法律；有300％的利润，它就敢犯任何罪行，甚至冒绞首的危险。如果动乱和纷争能带来利润，它就会鼓励动乱和纷争。”</p>
+<p>市场即战场。华尔街有一句名言：“哪里有股市，哪里就有丑闻。”资本市场这个血淋淋的战场里赤裸裸地展现出人性中最阴暗的一面。洪洞县内无好人，逐利的追求激发出人们心中最为无耻的各种欲望与卑劣的手段，种种匪夷所思的骗局和手段都层出不穷。只要参加了资本之间的战争，无论什么民族、什么国家、什么人都逃避不了这样歇斯底里的金钱游戏。世上不存在奇迹，只存在规律，巴菲特是人不是神，他也无法脱离资本的约束。巴菲特曾经的伙伴麦克·普莱斯（Michael Price）曾公开指出，巴菲特是“最大之一的幕后市场操纵者，在套利和所有活动中他得到的市场信息比任何人都有用，但大家却以为他只是个普通的正常人”。巴菲特不仅不是一个伟大的投资家，反而可能是当今世界最大的资本市场消息与趋势的制造者，是美国金融市场的一个大操盘手，更是世界金融市场的一个大操盘手。</p>
+<p>2010年，在穆迪公司操纵案的听证会上巴菲特声称，穆迪对一些次贷产品给出的评级并非欺诈，他“更倾向于把责任归咎于那些需要政府救助的金融机构高管，而非和3亿美国人犯了同样错误的穆迪管理层”。当有人问及，是否应该防止证券发行者向评级机构支付费用以避免出现评级机构袒护证券发行商时，巴菲特回答说，穆迪商业模式毫无问题，而他不知道谁会为评级支付费用，反正他不会。是的，他当然不会，因为他自己就是穆迪第一大股东，完全可以操纵评级。还有人质询巴菲特，他作为穆迪最大股东是否应该承担穆迪欺诈的责任时，巴菲特则搪塞说，他不清楚。可笑的是，价值投资一直向大众灌输的理念就是，不熟不做。总而言之，在巴菲特看来，穆迪也好，高盛也好，都毫无过错。原因是他持有这些公司的股份。</p>
+<h4 id="谁造就了巴菲特神话">谁造就了巴菲特神话</h4>
+<h3 id="第二章-报童巴菲特原来是犹太人世家子弟巴菲特">第二章 报童巴菲特原来是犹太人——世家子弟巴菲特</h3>
+<h4 id="巴菲特出身贫寒吗">巴菲特出身贫寒吗</h4>
+<h4 id="政商两栖的巴菲特家族">政商两栖的巴菲特家族</h4>
+<h4 id="为什么要对巴菲特的出身欲盖弥彰">为什么要对巴菲特的出身欲盖弥彰</h4>
+<h4 id="神化巴菲特是构建帝国软力量的需要">神化巴菲特是构建帝国软力量的需要</h4>
+<h3 id="第三章-巴菲特是靠价值投资发迹的吗早年发迹史">第三章 巴菲特是靠价值投资发迹的吗——早年发迹史</h3>
+<h4 id="巴菲特的第一桶金">巴菲特的第一桶金</h4>
+<h4 id="阴谋诡计的牛刀小试">阴谋诡计的牛刀小试</h4>
+<h4 id="浮存金的魔术">浮存金的魔术</h4>
+<h4 id="犹太人的伯克希尔公司">犹太人的伯克希尔公司</h4>
+<h4 id="为什么巴菲特不买黄金">为什么巴菲特不买黄金</h4>
+<h3 id="第四章-为什么巴菲特这么有钱世界首富">第四章 为什么巴菲特这么有钱——世界首富</h3>
+<h4 id="巧取豪夺华盛顿邮报">巧取豪夺《华盛顿邮报》</h4>
+<h4 id="放弃垄断是一种罪过">放弃垄断是一种罪过</h4>
+<h4 id="对老寡妇的欺诈">对老寡妇的欺诈</h4>
+<h4 id="所罗门兄弟公司丑闻">所罗门兄弟公司丑闻</h4>
+<h3 id="第五章-巴菲特是投资天才吗股神是这么炼成的">第五章 巴菲特是投资天才吗——股神是这么炼成的</h3>
+<h4 id="操纵评级机构">操纵评级机构</h4>
+<h4 id="台前唱戏台后操作高盛巴菲特和美国政府的铁三角关系">台前唱戏，台后操作——高盛、巴菲特和美国政府的铁三角关系</h4>
+<h4 id="美国新能源策略的马前卒">美国新能源策略的马前卒</h4>
+<h3 id="第六章-慈善大佬巴菲特的另一面">第六章 慈善大佬巴菲特的另一面</h3>
+<h4 id="可口可乐可口但不可乐">可口可乐，可口但不可乐</h4>
+<h4 id="巴菲特利用慈善基金做操纵工具">巴菲特利用慈善基金做操纵工具</h4>
+<h4 id="消灭发展中国家人口的阴谋">消灭发展中国家人口的阴谋</h4>
+<h3 id="第七章-巴菲特看好中国福音还是祸害">第七章 巴菲特看好中国：福音还是祸害</h3>
+<h4 id="投资比亚迪有意误导中国的新能源发展政策">投资比亚迪，有意误导中国的新能源发展政策</h4>
+<h4 id="巴菲特是新帝国主义集团殖民控制中国的一枚棋子">巴菲特是新帝国主义集团殖民控制中国的一枚棋子</h4>
+<h4 id="美国石油战略与巴菲特对中石油的投机">美国石油战略与巴菲特对中石油的投机</h4>
+<h3 id="第八章-为什么巴菲特可以操纵全世界谁搞乱了我们这个世界">第八章 为什么巴菲特可以操纵全世界——谁搞乱了我们这个世界</h3>
+<h4 id="金钱游戏的规则">金钱游戏的规则</h4>
+<h4 id="金融危机的根源">金融危机的根源</h4>
+<h4 id="羊偏偏要替狼来辩护">羊偏偏要替狼来辩护</h4>
+<h2 id="跋">跋</h2>
+<p>主要参考书目</p>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E7%A5%9E%E8%BF%98%E6%98%AF%E8%B6%85%E7%BA%A7%E9%AA%97%E5%AD%90">第一章 巴菲特：股神还是超级骗子</a>
+<ul>
+<li><a href="#%E8%B0%81%E7%BC%94%E9%80%A0%E4%BA%86%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%A5%9E%E8%AF%9D">谁缔造了巴菲特神话</a></li>
+<li><a href="#%E6%8E%A9%E4%BA%BA%E8%80%B3%E7%9B%AE%E7%9A%84%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84">掩人耳目的价值投资</a></li>
+<li><a href="#%E8%B0%81%E9%80%A0%E5%B0%B1%E4%BA%86%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%A5%9E%E8%AF%9D">谁造就了巴菲特神话</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8A%A5%E7%AB%A5%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%8E%9F%E6%9D%A5%E6%98%AF%E7%8A%B9%E5%A4%AA%E4%BA%BA%E4%B8%96%E5%AE%B6%E5%AD%90%E5%BC%9F%E5%B7%B4%E8%8F%B2%E7%89%B9">第二章 报童巴菲特原来是犹太人——世家子弟巴菲特</a>
+<ul>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%87%BA%E8%BA%AB%E8%B4%AB%E5%AF%92%E5%90%97">巴菲特出身贫寒吗</a></li>
+<li><a href="#%E6%94%BF%E5%95%86%E4%B8%A4%E6%A0%96%E7%9A%84%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%AE%B6%E6%97%8F">政商两栖的巴菲特家族</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AF%B9%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E5%87%BA%E8%BA%AB%E6%AC%B2%E7%9B%96%E5%BC%A5%E5%BD%B0">为什么要对巴菲特的出身欲盖弥彰</a></li>
+<li><a href="#%E7%A5%9E%E5%8C%96%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%98%AF%E6%9E%84%E5%BB%BA%E5%B8%9D%E5%9B%BD%E8%BD%AF%E5%8A%9B%E9%87%8F%E7%9A%84%E9%9C%80%E8%A6%81">神化巴菲特是构建帝国软力量的需要</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%98%AF%E9%9D%A0%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84%E5%8F%91%E8%BF%B9%E7%9A%84%E5%90%97%E6%97%A9%E5%B9%B4%E5%8F%91%E8%BF%B9%E5%8F%B2">第三章 巴菲特是靠价值投资发迹的吗——早年发迹史</a>
+<ul>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E7%AC%AC%E4%B8%80%E6%A1%B6%E9%87%91">巴菲特的第一桶金</a></li>
+<li><a href="#%E9%98%B4%E8%B0%8B%E8%AF%A1%E8%AE%A1%E7%9A%84%E7%89%9B%E5%88%80%E5%B0%8F%E8%AF%95">阴谋诡计的牛刀小试</a></li>
+<li><a href="#%E6%B5%AE%E5%AD%98%E9%87%91%E7%9A%84%E9%AD%94%E6%9C%AF">浮存金的魔术</a></li>
+<li><a href="#%E7%8A%B9%E5%A4%AA%E4%BA%BA%E7%9A%84%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94%E5%85%AC%E5%8F%B8">犹太人的伯克希尔公司</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%B4%E8%8F%B2%E7%89%B9%E4%B8%8D%E4%B9%B0%E9%BB%84%E9%87%91">为什么巴菲特不买黄金</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%BF%99%E4%B9%88%E6%9C%89%E9%92%B1%E4%B8%96%E7%95%8C%E9%A6%96%E5%AF%8C">第四章 为什么巴菲特这么有钱——世界首富</a>
+<ul>
+<li><a href="#%E5%B7%A7%E5%8F%96%E8%B1%AA%E5%A4%BA%E5%8D%8E%E7%9B%9B%E9%A1%BF%E9%82%AE%E6%8A%A5">巧取豪夺《华盛顿邮报》</a></li>
+<li><a href="#%E6%94%BE%E5%BC%83%E5%9E%84%E6%96%AD%E6%98%AF%E4%B8%80%E7%A7%8D%E7%BD%AA%E8%BF%87">放弃垄断是一种罪过</a></li>
+<li><a href="#%E5%AF%B9%E8%80%81%E5%AF%A1%E5%A6%87%E7%9A%84%E6%AC%BA%E8%AF%88">对老寡妇的欺诈</a></li>
+<li><a href="#%E6%89%80%E7%BD%97%E9%97%A8%E5%85%84%E5%BC%9F%E5%85%AC%E5%8F%B8%E4%B8%91%E9%97%BB">所罗门兄弟公司丑闻</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%98%AF%E6%8A%95%E8%B5%84%E5%A4%A9%E6%89%8D%E5%90%97%E8%82%A1%E7%A5%9E%E6%98%AF%E8%BF%99%E4%B9%88%E7%82%BC%E6%88%90%E7%9A%84">第五章 巴菲特是投资天才吗——股神是这么炼成的</a>
+<ul>
+<li><a href="#%E6%93%8D%E7%BA%B5%E8%AF%84%E7%BA%A7%E6%9C%BA%E6%9E%84">操纵评级机构</a></li>
+<li><a href="#%E5%8F%B0%E5%89%8D%E5%94%B1%E6%88%8F%E5%8F%B0%E5%90%8E%E6%93%8D%E4%BD%9C%E9%AB%98%E7%9B%9B%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%92%8C%E7%BE%8E%E5%9B%BD%E6%94%BF%E5%BA%9C%E7%9A%84%E9%93%81%E4%B8%89%E8%A7%92%E5%85%B3%E7%B3%BB">台前唱戏，台后操作——高盛、巴菲特和美国政府的铁三角关系</a></li>
+<li><a href="#%E7%BE%8E%E5%9B%BD%E6%96%B0%E8%83%BD%E6%BA%90%E7%AD%96%E7%95%A5%E7%9A%84%E9%A9%AC%E5%89%8D%E5%8D%92">美国新能源策略的马前卒</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%85%88%E5%96%84%E5%A4%A7%E4%BD%AC%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E5%8F%A6%E4%B8%80%E9%9D%A2">第六章 慈善大佬巴菲特的另一面</a>
+<ul>
+<li><a href="#%E5%8F%AF%E5%8F%A3%E5%8F%AF%E4%B9%90%E5%8F%AF%E5%8F%A3%E4%BD%86%E4%B8%8D%E5%8F%AF%E4%B9%90">可口可乐，可口但不可乐</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%88%A9%E7%94%A8%E6%85%88%E5%96%84%E5%9F%BA%E9%87%91%E5%81%9A%E6%93%8D%E7%BA%B5%E5%B7%A5%E5%85%B7">巴菲特利用慈善基金做操纵工具</a></li>
+<li><a href="#%E6%B6%88%E7%81%AD%E5%8F%91%E5%B1%95%E4%B8%AD%E5%9B%BD%E5%AE%B6%E4%BA%BA%E5%8F%A3%E7%9A%84%E9%98%B4%E8%B0%8B">消灭发展中国家人口的阴谋</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9C%8B%E5%A5%BD%E4%B8%AD%E5%9B%BD%E7%A6%8F%E9%9F%B3%E8%BF%98%E6%98%AF%E7%A5%B8%E5%AE%B3">第七章 巴菲特看好中国：福音还是祸害</a>
+<ul>
+<li><a href="#%E6%8A%95%E8%B5%84%E6%AF%94%E4%BA%9A%E8%BF%AA%E6%9C%89%E6%84%8F%E8%AF%AF%E5%AF%BC%E4%B8%AD%E5%9B%BD%E7%9A%84%E6%96%B0%E8%83%BD%E6%BA%90%E5%8F%91%E5%B1%95%E6%94%BF%E7%AD%96">投资比亚迪，有意误导中国的新能源发展政策</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%98%AF%E6%96%B0%E5%B8%9D%E5%9B%BD%E4%B8%BB%E4%B9%89%E9%9B%86%E5%9B%A2%E6%AE%96%E6%B0%91%E6%8E%A7%E5%88%B6%E4%B8%AD%E5%9B%BD%E7%9A%84%E4%B8%80%E6%9E%9A%E6%A3%8B%E5%AD%90">巴菲特是新帝国主义集团殖民控制中国的一枚棋子</a></li>
+<li><a href="#%E7%BE%8E%E5%9B%BD%E7%9F%B3%E6%B2%B9%E6%88%98%E7%95%A5%E4%B8%8E%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%AF%B9%E4%B8%AD%E7%9F%B3%E6%B2%B9%E7%9A%84%E6%8A%95%E6%9C%BA">美国石油战略与巴菲特对中石油的投机</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%8F%AF%E4%BB%A5%E6%93%8D%E7%BA%B5%E5%85%A8%E4%B8%96%E7%95%8C%E8%B0%81%E6%90%9E%E4%B9%B1%E4%BA%86%E6%88%91%E4%BB%AC%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C">第八章 为什么巴菲特可以操纵全世界——谁搞乱了我们这个世界</a>
+<ul>
+<li><a href="#%E9%87%91%E9%92%B1%E6%B8%B8%E6%88%8F%E7%9A%84%E8%A7%84%E5%88%99">金钱游戏的规则</a></li>
+<li><a href="#%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA%E7%9A%84%E6%A0%B9%E6%BA%90">金融危机的根源</a></li>
+<li><a href="#%E7%BE%8A%E5%81%8F%E5%81%8F%E8%A6%81%E6%9B%BF%E7%8B%BC%E6%9D%A5%E8%BE%A9%E6%8A%A4">羊偏偏要替狼来辩护</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        
+        
+    </body>
+    </html>
