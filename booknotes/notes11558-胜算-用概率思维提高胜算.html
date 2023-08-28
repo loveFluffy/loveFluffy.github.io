@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>&#x534e;&#x5c14;&#x8857;&#x6559;&#x7236;&#xff1a;&#x683c;&#x96f7;&#x5384;&#x59c6;&#x56de;&#x5fc6;&#x5f55;</title>
+        <title>&#x80dc;&#x7b97;&#xff1a;&#x7528;&#x6982;&#x7387;&#x601d;&#x7ef4;&#x63d0;&#x9ad8;&#x80dc;&#x7b97;</title>
         <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -420,7 +420,6 @@ iPad mini 5：2048*1536
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
@@ -429,10 +428,7 @@ iPad mini 5：2048*1536
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
@@ -442,25 +438,20 @@ iPad mini 5：2048*1536
 	}
 
 	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
 		background-color: skyblue;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
 		background-color: rgb(178, 216, 232);
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
 		background-color: rgb(210, 231, 239);
 	}
 
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
 		background-color: rgb(228, 235, 238);
 	}
 
@@ -469,10 +460,16 @@ iPad mini 5：2048*1536
 		padding-left: 0.5%;
 	}
 }
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
 </style>
     </head>
     <body class="vscode-body vscode-light">
-        <h1 id="华尔街教父格雷厄姆回忆录">华尔街教父：格雷厄姆回忆录</h1>
+        <h1 id="胜算用概率思维提高胜算">胜算：用概率思维提高胜算</h1>
 <h2 id=""></h2>
 
         
