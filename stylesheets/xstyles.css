@@ -55,10 +55,15 @@ section {
 body {
     /* 上、右、下、左： 左右居中 */
     margin: 0px auto 5px;
-    /* 手机屏幕宽度1080px */
-    max-width: 1080px;
     font-family: Georgia, Helvetica, sans-serif, Arial;
     font-size: 16pt;
+}
+
+.content {
+    /* 手机屏幕宽度1080px */
+    max-width: 1080px;
+    /* 左右居中 */
+    margin: 0px auto;
 }
 
 h1,
@@ -85,7 +90,7 @@ h2 {
 
 h3 {
     font-size: 1.6em;
-    margin: 10px 0 5px;
+    margin: 30px 0 5px;
     padding-left: 9px;
     border-left: 6px solid #ff7e79;
     border-bottom: 1px solid #ff7e79;
@@ -108,10 +113,12 @@ h6 {
     font-size: 1em;
 }
 
+/*选择所有未访问过的链接*/
 a:link {
     color: #000;
 }
 
+/*选择所有已访问的链接*/
 a:visited {
     color: #575757;
 }
@@ -238,12 +245,17 @@ table.toolbox td {
 table.toolbox td a {
     /*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
     display: block;
+
+    /*增加行间距*/
+    margin-top: 40px;
+    margin-bottom: 40px;
+
     text-decoration: none;
     color: black;
 }
 
 /* 当鼠标悬停时把链接颜色更改为浅红色*/
-table.toolbox td:hover {
+table.toolbox td a:hover {
     background-color: #ff9191;
     box-shadow: 2px 2px 5px gray;
 }
@@ -258,18 +270,21 @@ iframe.copyright {
 
     width: 100%;
     height: 100px;
+}
 
+iframe.menu {
     /*滚动时固定在屏幕顶端*/
-	/* Safari 及其他兼容 */
-	position: -webkit-sticky;
-	position: -ms-sticky;
-	position: -o-sticky;
+    /* Safari 及其他兼容 */
+    position: -webkit-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
     position: sticky;
     top: 0;
 }
 
 iframe.copyright {
     height: 50px;
+    margin-top: 30px;
 }
 
 
@@ -281,10 +296,10 @@ a img {
 
 /* hr 用于创建一条水平线*/
 hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
+    margin: 0.8em 0;
+    border: none;
+    border-bottom: 1px solid #cfcfcf;
+    height: 10px;
 }
 
 /* 将内容分成两栏显示，用以显示链接列表之类的 */
@@ -292,6 +307,6 @@ ul.list {
     columns: 2;
 }
 
-::selection{
-	background-color: #fbb;
+::selection {
+    background-color: #fbb;
 }
