@@ -66,6 +66,15 @@ body {
     margin: 0px auto;
 }
 
+.list li {
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    line-height: 2em;
+    text-indent: 2em;
+    list-style-type: none;
+}
+
 h1,
 h2,
 h3,
@@ -269,7 +278,6 @@ iframe.copyright {
     border-style: none;
 
     width: 100%;
-    height: 100px;
 }
 
 iframe.menu {
@@ -280,10 +288,12 @@ iframe.menu {
     position: -o-sticky;
     position: sticky;
     top: 0;
+
+    height: 100px;
 }
 
 iframe.copyright {
-    height: 50px;
+    height: 80px;
     margin-top: 30px;
 }
 
