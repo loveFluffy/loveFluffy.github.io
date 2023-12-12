@@ -4,10 +4,13 @@ books/
 
 # temp files directories
 *.swp
+tmp*
 
-links/business.html
+business/
 links/finance.html
 links/jobs.html
 projects.html
 audio/
 tmp-my-book-list.html
+notes.md
+links/neuroscience.html
