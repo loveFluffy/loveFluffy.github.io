@@ -6,11 +6,12 @@ books/
 *.swp
 tmp*
 
+audio/
 business/
 neuroscience/
 links/finance.html
 links/jobs.html
+links/mottos.html
 projects.html
-audio/
 tmp-my-book-list.html
 notes.md

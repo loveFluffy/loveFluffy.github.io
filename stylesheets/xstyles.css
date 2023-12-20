@@ -68,15 +68,6 @@ body {
     margin: 0px auto;
 }
 
-.list li {
-    background-size: 1.5em;
-    background-repeat: no-repeat;
-    background-position: 0 center;
-    line-height: 2em;
-    text-indent: 2em;
-    list-style-type: none;
-}
-
 h1,
 h2,
 h3,
@@ -146,7 +137,9 @@ ul p {
 }
 
 li {
-    margin: 0.75em;
+    margin-left: 0.75em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
     list-style: square inside;
 }
 
@@ -324,14 +317,27 @@ hr {
 
 /* 将内容分成两栏显示，用以显示链接列表之类的 */
 ul.list {
-    columns: 2;
+    column-count: 2;
+    /*
+    column-rule: 1px dashed #adadad;
+    */
+}
+
+.list li {
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    line-height: 2em;
+    text-indent: 2em;
+    list-style-type: none;
 }
 
 ::selection {
     background-color: #fbb;
 }
 
-#icon img {
-    width: 30px;
-    height: 30px;
+#icon img,
+h3 img {
+    width: 40px;
+    height: 40px;
 }
