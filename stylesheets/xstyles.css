@@ -56,7 +56,7 @@ section {
 
 body {
     /* 上、右、下、左： 左右居中 */
-    margin: 0px auto 5px;
+    margin: 0px auto 0px;
     font-family: Georgia, Helvetica, sans-serif, Arial;
     font-size: 16pt;
 }
@@ -275,7 +275,6 @@ iframe.copyright {
     margin: 0px;
     padding: 0px;
     border-style: none;
-
     width: 100%;
 }
 
@@ -292,7 +291,7 @@ iframe.menu {
 }
 
 iframe.copyright {
-    height: 80px;
+    height: 200px;
     margin-top: 30px;
 }
 
@@ -314,6 +313,8 @@ hr {
     border-bottom: 1px solid #cfcfcf;
     height: 10px;
 }
+
+
 
 /* 将内容分成两栏显示，用以显示链接列表之类的 */
 ul.list {
@@ -338,6 +339,27 @@ ul.list {
 
 #icon img,
 h3 img {
+    width: 40px;
+    height: 40px;
+}
+
+
+
+/* 设置backtotop按钮 */
+#backtotop {
+    /* Fixed/sticky position */
+    position: fixed;
+    /* Place the button at the bottom of the page */
+    bottom: 30px;
+    /* Place the button 30px from the right */
+    right: 30px;
+    /* Make sure it does not overlap */
+    z-index: 99;
+    /* Hidden by default */
+    visibility: hidden;
+}
+
+#backtotop a img {
     width: 40px;
     height: 40px;
 }

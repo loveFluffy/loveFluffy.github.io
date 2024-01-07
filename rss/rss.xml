@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+	<channel>
+		<title>loveFluffy</title>
+		<link>https://lovefluffy.github.io/</link>
+		<description>Things I find interesting~</description>
+	</channel>
+
+	<item>
+		<title>About Me</title>
+		<link>https://lovefluffy.github.io/about.html</link>
+		<description>This is my About page.</description>
+	</item>
+
+</rss>

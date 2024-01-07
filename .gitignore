@@ -5,6 +5,7 @@ books/
 # temp files directories
 *.swp
 tmp*
+tmp/
 
 audio/
 business/
@@ -15,3 +16,5 @@ links/mottos.html
 projects.html
 tmp-my-book-list.html
 notes.md
+
+offline/
