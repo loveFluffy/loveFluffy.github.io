@@ -10,11 +10,15 @@ tmp/
 audio/
 business/
 neuroscience/
-links/finance.html
+finance/
 links/jobs.html
 links/mottos.html
+links/myAccount.html
 projects.html
 tmp-my-book-list.html
 notes.md
 
 offline/
+projects/
+news/pdf/
+news/historyNews.html

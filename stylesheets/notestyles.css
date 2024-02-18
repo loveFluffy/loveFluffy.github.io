@@ -58,6 +58,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0 10%;
 }
 
 h1,
@@ -86,7 +87,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -96,13 +97,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {

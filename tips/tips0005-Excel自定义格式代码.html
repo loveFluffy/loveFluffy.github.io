@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Excel&#x81ea;&#x5b9a;&#x4e49;&#x683c;&#x5f0f;&#x4ee3;&#x7801;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Excel&#x81ea;&#x5b9a;&#x4e49;&#x683c;&#x5f0f;&#x4ee3;&#x7801;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -16,7 +16,7 @@
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +28,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +186,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0 10%;
 }
 
 h1,
@@ -118,7 +215,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +225,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -467,10 +564,12 @@ div.toc ul>li>ul>li>ul>li,
 div.toc ul>li>ul>li>ul>li>ul>li {
 */
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="excel自定义格式代码">Excel自定义格式代码</h1>
-<p><a href="https://zhuanlan.zhihu.com/p/334303598">原文链接：花了20小时整理的Excel自定义格式代码大全</a></p>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="excel自定义格式代码">Excel自定义格式代码</h1>
+<h2 id="常用的">常用的</h2>
+<p>0!.00,,&quot;亿&quot;</p>
+<h2 id="原文链接花了20小时整理的excel自定义格式代码大全"><a href="https://zhuanlan.zhihu.com/p/334303598">原文链接：花了20小时整理的Excel自定义格式代码大全</a></h2>
 <h3 id="01-如何设置单元格格式">01 如何设置单元格格式</h3>
 <p>选中需要设置单元格格式的区域范围后，至少有三种方法可以设置单元格格式：</p>
 <h4 id="菜单栏按键法">菜单栏按键法</h4>
@@ -566,7 +665,7 @@ div.toc ul>li>ul>li>ul>li>ul>li {
 <p>对于达成率&gt;=1的指标，使用“绿色”显示；达成率&gt;=0.95的指标，使用“黄色”指标显示；低于0.95的用红色显示。只需要在自定义单元格格式中填入如下代码：</p>
 <p><code>[绿色][&gt;=1];[黄色][&gt;=0.95];[红色]</code></p>
 
-        
-        
-    </body>
-    </html>
+            
+            
+        </body>
+        </html>

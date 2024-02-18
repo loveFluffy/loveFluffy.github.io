@@ -1,6 +1,10 @@
 # Excel自定义格式代码
 
-<a href="https://zhuanlan.zhihu.com/p/334303598">原文链接：花了20小时整理的Excel自定义格式代码大全</a>
+## 常用的
+
+0!.00,,"亿"
+
+## <a href="https://zhuanlan.zhihu.com/p/334303598">原文链接：花了20小时整理的Excel自定义格式代码大全</a>
 
 ### 01 如何设置单元格格式
 
