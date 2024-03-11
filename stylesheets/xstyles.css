@@ -346,7 +346,8 @@ h4 img {
     height: 25px;
 }
 
-.gridtable td img {
+.gridtable td img,
+.list li img {
     width: 20px;
     height: 20px;
 }
