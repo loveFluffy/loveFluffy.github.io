@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+    <title>Learning the vi Editor</title>
+    <link rel="icon" href="../images/x.ico" />
+</head>
+<body>
+    <h1>Notes#0005: Learning the vi Editor</h1>
+
+
+
+    <!-- ======================== Ch1: Getting acquainted ======================== -->
+    <h3>Ch1: Getting acquainted</h3>
+    <div>
+        <h4>1.2 Getting vi if you don't have it already</h4>
+        <p>vim comes in two variants, a text-only version, and a GUI version, the latter is called gvim.</p>
+    </div>
+
+
+
+    <!-- ======================== Ch2: Basic tasks ======================== -->
+    <h3>Ch2: Basic tasks</h3>
+    <p>You can invoke the tutor by entering vimtutor at your shell.</p>
+    <div>
+        <h4>2.3 Command mode</h4>
+        <ul>
+            <li><strong>h</strong> - left</li>
+            <li><strong>j</strong> - down</li>
+            <li><strong>k</strong> - up</li>
+            <li><strong>l</strong> - right</li>
+        </ul>
+        <ul>
+            <li><strong>w</strong> moves forward to the beginning of the next word.</li>
+            <li><strong>b</strong> moves backwards to the beginning of the previous word.</li>
+            <li><strong>(</strong> and <strong>)</strong> move by sentences, either backward or forward.</li>
+            <li><strong>{</strong> and <strong>}</strong> move by paragraphs.</li>
+        </ul>
+        <ul>
+            <li><strong>x</strong> deletes one character.</li>
+            <li><strong>dw</strong> deletes one word.</li>
+            <li><strong>dd</strong> deletes one line.</li>
+        </ul>
+        <p>删除一个单词的时候，光标要放在单词的首字母上。</p>
+    </div>
+
+
+
+    <!-- ======================== Ch3: Making your work easier ======================== -->
+    <h3>Ch3: Making your work easier</h3>
+    <div>
+        <h4>3.1 More on commands</h4>
+        <ul>
+            <li><strong>0</strong> moves to the immediate beginning of the line.</li>
+            <li><strong>$</strong> moves to the immediate end of the line.</li>
+            <li><strong>^</strong> moves to the first non-whitespace character of the line.</li>
+        </ul>
+        <p>The <strong>/</strong> command allows you to jump directly to some pattern in the file. For example, if you're looking for the next occurrence of the word "pomegranate" in your text, if you hit /, then type in pomegranate (you need not enter insert mode) and hit enter, the cursor will jump to the next occurrence of the word, if it exists. If you want to search backwards, you would perform the same procedure, but use the <strong>?</strong> command. To repeat either search, enter <strong>//</strong>, <strong>??</strong>, or alternatively, type <strong>/</strong> or <strong>?</strong> and hit Enter. You can also press <strong>n</strong> to jump to the next occurrence, and <strong>N</strong> to jump to the previous occurrence.</p>
+        <ul>
+            <p>Examples:</p>
+            <li><strong>d$</strong> will delete up to the of the line.</li>
+            <li><strong>dt;</strong> will delete until the next semicolon (This is helpful in languages like C and perl that use semicolons to finish statements).</li>
+            <li><strong>d2}</strong> to delete the next two paragraphs.</li>
+            <li><strong>d4b</strong> to delete the previous four words (alternatively, you could enter 4b4dw).</li>
+        </ul>
+    </div>
+
+
+
+    <!-- ======================== Ch4: Advanced tasks ======================== -->
+    <h3>Ch4: Advanced tasks</h3>
+    <div>
+        <h4>4.1 Copying and Pasting</h4>
+        <p><strong>dw</strong> to delete a single word.</p>
+        <p><strong>yw</strong> to yank a single word.</p>
+        <p>Example:<br/>
+            <strong>db</strong> to delete a single word before the cursor.<br/>
+            <strong>dW</strong> the capital W tells vi to go all the way to the first whitespace character after the word.<br/>
+            <strong>dB</strong> the capital B tells vi to go all the way to the first whitespace character before the word.
+        </p>
+        <p>用m来给文档加标签，用`来定位到标签。例如：d`a来删除当前位置到标签间的内容。</p>
+        <p>Type <strong>m</strong><strong>a</strong>. This will mark the current position that your cursor is at as mark a. You can go back to this position anytime you want from now on by typing <strong>`a</strong>. (`a means "move to the character that has been marked as a")</p>
+        <p>Now move to some other position. Type <strong>d`a</strong>. This will delete everything from the current position to the position you marked as a.</p>
+        <p>Some users find using <strong>mm</strong> to be a convenient temporary bookmark, because it can be typed so quickly.</p>
+        <ul>
+            <li>To the end or beginning of a line</li>
+            <p><strong>d$</strong> or <strong>d^</strong></p>
+            <li>To the end or beginning of the file</li>
+            <p><strong>dG</strong> or <strong>d1G</strong></p>
+            <li>To the next occurrence of a pattern</li>
+            <p><strong>d/myPattern</strong></p>
+            <p>This is particularly useful when editing HTML files with d/<</p>
+        </ul>
+
+        <h4>4.2 Adjusting the Screen</h4>
+        <p>In order to force vi to redraw the complete screen, press <strong>Ctrl-L</strong> </p>
+        <p>If you want to adjust what is currently displayed, then the <z> command is rather useful. It's a kind of Swiss army knife, and has a rather complex syntax:
+        </p>
+        <p><strong>[/pattern/][m]z[n](<CR>|.|-)</strong> 
+        </p>
+        <p>([ ... ] denotes optional items, (...|...) denotes alternatives)</p>
+        <p>Some common applications of the command,</p>
+        <p>Scroll the screen so the current line becomes the middle line of the screen. The cursor remains on that line:</p>
+        <p><strong>z .</strong> 这个挺有用的，光标置中。</p>
+        <p>Scroll the screen so the current line becomes the top line on the screen:</p>
+        <p><strong>z CR</strong></p>
+        <p>Scroll the screen, so the current line becomes the bottom line of the screen:</p>
+        <p><strong>z -</strong></p>
+        <p>If a <strong><i>/pattern/</i></strong> or a number <strong>m</strong> is given the cursor is moved further after the adjustment. <strong><i>/pattern/</i></strong> indicates to move the cursor to the first match of that pattern. <strong>m</strong> indicates to move the cursor to the mth line on the screen. So, for example,</p>
+        <p><strong>/while/z CR</strong></p>
+        <p>would first scroll the screen so the current line becomes the top line on the screen, and then move the cursor to the first 'while' in the text from that position on.</p>
+        <p>The number <strong>n</strong> is a rather obscure parameter. If provided, it tells vi to behave as if the screen is just <strong>n</strong> lines high. The result is that only <strong>n</strong> number of lines are adjusted, and the rest of the screen is either ignored or cleared, presumably useful on slow terminals to avoid redrawing the screen unneccessarily</p>
+    </div>
+
+
+
+    <!-- ======================== Ch5: Details ======================== -->
+    <h3>Ch5: Details</h3>
+    <p>从这一章往下，我只跳着看了一点，有很多特别细节的功能，暂时用不上的都没有看。以后用熟练了之后再回来深入学习吧。</p>
+    <div>
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+    </div>
+
+
+
+    <!-- ======================== Ch6: Vi Clones ======================== -->
+    <h3>Ch6: Vi Clones</h3>
+    <div>
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+    </div>
+
+
+
+    <!-- ======================== Ch7: Vim ======================== -->
+    <h3>Ch7: Vim</h3>
+    <div>
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+    </div>
+
+
+
+    <!-- ======================== Ch8: vile ======================== -->
+    <h3>Ch8: vile</h3>
+    <div>
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+    </div>
+
+
+
+    <!-- ======================== Ch9: BusyBox vi ======================== -->
+    <h3>Ch9: BusyBox vi</h3>
+    <div>
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+    </div>
+
+
+
+    <!-- ======================== Ch10: vi Reference ======================== -->
+    <h3>Ch10: vi Reference</h3>
+    <div>
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+    </div>
+
+
+
+    <!-- ======================== Ch11: Authors ======================== -->
+    <h3>Ch11: Authors</h3>
+    <div>
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+    </div>
+
+
+
+    <!-- ======================== Ch12: Contributors ======================== -->
+    <h3>Ch12: Contributors</h3>
+    <div>
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+
+        <h4></h4>
+        <p></p>
+    </div>
+
+</body>
+</html>
