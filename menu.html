@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="utf-8" />
+	<base target="_parent"> <!--页面的所有链接都在当前标签页打开-->
+	<style type="text/css">
+		body {
+			padding: 0px;
+			margin: 0px;
+
+			/*没起作用，为什么？？？？？？？？？？？？
+			height: 80px;
+			*/
+
+			/*禁用滚动条*/
+			overflow: hidden;
+		}
+
+		table {
+			width: 100%;
+
+			/* 手机屏幕宽度1080px */
+			max-width: 1080px;
+
+			/* 左右居中 */
+			margin: 0px auto;
+			padding: 0px;
+
+			/*每列宽度相等*/
+			table-layout: fixed;
+		}
+
+		td {
+			text-align: center;
+			background-color: transparent;
+			/*待定，最后要删除
+			border: 1px solid black;
+			*/
+			font-family: Georgia, Helvetica, sans-serif, Arial;
+			font-size: 18pt;
+			font-weight: bold;
+		}
+
+		td a {
+			/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+			display: block;
+			/*暂时不设定
+			background-color: #dddddd;
+			*/
+			text-decoration: none;
+			color: black;
+		}
+
+		/* 当鼠标悬停时把链接颜色更改为浅红色*/
+		td:hover {
+			background-color: #ff9191;
+			box-shadow: 2px 2px 5px gray;
+		}
+
+		a img {
+			width: 60px;
+			height: 60px;
+		}
+	</style>
+</head>
+
+<body style="background-color: #d2b48c"> <!--f1e5c9-->
+	<table>
+		<tr>
+			<td><a href="./index.html"><img src="./icon/home.png" alt="Home"></br>HOME</a></td>
+			<td><a href="./booknotes/myBooklist.html"><img src="./icon/books.png" alt="my book list"></br>BOOKS</a></td>
+			<td><a href="./csbooknotes/IT.html"><img src="./icon/IT.png" alt="IT"></br>IT</a></td>
+			<td><a href="./tools/tools.html"><img src="./icon/tools.png" alt="tools"></br>TOOLS</a></td>
+			<td><a href="./about.html"><img src="./icon/about.png" alt="ABOUT"></br>ABOUT</a></td>
+		</tr>
+	</table>
+</body>
+
+</html>

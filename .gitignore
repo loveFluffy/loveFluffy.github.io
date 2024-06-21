@@ -1,13 +1,17 @@
+# 大文件
 books/
-booknotes/*.md
-csbooknotes/*.md
+audio/
 
-# temp files directories
+# 原始笔记文件
+booknotes/notes*.md
+csbooknotes/notes*.md
+
+# 临时文件
 *.swp
 tmp*
 tmp/
 
-audio/
+# 涉及隐私文件
 business/
 neuroscience/
 finance/

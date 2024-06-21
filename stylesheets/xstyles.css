@@ -1,0 +1,394 @@
+﻿@charset "utf-8";
+
+@import "animate.css";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+    color: #000;
+    /*background-color: #f1e5c9;*/
+    background: #f1e5c9;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-rendering: optimizelegibility;
+    scroll-behavior: smooth;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* 上、右、下、左： 左右居中 */
+    margin: 0px auto 0px;
+    font-family: Georgia, Helvetica, sans-serif, Arial;
+    font-size: 16pt;
+}
+
+.content {
+    /* 手机屏幕宽度1080px */
+    max-width: 1080px;
+    /* 左右居中 */
+    margin: 0px auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.3;
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8em;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.6em;
+    margin: 30px 0 5px;
+    padding-left: 9px;
+    border-left: 6px solid #ff7e79;
+    border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+    font-size: 1.4em;
+    margin: 10px 0 5px;
+    padding-left: 9px;
+    border-left: 6px solid #ffcccc;
+    /*#666*/
+}
+
+h5 {
+    font-size: 1.2em;
+    padding-left: 9px;
+    border-left: 4px solid #ffcc99;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+/*选择所有未访问过的链接*/
+a:link {
+    color: #000;
+}
+
+/*选择所有已访问的链接*/
+a:visited {
+    color: #575757;
+}
+
+a:hover,
+a:active {
+    color: #d3595e;
+}
+
+ol p,
+ul p {
+    margin-bottom: 0px;
+}
+
+li {
+    margin-left: 0.75em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    list-style: square inside;
+}
+
+table {
+    align-self: center;
+    color: #333333;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #666666;
+    border-collapse: collapse;
+    font-size: 14pt;
+}
+
+
+table.legend,
+table.legend td {
+    border: none;
+}
+
+/**** book list table style ****/
+
+table.gridtable {
+    /*border: 1px black;*/
+    width: 100%;
+    /*列宽固定为设置值，不根据内容调整*/
+    table-layout: fixed;
+}
+
+table.gridtable th {
+    padding: 8px;
+    background-color: #dedede;
+}
+
+table.gridtable th:nth-child(1) {
+    width: 25%;
+}
+
+table.gridtable th:nth-child(2) {
+    width: 25%;
+}
+
+table.gridtable th:nth-child(3) {
+    width: 15%;
+}
+
+table.gridtable th:nth-child(4) {
+    width: 35%;
+}
+
+table.gridtable td {
+    padding: 4px 0px 4px 4px;
+    background-color: #ffffff;
+}
+
+/*============下面是比较相关的细致设置============*/
+
+.gridtable tr.bk0 td,
+.legend td#bk0 {
+    background-color: #C0C0C0;
+    /* 未读完不值得读-灰色 bk0 */
+}
+
+.gridtable tr.bk1 td,
+.legend td#bk1 {
+    background-color: #D2B48C;
+    /* 读完不值得再读-棕色 bk1 */
+}
+
+.gridtable tr.bk2 td,
+.legend td#bk2 {
+    background-color: #99CC99;
+    /* 笔记值得反复看-绿色 bk2 */
+}
+
+.gridtable tr.bk3 td,
+.legend td#bk3 {
+    background-color: #99CCFF;
+    /* 原作值得反复读-蓝色 bk3 */
+}
+
+.gridtable tr.bk4 td,
+.legend td#bk4 {
+    background-color: #FF9999;
+    /* 原作可买来收藏-红色 bk4 */
+}
+
+
+
+
+table.toolbox {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+
+    /*每列宽度相等*/
+    table-layout: fixed;
+}
+
+table.toolbox td {
+    text-align: center;
+    background-color: transparent;
+
+    padding-top: 30px;
+    /* padding: 3px; */
+}
+
+table.toolbox td a {
+    /*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+    display: block;
+    padding: 5px;
+
+    /*增加行间距
+    margin-top: 40px;
+    margin-bottom: 10px;
+    */
+    text-decoration: none;
+    color: black;
+}
+
+/* 当鼠标悬停时把链接颜色更改为浅红色
+table.toolbox td a:hover {
+    background-color: #ff9191;
+    box-shadow: 2px 2px 5px gray;
+}*/
+
+
+
+iframe.menu,
+iframe.copyright {
+    margin: 0px;
+    padding: 0px;
+    border-style: none;
+    width: 100%;
+}
+
+iframe.menu {
+    /*滚动时固定在屏幕顶端*/
+    /* Safari 及其他兼容 */
+    position: -webkit-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    top: 0;
+
+    height: 100px;
+}
+
+iframe.copyright {
+    height: 200px;
+    margin-top: 30px;
+}
+
+
+
+a img {
+    width: 60px;
+    height: 60px;
+}
+
+a:hover img {
+    animation: swing 0.5s;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+    margin: 0.8em 0;
+    border: none;
+    border-bottom: 1px solid #cfcfcf;
+    height: 10px;
+}
+
+
+
+/* 将内容分成两栏显示，用以显示链接列表之类的 */
+ul.list {
+    column-count: 2;
+    /*
+    column-rule: 1px dashed #adadad;
+    */
+}
+
+.list li {
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    line-height: 2em;
+    text-indent: 2em;
+    list-style-type: none;
+}
+
+::selection {
+    background-color: #fbb;
+}
+
+#icon img,
+h3 img {
+    width: 40px;
+    height: 40px;
+}
+
+h4 img {
+    width: 25px;
+    height: 25px;
+}
+
+.gridtable td img,
+.list li img {
+    width: 20px;
+    height: 20px;
+}
+
+/* 设置backtotop按钮 */
+#backtotop {
+    /* Fixed/sticky position */
+    position: fixed;
+    /* Place the button at the bottom right of the page */
+    bottom: 25%;
+    right: 5%;
+    /* Make sure it does not overlap */
+    z-index: 99;
+    /* Hidden by default */
+    visibility: hidden;
+}
+
+#backtotop a img {
+    width: 40px;
+    height: 40px;
+}
+
+canvas {
+    width: 800px;
+    height: 400px;
+    /* border: none; */
+    border: #000 1px solid;
+    margin: auto;
+    align-self: center;
+
+}
+
+
+
+
+
+/* 网站整体变灰色 */
+/* html {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+} */
