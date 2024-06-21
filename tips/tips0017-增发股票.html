@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x975e;&#x516c;&#x5f00;&#x589e;&#x53d1;&#x80a1;&#x7968;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+	padding: 0 10%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 30px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ffcccc;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 4px solid #ffcc99;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
+		z-index: 1;
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="非公开增发股票">非公开增发股票</h1>
+<h3 id="对股价影响">对股价影响</h3>
+<p>增发对股价的影响应该分为两个方面：</p>
+<p>一、上市公司选择增发股票是公开增发还是非公开增发（也叫定向增发）。如果是公开增发，会对二级市场的股价造成压力，对资金的压力更大，如果市场不好，肯定不好。如果是非公开增发，对二级市场的股价影响较小，如果参与非公开增发的机构实力很大，说明市场认可的相当不错，可以算是盈利。</p>
+<p>定向增发是指上市公司向其大股东增发股票，以换取大量现金。这种趋势通常是由于公司在并购或扩大生产时需要资金而引起的。然而由于并购和生产扩张对公司业绩增长都有长期影响，短期内股价的波动不会有明显的趋势（除非涉及稀缺资源、并购，往往会形成市场热点）。</p>
+<p>非公开增发是公司宣布发行新股，由普通投资者购买的一种形式。这种形式的资金成本最高，证明公司似乎别无选择，其大股东不支持公司的融资，因此往往被解读为负面信号——尤其是在价值投资中方面。然而由于购买者范围不受限制，增发股份将严重稀释分红的比例，这是上市公司对投资者的背叛行为。对于非定向增发的公司来说，市场前景的股价变化一般都很难看。</p>
+<p>二、增发的价格。如果是公开发行，价格更打折，会引起市场追逐，但会提高二级市场的股价。价格折扣少的话，可能会被市场抛弃。如果是定向增发，折扣不能太高，否则会打压二级市场的股价。</p>
+<p>公开发行一般指首次公开发行，即IPO。IPO后的股价走势有一个明显的前瞻性指标，就是在中签率购买股票，因为在最初发行的时候，对股票的供应量有一定的限制。因此中签率越高，购买者越少，这意味着投资者对市场前景不乐观，这种股票往往在发行后很快就会崩溃。另一方面，如果中签率非常低，这证明投资者渴望购买，并对市场前景持乐观态度。这类股票上市后会有一个短期的追逐过程，后续走势一般波动较大。</p>
+<p>增发对股价的影响是好是坏。其实只要是概念和新闻，都是准备股价涨跌的主力。股票交易尤其是牛市，不要关注消息和表现，更不要说基本面。如果一个公司业绩好，净资本流量为正，市场利润低，股价就拉不起来。不是一月二月，而是这半年来，从来没有大行情。最好不要碰。增发除了是上市公司募集资金外，并不会对其基本面产生很大的改变。许多公司增发股票是为了解决资金的困境。其次，它们可能向子公司注资，并向其他公司借钱。也就是说子公司赚的钱不归上市公司所有，第三是开发新项目或者开新公司。追加的资金只会一点点流入上市公司的财务。在股票发行价格之前，公司与机构串通抬高股价。当发行价格固定时，其股价不会上涨。所以股票的发行取决于它的时机，并不是所有的增发都能给你带来利润。</p>
+<p>股份通过董事会增持股份方案的，将提交证监会审批。一般情况下会批准其增发。上市公司在申请增发的过程中，为了提高增发价格，最大化资金圈。也就是说，当股票有增发且获批的可能性很大时，可以在这个时候介入以满足上市公司高层的意愿。如果增发计划已经通过，此时最好不要介入，因为一旦通过，增发的股价就会相应固定。主力和上市公司不会让增发价格与当前股价相差太多。如果股价高，增发量低，就会压低股价。因此，不要匆忙，因为一只股票已经通过了增发，而在同一天上市的涨幅是无限的。结果只会让它难过，因为这个时候股票不会涨也不会跌。</p>
+<p>如果有一个好项目急需资金，增发股票无疑是融资的最佳方案。融资后没有用，就是不能给股东带来利益，不能给公司带来利润，对公司的正常经营没有帮助。因此增发后净资产
+增加，新资金的盈利能力不如旧。</p>
+<h3 id=""></h3>
+<p>非公开增发即定向增发，定向增发一般来说，有一定利好因素，但是也要结合公司基本面实际分析。利好方面：股价在低位定向增发，只要不是在熊市，一般来说都会被炒作，因此短期可能引发股价上涨；增发得到的资金，若是进行项目投资，而项目能带来丰厚的利润，则可能上涨。利空方面：股价已经运行到高位增发，资金可能会借利好出货；定向增发融资得到的资金，进行项目投资，如果项目可能无法看到前景，股价可能会下跌；定向增发价如果太低，增发价可能会向二级市场价靠拢，那购买了股票的散户短期就会亏损；增发之后股价一般会进入限售期，如果限售期一旦解禁之后，很多特定投资者开始变现，短期二级市场承压，股价可能下跌，对散户来说也是利空。点掌财经上最近就在讲解非公开增发股票的相关知识点，你可以去了解下。</p>
+<h3 id="为什么a股上市公司增发股票的方式几乎没有公开增发">为什么A股上市公司增发股票的方式几乎没有公开增发</h3>
+
+            
+            
+        </body>
+        </html>

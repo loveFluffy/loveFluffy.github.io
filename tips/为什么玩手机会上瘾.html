@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x4e3a;&#x4ec0;&#x4e48;&#x73a9;&#x624b;&#x673a;&#x4f1a;&#x4e0a;&#x763e;&#xff1f;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
+		z-index: 1;
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="为什么玩手机会上瘾">为什么玩手机会上瘾？</h1>
+<p>英国BBC的纪录短片《智能手机：阴暗面》（Smartphones: The Dark Side），提供了一个很新奇的视角——它介绍了很多隐藏在手机里鲜为人知的套路与心机，科学地解释了为什么人们会沉迷手机。</p>
+<h3 id="套路一-红色未读提醒">套路一 ：红色未读提醒</h3>
+<p>智能手机各类app上的小红点，你关注到了吗？它不断提醒着人们——又有更新了，快看过来，赶紧点击，这样的设计可谓心机满满。相关心理学研究早已证明，红色是一种最能触发人体警觉性的颜色，可以一秒唤醒大脑的注意力。不同颜色对触发个体注意力及警觉性程度的平均值和标准误差，如图所示，不同颜色之间的差异显著，红色最高，接下来顺序依次为蓝色、绿色和白色。于是，频繁出现的提示小红点，轻而易举便吸引了人们的目光，让人忍不住就想点开软件一探究竟。尤其对于强迫症们来说，更是分分钟都无法忍受这些序号杂乱无章的小红点存在。</p>
+<h3 id="套路二-无限滚屏功能">套路二 ：无限滚屏功能</h3>
+<p>“无限滚屏”，顾名思义就是手机页面可以没有限制地往下滑动，人们可以不停接收浏览新的信息。平日里我们经常上的微博、知乎、抖音、淘宝等软件，其实都是这样，刷起来就没有结束，很容易让人忘了时间。这种设计看起来让人们更加方便地获取了海量信息，但实际上也是有套路的。</p>
+<p>它的原理源自于美国康奈尔大学营养学教授Brian Wansink的“无底碗实验”。这项研究发现，如果在汤碗底部装上导管，能够悄悄向碗里不断加汤，那么实验者会在不知情的情况下，比平时多喝73%的汤却不觉得更饱。值得一提的是，这个实验还获得了2007年搞笑诺贝尔奖。</p>
+<p>同样的道理，当信息能够不断被汲取时，人们自然会在无意识中大幅提高看手机的时间。</p>
+<h3 id="套路三-无法预期的奖励或点赞">套路三 ：无法预期的奖励或点赞</h3>
+<p>很多平台都有抽奖、抢红包或点赞留言等功能，吸引大家参与其中。其实，这也用到了心理学的原理。</p>
+<p>美国心理学家、新行为主义学习理论创始人斯金纳曾做过一个经典的“操作性条件反射”实验。他制作了一个特殊的箱子，内部设有按钮，当按钮被按下时，食物便会被自动放入箱子内。接着，他把8只鸽子放进箱子，观察它们的觅食行为。斯金纳发现，如果随机给予食物奖励，那么鸽子在无法预期的情况下，会更加卖力地啄击按钮。</p>
+<p>这说明，想让个体持续地作出某一动作，最好的方法并不是每次做出动作之后都给出奖励，而是在做出若干次动作之后，随机给出一次奖励。而手机app的奖励及点赞机制，正是运用了这个套路。我们永远不知道这次会抽到什么大奖、自己发的朋友圈会有哪些人点赞留言。这种无法预期的奖励或惊喜，会促使人们持续不断地继续玩下去。</p>
+<p>与此同时，从生物学层面来看，玩手机的过程会使大脑产生一种特别的神经递质——多巴胺。它是人类的快乐之源，能使人产生快感，并不自觉地上瘾。2019年，美国加州大学伯克利分校哈斯商学院的一项研究发现——“信息对大脑产生多巴胺的奖励系统的作用，和金钱或者食物的作用方式相同”。也就是说，玩手机所带来的快乐刺激，和吃大餐或者发工资时的喜悦与满足感是一样的。</p>
+<p>频繁玩电子产品对孩子有很多弊端，比如可能改变孩子大脑正常构造，延迟孩子语言、运动、社交等技能的发展，罹患焦虑症或抑郁症的概率更大……童学馆之前专门发文探讨过这个问题：玩手机对孩子危害有多大？查阅无数论文后，我震惊了……。</p>
+<p>但事实上，科技发展到今天，社会和我们儿时的成长环境有了非常大的不同，让孩子不玩手机，不上网是不太可能的。如何面对科技产品，是很多家长不得不共同思考的难题。越来越多的研究证明，电子产品对孩子的影响并没有想象中那么可怕。</p>
+<p>TED演讲《关于孩子整天对着屏幕的三种担忧——为什么它们并没有那么可怕？》中，儿童媒体专家萨拉•德威特认为，电子产品能够与孩子建立联结、有所互动、积极调动起孩子的情绪和行动……这是一种人性的体验，对孩子来说具有正面影响。</p>
+<p>演讲中，萨拉列举了家长对于孩子玩电子产品的三种主要担忧，并一一反驳：</p>
+<h3 id="第一种担忧-电子屏幕都是消极的会让孩子久坐不起">第一种担忧 ：电子屏幕都是消极的，会让孩子久坐不起。</h3>
+<p>她以《克拉特的动物世界》这个假扮动物的游戏为例，证明很多手机游戏都能让孩子动起来，并且在游戏中学到知识。萨拉指出，数字技术促进了具象化学习的发展，孩子可以应用到现实生活中。</p>
+<h3 id="第二种担忧-玩游戏是浪费时间会使孩子分心影响学习">第二种担忧 ：玩游戏是浪费时间，会使孩子分心，影响学习。</h3>
+<p>萨拉同样做出了反驳。她和团队成员设计了一系列数学主题游戏《好奇猴乔治》，并且让80位学龄前儿童在玩过这些游戏后进行了标准化的数学测验。结果证明，这些游戏可以帮助孩子理解相关的数学知识，并且根据游戏数据预测的分数，和孩子们参加考试获得的实际分数，具有精准的一致性。</p>
+<p>由此她认为，这些手机游戏能够和标准化考试一样，用于掌握更多关于孩子认知能力学习的信息，并减少孩子们坐在教室里考试的时间，降低考试所带来的焦虑感，帮助老师更直观地观察，为孩子制定更加个性化的学习策略。</p>
+<h3 id="第三种担忧-这些电子屏幕让我和我的孩子疏远了">第三种担忧 ：这些电子屏幕让我和我的孩子疏远了。</h3>
+<p>萨拉的相关研究证明，当父母与孩子共同看手机，并且一起讨论相关的内容时，可以促进孩子的情感成长，加深亲子关系。</p>
+<p>由此可见，父母的这些担忧，实际上是多虑了。手机等电子产品作为新技术，在帮助孩子成长、与人相处以及学习方面其实也具有积极的作用，关键在于如何使用。</p>
+<p>与此同时，2019年英国牛津大学网络研究所Andrew Przybylski等人的一项大型调查研究，还发现：使用电子产品并不会影响青少年的幸福感。</p>
+<p>研究人员采用严格的方法收集到这些青少年每天花在电子屏幕上的准确时长，同时通过心理测试、自尊及情绪量表等问卷调查，对他们的幸福感和心理状态进行全面了解与评估。结果证实，青少年每天使用电子产品的总时长对他们的心理健康几乎没有影响。</p>
+<p>可见，电子产品对于孩子，并不是真的一无是处。与其把它视为洪水猛兽，不如思考如何让孩子合理利用电子产品，在杜绝与上瘾之间找到一个平衡点，将电子产品的益处发挥到最大化。童学馆之前也发文探讨过这个问题：一味禁止孩子上网、玩手机？你可能正在关闭他走向未来的通道！</p>
+<p>如何让孩子避免上瘾，正确使用电子产品呢？这里提供几条建议：</p>
+<h3 id="1-关注孩子使用电子产品在做什么">1. 关注孩子使用电子产品在做什么</h3>
+<p>孩子使用电子产品的很多行为，都是有收获的，比如观看纪录片、玩益智类优质游戏、利用app探索与创作……我们真正要限制与杜绝的，是一些让孩子被动接受的娱乐方式，比如容易沉迷却学不到任何东西的快餐式信息软件、聊天灌水、以及血腥暴力的网络游戏。流量垃圾无法帮助孩子成长，反而让他们刷到停不下来，白白浪费了时间。</p>
+<h3 id="2主动规避手机上瘾的套路">2.主动规避手机上瘾的套路</h3>
+<p>既然手机等电子产品使人沉迷是运营商的套路，那我们不妨主动识破，及时规避。比如，关掉手机app上的更新提示、把屏幕调成黑白色、把喜欢的应用藏在主屏幕以外的文件夹里……这些措施都有助于防止孩子玩电子产品上瘾。</p>
+<h3 id="3-把握好电子产品的使用时间">3. 把握好电子产品的使用时间</h3>
+<p>根据美国儿科学会（AAP）关于儿童使用手机等电子产品的建议：<br>
+一岁半之前，除了打视频电话，不要使用任何电子产品；<br>
+一岁半至两岁，家长可选择一些优质的内容和孩子一起观看，不要让孩子单独使用电子产品；<br>
+两岁至五岁，每天对着屏幕的时间不要超过1小时，并建议家长和孩子商量可以观看的内容，共同分享。</p>
+<p>与此同时，孩子需要遵守“20-20-20”原则以防近视，即“每20分钟就将视线转向远处至少20英尺处（大约6米）至少20秒”。</p>
+<h3 id="4-父母共同参与做好引导">4. 父母共同参与，做好引导</h3>
+<p>正如前文提到的TED演讲中，萨拉在第三种担忧中所指出的，当父母参与到孩子们的电子产品使用内容中去，并且和孩子讨论时，会产生积极的效果。美国儿科学会则建议：5岁以后，家长可以与孩子共同协商制定玩电子产品的时间，并严格执行。而这其中，家长以身作则很关键。跟孩子一起制定好的规则，大人也要主动遵守。</p>
+<p>举个例子，跟孩子一起约法三章，在写作业、吃饭时、以及临睡前，避免使用电子产品。为此，家长需要带头为孩子创造一个不容易受到干扰和分心的环境。比如，当孩子需要学习时，我们可以把手机、平板等电子产品放在看不见的地方或调成静音模式；再比如，不要把电子产品带进卧室或带上餐桌，避免孩子睡觉前和吃饭时使用这些电子设备。这一切，需要我们跟孩子沟通为什么这样做，但更需要我们做好榜样，同时跟孩子彼此互相监督。毕竟，当自己整天刷手机不离手时，又凭什么对孩子提要求呢？值得一提的是，目前很多针对儿童青少年的app都有定时设置及家长模式，这对于防止孩子沉迷起到了很好的作用。</p>
+<p>电子产品作为现代人的生活必需品，早已和每个人密不可分。教会孩子合理使用它们，而不是被它们所控制，才能真正对成长有帮助。</p>
+<p>最后，借由TED演讲《关于孩子整天对着屏幕的三种担忧——为什么它们并没有那么可怕？》中的一段话来结束本文：“我今天并不是想说所有的电子媒体对孩子都好。我们有理由担忧，如今的孩子流连于各种屏幕不能自拔。我们也有理由考虑平衡的问题——怎样才能让电子产品融入孩子学习和成长所需要的其他事中？</p>
+<p>但是当我们一心担忧时，我们忘了很重要的一点——孩子跟我们同处一个世界，在这个世界，成年人看手机，每天超过50次。电子产品已经是孩子生活的一部分。如果我们不承认这一点，或者被担忧冲昏了头脑，孩子就永远不会明白使用它们的原因和方法。我们何不对这种媒介多一点期待？我们何不经常跟孩子们讨论一下他们看的内容？我们何不多考虑一下这种技术能给孩子们带来的正面影响？到那时，这些工具的潜力才能得以实现。”
+最近我们秋叶写书私房课好消息不断！大家出的新书一本接一本，而且书都在榜单上排名很好。刚好这三本书，都有幕后故事，我今天就给大家聊一聊。</p>
+<h1 id="沃尔玛的发货方式卖家该如何选择">沃尔玛的发货方式，卖家该如何选择！</h1>
+<p>深入交流，可以加微信：minge2023</p>
+<p>自2021年3月份，沃尔玛向中国卖家招商以来，加上亚马逊政策越来越收紧，入驻亚马逊的卖家也越来越多。据数据统计，沃尔玛上则有20%的新卖家来自中国，且可能还在持续增加。</p>
+<p>那么作为沃尔玛卖家，肯定最关心的就是发货问题了，作为一个发展趋势比较好的平台，选择一个比较适合自己的发货方式也是极其重要的。那么今天敏哥就来带大家了解一下沃尔玛的主要发货方式。</p>
+<h3 id="沃尔玛wfs">沃尔玛WFS</h3>
+<h4 id="1wfs负责收货储存分拣配送">1.WFS负责收货/储存/分拣/配送</h4>
+<p>中国卖家将自己的货物运输到WFS中心。和亚马逊FBA类似，沃尔玛WFS负责货物的存储，发货，客户服务等。当买家下单之后，沃尔玛负责将产品分拣，包装，运输和配送。</p>
+<h4 id="2两天配送服务">2、两天配送服务</h4>
+<p>产品由沃尔玛或者沃尔玛合作的第三方公司将产品配送给买家。沃尔玛为卖家提供次日，两天，三天和标准（7天）配送服务。卖家们大多数会选择两天配送服务。</p>
+<h4 id="3退货服务">3.退货服务</h4>
+<p>当买家产生退货之后，也可以在沃尔玛的线下店铺进行退货。并且沃尔玛在美国拥有4700多家线下门店。</p>
+<h4 id="wfs优点">WFS优点</h4>
+<p>选择使用WFS“两日达”卖家，在沃尔玛前台会有“两日达（2-day shipping）”标签以及“由卖家出售，由沃尔玛履行（Fulfilled by Walmart）”显示，享有平台首页更多的流量扶持，提高产品转化。另外也能够方便消费者，消费者退货更为便利，可以选择线下的商店进行退货，提高卖家的消费体验。</p>
+<h4 id="wfs缺点">WFS缺点</h4>
+<p>由于目前沃尔玛还处于发展阶段，所有仓库投入使用的数量还不够多，仓库的容量也处于供不应求的状态。所以现在存在产品进仓慢，上架慢的情况。并且目前卖家申请WFS也是有条件的，因此有的店铺很长时间都申请不下来。</p>
+<h3 id="自发货模式">自发货模式</h3>
+<p>也就是卖家自己发货，卖家可以选择自己发货或者选择海外仓发货。如果是卖家自己发货，非常影响时效，并且在这方面沃尔玛是会考核店铺的绩效。卖家会在每个月的1号，11号，21号收到平台发出的绩效邮件，如收到2次警告，沃尔玛会给出21天的整改期。</p>
+<p>物流时效要求是在8个工作日内，但由于不确定因素太多，卖家们可以选择海外仓，将货发到海外仓，当买家下单之后，由海外仓进行配送，缩短物流时间。</p>
+<h3 id="卖家该如何选择">卖家该如何选择</h3>
+<p>总的来说，沃尔玛的物流模式和亚马逊的模式差不多。那么对于卖家们来说哪种物流方式更适合自己呢？</p>
+<p>1.如果卖家们是多渠道布局，入驻了不同的电商平台，并且每个渠道的产品是一样的，敏哥建议这类卖家选择第三方海外仓进行发货。</p>
+<p>2.新手卖家才想要在沃尔玛进行少量测款，那就建议使用自发货，避免产生不必要的成本。</p>
+<p>3.现阶段，卖家已经有了稳定的出单，想要获得更多的转化率，可以直接申请WFS。但是产品必须是非易腐烂的产品，非管制商品，并且产品必须符合WFS的尺寸和重量要求。</p>
+<p>最后我想说，虽然沃尔玛是现阶段发展比较快的平台，很多卖家也盯上看了这块蛋糕。但是大家在做的时候还是要格外小心。千万不要认为现在平台还不太成熟，存在着很多bug，大家就去违规运营，小心驶得万年船！</p>
+
+        
+        
+    </body>
+    </html>
