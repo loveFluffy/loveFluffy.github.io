@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x767b;&#x5929;&#x7684;&#x611f;&#x89c9;&#xff1a;&#x6211;&#x5728;&#x54c8;&#x4f5b;&#x5927;&#x5b66;&#x505a;&#x5fc3;&#x7406;&#x54a8;&#x8be2;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <div class="content">
+<h1 id="登天的感觉我在哈佛大学做心理咨询">登天的感觉：我在哈佛大学做心理咨询</h1>
+<h2 id="岳晓东">岳晓东</h2>
+<h3 id="前言">前言</h3>
+<p>“如果我写一本有关心理咨询的书，你会看吗？”</p>
+<p>“如果你写的书不枯燥，不讲大道理，又有文学的味道，而且最好是与爱情有关，那我就会看的。”</p>
+<p>心理咨询中需要有感悟，有想象，有创造。这也是为什么心理咨询会有那么多流派分支的原因。仅就美国而言，已记录在册的专业心理咨询和治疗方法就有300多个，而且还在不断地增加。</p>
+<p>比起世界上发达的国家和地区，心理咨询在我国的发展还很缓慢，人们对心理咨询的性质、目的及操作方法还普遍存在许多不解和误解。</p>
+<h3 id="登天的感觉">登天的感觉</h3>
+<p>心理咨询就是要使人对自我感觉良好，犹如登天一样。</p>
+<h4 id="心理咨询追求的意境是什么">心理咨询追求的意境是什么？</h4>
+<p>心理咨询不同于一般的安慰，就在于它不仅要使人开心，更要使人成长。这里的成长，就是通过咨询的过程，使来询者自己想通了，认清问题的本质，知道该怎么做，达到了人们常言的心理平衡。</p>
+<p>用马斯洛的话来讲，心理咨询就是要使人获得“顶峰的体验”(peak experience)。这不就是指“登天的感觉”吗？</p>
+<h4 id="心理咨询追求的目标是什么">心理咨询追求的目标是什么？</h4>
+<p>任何一个心理咨询过程，无论其性质有多大不同，时间长短上有多少差别，本质上都是要帮助来询者从自卑和迷茫的泥潭中自己挣脱出来。来询者耷拉着脑袋进来，挺着腰杆出去。</p>
+<h4 id="心理咨询之高明何在">心理咨询之高明何在？</h4>
+<p>我为人做心理咨询，不是要去支配来询者，而是要去扶持来询者。心理咨询之妙，就在于它帮助了一个人，却让那个人感到自己帮助了自己。</p>
+<h4 id="心理咨询何以给人登天的感觉">心理咨询何以给人“登天的感觉”？</h4>
+<p>心理咨询不求教训他人，而求开导他人；<br>
+心理咨询不是要替人决策，而是要帮人决策；<br>
+心理咨询的首要任务是思想沟通，而非心理分析；<br>
+心理咨询是现代人的精神享受，而非见不得人的事情；<br>
+心理咨询确信人皆可自我完善，而非人是不能自我逾越的；<br>
+心理咨询应增强人的自立能力，而非增强其对他人的依赖；<br>
+心理咨询不仅可以帮助他人成长，也可以帮助自己成长；<br>
+心理咨询使人更加相信自我，而非更加迷信别人；<br>
+心理咨询使人学会多听少言，而非少听多言。<br>
+心理咨询小知识：现代心理咨询是怎样兴起的？</p>
+<p>简单说来，心理治疗人员不但要有心理咨询的知识，也要具备一定的医学知识和训练；而心理咨询人员则不必有医学方面的知识和训练。</p>
+<h3 id="林登街5号">林登街5号</h3>
+<p>这，就是我的咨询室：清净，和谐，温馨，阳光充足，有点儿艺术室的情调，却不过分夸张。这种宁静、祥和气氛的营造，对于心理咨询有着重要的象征意义和暗示作用。</p>
+<h4 id="心理咨询场所应给人以什么样的第一感觉">心理咨询场所应给人以什么样的第一感觉？</h4>
+<p>要给人以安全、祥和、舒适及充满生机的感觉。</p>
+<h4 id="心理咨询场所怎样为人创造一片心灵的净土">心理咨询场所怎样为人创造一片心灵的净土？</h4>
+<h4 id="心理咨询室的布置应传达出什么信息">心理咨询室的布置应传达出什么信息？</h4>
+<p>“在这间屋子里，任何一样东西都具有象征意义。”——弗洛伊德</p>
+<p>心理咨询乃是全方位的信息交流。</p>
+<h4 id="心理咨询小知识现代心理治疗是怎样兴起的">心理咨询小知识：现代心理治疗是怎样兴起的？</h4>
+<p>心理治疗，作为一种医学手段是自古就有的,但人们普遍将“催眼疗法”的创立作为现代心理治疗的开始。</p>
+<p>18世纪末，维也纳医生梅斯梅尔(Franz A. Mesmer, 1734-1815)提出了“人体磁场学说”，并将催眠暗示作为其“磁疗”方法的核心手段。19世纪中叶,法国医生夏可(Jean M. Charcot, 1825-1893)摒弃了梅斯梅尔的“人体磁场学说”，但保留了其催眠技术部分，并以此治愈了一些歇斯底里患者。再后来，弗洛伊德师从于夏可，并在此基础上步创立了他的“精神分析学说”。</p>
+<p>从此，心理治疗作为一门独立的治疗手段，日益受到人们的确认和应用。</p>
+<h3 id="我是全哈佛最自卑的人">我是全哈佛最自卑的人</h3>
+<p>她怨的全是别人，叹的都是自己。难怪她会在哈佛产生自卑的感觉。她只有摆脱往日光辉的“阴影”，全心投入“新世纪”的生活与奋斗当中，才能重新振作起来。总而言之，丽莎的问题的核心就在于：她往日的心理平衡点被彻底打破了，她需要在哈佛大学建立新的心理平衡点。我希望丽莎能自己领悟到这一切，因为只有那样，丽莎才会有足够的决心和勇气去改变当前的困境，发出一个强者的呼唤。</p>
+<h4 id="行动步骤一宣泄不良情绪">行动步骤一：宣泄不良情绪</h4>
+<p>同感：感同身受的意思，指咨询者尽量设身处地地理解来询者的内心感受，说出他想说的话，以建立充分的思想共鸣。</p>
+<p>“丽莎，你现在真是活得很辛苦，我非常理解你此刻的苦闷心情，我想如果我面临你现在的处境我也会感觉很不好受的。”这是我常说的一句话，也是我的由衷之言。听了这句话，丽莎紧锁的眉头在渐渐地舒展。</p>
+<p>同时，我还肯定了丽莎来寻求心理咨询帮助的举动。“当一个人面临如此巨大的精神压力时，他也需要得到专业人员的帮助，以更快、更有效地摆脱精神压抑，重振起来。”我如是说，丽莎不住地在点头。</p>
+<p>我还告诉丽莎，对哈佛适应不良，产生种种的焦虑与自卑反应，这在哈佛新生中是十分普遍的，绝不只你丽莎一人。产生这种“原来许多人也同我一样啊”的平常感，对于丽莎不良情绪的渲泄十分重要。</p>
+<p>其实，人越是在比自己成熟或地位高的人面前获得尊重，就越容易消除个人的自卑感。这既是人际交往中的一个常规，也是许多心理咨询人员没有充分意识到的一个神秘武器。</p>
+<h4 id="行动步骤二转移比较对象">行动步骤二：转移比较对象</h4>
+<p>“因为我意识到，我不可能一下子赶上周围的人，”我解释说:“我越是与他人相比，就越感到灰心丧气。因为在我进步的同时，别人也在进步。所以无论我怎样努力，我总是与别人有一段距离。但就我自己而言，我已经做出了很大的努力。这样，虽然与别人相比，我仍有一段距离，但已经取得很大的进步。”</p>
+<p>丽莎若有所思地望着我，眉头又紧锁起来。接着，我又告诉她，在我当初感到最苦闷、最自卑的时候，有一位关心我的女同学曾鼓励我说：“晓东，你学习这样刻苦，比起别人来说虽然显不出什么，但比起你自己来，你已经是很了不起了。”</p>
+<p>她的话，曾使我深受感动，也使我意识到：当我只想着与别人比较时，我永远感到自卑：而当我想着与自己比较时，我才会感到自信。此时此刻，我需要学会与自己相比来维持自己的干劲。</p>
+<p>我的这番话，立即引起了丽莎强烈的思想共鸣。</p>
+<h4 id="行动步骤三采取具体行动">行动步骤三：采取具体行动</h4>
+<p>帮助丽莎清理学习中的具体困难，并制定相应的学习计划加以克服和改进。</p>
+<h4 id="我为丽莎做心理咨询的前奏曲是什么">我为丽莎做心理咨询的“前奏曲”是什么？</h4>
+<p>心理咨询的核心目标，就是提高人的自信心。</p>
+<p>自卑，就好比是人情绪中的流感，人的体质越好，就越不容易受到流感的侵袭。同样，人的情绪自控能力越高，也就越不易染上这种情绪流感，陷入自卑的沼泽当中。</p>
+<p>由此，人对自卑的抵抗力也得益于对逆境的不断适应。</p>
+<h4 id="我为丽莎做心理咨询的主旋律是什么">我为丽莎做心理咨询的“主旋律”是什么？</h4>
+<h3 id="我想从哈佛转学">我想从哈佛转学</h3>
+<h3 id="我不要上哈佛大学法学院">我不要上哈佛大学法学院</h3>
+<h3 id="问你是否还爱我">问你是否还爱我</h3>
+<h3 id="骗分被罚的思索">骗分被罚的思索</h3>
+<h3 id="万般内疚为了谁">万般内疚为了谁</h3>
+<h3 id="我是同性恋吗">我是同性恋吗？</h3>
+<h3 id="我想约你出去行吗">我想约你出去行吗？</h3>
+<h3 id="我们的缘分尽了吗">我们的缘分尽了吗？</h3>
+<h3 id="走出心灵创伤的深渊">走出心灵创伤的深渊</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E7%99%BB%E5%A4%A9%E7%9A%84%E6%84%9F%E8%A7%89%E6%88%91%E5%9C%A8%E5%93%88%E4%BD%9B%E5%A4%A7%E5%AD%A6%E5%81%9A%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2">登天的感觉：我在哈佛大学做心理咨询</a>
+<ul>
+<li><a href="#%E5%B2%B3%E6%99%93%E4%B8%9C">岳晓东</a>
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%99%BB%E5%A4%A9%E7%9A%84%E6%84%9F%E8%A7%89">登天的感觉</a>
+<ul>
+<li><a href="#%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E8%BF%BD%E6%B1%82%E7%9A%84%E6%84%8F%E5%A2%83%E6%98%AF%E4%BB%80%E4%B9%88">心理咨询追求的意境是什么？</a></li>
+<li><a href="#%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E8%BF%BD%E6%B1%82%E7%9A%84%E7%9B%AE%E6%A0%87%E6%98%AF%E4%BB%80%E4%B9%88">心理咨询追求的目标是什么？</a></li>
+<li><a href="#%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E4%B9%8B%E9%AB%98%E6%98%8E%E4%BD%95%E5%9C%A8">心理咨询之高明何在？</a></li>
+<li><a href="#%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E4%BD%95%E4%BB%A5%E7%BB%99%E4%BA%BA%E7%99%BB%E5%A4%A9%E7%9A%84%E6%84%9F%E8%A7%89">心理咨询何以给人“登天的感觉”？</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9E%97%E7%99%BB%E8%A1%975%E5%8F%B7">林登街5号</a>
+<ul>
+<li><a href="#%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E5%9C%BA%E6%89%80%E5%BA%94%E7%BB%99%E4%BA%BA%E4%BB%A5%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E7%AC%AC%E4%B8%80%E6%84%9F%E8%A7%89">心理咨询场所应给人以什么样的第一感觉？</a></li>
+<li><a href="#%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E5%9C%BA%E6%89%80%E6%80%8E%E6%A0%B7%E4%B8%BA%E4%BA%BA%E5%88%9B%E9%80%A0%E4%B8%80%E7%89%87%E5%BF%83%E7%81%B5%E7%9A%84%E5%87%80%E5%9C%9F">心理咨询场所怎样为人创造一片心灵的净土？</a></li>
+<li><a href="#%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E5%AE%A4%E7%9A%84%E5%B8%83%E7%BD%AE%E5%BA%94%E4%BC%A0%E8%BE%BE%E5%87%BA%E4%BB%80%E4%B9%88%E4%BF%A1%E6%81%AF">心理咨询室的布置应传达出什么信息？</a></li>
+<li><a href="#%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%8E%B0%E4%BB%A3%E5%BF%83%E7%90%86%E6%B2%BB%E7%96%97%E6%98%AF%E6%80%8E%E6%A0%B7%E5%85%B4%E8%B5%B7%E7%9A%84">心理咨询小知识：现代心理治疗是怎样兴起的？</a></li>
+</ul>
+</li>
+<li><a href="#%E6%88%91%E6%98%AF%E5%85%A8%E5%93%88%E4%BD%9B%E6%9C%80%E8%87%AA%E5%8D%91%E7%9A%84%E4%BA%BA">我是全哈佛最自卑的人</a>
+<ul>
+<li><a href="#%E8%A1%8C%E5%8A%A8%E6%AD%A5%E9%AA%A4%E4%B8%80%E5%AE%A3%E6%B3%84%E4%B8%8D%E8%89%AF%E6%83%85%E7%BB%AA">行动步骤一：宣泄不良情绪</a></li>
+<li><a href="#%E8%A1%8C%E5%8A%A8%E6%AD%A5%E9%AA%A4%E4%BA%8C%E8%BD%AC%E7%A7%BB%E6%AF%94%E8%BE%83%E5%AF%B9%E8%B1%A1">行动步骤二：转移比较对象</a></li>
+<li><a href="#%E8%A1%8C%E5%8A%A8%E6%AD%A5%E9%AA%A4%E4%B8%89%E9%87%87%E5%8F%96%E5%85%B7%E4%BD%93%E8%A1%8C%E5%8A%A8">行动步骤三：采取具体行动</a></li>
+<li><a href="#%E6%88%91%E4%B8%BA%E4%B8%BD%E8%8E%8E%E5%81%9A%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E7%9A%84%E5%89%8D%E5%A5%8F%E6%9B%B2%E6%98%AF%E4%BB%80%E4%B9%88">我为丽莎做心理咨询的“前奏曲”是什么？</a></li>
+<li><a href="#%E6%88%91%E4%B8%BA%E4%B8%BD%E8%8E%8E%E5%81%9A%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E7%9A%84%E4%B8%BB%E6%97%8B%E5%BE%8B%E6%98%AF%E4%BB%80%E4%B9%88">我为丽莎做心理咨询的“主旋律”是什么？</a></li>
+</ul>
+</li>
+<li><a href="#%E6%88%91%E6%83%B3%E4%BB%8E%E5%93%88%E4%BD%9B%E8%BD%AC%E5%AD%A6">我想从哈佛转学</a></li>
+<li><a href="#%E6%88%91%E4%B8%8D%E8%A6%81%E4%B8%8A%E5%93%88%E4%BD%9B%E5%A4%A7%E5%AD%A6%E6%B3%95%E5%AD%A6%E9%99%A2">我不要上哈佛大学法学院</a></li>
+<li><a href="#%E9%97%AE%E4%BD%A0%E6%98%AF%E5%90%A6%E8%BF%98%E7%88%B1%E6%88%91">问你是否还爱我</a></li>
+<li><a href="#%E9%AA%97%E5%88%86%E8%A2%AB%E7%BD%9A%E7%9A%84%E6%80%9D%E7%B4%A2">骗分被罚的思索</a></li>
+<li><a href="#%E4%B8%87%E8%88%AC%E5%86%85%E7%96%9A%E4%B8%BA%E4%BA%86%E8%B0%81">万般内疚为了谁</a></li>
+<li><a href="#%E6%88%91%E6%98%AF%E5%90%8C%E6%80%A7%E6%81%8B%E5%90%97">我是同性恋吗？</a></li>
+<li><a href="#%E6%88%91%E6%83%B3%E7%BA%A6%E4%BD%A0%E5%87%BA%E5%8E%BB%E8%A1%8C%E5%90%97">我想约你出去行吗？</a></li>
+<li><a href="#%E6%88%91%E4%BB%AC%E7%9A%84%E7%BC%98%E5%88%86%E5%B0%BD%E4%BA%86%E5%90%97">我们的缘分尽了吗？</a></li>
+<li><a href="#%E8%B5%B0%E5%87%BA%E5%BF%83%E7%81%B5%E5%88%9B%E4%BC%A4%E7%9A%84%E6%B7%B1%E6%B8%8A">走出心灵创伤的深渊</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        
+        
+    </body>
+    </html>

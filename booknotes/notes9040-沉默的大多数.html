@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x6c89;&#x9ed8;&#x7684;&#x5927;&#x591a;&#x6570;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="沉默的大多数">沉默的大多数</h1>
+<h2 id="王小波-著">王小波 著</h2>
+<h3 id="第1节序1">第1节：序(1)</h3>
+<h3 id="第2节序2">第2节：序(2)</h3>
+<h3 id="第3节我是哪一种女权主义者1">第3节：我是哪一种女权主义者(1)</h3>
+<h3 id="第4节我是哪一种女权主义者2">第4节：我是哪一种女权主义者(2)</h3>
+<h3 id="第5节男人眼中的女性美">第5节：男人眼中的女性美</h3>
+<h3 id="第6节有关伟大一族">第6节：有关“伟大一族”</h3>
+<h3 id="第7节有关给点气氛">第7节：有关“给点气氛”</h3>
+<h3 id="第8节有关给点气氛2">第8节：有关“给点气氛”(2)</h3>
+<h3 id="第9节生活和小说">第9节：生活和小说</h3>
+<h3 id="第10节我看老三届1">第10节：我看老三届(1)</h3>
+<h3 id="第11节我看老三届2">第11节：我看老三届(2)</h3>
+<h3 id="第12节苏东坡与东坡肉">第12节：苏东坡与东坡肉</h3>
+<h3 id="第13节驴和人的新寓言">第13节：驴和人的新寓言</h3>
+<h3 id="第14节愚人节有感">第14节：愚人节有感</h3>
+<h3 id="第15节摆脱童稚状态1">第15节：摆脱童稚状态(1)</h3>
+<h3 id="第16节摆脱童稚状态2">第16节：摆脱童稚状态(2)</h3>
+<h3 id="第17节摆脱童稚状态3">第17节：摆脱童稚状态(3)</h3>
+<h3 id="第18节摆脱童稚状态4">第18节：摆脱童稚状态(4)</h3>
+<h3 id="第19节李银河的中国人的性爱与婚姻">第19节：李银河的《中国人的性爱与婚姻》</h3>
+<h3 id="第20节李银河的生育与中国村落文化1">第20节：李银河的《生育与中国村落文化》(1)</h3>
+<h3 id="第21节李银河的生育与中国村落文化2">第21节：李银河的《生育与中国村落文化》(2)</h3>
+<h3 id="第22节李银河的生育与中国村落文化3">第22节：李银河的《生育与中国村落文化》(3)</h3>
+<h3 id="第23节关于同性恋问题1">第23节：关于同性恋问题(1)</h3>
+<h3 id="第24节关于同性恋问题2">第24节：关于同性恋问题(2)</h3>
+<h3 id="第25节有关同性恋的伦理问题">第25节：有关同性恋的伦理问题</h3>
+<h3 id="第26节他们的世界序1">第26节：《他们的世界》序(1)</h3>
+<h3 id="第27节他们的世界序2">第27节：《他们的世界》序(2)</h3>
+<h3 id="第28节他们的世界跋">第28节：《他们的世界》跋</h3>
+<h3 id="第29节拷问社会学1">第29节：拷问社会学(1)</h3>
+<h3 id="第30节拷问社会学2">第30节：拷问社会学(2)</h3>
+<h3 id="第31节拷问社会学3">第31节：拷问社会学(3)</h3>
+<h3 id="第32节我为什么要写作1">第32节：我为什么要写作(1)</h3>
+<h3 id="第33节我为什么要写作2">第33节：我为什么要写作(2)</h3>
+<h3 id="第34节用一生来学习艺术1">第34节：用一生来学习艺术(1)</h3>
+<h3 id="第35节用一生来学习艺术2">第35节：用一生来学习艺术(2)</h3>
+<h3 id="第36节我对小说的看法">第36节：我对小说的看法</h3>
+<h3 id="第37节小说的艺术">第37节：小说的艺术</h3>
+<h3 id="第38节从黄金时代谈小说艺术">第38节：从《黄金时代》谈小说艺术</h3>
+<h3 id="第39节工作使命信心">第39节：工作·使命·信心</h3>
+<h3 id="第40节与人交流">第40节：与人交流</h3>
+<h3 id="第41节怀疑三部曲序">第41节：《怀疑三部曲》序</h3>
+<h3 id="第42节怀疑三部曲后记">第42节：《怀疑三部曲》后记</h3>
+<h3 id="第43节卡尔维诺与未来的一千年">第43节：卡尔维诺与未来的一千年</h3>
+<h3 id="第44节盖茨的紧身衣1">第44节：盖茨的紧身衣(1)</h3>
+<h3 id="第45节盖茨的紧身衣2">第45节：盖茨的紧身衣(2)</h3>
+<h3 id="第46节关于文体">第46节：关于文体</h3>
+<h3 id="第47节关于格调1">第47节：关于格调(1)</h3>
+<h3 id="第48节关于格调2">第48节：关于格调(2)</h3>
+<h3 id="第49节关于格调3">第49节：关于格调(3)</h3>
+<h3 id="第50节关于幽闭型小说1">第50节：关于幽闭型小说(1)</h3>
+<h3 id="第51节关于幽闭型小说2">第51节：关于幽闭型小说(2)</h3>
+<h3 id="第52节文明与反讽">第52节：文明与反讽</h3>
+<h3 id="第53节血统序1">第53节：《血统》序(1)</h3>
+<h3 id="第54节血统序2">第54节：《血统》序(2)</h3>
+<h3 id="第55节关于媚雅">第55节：关于“媚雅”</h3>
+<h3 id="第56节长虫草帽细高挑1">第56节：长虫·草帽·细高挑(1)</h3>
+<h3 id="第57节长虫草帽细高挑2">第57节：长虫·草帽·细高挑(2)</h3>
+<h3 id="第58节卡拉ok和驴鸣镇">第58节：卡拉OK和驴鸣镇</h3>
+<h3 id="第59节从internet说起1">第59节：从Internet说起(1)</h3>
+<h3 id="第60节从internet说起2">第60节：从Internet说起(2)</h3>
+<h3 id="第61节奸近杀">第61节：奸近杀</h3>
+<h3 id="第62节外国电影里的幽默1">第62节：外国电影里的幽默(1)</h3>
+<h3 id="第63节外国电影里的幽默2">第63节：外国电影里的幽默(2)</h3>
+<h3 id="第64节中国为什么没有科幻片">第64节：中国为什么没有科幻片</h3>
+<h3 id="第65节电脑特技与异化">第65节：电脑特技与异化</h3>
+<h3 id="第66节欣赏经典1">第66节：欣赏经典(1)</h3>
+<h3 id="第67节欣赏经典2">第67节：欣赏经典(2)</h3>
+<h3 id="第68节好人电影">第68节：好人电影</h3>
+<h3 id="第69节承认的勇气1">第69节：承认的勇气(1)</h3>
+<h3 id="第70节承认的勇气2">第70节：承认的勇气(2)</h3>
+<h3 id="第71节明星与癫狂">第71节：明星与癫狂</h3>
+<h3 id="第72节另一种文化1">第72节：另一种文化(1)</h3>
+<h3 id="第73节另一种文化2">第73节：另一种文化(2)</h3>
+<h3 id="第74节艺术与关怀弱势群体">第74节：艺术与关怀弱势群体</h3>
+<h3 id="第75节电视与电脑病毒">第75节：电视与电脑病毒</h3>
+<h3 id="第76节在美国左派家做客">第76节：在美国左派家做客</h3>
+<h3 id="第77节卖唱的人们1">第77节：卖唱的人们(1)</h3>
+<h3 id="第78节卖唱的人们2">第78节：卖唱的人们(2)</h3>
+<h3 id="第79节打工经历">第79节：打工经历</h3>
+<h3 id="第80节自然景观和人文景观1">第80节：自然景观和人文景观(1)</h3>
+<h3 id="第81节自然景观和人文景观2">第81节：自然景观和人文景观(2)</h3>
+<h3 id="第82节北京风情">第82节：北京风情</h3>
+<h3 id="第83节文化的园地1">第83节：文化的园地(1)</h3>
+<h3 id="第84节文化的园地2">第84节：文化的园地(2)</h3>
+<h3 id="第85节环境问题1">第85节：环境问题(1)</h3>
+<h3 id="第86节环境问题2">第86节：环境问题(2)</h3>
+<h3 id="第87节个人尊严1">第87节：个人尊严(1)</h3>
+<h3 id="第88节个人尊严2">第88节：个人尊严(2)</h3>
+<h3 id="第89节君子的尊严">第89节：君子的尊严</h3>
+<h3 id="第90节居住环境与尊严">第90节：居住环境与尊严</h3>
+<h3 id="第91节饮食卫生与尊严1">第91节：饮食卫生与尊严(1)</h3>
+<h3 id="第92节饮食卫生与尊严2">第92节：饮食卫生与尊严(2)</h3>
+<h3 id="第93节有关贫穷1">第93节：有关贫穷(1)</h3>
+<h3 id="第94节有关贫穷2">第94节：有关贫穷(2)</h3>
+<h3 id="第95节域外杂谈衣">第95节：域外杂谈·衣</h3>
+<h3 id="第96节域外杂谈食1">第96节：域外杂谈·食(1)</h3>
+<h3 id="第97节域外杂谈食2">第97节：域外杂谈·食(2)</h3>
+<h3 id="第98节域外杂谈住">第98节：域外杂谈·住</h3>
+<h3 id="第99节域外杂谈行1">第99节：域外杂谈·行(1)</h3>
+<h3 id="第100节域外杂谈行2">第100节：域外杂谈·行(2)</h3>
+<h3 id="第101节域外杂谈盗贼1">第101节：域外杂谈·盗贼(1)</h3>
+<h3 id="第102节域外杂谈盗贼2">第102节：域外杂谈·盗贼(2)</h3>
+<h3 id="第103节域外杂谈农场1">第103节：域外杂谈·农场(1)</h3>
+<h3 id="第104节域外杂谈农场2">第104节：域外杂谈·农场(2)</h3>
+<h3 id="第105节域外杂谈中国餐馆1">第105节：域外杂谈·中国餐馆(1)</h3>
+<h3 id="第106节域外杂谈中国餐馆2">第106节：域外杂谈·中国餐馆(2)</h3>
+<h3 id="第107节域外杂谈中国餐馆3">第107节：域外杂谈·中国餐馆(3)</h3>
+<h3 id="第108节域外杂谈中国餐馆4">第108节：域外杂谈·中国餐馆(4)</h3>
+<h3 id="第109节写给新的一年1996年">第109节：写给新的一年（1996年）</h3>
+<h3 id="第110节写给新的一年1997年1">第110节：写给新的一年（1997年）(1)</h3>
+<h3 id="第111节写给新的一年1997年2">第111节：写给新的一年（1997年）(2)</h3>
+<h3 id="第112节工作与人生1">第112节：工作与人生(1)</h3>
+<h3 id="第113节工作与人生2">第113节：工作与人生(2)</h3>
+<h3 id="第114节我的精神家园">第114节：我的精神家园</h3>
+
+        
+        
+    </body>
+    </html>

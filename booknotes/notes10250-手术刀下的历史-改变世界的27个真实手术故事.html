@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x624b;&#x672f;&#x5200;&#x4e0b;&#x7684;&#x5386;&#x53f2;&#xff1a;&#x6539;&#x53d8;&#x4e16;&#x754c;&#x7684;27&#x4e2a;&#x771f;&#x5b9e;&#x624b;&#x672f;&#x6545;&#x4e8b;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="手术刀下的历史改变世界的27个真实手术故事">手术刀下的历史：改变世界的27个真实手术故事</h1>
+<h2 id="荷阿诺德范德拉尔arnold-van-de-laar-著李命心-译">[荷]阿诺德·范德拉尔（Arnold van de Laar） 著|李命心 译</h2>
+<h3 id="引言-治愈之手外科医生">引言 治愈之手：外科医生</h3>
+<p>外伤、骨折、化脓感染和手术会留下疤痕，而感冒、腹泻、偏头痛之类的疾病通常不会留下任何痕迹。这种差异可以用两个不同的词语来表示“好转”：我们用“疗伤”——“使机体完整”——来描述手术、伤口、瘀伤和骨折，用“治病”——“使健康恢复”——来描述疾病。笼统地说，外科医生疗伤，而内科医生治病。外科医生长期以来也顺便兼做内科工作，但他们把自己限制在外科手段可解决的问题上，这些问题只占所有疾病的一小部分。大多数病症根本不需要外科医生或手术的干预。16世纪的外科医生所提供的服务是如此简单和有限，以至于他们可以像普通商人一样在一家小店铺里完成工作。在阿姆斯特丹，外科医生是一个微不足道的职业群体，他们与其他三个行业——滑板制造者、木偶制造者和理发师，同属一个行会。</p>
+<p>有两种疾病是当代外科医生工作的重要内容，直到最近才对人类生命造成严重威胁。癌症和动脉血管变硬（动脉硬化）在过去的几个世纪里进入了我们的生活，以高热量饮食和吸烟为代表的生活方式造成了这些疾病的高发。发病者通常是老年人，在过去，你或许在得癌症或动脉阻塞之前就已经去世了。</p>
+<p>在外科领域里，无菌意味着“完全没有细菌”。我们的洗手服、手套、手术器械和其他设备都经过消毒。它们被放在高压灭菌器（一种高压锅）内几个小时，用蒸汽处理或者用γ射线照射以杀死所有细菌和其他微生物。在手术过程中，我们采取近乎于苛刻的措施，在伤口周围形成一个无菌区域，在该区域内的任何人和任何物品都不能触及区域外的人和物品。如果你是手术团队的一员，那么你就是无菌的，这意味着你的衣服和手套上不该有任何细菌。为了保持这种无菌状态，无论是在穿手术衣和戴手套的过程中，还是在患者周围走动时，你都必须遵守严格的程序：双手始终放在腰部以上，在经过彼此时对视，在系手术衣时完全转过身去，永远不要背对患者。为了进一步限制手术室内的细菌数量，每个人都要戴着帽子和口罩，手术中在场人数保持在最低限度，门尽可能地关闭。</p>
+<p>所有这些措施都产生了非常明显的效果。在过去，手术后脓液从伤口渗出被认为是正常现象，只有愚蠢的外科医生才不知道这一点，所以那时候的伤口不得不保持开放，以便脓液流出。直到术中的无菌得以确保，常规伤口的感染才得到预防，并且在手术完成后可以立即缝合伤口。因此，卫生不是外科学中唯一的新元素，伤口的缝合也是一个相对较新的进展。</p>
+<h3 id="1-取石术-阿姆斯特丹铁匠简德多特体内的石头">1 取石术 阿姆斯特丹铁匠简·德·多特体内的石头</h3>
+<h3 id="2-窒息-世纪性的气管切开术肯尼迪总统">2 窒息 世纪性的气管切开术：肯尼迪总统</h3>
+<h3 id="3-伤口愈合-皇家包皮亚伯拉罕和国王路易十六">3 伤口愈合 皇家包皮：亚伯拉罕和国王路易十六</h3>
+<h3 id="4-休克-女士和无政府主义者茜茜皇后">4 休克 女士和无政府主义者：茜茜皇后</h3>
+<h3 id="5-肥胖-教皇从彼得到方济各">5 肥胖 教皇：从彼得到方济各</h3>
+<h3 id="6-造口-奇迹子弹卡罗尔沃伊蒂瓦">6 造口 奇迹子弹：卡罗尔·沃伊蒂瓦</h3>
+<h3 id="7-骨折-德摩斯医生和希腊式方法大流士国王">7 骨折 德摩斯医生和希腊式方法：大流士国王</h3>
+<h3 id="8-静脉曲张-露西和现代手术阿法南方古猿">8 静脉曲张 露西和现代手术：阿法南方古猿</h3>
+<h3 id="9-腹膜炎-逃脱艺术家之死哈里胡迪尼">9 腹膜炎 逃脱艺术家之死：哈里·胡迪尼</h3>
+<h3 id="10-麻醉-女王的麻醉维多利亚女王">10 麻醉 女王的麻醉：维多利亚女王</h3>
+<h3 id="11-坏疽-小湾战役彼得史蒂文森">11 坏疽 小湾战役：彼得·史蒂文森</h3>
+<h3 id="12-诊断-内科医生和外科医生赫尔克里波洛和夏洛克福尔摩斯">12 诊断 内科医生和外科医生：赫尔克里·波洛和夏洛克·福尔摩斯</h3>
+<h3 id="13-并发症-大师与伊朗国王穆罕默德雷扎帕拉维">13 并发症 大师与伊朗国王：穆罕默德·雷扎·帕拉维</h3>
+<h3 id="14-播散-两位音乐家与他们的大脚趾卢利和鲍勃马利">14 播散 两位音乐家与他们的大脚趾：卢利和鲍勃·马利</h3>
+<h3 id="15-腹部-罗马人与腹壁成形术卢修斯阿帕罗尼鲁斯西亚努斯">15 腹部 罗马人与腹壁成形术：卢修斯·阿帕罗尼鲁斯·西亚努斯</h3>
+<h3 id="16-动脉瘤-外科相对论阿尔伯特爱因斯坦">16 动脉瘤 外科相对论：阿尔伯特·爱因斯坦</h3>
+<h3 id="17-腹腔镜-内窥镜和微创革命">17 腹腔镜 内窥镜和微创革命</h3>
+<h3 id="18-阉割-一种简单手术的历史亚当夏娃和法里内利">18 阉割 一种简单手术的历史：亚当、夏娃和法里内利</h3>
+<h3 id="19-肺癌-在家中进行的开胸手术国王乔治六世">19 肺癌 在家中进行的开胸手术：国王乔治六世</h3>
+<h3 id="20-安慰剂-第五个登上月球的人艾伦谢泼德">20 安慰剂 第五个登上月球的人：艾伦·谢泼德</h3>
+<h3 id="21-脐疝-一位丰满女士的悲惨死亡卡罗琳王后">21 脐疝 一位丰满女士的悲惨死亡：卡罗琳王后</h3>
+<h3 id="22-早回家快康复-叛逆与革命巴西尼和李奇登斯坦">22 早回家，快康复 叛逆与革命：巴西尼和李奇登斯坦</h3>
+<h3 id="23-死在手术台上-手术的局限性李哈维奥斯瓦尔德">23 死在手术台上 手术的局限性：李·哈维·奥斯瓦尔德</h3>
+<h3 id="24-假体-美好时代的奇妙发明面包师朱尔斯佩杜">24 假体 “美好时代”的奇妙发明：面包师朱尔斯·佩杜</h3>
+<h3 id="25-胃切除术-牛仔与外科医生特蕾莎海勒夫人">25 胃切除术 “牛仔”与外科医生：特蕾莎·海勒夫人</h3>
+<h3 id="26-肛瘘-大手术国王路易十四">26 肛瘘 大手术：国王路易十四</h3>
+<h3 id="27-电-600伏特阿提斯动物园的电鳗">27 电 600伏特：阿提斯动物园的电鳗</h3>
+<h3 id="后记-十大未来的外科医生">后记 十大未来的外科医生</h3>
+
+        
+        
+    </body>
+    </html>

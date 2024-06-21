@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x5927;&#x8111;&#x4fee;&#x590d;&#x672f;&#xff1a;&#x4f60;&#x7684;&#x5927;&#x8111;&#x75c5;&#x4e86;&#x5417;&#xff1f;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
+		z-index: 1;
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="大脑修复术你的大脑病了吗">大脑修复术：你的大脑病了吗？</h1>
+<h2 id="姚乃琳-著">姚乃琳 著</h2>
+<h3 id="第1章-抑郁是大脑的重感冒也是进化的护身符">第1章 抑郁是大脑的重感冒，也是进化的护身符</h3>
+<p>在全球范围内，每年会有3亿人受到抑郁症的影响，这其中有80万人因抑郁症而自杀。抑郁症导致的死亡已经成为15~29岁的年轻人的第二大致死原因。当一个人抑郁症发作时，做什么都不开心，即使是平时最喜欢的活动，也都提不起兴趣，感觉没有任何事情可以给自己带来快乐。与郁闷不同，抑郁的症状要持续两周以上才可能是抑郁症。我有一个朋友在上大学时，很长一段时间都处于抑郁期。他告诉我，他一开始并没有意识到自己有什么问题，直到有一天他总结最近的生活，发现本来很外向的他竟然几个月都没有和任何人出去玩了。每次答应了别人出去吃饭或者做户外活动，他都在最后一刻满怀愧疚地爽了约，因为“就是不想去”。每当电话铃声响起，对他来说就是一种恐怖的折磨。于是，他觉得自己可能需要看医生了。</p>
+<h4 id="如何自我诊断抑郁症">如何自我诊断抑郁症</h4>
+<p>每5~6个人中就有一个人在一生当中的某个阶段会患抑郁症，这意味着抑郁症是一种非常常见的精神疾病。</p>
+<p>无论在富有的国家还是贫穷的国家，抑郁症的发病率都差不多，这说明抑郁症并不是一个由贫穷或者现代生活模式引发的疾病。虽然社会和文化因素在一定程度上会影响抑郁症的发病率，但总的来说，基因对抑郁症发病的影响才是最大的。</p>
+<p>抑郁症第一次发病的时间通常在青少年的中期到40多岁。其中有接近一半的人在20岁之前就经历了第一次抑郁症发病。抑郁症在不同的性别当中发病率不一样，女性的抑郁症发病率几乎是男性的两倍，第一次发病高峰通常在20岁左右，下一次高峰是在四五十岁的时候。</p>
+<p>抑郁症是由很多症状组成的，其中没有一个症状是抑郁症独有的。我们不能说有了某个症状，这个人就患有抑郁症，抑郁症的各种症状也会出现在其他精神疾病当中，比如精神分裂症、双相情感障碍、强迫症等。一个更准确的说法是，一系列的症状构成了抑郁症，抑郁症与其说是一种疾病，不如说是一种综合征。抑郁症的症状主要包括：持续两周以上的消极情绪，兴趣缺失，感到自己没有价值或内疚，有自杀的想法、计划，甚至有自杀的尝试，感到疲乏、缺乏能量，睡眠变多或者变少，体重和胃口发生明显变化，难以思考和集中注意力，难以做决策，因心理因素导致的行动迟缓、焦躁不安，等等。</p>
+<p>抑郁症和一般的情绪低落、伤心或者不开心的感觉是不一样的。一个人要符合抑郁症的标准，至少要满足前面说到的症状当中的5项，并且持续两周以上的时间，才有可能是抑郁症。</p>
+<p>焦虑可能会引发抑郁。抑郁症病人当中有很多人都有焦虑的问题，几乎有2/3的抑郁症病人有符合临床标准的焦虑症。焦虑症状通常在抑郁症发病前的一到两年就出现了，随着年龄的增长，一个人的焦虑症状可能会越来越明显。</p>
+<p>因为抑郁症会导致一些人负责记忆的海马神经元凋亡20%，所以抑郁症病人中有很大一部分会出现认知损失，比如记忆力、注意力下降，难以做决策，等等。很多抑郁症患者明显感觉思维变得比较模糊，不像之前那么清楚了。差不多一半的抑郁症或者双相情感障碍病人在痊愈后认知能力仍然得不到改善。科学家发现，肾脏分泌的促红细胞生成素可以明显增强抑郁症病人的认知能力，并且效果在6个星期后仍能维持。促红细胞生成素通常用于提高运动员的运动表现，后被发现在重性抑郁症病人中也有效果。不过并非所有人都适合服用这种激素，因为它会增加血液中的红细胞密度，所以吸烟的人或者有血栓记录的人都不适合服用它。</p>
+<p>抑郁症的另一个典型体验是内疚和自责。抑郁症患者发自内心地觉得自己不够好甚至一无是处，“充满负能量”。他们想要向人倾吐内心的痛苦和无助，却又害怕给别人带来麻烦，对不起别人。他们希望自己可以做好工作、好好生活，但抑郁期间因为缺乏心理能量，他们常常力有未逮，于是感到无助和后悔，甚至痛恨自己。我的微信公众号“酷炫脑”后台收到过一个留言：“其实，如果能说出来，抑郁症也不会到自杀的地步。有时候对于抑郁症病人来说，说出来会显得矫情。我们会一直不断地承受着别人不以为然的痛苦，但每次在要说出口时就又不想说了。”</p>
+<p>抑郁症还会体现在行为的各个方面，比如呼吸的时候会有深深的“叹气样呼吸”，表情减少，肩膀下垂，步伐沉重，等等。</p>
+<p>有时，抑郁症患者还会出现一些明显不真实的消极念头，或是出现幻觉。若干年前我有一个远渡重洋去大洋洲留学的朋友，我们好几年没联系，有一天她突然在网上和我聊起来，告诉我她得了抑郁症。她说：“最近不知道为什么，洗澡的时候常会听到有人说话，关了水之后又什么声音都没有了。”她一个人住，很害怕是不是出现了严重的问题。我告诉她，幻觉也是抑郁症患者可能出现的症状。</p>
+<h4 id="大脑发生的变化">大脑发生的变化</h4>
+<p>抑郁症患者的大脑功能也和一般人不同。复旦大学对1 000多人的大脑做了核磁共振扫描检查，结果发现抑郁症会影响大脑前部的眶额叶皮质，而眶额叶皮质负责感知奖赏的缺失。可能因为眶额叶皮质的活动出了问题，所以当抑郁症患者没有得到他们期待的奖赏时，他们会比普通人更失望。眶额叶皮质也和大脑中负责自我感受的区域相连，因此，当抑郁症患者没有得到外界奖赏反馈的时候，比如没有人夸自己、没有人请求自己的帮助或者努力之后没有取得期待的成绩，这些人就会强烈地觉得自己没有价值，产生“不值得活在这个世界上”“自己做什么都是错的”之类的极端想法。</p>
+<p>为什么抑郁症病人常常觉得自己的反应变慢了？这可能和他们大脑的结构变化有关。核磁共振研究发现，抑郁症患者的大脑结构和普通人不同。英国爱丁堡大学扫描了3 000多人的大脑白质纤维，结果发现抑郁症患者大脑白质的整合性低于普通人。大脑白质是大脑神经元彼此相连的神经纤维的集合，是大脑神经细胞之间传递信号的“高速公路”，抑郁症患者的大脑白质整合性偏低，意味着他们大脑不同区域之间的信息传递效率降低了，速度减慢了。</p>
+<h4 id="雄性更擅长应对急性压力雌性更擅长应对慢性压力">雄性更擅长应对急性压力，雌性更擅长应对慢性压力</h4>
+<p>动物实验发现，雄性更擅长应对急性压力，雌性更擅长应对慢性压力。</p>
+<p>所以，那些需要长期（几个月甚至几年）面对巨大压力的工作，在机会公平的情况下，女性可能会越来越胜任。</p>
+<h4 id="为什么抑郁的人似乎比较缺乏毅力">为什么抑郁的人似乎比较缺乏毅力</h4>
+<p>我们知道，毅力可以让一个人主动坚持做一件事，即使这件事不会带来奖赏感，比如背英语单词或者一步一个脚印地推进日常工作。</p>
+<p>前面说到，血清素分泌减少和抑郁症有很大的关系。大脑中如果血清素浓度太低，神经元之间的交流就会受到阻碍，导致“心力交瘁”的抑郁症状。血清素的分泌可以让人更有耐心。因为血清素在大脑中起抑制作用，所以比较充足的血清素可以让动物（包括人）愿意花更长时间去等待一个奖赏。在2018年，一项最新研究发现了血清素的更大作用：血清素不仅让人愿意被动地等待，而且可以增强一个人的恒心和毅力，让人即使面对不确定的结果也不轻言放弃。</p>
+<p>在这项研究中，科学家用小鼠做了一个简单的实验。他们让小鼠待在一个长长的纸箱里，纸箱两头可以取水喝。在任何时候都只有一个取水点有水，所以小鼠必须在长箱子两端跑来跑去地找水喝，并且每当它们跑到取水点时，必须用鼻子戳一下取水口，水才会出来。</p>
+<p>为了模拟现实世界不确定的情况，当小鼠用鼻子戳取水口的时候，不一定会有水流出来，所以有时候小鼠必须忍受戳了却没有水流出来的结果。这时就要考验小鼠的毅力了：它是愿意忍受戳不出来水的失望，继续多戳几次，还是试了一两次不成功便经受不起打击，直接放弃了呢？研究员对小鼠大脑血清素分泌的控制在这里隆重登场了。</p>
+<p>通过光遗传学手段，科学家刺激小鼠大脑负责分泌血清素的神经元，让小鼠大脑的血清素分泌量增加。这样一来，小鼠便更愿意多戳几次来取水，即使每次都得不到水，仍会有毅力坚持下去。</p>
+<p>这个研究结果或许也解释了，为什么缺乏血清素的抑郁症患者比普通人更容易受到失败的打击而一蹶不振。</p>
+<h4 id="有抑郁症的人为什么倾向于回避冲突">有抑郁症的人为什么倾向于回避冲突</h4>
+<p>抑郁症患者在面对冲突压力的时候，往往会选择回避冲突，这和大脑的海马有关系。当动物感到焦虑的时候，会出现一个典型的应激反应，这个反应叫作战斗或逃跑反应（fight or flight response）。当面对压力时，动物需要第一时间做出选择：是和引起它焦虑的东西战斗，还是回避冲突扭头就跑？</p>
+<p>这就好像当你走进一家你喜欢的餐馆时，突然看到了一个你很不喜欢的人，那么此时你会选择硬着头皮进去吃饭，还是转身走人呢？最近的研究发现，海马的不同活动模式对应着类似这种冲突场景下的不同选择。</p>
+<p>在这个研究中，科学家研究了小鼠的腹侧海马，这个区域对应着人类大脑海马的前部，包括分区CA1和CA3。结果发现，刺激海马不同的区域，小鼠面对冲突会做出截然相反的选择：当海马的CA1区暂时受到抑制时，小鼠在面对冲突时会倾向于逃避；而如果暂时抑制海马的CA3区，小鼠面对冲突时则会倾向于选择接近和直面冲突。</p>
+<p>这个对小鼠的研究结果说明，可能是海马活动的变化导致了有抑郁症的人倾向于回避冲突，而不是积极地面对和解决问题。</p>
+<h4 id="抑郁症是否可以痊愈">抑郁症是否可以痊愈</h4>
+<p>大部分抑郁症病人的症状是间歇式的，也就是抑郁症状时好时坏，有时症状比较明显，而在每两次发病的中间，他们的情绪状态又会比较稳定。每个人的抑郁症发作频率、持续时间都不一样，也就很难预测发病的时间。</p>
+<p>抑郁症可以说是一个终身疾病，很多抑郁症患者在一生当中会经历抑郁症状的多次反复发作，因此很难用“痊愈”来定义他们康复的状态。大部分时候，所谓抑郁症的痊愈，其实指的是一个人在某次抑郁症发作之后，很长一段时间不再有症状，恢复了他们的日常生活和工作。</p>
+<p>如果积极配合治疗，一次抑郁症的发作通常会持续3~6个月，而大部分病人会在12个月之内康复。那么，从长期来看，有多少病人可以维持很多年都不再复发，甚至是永远痊愈呢？情况并不是很乐观。</p>
+<p>从两年的尺度看，大约有60%的人可以维持康复的状态；当时间延长到4年时，大约只有40%的人维持在康复的状态；如果6年后再观察，则大约只有30%的人维持在康复的状态。抑郁症的长期康复率之所以这么低，是因为焦虑在其中扮演了一个不容小觑的角色。总之，抑郁症的复发风险非常高，大约80%的病人都会经历至少一次的复发。每复发一次，再度复发的风险又会增加，发病后的康复情况也会变差。</p>
+<p>在经历了第一次抑郁症发病之后，有超过一半的人可以在6个月之内康复，大约3/4的人一年内可以康复。但是，仍然有多达25%的病人一年以后仍然无法康复，并发展成慢性抑郁症，这和病人有没有积极参与治疗有很大的关系。</p>
+<h3 id="第2章-焦虑是大脑的过时本能">第2章 焦虑是大脑的过时本能</h3>
+<h3 id="第3章-有社交恐惧的你可能并不缺乏社交技巧">第3章 有社交恐惧的你可能并不缺乏社交技巧</h3>
+<h3 id="第4章-幻觉和妄想不是精神病人的特权">第4章 幻觉和妄想不是精神病人的特权</h3>
+<h3 id="第5章-不睡觉会死人">第5章 不睡觉会死人！</h3>
+<h3 id="第6章-上瘾是欲望不是快乐">第6章 上瘾是欲望，不是快乐</h3>
+<h3 id="第7章-好了伤疤忘了疼是成功人士的必备修养">第7章 好了伤疤忘了疼是成功人士的必备修养</h3>
+<h3 id="第8章-大脑神经终身可发育要活到老学到老">第8章 大脑神经终身可发育，要活到老学到老</h3>
+<h3 id="第9章-如何优雅地老去">第9章 如何优雅地老去</h3>
+<h3 id="第10章-如何拥有强大的记忆力">第10章 如何拥有强大的记忆力</h3>
+<h3 id="第11章-如何应对现代人的注意危机">第11章 如何应对现代人的注意危机</h3>
+<h3 id="第12章-你在听我说话吗">第12章 你在听我说话吗？</h3>
+<h3 id="第13章-创造力是比记忆力和专注力更重要的大脑核心竞争力">第13章 创造力是比记忆力和专注力更重要的大脑核心竞争力</h3>
+<h3 id="第14章-拖延症和提前症">第14章 拖延症和提前症</h3>
+<h3 id="第15章-每天洗多少次手才算强迫症">第15章 每天洗多少次手才算强迫症？</h3>
+<h3 id="第16章-心理变态的可怕与强大">第16章 心理变态的可怕与强大</h3>
+<h3 id="第17章-躁郁症一半是天堂一半是地狱">第17章 躁郁症：一半是天堂，一半是地狱</h3>
+<h3 id="第18章-有人在我大脑里装了芯片监听我">第18章 有人在我大脑里装了芯片监听我！</h3>
+<h3 id="第19章-身体和大脑谁才是主人">第19章 身体和大脑，谁才是主人？</h3>
+
+        
+        
+    </body>
+    </html>

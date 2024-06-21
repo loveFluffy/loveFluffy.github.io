@@ -7,7 +7,7 @@ tmp/
 audio/
 books/
 
-# 原始笔记文件
+# 原始笔记 md 文件
 booknotes/notes*.md
 csbooknotes/notes*.md
 

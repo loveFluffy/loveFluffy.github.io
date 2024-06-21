@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x767d;&#x8bdd;&#x6e2f;&#x80a1;&#x6295;&#x8d44;&#xff1a;&#x624b;&#x628a;&#x624b;&#x6559;&#x4f60;&#x6295;&#x8d44;&#x6e2f;&#x80a1;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+	padding: 0 10%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 30px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ffcccc;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 4px solid #ffcc99;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
+		z-index: 1;
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="白话港股投资手把手教你投资港股">白话港股投资：手把手教你投资港股</h1>
+<h2 id="范俊青-著">范俊青 著</h2>
+<p>范俊青 “70后”投资者，雪球网活跃用户，文章总阅读量超过1800万人次。有20年股票投资经历，2013年开始投资港股，经历过港股的起起伏伏，并在2016年后将大部分可投资金用于港股投资。</p>
+<h3 id="推荐序">推荐序</h3>
+<p>港股超级低估值，大概每一个主动投身于香港的内地投资者，都是冲着香港的股市便宜去的。与此同时，每一个仅仅因为便宜买入港股的投资者，也都有自己的血泪史。我也不例外，买过很多知名的烟蒂股，但最后结果都不太好。读完本书，我想总结几个观察低估值股票的角度。</p>
+<h4 id="1看股息">1．看股息</h4>
+<p>股息是贯穿全书的一个核心关键词，全书几百次重复股息，可见其重要。大家知道，低估是市场对于企业的负面看法，未必代表企业的真实情况。但是，企业真实的经营情况、良好的效益，如何能够传导到市场上来，扎扎实实地影响到投资者对企业的看法，并且实质性地打击空头，最佳方式就是股息（包括回购）。通过盈利的合理分配、企业的经营绩效，企业的真实情况就和股价建立了一个对应关系，否则可能企业是企业，股价是股价，两者完全脱钩。在港股那么多年，经历了大大小小的股灾。面对资产的巨大损失，最能给我以安慰的，就是股息。大不了拿股息，这句话看似无奈，背后其实有着巨大的支持力量。</p>
+<h4 id="2看成长">2．看成长</h4>
+<p>港股一直流传着种种黑料，本地老千、外资做空、被深圳超越等，好像港股市场不行了。但真要说拿得出手的明星成长股，港股是超越A股的。比如说十多年来一直在增长的腾讯，在香港上市16年，涨了上千倍，目前市值是4万多亿港元。再比如说恒大和碧桂园，它们在2010年的地产销售额还都只是万科的零头，但是截至2018年，两家双双超越万科，成为中国地产的新龙头。这两年涌现出了更多的大牛股，比如美团点评、李宁、春立医疗、金蝶国际，港股通的资金正在逐渐改变港股的生态系统，投资者并不太在意公司短期是否盈利、盈利多少，看中的是公司核心竞争力和长期的增长逻辑。</p>
+<p>腾讯几乎从未被低估，而碧桂园和恒大都曾经在两百亿的市值里挣扎过，如果一个股票，纸面上的低估，我们说的是低市盈率、低市净率、高股息率。这种情况下，对企业的极度低估，说明市场对企业的未来严重不看好，认为当前的盈利水平不可持续，或者认为企业可能突然因为债务破产。持续不断的增长财报就是对这种悲观预期最强悍有力的回击。</p>
+<h4 id="3看人气">3．看人气</h4>
+<p>我们在香港股市越久，就越会发现，冷门股票的“幺蛾子”特别多。港股很多冷门股极度低估，因此大股东没有动力维护市值，甚至干脆让市值下跌，然后逐步把优质资产转移出上市公司体系，更狠的，就直接私有化退市。所谓“出老千”只是投资者的气话，就法律而言，很多所谓“出老千”的行为其实并不违规。只是作为小股东，你没有能力和时间去跟大股东博弈。所以我说，港股还是要看人气。资本市场是一把双刃剑，估值给得太高，就形成了泡沫，你的投资就有风险；如果估值长期给得太低，大股东也懒得做市值，私有化对这类公司的大股东来说是利益最大化的。近几年来，港股私有化的公司数量逐年增加，这同时也反映了港股市场极度低估的现状，对企业股价底部买入后博中私有化的投资者来说是一个巨大的奖赏，但对长期持股的投资者来说是一个巨大的伤害。对于这类公司来说，进攻防守的底线还是股息率或超低市净率，因为每家被私有化的公司都能瞬间取得50%~120%的收益，这两年博私有化取得不错收益的港股投资者也大有人在。</p>
+<h4 id="4看趋势">4．看趋势</h4>
+<p>港股的低估是显而易见的，港股通的参与正在逐渐改变港股的生态，内地的机构投资者和个人投资者会建立与公司更多、更紧密的互动关系，驱动这些公司的价值走向合理的估值。举例来说，越来越多买中国建材、微创医疗的投资者，在公司盈利持续增长的基本面下，会去参加公司的业绩会、股东会；公司也在顺应市场的要求，借助各种渠道与市场沟通。大家应该可以欣喜地发现，今年中国建材、微创医疗的路演、机构调研报告比过往10年都多。而且不只是中国建材、微创医疗这两家公司，港股里被低估的优秀公司都有这个趋势。再比如，你可能会觉得，中国建材股息率较上一个年度增长了近一倍，这是你等待的结果，是水到渠成的事情。但事实上，这也有可能是一些机构投资者和个人股东不断地跟管理层当面提议的结果。所以可以相信，港股对比A股低估的这部分无风险超额收益会是以后确定的投资收益。</p>
+<p>如果是一个没人气的类似低估的股票，你等待的结果可能是私有化、低价配股、低价派发期权。到最后你会发现，有人气、有成长、有股息的股票其实很难在纸面上被过度低估。即便出现纸面低估，时间也不会太长，要善于把握。这就是所谓的投资并不容易，需要平时大量的积累，还需要机会出现时的敏锐果断。</p>
+<h3 id="自序">自序</h3>
+<p>我投资股票已经有20年了，投资港股也有7年的时间。从刚开始不经意地投资到后来开始专注研究股票投资，经历过2007年鸡犬升天的股市狂潮以及浪潮退后狂跌70%的大崩盘，也经历过2014年年末到2015年年初的大涨以及2015年的股灾。经历过股市的暴风骤雨，更知道股市投资需要有明灯指引。普通投资者如果考虑自己投资，必须建立适合自己的一套体系。</p>
+<p>港股市场在内地普通投资者的眼中是一个没有涨跌停、老千股横行、虽然估值低却陷阱更多、只可远观而不敢进入的市场，但是真实的港股是这样的吗？当然不是。我对港股的态度是：“再不投资港股，你还是价值投资者吗？”我本人也是身体力行，目前自有资金的80%以上都是投资在港股中。其实港股市场是价值投资者的天堂，港股的低估值给投资者提供了较高的安全边际，使得港股投资相对A股投资更为安全并能收获更好的收益。</p>
+<p>之所以建议投资港股，是因为港股又好又便宜。在A股，除了地产、银行、保险以及其他少数优质股票外很难找到又好又便宜的股票，更别说那些估值高得离谱的中小板和创业板股票，在那里寻找好的股票相对于港股难度大了很多（当然不是说没有好的成长企业，而是它们太贵了）。这几年以融创中国、中国恒大、碧桂园为代表的在香港上市的内地房地产股票的涨幅也远远超过A股房地产股票，其中最主要的原因就是低估和成长，优质制造业股票在港股更是被低估得多。在A股中估值相对低的优秀制造业企业，除了少数企业如万华化学、海螺水泥、格力电器、美的集团等，已经难觅踪影。但是，如果投资港股，你会重新打开一片天地，发现被低估的优秀制造业企业比比皆是，比如中国建材、东岳集团、天能动力、兴发铝业等，在A股和港股都已上市的公司，绝大多数港股也相对A股便宜得多。比如以2020年1月30日收盘价格来计算，长城汽车A股就比港股价格高出75%左右。当然港股的金矿边上也同样遍布陷阱，如何挖到金矿又不掉入陷阱则是我们需要修炼的基本功。本书第九章专门讲解港股的老千股和投资陷阱，了解这些可以说是投资港股的必修课。</p>
+<p>港股的股息率也是比较高的，2019年12月，恒生指数成份股股息率为3.52%，当然由于港股通收取20%的红利税，对于通过港股通购买的人来说收益要打个折扣。即便如此，股息率也超过了银行定期存款利率，同时也明显高于A股。事实上耐心挑选，在港股市场股息率超过10%的股票都不在少数，连续多年分红比率超过5%的股票也比比皆是。</p>
+<p>2019年12月末，内地企业已经占据港股上市公司数量的51%、市值的73%、成交量的79%，目前这个比例还在进一步上升。也就是说，内地投资者投资港股其实比国外和香港投资者有更多的优势，由于目前主要活跃股票以内地企业为主，这些内地企业的业务大部分也是在内地，因此内地投资者在理解企业商业模式、市场感知、企业调研方面都具备优势。</p>
+<h3 id="第一章-又好又便宜的港股">第一章 又好又便宜的港股</h3>
+<h4 id="第一节-中国股市中估值最低的港股">第一节 中国股市中估值最低的港股</h4>
+<p>先给大家看看港股中的内房股（内房股是指在香港上市，但是主要业务在内地的房地产公司）里的“三剑客”（这里的价格是采用2019年7月21日的前复权价格）：<br>
+融创中国：2016年全年股价徘徊在4~6港元，最低价3.84港元，最高价6.45港元，2017年10月触及当年最高价41.57港元，截至2019年7月21日，股价为38.85港元。<br>
+中国恒大：2016年全年股价徘徊在4.5~5.5港元，最低价4.16港元，最高价5.70港元，2017年10月触及最高价30.75港元，截至2019年7月21日，股价为22.10港元。<br>
+碧桂园：2016年全年股价徘徊在2.6~4港元，最低价2.51港元，最高价4.12港元，2017年10月触及当年最高价17.86港元，截至2019年7月21日，股价为11.36港元。</p>
+<p>除了内房“三剑客”，中国奥园、时代中国控股、新城发展、龙湖集团、宝龙地产等众多内房股都有不错的涨幅，其中有几只都是涨幅超过10倍的股票。这些股票涨幅和A股的“妖股”不同，是一个价值发现并认可的过程，即使到现在，仍然有不少内房股具备很高的投资价值。</p>
+<p>有人会说，房地产股票杠杆高，负债多，那么除了内房股，优质制造业也在港股屡创佳绩：长城汽车H股曾经从2008年10月的最低价到2015年4月涨幅接近100倍，吉利汽车也曾经在短短的2016年2月到2017年11月不到2年时间获得10倍的涨幅。申洲国际、安踏体育等也都有几十上百倍的涨幅，还有早期的康师傅、旺旺、达利园、维他奶国际这些消费股也曾经有过几十倍的涨幅。</p>
+<h5 id="一ah股比价情况">一、AH股比价情况</h5>
+<p>截至2020年2月7日，同时在A股和港股上市的股票共计119只，AH溢价率排名中位数第60位的兖州煤业A股要比港股贵出60.75%，溢价率最高的洛阳玻璃A股股价甚至是港股价格的5.97倍，只有一只股票中国平安港股是高于A股的，也只高出1.5%，其余118只港股均低于A股。要知道，这里的AH股是完全具有相同企业权益的股票，每股分红都是一样的，股东权利也是一样的。当然，A股的股票有打新的优势，加上流动性比较好，溢价率在10%~15%是合理的，当差价过大时，作为真正的价值投资者，这其实很容易选择。通俗地说，大家买东西的时候都知道一样的东西，不管它是在线上还是在线下卖，我们都应该选便宜的买。选择股票也是同样的道理，应该挑选价格低得多的H股来购买。</p>
+<h5 id="二港股和a股估值比较">二、港股和A股估值比较</h5>
+<h6 id="一估值比较">（一）估值比较</h6>
+<p>先简单介绍一下市盈率、市净率、股息率和净资产收益率的概念。</p>
+<p>1．市盈率</p>
+<p>市盈率（Price Earnings Ratio，P/E Ratio）也称“PE”，是指一定的考察期（通常为12个月）内，上市公司股票的价格与每股收益的比率，是股价除以每股收益得出的数据，也可以用公司市值除以归母净利润得出。市盈率的计算公式如下：</p>
+<p>一般认为，如果一家上市公司股票的市盈率过高，那么该股票的价格可能被高估。根据考察期的不同，市盈率分为静态市盈率、滚动市盈率、动态市盈率三种。<br>
+（1）用上一年度公司的归母净利润数据计算得到的市盈率为静态市盈率。静态市盈率的缺点在于使用的是上一年度的数据，无法反映公司未来的预期。<br>
+（2）用最近的4个季度的公司归母净利润数据计算得到的市盈率则是滚动市盈率，通常用TTM表示。<br>
+（3）动态市盈率则是用下一年度或者是年初推算的当年的预测归母净利润计算的市盈率。除了可以计算当年度的动态市盈率，还可以计算未来几年的动态市盈率，但由于是预估值，可能会有较大的偏差。</p>
+<p>一般说的市盈率通常是指静态市盈率，滚动市盈率更贴近现在。而动态市盈率则含有预测成分，是对未来的一种判断。市盈率是重要指标，但只是在一定程度上提供参考，不能单独作为投资依据。在实际投资中，投资者要结合股票的成长率全面考虑，只有市盈率不高成长性也好的股票才是好的投资标的。</p>
+<p>2．市净率</p>
+<p>市净率（Price-to-Book Ratio，P/B）也称“PB”，又名市账率，是指每股市价与每股净资产的比值，也可以用市值除以公司净资产得出。市净率的计算公式如下：</p>
+<p>市净率是比较常用的衡量股票估值高低的指标，但是和市盈率一样，都不适宜单独用来作为投资依据。一般来说，市净率较低的股票投资价值较高；市净率较高的股票则投资价值低。市净率一定要结合公司的其他指标以及经营情况、盈利能力等综合判断。</p>
+<p>市净率的优点在于净资产比净利润相对稳定，对公司净资产的衡量有较高的参考价值。但是市净率低的公司往往可能净资产收益率不高，如果预期未来的净资产收益率也同样不高，那么该公司的股票也不值得购买。</p>
+<p>资产重估或虚增资产会导致市净率低，所以分析市净率一定要分析净资产的组成。</p>
+<p>3．股息率</p>
+<p>股息率（Dividend Yield Ratio）是指一年中每股的派息额和每股股价的比率。也可以用公司一年的总派息金额与当时市值的比值计算。股息率的计算公式如下：</p>
+<p>在投资实践中，股息率是衡量企业是否具有投资价值的重要标尺之一。股息率是挑选收益型股票的重要参考标准，如果连续多年年度股息率超过1年期银行存款利率，则这只股票基本可以视为收益型股票，股息率越高越吸引人。</p>
+<p>4．净资产收益率</p>
+<p>净资产收益率（Rate of Return on Commom Stockholders' Equity，ROE），也称为股东权益报酬率、权益报酬率、权益利润率、净资产利润率，是衡量上市公司盈利能力的重要指标。净资产收益率是净利润与净资产（所有者权益）比值的百分比，净资产收益率的计算公式如下：</p>
+<p>净资产收益率是很重要的指标，但是要连续来看，一般来说要看最近5年的数据，更重要的是以此为依据推断未来的ROE，这个数据反映的是企业的盈利能力，据此并结合对未来的分析，判断出未来的盈利能力。</p>
+<p>上述四个指标用于个股时都必须和其他指标相结合来参考，不宜单独作为决策依据。市盈率、市净率和股息率用于整体市场的纵向比较时具备很好的参考价值，比如拿港股市场来说，当市盈率、市净率处于历史低位区间的时候或者当股息率处于历史高位区间的时候具备较好的投资价值；用于不同市场之间比较时也具备较高的参考价值，比如港股和A股或者美股做比较。</p>
+<h6 id="二港股和a股估值比较-1">（二）港股和A股估值比较</h6>
+<p>从图1-1可以看出，截至2019年7月19日，港股主板的平均市盈率为11.35倍，相比上交所13.61倍和深交所的23.54倍都要明显低得多。而如果看香港大盘股，市盈率更是低至8.86倍，市净率仅为1.08倍，香港国企指数市盈率8.96倍，市净率仅为1.04倍。而且由于腾讯控股无论在港交所主板还是大盘都占比接近10%，2019年7月19日市盈率高达38.43倍，所以腾讯控股这一只股其实就大约推高了港股主板或大盘市盈率的7%~8%。扣除腾讯控股的影响，港股主板PE大约不到10.5倍，港股大盘股PE大约仅为8.2倍。</p>
+<h4 id="第二节-中国股市中股息率最高的港股">第二节 中国股市中股息率最高的港股</h4>
+<h4 id="第三节-认识港股市场">第三节 认识港股市场</h4>
+<h4 id="第四节-谈谈恒生指数">第四节 谈谈恒生指数</h4>
+<h4 id="第五节-复利的魔力能在港股得到更好的体现">第五节 复利的魔力能在港股得到更好的体现</h4>
+<h3 id="第二章-港股投资渠道和交易知识">第二章 港股投资渠道和交易知识</h3>
+<h4 id="第一节-港股通主流便捷的渠道">第一节 港股通—主流便捷的渠道</h4>
+<h4 id="第二节-直接香港开户的渠道">第二节 直接香港开户的渠道</h4>
+<h4 id="第三节-通过基金渠道投资港股">第三节 通过基金渠道投资港股</h4>
+<h4 id="第四节-高昂的港股收费">第四节 高昂的港股收费</h4>
+<h4 id="第五节-港股通和直接香港开户的区别">第五节 港股通和直接香港开户的区别</h4>
+<h4 id="第六节-港股交易规则">第六节 港股交易规则</h4>
+<h4 id="第七节-投资信息来源和分析">第七节 投资信息来源和分析</h4>
+<h3 id="第三章-树立长期价值投资的理念">第三章 树立长期价值投资的理念</h3>
+<h4 id="第一节-价值投资是适合普通人的投资方式">第一节 价值投资是适合普通人的投资方式</h4>
+<h4 id="第二节-股票资产是各类资产中长期回报率最高的第一大类资产">第二节 股票资产是各类资产中长期回报率最高的第一大类资产</h4>
+<h4 id="第三节-价值投资是可以传承给后代的投资方式">第三节 价值投资是可以传承给后代的投资方式</h4>
+<h4 id="第四节-从企业的角度去理解你投资的股票">第四节 从企业的角度去理解你投资的股票</h4>
+<h4 id="第五节-正确对待股价波动">第五节 正确对待股价波动</h4>
+<h4 id="第六节-时间越长价值投资越有效">第六节 时间越长，价值投资越有效</h4>
+<h3 id="第四章-建立股票池">第四章 建立股票池</h3>
+<h4 id="第一节-什么是股票池">第一节 什么是股票池</h4>
+<h4 id="第二节-如何建立股票池">第二节 如何建立股票池</h4>
+<h4 id="第三节-股票池分类">第三节 股票池分类</h4>
+<h4 id="第四节-持续更新股票池">第四节 持续更新股票池</h4>
+<h3 id="第五章-港股财报解读">第五章 港股财报解读</h3>
+<h4 id="第一节-港股财报规则及准备工作">第一节 港股财报规则及准备工作</h4>
+<h4 id="第二节-财报阅读的方法">第二节 财报阅读的方法</h4>
+<h4 id="第三节-四张表简析">第三节 四张表简析</h4>
+<h4 id="第四节-港股财报综合分析">第四节 港股财报综合分析</h4>
+<h4 id="第五节-如何利用港股财报排除企业">第五节 如何利用港股财报排除企业</h4>
+<h3 id="第六章-个股分析和投资">第六章 个股分析和投资</h3>
+<h4 id="第一节-从长期股东的角度去分析公司">第一节 从长期股东的角度去分析公司</h4>
+<h4 id="第二节-用未来现金流折现的方式对公司估值">第二节 用未来现金流折现的方式对公司估值</h4>
+<h4 id="第三节-怎么分析要买的公司">第三节 怎么分析要买的公司</h4>
+<h4 id="第四节-如何对初创型企业进行分析和投资">第四节 如何对初创型企业进行分析和投资</h4>
+<h4 id="第五节-如何对发展期企业进行分析和投资">第五节 如何对发展期企业进行分析和投资</h4>
+<h4 id="第六节-如何对成熟期企业进行分析和投资">第六节 如何对成熟期企业进行分析和投资</h4>
+<h4 id="第七节-强周期行业的股票投资">第七节 强周期行业的股票投资</h4>
+<h4 id="第八节-投资的几个原则">第八节 投资的几个原则</h4>
+<h3 id="第七章-整体仓位控制和建仓">第七章 整体仓位控制和建仓</h3>
+<h4 id="第一节-什么是仓位">第一节 什么是仓位</h4>
+<h4 id="第二节-仓位的三种选择">第二节 仓位的三种选择</h4>
+<h4 id="第三节-如何建仓">第三节 如何建仓</h4>
+<h4 id="第四节-根据自身的能力来选择仓位控制方法">第四节 根据自身的能力来选择仓位控制方法</h4>
+<h3 id="第八章-何时卖出股票">第八章 何时卖出股票</h3>
+<h4 id="第一节-价值为尺衡量价格">第一节 价值为尺，衡量价格</h4>
+<h4 id="第二节-当基本面恶化时卖出">第二节 当基本面恶化时卖出</h4>
+<h4 id="第三节-价格达到目标价格时可以卖出">第三节 价格达到目标价格时可以卖出</h4>
+<h4 id="第四节-有更好的投资机会时卖出换股">第四节 有更好的投资机会时卖出换股</h4>
+<h4 id="第五节-企业的利润在增长股价就是不涨怎么办">第五节 企业的利润在增长，股价就是不涨怎么办</h4>
+<h3 id="第九章-风险防范及应对">第九章 风险防范及应对</h3>
+<h4 id="第一节-股价波动的风险和永久性损失本金的风险">第一节 股价波动的风险和永久性损失本金的风险</h4>
+<h4 id="第二节-如何避开老千股">第二节 如何避开老千股</h4>
+<h4 id="第三节-黑天鹅事件">第三节 黑天鹅事件</h4>
+<h4 id="第四节-沽空报告及应对">第四节 沽空报告及应对</h4>
+<h3 id="第十章-窝轮和期权投资">第十章 窝轮和期权投资</h3>
+<h4 id="第一节-什么是窝轮">第一节 什么是窝轮</h4>
+<h4 id="第二节-买卖窝轮的方法和原则">第二节 买卖窝轮的方法和原则</h4>
+<h4 id="第三节-窝轮投资实例分析">第三节 窝轮投资实例分析</h4>
+<h4 id="第四节-什么是期权">第四节 什么是期权</h4>
+<h4 id="第五节-香港期权的基本交易策略">第五节 香港期权的基本交易策略</h4>
+<h3 id="第十一章-港股投资实战案例之房地产篇">第十一章 港股投资实战案例之房地产篇</h3>
+<h4 id="第一节-港股地产行业之内房股">第一节 港股地产行业之内房股</h4>
+<h4 id="第二节-内房股是最值得投资的港股">第二节 内房股是最值得投资的港股</h4>
+<h4 id="第三节-分析房地产行业的统计口径问题">第三节 分析房地产行业的统计口径问题</h4>
+<h4 id="第四节-价值投资案例之绿城中国">第四节 价值投资案例之绿城中国</h4>
+<h3 id="第十二章-港股实战之制造业篇">第十二章 港股实战之制造业篇</h3>
+<h4 id="第一节-制造业中的三种周期">第一节 制造业中的三种周期</h4>
+<h4 id="第二节-被低估的水泥和多种材料之王中国建材">第二节 被低估的水泥和多种材料之王—中国建材</h4>
+<h4 id="第三节-铅酸电池的龙头老大天能动力">第三节 铅酸电池的龙头老大—天能动力</h4>
+<h4 id="第四节-港股制造业有黄金坑">第四节 港股制造业有“黄金坑”</h4>
+<h3 id="第十三章-如何投资港股的小型股票">第十三章 如何投资港股的小型股票</h3>
+<h4 id="第一节-港股小型股特点分析">第一节 港股小型股特点分析</h4>
+<h4 id="第二节-小型股投资的方法">第二节 小型股投资的方法</h4>
+<h4 id="第三节-小型股投资失败案例">第三节 小型股投资失败案例</h4>
+<h4 id="第四节-小型股投资成功案例">第四节 小型股投资成功案例</h4>
+<h3 id="附录-地产股呆会计37题">附录 地产股呆会计37题</h3>
+<h3 id="后-记">后 记</h3>
+
+            
+            
+        </body>
+        </html>

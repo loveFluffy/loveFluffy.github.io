@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x8bf4;&#x7684;&#x5c31;&#x662f;&#x597d;&#x542c;&#xff1a;&#x6ef4;&#x6c34;&#x4e0d;&#x6f0f;&#x7684;&#x53e3;&#x624d;&#x672f;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="说的就是好听滴水不漏的口才术">说的就是好听：滴水不漏的口才术</h1>
+<h2 id="亦辛-编著">亦辛 编著</h2>
+<h3 id="前言">前言</h3>
+<p>有句话说：常在河边走，哪能不湿鞋。倘若社会是一条长河，能够行走于世而鞋不湿，则无疑是非常成功的。而人人又都渴望这种成功，那就努力学说话和学做事吧！为人处世，无外乎这两个方面，把话说好听，把事做漂亮，你就是真正的强家。</p>
+<h3 id="第一章-好口才是魅力的门窗">第一章 好口才是魅力的门窗</h3>
+<h4 id="好口才具有神奇的魔力">好口才具有神奇的魔力</h4>
+<h4 id="好口才展示个人的魅力">好口才展示个人的魅力</h4>
+<h4 id="好口才会让你脱颖而出">好口才会让你脱颖而出</h4>
+<h3 id="第二章-好口才是成功的基石">第二章 好口才是成功的基石</h3>
+<h4 id="好口才是你人生轨道的奠基石">好口才是你人生轨道的奠基石</h4>
+<h4 id="好口才是你出类拔萃的助推器">好口才是你出类拔萃的助推器</h4>
+<h4 id="好口才是你无往不胜的重彩戏">好口才是你无往不胜的重彩戏</h4>
+<h3 id="第三章-好口才是通往幸福的阶梯">第三章 好口才是通往幸福的阶梯</h3>
+<h4 id="好口才是快乐生活的调味品">好口才是快乐生活的调味品</h4>
+<h4 id="好口才是优异工作的催化剂">好口才是优异工作的催化剂</h4>
+<h4 id="好口才是为人处世的护花泥">好口才是为人处世的护花泥</h4>
+<h3 id="第四章-好口才绝非天生">第四章 好口才绝非天生</h3>
+<h4 id="拯救自己要从沟通开始">拯救自己要从沟通开始</h4>
+<h4 id="客观分析自己的交谈力">客观分析自己的交谈力</h4>
+<h4 id="敢说话是成功的第一步">敢说话是成功的第一步</h4>
+<h4 id="练就伶牙俐齿的好口才">练就伶牙俐齿的好口才</h4>
+<h3 id="第五章-适时地语言表达">第五章 适时地语言表达</h3>
+<h4 id="明确表达目的-把握表达要领">明确表达目的 把握表达要领</h4>
+<h4 id="在遣词造句上下一番苦工夫">在遣词造句上下一番苦工夫</h4>
+<h4 id="平实通俗的语言最具感染力">平实通俗的语言最具感染力</h4>
+<h4 id="学会简明扼要的语言表达法">学会简明扼要的语言表达法</h4>
+<h4 id="在谈话中努力寻找共同语言">在谈话中努力寻找共同语言</h4>
+<h3 id="第六章-克服内心的恐惧">第六章 克服内心的恐惧</h3>
+<h4 id="敢于说话努力克服紧张情绪">敢于说话，努力克服紧张情绪</h4>
+<h4 id="善于说话抓住时机完美表达">善于说话，抓住时机完美表达</h4>
+<h4 id="恰当说话敏锐观察客观情境">恰当说话，敏锐观察客观情境</h4>
+<h4 id="漂亮说话适时接受新鲜事物">漂亮说话，适时接受新鲜事物</h4>
+<h4 id="幽默说话轻松缓解说话氛围">幽默说话，轻松缓解说话氛围</h4>
+<h4 id="真诚说话感人肺腑沁人心脾">真诚说话，感人肺腑沁人心脾</h4>
+<h3 id="第七章-提高个人修养">第七章 提高个人修养</h3>
+<h4 id="提高语言文化修养实现妙语连珠">提高语言文化修养，实现妙语连珠</h4>
+<h4 id="搜集丰富素材夯实口才的基本功">搜集丰富素材，夯实口才的基本功</h4>
+<h4 id="充实你的谈资合理运用谈话资料">充实你的谈资，合理运用谈话资料</h4>
+<h4 id="修饰你的仪表巧妙掌握肢体语言">修饰你的仪表，巧妙掌握肢体语言</h4>
+<h4 id="语气柔婉内外兼修成就动人谈吐">语气柔婉，内外兼修成就动人谈吐</h4>
+<h4 id="培养幽默细胞修炼成为风趣达人">培养幽默细胞，修炼成为风趣达人</h4>
+<h3 id="第八章-社交口才交际场上最会说话的人">第八章 社交口才——交际场上最会说话的人</h3>
+<h4 id="你是交际场上最受欢迎的人">你是交际场上最受欢迎的人</h4>
+<h4 id="提问方式的巧妙真诚">提问方式的巧妙真诚</h4>
+<h4 id="随机应变的回答技巧">随机应变的回答技巧</h4>
+<h4 id="不畏强势为自己辩解">不畏强势为自己辩解</h4>
+<h4 id="巧妙的开场白拉近彼此的距离">巧妙的开场白拉近彼此的距离</h4>
+<h4 id="谈吐优雅树立美好的第一印象">谈吐优雅，树立美好的第一印象</h4>
+<h4 id="自我介绍有技巧">自我介绍有技巧</h4>
+<h4 id="话语含蓄回味无穷">话语含蓄，回味无穷</h4>
+<h4 id="适当地称呼对方">适当地称呼对方</h4>
+<h4 id="巧妙暗示帮你摆脱困境">巧妙暗示帮你摆脱困境</h4>
+<h4 id="开玩笑要把握分寸">开玩笑要把握分寸</h4>
+<h4 id="赞美他人有忌讳">赞美他人有忌讳</h4>
+<h4 id="说话不要夸大其词">说话不要夸大其词</h4>
+<h4 id="精彩的场面话让你旗开得胜">精彩的场面话让你旗开得胜</h4>
+<h4 id="场面上能说会道好办事">场面上能说会道好办事</h4>
+<h4 id="酒场上语言出彩成大事">酒场上语言出彩成大事</h4>
+<h4 id="正话反说凸显智慧本色">正话反说凸显智慧本色</h4>
+<h4 id="求人办事激将法有奇效">求人办事，激将法有奇效</h4>
+<h4 id="要学会说客套话人情话">要学会说客套话、人情话</h4>
+<h3 id="第九章-处世口才左右逢源的语言艺术">第九章 处世口才——左右逢源的语言艺术</h3>
+<h4 id="春风化雨的赞美说服安慰暖人心">春风化雨的赞美、说服、安慰暖人心</h4>
+<h4 id="感谢他人要掌握技巧">感谢他人要掌握技巧</h4>
+<h4 id="说服并不等同于批评">说服并不等同于批评</h4>
+<h4 id="将心比心才更具说服力">“将心比心”才更具说服力</h4>
+<h4 id="规劝他人的语言要好听">规劝他人的语言要好听</h4>
+<h4 id="恭维他人的话要得体">恭维他人的话要得体</h4>
+<h4 id="批评反对拒绝道歉有策略">批评、反对、拒绝、道歉有策略</h4>
+<h4 id="反对他人要讲究方法策略">反对他人要讲究方法策略</h4>
+<h4 id="拒绝他人的要求要恰当得体">拒绝他人的要求要恰当得体</h4>
+<h4 id="赔礼道歉要表现得真诚">赔礼道歉要表现得真诚</h4>
+<h4 id="以退为进机智缓解谈话气氛">以退为进，机智缓解谈话气氛</h4>
+<h4 id="退一步海阔天空">退一步海阔天空</h4>
+<h4 id="以自责求谅解">以自责求谅解</h4>
+<h4 id="不要得罪小人物">不要得罪小人物</h4>
+<h4 id="说谎也是一种智慧">说谎也是一种智慧</h4>
+<h4 id="用谎言做自己的护身符">用谎言做自己的护身符</h4>
+<h4 id="机智救场化解尴尬局面">机智救场，化解尴尬局面</h4>
+<h4 id="三言两语解难题">三言两语解难题</h4>
+<h4 id="一语双关解困境">一语双关解困境</h4>
+<h4 id="学会几种温和的自卫方式">学会几种温和的自卫方式</h4>
+<h4 id="幽默化解尴尬">幽默化解尴尬</h4>
+<h4 id="找准突破口逐一攻克">找准突破口，逐一攻克</h4>
+<h4 id="等待时机适时发言">等待时机，适时发言</h4>
+<h4 id="如何应对羞辱">如何应对羞辱</h4>
+<h4 id="不要把话说得太绝">不要把话说得太绝</h4>
+<h4 id="逢人只说三分话">逢人只说三分话</h4>
+<h4 id="顺毛摸永远强过逆鳞捋">顺毛摸永远强过逆鳞捋</h4>
+<h4 id="打圈绕弯的说话艺术">打圈绕弯的说话艺术</h4>
+<h3 id="第十章-生活口才使家庭其乐融融">第十章 生活口才——使家庭其乐融融</h3>
+<h4 id="用语言浇灌爱情之花">用语言浇灌爱情之花</h4>
+<h4 id="恋爱中的问话艺术">恋爱中的问话艺术</h4>
+<h4 id="约会之后的话别">约会之后的话别</h4>
+<h4 id="亲昵的称呼增恋情">亲昵的称呼增恋情</h4>
+<h4 id="运用含蓄的语言表达明确的爱意">运用含蓄的语言表达明确的爱意</h4>
+<h4 id="恋爱中避免令人讨厌的谈吐">恋爱中避免令人讨厌的谈吐</h4>
+<h4 id="初次见面的语言要得体">初次见面的语言要得体</h4>
+<h4 id="用斗嘴的方式来增进恋人之间的感情">用斗嘴的方式来增进恋人之间的感情</h4>
+<h4 id="保持热恋说话有技巧">保持热恋，说话有技巧</h4>
+<h4 id="大声说出你的爱">大声说出你的爱</h4>
+<h4 id="夫妻之间和好有方">夫妻之间和好有方</h4>
+<h4 id="夫妻之间不可缺少甜言蜜语">夫妻之间不可缺少甜言蜜语</h4>
+<h4 id="夫妻之间说话不可忽视语气">夫妻之间说话不可忽视语气</h4>
+<h4 id="夫妻之间争吵要把握一定的准则">夫妻之间争吵要把握一定的准则</h4>
+<h4 id="爱人之间需要幽默">爱人之间需要幽默</h4>
+<h4 id="用语言维护和睦温馨的家庭">用语言维护和睦温馨的家庭</h4>
+<h4 id="轻松教育子女">轻松教育子女</h4>
+<h4 id="婆媳之间说话要讲究方式">婆媳之间说话要讲究方式</h4>
+<h4 id="做个讨人欢心的女婿">做个讨人欢心的女婿</h4>
+<h4 id="家庭成员相处幽默不可缺">家庭成员相处幽默不可缺</h4>
+<h4 id="用语言保持友谊之树常青">用语言保持友谊之树常青</h4>
+<h4 id="轻松获得朋友的好感">轻松获得朋友的好感</h4>
+<h4 id="朋友之间需要幽默">朋友之间需要幽默</h4>
+<h4 id="同密友该客气时也要客气">同密友该客气时也要客气</h4>
+<h3 id="第十一章-职场口才驰骋职场的语言圣经">第十一章 职场口才——驰骋职场的语言圣经</h3>
+<h4 id="用语言营造和谐的同事关系">用语言营造和谐的同事关系</h4>
+<h4 id="同事之间要适当保持距离">同事之间要适当保持距离</h4>
+<h4 id="绕开办公室不宜谈论的话题">绕开办公室不宜谈论的话题</h4>
+<h4 id="避免招人烦的说话方式和习惯">避免招人烦的说话方式和习惯</h4>
+<h4 id="对同事不要吝啬赞美的语言">对同事不要吝啬赞美的语言</h4>
+<h4 id="做一个办公室里的风趣高手">做一个办公室里的风趣高手</h4>
+<h4 id="与上司沟通的语言技巧">与上司沟通的语言技巧</h4>
+<h4 id="拒绝上司有绝招">拒绝上司有绝招</h4>
+<h4 id="谦卑和赞扬力量大">谦卑和赞扬力量大</h4>
+<h4 id="向老板提要求有技巧">向老板提要求有技巧</h4>
+<h4 id="巧言化解同上司的危机">巧言化解同上司的危机</h4>
+<h4 id="得体干练的领导口才">得体干练的领导口才</h4>
+<h4 id="命令下属的语言技巧">命令下属的语言技巧</h4>
+<h4 id="与下属沟通的语言技巧">与下属沟通的语言技巧</h4>
+<h4 id="如何向下级通报坏消息">如何向下级通报坏消息</h4>
+<h4 id="拒绝员工要求时要得体">拒绝员工要求时要得体</h4>
+<h4 id="训诫下属要讲究方法">训诫下属要讲究方法</h4>
+<h4 id="对下属不要吝啬赞扬的语言">对下属不要吝啬赞扬的语言</h4>
+<h3 id="第十二章-谈判口才谈判桌上稳操胜券">第十二章 谈判口才——谈判桌上稳操胜券</h3>
+<h4 id="谈判桌上稳操胜券的法则">谈判桌上稳操胜券的法则</h4>
+<h4 id="察言观色话语随机应变">察言观色，话语随机应变</h4>
+<h4 id="留足后路避免把话说得太死">留足后路，避免把话说得太死</h4>
+<h4 id="商业谈判中的艺术和技巧">商业谈判中的艺术和技巧</h4>
+<h4 id="谈判桌上的幽默运用">谈判桌上的幽默运用</h4>
+<h4 id="从容大方借形表意">从容大方，借形表意</h4>
+<h4 id="斗智斗谋出奇制胜">斗智斗谋，出奇制胜</h4>
+<h4 id="谈判中要关心对方的利益">谈判中要关心对方的利益</h4>
+<h4 id="善用谈判中的威胁逼迫对方接受自己的条件">善用谈判中的威胁，逼迫对方接受自己的条件</h4>
+<h4 id="指出对方的利益所在">指出对方的利益所在</h4>
+<h4 id="抓住对方的心理">抓住对方的心理</h4>
+<h4 id="满足不同谈判对手的心理需求">满足不同谈判对手的心理需求</h4>
+<h4 id="善谈更要善听">善谈更要善听</h4>
+<h4 id="以坦诚来征服对方">以坦诚来征服对方</h4>
+<h4 id="巧妙转移话题以缓和谈判气氛">巧妙转移话题以缓和谈判气氛</h4>
+<h3 id="第十三章-推销口才轻松说服顾客">第十三章 推销口才——轻松说服顾客</h3>
+<h4 id="紧紧抓住顾客的心">紧紧抓住顾客的心</h4>
+<h4 id="推销战术别出心裁">推销战术别出心裁</h4>
+<h4 id="别跟上帝争辩要勇于示弱">别跟“上帝”争辩，要勇于“示弱”</h4>
+<h4 id="学会制造悬念">学会制造悬念</h4>
+<h4 id="迎合顾客说话要与其口味相适应">迎合顾客，说话要与其口味相适应</h4>
+<h4 id="有效的提问方式">有效的提问方式</h4>
+<h4 id="推销中的幽默">推销中的幽默</h4>
+<h4 id="面对谢绝推销时该怎么办">面对“谢绝推销”时该怎么办</h4>
+<h4 id="灵活运用各种方法促成交易">灵活运用各种方法促成交易</h4>
+<h4 id="把冰卖给爱斯基摩人">把冰卖给爱斯基摩人</h4>
+<h4 id="对顾客说不的技巧">对顾客说“不”的技巧</h4>
+<h4 id="如何激发顾客的购买欲望">如何激发顾客的购买欲望</h4>
+<h4 id="勇于向顾客认错">勇于向顾客认错</h4>
+<h4 id="吸引客户的有效方法">吸引客户的有效方法</h4>
+<h4 id="巧用比喻攻破最后一道防线">巧用比喻，攻破最后一道防线</h4>
+<h3 id="第十四章-演讲和辩论口才激情四射稳操胜券">第十四章 演讲和辩论口才——激情四射、稳操胜券</h3>
+<h4 id="口吐莲花让演讲富有激情">口吐莲花，让演讲富有激情</h4>
+<h4 id="舌绽春蕾使辩论富有力度">舌绽春蕾，使辩论富有力度</h4>
+<h4 id="通俗易懂让演讲深入人心">通俗易懂，让演讲深入人心</h4>
+<h4 id="就坡骑驴使辩论精彩纷呈">“就坡骑驴”，使辩论精彩纷呈</h4>
+<h4 id="沉着自信展示演讲好姿态">沉着自信，展示演讲好姿态</h4>
+<h4 id="随机应变使辩论稳中取胜">随机应变，使辩论稳中取胜</h4>
+<h4 id="在演讲中力求情感共鸣">在演讲中力求情感共鸣</h4>
+<h4 id="在辩论中处处设陷阱">在辩论中处处设“陷阱”</h4>
+<h4 id="演讲精妙的开场白抓紧人心">演讲精妙的开场白抓紧人心</h4>
+<h4 id="辩论时巧比妙论以理服人">辩论时巧比妙论、以理服人</h4>
+<h4 id="辩论者要紧抓对方的小辫子">辩论者要紧抓对方的“小辫子”</h4>
+<h4 id="精妙结尾引人入胜">精妙结尾，引人入胜</h4>
+<h4 id="借力打力胜利收工">借力打力，胜利收工</h4>
+<h4 id="以谬制谬方为妙招">以谬制谬，方为妙招</h4>
+<h3 id="主要参考书目">主要参考书目</h3>
+
+        
+        
+    </body>
+    </html>

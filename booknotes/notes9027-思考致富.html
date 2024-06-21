@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x601d;&#x8003;&#x81f4;&#x5bcc;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="思考致富">思考致富</h1>
+<h2 id="美希尔-著王勇-编译">[美]希尔 著|王勇 编译</h2>
+<h3 id="序言">序言</h3>
+<h2 id="第一章-心想才能事成">第一章 心想才能事成</h2>
+<h3 id="一-你只需要一个好点子">一 你只需要一个好点子</h3>
+<h3 id="二-流浪汉走近发明家">二 “流浪汉”走近发明家</h3>
+<h3 id="三-抓住机会财富才会来临">三 抓住机会，财富才会来临</h3>
+<h3 id="四-距离黄金三尺">四 距离黄金三尺</h3>
+<h3 id="五-坚持5角钱的教训">五 坚持5角钱的教训</h3>
+<h3 id="六-我将获得我想要的">六 我将获得我想要的</h3>
+<h3 id="七-改变命运的原则">七 改变命运的原则</h3>
+<h2 id="第二章-渴望所有成就的起点">第二章 渴望——所有成就的起点</h2>
+<h3 id="一-燃烧的欲望">一 燃烧的欲望</h3>
+<h3 id="二-使渴望变成财富的六个步骤">二 使渴望变成财富的六个步骤</h3>
+<h3 id="三-欲望可以创造奇迹">三 欲望可以创造奇迹</h3>
+<h3 id="四-让梦想起飞">四 让梦想起飞</h3>
+<h2 id="第三章-信心具体描摹并且信以为真">第三章 信心——具体描摹并且信以为真</h2>
+<h3 id="一-信心的威力">一 信心的威力</h3>
+<h3 id="二-抛弃自卑">二 抛弃自卑</h3>
+<h3 id="三-神奇的自我暗示">三 神奇的自我暗示</h3>
+<h3 id="四-如何培养你的信心">四 如何培养你的信心</h3>
+<h3 id="五-价值10万美元的精彩演说">五 价值10万美元的精彩演说</h3>
+<h2 id="第四章-伟大的潜意识">第四章 伟大的潜意识</h2>
+<h3 id="一-肥沃的田园">一 肥沃的田园</h3>
+<h3 id="二-刺激潜意识的三步曲">二 刺激潜意识的三步曲</h3>
+<h3 id="三-利用想象力播种潜意识的种子">三 利用想象力播种潜意识的种子</h3>
+<h3 id="四-想象力的培养训练">四 想象力的培养训练</h3>
+<h3 id="五-积极的态度积极的情感">五 积极的态度积极的情感</h3>
+<h2 id="第五章-专业知识获得财富的工具">第五章 专业知识——获得财富的工具</h2>
+<h3 id="一-无知的致富者">一 “无知”的致富者</h3>
+<h3 id="二-如何成为需求的人才">二 如何成为需求的人才</h3>
+<h3 id="三-专业知识的创富路">三 专业知识的创富路</h3>
+<h3 id="四-同事是你的宝贵资源">四 同事是你的宝贵资源</h3>
+<h2 id="第六章-智囊团鞭策驱动的力量">第六章 智囊团——鞭策驱动的力量</h2>
+<h3 id="一-制定完善的成功步骤">一 制定完善的成功步骤</h3>
+<h3 id="二-借智囊团获取力量">二 借“智囊团”获取力量</h3>
+<h3 id="三-领导好你的智囊团">三 领导好你的智囊团</h3>
+<h3 id="四-招致失败的因素">四 招致失败的因素</h3>
+<h3 id="五-你知道自己的价值吗">五 你知道自己的价值吗</h3>
+<h2 id="第七章-决心和毅力致富的保障">第七章 决心和毅力——致富的保障</h2>
+<h3 id="一-勇敢果断地做出自己的决定">一 勇敢果断地做出自己的决定</h3>
+<h3 id="二-决定成为有钱的人">二 决定成为有钱的人</h3>
+<h3 id="三-要自由还是死亡">三 要自由还是死亡</h3>
+<h3 id="四-顽强的毅力">四 顽强的毅力</h3>
+<h3 id="五-我不怕困难">五 我不怕困难</h3>
+<h2 id="第八章-头脑开启财富城堡的万能钥匙">第八章 头脑——开启财富城堡的万能钥匙</h2>
+<h3 id="一-学会创新">一 学会创新</h3>
+<h3 id="二-不放过偶然现象">二 不放过偶然现象</h3>
+<h3 id="三-机遇实力成功">三 机遇＋实力＝成功</h3>
+<h2 id="第九章-神秘的性刺激能量">第九章 神秘的性刺激能量</h2>
+<h3 id="一-成就与性的关系">一 成就与性的关系</h3>
+<h3 id="二-培养创造力">二 培养创造力</h3>
+<h3 id="三-40岁以后的成功">三 40岁以后的成功</h3>
+<h3 id="四-女性的力量">四 女性的力量</h3>
+<h2 id="第十章-致富路上的六种恐惧">第十章 致富路上的六种恐惧</h2>
+<h3 id="一-恐惧的六大基本形态">一 恐惧的六大基本形态</h3>
+<h3 id="二-向钱伸出我们的手">二 向钱伸出我们的手</h3>
+<h2 id="第十一章-方法制胜的宝典">第十一章 方法——制胜的宝典</h2>
+<h3 id="一-确定办事目的">一 确定办事目的</h3>
+<h3 id="二-方法是主动想出来的">二 方法是主动想出来的</h3>
+<h3 id="三-做事前先找靶心后射击">三 做事前先找靶心后射击</h3>
+<h3 id="四-天下的事永远做不完">四 天下的事永远做不完</h3>
+<h3 id="五-别让你的汗水白流">五 别让你的汗水白流</h3>
+<h2 id="第十二章-信义并举以义制利">第十二章 信义并举以义制利</h2>
+<h3 id="一-信义为处世立业之本">一 信义为处世立业之本</h3>
+<h3 id="二-人格修养和信誉是盈利的命根">二 人格修养和信誉是盈利的命根</h3>
+<h3 id="三-珍惜声誉犹如珍惜生命">三 珍惜声誉犹如珍惜生命</h3>
+<h2 id="第十三章-益寿必须遵循的人生20个定律">第十三章 益寿必须遵循的人生20个定律</h2>
+<h3 id="一-拜伦法则">一 拜伦法则</h3>
+<h3 id="二-牢骚效应">二 牢骚效应</h3>
+<h3 id="三-犬獒效应">三 犬獒效应</h3>
+<h3 id="四-洛克忠告">四 洛克忠告</h3>
+<h3 id="五-吉格勒定理">五 吉格勒定理</h3>
+<h3 id="六-洛克定律">六 洛克定律</h3>
+<h3 id="七-韦特莱法则">七 韦特莱法则</h3>
+<h3 id="八-贝尔效应">八 贝尔效应</h3>
+<h3 id="九-杜根定律">九 杜根定律</h3>
+<h3 id="十-蜕皮效应">十 蜕皮效应</h3>
+<h3 id="十一-迪斯忠告">十一 迪斯忠告</h3>
+<h3 id="十二-罗伯特定理">十二 罗伯特定理</h3>
+<h3 id="十三-杜利奥定理">十三 杜利奥定理</h3>
+<h3 id="十四-吉格定理">十四 吉格定理</h3>
+<h3 id="十五-隧道视野效应">十五 隧道视野效应</h3>
+<h3 id="十六-皮尔斯定理">十六 皮尔斯定理</h3>
+<h3 id="十七-特里法则">十七 特里法则</h3>
+<h3 id="十八-比伦定律">十八 比伦定律</h3>
+<h3 id="十九-基利定理">十九 基利定理</h3>
+<h3 id="二十-卡贝定理">二十 卡贝定理</h3>
+<h2 id="第十四章-全新人生八理念">第十四章 全新人生八理念</h2>
+<h3 id="一-言必行行必果">一 言必行，行必果</h3>
+<h3 id="二-让礼物传递心意">二 让礼物传递心意</h3>
+<h3 id="三-把握分寸恰到好处">三 把握分寸，恰到好处</h3>
+<h3 id="四-真实的谦逊">四 真实的谦逊</h3>
+<h3 id="五-适当的举止">五 适当的举止</h3>
+<h3 id="六-学会说不">六 学会说“不”</h3>
+<h3 id="七-面对嫉妒心理">七 面对“嫉妒”心理</h3>
+<h3 id="八-用诚恳打动人心">八 用诚恳打动人心</h3>
+<h2 id="后记">后记</h2>
+
+        
+        
+    </body>
+    </html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x8d22;&#x5bcc;&#x662f;&#x8ba4;&#x77e5;&#x7684;&#x53d8;&#x73b0;&#xff1a;&#x5982;&#x4f55;&#x907f;&#x5f00;&#x6295;&#x8d44;&#x4e2d;&#x7684;12&#x4e2a;&#x9677;&#x9631;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="财富是认知的变现如何避开投资中的12个陷阱">财富是认知的变现：如何避开投资中的12个陷阱</h1>
+<h2 id="舒泰峰-著">舒泰峰 著</h2>
+<h3 id="推荐序-形而上者谓之道形而下者谓之器">推荐序 “形而上者谓之道，形而下者谓之器”</h3>
+<p>投资大概可以分为三类：价值投资、行为金融和金融工程。金融工程以对历史数据的系统归纳为基础，在逐步迈向成熟的中国资本市场将有越来越大的施展空间。不过金融工程以未来会重复历史为假设，而未来充满了不确定性，所以有其局限所在。行为金融则以分析人性心理为基础。传统意义上的投资大师，无论是像巴菲特这样的价值投资者，还是像索罗斯这样的“狙击高手”，本质上都是行为金融的成功实践者。金融工程和行为金融各有其优势，但也都有一定程度的局限性，所以价值投资（基本面投资）还是投资的基础方法。我有一种感觉，未来在投资界取得类似于今天巴菲特和索罗斯这样量级成就的人，可能属于价值投资、行为金融、金融工程的跨界立体化实践者。</p>
+<h3 id="01-以自知者明破解过度自信">01 以“自知者明”破解“过度自信”</h3>
+<h4 id="认知陷阱1过度自信-机关算尽太聪明反害了卿卿性命">认知陷阱1：过度自信 “机关算尽太聪明，反害了卿卿性命”</h4>
+<h4 id="破解之道1认识你自己-承认无知是智慧的开始">破解之道1：认识你自己 “承认无知是智慧的开始”</h4>
+<h4 id="老子对话巴菲特-知人者智自知者明">老子对话巴菲特 知人者智，自知者明</h4>
+<h3 id="02-以理性自律破解贪婪与嫉妒">02 以“理性自律”破解“贪婪与嫉妒”</h3>
+<h4 id="认知陷阱2贪婪与嫉妒-最令人头疼的事莫过于看到朋友发大财">认知陷阱2：贪婪与嫉妒 “最令人头疼的事莫过于看到朋友发大财”</h4>
+<h4 id="破解之道2保持理性-战胜他人不如战胜自己">破解之道2：保持理性 “战胜他人不如战胜自己”</h4>
+<h4 id="老子对话巴菲特-胜人者有力自胜者强">老子对话巴菲特 胜人者有力，自胜者强</h4>
+<h3 id="03-以长期主义破解急于求成">03 以“长期主义”破解“急于求成”</h3>
+<h4 id="认知陷阱3急于求成-人类本能地渴望立竿见影的效果">认知陷阱3：急于求成 “人类本能地渴望立竿见影的效果”</h4>
+<h4 id="破解之道3长期主义-时间的妙处在于它的长度">破解之道3：长期主义 “时间的妙处在于它的长度”</h4>
+<h4 id="老子对话巴菲特-大器晚成大音希声">老子对话巴菲特 大器晚成，大音希声</h4>
+<h3 id="04-以安全边际破解禀赋效应">04 以“安全边际”破解“禀赋效应”</h3>
+<h4 id="认知陷阱4禀赋效应-一个人想要什么就会相信什么">认知陷阱4：禀赋效应 “一个人想要什么，就会相信什么”</h4>
+<h4 id="破解之道4安全边际-做投资如烹小鲜">破解之道4：安全边际 “做投资如烹小鲜”</h4>
+<h4 id="老子对话巴菲特-保此道者不欲盈">老子对话巴菲特 保此道者，不欲盈</h4>
+<h3 id="05-以变亦不变破解锚定效应">05 以“变亦不变”破解“锚定效应”</h3>
+<h4 id="认知陷阱5锚定效应-投资中的刻舟求剑">认知陷阱5：锚定效应 投资中的“刻舟求剑”</h4>
+<h4 id="破解之道5变亦不变-投资中真理比面子重要">破解之道5：变亦不变 “投资中，真理比面子重要”</h4>
+<h4 id="老子对话巴菲特-万物并作吾以观复">老子对话巴菲特 万物并作，吾以观复</h4>
+<h3 id="06-以未来思维破解损失厌恶">06 以“未来思维”破解“损失厌恶”</h3>
+<h4 id="认知陷阱6损失厌恶-煮熟的鸭子飞走了">认知陷阱6：损失厌恶 “煮熟的鸭子飞走了”</h4>
+<h4 id="破解之道6未来思维-投资这一行机可失时再来">破解之道6：未来思维 “投资这一行：机可失，时再来”</h4>
+<h4 id="老子对话巴菲特-不失其所者久">老子对话巴菲特 不失其所者久</h4>
+<h3 id="07-以逆向思维破解过度悲观">07 以“逆向思维”破解“过度悲观”</h3>
+<h4 id="认知陷阱7过度悲观-我们的恐惧常常大于危险本身">认知陷阱7：过度悲观 “我们的恐惧常常大于危险本身”</h4>
+<h4 id="破解之道7逆向思维-反过来想总是反过来想">破解之道7：逆向思维 “反过来想，总是反过来想”</h4>
+<h4 id="老子对话巴菲特-俗人昭昭我独昏昏">老子对话巴菲特 俗人昭昭，我独昏昏</h4>
+<h3 id="08-以独立精神破解盲目从众">08 以“独立精神”破解“盲目从众”</h3>
+<h4 id="认知陷阱8盲目从众-我们都是随大流的绵羊">认知陷阱8：盲目从众 我们都是随大流的“绵羊”</h4>
+<h4 id="破解之道8独立精神-投资要在知识上做加法在心性上做减法">破解之道8：独立精神 投资要在知识上做加法，在心性上做减法</h4>
+<h4 id="老子对话巴菲特-少则得多则惑">老子对话巴菲特 少则得，多则惑</h4>
+<h3 id="09-以周期思维破解线性思维">09 以“周期思维”破解“线性思维”</h3>
+<h4 id="认知陷阱9线性思维-幸福且只幸福了1-000天的火鸡">认知陷阱9：线性思维 幸福且只幸福了1 000天的火鸡</h4>
+<h4 id="破解之道9周期思维-做投资不妨建立一点摆钟意识">破解之道9：周期思维 做投资，不妨建立一点摆钟意识</h4>
+<h4 id="老子对话巴菲特-反者道之动">老子对话巴菲特 反者道之动</h4>
+<h3 id="10-以概率思维破解故事思维">10 以“概率思维”破解“故事思维”</h3>
+<h4 id="认知陷阱10故事思维-永不散去的荷兰郁金香魅影">认知陷阱10：故事思维 永不散去的荷兰郁金香魅影</h4>
+<h4 id="破解之道10概率思维-价值投资就是做大概率正确的事情">破解之道10：概率思维 价值投资就是做大概率正确的事情</h4>
+<h4 id="老子对话巴菲特-致虚极守静笃">老子对话巴菲特 致虚极，守静笃</h4>
+<h3 id="11-以谨慎小心破解黑天鹅">11 以“谨慎小心”破解“黑天鹅”</h3>
+<h4 id="认知陷阱11均值回归是对称的-天之道损有余而补不足">认知陷阱11：均值回归是对称的 “天之道，损有余而补不足”</h4>
+<h4 id="破解之道11均值回归是不对称的-我们的大脑必须习惯于对尾部风险说不">破解之道11：均值回归是不对称的 我们的大脑必须习惯于对尾部风险说“不”</h4>
+<h4 id="老子对话巴菲特-为之于未有治之于未乱">老子对话巴菲特 为之于未有，治之于未乱</h4>
+<h3 id="12-以财富善念破解财不配位">12 以“财富善念”破解“财不配位”</h3>
+<h4 id="认知陷阱12德不配财-交易程序与生活程序紧密相连">认知陷阱12：德不配财 交易程序与生活程序紧密相连</h4>
+<h4 id="破解之道12财富是对善的激励-正直的行为能够带来好处是因为它们是好的">破解之道12：财富是对善的激励 “正直的行为能够带来好处，是因为它们是好的”</h4>
+<h3 id="老子对话巴菲特-上善若水">老子对话巴菲特 上善若水</h3>
+<h3 id="附录-舒泰峰的财富认知书单">附录 舒泰峰的财富认知书单</h3>
+<h3 id="后记">后记</h3>
+
+        
+        
+    </body>
+    </html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x533b;&#x751f;&#x6700;&#x60f3;&#x8ba9;&#x4f60;&#x8bfb;&#x7684;&#x4e66;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="医生最想让你读的书">医生最想让你读的书</h1>
+<h2 id="美杰尔姆格罗普曼jerome-groopman-著黄钰苹-译">[美]杰尔姆·格罗普曼(Jerome Groopman) 著|黄钰苹 译</h2>
+<h3 id="推荐序-医学不等式与临床万花筒">推荐序 医学不等式与临床万花筒</h3>
+<h3 id="导言-破解医疗思维的魔盒">导言 破解医疗思维的魔盒</h3>
+<h4 id="医生都会犯错思维方式是突破口">医生都会犯错，思维方式是突破口</h4>
+<h4 id="高明的医生会思考好思考重思考">高明的医生会思考、好思考、重思考</h4>
+<h4 id="有时常识思维是最优解">有时常识思维是“最优解”</h4>
+<h3 id="1-除了技术医学新手和专家最大差距在思维能力">1. 除了技术，医学新手和专家最大差距在思维能力</h3>
+<h4 id="年轻不等于不靠谱思维决定高度">年轻不等于不靠谱，思维决定高度</h4>
+<h4 id="书面病例仅作参考">书面病例，仅作参考</h4>
+<h4 id="启发法是培养医疗思维的基石">启发法是培养医疗思维的基石</h4>
+<h4 id="内在情感是导致思维错误的推手">内在情感是导致思维错误的推手</h4>
+<h3 id="2-医生对你的喜好会影响决策力">2. 医生对你的喜好会影响决策力</h3>
+<h4 id="医生的刻板印象让你被误诊">医生的刻板印象让你“被误诊”</h4>
+<h4 id="医生的偏爱会害人">医生的偏爱会害人</h4>
+<h4 id="控制好情感成就好医生">控制好情感，成就好医生</h4>
+<h3 id="3-远离被误诊你和医生都该养成的思维模式">3. 远离被误诊，你和医生都该养成的思维模式</h3>
+<h4 id="一医学结果具有不确定性">一，医学结果具有不确定性</h4>
+<h4 id="二病情具有个体差异性">二，病情具有个体差异性</h4>
+<h4 id="三医生不能过度依赖既往经验">三，医生不能过度依赖既往经验</h4>
+<h4 id="四患者的回答能引导医生远离思维误区">四，患者的回答能引导医生远离思维误区</h4>
+<h3 id="4-医生如何提升初级医疗思维能力">4. 医生如何提升初级医疗思维能力</h3>
+<h4 id="不忽视任何可能的生理问题">不忽视任何可能的生理问题</h4>
+<h4 id="数据有效决策合理">数据有效，决策合理</h4>
+<h4 id="把握工作节奏避免认知错误">把握工作节奏，避免认知错误</h4>
+<h4 id="全面考虑患者背景会沟通是门技术语">全面考虑患者背景，会沟通是门技术语</h4>
+<h4 id="治病人而非治病">治“病人”而非治“病”</h4>
+<h3 id="5-你的思维模式也能影响医生诊断">5. 你的思维模式也能影响医生诊断</h3>
+<h4 id="不能只做被动医疗者">不能只做被动医疗者</h4>
+<h4 id="质疑医生莫失理性">质疑医生，莫失理性</h4>
+<h4 id="非专业看法帮医生填补思维漏洞">非专业看法帮医生填补思维漏洞</h4>
+<h3 id="6-疾病千面开放性思维开启正确的医疗之旅">6. 疾病千面，开放性思维开启正确的医疗之旅</h3>
+<h4 id="临床即兴发挥是一种本事">临床即兴发挥是一种本事</h4>
+<h4 id="老师怎么教很可贵医生能否变通更重要">老师怎么教很可贵，医生能否变通更重要</h4>
+<h4 id="别让主要因素成为诊断的绊脚石">别让“主要”因素成为诊断的绊脚石</h4>
+<h4 id="关注不确定性有助于提高诊疗效果">关注不确定性有助于提高诊疗效果</h4>
+<h3 id="7-医生承认自己不知道有多难">7. 医生承认自己不知道有多难</h3>
+<h4 id="无中生有是医生最大忌">“无中生有”是医生最大忌</h4>
+<h4 id="动脑子比动手重要">动脑子比“动手”重要</h4>
+<h4 id="普通医生常承诺高明医生重坦诚">普通医生常承诺，高明医生重坦诚</h4>
+<h4 id="好医生懂得利用患者">好医生懂得“利用”患者</h4>
+<h3 id="8-医学技术用对能救人过犹则不及">8. 医学技术：用对能救人，过犹则不及</h3>
+<h4 id="当心两大失误假阳性与假阴性">当心两大失误：假阳性与假阴性</h4>
+<h4 id="过度解读和过于谨慎都不可取">过度解读和过于谨慎都不可取</h4>
+<h4 id="不做医学技术的傀儡">不做医学技术的傀儡</h4>
+<h4 id="机器不能取代医生的思考">机器不能取代医生的思考</h4>
+<h3 id="9-当医学遇见商业如何突破潜规则">9. 当医学遇见商业，如何突破“潜规则”</h3>
+<h4 id="制药业魔法还是魔咒">制药业：魔法还是魔咒</h4>
+<h4 id="医生要避免迷失在医学文献中">医生要避免迷失在医学文献中</h4>
+<h4 id="不能任由医疗营销牵着鼻子走">不能任由医疗营销牵着鼻子走</h4>
+<h4 id="治病没有专营权">治病没有“专营权”</h4>
+<h4 id="知情选择比知情同意更重要">知情选择比知情同意更重要</h4>
+<h3 id="10-最好的医术是技术与思维的完美结合">10. 最好的医术是技术与思维的完美结合</h3>
+<h4 id="心中有数还不够用对用好很关键">心中有“数”还不够，用对用好很关键</h4>
+<h4 id="疾病没有好坏之分">疾病没有“好”“坏”之分</h4>
+<h4 id="重视副作用弊大于利">“重视”副作用，弊大于利</h4>
+<h4 id="趣味相投的医生更适合你">“趣味相投”的医生更适合你</h4>
+<h4 id="好医生胜过好医院">好医生胜过好医院</h4>
+<h3 id="后记-临床决策与治疗思维是医生的私事吗">后记 临床决策与治疗思维是医生的私事吗</h3>
+
+        
+        
+    </body>
+    </html>

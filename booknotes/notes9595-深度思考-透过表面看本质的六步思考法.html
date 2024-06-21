@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x6df1;&#x5ea6;&#x601d;&#x8003;&#xff1a;&#x900f;&#x8fc7;&#x8868;&#x9762;&#x770b;&#x672c;&#x8d28;&#x7684;&#x516d;&#x6b65;&#x601d;&#x8003;&#x6cd5;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="深度思考透过表面看本质的六步思考法">深度思考：透过表面看本质的六步思考法</h1>
+<h2 id="萧亮-著">萧亮 著</h2>
+<h3 id="序言-我们总以为自己在思考">序言 我们总以为自己在思考</h3>
+<p>对于“浅思考”的表现形态，著有《黑天鹅》的美国知名投资者塔勒布举过一个例子：消防员们闲着没事干时，就会聚到一起聊天，久而久之，因聊得太多，对很多事情就形成了相同的看法，而这些看法在局外人眼中则十分荒唐可笑。他将这种情况称为“消防站效应”。萧亮在做出投资决策时，显然已经和“消防员们”聊得太久了，他们“削足适履”，互相说服，达成了“可笑的共识”。</p>
+<h3 id="第一章-深度思考的核心思维模式">第一章 深度思考的核心思维模式</h3>
+<h4 id="01-定义信息严格遵循8020法则">01 定义信息，严格遵循80/20法则</h4>
+<p>人们在聊天时80%的话是废话，浏览网站看过的80%的新闻纯属浪费时间，商业合同上80%的内容和其他合同没什么两样，可以说，最重要的是余下20%的部分。深度思考养成的第一步就是定义对自己有用的20%的信息，剔除无用的80%的部分。</p>
+<p>无用信息有以下几个特点：</p>
+<p>第一，与需求不匹配。比如，人们在恋爱、求职、买房时习惯性地做着勉强的决定，吞下的苦水比喝下的蜜汁还要多。这是因为，多数人做决定时倚重的信息与自己的需求并不匹配，经历了一段磨合期后才发现不符合自己的预期。</p>
+<p>第二，缺乏时效性。比如，一只股票30天前的价格、上一次的公务员考试题目等。时间尺度是定义信息的一个重要标准，一方面就像希勒说的，海水退去后才能看到谁没有穿裤衩，许多事情需要时间的检验；另一方面，在时效性较强的决策中，还必须分析信息对当下的参考意义。</p>
+<p>第三，具有欺骗性。欺骗性的信息在生活中无处不在，每个人都活在这些信息中。但同时，它们或多或少为人们制造了幸福和满足的“体验”。但是，当你要做出一个影响深远的决定时，就必须把这些信息与真实的信息隔离开。</p>
+<h4 id="02-抽离清除思考的障碍">02 抽离，清除思考的障碍</h4>
+<h4 id="03-辨别从似是而非中看到真正的问题">03 辨别，从似是而非中看到真正的问题</h4>
+<p>比如，在做一份明日早起的时间规划时，多数人会想到哪些问题呢？如：<br>
+我很累，早晨可能起不来；<br>
+我要打游戏、看美剧，晚上可能睡得很晚；<br>
+我要加班做很多工作，连几点睡都不知道；<br>
+天气太冷了，我可不想早起；<br>
+我习惯睡懒觉。<br>
+……</p>
+<p>此类信息与“早起计划”丝毫无关。但问题的本质是：你有没有必要早起？大脑不会欺骗你，它真的很累。所以，正确的思考模式是绕过这些影响早起的因素，<strong>直接思考和确认早起的必要性</strong>。比如问问自己：每天6点就爬起来除了在朋友圈发一张黎明的照片或是写一段励志的宣言，还有其他意义吗？这个时间点你有什么紧迫的、必须去做的任务吗？只有将问题的主线厘清了，才能坚定自己执行计划的决心。所以，直奔目标之前，先对无关信息进行剔除，然后绕开障碍，才能直奔核心。</p>
+<p>在思考问题时，要谨记一个原则：那些看起来非常复杂、信息繁多的事情，其本质往往是很简单的，也许一两句话就能说清楚。本书在第四章针对辨别的步骤阐述了一个宗旨：成为一个办事高效的人，要有火眼金睛，先学会挑选自己需要的信息，然后简单直接地去思考和分析问题，找到最省力的解决方案。</p>
+<h4 id="04-筛选我们想要的究竟是什么">04 筛选，我们想要的究竟是什么</h4>
+<p>筛选是一个主观性很强的工作。人们每天都在接收新信息、吸纳新知识。这些既是思考的素材，又是思考的结果。无数信息涌进大脑，有新的，也有旧的。你一定会从中选择几个，让它们进入你的深层意识，或写进电脑，或挂在墙上，变成一系列的关键词。</p>
+<p>做消费类决策时，人们极易陷入浅思考模式。表面上，他们做出了一个经过慎重思考的决定，实际上，却是在“有目的的信息”的引导下进行了一次“思考表演”。做这类事情的时候，我喜欢放下手机，去实地考察。也许会每隔两天就去一趟，直到发现最有利或最不利的信息为止。有时人们也会对自己的眼睛充满怀疑，因为信息总是动态变化的，你得争取时间等待那个变化，才能看清你所选择的目标是否就是自己想要的。</p>
+<h4 id="05-设计让精准决策毫不费力">05 设计，让精准决策毫不费力</h4>
+<p>决策不是做出对自己最有利的选择，而是做出最接近正确的决定。但人们常把前者视为决策，而把后者视为错误。</p>
+<h4 id="06-反馈用结果修正思考的偏差">06 反馈，用结果修正思考的偏差</h4>
+<p>思考的反馈、修正与调整是一个人不断加深对自己认识的过程，同时也是向外界学习的过程，是使人们的思维方式更加有效的必要手段。你有一万个精妙的想法，也比不上一个用行动校验的做法。思维方式的有效与否，需要在行动中用结果去验证和修正。</p>
+<p>一个愤世嫉俗的创业者，他对世界产生误解的原因大体上源于他不肯修正自己的思考，喜欢活在自己的小世界里无病呻吟。这不是思考的错误，而是他对世界的看法存在问题。我不是从少数样本中得出这个观点的，而是始终与读者一起感受到了这些浮躁的信息。</p>
+<p>有一年我在洛杉矶的独角兽俱乐部（Los Angeles Unicorn Club，由硅谷投资人创办的融资论坛）遇到了一位创业者C。C是美墨混血儿，34岁，曾在国际商业机器公司（IBM）担任技术部门主管6年，他的技术能力有多强，人缘就有多差。C喜欢高谈阔论，他有厚厚的6种语言版本的商业计划书，有专业得如同哈佛商学院教材的项目和产品说明书，也有别出心裁的团队规划。他最大的缺点是忽视反馈，对不确定的因素不屑一顾，没有后备计划，偏执坚硬得就像一根千锤百炼的钢筋。他坚信自己可以改造一片荒芜的市场，创造出一个新的商业世界。在投资人的眼中，把钱投给他就好比打水漂。即便他有机会成功，需要的时间也长得让人绝望。因此，当投资人婉言拒绝他的融资请求时，C当即发起脾气，他用右手四指的关节铿铿地敲打着桌子，左手没有规律地摆动着，眼睛直盯着昏昏欲睡的投资人，愤怒地说了一句让在场的人包括我在内数年后仍当作谈资的话：“你们怎么确定市场是不能改造的呢？”</p>
+<p>拒绝现实的人通常都具有这一特征，抛出一个“不确定性”保护自己的另一个“不确定性”，转移辩论的焦点。比如，一位喜欢协调婚姻关系的好事者苦口婆心地劝解家暴中的受害者：“好好过啊，他未必会再打你了。”生活中处处充满理想化的期盼，但这对结果有害而无益，还会损伤思考。我把这种人形容为“两脚踏云的理想家”。</p>
+<h3 id="第二章-深度思考养成第一步定义">第二章 深度思考养成第一步：定义</h3>
+<h4 id="01-信息不是一个确定的yes就是完全的no">01 信息，不是一个确定的YES，就是完全的NO</h4>
+<p>那些看起来可能的东西不都是真的，信息是最会骗人的玩意儿，你要懂得对事物做出自己的理解，而不是人云亦云，尽管你的理解有时也会出错。</p>
+<p>如果一件事情有变坏的可能，就要想到最坏的情况。这么做可以创造两种优势：<br>
+第一，你可以比别人更快地想到如何预防最坏的情况。<br>
+第二，你可以有充足的时间为坏事制订备用方案。</p>
+<p>习惯于浅思考的创业者处理不好与“可能”有关的问题。比如说，维德的另一个学生坎纳，毕业于哈佛商学院，22岁他就创办了自己的公司，融到了50万美元的天使投资，比扎克伯格得到的第一笔投资还要多。他天赋异禀，拥有雄心壮志，准备大干一场。“如果运气不错，谁敢说我的公司不是下一个微软或亚马逊呢？”他拥有得天独厚的优势，唯一的坏消息是，他相信一切“可能”的事情都会向积极的方向发展。每当出现不确定的状况时，他都将之看作机遇。对于从商者而言，这是不折不扣的坏习惯。由于他愿意沟通，也喜欢等待，与人为善，广结人脉，受到大量客户的好评，所以他交到了越来越多的“476天客户”，公司的资金也越来越吃紧。最终，他在看似最火热的时候退出了市场，不得不说这是一个悲剧。萧亮喜欢坎纳这样的年轻人，他们思考问题的动机很单纯，喜欢把事情往好的方面想，彬彬有礼，遵守规则。萧亮想和他们交朋友，但不建议他们做生意。他们对商业和人性的思考太浅了，视野太窄，只能看到冰山一角。</p>
+<p>为什么99.99%拥有好项目的创业者都‘死’在了第一年呢？是劣币驱逐良币吗？不，是因为他们不懂得对付这种‘476天客户’。他们不善于定义客户，也不明白如何定义问题。在这个环节上他们付出了高昂的代价（时间和金钱成本）。记住，只有奇思妙想并不能帮你成功，甚至会让你败得更惨烈。</p>
+<h4 id="02-性质用n-why分析法接近事物的真相">02 性质，用n-WHY分析法接近事物的真相</h4>
+<p>没人能预测犯错的概率，也没人拥有完全控制风险的能力，错误是阴阳两面的阴面，永远都会存在。当你已经懂得犯错以后该如何去减少亏损，如何去管理这些错误时，错误才变得不再可怕。</p>
+<p>你如何定义房子的价值，就会如何定义股票。重要的不是怎么发生的，而是“它是什么”。不论是定义一栋房子之于自己人生的价值，还是定义一只股票对于财富增长的意义，抛开表象思考它内在的本质都是与你生死攸关的事情。多问几个“为什么”，追根溯源，然后根据实际情况调整你的方法。这样做也不是说就不会犯错了，而是能避免犯下那些最愚蠢的错误，并不断地修补自己思维中的漏洞。</p>
+<h4 id="03-路径心智模式的较量">03 路径，心智模式的较量</h4>
+<p>人们想到也未必能做到。事实上，人们总是空想多过行动，喜欢心智规划而懒于迈出实际的一步。这些“节省掉的行动”造成了许多人的心智与现实表现的断裂，成为勤于思考而懒于行动的人。</p>
+<p>首先，消除学习的误区，不仅要通过读书、听课获取新的信息，还要扩大人际交流的范畴，观察其他人，尤其是“欣赏”失败者的表演，失败者涕泗横流的哭诉和血的教训远比成功者自我标榜的虚假演说更能帮助我们。其次，我们需要接纳和尊重差异性，积极地向与自己看法不同的人学习，但要保持必要的距离和独立性。</p>
+<h3 id="第三章-深度思考养成第二步抽离">第三章 深度思考养成第二步：抽离</h3>
+<h4 id="01-放空为思考留出偷懒时间">01 放空，为思考留出“偷懒”时间</h4>
+<p>2016年的一天，芝加哥《太阳时报》的编辑莱斯特·伯纳姆问过我一个问题：“假如今天晚上你突然写不出我们专栏明晨见报的约稿，熬夜伏案苦思与推迟发表时间你会选哪一样？我要强调一下，这是一个思考问题。”看着他狡黠的笑容，我回答说：“哪一样都不选。”我的选择是关掉电话、电脑、电视，不和伯纳姆这样的催稿狂人聊天，而是走出去散步，或躺到床上小憩，漫无边际地遐想，然后再坐回来考虑稿件的问题。放空大脑并且后退几步，有时候比使劲向前跑更有收获。</p>
+<h4 id="02-打破远离复杂的无关线索从最简单的问题开始">02 打破，远离复杂的无关线索，从最简单的问题开始</h4>
+<p>在做出任何决定之前先思考一下这个行动的“背面”——不这么做，我将损失什么呢？如果你对自己将要损失掉的东西并不明确，那么这个决策就是错误的，并且促使你做出决策的因素一定存在问题。</p>
+<h4 id="03-回归让纯粹的思考聚焦原始目的">03 回归，让“纯粹”的思考聚焦“原始目的”</h4>
+<h3 id="第四章-深度思考养成第三步辨别">第四章 深度思考养成第三步：辨别</h3>
+<h4 id="01-割裂去除理所当然拥抱理性">01 割裂，去除“理所当然”，拥抱理性</h4>
+<h4 id="02-识别确认问题的本质是什么">02 识别，确认问题的本质是什么</h4>
+<h4 id="03-论证用对比的方式展开分析">03 论证，用对比的方式展开分析</h4>
+<h4 id="04-坚定不要偏离最初的目标">04 坚定，不要偏离最初的目标</h4>
+<h4 id="05-掌控从问题中挖掘机遇">05 掌控，从问题中挖掘机遇</h4>
+<h3 id="第五章-深度思考养成第四步筛选">第五章 深度思考养成第四步：筛选</h3>
+<h4 id="01-取舍分开无用的90与高价值的10">01 取舍，分开无用的90%与高价值的10%</h4>
+<h4 id="02-勇气放弃二者兼得的奢望">02 勇气，放弃“二者兼得”的奢望</h4>
+<h4 id="03-止损向沉没成本说再见">03 止损，向沉没成本说再见</h4>
+<h4 id="04-重组将信息重新组织赋予其新的意义">04 重组，将信息重新组织，赋予其新的意义</h4>
+<h4 id="05-界限画线才能赢得思考的自由">05 界限，画线才能赢得思考的自由</h4>
+<h4 id="06-清除删掉影响思维运转的杂念">06 清除，删掉影响思维运转的杂念</h4>
+<h3 id="第六章-深度思考养成第五步设计">第六章 深度思考养成第五步：设计</h3>
+<h4 id="01-搜集准备一切必备信息">01 搜集，准备一切必备信息</h4>
+<h4 id="02-归纳整理逻辑与要点">02 归纳，整理逻辑与要点</h4>
+<h4 id="03-导图用思维导图展开可视化决策">03 导图，用思维导图展开“可视化决策”</h4>
+<h4 id="04-提升从完善思路到精准决策">04 提升，从完善思路，到精准决策</h4>
+<h4 id="05-聚焦专注并服务于当下">05 聚焦，专注并服务于当下</h4>
+<h3 id="第七章-深度思考养成第六步反馈">第七章 深度思考养成第六步：反馈</h3>
+<h4 id="01-跟踪永远不要偏离主要目标">01 跟踪，永远不要偏离主要目标</h4>
+<h4 id="02-整修查补执行漏洞让下一步的思考更完善">02 整修，查补执行漏洞，让下一步的思考更完善</h4>
+<h4 id="03-攀登用不断的小胜累积成最后的大胜">03 攀登，用不断的小胜，累积成最后的大胜</h4>
+<h4 id="04-归零紧抓本质让思考更少但更好">04 归零，紧抓本质，让思考“更少但更好”</h4>
+<h3 id="尾章-培养深度思考的100个方法">尾章 培养深度思考的100个方法</h3>
+
+        
+        
+    </body>
+    </html>

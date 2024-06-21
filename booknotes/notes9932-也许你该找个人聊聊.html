@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x4e5f;&#x8bb8;&#x4f60;&#x8be5;&#x627e;&#x4e2a;&#x4eba;&#x804a;&#x804a;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="也许你该找个人聊聊">也许你该找个人聊聊</h1>
+<h2 id="美洛莉戈特利布lori-gottlieb-著张含笑-译">[美]洛莉·戈特利布（Lori Gottlieb） 著|张含笑 译</h2>
+<h3 id="作者的话">作者的话</h3>
+<h3 id="序当痛苦可以被言说">序：当痛苦可以被言说</h3>
+<h2 id="第一部分">第一部分</h2>
+<h3 id="1-到处是蠢货">1 到处是蠢货</h3>
+<h3 id="2-世事难两全">2 世事难两全</h3>
+<h3 id="3-每次走一步">3 每次走一步</h3>
+<h3 id="4-聪明的那个还是好看的那个">4 聪明的那个，还是好看的那个</h3>
+<h3 id="5-练瑜伽不如躺着">5 练瑜伽不如躺着</h3>
+<h3 id="6-寻找温德尔">6 寻找温德尔</h3>
+<h3 id="7-觉知的起点">7 觉知的起点</h3>
+<h3 id="8-罗西">8 罗西</h3>
+<h3 id="9-我们的自拍照">9 我们的自拍照</h3>
+<h3 id="10-此刻就是未来">10 此刻就是未来</h3>
+<h3 id="11-告别好莱坞">11 告别好莱坞</h3>
+<h3 id="12-欢迎来到荷兰">12 欢迎来到荷兰</h3>
+<h3 id="13-孩子应对悲伤的方式">13 孩子应对悲伤的方式</h3>
+<h3 id="14-解剖课">14 解剖课</h3>
+<h3 id="15-不要蛋黄酱">15 不要蛋黄酱</h3>
+<h3 id="16-完美之选">16 完美之选</h3>
+<h3 id="17-没有记忆也没有期望">17 没有记忆也没有期望</h3>
+<h2 id="第二部分">第二部分</h2>
+<h3 id="18-治疗师的聚会">18 治疗师的聚会</h3>
+<h3 id="19-当我们做梦">19 当我们做梦</h3>
+<h3 id="20-第一次忏悔">20 第一次忏悔</h3>
+<h3 id="21-戴着保险套做心理治疗">21 戴着保险套做心理治疗</h3>
+<h3 id="22-牢笼">22 牢笼</h3>
+<h3 id="23-乔氏超市">23 乔氏超市</h3>
+<h3 id="24-做一个了结">24 做一个了结</h3>
+<h3 id="25-快递小哥">25 快递小哥</h3>
+<h3 id="26-不期而遇">26 不期而遇</h3>
+<h3 id="27-温德尔的母亲">27 温德尔的母亲</h3>
+<h3 id="28-上瘾">28 上瘾</h3>
+<h3 id="29-盖比是谁">29 盖比是谁</h3>
+<h3 id="30-钟上的时间">30 钟上的时间</h3>
+<h2 id="第三部分">第三部分</h2>
+<h3 id="31-徘徊的子宫">31 徘徊的子宫</h3>
+<h3 id="32-紧急治疗">32 紧急治疗</h3>
+<h3 id="33-因果报应">33 因果报应</h3>
+<h3 id="34-就由它去吧">34 就由它去吧</h3>
+<h3 id="35-二选一">35 二选一</h3>
+<h3 id="36-渴求的速度">36 渴求的速度</h3>
+<h3 id="37-终极问题">37 终极问题</h3>
+<h3 id="38-乐高乐园">38 乐高乐园</h3>
+<h3 id="39-人类如何作出改变">39 人类如何作出改变</h3>
+<h3 id="40-父亲们">40 父亲们</h3>
+<h3 id="41-完满还是绝望">41 完满还是绝望</h3>
+<h3 id="42-我的聂萨玛">42 我的“聂萨玛”</h3>
+<h3 id="43-垂死之人的言语禁忌">43 垂死之人的言语禁忌</h3>
+<h3 id="44-来自男友的邮件">44 来自男友的邮件</h3>
+<h3 id="45-温德尔的胡子">45 温德尔的胡子</h3>
+<h2 id="第四部分">第四部分</h2>
+<h3 id="46-蜜蜂">46 蜜蜂</h3>
+<h3 id="47-肯尼亚">47 肯尼亚</h3>
+<h3 id="48-心理免疫系统">48 心理免疫系统</h3>
+<h3 id="49-是业务咨询还是心理治疗">49 是业务咨询还是心理治疗</h3>
+<h3 id="50-葬礼狂人">50 葬礼狂人</h3>
+<h3 id="51-亲爱的麦伦">51 亲爱的麦伦</h3>
+<h3 id="52-母亲们">52 母亲们</h3>
+<h3 id="53-拥抱">53 拥抱</h3>
+<h3 id="54-别搞砸了">54 别搞砸了</h3>
+<h3 id="55-这是我的派对想哭你就哭出来">55 这是我的派对，想哭你就哭出来</h3>
+<h3 id="56-幸福就在有时">56 幸福就在有时</h3>
+<h3 id="57-星期三的温德尔">57 星期三的温德尔</h3>
+<h3 id="58-对话中的暂停">58 对话中的暂停</h3>
+
+        
+        
+    </body>
+    </html>

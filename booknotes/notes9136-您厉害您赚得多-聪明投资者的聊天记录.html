@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x60a8;&#x5389;&#x5bb3;&#xff0c;&#x60a8;&#x8d5a;&#x5f97;&#x591a;&#xff1a;&#x806a;&#x660e;&#x6295;&#x8d44;&#x8005;&#x7684;&#x804a;&#x5929;&#x8bb0;&#x5f55;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <div class="content">
+<h1 id="您厉害您赚得多聪明投资者的聊天记录">您厉害，您赚得多：聪明投资者的聊天记录</h1>
+<h2 id="方三文-著">方三文 著</h2>
+<h3 id="序言-聪明投资者的聊天记录">序言 聪明投资者的聊天记录</h3>
+<p>首先，作为曾经靠码字为生的人，我认为跟帖比主帖更有价值，聊天比发文章更有价值。发文章的主要价值是为了证明自己有多牛，聊天的主要价值却在于发现自己有多傻。但是，这个聊天有一个前提，就是聊天对象不固定，意见来自不确定的对象。如果把聊天对象限定在熟人关系圈，进步就停滞了。</p>
+<p>其次，作为现在靠“赌博”为生的人，我认为“赌技”的提升，主要受益于聊天。因为在投资方面，发现自己傻比证明自己牛的价值大10 000倍！</p>
+<p>我曾经跟很多像巴菲特这样的投资大师聊过，收益很大。但是，发自内心地说，还是在雪球上大家聊的几十万条帖，令我收益更大。</p>
+<p>（1）我认为买股票就是买公司，投资者能够做的主要工作是寻找优质的公司，优质的公司可能拥有好的行业处境、好的商业模式、优秀的治理结构和企业文化。鉴于每个人的能力不同，每个投资者能够有认知的优质公司数量是非常少的，一辈子能有十家八家就算非常多了。本书中关于公司的探讨，就是寻找优秀公司的过程。</p>
+<p>（2）优质的公司能够以合适的价格甚至优惠的价格买入当然是最理想的，但这并不容易，所以只能靠运气和耐心，比如，整个市场出现低估，或者个股出现“黑天鹅”事件。投资者可以祈求自己有好运气能获得这样的机会，但也不能妄想自己永远会有这样的机会。本书还有大量关于市场和个股买入机会的内容，结论也很简单：完美的买入机会可遇不可求。</p>
+<p>（3）长期持有优质公司才能获得足够大的回报，那么如何做到长期持有？需要重视两点：一是对公司的认识，只有相信公司长期的价值，才可能长期持有；二是对市场波动的认识，认识到市场波动无法把握，就不会妄图“高抛低吸”赚市场的钱。这本书里关于市场的部分，主要就是探讨投资者跟市场的关系，结论就是：股价涨跌无法预测，投资者应该放弃赚市场钱的企图。</p>
+<p>（4）如果没有能力寻找优秀的公司，没有耐心等待合适的买入机会，那么是不是就不能投资了？也并不是这样，这本书里关于资产配置的部分，就是探讨资产配置这种最适合非专业投资者的投资方法，结论也比较简单：不择时不择股，你就跑赢了大多数人。</p>
+<h2 id="第一部分-投资理念">第一部分 投资理念</h2>
+<h3 id="第一章-认识市场">第一章 认识市场</h3>
+<h4 id="我和你">我和你</h4>
+<p>很多投资失败都是由于投资者的能力问题，但反思的时候往往归因于心态，毕竟承认自己不够聪慧要比承认自己心态不好难得多，“当时我太贪了”“当时我图便宜”“当时我太恐慌了”……说这话多轻松，但真正的原因可能是当时太蠢了，没有认识到那种商业模式有多牛，或者没有看到这生意有多大的风险。
+关于投资能力</p>
+<p>一个人做实业非常成功，至少可以证明他有在一个领域做到优秀的能力。比如我认识的一个业绩“逆天”的基金经理，他同时也是一个脑神经外科医生。投资能力是一种非常综合的能力，所以优秀投资者的能力往往能在其他领域也显露出来。国外不少优秀对冲基金公司在校园招聘时喜欢招优秀运动员也是这个原因，因为这些人至少证明了自己有纪律、有毅力，可以在一个领域做到最优秀。很多人说自己怀才不遇，至今没有做成什么事情，希望在炒股这件事情上能够成功从而改变命运，我觉得这是“鸡汤”喝多了。</p>
+<p>再说一个有趣的现象。我曾经对大概100个“混”得最好（基金表现或是规模）的私募基金经理（国外又称“对冲基金”）的从业经历做过统计，从中发现一个规律：在金融行业积累从业经验，然后创业做私募并取得成功的人，大多是券商出身，各个部门的都有，最多的是出身于经纪部门（包括财富管理部门）和自营交易部门，也有出身于研究、投行、资管部门的。</p>
+<p>从公募基金“奔私”之后很成功的人基本没有！从高盛、雷曼、美林、DLJ（瑞银美国前身）、Drexel（垃圾债券之王）出来做得很成功的人有很多，但是没听说过从富达、贝莱德、邓普顿、景顺、普信、美盛、道富这些公募“大厂”出来的人有做得很成功的，成功的也都是从销售部门出来到私募基金管理客户关系的那些人。</p>
+<p>我也算是对这个群体非常熟悉。我自己的分析是，这和私募基金成功的两个必要条件有关：一是绝对回报的观念和风控意识，二是和投资人沟通并建立信任的能力。</p>
+<p>在这两点上，公募基金经理有很大的短板。一方面，公募基金一般做的是相对回报，做惯了相对回报，就很难有绝对回报的观念，这不是换个投资方法就行得通的。另一方面，“大厂”的公募基金经理通常与最终的投资人是隔绝的，所以自己出来做私募，和客户直接沟通时就发现没有和陌生人建立信任的能力。</p>
+<p>回到刚才讲的券商出身的人做私募的可能优势。</p>
+<p>经纪部门、财富管理部门出来的人，一般都很善于和客户“勾搭”和沟通。这里的“勾搭”并不是贬义词。善于和客户主动沟通的结果是，客户对自己的需求掌握得非常到位，能把自己的预期调整好，在低谷时也能继续信任私募基金经理。私募基金要想取得成功，投资人的作用不可小觑。其实投资相当于是木桶的一块短板，如果他们高抛低吸的话，即使基金长期表现得再好，投资人获得的回报也会很糟糕，他们的体验会很差，最终倒霉的还是基金经理。</p>
+<p>另外，从经纪部门出来做私募的人，很多都是因为原来服务的大户支持他出来做私募。这部分人原来基本上是在经纪部门为客户做专户的（国外法规允许）。为什么他们成功的可能性大呢？一个原因是刚才所说的和客户沟通并建立信任的能力，另外一个原因则是他们在做专户的过程中形成的绝对回报的观念。无论是在国内还是在欧美国家，这些大客户大多对亏损的容忍度很小，所以私募基金经理在做私募基金时能建立非常强烈的绝对回报观念（当然，前提是他们也是有创造长期回报的投资能力）。</p>
+<p>从自营交易部门出来的人做得很成功也是出于这个原因。自营盘通常对亏损有着非常严格的限制，而且都要求短期内能盈利。所以基金经理在券商时基本都采用套利型的策略（当然也有一部分人去找内幕信息），出来做私募后能力还在，但资金量小了，所以业绩马上就爆发，而且他们的策略往往能产生高净值客户特别喜欢的平滑曲线。</p>
+<pre><code>股市中的不可能
+
+1.大家都赚钱。
+2.大家都是价值投资者。
+3.股价都很“合理”。
+4.大股东从不减持。
+5.有看穿一切涨跌的股神。
+6.有一种技术或工具能准确预测股市。
+7.财务报表完全体现公司经营状况。
+8.上市公司只分红，不融资。
+9.整个股市完全由优质企业构成。
+10.所有投资者同时知道公司的信息。
+11.没有内幕交易。
+12.吸取教训不重复犯错。
+13.大家都抄底，大家都逃顶。
+14.有一个无所不能的“庄家”操纵一只股票。
+</code></pre>
+<p>你抗不住的波动，可能就是风险</p>
+<p>一个营业部老总的观察</p>
+<p>这个营业部位于一线城市。该老总做了10年。他观察10年发现，大概只有20%的人能盈利。赚大钱的赚的都是企业的钱。某大户10年就持股一只，10年涨了将近30倍。</p>
+<p>营业部老总曾两次劝其交易，第一次是在2008年，其他股跌得很厉害，大户所持股票没怎么跌，但是他不动。大户的说法是，他没有什么内幕，但是对所持公司比较了解，觉得公司管理层不错，是做事的人，拿着踏实。第二次是劝大户买银行股，大户说银行股看起来不错，但还是不如拿着原有的公司股踏实。</p>
+<p>还有些次于大户的账户也能赚钱，就是买进了不是那么好的公司，一直没动，涨幅可能没有大户那么大，但十余年下来也有5～10倍。营业部老总的分析是，可能这些用户投在股票上的钱占其总资产的比例不高，所以买了股票后基本忘记了。</p>
+<p>这些用户赚到企业的钱了，但是营业部基本上没钱赚，因为他们根本不交易。</p>
+<p>经常交易的，基本不赚钱，最好的业绩是50万元的账户，10年盈利50%，但是给营业部贡献了50万元的佣金，这些是营业部最优质的客户。该老总形容，10年前他有50万元，每天骑着自行车来营业部，10年后还是骑着自行车来营业部。</p>
+<p>2004年左右，账户年活比例不超过30%，2007～2008年，比例超过90%。
+旗帜鲜明地赞成A股扩容</p>
+<p>太阳底下无新事，但凡股市一跌，有一种论调就很流行：股市下跌都是因为新股发得太多，应该叫停IPO（首次公开募股）。甚至有人说，上证指数回到10年前是中国资本市场的耻辱。这真是费解，难道涨到10000点就是中国资本市场的荣耀？我认为那会是中国资本市场的灾难。</p>
+<p>当然，还有一种更加不切实际的说法，指数下跌和扩容无关，大小非减持，新股发行，A股流通市值从2006年的5万亿元到2012年近20万亿元，估值不下降，指数不下跌，那才奇怪了。</p>
+<p>所以，指数下跌是事实，估值下降是事实，跟扩容的关系也是事实，这些都不是问题，真正的问题是如何看待这些事情。</p>
+<p>但凡你是个消费者，你走进市场，如果市场里面商品种类丰富，价格低廉，你肯定很开心。如果里面卖的都是“歪瓜裂枣”，价格还贵得离谱儿，那你肯定“拔腿就跑”。如果市场管理方请你走之前提点儿建议，你肯定会说那赶快招商啊，多把优质供应商放进场。</p>
+<p>可是如果这个市场变成资本市场，人们的思维好像就变了，尤其是如果他已经买了东西的话，为了避免手中的东西价格下跌，他会要求市场管理方不要再招商了，甚至把市场锁起来，不再放供应商进来，而只放购买者进来，只准高价买他手中的劣质商品。</p>
+<p>当然，这只是一种人的思维。走进资本市场买东西的人大体可以分两种：第一种人预期别人会以更高的价格买入股票，所以他的唯一使命是猜别人会不会买，至于手里的股票到底值多少钱，他并不关心，当然，他反对市场上有更多股票出售，也就是反对扩容，最好市场上只剩下他现在拥有的那只股票；另一种人认为股票价格低于它的价值，进而买入股票，那么他的诉求就是希望市场上供应的股票越多越好，估值越低越好，因为这样才有好的买入机会。至于有没有人以更高的价格买走股票，他不是那么关心，甚至股票价格下跌，他也不着急，因为他知道自己手中的股票值多少钱。</p>
+<p>如果用一个“老得掉牙”的分类法，那么第一种人可以称为投机者，第二种人可以称为投资者。如果你搞不清楚身边的人是投机者还是投资者，其对扩容问题的看法就是最好的测试。</p>
+<p>真正的投资者是不会反对扩容的，他会旗帜鲜明地支持扩容，因为无论如何，扩容增加了股票的供应，投资者更有可能找到低估的股票。当然，更好的办法是上市实行注册制，即发不发行股票由企业自己决定，达到交易所法定的条件，接受市场的估值，就可以发，这样理论上股票就是无限量供应的。即使目前股票发行没有完全市场化，投资者认为应该改进的也只是具体的发行办法，而不是反对扩容。</p>
+<p>有人会问，新股发太多了，烂公司上市了怎么办？这完全不是问题，如果能认定它是烂公司，不买它就行了，大家都不买，价格就会回归，最后退市。另外，大家都要放弃靠发行审核对上市公司进行质量把关的想法。任何一个资本市场，都有所谓的烂公司，只要投资者有足够大的选择余地，烂公司就会自生自灭。</p>
+<p>我补充一点我的看法：监管部门不应该对市场涨跌负责，也不应该对投资者的盈亏负责。</p>
+<p>那么已经用高价买了老股的老股民怎么办？这是没有办法的，投资者本来就应该放弃“自己买的股票就应该涨”这种不切实际的幻想。</p>
+<p>你还是得回到投资的本源：低的价格买好的公司。如果你不知道什么是低的价格、什么是好的公司，那么你也许应该放弃从资本市场获利的想法。
+好的资本市场是怎样的？</p>
+<p>一个好的资本市场一定是供需平衡的，而中国的资本市场一直都是供需失衡，股票少、钱多，导致股价高，没有淘汰机制，估值工具失灵。那么什么样的资本市场才是好的市场，我觉得符合下面特征的市场就是好的市场：</p>
+<p>（1）交易所和券商求着公司上市，公司并不在意。为了拓展上市公司资源，交易所需要到拉丁美洲和非洲去开展业务。
+（2）经常有公司退市——主动或者被动。
+（3）经常有准备上市的公司主动放弃上市，或者发行失败，原因是认购不足。
+（4）上市首日，“破发”的概率接近或者超过50%。
+（5）经常出现市盈率接近1倍或者现金余额超过市值的上市公司。
+（6）上市公司经常回购自己的股票。还有什么条件？大家补充。
+有健全的法制体系的保障。
+企业和公众不以上市与否作为公司好坏的唯一判断标准；投资者投资的是企业的增长潜力，赚钱是顺便的事。
+让作假的公司每天担心被揭发、被惩罚就是好市场了。
+这些特征无疑都是我们目前资本市场所欠缺的，但如果要给好的资本市场定义，条件就需要列得更为平衡，不能一边倒。也就是说，不能仅仅是肃清那些劣质的公司，还要奖励那些优质的公司；既要有自由的市场机制，也要有严厉的监控；既要有负责任的上市公司，也要有理智的投资者。
+股市中的市场情绪</p>
+<p>罗伯特·希勒在《非理性繁荣》一书中写道：“在20世纪60年代，‘股市是最佳投资场所’的理论曾盛行一时，投资者们感到股票是最佳投资工具，因为它可以减弱通货膨胀的影响，是分享未来经济增长的手段。投资者们似乎确信，通货膨胀将伴随经济复苏出现，所以普通股即使在目前的价位上，也是真正的保值工具。当时投资者们都相信，如果通货膨胀爆发，股市将会上涨，而不是像现在普遍认为的那样会下跌，其结果是可能发生的通货膨胀成为持有股票的原因。”</p>
+<p>现在中国是相反的？</p>
+<h3 id="第二章-认识公司">第二章 认识公司</h3>
+<h3 id="第三章-认识自己">第三章 认识自己</h3>
+<h2 id="第二部分-投资组合">第二部分 投资组合</h2>
+<h3 id="第四章-资产配置">第四章 资产配置</h3>
+<h3 id="第五章-选股">第五章 选股</h3>
+<h2 id="第三部分-问答及方法论">第三部分 问答及方法论</h2>
+<h3 id="第六章-问答">第六章 问答</h3>
+<h3 id="第七章-雪球方法论">第七章 雪球方法论</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BA%8F%E8%A8%80-%E8%81%AA%E6%98%8E%E6%8A%95%E8%B5%84%E8%80%85%E7%9A%84%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95">序言 聪明投资者的聊天记录</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E8%AE%A4%E8%AF%86%E5%B8%82%E5%9C%BA">第一章 认识市场</a>
+<ul>
+<li><a href="#%E6%88%91%E5%92%8C%E4%BD%A0">我和你</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%AE%A4%E8%AF%86%E5%85%AC%E5%8F%B8">第二章 认识公司</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%AE%A4%E8%AF%86%E8%87%AA%E5%B7%B1">第三章 认识自己</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E8%B5%84%E4%BA%A7%E9%85%8D%E7%BD%AE">第四章 资产配置</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E9%80%89%E8%82%A1">第五章 选股</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E9%97%AE%E7%AD%94">第六章 问答</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E9%9B%AA%E7%90%83%E6%96%B9%E6%B3%95%E8%AE%BA">第七章 雪球方法论</a></li>
+</ul>
+</div>
+        
+        
+    </body>
+    </html>

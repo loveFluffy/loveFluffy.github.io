@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x836f;&#x7269;&#x7b80;&#x53f2;&#xff1a;&#x9e26;&#x7247;&#x3001;&#x594e;&#x5b81;&#x3001;&#x963f;&#x53f8;&#x5339;&#x6797;&#x4e0e;&#x6211;&#x4eec;&#x7684;&#x6297;&#x75c5;&#x6545;&#x4e8b;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="药物简史鸦片奎宁阿司匹林与我们的抗病故事">药物简史：鸦片、奎宁、阿司匹林与我们的抗病故事</h1>
+<h2 id="英德劳因伯奇druin-burch-著梁余音-译">[英]德劳因·伯奇（Druin Burch） 著|梁余音 译</h2>
+<h3 id="引言">引言</h3>
+<p>病人的脖子肿了起来，两侧各鼓出一个血包。血没有流得满地都是，而是被封闭在她的体内。她颈部的压力开始增加，两个番茄大小的肿块挤压着周边组织。病人开始呼吸困难。两处内出血尽管不比淤青严重多少，却压迫了她的气管。肿块最终压裂了气管。她死了。</p>
+<p>医疗干预是危险的。无论你多么小心，有时还是会搞砸。如果事故原因是一支粗大的针头，这还比较容易理解，但如果只是一粒药丸，理解起来就有点困难了。而危险品并不一定要刃口锋利。我曾经给心肌梗死（myocardial infarction，MI）病人服用溶栓药物，然后发现他们的舌头快速充血肿胀，这让他们一下子窒息。还有些人已经因中风而昏厥，药物在让他们的心脏复苏的同时，却让血液猛地涌入大脑。就算死亡发生得没那么具有戏剧性，也一样是真正的死亡。药物的伤害有时无声无息，不易察觉。有些药让人比平时更神志不清，有些药让人衰老得更快一些。有些癌症病人会内出血，并呕血不止。当你预计会发生不良症状，就很容易对药物加速症状发生的后果视而不见。</p>
+<h2 id="第一部分-前现代药物">第一部分 前现代药物</h2>
+<h3 id="第1章-早期医学与鸦片">第1章 早期医学与鸦片</h3>
+<p>毫无疑问，罂粟确实是一种药物。它能带来熟睡与快乐，缓解忧郁及呼吸短促，对腹泻效果显著。最重要的是，它能消除疼痛。奥斯卡·王尔德晚年在穷困潦倒中奄奄一息，医生诊断他得了致命的脑膜炎，并用吗啡和鸦片为他镇痛。到最后，即1900年11月，他们到了只能假装给他注射的地步。因病痛而只余一半神志的王尔德不得不把手塞到嘴里，以免尖叫出声。医生不再对他使用吗啡，这无疑很残忍，但也使王尔德得以苟延残喘。罂粟具有消除窒息感的作用，不是因为它能帮助呼吸，恰恰相反，它消除的是人们对呼吸不畅的感知。这减少了人们的痛苦，但同时也可能缩短他们的生命。</p>
+<p>是什么让这些早期药物得以被人类发现呢？如果有样东西能很快让人呕吐、出汗、出现幻觉或失去意识，那你立刻就能发现结果。如果一个人的肠道或膀胱出现异常，他（或她）第二天就会告诉别人。有这样效果的药物很容易被圈定，就像人们发现什么东西好吃一样，而较为微弱或长期的效果就不那么容易被发现。许多慢性毒药都曾被人忽视。罗马人曾用铅来增加酒的甜味，但要等到数十年后他们才发现，此后痛苦而缓慢的死亡就是由这种溶解在酒中的金属造成的。有益的药效如果不是即时、强烈、明白无误的话，也很容易被忽视。从吃下的食品到花园里的植物，人们身边到处都是含有活性药物成分的物质，但他们却缺少察觉的方法。</p>
+<h3 id="第2章-诡辩与鸦片酊">第2章 诡辩与鸦片酊</h3>
+<p>我们今天对鸦片心存恐惧，部分原因是毒品斗争产生的副作用。由于运输古柯叶的罪责与运输可卡因相同，运输高浓度吗啡又与运输未经处理的罂粟乳液同罪，因此效力强的药品就比较占优。如果你要冒险生产及运送非法药物，最有利的做法就是将其制成尽可能浓缩的形式，这就把毒贩子的违法风险转化成了他们客户的生理风险。海洛因已经寻隙进入各个城市，而它在整个历史时期都很常见的较为温和的替代品——罂粟茶、自制的鸦片酊等——却消失不见了。保留下来的只有对罂粟美丽外表的喜爱。</p>
+<p>直到今天，医学中也很少有哪项操作比什么都不做更难。医学的设立是基于病人对受助的渴求与医生对助人的渴求，这种渴求压倒了理智。要什么都不做，或者说承认无能为力，其难度是巨大的。就像政治家面对他们实际上控制不了的问题时，也需要做点儿什么——随便什么都好，医生也被迫有所作为。但当医生和政治家开始当真以为自己十分重要时，危险就会随之而来。人们希望医生自信、肯定，能够提供治疗。自信能让医生更受人们信任，因而也逐渐融入了医生的性格之中。重要的是说服人们相信你的判断——如果要让人们感到被关心，如果要让他们对遵从医嘱感到足够安全，或者至少能得到些安慰，而说服别人最简单的方法，就是先说服自己。</p>
+<p>“至于彻底治愈的方法，”西德纳姆写道，“一种完美无缺的、能让病人连患病的可能性都不复存在的方法，这就是种谎言。它和真理一起被埋在深井之底，在大自然最深的隐蔽之处，我不知道能由谁、在什么时候将它带到光天化日之下。”他的确是在以良言相劝，但这绝不是担惊受怕的病人想要听到的。病人希望有人能提供信心与希望，而不是鲁莽地提出怀疑。</p>
+<h3 id="第3章-自信与奎宁">第3章 自信与奎宁</h3>
+<p>对于第一世界来说，疟疾如今只是在度假期间才需要考虑的问题。而在其他地区，每年都有将近7亿人患病，数百万人（多数是非洲儿童）死亡。疟疾没有疫苗，但药物可以有效抵御和治疗这种疾病。最早的药物是南美的金鸡纳树皮，其中含有一种叫作奎宁的化合物，能够杀伤疟原虫。</p>
+<h3 id="第4章-学习做实验">第4章 学习做实验</h3>
+<h3 id="第5章-树的味道">第5章 树的味道</h3>
+<h2 id="第二部分-化学的崛起">第二部分 化学的崛起</h2>
+<h3 id="第6章-甜菜根催眠术与有机化学">第6章 甜菜根、催眠术与有机化学</h3>
+<h3 id="第7章-新英格兰与新思路">第7章 新英格兰与新思路</h3>
+<h3 id="第8章-染料着色剂与抗生素">第8章 染料、着色剂与抗生素</h3>
+<h3 id="第9章-医学传教士">第9章 医学传教士</h3>
+<h2 id="第三部分-抗生素时代">第三部分 抗生素时代</h2>
+<h3 id="第10章-阿司匹林与药物研发">第10章 阿司匹林与药物研发</h3>
+<h3 id="第11章-止咳良药海洛因">第11章 止咳良药海洛因</h3>
+<h3 id="第12章-弗朗西斯高尔顿几近革新">第12章 弗朗西斯·高尔顿：几近革新</h3>
+<h3 id="第13章-抗生素与纳粹时期的诺贝尔奖">第13章 抗生素与纳粹时期的诺贝尔奖</h3>
+<h3 id="第14章-盘尼西林与链霉素">第14章 盘尼西林与链霉素</h3>
+<h2 id="第四部分-统计学与药物试验的争议">第四部分 统计学与药物试验的争议</h2>
+<h3 id="第15章-萨洛尼卡之病我的第一次最糟糕也最成功的临床试验">第15章 “萨洛尼卡之病——我的第一次最糟糕也最成功的临床试验”</h3>
+<h3 id="第16章-死神之首">第16章 死神之首</h3>
+<h3 id="第17章-伦理与未来一瞥">第17章 伦理与未来一瞥</h3>
+<h3 id="第18章-沙利度胺的未竟之殇">第18章 沙利度胺的未竟之殇</h3>
+<h3 id="第19章-梅毒麻风与颅脑外伤">第19章 梅毒、麻风与颅脑外伤</h3>
+<h2 id="第五部分-药物的新挑战">第五部分 药物的新挑战</h2>
+<h3 id="第20章-阿司匹林与心脏">第20章 阿司匹林与心脏</h3>
+<h3 id="第21章-大规模试验与宏伟蓝图">第21章 大规模试验与宏伟蓝图</h3>
+<h3 id="第22章-为心脏与心智而战">第22章 为心脏与心智而战</h3>
+<h3 id="第23章-意见的风险">第23章 意见的风险</h3>
+<h3 id="第六部分-为何医学总被愚昧围绕">第六部分 为何医学总被愚昧围绕</h3>
+<h3 id="第24章-革命的自信">第24章 革命的自信</h3>
+<h3 id="第25章-怀疑之美">第25章 怀疑之美</h3>
+
+        
+        
+    </body>
+    </html>

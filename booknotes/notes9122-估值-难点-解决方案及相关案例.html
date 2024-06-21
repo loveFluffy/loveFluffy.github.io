@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x4f30;&#x503c;&#xff1a;&#x96be;&#x70b9;&#x3001;&#x89e3;&#x51b3;&#x65b9;&#x6848;&#x53ca;&#x76f8;&#x5173;&#x6848;&#x4f8b;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="估值难点解决方案及相关案例">估值：难点、解决方案及相关案例</h1>
+<h2 id="美达莫达兰damodaran-a著李必龙-李羿-郭海等-译">[美]达莫达兰(Damodaran A.)　著|李必龙 李羿 郭海等 译</h2>
+<h3 id="译者序">译者序</h3>
+<p>资产的灵魂是价值，但在资产为国人所竞相追逐的今天，鲜有人掌握价值管理的系统方法。</p>
+<p>估值是价值管理的基础。无论是资产管理还是投资管理，它们的本质都是价值管理。</p>
+<p>今日中国，所有公司都面临着价值管理的问题。从银行、证券公司、基金管理公司，到担保公司、物业公司，再到多如繁星的实业企业，莫不如此。</p>
+<p>价值管理应用范围广泛，从贷款管理、理财产品管理，到证券投资、VC/PE投资，到对担保对象的估值、实业企业已有资产和新增投资的管理，再到企业并购和资产并购等。</p>
+<p>随着中国的资产越来越多，资产管理的专业需求会越来越明显。没有系统的估值技术作支撑的管理，只会浮于表面，价值危害极大。</p>
+<p>本书是目前市场上专业水准很高的一本专著，作者达莫达兰被评为2012年“全球十大顶级商学院教授”，是业界举足轻重的人物。</p>
+<p>本书不仅根据企业所处行业特点、发展阶段、市场环境及其他各种不确定因素的影响，系统地整理出了估值时所面临的问题，提出了系统的解决方法，而且给出了很多相关案例。</p>
+<p>如果你想做好资产管理或投资管理，或是想成为这类管理的高级人才，这是一本必读之作！</p>
+<p>本书的第1~5章由郭海翻译，第6、7章由文雅翻译，第8~12章由李羿翻译，第13~18章由李必龙翻译。全书译文由李必龙进行总校对。</p>
+<h3 id="作者简介">作者简介</h3>
+<p>埃斯瓦斯·达莫达兰（Aswath Damodaran）是纽约大学斯特恩商学院的金融学教授。他为MBA学员讲授公司金融和股权估值课程。达莫达兰在加州大学洛杉矶分校获得了工商管理硕士和博士学位。迄今为止，他已经撰写了数本有关公司金融、公司估值和投资组合管理的书籍。达莫达兰自1986年始就在纽约大学教书，八次荣获斯特恩商学院的最佳教学奖（由毕业班授予）。他在1994年被《商业周刊》评为“美国十大顶级商学院教授”之一。</p>
+<h3 id="前言">前言</h3>
+<p>本书第1版带有时代印记，但它是该书的本源。创作本书第1版的灵感闪现于1999年年底，时值互联网的盛期之末。这个灵感触发于两个现象：</p>
+<p>●传统的估值模型似乎不能解读当时技术类公司（特别是新技术）的天价股。</p>
+<p>●面对估值难点，分析师放弃传统估值方法，却陷入一些“误区”——使用各种新的技法和讲故事方式，为所估价格作说辞和搪塞。</p>
+<p>本书第1版的出版恰逢互联网泡沫破灭之时。</p>
+<p>随着市场的演进与改变，焦点也发生了位移。这种泡沫及其相关的新技法和新模型的辩词又张冠李戴于一组新股票（中国和印度的股权）和一些新型资产（次级按揭贷款）。我逐渐意识到，一旦分析师遭遇困境，无法用传统模型和方法对公司进行估值时，就容易陷入某种“误区”。这次的第2版反映的视角更加广泛：第1版聚焦于年幼公司和高科技（网络）公司，第2版的视野将扫描所有难以估值的公司。</p>
+<p>第2~5章回顾了估值的基础性工具。它们侧重概述传统的现金流贴现模型、概率模型（模拟算法和决策树）、相对估值模型和实物期权。这些内容多半都在我的其他估值著作里有过表述。</p>
+<p>第6~8章探讨了影响所有估值的宏观变量的问题和争议。第6章审视的是无风险利率——其他所有估值要素的必要组成部分，并挑战这样一种观念：政府债券利率永远是无风险利率的有效评估值。第7章探讨股权风险溢价。这是另一个在估值中被视为不言自明的数字，主要是因为长期以来成熟市场的风险溢价都很稳定。在不断演变且波动性大的市场里，风险溢价甚至在短期内也会发生很大的变化。无视这种现实会导致对结果的误估。第8章研究了其他一些隐含于估值中的有关实体经济增长的宏观经济假设。本章还关注了汇率和通货膨胀率，讨论其评估的不一致性如何影响我们的结论。</p>
+<p>第9~12章探讨不同企业周期面临的估值挑战。下图列示了这些挑战。</p>
+<p><img src="file:///d:\loveFluffy\myBlog\booknotes\img\notes9122-1.jpg" alt="估值的生命周期观"></p>
+<p>估值的生命周期观</p>
+<p>在第9章，我们关注估值初创公司时面临的挑战：这类公司有了某种产品或服务的创意，但缺乏有形的商业化产品。此时，它们的收入和市场都很有限，但该章还是探讨了这类创意演化为商业化产品的一些循序渐进的方法。该章还审视了初创企业估值最初阶段所面临的那些挑战。这些都是风险投资人在向小企业提供“天使投资”时所必须面对的挑战。第10章顺企业生命周期阶梯拾级而上，审视年幼成长型公司——其产品和服务已经找到了市场，而且收入增长很快。该章还研究了上市（相对于不上市）和保持增长的可持续性的估值内涵。另外，该章还认真打量了闯过风险投资阶段并已经上市的成长型公司。这些公司具有很好的增长表现，但它们的规模不够。在第11章，我们把注意力投向了成熟公司——它们已不再成长，提升价值的主要方式是并购、业务重组和财务重组。在这个过程中，我们也探讨了在杠杆收购的背景下，私募股权投资者如何看待成熟公司的价值及其控制权的价值。第12章关注处于衰落中的公司——负增长，且很可能陷入困境和出现倒闭。</p>
+<p>第13~17章探究了出于各种原因很难估值的各类公司。第13章审视了大宗商品类（石油和黄金）公司和周期性公司。它们的利润受外部因素（大宗商品价格和经济状况）左右、动荡不定，使得各种预测变得很困难。在第14章，我们梳理了与金融服务公司（银行、保险公司和投资银行）相关的特有挑战，重点放在监管的变化会如何影响价值上。第15章所考虑的公司，其价值都依赖于无形资产：专利、科技实力和人力资本。这些公司的资产性质及其会计处理准则的缺陷，为估值带来了很大的挑战。第16章审视了在动荡和年幼经济体（新兴市场）中经营的公司，探讨如何更好地评估这类公司的价值。第17章则设法了解在多国从事多元化经营的公司，探讨如何更好地处理这些公司内部不同部分的相互影响。</p>
+<p>总之，本书的第2版涉猎了所有类别的公司（不仅仅是年幼的技术类公司）在估值上的负面行为和不良做法。</p>
+<h3 id="第1章-估值的难点">第1章 估值的难点</h3>
+<h4 id="11-价值基础">1.1 价值基础</h4>
+<h4 id="12-跨期估值">1.2 跨期估值</h4>
+<h4 id="13-跨生命周期的估值">1.3 跨生命周期的估值</h4>
+<h4 id="14-各类公司的估值">1.4 各类公司的估值</h4>
+<h4 id="15-厘清估值的难点">1.5 厘清估值的难点</h4>
+<h4 id="16-结论">1.6 结论</h4>
+<h3 id="第2章-内生性估值">第2章 内生性估值</h3>
+<h4 id="21-现金流贴现估值">2.1 现金流贴现估值</h4>
+<h4 id="22-现金流贴现估值的衍生版">2.2 现金流贴现估值的衍生版</h4>
+<h4 id="23-内生性估值模型给我们带来了什么">2.3 内生性估值模型给我们带来了什么</h4>
+<h4 id="24-结论">2.4 结论</h4>
+<h3 id="第3章-概率估值情景分析决策树和模拟算法">第3章 概率估值：情景分析、决策树和模拟算法</h3>
+<h4 id="31-情景分析">3.1 情景分析</h4>
+<h4 id="32-决策树">3.2 决策树</h4>
+<h4 id="33-模拟算法">3.3 模拟算法</h4>
+<h4 id="34-概率风险评估方法综述">3.4 概率风险评估方法综述</h4>
+<h4 id="35-结论">3.5 结论</h4>
+<h3 id="第4章-相对估值">第4章 相对估值</h3>
+<h4 id="41-什么是相对估值">4.1 什么是相对估值</h4>
+<h4 id="42-相对估值的普遍性">4.2 相对估值的普遍性</h4>
+<h4 id="43-相对估值流行的原因和潜在的缺陷">4.3 相对估值流行的原因和潜在的缺陷</h4>
+<h4 id="44-标准化价值和倍数">4.4 标准化价值和倍数</h4>
+<h4 id="45-应用倍数的四个基础步骤">4.5 应用倍数的四个基础步骤</h4>
+<h4 id="46-相对估值和内生性估值的协调">4.6 相对估值和内生性估值的协调</h4>
+<h4 id="47-结论">4.7 结论</h4>
+<h3 id="第5章-实物期权估值">第5章 实物期权估值</h3>
+<h4 id="51-实物期权的本质">5.1 实物期权的本质</h4>
+<h4 id="52-实物期权风险调整过的价值及其概率评估">5.2 实物期权、风险调整过的价值及其概率评估</h4>
+<h4 id="53-实物期权案例">5.3 实物期权案例</h4>
+<h4 id="54-实物期权的注意事项">5.4 实物期权的注意事项</h4>
+<h4 id="55-结论">5.5 结论</h4>
+<h4 id="附录5a-期权及其定价的基础">附录5A 期权及其定价的基础</h4>
+<h3 id="第6章-摇晃的根基无风险利率的风险性">第6章 摇晃的根基：无风险利率的“风险性”</h3>
+<h4 id="61-什么是无风险资产">6.1 什么是无风险资产</h4>
+<h4 id="62-为什么无风险利率重要">6.2 为什么无风险利率重要</h4>
+<h4 id="63-评估无风险利率">6.3 评估无风险利率</h4>
+<h4 id="64-评估无风险利率的问题">6.4 评估无风险利率的问题</h4>
+<h4 id="65-有关无风险利率的最后想法">6.5 有关无风险利率的最后想法</h4>
+<h4 id="66-结论">6.6 结论</h4>
+<h4 id="附录6a-国家的主权信用">附录6A 国家的主权信用</h4>
+<h3 id="第7章-风险投资评估风险的价格">第7章 风险投资：评估风险的价格</h3>
+<h4 id="71-为什么风险溢价重要">7.1 为什么风险溢价重要</h4>
+<h4 id="72-风险溢价的决定要素是什么">7.2 风险溢价的决定要素是什么</h4>
+<h4 id="73-评估风险溢价的标准方法">7.3 评估风险溢价的标准方法</h4>
+<h4 id="74-结论">7.4 结论</h4>
+<h3 id="第8章-基本面举足轻重实体经济">第8章 基本面举足轻重：实体经济</h3>
+<h4 id="81-实体经济的增长">8.1 实体经济的增长</h4>
+<h4 id="82-预期通胀率">8.2 预期通胀率</h4>
+<h4 id="83-汇率">8.3 汇率</h4>
+<h4 id="84-流行的做法">8.4 流行的做法</h4>
+<h4 id="85-难点">8.5 难点</h4>
+<h4 id="86-药方">8.6 药方</h4>
+<h4 id="87-结论">8.7 结论</h4>
+<h3 id="第9章-蹒跚学步创业和年幼公司">第9章 蹒跚学步：创业和年幼公司</h3>
+<h4 id="91-经济体中的年幼公司">9.1 经济体中的年幼公司</h4>
+<h4 id="92-估值问题">9.2 估值问题</h4>
+<h4 id="93-估值的难点">9.3 估值的难点</h4>
+<h4 id="94-估值的亮点">9.4 估值的亮点</h4>
+<h4 id="95-结论">9.5 结论</h4>
+<h3 id="第10章-攀升的新星成长型公司">第10章 攀升的新星：成长型公司</h3>
+<h4 id="101-成长型公司">10.1 成长型公司</h4>
+<h4 id="102-估值问题">10.2 估值问题</h4>
+<h4 id="103-估值的难点">10.3 估值的难点</h4>
+<h4 id="104-估值的亮点">10.4 估值的亮点</h4>
+<h4 id="105-结论">10.5 结论</h4>
+<h3 id="第11章-长大成形成熟公司">第11章 长大成形：成熟公司</h3>
+<h4 id="111-经济体中的成熟公司">11.1 经济体中的成熟公司</h4>
+<h4 id="112-估值问题">11.2 估值问题</h4>
+<h4 id="113-估值的难点">11.3 估值的难点</h4>
+<h4 id="114-估值的亮点">11.4 估值的亮点</h4>
+<h4 id="115-结论">11.5 结论</h4>
+<h3 id="第12章-日薄西山衰落的公司">第12章 日薄西山：衰落的公司</h3>
+<h4 id="121-经济中的衰落公司">12.1 经济中的衰落公司</h4>
+<h4 id="122-估值问题">12.2 估值问题</h4>
+<h4 id="123-估值的难点">12.3 估值的难点</h4>
+<h4 id="124-估值的亮点">12.4 估值的亮点</h4>
+<h4 id="125-结论">12.5 结论</h4>
+<h3 id="第13章-潮起潮落周期性和大宗商品类公司">第13章 潮起潮落：周期性和大宗商品类公司</h3>
+<h4 id="131-关键词">13.1 关键词</h4>
+<h4 id="132-估值的难点">13.2 估值的难点</h4>
+<h4 id="133-估值的亮点">13.3 估值的亮点</h4>
+<h4 id="134-结论">13.4 结论</h4>
+<h3 id="第14章-随行就市金融服务公司">第14章 随行就市：金融服务公司</h3>
+<h4 id="141-金融服务公司全局图">14.1 金融服务公司：全局图</h4>
+<h4 id="142-金融服务公司的特征">14.2 金融服务公司的特征</h4>
+<h4 id="143-估值的难点">14.3 估值的难点</h4>
+<h4 id="144-结论">14.4 结论</h4>
+<h3 id="第15章-看不见的投资具有大量无形资产的公司">第15章 看不见的投资：具有大量无形资产的公司</h3>
+<h4 id="151-具有大量无形资产的公司">15.1 具有大量无形资产的公司</h4>
+<h4 id="152-估值的难点">15.2 估值的难点</h4>
+<h4 id="153-估值的亮点">15.3 估值的亮点</h4>
+<h4 id="154-结论">15.4 结论</h4>
+<h3 id="第16章-波动性规则新兴市场中的公司">第16章 波动性规则：新兴市场中的公司</h3>
+<h4 id="161-新兴市场公司的角色">16.1 新兴市场公司的角色</h4>
+<h4 id="162-估值难点">16.2 估值难点</h4>
+<h4 id="163-估值的亮点">16.3 估值的亮点</h4>
+<h4 id="164-结论">16.4 结论</h4>
+<h3 id="第17章-章鱼多元化全球公司">第17章 章鱼：多元化全球公司</h3>
+<h4 id="171-跨国性">17.1 跨国性</h4>
+<h4 id="172-估值争议">17.2 估值争议</h4>
+<h4 id="173-估值的难点">17.3 估值的难点</h4>
+<h4 id="174-估值的亮点">17.4 估值的亮点</h4>
+<h4 id="175-结论">17.5 结论</h4>
+<h3 id="第18章-直击要旨消弭难点">第18章 直击要旨：消弭难点</h3>
+<h4 id="181-坚守原则善用新工具弹性评估">18.1 坚守原则、善用新工具、弹性评估</h4>
+<h4 id="182-关注市场但不要让它们左右你的估值">18.2 关注市场，但不要让它们左右你的估值</h4>
+<h4 id="183-不要忽视风险">18.3 不要忽视风险</h4>
+<h4 id="184-增长不是免费的不会总是加分的">18.4 增长不是免费的，不会总是加分的</h4>
+<h4 id="185-好事都有尽头">18.5 好事都有尽头</h4>
+<h4 id="186-小心遇上截断风险">18.6 小心遇上截断风险</h4>
+<h4 id="187-回顾过去思考未来">18.7 回顾过去，思考未来</h4>
+<h4 id="188-善用大数定律">18.8 善用大数定律</h4>
+<h4 id="189-接受不确定性相机处置">18.9 接受不确定性，相机处置</h4>
+<h4 id="1810-把故事转化为数字">18.10 把故事转化为数字</h4>
+<h4 id="1811-结论">18.11 结论</h4>
+
+        
+        
+    </body>
+    </html>
