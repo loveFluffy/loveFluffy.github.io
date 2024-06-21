@@ -1,0 +1,24 @@
+books/
+booknotes/*.md
+csbooknotes/*.md
+
+# temp files directories
+*.swp
+tmp*
+tmp/
+
+audio/
+business/
+neuroscience/
+finance/
+links/jobs.html
+links/mottos.html
+findebook/myID.html
+projects.html
+tmp-my-book-list.html
+notes.md
+
+offline/
+projects/
+news/pdf/
+news/historyNews.html
