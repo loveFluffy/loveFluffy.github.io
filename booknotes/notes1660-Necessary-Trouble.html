@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5df4;&#x83f2;&#x7279;&#x6700;&#x63a8;&#x5d07;&#x7684;8&#x5927;&#x4f01;&#x4e1a;&#x5bb6;&#x7279;&#x8d28;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Necessary Trouble&colon; Growing Up at Midcentury</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0 10%;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -420,7 +519,6 @@ iPad mini 5：2048*1536
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
@@ -429,10 +527,7 @@ iPad mini 5：2048*1536
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
@@ -442,25 +537,20 @@ iPad mini 5：2048*1536
 	}
 
 	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
 		background-color: skyblue;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
 		background-color: rgb(178, 216, 232);
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
 		background-color: rgb(210, 231, 239);
 	}
 
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
 		background-color: rgb(228, 235, 238);
 	}
 
@@ -469,13 +559,19 @@ iPad mini 5：2048*1536
 		padding-left: 0.5%;
 	}
 }
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="巴菲特最推崇的8大企业家特质">巴菲特最推崇的8大企业家特质</h1>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="necessary-trouble-growing-up-at-midcentury">Necessary Trouble: Growing Up at Midcentury</h1>
 <h2 id=""></h2>
 
-        
-        
-    </body>
-    </html>
+            
+            
+        </body>
+        </html>

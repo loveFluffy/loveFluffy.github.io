@@ -485,12 +485,13 @@ iPad mini 5：2048*1536
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
 	.content {
-		width: 75%;
+		width: 73%;
 		padding-left: 0.5%;
 	}
 
 	div.toc {
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
 		padding-right: 0;
 
@@ -531,6 +532,13 @@ iPad mini 5：2048*1536
 		/*隐藏链接下划线*/
 		text-decoration: none;
 		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
 	}
 
 	div.toc a:hover {

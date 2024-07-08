@@ -6,10 +6,12 @@ tmp/
 # 大文件
 audio/
 books/
+courses/
 
 # 原始笔记 md 文件
 booknotes/notes*.md
 csbooknotes/notes*.md
+coursenotes/course*.md
 
 # 涉及隐私文件
 business/

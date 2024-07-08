@@ -58,7 +58,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
-	padding: 0 10%;
+	padding: 0;
 }
 
 h1,
@@ -327,8 +327,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -353,14 +354,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -378,25 +383,52 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
 	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
@@ -404,30 +436,41 @@ iPad mini 5：2048*1536
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
 		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
 
 /*

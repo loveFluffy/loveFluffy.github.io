@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x4ece;&#x62a5;&#x8868;&#x770b;&#x4f01;&#x4e1a;&#xff1a;&#x6570;&#x5b57;&#x80cc;&#x540e;&#x7684;&#x79d8;&#x5bc6;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x4ece;&#x62a5;&#x8868;&#x770b;&#x4f01;&#x4e1a;&#xff1a;&#x6570;&#x5b57;&#x80cc;&#x540e;&#x7684;&#x79d8;&#x5bc6;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -358,8 +457,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +484,17 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
 		max-width: 24%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,70 +512,101 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
+	*/
 
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+
 }
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="从报表看企业数字背后的秘密">从报表看企业：数字背后的秘密</h1>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="从报表看企业数字背后的秘密">从报表看企业：数字背后的秘密</h1>
 <h2 id="张新民-著">张新民 著</h2>
 <h2 id="前言">前言</h2>
 <p>经过几年的不断修改，《从报表看企业——数字背后的秘密》终于与读者见面了！</p>
@@ -496,7 +630,7 @@ iPad mini 5：2048*1536
 <p>但是，2006年会计改革之后再先看利润表就有问题了，尤其是在企业进行集团化管理的背景下。严谨地说，我们应该先看资产负债表，但是从利润表入手代表了企业管理层看报表的一种习惯。</p>
 <p>比如我们想了解效益，一看利润表，可能会吓一跳：在有子公司的情况下，净利润为什么有三个数字呢？一个是母公司报表的“净利润”，一个是合并报表的“净利润”，还有一个是“归属于母公司所有者的净利润”。那么，我们应该看哪个呢？</p>
 <p>我们先来看一下这个关系（见图1—1）：</p>
-<p><img src="file:///d:\loveFluffy\myBlog\booknotes\img\notes9022-1.jpeg" alt="企业集团示意图"></p>
+<p><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\img\notes9022-1.jpeg" alt="企业集团示意图"></p>
 <p>图1—1　企业集团示意图</p>
 <p>在会计中，只要有控制性的关系，就形成企业集团，母公司就要编制合并报表。因此，我们可以说：合并报表展示的是包括母、子公司的企业集团的财务数据。</p>
 <p>“母公司净利润”就是图1—1中A公司自己的净利润，“合并报表净利润”就是企业所有母、子公司合在一起的净利润。一般来说，我们都会认为母公司加上子公司的利润，应该比母公司自己的利润大一些。但实际情况经常不是这样的，比如子公司亏损得一塌糊涂。在这种情况下，在不包括子公司的利润时，母公司也许还有利润，但是合并时，整个集团反而亏损了！后面我们会更具体地谈到这些问题。</p>
@@ -1008,8 +1142,68 @@ iPad mini 5：2048*1536
 <h3 id="案例资料二特变电工股份有限公司2010年度报告部分内容">案例资料二：特变电工股份有限公司2010年度报告部分内容</h3>
 <h2 id="参考文献">参考文献</h2>
 <h2 id="教师教学服务说明">教师教学服务说明</h2>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E4%B8%80%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8%E8%A7%A3%E8%AF%BB%E8%A1%A8%E5%86%85%E8%B5%84%E6%BA%90%E4%B8%8E%E8%A1%A8%E5%A4%96%E8%B5%84%E6%BA%90">一、资产负债表解读：表内资源与表外资源</a></li>
+<li><a href="#%E4%BA%8C%E8%B5%84%E4%BA%A7%E7%9A%84%E5%88%86%E7%B1%BB">二、资产的分类</a>
+<ul>
+<li><a href="#%E4%B8%80%E6%8C%89%E7%85%A7%E6%B5%81%E5%8A%A8%E6%80%A7%E5%88%86%E7%B1%BB">（一）按照流动性分类</a></li>
+<li><a href="#%E4%BA%8C%E6%8C%89%E7%85%A7%E5%AF%B9%E5%88%A9%E6%B6%A6%E7%9A%84%E8%B4%A1%E7%8C%AE%E6%96%B9%E5%BC%8F%E5%88%86%E7%B1%BB">（二）按照对利润的贡献方式分类</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89%E4%BB%8E%E6%9D%83%E7%9B%8A%E7%9A%84%E8%A7%86%E8%A7%92%E7%9C%8B%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8">三、从权益的视角看资产负债表</a></li>
+<li><a href="#%E5%9B%9B%E4%BB%8E%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8%E7%9C%8B%E6%88%98%E7%95%A5">四、从资产负债表看战略</a>
+<ul>
+<li><a href="#1%E8%A1%8C%E4%B8%9A%E9%80%89%E6%8B%A9%E4%B8%8E%E5%AE%9A%E4%BD%8D">1．行业选择与定位</a></li>
+<li><a href="#2%E7%9B%88%E5%88%A9%E6%A8%A1%E5%BC%8F">2．盈利模式</a></li>
+<li><a href="#3%E6%89%A9%E5%BC%A0%E6%88%98%E7%95%A5">3．扩张战略</a></li>
+<li><a href="#4%E7%AB%8B%E5%9C%BA">4．立场</a></li>
+<li><a href="#5%E9%9B%86%E5%9B%A2%E7%AE%A1%E7%90%86">5．集团管理</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%80%E8%B4%A7%E5%B8%81%E8%B5%84%E9%87%91%E5%AD%98%E9%87%8F%E7%AE%A1%E7%90%86">一、货币资金存量管理</a></li>
+<li><a href="#%E4%BA%8C%E4%BB%A5%E5%AD%98%E8%B4%A7%E4%B8%BA%E6%A0%B8%E5%BF%83%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%B8%B8%E5%85%B3%E7%B3%BB%E7%AE%A1%E7%90%86">二、以存货为核心的上下游关系管理</a></li>
+<li><a href="#%E4%B8%89%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E5%88%A9%E7%94%A8">三、固定资产利用</a></li>
+<li><a href="#%E5%9B%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%9A%84%E7%BB%BC%E5%90%88%E6%95%88%E5%BA%94">四、资源管理的综合效应</a></li>
+<li><a href="#%E4%B8%80%E6%A0%B8%E5%BF%83%E5%88%A9%E6%B6%A6%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B%E7%9A%84%E8%B4%A8%E9%87%8F">一、核心利润实现过程的质量</a></li>
+<li><a href="#%E4%BA%8C%E5%88%A9%E6%B6%A6%E7%9A%84%E7%BB%93%E6%9E%84%E8%B4%A8%E9%87%8F">二、利润的结构质量</a></li>
+<li><a href="#%E4%B8%89%E5%88%A9%E6%B6%A6%E7%BB%93%E6%9E%9C%E7%9A%84%E8%B4%A8%E9%87%8F">三、利润结果的质量</a></li>
+<li><a href="#%E4%B8%80%E8%82%A1%E4%B8%9C%E5%85%A5%E8%B5%84%E7%9A%84%E4%BB%B7%E5%80%BC%E5%85%A5%E8%B5%84%E7%9A%84%E4%B8%89%E9%87%8D%E6%95%88%E5%BA%94">一、股东入资的价值——入资的三重效应</a></li>
+<li><a href="#%E4%BA%8C%E8%82%A1%E4%B8%9C%E6%9D%83%E7%9B%8A%E7%9A%84%E4%BB%B7%E5%80%BC%E7%A1%AE%E5%AE%9A%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95">二、股东权益的价值确定——评估方法</a></li>
+<li><a href="#%E4%B8%89%E8%82%A1%E4%B8%9C%E6%9D%83%E7%9B%8A%E7%9A%84%E4%BB%B7%E5%80%BC%E7%A1%AE%E5%AE%9A%E5%88%B6%E5%BA%A6%E8%A7%84%E5%AE%9A">三、股东权益的价值确定——制度规定</a></li>
+<li><a href="#%E5%9B%9B%E8%82%A1%E4%B8%9C%E6%9D%83%E7%9B%8A%E7%9A%84%E4%BB%B7%E5%80%BC%E7%A1%AE%E5%AE%9A%E7%AB%8B%E5%9C%BA%E4%B8%8E%E4%BA%A4%E6%98%93%E4%BB%B7%E5%80%BC%E7%9A%84%E5%BA%95%E7%BA%BF">四、股东权益的价值确定——立场与交易价值的底线</a></li>
+<li><a href="#%E4%BA%94%E4%BC%81%E4%B8%9A%E4%BC%B0%E4%BB%B7%E4%B8%8D%E8%83%BD%E5%BF%BD%E8%A7%86%E7%9A%84%E5%9B%A0%E7%B4%A0%E5%B0%8F%E9%87%91%E5%BA%93">五、企业估价不能忽视的因素——小金库</a></li>
+<li><a href="#%E4%B8%80%E5%86%B3%E7%AD%96%E5%9B%A0%E7%B4%A0">一、决策因素</a></li>
+<li><a href="#%E4%BA%8C%E7%AE%A1%E7%90%86%E5%9B%A0%E7%B4%A0">二、管理因素</a></li>
+<li><a href="#%E4%B8%89%E6%A0%B8%E7%AE%97%E5%9B%A0%E7%B4%A0">三、核算因素</a></li>
+<li><a href="#%E4%B8%80%E8%B5%84%E4%BA%A7%E8%B4%A8%E9%87%8F%E4%BB%8E%E4%B8%89%E4%B8%AA%E5%B1%82%E9%9D%A2%E6%9D%A5%E8%80%83%E5%AF%9F">一、资产质量——从三个层面来考察</a></li>
+<li><a href="#%E4%BA%8C%E5%88%86%E6%9E%90%E7%9A%84%E5%9F%BA%E7%A1%80%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E5%8E%9F%E5%88%99">二、分析的基础——几个重要原则</a></li>
+<li><a href="#%E4%B8%89%E8%B4%A7%E5%B8%81%E8%B5%84%E9%87%91%E8%B4%A8%E9%87%8F%E5%88%86%E6%9E%90">三、货币资金质量分析</a></li>
+<li><a href="#%E5%9B%9B%E5%95%86%E4%B8%9A%E5%80%BA%E6%9D%83%E8%B4%A8%E9%87%8F%E5%88%86%E6%9E%90">四、商业债权质量分析</a></li>
+<li><a href="#%E4%BA%94%E5%85%B6%E4%BB%96%E5%BA%94%E6%94%B6%E6%AC%BE%E8%B4%A8%E9%87%8F%E5%88%86%E6%9E%90">五、其他应收款质量分析</a></li>
+<li><a href="#%E5%85%AD%E5%AD%98%E8%B4%A7%E8%B4%A8%E9%87%8F%E5%88%86%E6%9E%90">六、存货质量分析</a></li>
+<li><a href="#%E4%B8%83%E6%B5%81%E5%8A%A8%E8%B5%84%E4%BA%A7%E6%95%B4%E4%BD%93%E8%B4%A8%E9%87%8F">七、流动资产整体质量</a></li>
+<li><a href="#%E5%85%AB%E6%97%A0%E5%BD%A2%E8%B5%84%E4%BA%A7%E8%B4%A8%E9%87%8F%E5%88%86%E6%9E%90">八、无形资产质量分析</a></li>
+<li><a href="#%E4%B9%9D%E6%8A%95%E8%B5%84%E8%B5%84%E4%BA%A7%E8%B4%A8%E9%87%8F%E5%88%86%E6%9E%90">九、投资资产质量分析</a></li>
+<li><a href="#%E5%8D%81%E8%B5%84%E6%9C%AC%E7%BB%93%E6%9E%84%E8%B4%A8%E9%87%8F%E5%88%86%E6%9E%90">十、资本结构质量分析</a></li>
+<li><a href="#%E5%8D%81%E4%B8%80%E5%87%A0%E7%A7%8D%E9%87%8D%E7%BB%84%E7%9A%84%E8%B4%A2%E5%8A%A1%E6%95%88%E5%BA%94%E5%88%86%E6%9E%90">十一、几种重组的财务效应分析</a></li>
+<li><a href="#%E5%8D%81%E4%BA%8C%E7%A8%8E%E5%8A%A1%E8%A7%84%E5%88%92%E7%9A%84%E8%B4%A2%E5%8A%A1%E6%95%88%E5%BA%94%E5%88%86%E6%9E%90">十二、税务规划的财务效应分析</a></li>
+<li><a href="#%E5%8D%81%E4%B8%89%E5%AF%B9%E7%8E%B0%E9%87%91%E6%B5%81%E9%87%8F%E8%A1%A8%E7%9A%84%E5%88%86%E6%9E%90">十三、对现金流量表的分析</a></li>
+<li><a href="#%E5%8D%81%E5%9B%9B%E5%90%88%E5%B9%B6%E6%8A%A5%E8%A1%A8%E4%B8%8E%E8%B4%A2%E5%8A%A1%E7%8A%B6%E5%86%B5%E8%B4%A8%E9%87%8F">十四、合并报表与财务状况质量</a></li>
+<li><a href="#%E5%8D%81%E4%BA%94%E8%B4%A2%E5%8A%A1%E6%AF%94%E7%8E%87%E5%88%86%E6%9E%90%E7%9A%84%E8%BF%90%E7%94%A8">十五、财务比率分析的运用</a></li>
+<li><a href="#%E4%B8%80%E5%85%AC%E5%8F%B8%E8%82%A1%E6%9D%83%E7%BB%93%E6%9E%84%E5%B7%A8%E5%8F%98%E6%B2%BB%E7%90%86%E7%8E%AF%E5%A2%83%E5%8F%98%E5%8C%96%E4%BB%A5%E5%8F%8A%E6%A0%B8%E5%BF%83%E7%AE%A1%E7%90%86%E4%BA%BA%E5%91%98%E5%8F%98%E6%9B%B4%E7%9A%84%E9%A3%8E%E9%99%A9">一、公司股权结构巨变、治理环境变化以及核心管理人员变更的风险</a></li>
+<li><a href="#%E4%BA%8C%E6%83%AF%E6%80%A7%E4%BE%9D%E8%B5%96%E7%9A%84%E9%A3%8E%E9%99%A9">二、惯性依赖的风险</a></li>
+<li><a href="#%E4%B8%89%E5%A4%96%E9%83%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E5%8C%96%E7%9A%84%E9%A3%8E%E9%99%A9">三、外部环境变化的风险</a></li>
+<li><a href="#%E4%B8%80%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90">一、基础分析</a></li>
+<li><a href="#%E4%BA%8C%E5%AF%B9%E4%BC%81%E4%B8%9A%E5%8F%91%E5%B1%95%E5%89%8D%E6%99%AF%E7%9A%84%E9%A2%84%E6%B5%8B">二、对企业发展前景的预测</a></li>
+<li><a href="#%E4%B8%80%E4%BC%81%E4%B8%9A%E8%B4%A2%E5%8A%A1%E7%8A%B6%E5%86%B5%E8%B4%A8%E9%87%8F%E7%9A%84%E7%BB%BC%E5%90%88%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95">一、企业财务状况质量的综合分析方法</a></li>
+<li><a href="#%E4%BA%8C%E5%AF%B9%E7%89%B9%E5%8F%98%E7%94%B5%E5%B7%A52010%E5%B9%B4%E5%BA%A6%E8%B4%A2%E5%8A%A1%E7%8A%B6%E5%86%B5%E7%9A%84%E6%95%B4%E4%BD%93%E5%88%86%E6%9E%90">二、对特变电工2010年度财务状况的整体分析</a></li>
+<li><a href="#%E6%A1%88%E4%BE%8B%E8%B5%84%E6%96%99%E4%B8%80%E6%B5%B7%E4%BF%A1%E7%A7%91%E9%BE%99%E7%94%B5%E5%99%A8%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B82010%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9">案例资料一：海信科龙电器股份有限公司2010年度报告部分内容</a></li>
+<li><a href="#%E6%A1%88%E4%BE%8B%E8%B5%84%E6%96%99%E4%BA%8C%E7%89%B9%E5%8F%98%E7%94%B5%E5%B7%A5%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B82010%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9">案例资料二：特变电工股份有限公司2010年度报告部分内容</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>
