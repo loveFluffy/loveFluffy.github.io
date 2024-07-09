@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x6697;&#x7f51;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x6697;&#x7f51;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -348,6 +447,20 @@ img {
 
 
 
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
+}
+
+
+
 /* ======== 侧边的目录相关 ======== */
 
 .content {
@@ -358,8 +471,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +498,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,25 +527,52 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
 	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
@@ -435,30 +580,41 @@ iPad mini 5：2048*1536
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
 		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
 
 /*
@@ -467,18 +623,43 @@ div.toc ul>li>ul>li>ul>li,
 div.toc ul>li>ul>li>ul>li>ul>li {
 */
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="暗网">暗网</h1>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="暗网">暗网</h1>
 <h2 id="英杰米巴特利特jamie-bartlett-著刘丹丹-译">[英]杰米·巴特利特（Jamie Bartlett） 著|刘丹丹 译</h2>
+<div class="mycomment">
 <p>刚看到这本书封面的时候，我期待看到诸如一些计算机攻防技术的介绍，看了一小部分以后，我发现实际上这本书是对人性邪恶面在网络面具下的剖析。真正黑暗的并非技术本身，而是人类利用它去买卖毒品、色情直播、发起反动组织等等。黑暗的人类本性的一部分，在匿名和不必负责的网络中，这种黑暗的本性被无限放大。</p>
 <p>一开始书里提到个别的网站，我还抱有好奇心想要去搜索一下，了解一下。看到书的末了，作者坦言自己对于对错的判断不停地遭到现实中看到这些事实的质疑。对于一个活生生的陌生人，我们很难像是在网络上对于他这个人所说的一两句话那样轻易做出对错的评判。当作者真实地去面对一个活生生的人，了解他这么做的动机，听到对方的生活分享，或许一些本来看起来绝对是错误的事情，也有了合理的解释。这让我想起来一个说法“如果你讨厌一个人，只是因为你不够了解他。”当我们站在对方的角度，或许很多事情都变得可以理解了起来，无论这个事在一开始看起来是多么地荒唐。</p>
 <p>有的人专门在网上寻找有自杀想法的人，鼓励对方实施自杀。这听起来是多么地恐怖邪恶。在网络上可以买到毒品，无论是多么小克数的购买，这样诱导吸毒，是多么地可怕！想想会有多少不谙世事的青少年为了满足好奇心而一步跌入深渊！看到最后，我甚至对书里提到的那些网站都不再有好奇心。作者也感叹自己的这番调查下来才发现原来这一切是多么地复杂，并不像一开始想象地那么黑白分明，更多地像是一块灰色地带。</p>
 <p>作为普通人的我，看了这本书以后，只想在有生之年不要去过多地接触这些。如果接触到了，也可以有所警惕。就像书里说的，一个人如果长时间在网络上观看骂人的内容，只要时间足够长，最后成为一个网络喷子的概率就是100%，这是多么惊人的事，令我感到震惊。所谓近朱者赤近墨者黑，要利用网络和科技达到自己的目的，而不要被带偏才是正经事。相信无论多么正常的一个人，如果长期接触极端思想，被带偏应该都不是一件很难的事儿。只要长期接触，就会发现原来沉迷于暗网，面对暴力现象就会变得那么地习以为常…… 这很可怕。</p>
-<hr>
-<p>测试</p>
-
-        
-        
-    </body>
-    </html>
+</div>
+<h3 id="引言-自由或死亡">引言 自由或死亡</h3>
+<h3 id="第一章-揭开网络引战的面纱">第一章 揭开网络引战的面纱</h3>
+<h3 id="第二章-独行者">第二章 独行者</h3>
+<h3 id="第三章-潜入高尔特峡谷">第三章 潜入“高尔特峡谷”</h3>
+<h3 id="第四章-三次点击">第四章 三次点击</h3>
+<h3 id="第五章-在路上">第五章 在路上</h3>
+<h3 id="第六章-灯光网络摄像头行动起来">第六章 灯光、网络摄像头，行动起来</h3>
+<h3 id="第七章-维特效应">第七章 维特效应</h3>
+<h3 id="结语-科技乐观主义与悲观主义之争">结语 科技乐观主义与悲观主义之争</h3>
+<h3 id="尾注">尾注</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BC%95%E8%A8%80-%E8%87%AA%E7%94%B1%E6%88%96%E6%AD%BB%E4%BA%A1">引言 自由或死亡</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8F%AD%E5%BC%80%E7%BD%91%E7%BB%9C%E5%BC%95%E6%88%98%E7%9A%84%E9%9D%A2%E7%BA%B1">第一章 揭开网络引战的面纱</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%8B%AC%E8%A1%8C%E8%80%85">第二章 独行者</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%BD%9C%E5%85%A5%E9%AB%98%E5%B0%94%E7%89%B9%E5%B3%A1%E8%B0%B7">第三章 潜入“高尔特峡谷”</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%B8%89%E6%AC%A1%E7%82%B9%E5%87%BB">第四章 三次点击</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%9C%A8%E8%B7%AF%E4%B8%8A">第五章 在路上</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%81%AF%E5%85%89%E7%BD%91%E7%BB%9C%E6%91%84%E5%83%8F%E5%A4%B4%E8%A1%8C%E5%8A%A8%E8%B5%B7%E6%9D%A5">第六章 灯光、网络摄像头，行动起来</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E7%BB%B4%E7%89%B9%E6%95%88%E5%BA%94">第七章 维特效应</a></li>
+<li><a href="#%E7%BB%93%E8%AF%AD-%E7%A7%91%E6%8A%80%E4%B9%90%E8%A7%82%E4%B8%BB%E4%B9%89%E4%B8%8E%E6%82%B2%E8%A7%82%E4%B8%BB%E4%B9%89%E4%B9%8B%E4%BA%89">结语 科技乐观主义与悲观主义之争</a></li>
+<li><a href="#%E5%B0%BE%E6%B3%A8">尾注</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>
