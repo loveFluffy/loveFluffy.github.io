@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x4e0d;&#x53ef;&#x6d88;&#x5931;&#x7684;&#x95e8;&#x5e97;&#xff1a;&#x540e;&#x7535;&#x5546;&#x65f6;&#x4ee3;&#x7684;&#x96f6;&#x552e;&#x6cd5;&#x5219;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x4e0d;&#x53ef;&#x6d88;&#x5931;&#x7684;&#x95e8;&#x5e97;&#xff1a;&#x540e;&#x7535;&#x5546;&#x65f6;&#x4ee3;&#x7684;&#x96f6;&#x552e;&#x6cd5;&#x5219;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -331,10 +430,33 @@ a:target {
 	outline: 0;
 }
 
+/*笔记中的普通表格*/
 table {
-	align-self: center;
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
 }
 
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
 img {
 	align-self: center;
 	max-width: 1000px;
@@ -344,6 +466,20 @@ img {
 /* 选中后背景浅粉色 */
 ::selection {
 	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
 }
 
 
@@ -358,8 +494,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +521,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,73 +550,160 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
-</style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="不可消失的门店后电商时代的零售法则">不可消失的门店：后电商时代的零售法则</h1>
-<h2 id=""></h2>
 
-        
-        
-    </body>
-    </html>
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="不可消失的门店后电商时代的零售法则">不可消失的门店：后电商时代的零售法则</h1>
+<h2 id=""></h2>
+<div class="mycomment">
+<p>基于诸多的科研结果，介绍了不同地域的人对于不同产品、品牌的偏好，同样也会影响到线上产品的销售。虽然互联网正在把世界变平，但是作者提醒，地域对于互联网的影响依然还是有像传统行业类似的效果。不过现在只读了开头，总体并没有让我有多惊讶，毕竟分众之所以存在，不就是在利用这种现象吗？</p>
+</div>
+<h3 id="推荐序一-回归零售本质打造未来全渠道零售">推荐序一 回归零售本质，打造未来全渠道零售</h3>
+<h3 id="推荐序二网店也要关注顾客位置">推荐序二网店也要关注顾客位置</h3>
+<h3 id="中文版序新零售时代已来">中文版序新零售时代已来</h3>
+<h3 id="引言">引言</h3>
+<h3 id="第1章-线下位置关系到消费者的购物选择">第1章 线下位置关系到消费者的购物选择</h3>
+<p>法则关键一：地理 Geography
+l 为什么在购物选择上，我和你是谁很重要，我和你在哪里同样重要？
+l 为什么线下门店的具体位置会影响我们线上购买的行为？</p>
+<h3 id="第2章-铲除线下搜索阻力和位置阻力">第2章 铲除线下搜索阻力和位置阻力</h3>
+<p>法则关键二：阻力 Resistance
+l 线下搜索和门店距离会给消费者高效购物造成怎样的障碍？
+l 为什么线上购买不能完全消除线下购买的阻力？</p>
+<h3 id="第3章-社区效应创造社区商业找到零售突破口">第3章 社区效应创造社区商业，找到零售突破口</h3>
+<p>法则关键三： 相邻 Adjacency
+l 为什么同一社区的人们会有相似的购物品味和偏好，他们的口碑效应会促进购买行为的规模化发生？
+l 如何利用社区效应开启新零售的新机会？</p>
+<h3 id="第4章-打造空间长尾搭建良好店群关系">第4章 打造空间长尾，搭建良好“店群”关系</h3>
+<p>法则关键四：近区 Vicinity
+l 为什么相隔甚远、不同地区的人们会对某个产品产生相同的偏好？
+l 如何充分发挥虚拟社区的力量？如何选择空间上最有利的位置，让线上和线下卖家的业务增长都得到最优的效应？</p>
+<h3 id="第5章-按需定制满足偏好少数派">第5章 按需定制，满足“偏好少数派”</h3>
+<p>法则关键五：隔离 Isolation
+l 为什么只要知道一个社区的“偏好隔离”状况，卖家就可能从中得到有价值的信息来改善管理。
+l 实体门店如何通过满足小众消费者进行差异化经营？</p>
+<h3 id="第6章-不是o2o而是oo-">第6章 不是O2O，而是O+O ‘’</h3>
+<p>法则关键六：地形 Topography
+l 为什么实体门店不可消失？
+l 为什么虚拟现实跨界融合才是新零售时代的未来？</p>
+<h3 id="结语-打通线上线下迎接未来新零售时代">结语 打通线上线下，迎接未来新零售时代</h3>
+<p>等你来创造 You
+为什么沃比派克能够打破零售垄断？
+为什么在后电商的新零售时代，企业要致力于全渠道满足消费者需求？</p>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%B8%80-%E5%9B%9E%E5%BD%92%E9%9B%B6%E5%94%AE%E6%9C%AC%E8%B4%A8%E6%89%93%E9%80%A0%E6%9C%AA%E6%9D%A5%E5%85%A8%E6%B8%A0%E9%81%93%E9%9B%B6%E5%94%AE">推荐序一 回归零售本质，打造未来全渠道零售</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%BA%8C%E7%BD%91%E5%BA%97%E4%B9%9F%E8%A6%81%E5%85%B3%E6%B3%A8%E9%A1%BE%E5%AE%A2%E4%BD%8D%E7%BD%AE">推荐序二网店也要关注顾客位置</a></li>
+<li><a href="#%E4%B8%AD%E6%96%87%E7%89%88%E5%BA%8F%E6%96%B0%E9%9B%B6%E5%94%AE%E6%97%B6%E4%BB%A3%E5%B7%B2%E6%9D%A5">中文版序新零售时代已来</a></li>
+<li><a href="#%E5%BC%95%E8%A8%80">引言</a></li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E7%BA%BF%E4%B8%8B%E4%BD%8D%E7%BD%AE%E5%85%B3%E7%B3%BB%E5%88%B0%E6%B6%88%E8%B4%B9%E8%80%85%E7%9A%84%E8%B4%AD%E7%89%A9%E9%80%89%E6%8B%A9">第1章 线下位置关系到消费者的购物选择</a></li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E9%93%B2%E9%99%A4%E7%BA%BF%E4%B8%8B%E6%90%9C%E7%B4%A2%E9%98%BB%E5%8A%9B%E5%92%8C%E4%BD%8D%E7%BD%AE%E9%98%BB%E5%8A%9B">第2章 铲除线下搜索阻力和位置阻力</a></li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E7%A4%BE%E5%8C%BA%E6%95%88%E5%BA%94%E5%88%9B%E9%80%A0%E7%A4%BE%E5%8C%BA%E5%95%86%E4%B8%9A%E6%89%BE%E5%88%B0%E9%9B%B6%E5%94%AE%E7%AA%81%E7%A0%B4%E5%8F%A3">第3章 社区效应创造社区商业，找到零售突破口</a></li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E6%89%93%E9%80%A0%E7%A9%BA%E9%97%B4%E9%95%BF%E5%B0%BE%E6%90%AD%E5%BB%BA%E8%89%AF%E5%A5%BD%E5%BA%97%E7%BE%A4%E5%85%B3%E7%B3%BB">第4章 打造空间长尾，搭建良好“店群”关系</a></li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E6%8C%89%E9%9C%80%E5%AE%9A%E5%88%B6%E6%BB%A1%E8%B6%B3%E5%81%8F%E5%A5%BD%E5%B0%91%E6%95%B0%E6%B4%BE">第5章 按需定制，满足“偏好少数派”</a></li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E4%B8%8D%E6%98%AFo2o%E8%80%8C%E6%98%AFoo-">第6章 不是O2O，而是O+O ‘’</a></li>
+<li><a href="#%E7%BB%93%E8%AF%AD-%E6%89%93%E9%80%9A%E7%BA%BF%E4%B8%8A%E7%BA%BF%E4%B8%8B%E8%BF%8E%E6%8E%A5%E6%9C%AA%E6%9D%A5%E6%96%B0%E9%9B%B6%E5%94%AE%E6%97%B6%E4%BB%A3">结语 打通线上线下，迎接未来新零售时代</a></li>
+</ul>
+</div>
+
+            
+            
+        </body>
+        </html>

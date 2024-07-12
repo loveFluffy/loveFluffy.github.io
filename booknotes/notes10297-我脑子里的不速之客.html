@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x6211;&#x8111;&#x5b50;&#x91cc;&#x7684;&#x4e0d;&#x901f;&#x4e4b;&#x5ba2;&#xff1a;&#x5bc4;&#x751f;&#x751f;&#x7269;&#x5982;&#x4f55;&#x64cd;&#x7eb5;&#x4eba;&#x7c7b;&#x4e0e;&#x793e;&#x4f1a;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x6211;&#x8111;&#x5b50;&#x91cc;&#x7684;&#x4e0d;&#x901f;&#x4e4b;&#x5ba2;&#xff1a;&#x5bc4;&#x751f;&#x751f;&#x7269;&#x5982;&#x4f55;&#x64cd;&#x7eb5;&#x4eba;&#x7c7b;&#x4e0e;&#x793e;&#x4f1a;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -331,10 +430,33 @@ a:target {
 	outline: 0;
 }
 
+/*笔记中的普通表格*/
 table {
-	align-self: center;
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
 }
 
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
 img {
 	align-self: center;
 	max-width: 1000px;
@@ -344,6 +466,20 @@ img {
 /* 选中后背景浅粉色 */
 ::selection {
 	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
 }
 
 
@@ -358,8 +494,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +521,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,71 +550,111 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="我脑子里的不速之客寄生生物如何操纵人类与社会">我脑子里的不速之客：寄生生物如何操纵人类与社会</h1>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="我脑子里的不速之客寄生生物如何操纵人类与社会">我脑子里的不速之客：寄生生物如何操纵人类与社会</h1>
 <h2 id="美凯瑟琳麦考利夫kathleen-mcauliffe-著袁祎-译">[美]凯瑟琳·麦考利夫（Kathleen McAuliffe） 著|袁祎 译</h2>
+<div class="mycomment">
+<p>寄生虫在科研领域的研究非常少，然而根据作者罗列的事实，似乎寄生虫对人类的影响无论深度还是广度都远超人们的想象和认知，读来真是打开眼界！而且作者列举的例子有理有据，引用了很多的科研成果，十分具有说服力。</p>
+<p>非常精彩的一本科普书。其中对于寄生虫可能影响我们所认为的“人类自由意志”这一点，真是令我大为震惊！不禁叹服作者的脑洞之大、研究思路真够野。因为是科普猎奇类书籍，读过一遍就基本上没必要再读了，但仍然值得推荐给别人一读。</p>
+</div>
 <h3 id="导言">导言</h3>
 <p>越来越多的研究表明，宿主形成了强大的心理防御来抵抗寄生生物。科学家称这种精神屏障为“行为免疫系统”。实验表明，它在感染风险很高的情况下开始发挥作用，促使处于危险中的生物体以特定的方式做出反应，以降低其所面临的风险。举个简单的例子，狗对外伤的反应就是舔伤口，用富含杀菌化合物的唾液包住伤口。然而，对像人类这样的灵长类动物来说，我们的行为防御似乎越来越与抽象和象征性的思维方式联系在一起。许多看似与病原体搭不上边的习惯和特征，例如我们的政治信仰、性态度或对打破社会禁忌之人不容忍的态度，这其中可能有一部分源于我们希望避免被传染的潜意识。甚至有证据表明，我们周围环境中细菌的存在——如腐臭的气味或肮脏的生活条件等——会影响我们的性格。</p>
 <p>寄生生物直接或间接地操纵我们的思维、感觉和行为。事实上，我们与它们之间的互动可能不仅塑造了我们的思维框架，也塑造了整个社会的特征。这也许可以解释一个令人困惑的问题：病原体肆虐的地区与通过接种疫苗、改善卫生条件而大幅降低患病风险的地区总是存在着文化差异。大量证据表明，在我们身处的更广泛的人群中，寄生生物的流行会影响我们的饮食习惯、宗教习俗、择偶倾向，以及政府公共政策。</p>
@@ -622,8 +803,26 @@ iPad mini 5：2048*1536
 <h3 id="第十一章-寄生与道德">第十一章 寄生与道德</h3>
 <h3 id="第十二章-思想的疆域">第十二章 思想的疆域</h3>
 <h3 id="致谢">致谢</h3>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%AF%BC%E8%A8%80">导言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AF%84%E7%94%9F%E8%99%AB%E6%97%B6%E9%AB%A6%E4%B9%8B%E5%89%8D">第一章 寄生虫时髦之前</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%90%AD%E4%BE%BF%E8%BD%A6">第二章 搭便车</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%A1%8C%E5%B0%B8%E8%B5%B0%E8%82%89">第三章 行尸走肉</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%82%AC%E7%9C%A0%E5%A4%A7%E6%B3%95">第四章 催眠大法</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%8D%B1%E9%99%A9%E5%85%B3%E7%B3%BB">第五章 危险关系</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E9%81%87%E4%BA%8B%E4%B8%8D%E5%86%B3%E8%82%A0%E9%81%93%E7%9B%B4%E8%A7%89">第六章 遇事不决，肠道直觉</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E8%8F%8C%E7%BE%A4%E4%BD%BF%E4%BA%BA%E8%82%A5%E8%83%96">第七章 菌群使人肥胖</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E7%96%97%E6%84%88%E6%9C%AC%E8%83%BD">第八章 疗愈本能</a></li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E8%A2%AB%E9%81%97%E5%BF%98%E7%9A%84%E6%83%85%E6%84%9F">第九章 被遗忘的情感</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%AF%84%E7%94%9F%E4%B8%8E%E5%81%8F%E8%A7%81">第十章 寄生与偏见</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E5%AF%84%E7%94%9F%E4%B8%8E%E9%81%93%E5%BE%B7">第十一章 寄生与道德</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E6%80%9D%E6%83%B3%E7%9A%84%E7%96%86%E5%9F%9F">第十二章 思想的疆域</a></li>
+<li><a href="#%E8%87%B4%E8%B0%A2">致谢</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

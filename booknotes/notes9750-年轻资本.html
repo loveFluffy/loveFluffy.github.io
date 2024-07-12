@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5e74;&#x8f7b;&#x8d44;&#x672c;&#xff1a;&#x91d1;&#x878d;&#x98ce;&#x66b4;&#x540e;&#x534e;&#x5c14;&#x8857;&#x7684;&#x516b;&#x4e2a;&#x6545;&#x4e8b;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5e74;&#x8f7b;&#x8d44;&#x672c;&#xff1a;&#x91d1;&#x878d;&#x98ce;&#x66b4;&#x540e;&#x534e;&#x5c14;&#x8857;&#x7684;&#x516b;&#x4e2a;&#x6545;&#x4e8b;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -348,6 +447,20 @@ img {
 
 
 
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
+}
+
+
+
 /* ======== 侧边的目录相关 ======== */
 
 .content {
@@ -358,8 +471,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +498,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,75 +527,232 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="年轻资本金融风暴后华尔街的八个故事">年轻资本：金融风暴后华尔街的八个故事</h1>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="年轻资本金融风暴后华尔街的八个故事">年轻资本：金融风暴后华尔街的八个故事</h1>
 <h2 id="美凯文鲁斯kevin-roose-著陈治宇-译">[美]凯文·鲁斯（Kevin Roose） 著|陈治宇 译</h2>
+<div class="mycomment">
 <p>8个真实的匿名故事。根据作者的调查，金融行业的工作已经越发丧失了吸引性。年轻分析师在投行里的工作时长和压力可见是非常之大，身体健康和心理健康问题都非常明显。2013年金融行业就已经从2008年的金融危机中恢复了过来并又创新高。</p>
 <p>在以前，大学毕业以后先去大银行工作两三年，然后跳槽到私募基金公司之类，再回去读MBA，然后再次回到华尔街谋求管理职位，这是一条常规路线。</p>
-
-        
-        
-    </body>
-    </html>
+</div>
+<h3 id="序-金融危机爆发华尔街招来了整个世界的愤怒">序 金融危机爆发，华尔街招来了整个世界的愤怒</h3>
+<p>在华尔街，年轻人充满魅力，又忍受着被虐。一方面，你比同龄人挣更多的钱，另一方面，你要遭受谴责和侮辱。</p>
+<h3 id="第一章-华尔街人不再是宇宙的主人吗">第一章 华尔街人不再是“宇宙的主人”吗</h3>
+<p>只要你聪明能干，愿意吃苦，就可以成为金融界里所谓的“PHD”——贫穷（Poor），饥渴（Hungry）和发愤（Driven）的人，并最终混进金融界的核心圈。</p>
+<h3 id="第二章-美银收购美林影响到了金融人什么">第二章 美银收购美林，影响到了金融人什么</h3>
+<p>老板给她项目所作的修改，细致到诸如把阿拉伯数字“2”改成英文单词“two”，对细节如此严格的要求简直让她发疯。</p>
+<h3 id="第三章-华尔街的招聘机器是如何运转的">第三章 华尔街的招聘机器是如何运转的</h3>
+<p>一场类似末日大决战的金融危机，似乎也未能将华尔街逐出神坛。如果宾大学生都不能被经济危机影响，如此步调一致地走向银行，那么金融业在优秀大学生心中是不是依旧占据着重要位置？</p>
+<h3 id="第四章-分手是华尔街年轻人的必选项吗">第四章 分手是华尔街年轻人的必选项吗</h3>
+<p>在他看来，曼哈顿有着一种充满活力的热闹。这个城市，是一个权力形成、社会和经济资本积累、每一个普通的日子你都可以看到几十种不同人性的地方。
+也许，他想，他需要一点鞭策，而分手，可能正是他所需要的。</p>
+<h3 id="第五章-后危机时代投行人的生活">第五章 后危机时代投行人的生活</h3>
+<p>现在，和金融危机之前一样，一个入行第一年的IBD分析师一周工作100个小时并不是什么稀罕事，这就相当于，他们工作日每天要工作16个小时，周末两天每天还要工作10个小时。</p>
+<h3 id="第六章-我们不是来拯救世界的是来赚钱的">第六章 我们不是来拯救世界的，是来赚钱的</h3>
+<p>高盛的销售和交易实习以“职位争夺”而出名，为期十周的实习竞争激烈，在很多方面类似于兄弟会招收新成员。</p>
+<h3 id="第七章-华尔街文化的洗礼">第七章 华尔街文化的洗礼</h3>
+<p>一些人开始穿昂贵西装，会在闲谈的时候使用诸如“delta”和“top-tick”等金融术语，这标志着华尔街文化已经对他们的内心产生影响了。</p>
+<h3 id="第八章-华尔街的女人们">第八章 华尔街的女人们</h3>
+<p>2006年《纽约时报》开展的一项分析研究发现，入行第一年的分析师中33%是女性，但是，新晋的全职助理和担任主管的人中女性就分别只有25%和14%，女性CEO就更没有了。</p>
+<h3 id="第九章-电影华尔街天天都在上演">第九章 电影《华尔街》天天都在上演</h3>
+<p>他喜欢进行这种交易所需的快速思维和敏锐分析，而能够在交易大厅里站起来并大声喊叫，让他感到自己就像是在演一部华尔街的电影，而电影的背景是早些年更激动人心的华尔街。</p>
+<h3 id="第十章-干劲和野心可以变成财富">第十章 干劲和野心可以变成财富</h3>
+<p>尽管白天疯干、晚上苦熬肯定会让他折寿，但他确信，当他有足够多的金钱和足够高的地位，帮自己家挤进上等社会，并且有足够的余钱来维持生活的时候，这一切都是值得的。</p>
+<h3 id="第十一章-华尔街都有个疯帽子老板">第十一章 华尔街都有个“疯帽子”老板</h3>
+<p>受到了责骂，她期待着她的老板能来为自己辩解。毕竟，他们都是她的领导，是负责周报向客户发送之前，最终审核检查的。但是，他们谁都没有说什么。最终，她认识到，这个事儿只能自己全部承担了。</p>
+<h3 id="第十二章-谁能得到私募股权公司offer">第十二章 谁能得到私募股权公司Offer</h3>
+<p>把一个耶鲁大学成绩优异的学生安排到高盛工作，然后再让他参加私募股权招聘，你就能看到他是否足够坚强。</p>
+<h3 id="第十三章-华尔街男人娶了时尚界女人">第十三章 华尔街男人娶了时尚界女人</h3>
+<p>夜深了，音乐声音变得越来越大，大多数年轻些的银行职员们已经先后离去了，大多数女性和年龄稍大些的男性们留了下来。他们的行为举止散发着老华尔街独特的气质。除了扬声器传出蕾哈娜的歌声外，这一切看起来就像是1987年的所罗门兄弟公司。</p>
+<h3 id="第十四章-分析师-or-excel奴">第十四章 分析师 or Excel奴</h3>
+<p>这种不合理的时间安排的逻辑是，分析师们要么在压力下退出，要么迎接挑战。如果不以这种方式，怎么才能找到华尔街真正需要的人才呢？</p>
+<h3 id="第十五章-西大街200号就是阿兹卡班">第十五章 西大街200号，就是阿兹卡班</h3>
+<p>阿兹卡班是《哈利•波特》系列中的巫师监狱，在那里，摄魂怪看守会吸取犯人的灵魂，带走他们所有的希望和快乐。</p>
+<h3 id="第十六章-考虑健康并不是最好的选择">第十六章 考虑健康并不是最好的选择</h3>
+<p>每天早上，他都拖着病体赶到花旗银行。尽管他还不能彻底忽视病痛，但日常工作的回归，让他不再那么恐惧和焦虑。</p>
+<h3 id="第十七章-冒险及逐利的华尔街文化未变">第十七章 冒险及逐利的华尔街文化未变</h3>
+<p>这里混杂着叫嚷声、电话铃声以及公共广播刺耳的嘈杂声。在她听来，这就像资本市场咯吱作响的齿轮一样。当面对如此刺激又赚钱的工作时，谁又想考虑灾难的可能性呢？</p>
+<h3 id="第十八章-只有在纽约才有的激动">第十八章 只有在纽约才有的激动</h3>
+<p>每次你走在大街上，都能看见你所见过的最漂亮的姑娘和最疯狂的事，而且还常常得为究竟关注哪一个而伤一番脑筋。</p>
+<h3 id="第十九章-年终奖季圣诞节抑或审判日">第十九章 年终奖季，圣诞节抑或审判日</h3>
+<p>在一个盈利状况较好的公司，奖金标准被划为“高档”的入行第一年的分析师，年终奖金可能达到75000美元。获得最高档奖金的分析员通常也会稳稳当当地获得第三年的聘用邀请，而只得到最低档奖金的分析员则往往会被委婉暗示，建议另谋出路。</p>
+<h3 id="第二十章-金融业是一条不那么性感的道儿">第二十章 金融业是一条不那么“性感”的道儿</h3>
+<p>他知道，年轻和卑微带来的压力会慢慢减弱，他将拥有一份稳定的事业。这份事业将给他带来足够的时间和可支配的收入，让他去做真正喜欢的事情。</p>
+<h3 id="第二十一章-坚信华尔街就是归宿的金融极客">第二十一章 坚信华尔街就是归宿的金融极客</h3>
+<p>睡觉时枕头下都要垫本杰明•格雷厄姆的《聪明的投资者》；墙上，挂着沃伦•巴菲特和乔治•索罗斯等大鳄的海报头像；上中学时就开始练习Excel使用技巧。</p>
+<h3 id="第二十二章-是否要离开高盛妈妈温暖的怀抱">第二十二章 是否要离开“高盛妈妈”温暖的怀抱</h3>
+<p>他们的这次旅行并非像《逍遥骑士》那样消极叛逆，也没有让两人有任何慰藉。即使是在服用了迷幻剂之后的迷糊状态下，似乎也并未能逃离华尔街，也并未能摆脱华尔街的困扰。</p>
+<h3 id="第二十三章-在迷失中找回自己">第二十三章 在迷失中找回自己</h3>
+<p>为了寻找能让自己开心的事情，她就练起了拳击。在两个小时的练习中，她将所有的沮丧和失意都借着击打释放出来，并且不止一次在结束训练时泪流满面地离开。</p>
+<h3 id="第二十四章-与硅谷科技公司的人才争夺战">第二十四章 与硅谷科技公司的人才争夺战</h3>
+<p>自互联网经济兴盛以来，在广大青年才俊心中，终于第一次出现了一个能与华尔街匹敌的行业。</p>
+<h3 id="第二十五章-占领华尔街运动带来的道德思考">第二十五章 “占领华尔街”运动带来的道德思考</h3>
+<p>自金融危机爆发以来，大型投资银行第一次成为全世界关注的焦点。虽然并不是每个人都因此自我怀疑，但有些人的良知在看到全球性抗议运动日益高涨后受到了激发，他们对金融业的疑虑也开始浮出水面。</p>
+<h3 id="第二十六章-华尔街正失去对顶级大学的影响力">第二十六章 华尔街正失去对顶级大学的影响力</h3>
+<p>虽然“占领华尔街”抗议活动会对金融业产生什么更大的影响还有待观察，但是微妙的转变也意味着年轻的华尔街正在变成一个完全不同的地方。</p>
+<h3 id="第二十七章-kappa-beta-phi精英会华尔街最神秘的兄弟会">第二十七章 Kappa Beta Phi精英会——华尔街最神秘的兄弟会</h3>
+<p>那天晚上，瑞吉酒店集中了太多的财富和权力。如果在瑞吉酒店的房顶上投下一枚炸弹，那么目前的整个全球金融可能都将不复存在 ！</p>
+<h3 id="第二十八章-道德与金钱之间天平砝码往哪边加">第二十八章 道德与金钱之间，天平砝码往哪边加</h3>
+<p>某种程度上，他想要实现专家级的平衡。他想做金融，因为华尔街光鲜、诱人；但他又想保持小镇民众的价值观念。</p>
+<h3 id="第二十九章-不要发飙赶快走">第二十九章 不要发飙，赶快走</h3>
+<p>真正的生活是异常艰辛的。我希望将它弄明白。很可能，了解生活就是过生活，尽可能把它当作过山车。迎接它，拥抱它，别去选最容易的道路。</p>
+<h3 id="第三十章-为什么要强制休假">第三十章 为什么要“强制休假”</h3>
+<p>“强制休假”制度，其实不是为了让那些疲惫不堪的雇员从繁重的工作中得到一个星期的解脱，而是为了找出那些不负责任或者从事不法活动的交易员。</p>
+<h3 id="第三十一章-华尔街商业模式的巨变">第三十一章 华尔街商业模式的巨变</h3>
+<p>这些都是优秀的孩子，供职于最好的银行。很久以来，他们都在追求高水平的成就，私募股权公司和对冲基金是他们职业生涯的下一步选择。但现在，情况不同了。</p>
+<h3 id="第三十二章-离开高盛到创业公司">第三十二章 离开高盛到创业公司</h3>
+<p>在这样的公司工作，可以与一群聪明、年轻、有创造力的人一起，做有意义的事情。尽管现在走，会让他损失半年的奖金，但这有什么大不了的呢？</p>
+<h3 id="第三十三章-金融人在艰苦工作中实现成长">第三十三章 金融人在艰苦工作中实现成长</h3>
+<p>他的故事清晰地体现了华尔街的工作给年轻人带来的好处，包括在社会与经济上的提升，与成功人士交往的机会，以及为不平庸的人赋予的逃离平庸生活的能力。但是他依旧不满足，因为他对金融行业的基本运营机制感到不适。</p>
+<h3 id="第三十四章-坚持下去不逃离">第三十四章 坚持下去，不逃离</h3>
+<p>除了金钱，华尔街的工作确实还有很多好处。其中最重要的一点是，金融世界是一把巨大的伞，伞下聚集了上千种不同的工作，分别提供不同的职能和工作环境。</p>
+<h3 id="第三十五章-磨砺助我做出创业的选择">第三十五章 磨砺助我做出创业的选择</h3>
+<p>我很清楚我辞职创业，生活将更加艰苦，但我正在做的是我想做的事。我很感谢那段经历，感谢从中学到的一切以及那段经历对我的考验与磨砺。</p>
+<h3 id="第三十六章-金融风暴后的华尔街">第三十六章 金融风暴后的华尔街</h3>
+<p>大学毕业生们不会再不加选择地登陆华尔街这片海岸，投资银行也不会再给漫无目的的常春藤毕业生提供两年的栖息地。这将是一个良性的转变。随着金融行业从一些顶尖学校走下神坛，许多企业一定会受益的。而这对我们所有人来说，都是好事。</p>
+<h3 id="尾声-未来金融业最吸引人的地方">尾声 未来，金融业最吸引人的地方</h3>
+<p>金融业的变化并没有停止……</p>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BA%8F-%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA%E7%88%86%E5%8F%91%E5%8D%8E%E5%B0%94%E8%A1%97%E6%8B%9B%E6%9D%A5%E4%BA%86%E6%95%B4%E4%B8%AA%E4%B8%96%E7%95%8C%E7%9A%84%E6%84%A4%E6%80%92">序 金融危机爆发，华尔街招来了整个世界的愤怒</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%8D%8E%E5%B0%94%E8%A1%97%E4%BA%BA%E4%B8%8D%E5%86%8D%E6%98%AF%E5%AE%87%E5%AE%99%E7%9A%84%E4%B8%BB%E4%BA%BA%E5%90%97">第一章 华尔街人不再是“宇宙的主人”吗</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BE%8E%E9%93%B6%E6%94%B6%E8%B4%AD%E7%BE%8E%E6%9E%97%E5%BD%B1%E5%93%8D%E5%88%B0%E4%BA%86%E9%87%91%E8%9E%8D%E4%BA%BA%E4%BB%80%E4%B9%88">第二章 美银收购美林，影响到了金融人什么</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%8D%8E%E5%B0%94%E8%A1%97%E7%9A%84%E6%8B%9B%E8%81%98%E6%9C%BA%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%BD%AC%E7%9A%84">第三章 华尔街的招聘机器是如何运转的</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%88%86%E6%89%8B%E6%98%AF%E5%8D%8E%E5%B0%94%E8%A1%97%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E5%BF%85%E9%80%89%E9%A1%B9%E5%90%97">第四章 分手是华尔街年轻人的必选项吗</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%90%8E%E5%8D%B1%E6%9C%BA%E6%97%B6%E4%BB%A3%E6%8A%95%E8%A1%8C%E4%BA%BA%E7%9A%84%E7%94%9F%E6%B4%BB">第五章 后危机时代投行人的生活</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%88%91%E4%BB%AC%E4%B8%8D%E6%98%AF%E6%9D%A5%E6%8B%AF%E6%95%91%E4%B8%96%E7%95%8C%E7%9A%84%E6%98%AF%E6%9D%A5%E8%B5%9A%E9%92%B1%E7%9A%84">第六章 我们不是来拯救世界的，是来赚钱的</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%8D%8E%E5%B0%94%E8%A1%97%E6%96%87%E5%8C%96%E7%9A%84%E6%B4%97%E7%A4%BC">第七章 华尔街文化的洗礼</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E5%8D%8E%E5%B0%94%E8%A1%97%E7%9A%84%E5%A5%B3%E4%BA%BA%E4%BB%AC">第八章 华尔街的女人们</a></li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E7%94%B5%E5%BD%B1%E5%8D%8E%E5%B0%94%E8%A1%97%E5%A4%A9%E5%A4%A9%E9%83%BD%E5%9C%A8%E4%B8%8A%E6%BC%94">第九章 电影《华尔街》天天都在上演</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%B9%B2%E5%8A%B2%E5%92%8C%E9%87%8E%E5%BF%83%E5%8F%AF%E4%BB%A5%E5%8F%98%E6%88%90%E8%B4%A2%E5%AF%8C">第十章 干劲和野心可以变成财富</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E5%8D%8E%E5%B0%94%E8%A1%97%E9%83%BD%E6%9C%89%E4%B8%AA%E7%96%AF%E5%B8%BD%E5%AD%90%E8%80%81%E6%9D%BF">第十一章 华尔街都有个“疯帽子”老板</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E8%B0%81%E8%83%BD%E5%BE%97%E5%88%B0%E7%A7%81%E5%8B%9F%E8%82%A1%E6%9D%83%E5%85%AC%E5%8F%B8offer">第十二章 谁能得到私募股权公司Offer</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E5%8D%8E%E5%B0%94%E8%A1%97%E7%94%B7%E4%BA%BA%E5%A8%B6%E4%BA%86%E6%97%B6%E5%B0%9A%E7%95%8C%E5%A5%B3%E4%BA%BA">第十三章 华尔街男人娶了时尚界女人</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-%E5%88%86%E6%9E%90%E5%B8%88-or-excel%E5%A5%B4">第十四章 分析师 or Excel奴</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0-%E8%A5%BF%E5%A4%A7%E8%A1%97200%E5%8F%B7%E5%B0%B1%E6%98%AF%E9%98%BF%E5%85%B9%E5%8D%A1%E7%8F%AD">第十五章 西大街200号，就是阿兹卡班</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0-%E8%80%83%E8%99%91%E5%81%A5%E5%BA%B7%E5%B9%B6%E4%B8%8D%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E9%80%89%E6%8B%A9">第十六章 考虑健康并不是最好的选择</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0-%E5%86%92%E9%99%A9%E5%8F%8A%E9%80%90%E5%88%A9%E7%9A%84%E5%8D%8E%E5%B0%94%E8%A1%97%E6%96%87%E5%8C%96%E6%9C%AA%E5%8F%98">第十七章 冒险及逐利的华尔街文化未变</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0-%E5%8F%AA%E6%9C%89%E5%9C%A8%E7%BA%BD%E7%BA%A6%E6%89%8D%E6%9C%89%E7%9A%84%E6%BF%80%E5%8A%A8">第十八章 只有在纽约才有的激动</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0-%E5%B9%B4%E7%BB%88%E5%A5%96%E5%AD%A3%E5%9C%A3%E8%AF%9E%E8%8A%82%E6%8A%91%E6%88%96%E5%AE%A1%E5%88%A4%E6%97%A5">第十九章 年终奖季，圣诞节抑或审判日</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0-%E9%87%91%E8%9E%8D%E4%B8%9A%E6%98%AF%E4%B8%80%E6%9D%A1%E4%B8%8D%E9%82%A3%E4%B9%88%E6%80%A7%E6%84%9F%E7%9A%84%E9%81%93%E5%84%BF">第二十章 金融业是一条不那么“性感”的道儿</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%80%E7%AB%A0-%E5%9D%9A%E4%BF%A1%E5%8D%8E%E5%B0%94%E8%A1%97%E5%B0%B1%E6%98%AF%E5%BD%92%E5%AE%BF%E7%9A%84%E9%87%91%E8%9E%8D%E6%9E%81%E5%AE%A2">第二十一章 坚信华尔街就是归宿的金融极客</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E7%AB%A0-%E6%98%AF%E5%90%A6%E8%A6%81%E7%A6%BB%E5%BC%80%E9%AB%98%E7%9B%9B%E5%A6%88%E5%A6%88%E6%B8%A9%E6%9A%96%E7%9A%84%E6%80%80%E6%8A%B1">第二十二章 是否要离开“高盛妈妈”温暖的怀抱</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E7%AB%A0-%E5%9C%A8%E8%BF%B7%E5%A4%B1%E4%B8%AD%E6%89%BE%E5%9B%9E%E8%87%AA%E5%B7%B1">第二十三章 在迷失中找回自己</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%AB%A0-%E4%B8%8E%E7%A1%85%E8%B0%B7%E7%A7%91%E6%8A%80%E5%85%AC%E5%8F%B8%E7%9A%84%E4%BA%BA%E6%89%8D%E4%BA%89%E5%A4%BA%E6%88%98">第二十四章 与硅谷科技公司的人才争夺战</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AB%A0-%E5%8D%A0%E9%A2%86%E5%8D%8E%E5%B0%94%E8%A1%97%E8%BF%90%E5%8A%A8%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%81%93%E5%BE%B7%E6%80%9D%E8%80%83">第二十五章 “占领华尔街”运动带来的道德思考</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E7%AB%A0-%E5%8D%8E%E5%B0%94%E8%A1%97%E6%AD%A3%E5%A4%B1%E5%8E%BB%E5%AF%B9%E9%A1%B6%E7%BA%A7%E5%A4%A7%E5%AD%A6%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8A%9B">第二十六章 华尔街正失去对顶级大学的影响力</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E7%AB%A0-kappa-beta-phi%E7%B2%BE%E8%8B%B1%E4%BC%9A%E5%8D%8E%E5%B0%94%E8%A1%97%E6%9C%80%E7%A5%9E%E7%A7%98%E7%9A%84%E5%85%84%E5%BC%9F%E4%BC%9A">第二十七章 Kappa Beta Phi精英会——华尔街最神秘的兄弟会</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AB%A0-%E9%81%93%E5%BE%B7%E4%B8%8E%E9%87%91%E9%92%B1%E4%B9%8B%E9%97%B4%E5%A4%A9%E5%B9%B3%E7%A0%9D%E7%A0%81%E5%BE%80%E5%93%AA%E8%BE%B9%E5%8A%A0">第二十八章 道德与金钱之间，天平砝码往哪边加</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B9%9D%E7%AB%A0-%E4%B8%8D%E8%A6%81%E5%8F%91%E9%A3%99%E8%B5%B6%E5%BF%AB%E8%B5%B0">第二十九章 不要发飙，赶快走</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E7%AB%A0-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%BC%BA%E5%88%B6%E4%BC%91%E5%81%87">第三十章 为什么要“强制休假”</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%80%E7%AB%A0-%E5%8D%8E%E5%B0%94%E8%A1%97%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%B7%A8%E5%8F%98">第三十一章 华尔街商业模式的巨变</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%BA%8C%E7%AB%A0-%E7%A6%BB%E5%BC%80%E9%AB%98%E7%9B%9B%E5%88%B0%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8">第三十二章 离开高盛到创业公司</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%89%E7%AB%A0-%E9%87%91%E8%9E%8D%E4%BA%BA%E5%9C%A8%E8%89%B0%E8%8B%A6%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%AE%9E%E7%8E%B0%E6%88%90%E9%95%BF">第三十三章 金融人在艰苦工作中实现成长</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E7%AB%A0-%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB%E4%B8%8D%E9%80%83%E7%A6%BB">第三十四章 坚持下去，不逃离</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%BA%94%E7%AB%A0-%E7%A3%A8%E7%A0%BA%E5%8A%A9%E6%88%91%E5%81%9A%E5%87%BA%E5%88%9B%E4%B8%9A%E7%9A%84%E9%80%89%E6%8B%A9">第三十五章 磨砺助我做出创业的选择</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E5%85%AD%E7%AB%A0-%E9%87%91%E8%9E%8D%E9%A3%8E%E6%9A%B4%E5%90%8E%E7%9A%84%E5%8D%8E%E5%B0%94%E8%A1%97">第三十六章 金融风暴后的华尔街</a></li>
+<li><a href="#%E5%B0%BE%E5%A3%B0-%E6%9C%AA%E6%9D%A5%E9%87%91%E8%9E%8D%E4%B8%9A%E6%9C%80%E5%90%B8%E5%BC%95%E4%BA%BA%E7%9A%84%E5%9C%B0%E6%96%B9">尾声 未来，金融业最吸引人的地方</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

@@ -6,16 +6,22 @@
 	<link rel="icon" href="../favicon.ico" />
 	<title>Courses</title>
 	<style>
-		table.gridtable th:nth-child(1) {
-			width: 40%;
+		table.gridtable th:nth-child(1),
+		table.gridtable td:nth-child(1) {
+			width: 60%;
 		}
 
-		table.gridtable th:nth-child(2) {
+		table.gridtable th:nth-child(2),
+		table.gridtable td:nth-child(2),
+		table.gridtable th:nth-child(3),
+		table.gridtable td:nth-child(3) {
 			width: 20%;
 		}
 
-		table.gridtable th:nth-child(3) {
-			width: 40%;
+		/*第2列、第3列用小号字体*/
+		table.gridtable td:nth-child(2),
+		table.gridtable td:nth-child(3) {
+			font-size: smaller;
 		}
 	</style>
 </head>
@@ -25,48 +31,48 @@
 	<div class="content">
 		<table align="center" border="0" width="100%" class="legend">
 			<tr align="center">
-				<td id="bk4">4.原作可买来收藏-红色</td>
-				<td id="bk3">3.原作值得反复读-蓝色</td>
+				<td id="bk4">4.对课程展开学习-红色</td>
+				<td id="bk3">3.课程应反复学习-蓝色</td>
 				<td id="bk2">2.笔记值得反复看-绿色</td>
-				<td id="bk1">1.读完没必要再读-棕色</td>
-				<td id="bk0">0.未读完不值得读-灰色</td>
+				<td id="bk1">1.看完没必要再看-棕色</td>
+				<td id="bk0">0.未看完不值得看-灰色</td>
 			</tr>
 		</table>
 
 		<table align="center" border="1" width="100%" class="gridtable">
 			<tr align="center">
-				<th>课程</th>
+				<th>本地 | 在线 | 笔记</th>
 				<th>教师</th>
-				<th>评价</th>
+				<th>其他</th>
 			</tr>
 
 			<tr>
-				<td><a href="../courses/001-Crashes-and-Crises"><img src="../icon/video.png"></a> <a href="https://lib.thegreatcourses.com/fintech-crypto-and-the-future-of-disaster.html"><img src="../icon/thegreatcourses.png"></a> <a href="course001-Crashes-and-Crises.html">Crashes and Crises: Lessons from a History of Financial Disasters</a></td>
+				<td><a href="../video/001-Crashes-and-Crises"><img src="../icon/play.png"></a> <a href="https://lib.thegreatcourses.com/fintech-crypto-and-the-future-of-disaster.html"><img src="../icon/thegreatcourses.png"></a> <a href="course001-Crashes-and-Crises.html">Crashes and Crises: Lessons from a History of Financial Disasters</a></td>
 				<td>Connel Fullenkamp</td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="../courses/005-The-Art-of-Public-Speaking"><img src="../icon/video.png"></a> <a href="https://lib.thegreatcourses.com/overcome-obstacles-demosthenes-of-athens.html"><img src="../icon/thegreatcourses.png"></a> <a href="course005-The-Art-of-Public-Speaking.html">The Art of Public Speaking</a></td>
+				<td><a href="../video/005-The-Art-of-Public-Speaking"><img src="../icon/play.png"></a> <a href="https://lib.thegreatcourses.com/overcome-obstacles-demosthenes-of-athens.html"><img src="../icon/thegreatcourses.png"></a> <a href="course005-The-Art-of-Public-Speaking.html">The Art of Public Speaking</a></td>
 				<td>John R. Hale</td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="../courses/006-The-Entrepreneurs-Toolkit"><img src="../icon/video.png"></a> <a href="https://lib.thegreatcourses.com/how-to-come-up-with-a-great-business-idea.html"><img src="../icon/thegreatcourses.png"></a> <a href="course006-The-Entrepreneurs-Toolkit.html">The Entrepreneur's Toolkit</a></td>
+				<td><a href="../video/006-The-Entrepreneurs-Toolkit"><img src="../icon/play.png"></a> <a href="https://lib.thegreatcourses.com/how-to-come-up-with-a-great-business-idea.html"><img src="../icon/thegreatcourses.png"></a> <a href="course006-The-Entrepreneurs-Toolkit.html">The Entrepreneur's Toolkit</a></td>
 				<td>Michael G. Goldsby</td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><img src="../icon/online.png"> <a href="https://www.coursera.org/lecture/sciwrite/1-1-introduction-principles-of-effective-writing-wSYLq"><img src="../icon/coursera.png"></a> <a href="course003-Writing-in-the-Sciences.html">Writing in the Sciences</a></td>
+				<td><img src="../icon/null.png"> <a href="https://www.coursera.org/lecture/sciwrite/1-1-introduction-principles-of-effective-writing-wSYLq"><img src="../icon/coursera.png"></a> <a href="course003-Writing-in-the-Sciences.html">Writing in the Sciences</a></td>
 				<td>Stanford University</td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="../courses/002-企业财务报表分析"><img src="../icon/video.png"></a> <img src="../icon/offline.png"> <a href="course002-企业财务报表分析.html">企业财务报表分析</a></td>
+				<td><a href="../video/002-企业财务报表分析"><img src="../icon/play.png"></a> <img src="../icon/null.png"> <a href="course002-企业财务报表分析.html">企业财务报表分析</a></td>
 				<td>张新民</td>
 				<td>对外经济贸易大学</td>
 			</tr>
 			<tr>
-				<td><a href="../courses/004-财务报表分析"><img src="../icon/video.png"></a> <a href="https://www.youtube.com/watch?v=uZtko4g0kKg&list=PLpNl_6MXVvR1OUXLvVPSDr2wzA-VKZ73t&index=1"><img src="../icon/youtube.png"></a> <a href="course004-财务报表分析.html">财务报表分析</a></td>
+				<td><a href="../video/004-财务报表分析"><img src="../icon/play.png"></a> <a href="https://www.youtube.com/watch?v=uZtko4g0kKg&list=PLpNl_6MXVvR1OUXLvVPSDr2wzA-VKZ73t&index=1"><img src="../icon/youtube.png"></a> <a href="course004-财务报表分析.html">财务报表分析</a></td>
 				<td>张新民</td>
 				<td>64课</td>
 			</tr>
@@ -94,7 +100,7 @@
 	</div>
 
 	<!--
-    <a href="../courses/"><img src="../icon/video.png"></a> 
+    <a href="../video/"><img src="../icon/play.png"></a> 
 	<a href=""><img src="../icon/"></a> 
     <script src="https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@latest/index.min.js" id="lovefluffy-github-io-954u56xwu"></script>
     -->

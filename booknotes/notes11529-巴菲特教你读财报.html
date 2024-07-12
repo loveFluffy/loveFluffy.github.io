@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5df4;&#x83f2;&#x7279;&#x6559;&#x4f60;&#x8bfb;&#x8d22;&#x62a5;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5df4;&#x83f2;&#x7279;&#x6559;&#x4f60;&#x8bfb;&#x8d22;&#x62a5;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
         
         <style>
@@ -29,6 +31,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -89,8 +187,14 @@ body {
 	font-size: 18pt;
 	color: #333;
 	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
+
+	/*
+	同时声明中文字体的字体名称（英文）和显示名称（中文）
+	主体使用无衬线字体，更清晰
+	*/
+	font-family: Helvetica, Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
 }
 
 h1,
@@ -119,7 +223,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -129,13 +233,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -162,6 +266,8 @@ p {
 	margin: 0 0 1em;
 	padding: 0;
 	line-height: 1.8;
+	/*段落使用衬线字体，更好看*/
+	font-family: Georgia, Arial, "Microsoft YaHei", "微软雅黑", serif;
 }
 
 a:link {
@@ -239,12 +345,12 @@ figure img {
 	margin-bottom: 0px;
 }
 
-/* hr 用于创建一条水平线*/
+/* hr 用于创建一条水平线 */
 hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
+	border: 0;
+	padding-top: 1px;
+	margin-bottom: 0.8em;
+	background: linear-gradient(to right, transparent, #d0d0d5, transparent);
 }
 
 ol p,
@@ -332,10 +438,33 @@ a:target {
 	outline: 0;
 }
 
+/*笔记中的普通表格*/
 table {
-	align-self: center;
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
 }
 
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
 img {
 	align-self: center;
 	max-width: 1000px;
@@ -345,6 +474,20 @@ img {
 /* 选中后背景浅粉色 */
 ::selection {
 	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
 }
 
 
@@ -359,8 +502,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -385,14 +529,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -410,25 +558,52 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
 	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
@@ -436,30 +611,41 @@ iPad mini 5：2048*1536
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
 		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
 
 /*
@@ -468,10 +654,16 @@ div.toc ul>li>ul>li>ul>li,
 div.toc ul>li>ul>li>ul>li>ul>li {
 */
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="巴菲特教你读财报">巴菲特教你读财报</h1>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="巴菲特教你读财报">巴菲特教你读财报</h1>
 <h2 id="美玛丽巴菲特marry-buffett-美戴维克拉克david-clark-著李凤-译">[美]玛丽·巴菲特（Marry Buffett） [美]戴维·克拉克（David Clark） 著|李凤 译</h2>
+<div class="mycomment">
+<p>每章内容都很简短，分别介绍财报的各条数据以及每条应该注意的方面。</p>
+<p>整本书都围绕着“巴菲特发现有某种持续性竞争优势企业”这一目标进行的，对财报的每条数据逐一解释，分别介绍哪些数据对这一目标有很强的参考价值。</p>
+<p>可以将内容整理进自己的checking list里，有很多可以参考的非常有条理的审查标准。不足200页的一本书，内容很紧凑，适合反复拿出来参考。</p>
+</div>
 <h3 id="导读">导读</h3>
 <h4 id="想知道股票值多少钱首先要知道公司值多少钱">想知道股票值多少钱：首先要知道公司值多少钱</h4>
 <p>大家都知道巴菲特投资股票的策略是价值投资，什么是价值投资？</p>
@@ -1007,8 +1199,87 @@ div.toc ul>li>ul>li>ul>li>ul>li {
 <h3 id="附录不具有持续性竞争优势公司的资产负债例表">附录　不具有持续性竞争优势公司的资产负债例表</h3>
 <h3 id="附录具有持续性竞争优势公司的损益例表">附录　具有持续性竞争优势公司的损益例表</h3>
 <h3 id="附录不具有持续性竞争优势公司的损益例表">附录　不具有持续性竞争优势公司的损益例表</h3>
-
-        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%AF%BC%E8%AF%BB">导读</a>
+<ul>
+<li><a href="#%E6%83%B3%E7%9F%A5%E9%81%93%E8%82%A1%E7%A5%A8%E5%80%BC%E5%A4%9A%E5%B0%91%E9%92%B1%E9%A6%96%E5%85%88%E8%A6%81%E7%9F%A5%E9%81%93%E5%85%AC%E5%8F%B8%E5%80%BC%E5%A4%9A%E5%B0%91%E9%92%B1">想知道股票值多少钱：首先要知道公司值多少钱</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%AE%80%E5%8D%95%E6%9C%89%E6%95%88%E7%9A%84%E4%BC%B0%E5%80%BC%E6%96%B9%E6%B3%95%E5%83%8F%E4%BC%B0%E7%AE%97%E5%80%BA%E5%88%B8%E4%B8%80%E6%A0%B7%E4%BC%B0%E7%AE%97%E8%82%A1%E7%A5%A8%E4%BB%B7%E5%80%BC">巴菲特简单有效的估值方法：像估算债券一样估算股票价值</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E9%80%89%E8%82%A1%E7%A7%98%E8%AF%80%E5%AF%BB%E6%89%BE%E5%88%A9%E6%81%AF%E6%8C%81%E7%BB%AD%E5%A2%9E%E9%95%BF%E7%9A%84%E8%82%A1%E6%9D%83%E5%80%BA%E5%88%B8">巴菲特的选股秘诀：寻找利息持续增长的“股权债券”</a></li>
+<li><a href="#%E5%88%86%E6%9E%90%E8%82%A1%E7%A5%A8%E7%9A%84%E5%89%8D%E6%8F%90%E6%98%AF%E5%88%86%E6%9E%90%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8">分析股票的前提是分析财务报表</a></li>
+<li><a href="#%E5%88%86%E6%9E%90%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%85%B6%E5%AE%9E%E5%BE%88%E7%AE%80%E5%8D%95">分析财务报表其实很简单</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BA%8F%E8%A8%80">序言</a></li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0%E8%AE%A9%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%88%90%E4%B8%BA%E4%B8%96%E7%95%8C%E9%A6%96%E5%AF%8C%E7%9A%84%E4%B8%A4%E5%A4%A7%E5%8F%91%E7%8E%B0">第1章　让巴菲特成为世界首富的两大发现</a></li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0%E8%AE%A9%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%88%90%E4%B8%BA%E8%B6%85%E7%BA%A7%E5%AF%8C%E8%B1%AA%E7%9A%84%E4%BC%81%E4%B8%9A%E7%B1%BB%E5%9E%8B">第2章　让巴菲特成为超级富豪的企业类型</a></li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E6%B7%98%E9%87%91%E4%B9%8B%E5%9C%B0">第3章　巴菲特的淘金之地</a></li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0%E6%8C%81%E7%BB%AD%E6%80%A7%E6%98%AF%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%89%93%E5%BC%80%E9%87%91%E5%BA%93%E7%9A%84%E9%92%A5%E5%8C%99">第4章　“持续性”是巴菲特打开金库的钥匙</a></li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E6%A6%82%E8%BF%B0%E6%B7%98%E9%87%91%E4%B9%8B%E5%9C%B0">第5章　财务报表概述：淘金之地</a></li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%9C%A8%E5%93%AA%E9%87%8C%E5%8F%91%E7%8E%B0%E8%B4%A2%E5%8A%A1%E4%BF%A1%E6%81%AF">第6章　巴菲特在哪里发现财务信息</a></li>
+<li><a href="#%E5%AF%BC%E8%AF%BB-1">导读</a></li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0%E5%B7%B4%E8%8F%B2%E7%89%B9%E4%BB%8E%E5%93%AA%E9%87%8C%E5%BC%80%E5%A7%8B%E7%9D%80%E6%89%8B%E6%8D%9F%E7%9B%8A%E8%A1%A8">第7章　巴菲特从哪里开始着手：损益表</a></li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0%E6%94%B6%E5%85%A5%E8%B5%84%E9%87%91%E6%9D%A5%E6%BA%90%E7%9A%84%E6%B8%A0%E9%81%93">第8章　收入——资金来源的渠道</a></li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0%E9%94%80%E5%94%AE%E6%88%90%E6%9C%AC%E5%AF%B9%E4%BA%8E%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%9D%A5%E8%AF%B4%E8%B6%8A%E5%B0%91%E8%B6%8A%E5%A5%BD">第9章　销售成本——对于巴菲特来说越少越好</a></li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0%E6%AF%9B%E5%88%A9%E6%B6%A6%E6%AF%9B%E5%88%A9%E7%8E%87%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%AF%BB%E6%B1%82%E9%95%BF%E6%9C%9F%E8%B5%A2%E5%88%A9%E7%9A%84%E5%85%B3%E9%94%AE%E6%8C%87%E6%A0%87">第10章　毛利润／毛利率：巴菲特寻求长期赢利的关键指标</a></li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0%E8%90%A5%E4%B8%9A%E8%B4%B9%E7%94%A8%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E5%85%B3%E6%B3%A8%E7%82%B9">第11章　营业费用：巴菲特的关注点</a></li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0%E9%94%80%E5%94%AE%E8%B4%B9%E7%94%A8%E5%8F%8A%E4%B8%80%E8%88%AC%E7%AE%A1%E7%90%86%E8%B4%B9%E7%94%A8">第12章　销售费用及一般管理费用</a></li>
+<li><a href="#%E7%AC%AC13%E7%AB%A0%E7%A0%94%E7%A9%B6%E5%92%8C%E5%BC%80%E5%8F%91%E8%B4%B9%E7%94%A8%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%A6%81%E9%81%BF%E8%80%8C%E8%BF%9C%E4%B9%8B">第13章　研究和开发费用：为什么巴菲特要避而远之</a></li>
+<li><a href="#%E7%AC%AC14%E7%AB%A0%E6%8A%98%E6%97%A7%E8%B4%B9%E5%B7%B4%E8%8F%B2%E7%89%B9%E4%B8%8D%E8%83%BD%E5%BF%BD%E8%A7%86%E7%9A%84%E6%88%90%E6%9C%AC">第14章　折旧费：巴菲特不能忽视的成本</a></li>
+<li><a href="#%E7%AC%AC15%E7%AB%A0%E5%88%A9%E6%81%AF%E6%94%AF%E5%87%BA%E5%B7%B4%E8%8F%B2%E7%89%B9%E4%B8%8D%E6%83%B3%E7%9C%8B%E5%88%B0">第15章　利息支出：巴菲特不想看到</a></li>
+<li><a href="#%E7%AC%AC16%E7%AB%A0%E5%87%BA%E5%94%AE%E8%B5%84%E4%BA%A7%E6%94%B6%E7%9B%8A%E6%8D%9F%E5%A4%B1%E5%8F%8A%E5%85%B6%E4%BB%96">第16章　出售资产收益（损失）及其他</a></li>
+<li><a href="#%E7%AC%AC17%E7%AB%A0%E7%A8%8E%E5%89%8D%E5%88%A9%E6%B6%A6%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%83%AF%E7%94%A8%E7%9A%84%E6%8C%87%E6%A0%87">第17章　税前利润：巴菲特惯用的指标</a></li>
+<li><a href="#%E7%AC%AC18%E7%AB%A0%E5%BA%94%E7%BC%B4%E6%89%80%E5%BE%97%E7%A8%8E%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%80%8E%E4%B9%88%E7%9F%A5%E9%81%93%E8%B0%81%E5%9C%A8%E8%AF%B4%E7%9C%9F%E8%AF%9D">第18章　应缴所得税：巴菲特怎么知道谁在说真话</a></li>
+<li><a href="#%E7%AC%AC19%E7%AB%A0%E5%87%80%E5%88%A9%E6%B6%A6%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E8%BF%BD%E6%B1%82">第19章　净利润：巴菲特的追求</a></li>
+<li><a href="#%E7%AC%AC20%E7%AB%A0%E6%AF%8F%E8%82%A1%E6%94%B6%E7%9B%8A%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%80%8E%E4%B9%88%E8%BE%A8%E5%88%AB%E6%88%90%E5%8A%9F%E8%80%85%E5%92%8C%E5%A4%B1%E8%B4%A5%E8%80%85">第20章　每股收益：巴菲特怎么辨别成功者和失败者</a></li>
+<li><a href="#%E5%AF%BC%E8%AF%BB-2">导读</a></li>
+<li><a href="#%E7%AC%AC21%E7%AB%A0%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8%E6%A6%82%E8%BF%B0">第21章　资产负债表概述</a></li>
+<li><a href="#%E7%AC%AC22%E7%AB%A0%E8%B5%84%E4%BA%A7">第22章　资产</a></li>
+<li><a href="#%E7%AC%AC23%E7%AB%A0%E6%B5%81%E5%8A%A8%E8%B5%84%E4%BA%A7%E5%91%A8%E8%BD%AC%E9%92%B1%E6%98%AF%E5%A6%82%E4%BD%95%E8%B5%9A%E5%8F%96%E7%9A%84">第23章　流动资产周转：钱是如何赚取的</a></li>
+<li><a href="#%E7%AC%AC24%E7%AB%A0%E7%8E%B0%E9%87%91%E5%92%8C%E7%8E%B0%E9%87%91%E7%AD%89%E4%BB%B7%E7%89%A9%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E5%9B%B0%E6%83%91">第24章　现金和现金等价物：巴菲特的困惑</a></li>
+<li><a href="#%E7%AC%AC25%E7%AB%A0%E5%AD%98%E8%B4%A7%E5%85%AC%E5%8F%B8%E9%9C%80%E9%87%87%E8%B4%AD%E7%9A%84%E5%8E%9F%E6%96%99%E5%92%8C%E5%85%AC%E5%8F%B8%E9%9C%80%E5%87%BA%E5%94%AE%E7%9A%84%E4%BA%A7%E5%93%81">第25章　存货：公司需采购的原料和公司需出售的产品</a></li>
+<li><a href="#%E7%AC%AC26%E7%AB%A0%E5%BA%94%E6%94%B6%E8%B4%A6%E6%AC%BE%E5%87%80%E5%80%BC%E5%88%AB%E4%BA%BA%E6%AC%A0%E5%85%AC%E5%8F%B8%E7%9A%84%E9%92%B1">第26章　应收账款净值：别人欠公司的钱</a></li>
+<li><a href="#%E7%AC%AC27%E7%AB%A0%E9%A2%84%E4%BB%98%E8%B4%A6%E6%AC%BE%E5%92%8C%E5%85%B6%E4%BB%96%E6%B5%81%E5%8A%A8%E8%B5%84%E4%BA%A7">第27章　预付账款和其他流动资产</a></li>
+<li><a href="#%E7%AC%AC28%E7%AB%A0%E6%B5%81%E5%8A%A8%E8%B5%84%E4%BA%A7%E5%90%88%E8%AE%A1%E5%92%8C%E6%B5%81%E5%8A%A8%E6%AF%94%E7%8E%87">第28章　流动资产合计和流动比率</a></li>
+<li><a href="#%E7%AC%AC29%E7%AB%A0%E6%88%BF%E4%BA%A7%E5%8E%82%E6%88%BF%E5%92%8C%E6%9C%BA%E5%99%A8%E8%AE%BE%E5%A4%87%E5%AF%B9%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%9D%A5%E8%AF%B4%E8%B6%8A%E5%B0%91%E8%B6%8A%E5%A5%BD">第29章　房产、厂房和机器设备：对巴菲特来说越少越好</a></li>
+<li><a href="#%E7%AC%AC30%E7%AB%A0%E5%95%86%E8%AA%89">第30章　商誉</a></li>
+<li><a href="#%E7%AC%AC31%E7%AB%A0%E6%97%A0%E5%BD%A2%E8%B5%84%E4%BA%A7%E8%A1%A1%E9%87%8F%E4%B8%8D%E5%8F%AF%E6%B5%8B%E9%87%8F%E7%9A%84%E8%B5%84%E4%BA%A7">第31章　无形资产：衡量不可测量的资产</a></li>
+<li><a href="#%E7%AC%AC32%E7%AB%A0%E9%95%BF%E6%9C%9F%E6%8A%95%E8%B5%84%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%88%90%E5%8A%9F%E7%9A%84%E7%A7%98%E5%AF%86%E4%B9%8B%E4%B8%80">第32章　长期投资：巴菲特成功的秘密之一</a></li>
+<li><a href="#%E7%AC%AC33%E7%AB%A0%E5%85%B6%E4%BB%96%E9%95%BF%E6%9C%9F%E8%B5%84%E4%BA%A7">第33章　其他长期资产</a></li>
+<li><a href="#%E7%AC%AC34%E7%AB%A0%E6%80%BB%E8%B5%84%E4%BA%A7%E5%92%8C%E6%80%BB%E8%B5%84%E4%BA%A7%E5%9B%9E%E6%8A%A5">第34章　总资产和总资产回报</a></li>
+<li><a href="#%E7%AC%AC35%E7%AB%A0%E6%B5%81%E5%8A%A8%E8%B4%9F%E5%80%BA">第35章　流动负债</a></li>
+<li><a href="#%E7%AC%AC36%E7%AB%A0%E5%BA%94%E4%BB%98%E8%B4%A6%E6%AC%BE%E9%A2%84%E6%8F%90%E8%B4%B9%E7%94%A8%E5%92%8C%E5%85%B6%E4%BB%96%E6%B5%81%E5%8A%A8%E8%B4%9F%E5%80%BA">第36章　应付账款、预提费用和其他流动负债</a></li>
+<li><a href="#%E7%AC%AC37%E7%AB%A0%E7%9F%AD%E6%9C%9F%E8%B4%B7%E6%AC%BE%E5%AE%83%E5%A6%82%E4%BD%95%E6%91%A7%E6%AF%81%E4%B8%80%E5%AE%B6%E9%87%91%E8%9E%8D%E6%9C%BA%E6%9E%84">第37章　短期贷款：它如何摧毁一家金融机构</a></li>
+<li><a href="#%E7%AC%AC38%E7%AB%A0%E4%B8%80%E5%B9%B4%E5%86%85%E5%88%B0%E6%9C%9F%E7%9A%84%E9%95%BF%E6%9C%9F%E8%B4%B7%E6%AC%BE%E5%8F%8A%E5%85%B6%E5%8F%AF%E8%83%BD%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98">第38章　一年内到期的长期贷款及其可能带来的问题</a></li>
+<li><a href="#%E7%AC%AC39%E7%AB%A0%E8%B4%9F%E5%80%BA%E5%90%88%E8%AE%A1%E5%92%8C%E6%B5%81%E5%8A%A8%E6%AF%94%E7%8E%87">第39章　负债合计和流动比率</a></li>
+<li><a href="#%E7%AC%AC40%E7%AB%A0%E9%95%BF%E6%9C%9F%E8%B4%B7%E6%AC%BE%E4%BC%98%E7%A7%80%E5%85%AC%E5%8F%B8%E5%BE%88%E5%B0%91%E6%9C%89%E7%9A%84%E4%B8%9C%E8%A5%BF">第40章　长期贷款：优秀公司很少有的东西</a></li>
+<li><a href="#%E7%AC%AC41%E7%AB%A0%E9%80%92%E5%BB%B6%E6%89%80%E5%BE%97%E7%A8%8E%E5%B0%91%E6%95%B0%E8%82%A1%E4%B8%9C%E6%9D%83%E7%9B%8A%E5%92%8C%E5%85%B6%E4%BB%96%E8%B4%9F%E5%80%BA">第41章　递延所得税、少数股东权益和其他负债</a></li>
+<li><a href="#%E7%AC%AC42%E7%AB%A0%E8%B4%9F%E5%80%BA%E5%90%88%E8%AE%A1%E5%92%8C%E5%80%BA%E5%8A%A1%E8%82%A1%E6%9D%83%E6%AF%94%E7%8E%87">第42章　负债合计和债务股权比率</a></li>
+<li><a href="#%E7%AC%AC43%E7%AB%A0%E8%82%A1%E4%B8%9C%E6%9D%83%E7%9B%8A%E8%B4%A6%E9%9D%A2%E4%BB%B7%E5%80%BC">第43章　股东权益／账面价值</a></li>
+<li><a href="#%E7%AC%AC44%E7%AB%A0%E4%BC%98%E5%85%88%E8%82%A1%E6%99%AE%E9%80%9A%E8%82%A1%E5%92%8C%E8%B5%84%E6%9C%AC%E5%85%AC%E7%A7%AF">第44章　优先股、普通股和资本公积</a></li>
+<li><a href="#%E7%AC%AC45%E7%AB%A0%E7%95%99%E5%AD%98%E6%94%B6%E7%9B%8A%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%8F%98%E5%BE%97%E8%B6%85%E7%BA%A7%E5%AF%8C%E6%9C%89%E7%9A%84%E7%A7%98%E5%AF%86">第45章　留存收益：巴菲特变得超级富有的秘密</a></li>
+<li><a href="#%E7%AC%AC46%E7%AB%A0%E5%BA%93%E5%AD%98%E8%82%A1%E7%A5%A8%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%96%9C%E6%AC%A2%E5%9C%A8%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8%E4%B8%8A%E7%9C%8B%E5%88%B0%E7%9A%84">第46章　库存股票：巴菲特喜欢在资产负债表上看到的</a></li>
+<li><a href="#%E7%AC%AC47%E7%AB%A0%E8%82%A1%E4%B8%9C%E6%9D%83%E7%9B%8A%E5%9B%9E%E6%8A%A5%E7%8E%87%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86">第47章　股东权益回报率：第一部分</a></li>
+<li><a href="#%E7%AC%AC48%E7%AB%A0%E8%82%A1%E4%B8%9C%E6%9D%83%E7%9B%8A%E5%9B%9E%E6%8A%A5%E7%8E%87%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86">第48章　股东权益回报率：第二部分</a></li>
+<li><a href="#%E7%AC%AC49%E7%AB%A0%E6%9D%A0%E6%9D%86%E9%97%AE%E9%A2%98%E5%92%8C%E5%8F%AF%E8%83%BD%E7%9A%84%E9%AA%97%E5%B1%80">第49章　杠杆问题和可能的骗局</a></li>
+<li><a href="#%E5%AF%BC%E8%AF%BB-3">导读</a></li>
+<li><a href="#%E7%AC%AC50%E7%AB%A0%E7%8E%B0%E9%87%91%E6%B5%81%E9%87%8F%E8%A1%A8%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%9F%A5%E7%9C%8B%E7%8E%B0%E9%87%91%E4%B9%8B%E5%A4%84">第50章　现金流量表：巴菲特查看现金之处</a></li>
+<li><a href="#%E7%AC%AC51%E7%AB%A0%E8%B5%84%E6%9C%AC%E5%BC%80%E6%94%AF%E8%87%B4%E5%AF%8C%E7%A7%98%E8%AF%80%E4%B9%8B%E4%B8%80%E5%B0%B1%E6%98%AF%E5%87%8F%E5%B0%91%E5%AE%83">第51章　资本开支：致富秘诀之一就是减少它</a></li>
+<li><a href="#%E7%AC%AC52%E7%AB%A0%E8%82%A1%E7%A5%A8%E5%9B%9E%E8%B4%AD%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%A2%9E%E5%8A%A0%E8%82%A1%E4%B8%9C%E8%B4%A2%E5%AF%8C%E7%9A%84%E5%85%8D%E7%A8%8E%E9%80%94%E5%BE%84">第52章　股票回购：巴菲特增加股东财富的免税途径</a></li>
+<li><a href="#%E5%AF%BC%E8%AF%BB-4">导读</a></li>
+<li><a href="#%E7%AC%AC53%E7%AB%A0%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E8%82%A1%E6%9D%83%E5%80%BA%E5%88%B8%E5%88%9B%E6%84%8F%E5%A6%82%E4%BD%95%E4%BD%BF%E4%BB%96%E8%87%B4%E5%AF%8C">第53章　巴菲特的股权债券创意如何使他致富</a></li>
+<li><a href="#%E7%AC%AC54%E7%AB%A0%E6%8C%81%E7%BB%AD%E6%80%A7%E7%AB%9E%E4%BA%89%E4%BC%98%E5%8A%BF%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%8C%81%E7%BB%AD%E5%A2%9E%E9%95%BF%E5%9B%9E%E6%8A%A5">第54章　持续性竞争优势带来的持续增长回报</a></li>
+<li><a href="#%E7%AC%AC55%E7%AB%A0%E8%A1%A1%E9%87%8F%E5%85%B7%E6%9C%89%E6%8C%81%E7%BB%AD%E6%80%A7%E7%AB%9E%E4%BA%89%E4%BC%98%E5%8A%BF%E5%85%AC%E5%8F%B8%E4%BB%B7%E5%80%BC%E7%9A%84%E5%85%B6%E4%BB%96%E9%80%94%E5%BE%84">第55章　衡量具有持续性竞争优势公司价值的其他途径</a></li>
+<li><a href="#%E7%AC%AC56%E7%AB%A0%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%A6%82%E4%BD%95%E7%A1%AE%E5%AE%9A%E8%B4%AD%E4%B9%B0%E4%B8%80%E5%AE%B6%E7%90%86%E6%83%B3%E4%BC%81%E4%B8%9A%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA">第56章　巴菲特如何确定购买一家理想企业的最佳时机</a></li>
+<li><a href="#%E7%AC%AC57%E7%AB%A0%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%A6%82%E4%BD%95%E7%A1%AE%E5%AE%9A%E5%8D%96%E5%87%BA%E6%97%B6%E6%9C%BA">第57章　巴菲特如何确定卖出时机</a></li>
+<li><a href="#%E9%99%84%E5%BD%95%E5%85%B7%E6%9C%89%E6%8C%81%E7%BB%AD%E6%80%A7%E7%AB%9E%E4%BA%89%E4%BC%98%E5%8A%BF%E5%85%AC%E5%8F%B8%E7%9A%84%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E4%BE%8B%E8%A1%A8">附录　具有持续性竞争优势公司的资产负债例表</a></li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%B8%8D%E5%85%B7%E6%9C%89%E6%8C%81%E7%BB%AD%E6%80%A7%E7%AB%9E%E4%BA%89%E4%BC%98%E5%8A%BF%E5%85%AC%E5%8F%B8%E7%9A%84%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E4%BE%8B%E8%A1%A8">附录　不具有持续性竞争优势公司的资产负债例表</a></li>
+<li><a href="#%E9%99%84%E5%BD%95%E5%85%B7%E6%9C%89%E6%8C%81%E7%BB%AD%E6%80%A7%E7%AB%9E%E4%BA%89%E4%BC%98%E5%8A%BF%E5%85%AC%E5%8F%B8%E7%9A%84%E6%8D%9F%E7%9B%8A%E4%BE%8B%E8%A1%A8">附录　具有持续性竞争优势公司的损益例表</a></li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%B8%8D%E5%85%B7%E6%9C%89%E6%8C%81%E7%BB%AD%E6%80%A7%E7%AB%9E%E4%BA%89%E4%BC%98%E5%8A%BF%E5%85%AC%E5%8F%B8%E7%9A%84%E6%8D%9F%E7%9B%8A%E4%BE%8B%E8%A1%A8">附录　不具有持续性竞争优势公司的损益例表</a></li>
+</ul>
+</div>
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

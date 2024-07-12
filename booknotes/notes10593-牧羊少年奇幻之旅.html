@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x7267;&#x7f8a;&#x5c11;&#x5e74;&#x5947;&#x5e7b;&#x4e4b;&#x65c5;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x7267;&#x7f8a;&#x5c11;&#x5e74;&#x5947;&#x5e7b;&#x4e4b;&#x65c5;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,245 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="牧羊少年奇幻之旅">牧羊少年奇幻之旅</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="牧羊少年奇幻之旅">牧羊少年奇幻之旅</h1>
+<h2 id="巴西保罗柯艾略paulo-coelho-著丁文林-译">[巴西]保罗·柯艾略（Paulo Coelho） 著|丁文林 译</h2>
+<div class="mycomment">
+<p>讲一个牧羊男孩为了一个梦，卖掉羊群一路曲折去埃及金字塔寻宝藏的故事，最后才发觉原来宝藏就在自己放养时住过的一个破庙里。</p>
+<p>不太能看懂其中的隐喻是什么，而且里面涉及“炼金士”、“天命”之类的，有点神神叨叨的。但是通篇看下来，有一个反复出现的说法“万物皆为一物。当你想要某种东西的时候，整个宇宙会合力助你实现愿望。”令我印象十分深刻。类似的其他说法和道理也还有几处，还是蛮有启发性的。</p>
+<p>可以偶尔再翻翻划出的笔记部分。</p>
+</div>
+<h3 id="自序">自序</h3>
+<p>我耗费了十一年光阴钻研炼金术。</p>
+<p>“有三类炼金术士。”我师父说道，“有的说话空洞，是因为他们不了解自己所说的事情；有的是因为他们了解自己所说的事情，还知道炼金术的语言针对心灵，而不是针对理智。”</p>
+<p>“那么，第三类呢？”我问道。</p>
+<p>“他们从未听说过炼金术，却在生活中发现了‘点金石’。”</p>
+<p>《牧羊少年奇幻之旅》是一部象征性的作品。遍览其章，除去转述我所学到的一切，我还试图向海明威、布莱克、博尔赫斯（他曾将波斯历史运用到短篇小说中）、马尔巴•塔罕等伟大的作家们致敬，他们成功地理解了“宇宙语言”。</p>
+<h3 id="上部">上部</h3>
+<p>不管是牧羊人、海员，还是推销员，总会有一个地方令他们魂牵梦萦，那里会有一个人，让他们忘记自由自在周游世界的快乐。</p>
+<p>酷热会一直持续到入夜。而在酷热降临之前，他不得不一直披着外衣。然而，每当他想抱怨外衣沉重时，总会想起多亏这件衣服，才不会在清晨感到寒冷。</p>
+<p>“这个梦表明，你应该前往埃及金字塔。我从未听说过金字塔，不过，既然有个小孩让你见到了它，那金字塔就一定存在。你将在那里找到宝藏，变成富翁。”</p>
+<p>男孩感到有点意外，然后又很气愤。要是为这样一个解释，他根本没必要来找这老妇人。好歹最后他想起来，自己并未付任何费用。</p>
+<p>“我没必要浪费时间来听这样的解释。”他说。</p>
+<p>“所以我先前就对你说过，你的梦非常难解。简单的事情往往最异乎寻常，只有智者才能看透。我不是智者，所以必须有其他的能耐，比如看手相。”</p>
+<p>“那么，我怎样才能到埃及呢？”</p>
+<p>“我只管解梦，不会把梦变成现实。因此，我只能依靠女儿们养活。”</p>
+<p>“如果我到不了埃及呢？”</p>
+<p>“那我就拿不到酬金了。这是常事。”</p>
+<p>之后，老妇人没再说什么。她让男孩离开，因为她在他身上花费的时间已经够多了。</p>
+<p>圣地亚哥失望地走了，他决定永远不再相信梦。想起还有几件事需要办，他先去商店买了些吃的，又用手上的书换了一本更厚的书，然后坐在公园里一条长凳上品尝刚买来的新酿葡萄酒。是个大热天，葡萄酒使他的身体凉爽了些，其中的奥妙令人费解。羊群留在了城门外，关在他新结识的一个朋友家的羊圈里。在那一带，他认识很多人，这正是他喜欢云游四方的原因，因为总能结交新朋友，而且不必天天跟他们低头不见抬头见。当总是面对同样的面孔，像在神学院里那样，就会渐渐让那些人成为生活的一部分。而由于他们是你生活的一部分，当然就想改变你的生活。如果你不像他们所期望的那样，他们就会不高兴。因为，对于该怎样生活，所有人都有固定的观念。但是他们对于自己该怎样生活却一头雾水，就像那个给人解梦、却不会把梦变成现实的老妇人。</p>
+<p>男孩想，倘若有一天我写书，就只写一个人物，好让读者不必费心去记人名。</p>
+<p>“什么是世上最大的谎言？”男孩吃惊地问道。</p>
+<p>“在人生的某个时候，我们失去了对自己生活的掌控，命运主宰了我们的人生。这就是世上最大的谎言。”</p>
+<p>“天命就是你一直期望去做的事情。人一旦步入青年时期，就知道什么是自己的天命了。在人生的这个阶段，一切都那么明朗，没有做不到的事情。人们敢于梦想，期待完成他们一生中喜欢做的一切事情。但是，随着时光的流逝，一股神秘的力量开始企图证明，根本不可能实现天命。”</p>
+<p>在这个星球上，存在一个伟大的真理：不论你是谁，不论你做什么，当你渴望得到某种东西时，最终一定能够得到，因为这愿望来自宇宙的灵魂。那就是你在世间的使命。”</p>
+<p>万物皆为一物。当你想要某种东西时，整个宇宙会合力助你实现愿望。”</p>
+<p>“如果东西还没到手，你就先许诺于人，那你就不会积极去争取了。”</p>
+<p>只需卖掉一只羊，他就可以到海峡的对岸去了。这个念头吓了他一跳。</p>
+<p>财宝就在金字塔附近，这你已经知道了。不过你得拿出六只羊做报酬，因为我帮你作出了一个决定。”</p>
+<p>“智慧大师认真地听完少年陈述此番来访的目的，却说他此刻没时间给他讲解幸福的秘密。他建议少年先在他的城堡里转一转，两个小时之后再回来见他。</p>
+<p>“‘同时，我想请你办件事。’智慧大师说着，递给少年一把茶匙，并在茶匙里滴了两滴油，‘你走路的时候拿着这把茶匙，不要让油洒出来。’</p>
+<p>“少年开始沿着城堡的大小台阶上上下下，两眼始终盯着那茶匙不放。两个小时之后，他回到智慧大师面前。</p>
+<p>“大师问道：‘你看见我餐厅里的波斯壁毯了吗？你看见园艺大师耗时十年培育的花园了吗？你留意我图书馆里那些漂亮的羊皮纸文献了吗？’</p>
+<p>“少年很不好意思，坦白说他什么也没看到。当时他唯一关注的是不要让那两滴油洒出来，因为那是智者托付他办的事。</p>
+<p>“‘那你就再去看一看我城堡中的奇珍异宝吧。’智慧大师说，‘如果你不了解一个人的家，就不能信任他。’</p>
+<p>“少年放松下来，拿起茶匙，重新开始在城堡里漫步。这一次，他注意到了挂在天花板上和墙壁上的那些艺术品，看到了花园，看到了周围的山岭，看到了娇嫩的鲜花，看到每件艺术品都摆放得恰到好处。再回到智慧大师面前时，他详细地叙述了刚才看到的一切。</p>
+<p>“‘可我托付你拿着的那两滴油在哪儿呢？’智慧大师问。</p>
+<p>“少年一看那茶匙，发现油已经洒光了。</p>
+<p>“‘这正是我要给你的唯一忠告。’智慧大师说，‘幸福的秘密就在于，既要看到世上的奇珍异宝，又要永远不忘记勺里的那两滴油。’”</p>
+<p>在这个国家，所有的人都只讲阿拉伯语。</p>
+<p>卖掉羊群之后，口袋里有钱了，男孩知道金钱是有魔力的：只要有了钱，谁都不会孤单。</p>
+<p>“这个国家没有红酒。”少年说，“教会不允许喝酒。”</p>
+<p>“丹吉尔和非洲其他地方不一样，这是个港口，港口总是有很多贼。”</p>
+<p>他们在丹吉尔狭窄的街巷里走着，每个街角都有卖东西的棚子。最后，他们来到一个很大的广场。广场此时成了集市，数千人在那里讨价还价，买进卖出。卖蔬菜的中间夹杂着卖短剑的，卖地毯的旁边就是卖各种各样烟袋的。但是，男孩的目光一直紧盯着他的新朋友，不管怎么说，男孩所有的钱都在他手上呢。他本想把钱要回来，但又觉得那样做不太礼貌。他并不了解这块陌生土地的风土人情。</p>
+<p>盯住他就行，圣地亚哥暗自思忖，反正自己比他强壮。</p>
+<p>搭好售货棚子之后，甜食商贩把做好的第一份甜食给了男孩。他心满意足地吃了，谢过商贩，继续往前走。走出一段路之后，他才想起 ，两人在搭售货棚子的时候，一个讲阿拉伯语，一个讲西班牙语。而他们却完全理解了对方的意思。</p>
+<p>“《古兰经》规定必须给饥饿的人饭吃。”</p>
+<p>“我需要钱，好去买些羊。”</p>
+<h3 id="下部">下部</h3>
+<p>“我想做一个水晶陈列架。”男孩对老板说，“可以把陈列架放在店外，吸引从山坡下面经过的人。”</p>
+<p>“以前我从未做过陈列架。”老板回答说，“行人路过时会碰到陈列架，水晶会摔碎的。”</p>
+<p>“我想尽快回到我的羊群身边。当好运降临时，我们必须抓住机会，顺应趋势，竭尽全力推动好运向前发展。这叫作‘良好的开端’，或者‘新手的运气’。”</p>
+<p>“两天前，你说我从未梦想过云游四方。”店老板回答说，“第五项戒律就是所有的穆斯林教徒都要出行一次。一生当中至少要有一次，我们应该去一趟圣城麦加。</p>
+<p>“您为什么不现在去麦加呢？”男孩问道。</p>
+<p>“因为麦加是支撑我活下去的希望，使我能够忍受平庸的岁月，忍受橱柜里那些不会说话的水晶，忍受那间糟糕透顶的餐厅里的午饭和晚饭。我害怕实现我的梦想，实现之后，我就没有活下去的动力了。</p>
+<p>又过去了两个月，陈列架把许多顾客吸引到水晶店来。男孩估计，再干上六个月，他就可以回西班牙并买上一百二十只羊。用不了一年，羊的数量就能翻上一番，而且还能跟阿拉伯人做生意，因为他已经会讲那种奇怪的语言了。这段时间，他一直没动过乌凌和图明。因为埃及对于他来说，就像圣城麦加对于水晶商人一样，早已变成了一个遥远的梦想。男孩现在很满意自己的工作，并且无时无刻不在憧憬着凯旋塔里法的那一天。</p>
+<p>“我们可以把茶水盛在水晶杯里来卖。这样一来，人们不但会喜欢茶水，还愿意购买水晶杯，因为美丽最易令人折服。”</p>
+<p>“这个店铺我已经开了三十年，我会识别水晶的好坏，了解水晶的所有特性。我熟悉每块水晶的大小和折光度。如果你用水晶杯盛茶水卖，商店必然会扩大，这样一来，我就必须改变我的生活方式。”</p>
+<p>“这难道不好吗？”</p>
+<p>“我已经习惯了这种生活。在你来这儿之前，我曾认为我在同一个地方待的时间太长了。而这期间，我所有的朋友都有了变化，有破产的，也有发财的。这一切使我感到非常难过。现在我明白了，根本不必伤心，店铺的规模正如我期待的那样，恰到好处。我不想再变了，因为我不知道该怎么变。我对自己的一切已经非常习惯了。”</p>
+<p>男孩一时不知该说什么才好。</p>
+<p>店主又说：“你一度成为我的福音。而今天我明白了一个道理，任何不被接纳的福音，都会变成诅咒。我对生活没有更多的要求。而你正迫使我盯着从未见过的财富和前景。现在，我知道了这些财富和前景，也知道了我完全有可能拥有它们。可是我的感觉却比以前糟糕了。因为我知道自己可以拥有这一切，却不愿拥有它们。”</p>
+<p>“马克图布。”店老板终于开口说道。</p>
+<p>“什么意思？”</p>
+<p>“你必须生来就是阿拉伯人才能弄懂它的意思。”店老板回答说，“大意是：命中注定。”</p>
+<p>他一边熄灭水烟袋里的炭火，一边告诉男孩，可以用水晶杯卖茶水。生活的河流是无法阻挡的。</p>
+<p>那是厚厚的一沓钱，足够用来买上一百二十只羊、一张回家的船票和一张贸易许可证。有了许可证，他就能往来于西班牙和摩洛哥做生意。</p>
+<p>“我为你感到骄傲。”他说，“你为我的水晶店带来了生机。但是你知道，我不会去麦加，就像你知道自己不会回去买羊一样。”</p>
+<p>“这是谁告诉您的？”男孩惊讶地问。</p>
+<p>“马克图布。”水晶店老板淡然地说。</p>
+<p>他祝福了男孩。</p>
+<p>我会重新成为原来那样的人，男孩想，只是羊群并没有教我阿拉伯语。</p>
+<p>但是，羊群却教过他一件更重要的事，即世上有一种人人都能理解的语言。在使水晶店兴旺发达的那段时间里，男孩曾经运用过它。这是一种热情的语言，表达着爱和毅力。用这种语言可以寻求所期望或坚信的东西。丹吉尔已经不再是个陌生的城市，男孩觉得他已经征服了这个地方。用同样的方式，他也能征服世界。</p>
+<p>在沙漠中，不服从就意味着死亡。</p>
+<p>男孩默默地观察着人群和牲口在沙漠里行进。现在，一切都与出发的那一天大相径庭了。那天人声鼎沸，一片混乱，孩子们的哭闹声，牲口的嘶叫声，领队和商人们的吆喝声，全都交织在一起。然而，在沙漠里，只有无休无止的风声，牲口的踏蹄声和永远的寂静，就连领队之间也很少交谈。</p>
+<p>沙漠里，有的地方黄沙遍野，有的地方乱石嶙峋。如果面前有一块石头，商队绕过去就可以了；如果遇到的是陡峭的山岩，那就得兜上一个大圈子。如果骆驼感觉沙粒过于细腻，它们就找沙子比较密实的地方通过。有时，地面上覆盖着一层盐，那地方从前应该是一个湖泊。于是，牲口都不肯往前走。赶驼人便跳下地，把货物背在身上，等通过那段难走的路之后，再把货物放回牲口背上。如果某个领队病了或是死了，他们就通过抓阄选出一个新领队。</p>
+<p>有时候，会在夜间与别的商队相遇。总有一支商队有另一支商队所需的物资，就仿佛一切真的是由同一只手写就。赶驼人相互交换关于风暴的信息，并围坐在篝火旁，讲述沙漠里的故事。</p>
+<p>还有的时候，会遇见一些戴风帽的神秘人物。他们是为商队探路的贝都因人，给商队提供有关劫匪和野蛮人部落的消息。这些人一袭黑衣，只露出一双眼睛，悄无声息地赶来，悄无声息地离去。</p>
+<p>商队开始日夜兼程。戴风帽的报信人频繁地出现。已经同男孩成为朋友的那个赶驼人解释说，部族之间的战争已经开始了。他们只有运气极佳才能抵达绿洲。</p>
+<p>商队首领颇费了一番气力才把所有人召集在一起，随后便开始发布指令。他们将在绿洲驻扎下来，直到部落间的战争结束。由于是客人，所以要与绿洲的居民分享帐篷，居民们将把最好的位置留给他们。这是沙漠里的好客原则。接下来头领要求所有人，包括他的贴身卫士，都把武器交给各部落头领指定的人。</p>
+<p>“这是战争的规则。”商队首领解释道。因为有规定，所有的绿洲都不可以接纳军队或士兵。</p>
+<p>令男孩意想不到的是，英国人竟从外套口袋里掏出了一把镀铬的左轮手枪，交给了前来收缴武器的人。</p>
+<p>“你带左轮手枪干吗？”男孩问。</p>
+<p>“为了学会信任别人。”英国人回答。现在他很高兴，因为终于来到了他的目的地。</p>
+<p>“下午好，太太。您能告诉我绿洲里的那位炼金术士住在哪儿吗？”男孩问。</p>
+<p>那女人声称自己从未听说过什么炼金术士，说完拔腿就走。临走之前，她告诫男孩不要与穿黑衣的女人说话，因为她们都是已婚女人。他必须尊重当地的风俗。</p>
+<p>“我从下午等到晚上，直到星星开始眨眼的时候，他才露面。”英国人说，“我对他讲了我的事，他问我是否已经把铅块变成了黄金。我回答说，这正是我想学会的本事。他让我去试一试。他只是对我说：去试试看吧。”</p>
+<p>“沙漠带走我们的男人，并不总是把他们再带回来。”她说，“我们习惯了这种事。那些没回来的男人活在不下雨的云彩里，活在栖身石缝中的动物身上，活在大地慷慨吐出的泉水之中。他们融入万物，变成了世界之魂。</p>
+<p>“有些男人回来了。于是所有的女人都非常高兴，因为其他女人等待的男人也有可能在某一天回来。以前我看着那些女人，很羡慕她们幸福的样子。如今我也有了期盼。</p>
+<p>“作为沙漠中的女人，我为此而骄傲。希望我的男人像移动沙丘的风一样自由。也希望能在云彩中、动物身上和泉水里看到我的男人。”</p>
+<p>“这是工作的第一阶段。”英国人说，“我必须把硫磺中的杂质分离出去。我不能害怕失败。正是由于害怕失败，我至今都没尝试获取元精。现在，我已经开始做十年前就可以开始做的事情了。但是我很高兴，因为毕竟没等上二十年才做这件事。”</p>
+<p>突然，一只鹰飞速俯冲下来，攻击另一只鹰。那一刻，一个突如其来的幻觉在男孩眼前一闪而过：一支剑拔弩张的军队正进入绿洲。那幻觉瞬间便消失了，但是场面却令他震惊。他听别人说起过海市蜃楼，而且也见到过几次，可那都是人们的愿望在沙漠中的体现。然而，他并不希望有军队入侵绿洲。</p>
+<p>男孩费了很大劲才摆脱惶恐。他站起身，朝椰枣树方向走去。此时他察觉到万物的语言：沙漠是安全之地，绿洲则为险境。</p>
+<p>“我必须试一试你的勇气。”神秘骑士说道，“对于寻求宇宙语言的人，勇气是最重要的素质。”</p>
+<p>男孩感到吃惊。这个人所说的事很少有人知道。</p>
+<p>“你必须永不松懈，哪怕已经走了很远的路。”骑士继续说，“你必须热爱沙漠，但是绝不要完全相信沙漠。因为沙漠对所有人都是一个考验：考验你迈出的每一步，杀死心猿意马的人。”</p>
+<p>“明天卖掉你的骆驼，去买一匹马。骆驼令人看不透，它们就是走成千上万里，也不会露出疲惫之态，但突然之间就会跪倒在地，力竭而死。马则会逐渐显露疲劳，你随时会知道还能让它走多远，或者它会在何时死去。”</p>
+<p>他们在沙漠中赶路的时候，圣地亚哥继续倾听自己的心声。他早已熟悉心所耍的手腕和种种花招，并接受了它的表现。于是，男孩不再害怕，并放弃了返回绿洲的打算，因为有一天下午，他的心告诉他，它非常满意。“即便我有点抱怨，”他的心说道，“也是因为我是人类的一颗心，人心全都如此。它们害怕实现更大的梦想，认为自己不配有这样的梦想，或者无法实现这样的梦想。一想到爱情去而不返，本该美好的时刻却并非如此，本该发现的财宝却永埋沙下，我们的心就害怕得要命。因为一旦这种情况发生，我们将会痛苦异常。”</p>
+<p>“我的心害怕遭受痛苦。”当他们在一个没有月亮的晚上仰望天空时，男孩对炼金术士说道。</p>
+<p>“你告诉它，害怕遭受痛苦比遭受痛苦本身还要糟糕。还要告诉它，没有一颗心在追求梦想的时候感到痛苦，因为追寻过程的每一刻，都与上帝和永恒同在。”</p>
+<p>每个人的寻梦过程都是以‘新手的运气’为开端，又总是以‘对远征者的考验’收尾。”</p>
+<p>男孩想起了家乡一句古老的谚语。那谚语说，夜色之浓，莫过于黎明前的黑暗。</p>
+<p>“当巨大的财富就在我们眼前时，我们却从来都觉察不到。你知道为什么吗？因为人们不相信财宝存在。”</p>
+<p>圣地亚哥吓得僵了。炼金术士架着他的胳膊，他才走了出来。</p>
+<p>“不要让他们察觉出你的恐惧。”炼金术士说，“他们都是勇敢的人，最鄙视胆小鬼。”</p>
+<p>但是男孩已经说不出话来。走到营地中央时，男孩才能够开始讲话。阿拉伯人牵走了他们的马匹，也就没必要关押他们了。世界再一次展示了它语言的多样性：此前沙漠是一片自由广袤的天地，现在却变成了一道无法逾越的坚壁。</p>
+<p>“您把我所有的财宝都给了他们！”男孩说，“那是我拼命挣来的呀！”</p>
+<p>“如果你必死无疑，它们对你又有什么用处呢？”炼金术士回答说，“你的钱救了你，还能多活三天。钱能用来推迟死期，这种事并不多见。”</p>
+<p>然而，男孩仍处于极度恐惧之中，根本听不进那些智慧的话语。他不知道怎样才能使自己变成风。他可不是炼金术士。</p>
+<p>炼金术士向一位士兵要来茶水，在男孩的手腕上倒了几滴。一阵平静的感觉潮水般涌遍全身，这样做的同时，炼金术士说了一些男孩听不懂的话。</p>
+<p>“你不要陷入绝望而不能自拔。”炼金术士用一种异常柔和的声音说道，“这样会使你无法和自己的心沟通。”</p>
+<p>“但我不知道如何把自己变成风。”</p>
+<p>“追寻天命的人，知道自己需要掌握的一切。只有一样东西令梦想无法成真，那就是担心失败。”</p>
+<p>“我并不担心失败，我只是不知道怎样把自己变成风。”</p>
+<p>“那么你必须学会。你的生死取决于它。”</p>
+<p>“如果我做不到呢？”</p>
+<p>“你将在追寻天命的过程中死去。这也比大多数普通人的死要好得多，因为他们根本不知道有天命存在。但是，你不必担心，一般来说，死会使人对生更加敏感。”</p>
+<p>我是个迷信的阿拉伯老头，我相信自己家乡的一个谚语：所有发生过一次的事，可能永远不会再发生；但所有发生过两次的事，肯定还会发生第三次。”</p>
+<p>“如果你必死无疑，钱对你又有什么用处呢？钱能用来使人免于一死，这种事并不多见。”炼金术士曾这样说过。</p>
+<h3 id="尾声">尾声</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E8%87%AA%E5%BA%8F">自序</a></li>
+<li><a href="#%E4%B8%8A%E9%83%A8">上部</a></li>
+<li><a href="#%E4%B8%8B%E9%83%A8">下部</a></li>
+<li><a href="#%E5%B0%BE%E5%A3%B0">尾声</a></li>
+</ul>
+</div>
+
+            
+            
+        </body>
+        </html>

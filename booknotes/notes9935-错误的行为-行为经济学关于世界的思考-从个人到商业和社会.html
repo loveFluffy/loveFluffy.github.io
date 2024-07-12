@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&ldquo;&#x9519;&#x8bef;&CloseCurlyDoubleQuote;&#x7684;&#x884c;&#x4e3a;&#xff1a;&#x884c;&#x4e3a;&#x7ecf;&#x6d4e;&#x5b66;&#x5173;&#x4e8e;&#x4e16;&#x754c;&#x7684;&#x601d;&#x8003;&#xff0c;&#x4ece;&#x4e2a;&#x4eba;&#x5230;&#x5546;&#x4e1a;&#x548c;&#x793e;&#x4f1a;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&ldquo;&#x9519;&#x8bef;&CloseCurlyDoubleQuote;&#x7684;&#x884c;&#x4e3a;&#xff1a;&#x884c;&#x4e3a;&#x7ecf;&#x6d4e;&#x5b66;&#x5173;&#x4e8e;&#x4e16;&#x754c;&#x7684;&#x601d;&#x8003;&#xff0c;&#x4ece;&#x4e2a;&#x4eba;&#x5230;&#x5546;&#x4e1a;&#x548c;&#x793e;&#x4f1a;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -348,6 +447,20 @@ img {
 
 
 
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
+}
+
+
+
 /* ======== 侧边的目录相关 ======== */
 
 .content {
@@ -358,8 +471,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +498,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,73 +527,197 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
-</style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="错误的行为行为经济学关于世界的思考从个人到商业和社会">“错误”的行为：行为经济学关于世界的思考，从个人到商业和社会</h1>
-<h2 id=""></h2>
 
-        
-        
-    </body>
-    </html>
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="错误的行为行为经济学关于世界的思考从个人到商业和社会">“错误”的行为：行为经济学关于世界的思考，从个人到商业和社会</h1>
+<h2 id="美理查德泰勒richard-h-thaler-著王晋-译">[美]理查德·泰勒（Richard H. Thaler） 著|王晋 译</h2>
+<div class="mycomment">
+<p>按照时间段的顺序，讲述了行为经济学的起步、发展及现状，作者算是行为经济学学科的创始人之一，所以作者对于自己当时的心理描述十分精彩，比如在提成对传统经济学有挑战性的观点时，作为科研新人如何权衡利弊，拿捏用词，真实体现了科研界的现状。科普了一些基本的经济学和心理学概念，很有趣。</p>
+</div>
+<h3 id="引言">引言</h3>
+<h2 id="第一部分-行为经济学的发轫19701978年">第一部分 行为经济学的发轫：1970~1978年</h2>
+<h3 id="第1章-经济人与非理性的人">第1章 经济人与非理性的人</h3>
+<h3 id="第2章-机会成本和禀赋效应">第2章 机会成本和禀赋效应</h3>
+<h3 id="第3章-非理性行为清单">第3章 非理性行为清单</h3>
+<h3 id="第4章-前景理论和价值函数">第4章 前景理论和价值函数</h3>
+<h3 id="第5章-加州圆梦之旅">第5章 加州圆梦之旅</h3>
+<h3 id="第6章-行为经济学面临的挑战">第6章 行为经济学面临的挑战</h3>
+<h2 id="第二部分-心理账户19791985年">第二部分 心理账户：1979~1985年</h2>
+<h3 id="第7章-这笔交易到底值不值">第7章 这笔交易到底值不值？</h3>
+<h3 id="第8章-沉没成本">第8章 沉没成本</h3>
+<h3 id="第9章-漏水的桶与财务预算">第9章 漏水的桶与财务预算</h3>
+<h3 id="第10章-扑克牌桌边的怪诞行为">第10章 扑克牌桌边的怪诞行为</h3>
+<h3 id="第三部分-自我控制19751988年">第三部分 自我控制：1975~1988年</h3>
+<h3 id="第11章-意志力和延迟消费">第11章 意志力和延迟消费</h3>
+<h3 id="第12章-计划者与行动者">第12章 计划者与行动者</h3>
+<h3 id="插曲">插曲</h3>
+<h3 id="第13章-现实生活中的人类行为">第13章 现实生活中的人类行为</h3>
+<h2 id="第四部分-我与卡尼曼合作的时光19841985年">第四部分 我与卡尼曼合作的时光：1984~1985年</h2>
+<h3 id="第14章-怎样才算公平">第14章 怎样才算公平？</h3>
+<h3 id="第15章-关于公平的博弈实验">第15章 关于公平的博弈实验</h3>
+<h3 id="第16章-从代币实验到马克杯实验">第16章 从代币实验到马克杯实验</h3>
+<h2 id="第五部分-埋首于经济学研究的日子19861994年">第五部分 埋首于经济学研究的日子：1986~1994年</h2>
+<h3 id="第17章-理性主义者与行为主义者的辩论">第17章 理性主义者与行为主义者的辩论</h3>
+<h3 id="第18章-股市赛马与反常现象">第18章 股市、赛马与反常现象</h3>
+<h3 id="第19章-打造一个行为经济学家的明星团队">第19章 打造一个行为经济学家的明星团队</h3>
+<h3 id="第20章-狭窄框架与出租车司机的工作时间">第20章 狭窄框架与出租车司机的工作时间</h3>
+<h2 id="第六部分-金融市场19832003年">第六部分 金融市场：1983~2003年</h2>
+<h3 id="第21章-选美竞赛和股票投资">第21章 选美竞赛和股票投资</h3>
+<h3 id="第22章-股市反应过度了吗">第22章 股市反应过度了吗？</h3>
+<h3 id="第23章-价值股比成长股的风险更大">第23章 价值股比成长股的风险更大？</h3>
+<h3 id="第24章-价格并不都是合理的">第24章 价格并不都是合理的</h3>
+<h3 id="第25章-动物精神和封闭式基金折价之谜">第25章 动物精神和封闭式基金折价之谜</h3>
+<h3 id="第26章-果蝇冰山和负股价">第26章 果蝇、冰山和负股价</h3>
+<h2 id="第七部分-助推计划1995年至今">第七部分 助推计划：1995年至今</h2>
+<h3 id="第27章-当法律遇上行为经济学">第27章 当法律遇上行为经济学</h3>
+<h3 id="第28章-挑选办公室的风波">第28章 挑选办公室的风波</h3>
+<h3 id="第29章-球队选秀与贝克尔猜想">第29章 球队选秀与贝克尔猜想</h3>
+<h3 id="第30章-有奖竞猜类节目你该怎么玩">第30章 有奖竞猜类节目你该怎么玩？</h3>
+<h2 id="第八部分-让世界变得更美好2004年至今">第八部分 让世界变得更美好：2004年至今</h2>
+<h3 id="第31章-为明天多储蓄计划">第31章 “为明天多储蓄”计划</h3>
+<h3 id="第32章-自由家长主义与助推策略">第32章 自由家长主义与助推策略</h3>
+<h3 id="第33章-助推人们做出正确的决策">第33章 助推人们做出正确的决策</h3>
+<h3 id="结语-经济学的未来">结语 经济学的未来</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BC%95%E8%A8%80">引言</a></li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E7%BB%8F%E6%B5%8E%E4%BA%BA%E4%B8%8E%E9%9D%9E%E7%90%86%E6%80%A7%E7%9A%84%E4%BA%BA">第1章 经济人与非理性的人</a></li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E6%9C%BA%E4%BC%9A%E6%88%90%E6%9C%AC%E5%92%8C%E7%A6%80%E8%B5%8B%E6%95%88%E5%BA%94">第2章 机会成本和禀赋效应</a></li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E9%9D%9E%E7%90%86%E6%80%A7%E8%A1%8C%E4%B8%BA%E6%B8%85%E5%8D%95">第3章 非理性行为清单</a></li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E5%89%8D%E6%99%AF%E7%90%86%E8%AE%BA%E5%92%8C%E4%BB%B7%E5%80%BC%E5%87%BD%E6%95%B0">第4章 前景理论和价值函数</a></li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E5%8A%A0%E5%B7%9E%E5%9C%86%E6%A2%A6%E4%B9%8B%E6%97%85">第5章 加州圆梦之旅</a></li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E8%A1%8C%E4%B8%BA%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%8C%91%E6%88%98">第6章 行为经济学面临的挑战</a></li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E8%BF%99%E7%AC%94%E4%BA%A4%E6%98%93%E5%88%B0%E5%BA%95%E5%80%BC%E4%B8%8D%E5%80%BC">第7章 这笔交易到底值不值？</a></li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E6%B2%89%E6%B2%A1%E6%88%90%E6%9C%AC">第8章 沉没成本</a></li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E6%BC%8F%E6%B0%B4%E7%9A%84%E6%A1%B6%E4%B8%8E%E8%B4%A2%E5%8A%A1%E9%A2%84%E7%AE%97">第9章 漏水的桶与财务预算</a></li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E6%89%91%E5%85%8B%E7%89%8C%E6%A1%8C%E8%BE%B9%E7%9A%84%E6%80%AA%E8%AF%9E%E8%A1%8C%E4%B8%BA">第10章 扑克牌桌边的怪诞行为</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E8%87%AA%E6%88%91%E6%8E%A7%E5%88%B619751988%E5%B9%B4">第三部分 自我控制：1975~1988年</a></li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E6%84%8F%E5%BF%97%E5%8A%9B%E5%92%8C%E5%BB%B6%E8%BF%9F%E6%B6%88%E8%B4%B9">第11章 意志力和延迟消费</a></li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0-%E8%AE%A1%E5%88%92%E8%80%85%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%80%85">第12章 计划者与行动者</a></li>
+<li><a href="#%E6%8F%92%E6%9B%B2">插曲</a></li>
+<li><a href="#%E7%AC%AC13%E7%AB%A0-%E7%8E%B0%E5%AE%9E%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E4%BA%BA%E7%B1%BB%E8%A1%8C%E4%B8%BA">第13章 现实生活中的人类行为</a></li>
+<li><a href="#%E7%AC%AC14%E7%AB%A0-%E6%80%8E%E6%A0%B7%E6%89%8D%E7%AE%97%E5%85%AC%E5%B9%B3">第14章 怎样才算公平？</a></li>
+<li><a href="#%E7%AC%AC15%E7%AB%A0-%E5%85%B3%E4%BA%8E%E5%85%AC%E5%B9%B3%E7%9A%84%E5%8D%9A%E5%BC%88%E5%AE%9E%E9%AA%8C">第15章 关于公平的博弈实验</a></li>
+<li><a href="#%E7%AC%AC16%E7%AB%A0-%E4%BB%8E%E4%BB%A3%E5%B8%81%E5%AE%9E%E9%AA%8C%E5%88%B0%E9%A9%AC%E5%85%8B%E6%9D%AF%E5%AE%9E%E9%AA%8C">第16章 从代币实验到马克杯实验</a></li>
+<li><a href="#%E7%AC%AC17%E7%AB%A0-%E7%90%86%E6%80%A7%E4%B8%BB%E4%B9%89%E8%80%85%E4%B8%8E%E8%A1%8C%E4%B8%BA%E4%B8%BB%E4%B9%89%E8%80%85%E7%9A%84%E8%BE%A9%E8%AE%BA">第17章 理性主义者与行为主义者的辩论</a></li>
+<li><a href="#%E7%AC%AC18%E7%AB%A0-%E8%82%A1%E5%B8%82%E8%B5%9B%E9%A9%AC%E4%B8%8E%E5%8F%8D%E5%B8%B8%E7%8E%B0%E8%B1%A1">第18章 股市、赛马与反常现象</a></li>
+<li><a href="#%E7%AC%AC19%E7%AB%A0-%E6%89%93%E9%80%A0%E4%B8%80%E4%B8%AA%E8%A1%8C%E4%B8%BA%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%98%8E%E6%98%9F%E5%9B%A2%E9%98%9F">第19章 打造一个行为经济学家的明星团队</a></li>
+<li><a href="#%E7%AC%AC20%E7%AB%A0-%E7%8B%AD%E7%AA%84%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%87%BA%E7%A7%9F%E8%BD%A6%E5%8F%B8%E6%9C%BA%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%97%B6%E9%97%B4">第20章 狭窄框架与出租车司机的工作时间</a></li>
+<li><a href="#%E7%AC%AC21%E7%AB%A0-%E9%80%89%E7%BE%8E%E7%AB%9E%E8%B5%9B%E5%92%8C%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84">第21章 选美竞赛和股票投资</a></li>
+<li><a href="#%E7%AC%AC22%E7%AB%A0-%E8%82%A1%E5%B8%82%E5%8F%8D%E5%BA%94%E8%BF%87%E5%BA%A6%E4%BA%86%E5%90%97">第22章 股市反应过度了吗？</a></li>
+<li><a href="#%E7%AC%AC23%E7%AB%A0-%E4%BB%B7%E5%80%BC%E8%82%A1%E6%AF%94%E6%88%90%E9%95%BF%E8%82%A1%E7%9A%84%E9%A3%8E%E9%99%A9%E6%9B%B4%E5%A4%A7">第23章 价值股比成长股的风险更大？</a></li>
+<li><a href="#%E7%AC%AC24%E7%AB%A0-%E4%BB%B7%E6%A0%BC%E5%B9%B6%E4%B8%8D%E9%83%BD%E6%98%AF%E5%90%88%E7%90%86%E7%9A%84">第24章 价格并不都是合理的</a></li>
+<li><a href="#%E7%AC%AC25%E7%AB%A0-%E5%8A%A8%E7%89%A9%E7%B2%BE%E7%A5%9E%E5%92%8C%E5%B0%81%E9%97%AD%E5%BC%8F%E5%9F%BA%E9%87%91%E6%8A%98%E4%BB%B7%E4%B9%8B%E8%B0%9C">第25章 动物精神和封闭式基金折价之谜</a></li>
+<li><a href="#%E7%AC%AC26%E7%AB%A0-%E6%9E%9C%E8%9D%87%E5%86%B0%E5%B1%B1%E5%92%8C%E8%B4%9F%E8%82%A1%E4%BB%B7">第26章 果蝇、冰山和负股价</a></li>
+<li><a href="#%E7%AC%AC27%E7%AB%A0-%E5%BD%93%E6%B3%95%E5%BE%8B%E9%81%87%E4%B8%8A%E8%A1%8C%E4%B8%BA%E7%BB%8F%E6%B5%8E%E5%AD%A6">第27章 当法律遇上行为经济学</a></li>
+<li><a href="#%E7%AC%AC28%E7%AB%A0-%E6%8C%91%E9%80%89%E5%8A%9E%E5%85%AC%E5%AE%A4%E7%9A%84%E9%A3%8E%E6%B3%A2">第28章 挑选办公室的风波</a></li>
+<li><a href="#%E7%AC%AC29%E7%AB%A0-%E7%90%83%E9%98%9F%E9%80%89%E7%A7%80%E4%B8%8E%E8%B4%9D%E5%85%8B%E5%B0%94%E7%8C%9C%E6%83%B3">第29章 球队选秀与贝克尔猜想</a></li>
+<li><a href="#%E7%AC%AC30%E7%AB%A0-%E6%9C%89%E5%A5%96%E7%AB%9E%E7%8C%9C%E7%B1%BB%E8%8A%82%E7%9B%AE%E4%BD%A0%E8%AF%A5%E6%80%8E%E4%B9%88%E7%8E%A9">第30章 有奖竞猜类节目你该怎么玩？</a></li>
+<li><a href="#%E7%AC%AC31%E7%AB%A0-%E4%B8%BA%E6%98%8E%E5%A4%A9%E5%A4%9A%E5%82%A8%E8%93%84%E8%AE%A1%E5%88%92">第31章 “为明天多储蓄”计划</a></li>
+<li><a href="#%E7%AC%AC32%E7%AB%A0-%E8%87%AA%E7%94%B1%E5%AE%B6%E9%95%BF%E4%B8%BB%E4%B9%89%E4%B8%8E%E5%8A%A9%E6%8E%A8%E7%AD%96%E7%95%A5">第32章 自由家长主义与助推策略</a></li>
+<li><a href="#%E7%AC%AC33%E7%AB%A0-%E5%8A%A9%E6%8E%A8%E4%BA%BA%E4%BB%AC%E5%81%9A%E5%87%BA%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%86%B3%E7%AD%96">第33章 助推人们做出正确的决策</a></li>
+<li><a href="#%E7%BB%93%E8%AF%AD-%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%9A%84%E6%9C%AA%E6%9D%A5">结语 经济学的未来</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

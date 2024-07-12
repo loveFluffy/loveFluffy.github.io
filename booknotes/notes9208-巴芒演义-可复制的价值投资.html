@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5df4;&#x8292;&#x6f14;&#x4e49;&#xff1a;&#x53ef;&#x590d;&#x5236;&#x7684;&#x4ef7;&#x503c;&#x6295;&#x8d44;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5df4;&#x8292;&#x6f14;&#x4e49;&#xff1a;&#x53ef;&#x590d;&#x5236;&#x7684;&#x4ef7;&#x503c;&#x6295;&#x8d44;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -238,12 +337,12 @@ figure img {
 	margin-bottom: 0px;
 }
 
-/* hr 用于创建一条水平线*/
+/* hr 用于创建一条水平线 */
 hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
+	border: 0;
+	padding-top: 1px;
+	margin-bottom: 0.8em;
+	background: linear-gradient(to right, transparent, #d0d0d5, transparent);
 }
 
 ol p,
@@ -331,10 +430,33 @@ a:target {
 	outline: 0;
 }
 
+/*笔记中的普通表格*/
 table {
-	align-self: center;
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
 }
 
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
 img {
 	align-self: center;
 	max-width: 1000px;
@@ -344,6 +466,20 @@ img {
 /* 选中后背景浅粉色 */
 ::selection {
 	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
 }
 
 
@@ -358,8 +494,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +521,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,73 +550,112 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <div class="content">
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
 <h1 id="巴芒演义可复制的价值投资">巴芒演义：可复制的价值投资</h1>
 <h2 id="唐朝-著">唐朝 著</h2>
-<h3 id="自序巴芒演义的三重价值">自序　《巴芒演义》的三重价值</h3>
+<div class="mycomment">
+<p>因为看过他的公众号，所以这本书看的很快。很有启发性的一本书，对我来说作用与富爸爸穷爸爸类似，一旦接受了作者的观点，就没有必要再去重复阅读，偶尔再看看书里划出的重点即可，继续往前去读更为专业的书籍。</p>
+<p>老唐对于时间线和人物关系的整理很有用，应该把他书后附录里罗列的参考书也都看一遍。</p>
+</div>
+<h3 id="自序-巴芒演义的三重价值">自序 《巴芒演义》的三重价值</h3>
 <p>价值投资者群体内部，在一些相当重要的投资原则上经常会出现严重的分歧和争论，如烟蒂还是成长，集中还是分散，个股还是指数，借助杠杆还是拒绝杠杆，永远不卖还是高估出手，赌宏观国运还是看微观企业，等等。</p>
 <p>这些持不同观点的投资者，基本都能搬出不同的大师语录为证，甚至有时能遇到同一位投资大师在同一个问题上，有过意思完全相反的表述。这让很多投资者，尤其是初学者非常困惑，结果导致他们在不同投资风格之间摇摆，并为此浪费了财务自由道路上最宝贵的东西：时间。</p>
 <h3 id="引子">引子</h3>
@@ -483,7 +663,7 @@ iPad mini 5：2048*1536
 <p>当然，诞生于大崩溃并不必然成长为“股神”。在学习本杰明·格雷厄姆的投资体系之前，巴菲特并没有表现出过人的投资天赋。如果一定要在他身上寻找一些与普通孩子不同的“神迹”，大概也就是少年巴菲特喜欢数字、喜欢阅读、喜欢金钱，并且愿意为获取金钱付出劳动。</p>
 <p>从大约6岁起，巴菲特就从爷爷的杂货店里买进整包的可乐、口香糖，然后挨门挨户拆零推销，从中赚取批零差价。稍大点，巴菲特还在体育场卖花生和爆米花，在小区捡废书报卖给废品收购站，在草丛或池塘里捡旧高尔夫球清理后出售，在爷爷的杂货店里干体力活挣工钱，在凌晨四点半去取报送报，几年如一日（包括节假日）……所有这些，都是为了挣钱。</p>
 <p>巴菲特读过两位合著的《证券分析》，也读过格雷厄姆1949年刚出版的《聪明的投资者》。他对《聪明的投资者》评价非常高。1973年巴菲特给《聪明的投资者》第四版作序时写道：“1950年年初，我读了本书第一版。当时，我认为它是有史以来投资著作中最杰出的一本。时至今日，我仍然这么认为。”</p>
-<h3 id="第一回受磨难获得奖学金本杰明步入华尔街">第一回　受磨难获得奖学金　本杰明步入华尔街</h3>
+<h3 id="第一回-受磨难获得奖学金-本杰明步入华尔街">第一回 受磨难获得奖学金 本杰明步入华尔街</h3>
 <p>本杰明·格雷厄姆于1894年（中日甲午战争爆发的大清光绪二十年）5月9日出生于英国伦敦，是家里的老幺，上面有两个哥哥维克多和里昂，依次差14个月和13个月。其父亲一辈兄弟众多，家里主要经营瓷器及古玩小摆件，不算很有钱，但家境还不错。母亲是波兰华沙一名犹太教大主教的女儿，受过良好的教育。</p>
 <p>在格雷厄姆还不满一岁时，父亲受命去纽约拓展家族生意。起初，一家五口在纽约生活条件挺优越的，属于有大宅、有厨师、有仆人、有家庭女教师的那种。然而好景不长，在格雷厄姆8岁多的时候，父亲因胰腺癌去世，年仅35岁。家里的店铺先后经过三位叔叔和一位舅舅帮忙打理，依然连续亏损，不得不关闭了事。</p>
 <p>母亲带着三个孩子艰难谋生，尝试过经营家庭旅馆，也尝试过投机股票。1907年，妈妈开设账户买入著名蓝筹股美国钢铁公司的股票。帮妈妈从报纸上查看美国钢铁股票的涨跌幅，就是13岁的格雷厄姆第一次和股票的亲密接触。</p>
@@ -502,97 +682,97 @@ iPad mini 5：2048*1536
 <p>那时候，教科书里清清楚楚地写着“只有债券才被当作投资，股票本质上是投机性的”，华尔街的基本认识是“债券是投资者的首选，而股票则是投机者的出没之地”，市场里广泛传说的是类似“股票大作手”利弗莫尔翻手为云覆手为雨的英雄事迹。讽刺的是，1914年的杰西·利弗莫尔刚刚爆仓破产，身负超过百万美元的债务。后来利弗莫尔再次崛起，并曾在1929年的股市大崩溃里让财富膨胀到过亿美元。1934年利弗莫尔人生第N次也是最后一次破产后，经历了几年穷困潦倒的挣扎，最终于1940年11月27日留下一张“我的人生是一场失败”的纸条，饮弹自杀，终年63岁。</p>
 <p>这种环境下，股票在市场参与者眼里，就是赌桌上的筹码。如果“趋势”是下跌的，那么以更低的价格抢在他人之前将筹码兑换为现金，为下次参赌保住赌本才是第一要务。这种行为被很高大上地称为“顺势而为”或“不要与趋势作对”。很多非常荒诞的成交价格，就是在这种争先恐后的抛售中形成的。</p>
 <p>然而，此时的格雷厄姆还没有把目光放在股票上，他正如饥似渴地学习一切有关债券的知识，希望从底层的办公室小职员升级为证券统计员。</p>
-<h3 id="第二回格雷厄姆小试牛刀设立基金志得意满">第二回　格雷厄姆小试牛刀　设立基金志得意满</h3>
-<h3 id="第三回代客理财风生水起投资课程顺势推出">第三回　代客理财风生水起　投资课程顺势推出</h3>
-<h3 id="第四回巴鲁克逃顶写传奇大崩溃突袭显神威">第四回　巴鲁克逃顶写传奇　大崩溃突袭显神威</h3>
-<h3 id="第五回重捡烟蒂起死回生宗师理论日臻成型">第五回　重捡烟蒂起死回生　宗师理论日臻成型</h3>
-<h3 id="第六回投资奇才走入课堂烟蒂兵团初具规模">第六回　投资奇才走入课堂　烟蒂兵团初具规模</h3>
-<h3 id="第七回施洛斯埋头捡垃圾能力圈凸显大智慧">第七回　施洛斯埋头捡垃圾　能力圈凸显大智慧</h3>
-<h3 id="第八回烟蒂照样与时俱进标准需随现实微调">第八回　烟蒂照样与时俱进　标准需随现实微调</h3>
-<h3 id="第九回巴菲特初窥保险业戴维森倾囊传秘籍">第九回　巴菲特初窥保险业　戴维森倾囊传秘籍</h3>
-<h3 id="第十回高额回报知行不一疑心种子悄悄萌芽">第十回　高额回报知行不一　疑心种子悄悄萌芽</h3>
-<h3 id="第十一回天外有天学会避税内幕消息运用分歧">第十一回　天外有天学会避税　内幕消息运用分歧</h3>
-<h3 id="第十二回巴菲特拒任接班人奥马哈传奇初起步">第十二回　巴菲特拒任接班人　奥马哈传奇初起步</h3>
-<h3 id="第十三回烟蒂也须天时地利控制投资兑现价值">第十三回　烟蒂也须天时地利　控制投资兑现价值</h3>
-<h3 id="第十四回捡烟蒂树最佳模板不小心成过街老鼠">第十四回　捡烟蒂树最佳模板　不小心成过街老鼠</h3>
-<h3 id="第十五回冲动收购伯克希尔损失超过千亿美元">第十五回　冲动收购伯克希尔　损失超过千亿美元</h3>
-<h3 id="第十六回不甘心试图找出路犯糊涂再次走臭棋">第十六回　不甘心试图找出路　犯糊涂再次走臭棋</h3>
-<h3 id="第十七回巴菲特嘲讽蔡至勇华尔街追星中国佬">第十七回　巴菲特嘲讽蔡至勇　华尔街追星中国佬</h3>
-<h3 id="第十八回风口飞猪现出原形东山再起创下奇迹">第十八回　风口飞猪现出原形　东山再起创下奇迹</h3>
-<h3 id="第十九回耗尽人品黯然离开慈善八卦聊度余生">第十九回　耗尽人品黯然离开　慈善八卦聊度余生</h3>
-<h3 id="第二十回市场风格难以适应解散基金图个清静">第二十回　市场风格难以适应　解散基金图个清静</h3>
-<h3 id="第二十一回股神赌神偶然相逢投资赌博原理互通">第二十一回　股神赌神偶然相逢　投资赌博原理互通</h3>
-<h3 id="第二十二回赌神索普创造传奇香农凯利协防有功">第二十二回　赌神索普创造传奇　香农凯利协防有功</h3>
-<h3 id="第二十三回凯利公式暗藏隐患投资奥秘各有不同">第二十三回　凯利公式暗藏隐患　投资奥秘各有不同</h3>
-<h3 id="第二十四回米尔肯入狱坑索普神业绩变招疑乔尔">第二十四回　米尔肯入狱坑索普　神业绩变招疑乔尔</h3>
-<h3 id="第二十五回压力促生神奇公式格老否定证券分析">第二十五回　压力促生神奇公式　格老否定证券分析</h3>
-<h3 id="第二十六回巴菲特专注搭讲坛懂平衡芒格双丰收">第二十六回　巴菲特专注搭讲坛　懂平衡芒格双丰收</h3>
-<h3 id="第二十七回芒格推动思想进化喜诗展示优质魅力">第二十七回　芒格推动思想进化　喜诗展示优质魅力</h3>
-<h3 id="第二十八回世家子弟广结人脉圈子贡献赚钱良机">第二十八回　世家子弟广结人脉　圈子贡献赚钱良机</h3>
-<h3 id="第二十九回巴菲特身陷欺诈案大律师背书保清白">第二十九回　巴菲特身陷欺诈案　大律师背书保清白</h3>
-<h3 id="第三十回收购报业四面楚歌步步申诉向死而生">第三十回　收购报业四面楚歌　步步申诉向死而生</h3>
-<h3 id="第三十一回家庭妇女被迫掌舵新闻女王两难选择">第三十一回　家庭妇女被迫掌舵　新闻女王两难选择</h3>
-<h3 id="第三十二回关键战役邮报登顶长期持股高额回报">第三十二回　关键战役邮报登顶　长期持股高额回报</h3>
-<h3 id="第三十三回盖可保险绝地逢生伯克希尔如虎添翼">第三十三回　盖可保险绝地逢生　伯克希尔如虎添翼</h3>
-<h3 id="第三十四回乐观出价通用再保遭受重创公开忏悔">第三十四回　乐观出价通用再保　遭受重创公开忏悔</h3>
-<h3 id="第三十五回曲线减持暗动心机偷鸡不成险蚀把米">第三十五回　曲线减持暗动心机　偷鸡不成险蚀把米</h3>
-<h3 id="第三十六回可口可乐双重错误通用再保持续失血">第三十六回　可口可乐双重错误　通用再保持续失血</h3>
-<h3 id="第三十七回蹚浑水拯救所罗门看笑话围观赌金者">第三十七回　蹚浑水拯救所罗门　看笑话围观赌金者</h3>
-<h3 id="第三十八回指导思想与时俱进投资首选指数基金">第三十八回　指导思想与时俱进　投资首选指数基金</h3>
-<h3 id="第三十九回指数基金英雄丰碑思想源泉宏观鼻祖">第三十九回　指数基金英雄丰碑　思想源泉宏观鼻祖</h3>
-<h3 id="第四十回先锋集团一鸣惊人伯克希尔渐显颓势">第四十回　先锋集团一鸣惊人　伯克希尔渐显颓势</h3>
-<h3 id="第四十一回金钱束缚降低回报投资正道共有四条">第四十一回　金钱束缚降低回报　投资正道共有四条</h3>
-<h3 id="第四十二回农地案例投资真谛别瞅傻子坚持瞅地">第四十二回　农地案例投资真谛　别瞅傻子坚持瞅地</h3>
+<h3 id="第二回-格雷厄姆小试牛刀-设立基金志得意满">第二回 格雷厄姆小试牛刀 设立基金志得意满</h3>
+<h3 id="第三回-代客理财风生水起-投资课程顺势推出">第三回 代客理财风生水起 投资课程顺势推出</h3>
+<h3 id="第四回-巴鲁克逃顶写传奇-大崩溃突袭显神威">第四回 巴鲁克逃顶写传奇 大崩溃突袭显神威</h3>
+<h3 id="第五回-重捡烟蒂起死回生-宗师理论日臻成型">第五回 重捡烟蒂起死回生 宗师理论日臻成型</h3>
+<h3 id="第六回-投资奇才走入课堂-烟蒂兵团初具规模">第六回 投资奇才走入课堂 烟蒂兵团初具规模</h3>
+<h3 id="第七回-施洛斯埋头捡垃圾-能力圈凸显大智慧">第七回 施洛斯埋头捡垃圾 能力圈凸显大智慧</h3>
+<h3 id="第八回-烟蒂照样与时俱进-标准需随现实微调">第八回 烟蒂照样与时俱进 标准需随现实微调</h3>
+<h3 id="第九回-巴菲特初窥保险业-戴维森倾囊传秘籍">第九回 巴菲特初窥保险业 戴维森倾囊传秘籍</h3>
+<h3 id="第十回-高额回报知行不一-疑心种子悄悄萌芽">第十回 高额回报知行不一 疑心种子悄悄萌芽</h3>
+<h3 id="第十一回-天外有天学会避税-内幕消息运用分歧">第十一回 天外有天学会避税 内幕消息运用分歧</h3>
+<h3 id="第十二回-巴菲特拒任接班人-奥马哈传奇初起步">第十二回 巴菲特拒任接班人 奥马哈传奇初起步</h3>
+<h3 id="第十三回-烟蒂也须天时地利-控制投资兑现价值">第十三回 烟蒂也须天时地利 控制投资兑现价值</h3>
+<h3 id="第十四回-捡烟蒂树最佳模板-不小心成过街老鼠">第十四回 捡烟蒂树最佳模板 不小心成过街老鼠</h3>
+<h3 id="第十五回-冲动收购伯克希尔-损失超过千亿美元">第十五回 冲动收购伯克希尔 损失超过千亿美元</h3>
+<h3 id="第十六回-不甘心试图找出路-犯糊涂再次走臭棋">第十六回 不甘心试图找出路 犯糊涂再次走臭棋</h3>
+<h3 id="第十七回-巴菲特嘲讽蔡至勇-华尔街追星中国佬">第十七回 巴菲特嘲讽蔡至勇 华尔街追星中国佬</h3>
+<h3 id="第十八回-风口飞猪现出原形-东山再起创下奇迹">第十八回 风口飞猪现出原形 东山再起创下奇迹</h3>
+<h3 id="第十九回-耗尽人品黯然离开-慈善八卦聊度余生">第十九回 耗尽人品黯然离开 慈善八卦聊度余生</h3>
+<h3 id="第二十回-市场风格难以适应-解散基金图个清静">第二十回 市场风格难以适应 解散基金图个清静</h3>
+<h3 id="第二十一回-股神赌神偶然相逢-投资赌博原理互通">第二十一回 股神赌神偶然相逢 投资赌博原理互通</h3>
+<h3 id="第二十二回-赌神索普创造传奇-香农凯利协防有功">第二十二回 赌神索普创造传奇 香农凯利协防有功</h3>
+<h3 id="第二十三回-凯利公式暗藏隐患-投资奥秘各有不同">第二十三回 凯利公式暗藏隐患 投资奥秘各有不同</h3>
+<h3 id="第二十四回-米尔肯入狱坑索普-神业绩变招疑乔尔">第二十四回 米尔肯入狱坑索普 神业绩变招疑乔尔</h3>
+<h3 id="第二十五回-压力促生神奇公式-格老否定证券分析">第二十五回 压力促生神奇公式 格老否定证券分析</h3>
+<h3 id="第二十六回-巴菲特专注搭讲坛-懂平衡芒格双丰收">第二十六回 巴菲特专注搭讲坛 懂平衡芒格双丰收</h3>
+<h3 id="第二十七回-芒格推动思想进化-喜诗展示优质魅力">第二十七回 芒格推动思想进化 喜诗展示优质魅力</h3>
+<h3 id="第二十八回-世家子弟广结人脉-圈子贡献赚钱良机">第二十八回 世家子弟广结人脉 圈子贡献赚钱良机</h3>
+<h3 id="第二十九回-巴菲特身陷欺诈案-大律师背书保清白">第二十九回 巴菲特身陷欺诈案 大律师背书保清白</h3>
+<h3 id="第三十回-收购报业四面楚歌-步步申诉向死而生">第三十回 收购报业四面楚歌 步步申诉向死而生</h3>
+<h3 id="第三十一回-家庭妇女被迫掌舵-新闻女王两难选择">第三十一回 家庭妇女被迫掌舵 新闻女王两难选择</h3>
+<h3 id="第三十二回-关键战役邮报登顶-长期持股高额回报">第三十二回 关键战役邮报登顶 长期持股高额回报</h3>
+<h3 id="第三十三回-盖可保险绝地逢生-伯克希尔如虎添翼">第三十三回 盖可保险绝地逢生 伯克希尔如虎添翼</h3>
+<h3 id="第三十四回-乐观出价通用再保-遭受重创公开忏悔">第三十四回 乐观出价通用再保 遭受重创公开忏悔</h3>
+<h3 id="第三十五回-曲线减持暗动心机-偷鸡不成险蚀把米">第三十五回 曲线减持暗动心机 偷鸡不成险蚀把米</h3>
+<h3 id="第三十六回-可口可乐双重错误-通用再保持续失血">第三十六回 可口可乐双重错误 通用再保持续失血</h3>
+<h3 id="第三十七回-蹚浑水拯救所罗门-看笑话围观赌金者">第三十七回 蹚浑水拯救所罗门 看笑话围观赌金者</h3>
+<h3 id="第三十八回-指导思想与时俱进-投资首选指数基金">第三十八回 指导思想与时俱进 投资首选指数基金</h3>
+<h3 id="第三十九回-指数基金英雄丰碑-思想源泉宏观鼻祖">第三十九回 指数基金英雄丰碑 思想源泉宏观鼻祖</h3>
+<h3 id="第四十回-先锋集团一鸣惊人-伯克希尔渐显颓势">第四十回 先锋集团一鸣惊人 伯克希尔渐显颓势</h3>
+<h3 id="第四十一回-金钱束缚降低回报-投资正道共有四条">第四十一回 金钱束缚降低回报 投资正道共有四条</h3>
+<h3 id="第四十二回-农地案例投资真谛-别瞅傻子坚持瞅地">第四十二回 农地案例投资真谛 别瞅傻子坚持瞅地</h3>
 </div>
 <div class="toc">
 <ul>
-<li><a href="#%E8%87%AA%E5%BA%8F%E5%B7%B4%E8%8A%92%E6%BC%94%E4%B9%89%E7%9A%84%E4%B8%89%E9%87%8D%E4%BB%B7%E5%80%BC">自序　《巴芒演义》的三重价值</a></li>
+<li><a href="#%E8%87%AA%E5%BA%8F-%E5%B7%B4%E8%8A%92%E6%BC%94%E4%B9%89%E7%9A%84%E4%B8%89%E9%87%8D%E4%BB%B7%E5%80%BC">自序 《巴芒演义》的三重价值</a></li>
 <li><a href="#%E5%BC%95%E5%AD%90">引子</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%80%E5%9B%9E%E5%8F%97%E7%A3%A8%E9%9A%BE%E8%8E%B7%E5%BE%97%E5%A5%96%E5%AD%A6%E9%87%91%E6%9C%AC%E6%9D%B0%E6%98%8E%E6%AD%A5%E5%85%A5%E5%8D%8E%E5%B0%94%E8%A1%97">第一回　受磨难获得奖学金　本杰明步入华尔街</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E5%9B%9E%E6%A0%BC%E9%9B%B7%E5%8E%84%E5%A7%86%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80%E8%AE%BE%E7%AB%8B%E5%9F%BA%E9%87%91%E5%BF%97%E5%BE%97%E6%84%8F%E6%BB%A1">第二回　格雷厄姆小试牛刀　设立基金志得意满</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E5%9B%9E%E4%BB%A3%E5%AE%A2%E7%90%86%E8%B4%A2%E9%A3%8E%E7%94%9F%E6%B0%B4%E8%B5%B7%E6%8A%95%E8%B5%84%E8%AF%BE%E7%A8%8B%E9%A1%BA%E5%8A%BF%E6%8E%A8%E5%87%BA">第三回　代客理财风生水起　投资课程顺势推出</a></li>
-<li><a href="#%E7%AC%AC%E5%9B%9B%E5%9B%9E%E5%B7%B4%E9%B2%81%E5%85%8B%E9%80%83%E9%A1%B6%E5%86%99%E4%BC%A0%E5%A5%87%E5%A4%A7%E5%B4%A9%E6%BA%83%E7%AA%81%E8%A2%AD%E6%98%BE%E7%A5%9E%E5%A8%81">第四回　巴鲁克逃顶写传奇　大崩溃突袭显神威</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%94%E5%9B%9E%E9%87%8D%E6%8D%A1%E7%83%9F%E8%92%82%E8%B5%B7%E6%AD%BB%E5%9B%9E%E7%94%9F%E5%AE%97%E5%B8%88%E7%90%86%E8%AE%BA%E6%97%A5%E8%87%BB%E6%88%90%E5%9E%8B">第五回　重捡烟蒂起死回生　宗师理论日臻成型</a></li>
-<li><a href="#%E7%AC%AC%E5%85%AD%E5%9B%9E%E6%8A%95%E8%B5%84%E5%A5%87%E6%89%8D%E8%B5%B0%E5%85%A5%E8%AF%BE%E5%A0%82%E7%83%9F%E8%92%82%E5%85%B5%E5%9B%A2%E5%88%9D%E5%85%B7%E8%A7%84%E6%A8%A1">第六回　投资奇才走入课堂　烟蒂兵团初具规模</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%83%E5%9B%9E%E6%96%BD%E6%B4%9B%E6%96%AF%E5%9F%8B%E5%A4%B4%E6%8D%A1%E5%9E%83%E5%9C%BE%E8%83%BD%E5%8A%9B%E5%9C%88%E5%87%B8%E6%98%BE%E5%A4%A7%E6%99%BA%E6%85%A7">第七回　施洛斯埋头捡垃圾　能力圈凸显大智慧</a></li>
-<li><a href="#%E7%AC%AC%E5%85%AB%E5%9B%9E%E7%83%9F%E8%92%82%E7%85%A7%E6%A0%B7%E4%B8%8E%E6%97%B6%E4%BF%B1%E8%BF%9B%E6%A0%87%E5%87%86%E9%9C%80%E9%9A%8F%E7%8E%B0%E5%AE%9E%E5%BE%AE%E8%B0%83">第八回　烟蒂照样与时俱进　标准需随现实微调</a></li>
-<li><a href="#%E7%AC%AC%E4%B9%9D%E5%9B%9E%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%88%9D%E7%AA%A5%E4%BF%9D%E9%99%A9%E4%B8%9A%E6%88%B4%E7%BB%B4%E6%A3%AE%E5%80%BE%E5%9B%8A%E4%BC%A0%E7%A7%98%E7%B1%8D">第九回　巴菲特初窥保险业　戴维森倾囊传秘籍</a></li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9E%E9%AB%98%E9%A2%9D%E5%9B%9E%E6%8A%A5%E7%9F%A5%E8%A1%8C%E4%B8%8D%E4%B8%80%E7%96%91%E5%BF%83%E7%A7%8D%E5%AD%90%E6%82%84%E6%82%84%E8%90%8C%E8%8A%BD">第十回　高额回报知行不一　疑心种子悄悄萌芽</a></li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E5%9B%9E%E5%A4%A9%E5%A4%96%E6%9C%89%E5%A4%A9%E5%AD%A6%E4%BC%9A%E9%81%BF%E7%A8%8E%E5%86%85%E5%B9%95%E6%B6%88%E6%81%AF%E8%BF%90%E7%94%A8%E5%88%86%E6%AD%A7">第十一回　天外有天学会避税　内幕消息运用分歧</a></li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%9B%9E%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%8B%92%E4%BB%BB%E6%8E%A5%E7%8F%AD%E4%BA%BA%E5%A5%A5%E9%A9%AC%E5%93%88%E4%BC%A0%E5%A5%87%E5%88%9D%E8%B5%B7%E6%AD%A5">第十二回　巴菲特拒任接班人　奥马哈传奇初起步</a></li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E5%9B%9E%E7%83%9F%E8%92%82%E4%B9%9F%E9%A1%BB%E5%A4%A9%E6%97%B6%E5%9C%B0%E5%88%A9%E6%8E%A7%E5%88%B6%E6%8A%95%E8%B5%84%E5%85%91%E7%8E%B0%E4%BB%B7%E5%80%BC">第十三回　烟蒂也须天时地利　控制投资兑现价值</a></li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%9B%9E%E6%8D%A1%E7%83%9F%E8%92%82%E6%A0%91%E6%9C%80%E4%BD%B3%E6%A8%A1%E6%9D%BF%E4%B8%8D%E5%B0%8F%E5%BF%83%E6%88%90%E8%BF%87%E8%A1%97%E8%80%81%E9%BC%A0">第十四回　捡烟蒂树最佳模板　不小心成过街老鼠</a></li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%94%E5%9B%9E%E5%86%B2%E5%8A%A8%E6%94%B6%E8%B4%AD%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94%E6%8D%9F%E5%A4%B1%E8%B6%85%E8%BF%87%E5%8D%83%E4%BA%BF%E7%BE%8E%E5%85%83">第十五回　冲动收购伯克希尔　损失超过千亿美元</a></li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AD%E5%9B%9E%E4%B8%8D%E7%94%98%E5%BF%83%E8%AF%95%E5%9B%BE%E6%89%BE%E5%87%BA%E8%B7%AF%E7%8A%AF%E7%B3%8A%E6%B6%82%E5%86%8D%E6%AC%A1%E8%B5%B0%E8%87%AD%E6%A3%8B">第十六回　不甘心试图找出路　犯糊涂再次走臭棋</a></li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%83%E5%9B%9E%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%98%B2%E8%AE%BD%E8%94%A1%E8%87%B3%E5%8B%87%E5%8D%8E%E5%B0%94%E8%A1%97%E8%BF%BD%E6%98%9F%E4%B8%AD%E5%9B%BD%E4%BD%AC">第十七回　巴菲特嘲讽蔡至勇　华尔街追星中国佬</a></li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AB%E5%9B%9E%E9%A3%8E%E5%8F%A3%E9%A3%9E%E7%8C%AA%E7%8E%B0%E5%87%BA%E5%8E%9F%E5%BD%A2%E4%B8%9C%E5%B1%B1%E5%86%8D%E8%B5%B7%E5%88%9B%E4%B8%8B%E5%A5%87%E8%BF%B9">第十八回　风口飞猪现出原形　东山再起创下奇迹</a></li>
-<li><a href="#%E7%AC%AC%E5%8D%81%E4%B9%9D%E5%9B%9E%E8%80%97%E5%B0%BD%E4%BA%BA%E5%93%81%E9%BB%AF%E7%84%B6%E7%A6%BB%E5%BC%80%E6%85%88%E5%96%84%E5%85%AB%E5%8D%A6%E8%81%8A%E5%BA%A6%E4%BD%99%E7%94%9F">第十九回　耗尽人品黯然离开　慈善八卦聊度余生</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9E%E5%B8%82%E5%9C%BA%E9%A3%8E%E6%A0%BC%E9%9A%BE%E4%BB%A5%E9%80%82%E5%BA%94%E8%A7%A3%E6%95%A3%E5%9F%BA%E9%87%91%E5%9B%BE%E4%B8%AA%E6%B8%85%E9%9D%99">第二十回　市场风格难以适应　解散基金图个清静</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%80%E5%9B%9E%E8%82%A1%E7%A5%9E%E8%B5%8C%E7%A5%9E%E5%81%B6%E7%84%B6%E7%9B%B8%E9%80%A2%E6%8A%95%E8%B5%84%E8%B5%8C%E5%8D%9A%E5%8E%9F%E7%90%86%E4%BA%92%E9%80%9A">第二十一回　股神赌神偶然相逢　投资赌博原理互通</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E5%9B%9E%E8%B5%8C%E7%A5%9E%E7%B4%A2%E6%99%AE%E5%88%9B%E9%80%A0%E4%BC%A0%E5%A5%87%E9%A6%99%E5%86%9C%E5%87%AF%E5%88%A9%E5%8D%8F%E9%98%B2%E6%9C%89%E5%8A%9F">第二十二回　赌神索普创造传奇　香农凯利协防有功</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E5%9B%9E%E5%87%AF%E5%88%A9%E5%85%AC%E5%BC%8F%E6%9A%97%E8%97%8F%E9%9A%90%E6%82%A3%E6%8A%95%E8%B5%84%E5%A5%A5%E7%A7%98%E5%90%84%E6%9C%89%E4%B8%8D%E5%90%8C">第二十三回　凯利公式暗藏隐患　投资奥秘各有不同</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E5%9B%9E%E7%B1%B3%E5%B0%94%E8%82%AF%E5%85%A5%E7%8B%B1%E5%9D%91%E7%B4%A2%E6%99%AE%E7%A5%9E%E4%B8%9A%E7%BB%A9%E5%8F%98%E6%8B%9B%E7%96%91%E4%B9%94%E5%B0%94">第二十四回　米尔肯入狱坑索普　神业绩变招疑乔尔</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E5%9B%9E%E5%8E%8B%E5%8A%9B%E4%BF%83%E7%94%9F%E7%A5%9E%E5%A5%87%E5%85%AC%E5%BC%8F%E6%A0%BC%E8%80%81%E5%90%A6%E5%AE%9A%E8%AF%81%E5%88%B8%E5%88%86%E6%9E%90">第二十五回　压力促生神奇公式　格老否定证券分析</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E5%9B%9E%E5%B7%B4%E8%8F%B2%E7%89%B9%E4%B8%93%E6%B3%A8%E6%90%AD%E8%AE%B2%E5%9D%9B%E6%87%82%E5%B9%B3%E8%A1%A1%E8%8A%92%E6%A0%BC%E5%8F%8C%E4%B8%B0%E6%94%B6">第二十六回　巴菲特专注搭讲坛　懂平衡芒格双丰收</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E5%9B%9E%E8%8A%92%E6%A0%BC%E6%8E%A8%E5%8A%A8%E6%80%9D%E6%83%B3%E8%BF%9B%E5%8C%96%E5%96%9C%E8%AF%97%E5%B1%95%E7%A4%BA%E4%BC%98%E8%B4%A8%E9%AD%85%E5%8A%9B">第二十七回　芒格推动思想进化　喜诗展示优质魅力</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E5%9B%9E%E4%B8%96%E5%AE%B6%E5%AD%90%E5%BC%9F%E5%B9%BF%E7%BB%93%E4%BA%BA%E8%84%89%E5%9C%88%E5%AD%90%E8%B4%A1%E7%8C%AE%E8%B5%9A%E9%92%B1%E8%89%AF%E6%9C%BA">第二十八回　世家子弟广结人脉　圈子贡献赚钱良机</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B9%9D%E5%9B%9E%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%BA%AB%E9%99%B7%E6%AC%BA%E8%AF%88%E6%A1%88%E5%A4%A7%E5%BE%8B%E5%B8%88%E8%83%8C%E4%B9%A6%E4%BF%9D%E6%B8%85%E7%99%BD">第二十九回　巴菲特身陷欺诈案　大律师背书保清白</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9E%E6%94%B6%E8%B4%AD%E6%8A%A5%E4%B8%9A%E5%9B%9B%E9%9D%A2%E6%A5%9A%E6%AD%8C%E6%AD%A5%E6%AD%A5%E7%94%B3%E8%AF%89%E5%90%91%E6%AD%BB%E8%80%8C%E7%94%9F">第三十回　收购报业四面楚歌　步步申诉向死而生</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%80%E5%9B%9E%E5%AE%B6%E5%BA%AD%E5%A6%87%E5%A5%B3%E8%A2%AB%E8%BF%AB%E6%8E%8C%E8%88%B5%E6%96%B0%E9%97%BB%E5%A5%B3%E7%8E%8B%E4%B8%A4%E9%9A%BE%E9%80%89%E6%8B%A9">第三十一回　家庭妇女被迫掌舵　新闻女王两难选择</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%BA%8C%E5%9B%9E%E5%85%B3%E9%94%AE%E6%88%98%E5%BD%B9%E9%82%AE%E6%8A%A5%E7%99%BB%E9%A1%B6%E9%95%BF%E6%9C%9F%E6%8C%81%E8%82%A1%E9%AB%98%E9%A2%9D%E5%9B%9E%E6%8A%A5">第三十二回　关键战役邮报登顶　长期持股高额回报</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%89%E5%9B%9E%E7%9B%96%E5%8F%AF%E4%BF%9D%E9%99%A9%E7%BB%9D%E5%9C%B0%E9%80%A2%E7%94%9F%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94%E5%A6%82%E8%99%8E%E6%B7%BB%E7%BF%BC">第三十三回　盖可保险绝地逢生　伯克希尔如虎添翼</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E5%9B%9E%E4%B9%90%E8%A7%82%E5%87%BA%E4%BB%B7%E9%80%9A%E7%94%A8%E5%86%8D%E4%BF%9D%E9%81%AD%E5%8F%97%E9%87%8D%E5%88%9B%E5%85%AC%E5%BC%80%E5%BF%8F%E6%82%94">第三十四回　乐观出价通用再保　遭受重创公开忏悔</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%BA%94%E5%9B%9E%E6%9B%B2%E7%BA%BF%E5%87%8F%E6%8C%81%E6%9A%97%E5%8A%A8%E5%BF%83%E6%9C%BA%E5%81%B7%E9%B8%A1%E4%B8%8D%E6%88%90%E9%99%A9%E8%9A%80%E6%8A%8A%E7%B1%B3">第三十五回　曲线减持暗动心机　偷鸡不成险蚀把米</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E5%85%AD%E5%9B%9E%E5%8F%AF%E5%8F%A3%E5%8F%AF%E4%B9%90%E5%8F%8C%E9%87%8D%E9%94%99%E8%AF%AF%E9%80%9A%E7%94%A8%E5%86%8D%E4%BF%9D%E6%8C%81%E7%BB%AD%E5%A4%B1%E8%A1%80">第三十六回　可口可乐双重错误　通用再保持续失血</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%83%E5%9B%9E%E8%B9%9A%E6%B5%91%E6%B0%B4%E6%8B%AF%E6%95%91%E6%89%80%E7%BD%97%E9%97%A8%E7%9C%8B%E7%AC%91%E8%AF%9D%E5%9B%B4%E8%A7%82%E8%B5%8C%E9%87%91%E8%80%85">第三十七回　蹚浑水拯救所罗门　看笑话围观赌金者</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E5%85%AB%E5%9B%9E%E6%8C%87%E5%AF%BC%E6%80%9D%E6%83%B3%E4%B8%8E%E6%97%B6%E4%BF%B1%E8%BF%9B%E6%8A%95%E8%B5%84%E9%A6%96%E9%80%89%E6%8C%87%E6%95%B0%E5%9F%BA%E9%87%91">第三十八回　指导思想与时俱进　投资首选指数基金</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B9%9D%E5%9B%9E%E6%8C%87%E6%95%B0%E5%9F%BA%E9%87%91%E8%8B%B1%E9%9B%84%E4%B8%B0%E7%A2%91%E6%80%9D%E6%83%B3%E6%BA%90%E6%B3%89%E5%AE%8F%E8%A7%82%E9%BC%BB%E7%A5%96">第三十九回　指数基金英雄丰碑　思想源泉宏观鼻祖</a></li>
-<li><a href="#%E7%AC%AC%E5%9B%9B%E5%8D%81%E5%9B%9E%E5%85%88%E9%94%8B%E9%9B%86%E5%9B%A2%E4%B8%80%E9%B8%A3%E6%83%8A%E4%BA%BA%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94%E6%B8%90%E6%98%BE%E9%A2%93%E5%8A%BF">第四十回　先锋集团一鸣惊人　伯克希尔渐显颓势</a></li>
-<li><a href="#%E7%AC%AC%E5%9B%9B%E5%8D%81%E4%B8%80%E5%9B%9E%E9%87%91%E9%92%B1%E6%9D%9F%E7%BC%9A%E9%99%8D%E4%BD%8E%E5%9B%9E%E6%8A%A5%E6%8A%95%E8%B5%84%E6%AD%A3%E9%81%93%E5%85%B1%E6%9C%89%E5%9B%9B%E6%9D%A1">第四十一回　金钱束缚降低回报　投资正道共有四条</a></li>
-<li><a href="#%E7%AC%AC%E5%9B%9B%E5%8D%81%E4%BA%8C%E5%9B%9E%E5%86%9C%E5%9C%B0%E6%A1%88%E4%BE%8B%E6%8A%95%E8%B5%84%E7%9C%9F%E8%B0%9B%E5%88%AB%E7%9E%85%E5%82%BB%E5%AD%90%E5%9D%9A%E6%8C%81%E7%9E%85%E5%9C%B0">第四十二回　农地案例投资真谛　别瞅傻子坚持瞅地</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E5%9B%9E-%E5%8F%97%E7%A3%A8%E9%9A%BE%E8%8E%B7%E5%BE%97%E5%A5%96%E5%AD%A6%E9%87%91-%E6%9C%AC%E6%9D%B0%E6%98%8E%E6%AD%A5%E5%85%A5%E5%8D%8E%E5%B0%94%E8%A1%97">第一回 受磨难获得奖学金 本杰明步入华尔街</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%9B%9E-%E6%A0%BC%E9%9B%B7%E5%8E%84%E5%A7%86%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80-%E8%AE%BE%E7%AB%8B%E5%9F%BA%E9%87%91%E5%BF%97%E5%BE%97%E6%84%8F%E6%BB%A1">第二回 格雷厄姆小试牛刀 设立基金志得意满</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%9B%9E-%E4%BB%A3%E5%AE%A2%E7%90%86%E8%B4%A2%E9%A3%8E%E7%94%9F%E6%B0%B4%E8%B5%B7-%E6%8A%95%E8%B5%84%E8%AF%BE%E7%A8%8B%E9%A1%BA%E5%8A%BF%E6%8E%A8%E5%87%BA">第三回 代客理财风生水起 投资课程顺势推出</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E5%9B%9E-%E5%B7%B4%E9%B2%81%E5%85%8B%E9%80%83%E9%A1%B6%E5%86%99%E4%BC%A0%E5%A5%87-%E5%A4%A7%E5%B4%A9%E6%BA%83%E7%AA%81%E8%A2%AD%E6%98%BE%E7%A5%9E%E5%A8%81">第四回 巴鲁克逃顶写传奇 大崩溃突袭显神威</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E5%9B%9E-%E9%87%8D%E6%8D%A1%E7%83%9F%E8%92%82%E8%B5%B7%E6%AD%BB%E5%9B%9E%E7%94%9F-%E5%AE%97%E5%B8%88%E7%90%86%E8%AE%BA%E6%97%A5%E8%87%BB%E6%88%90%E5%9E%8B">第五回 重捡烟蒂起死回生 宗师理论日臻成型</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E5%9B%9E-%E6%8A%95%E8%B5%84%E5%A5%87%E6%89%8D%E8%B5%B0%E5%85%A5%E8%AF%BE%E5%A0%82-%E7%83%9F%E8%92%82%E5%85%B5%E5%9B%A2%E5%88%9D%E5%85%B7%E8%A7%84%E6%A8%A1">第六回 投资奇才走入课堂 烟蒂兵团初具规模</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E5%9B%9E-%E6%96%BD%E6%B4%9B%E6%96%AF%E5%9F%8B%E5%A4%B4%E6%8D%A1%E5%9E%83%E5%9C%BE-%E8%83%BD%E5%8A%9B%E5%9C%88%E5%87%B8%E6%98%BE%E5%A4%A7%E6%99%BA%E6%85%A7">第七回 施洛斯埋头捡垃圾 能力圈凸显大智慧</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E5%9B%9E-%E7%83%9F%E8%92%82%E7%85%A7%E6%A0%B7%E4%B8%8E%E6%97%B6%E4%BF%B1%E8%BF%9B-%E6%A0%87%E5%87%86%E9%9C%80%E9%9A%8F%E7%8E%B0%E5%AE%9E%E5%BE%AE%E8%B0%83">第八回 烟蒂照样与时俱进 标准需随现实微调</a></li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E5%9B%9E-%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%88%9D%E7%AA%A5%E4%BF%9D%E9%99%A9%E4%B8%9A-%E6%88%B4%E7%BB%B4%E6%A3%AE%E5%80%BE%E5%9B%8A%E4%BC%A0%E7%A7%98%E7%B1%8D">第九回 巴菲特初窥保险业 戴维森倾囊传秘籍</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9E-%E9%AB%98%E9%A2%9D%E5%9B%9E%E6%8A%A5%E7%9F%A5%E8%A1%8C%E4%B8%8D%E4%B8%80-%E7%96%91%E5%BF%83%E7%A7%8D%E5%AD%90%E6%82%84%E6%82%84%E8%90%8C%E8%8A%BD">第十回 高额回报知行不一 疑心种子悄悄萌芽</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E5%9B%9E-%E5%A4%A9%E5%A4%96%E6%9C%89%E5%A4%A9%E5%AD%A6%E4%BC%9A%E9%81%BF%E7%A8%8E-%E5%86%85%E5%B9%95%E6%B6%88%E6%81%AF%E8%BF%90%E7%94%A8%E5%88%86%E6%AD%A7">第十一回 天外有天学会避税 内幕消息运用分歧</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%9B%9E-%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%8B%92%E4%BB%BB%E6%8E%A5%E7%8F%AD%E4%BA%BA-%E5%A5%A5%E9%A9%AC%E5%93%88%E4%BC%A0%E5%A5%87%E5%88%9D%E8%B5%B7%E6%AD%A5">第十二回 巴菲特拒任接班人 奥马哈传奇初起步</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E5%9B%9E-%E7%83%9F%E8%92%82%E4%B9%9F%E9%A1%BB%E5%A4%A9%E6%97%B6%E5%9C%B0%E5%88%A9-%E6%8E%A7%E5%88%B6%E6%8A%95%E8%B5%84%E5%85%91%E7%8E%B0%E4%BB%B7%E5%80%BC">第十三回 烟蒂也须天时地利 控制投资兑现价值</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%9B%9E-%E6%8D%A1%E7%83%9F%E8%92%82%E6%A0%91%E6%9C%80%E4%BD%B3%E6%A8%A1%E6%9D%BF-%E4%B8%8D%E5%B0%8F%E5%BF%83%E6%88%90%E8%BF%87%E8%A1%97%E8%80%81%E9%BC%A0">第十四回 捡烟蒂树最佳模板 不小心成过街老鼠</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%94%E5%9B%9E-%E5%86%B2%E5%8A%A8%E6%94%B6%E8%B4%AD%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94-%E6%8D%9F%E5%A4%B1%E8%B6%85%E8%BF%87%E5%8D%83%E4%BA%BF%E7%BE%8E%E5%85%83">第十五回 冲动收购伯克希尔 损失超过千亿美元</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AD%E5%9B%9E-%E4%B8%8D%E7%94%98%E5%BF%83%E8%AF%95%E5%9B%BE%E6%89%BE%E5%87%BA%E8%B7%AF-%E7%8A%AF%E7%B3%8A%E6%B6%82%E5%86%8D%E6%AC%A1%E8%B5%B0%E8%87%AD%E6%A3%8B">第十六回 不甘心试图找出路 犯糊涂再次走臭棋</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%83%E5%9B%9E-%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%98%B2%E8%AE%BD%E8%94%A1%E8%87%B3%E5%8B%87-%E5%8D%8E%E5%B0%94%E8%A1%97%E8%BF%BD%E6%98%9F%E4%B8%AD%E5%9B%BD%E4%BD%AC">第十七回 巴菲特嘲讽蔡至勇 华尔街追星中国佬</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AB%E5%9B%9E-%E9%A3%8E%E5%8F%A3%E9%A3%9E%E7%8C%AA%E7%8E%B0%E5%87%BA%E5%8E%9F%E5%BD%A2-%E4%B8%9C%E5%B1%B1%E5%86%8D%E8%B5%B7%E5%88%9B%E4%B8%8B%E5%A5%87%E8%BF%B9">第十八回 风口飞猪现出原形 东山再起创下奇迹</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B9%9D%E5%9B%9E-%E8%80%97%E5%B0%BD%E4%BA%BA%E5%93%81%E9%BB%AF%E7%84%B6%E7%A6%BB%E5%BC%80-%E6%85%88%E5%96%84%E5%85%AB%E5%8D%A6%E8%81%8A%E5%BA%A6%E4%BD%99%E7%94%9F">第十九回 耗尽人品黯然离开 慈善八卦聊度余生</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9E-%E5%B8%82%E5%9C%BA%E9%A3%8E%E6%A0%BC%E9%9A%BE%E4%BB%A5%E9%80%82%E5%BA%94-%E8%A7%A3%E6%95%A3%E5%9F%BA%E9%87%91%E5%9B%BE%E4%B8%AA%E6%B8%85%E9%9D%99">第二十回 市场风格难以适应 解散基金图个清静</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%80%E5%9B%9E-%E8%82%A1%E7%A5%9E%E8%B5%8C%E7%A5%9E%E5%81%B6%E7%84%B6%E7%9B%B8%E9%80%A2-%E6%8A%95%E8%B5%84%E8%B5%8C%E5%8D%9A%E5%8E%9F%E7%90%86%E4%BA%92%E9%80%9A">第二十一回 股神赌神偶然相逢 投资赌博原理互通</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E5%9B%9E-%E8%B5%8C%E7%A5%9E%E7%B4%A2%E6%99%AE%E5%88%9B%E9%80%A0%E4%BC%A0%E5%A5%87-%E9%A6%99%E5%86%9C%E5%87%AF%E5%88%A9%E5%8D%8F%E9%98%B2%E6%9C%89%E5%8A%9F">第二十二回 赌神索普创造传奇 香农凯利协防有功</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E5%9B%9E-%E5%87%AF%E5%88%A9%E5%85%AC%E5%BC%8F%E6%9A%97%E8%97%8F%E9%9A%90%E6%82%A3-%E6%8A%95%E8%B5%84%E5%A5%A5%E7%A7%98%E5%90%84%E6%9C%89%E4%B8%8D%E5%90%8C">第二十三回 凯利公式暗藏隐患 投资奥秘各有不同</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E5%9B%9E-%E7%B1%B3%E5%B0%94%E8%82%AF%E5%85%A5%E7%8B%B1%E5%9D%91%E7%B4%A2%E6%99%AE-%E7%A5%9E%E4%B8%9A%E7%BB%A9%E5%8F%98%E6%8B%9B%E7%96%91%E4%B9%94%E5%B0%94">第二十四回 米尔肯入狱坑索普 神业绩变招疑乔尔</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E5%9B%9E-%E5%8E%8B%E5%8A%9B%E4%BF%83%E7%94%9F%E7%A5%9E%E5%A5%87%E5%85%AC%E5%BC%8F-%E6%A0%BC%E8%80%81%E5%90%A6%E5%AE%9A%E8%AF%81%E5%88%B8%E5%88%86%E6%9E%90">第二十五回 压力促生神奇公式 格老否定证券分析</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E5%9B%9E-%E5%B7%B4%E8%8F%B2%E7%89%B9%E4%B8%93%E6%B3%A8%E6%90%AD%E8%AE%B2%E5%9D%9B-%E6%87%82%E5%B9%B3%E8%A1%A1%E8%8A%92%E6%A0%BC%E5%8F%8C%E4%B8%B0%E6%94%B6">第二十六回 巴菲特专注搭讲坛 懂平衡芒格双丰收</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E5%9B%9E-%E8%8A%92%E6%A0%BC%E6%8E%A8%E5%8A%A8%E6%80%9D%E6%83%B3%E8%BF%9B%E5%8C%96-%E5%96%9C%E8%AF%97%E5%B1%95%E7%A4%BA%E4%BC%98%E8%B4%A8%E9%AD%85%E5%8A%9B">第二十七回 芒格推动思想进化 喜诗展示优质魅力</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E5%9B%9E-%E4%B8%96%E5%AE%B6%E5%AD%90%E5%BC%9F%E5%B9%BF%E7%BB%93%E4%BA%BA%E8%84%89-%E5%9C%88%E5%AD%90%E8%B4%A1%E7%8C%AE%E8%B5%9A%E9%92%B1%E8%89%AF%E6%9C%BA">第二十八回 世家子弟广结人脉 圈子贡献赚钱良机</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B9%9D%E5%9B%9E-%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%BA%AB%E9%99%B7%E6%AC%BA%E8%AF%88%E6%A1%88-%E5%A4%A7%E5%BE%8B%E5%B8%88%E8%83%8C%E4%B9%A6%E4%BF%9D%E6%B8%85%E7%99%BD">第二十九回 巴菲特身陷欺诈案 大律师背书保清白</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9E-%E6%94%B6%E8%B4%AD%E6%8A%A5%E4%B8%9A%E5%9B%9B%E9%9D%A2%E6%A5%9A%E6%AD%8C-%E6%AD%A5%E6%AD%A5%E7%94%B3%E8%AF%89%E5%90%91%E6%AD%BB%E8%80%8C%E7%94%9F">第三十回 收购报业四面楚歌 步步申诉向死而生</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%80%E5%9B%9E-%E5%AE%B6%E5%BA%AD%E5%A6%87%E5%A5%B3%E8%A2%AB%E8%BF%AB%E6%8E%8C%E8%88%B5-%E6%96%B0%E9%97%BB%E5%A5%B3%E7%8E%8B%E4%B8%A4%E9%9A%BE%E9%80%89%E6%8B%A9">第三十一回 家庭妇女被迫掌舵 新闻女王两难选择</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%BA%8C%E5%9B%9E-%E5%85%B3%E9%94%AE%E6%88%98%E5%BD%B9%E9%82%AE%E6%8A%A5%E7%99%BB%E9%A1%B6-%E9%95%BF%E6%9C%9F%E6%8C%81%E8%82%A1%E9%AB%98%E9%A2%9D%E5%9B%9E%E6%8A%A5">第三十二回 关键战役邮报登顶 长期持股高额回报</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%89%E5%9B%9E-%E7%9B%96%E5%8F%AF%E4%BF%9D%E9%99%A9%E7%BB%9D%E5%9C%B0%E9%80%A2%E7%94%9F-%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94%E5%A6%82%E8%99%8E%E6%B7%BB%E7%BF%BC">第三十三回 盖可保险绝地逢生 伯克希尔如虎添翼</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E5%9B%9E-%E4%B9%90%E8%A7%82%E5%87%BA%E4%BB%B7%E9%80%9A%E7%94%A8%E5%86%8D%E4%BF%9D-%E9%81%AD%E5%8F%97%E9%87%8D%E5%88%9B%E5%85%AC%E5%BC%80%E5%BF%8F%E6%82%94">第三十四回 乐观出价通用再保 遭受重创公开忏悔</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%BA%94%E5%9B%9E-%E6%9B%B2%E7%BA%BF%E5%87%8F%E6%8C%81%E6%9A%97%E5%8A%A8%E5%BF%83%E6%9C%BA-%E5%81%B7%E9%B8%A1%E4%B8%8D%E6%88%90%E9%99%A9%E8%9A%80%E6%8A%8A%E7%B1%B3">第三十五回 曲线减持暗动心机 偷鸡不成险蚀把米</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E5%85%AD%E5%9B%9E-%E5%8F%AF%E5%8F%A3%E5%8F%AF%E4%B9%90%E5%8F%8C%E9%87%8D%E9%94%99%E8%AF%AF-%E9%80%9A%E7%94%A8%E5%86%8D%E4%BF%9D%E6%8C%81%E7%BB%AD%E5%A4%B1%E8%A1%80">第三十六回 可口可乐双重错误 通用再保持续失血</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%83%E5%9B%9E-%E8%B9%9A%E6%B5%91%E6%B0%B4%E6%8B%AF%E6%95%91%E6%89%80%E7%BD%97%E9%97%A8-%E7%9C%8B%E7%AC%91%E8%AF%9D%E5%9B%B4%E8%A7%82%E8%B5%8C%E9%87%91%E8%80%85">第三十七回 蹚浑水拯救所罗门 看笑话围观赌金者</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E5%85%AB%E5%9B%9E-%E6%8C%87%E5%AF%BC%E6%80%9D%E6%83%B3%E4%B8%8E%E6%97%B6%E4%BF%B1%E8%BF%9B-%E6%8A%95%E8%B5%84%E9%A6%96%E9%80%89%E6%8C%87%E6%95%B0%E5%9F%BA%E9%87%91">第三十八回 指导思想与时俱进 投资首选指数基金</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B9%9D%E5%9B%9E-%E6%8C%87%E6%95%B0%E5%9F%BA%E9%87%91%E8%8B%B1%E9%9B%84%E4%B8%B0%E7%A2%91-%E6%80%9D%E6%83%B3%E6%BA%90%E6%B3%89%E5%AE%8F%E8%A7%82%E9%BC%BB%E7%A5%96">第三十九回 指数基金英雄丰碑 思想源泉宏观鼻祖</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E5%8D%81%E5%9B%9E-%E5%85%88%E9%94%8B%E9%9B%86%E5%9B%A2%E4%B8%80%E9%B8%A3%E6%83%8A%E4%BA%BA-%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94%E6%B8%90%E6%98%BE%E9%A2%93%E5%8A%BF">第四十回 先锋集团一鸣惊人 伯克希尔渐显颓势</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E5%8D%81%E4%B8%80%E5%9B%9E-%E9%87%91%E9%92%B1%E6%9D%9F%E7%BC%9A%E9%99%8D%E4%BD%8E%E5%9B%9E%E6%8A%A5-%E6%8A%95%E8%B5%84%E6%AD%A3%E9%81%93%E5%85%B1%E6%9C%89%E5%9B%9B%E6%9D%A1">第四十一回 金钱束缚降低回报 投资正道共有四条</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E5%8D%81%E4%BA%8C%E5%9B%9E-%E5%86%9C%E5%9C%B0%E6%A1%88%E4%BE%8B%E6%8A%95%E8%B5%84%E7%9C%9F%E8%B0%9B-%E5%88%AB%E7%9E%85%E5%82%BB%E5%AD%90%E5%9D%9A%E6%8C%81%E7%9E%85%E5%9C%B0">第四十二回 农地案例投资真谛 别瞅傻子坚持瞅地</a></li>
 </ul>
 </div>
-        
-        
-    </body>
-    </html>
+            
+            
+        </body>
+        </html>

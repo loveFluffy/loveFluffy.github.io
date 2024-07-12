@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x6c38;&#x4e45;&#x8bb0;&#x5f55;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x6c38;&#x4e45;&#x8bb0;&#x5f55;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,448 +31,113 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
-		z-index: 1;
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="永久记录">永久记录</h1>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="永久记录">永久记录</h1>
 <h2 id="美爱德华斯诺登edward-snowden-著萧美慧-郑胜得-译">[美]爱德华·斯诺登(Edward Snowden) 著|萧美慧 郑胜得 译</h2>
+<div class="mycomment">
+<p>自传形式，前半部分记录的小时候的故事、生活细节很多，读来有点繁琐冗杂。后半部分记录自己的工作、泄密想法的形成与实施，以及之后的流亡生活，是主要的重点部分，读起来还是非常激动人心的。</p>
+</div>
 <h3 id="前言">前言</h3>
 <p>在你产生反感、明白互联网疯狂毒害我们这个时代之前，请你谅解，对我来说，在我认识互联网之时，它是很不一样的事物。网络既是朋友，也是父母，是一个无边界、无限制的社群；既有单一的声音，也有无数的声音，是一个已经有人垦殖但尚未遭到剥削的共同地带，各种各样的部落和睦相处，每个成员都能自由选择自己的姓名、历史和风俗习惯。每个人都戴着面具，然而这种多数匿名造就的文化所产生的事实多于造假，因为重点在于创造与合作，而不是商业与竞争。当然，这中间也会有冲突，但善意与善念会胜过冲突——这正是真正的先驱精神。</p>
 <p>如此一来，你便会明白，我说今日的网络是“无法辨识”的是什么意思。值得一提的是，这种改变是一项有意识的改变，是少数特权人士的系统性努力的结果。在线发展电子商务的早期浪潮很快便成为泡沫，接着在21世纪之初终于破灭。在那之后，企业界意识到，人们在网络上的兴趣不仅在于消费，更在于分享，而且网络促成的人际联结是可以卖钱的。如果人们在网络上想做的事主要是跟家人、朋友和陌生人报告自己的近况，从而得知家人、朋友和陌生人的近况，那么企业只需要设法将自己挤进这些社交互动中，再从中获利即可。</p>
@@ -800,8 +467,42 @@ div.toc ul>li>ul>li>ul>li>ul>li {
 <p>我们不能任由自己受到这样的利用，被利用来对抗未来。我们不能允许自己的资料被用来向我们推销绝对不可以出卖的东西，例如新闻。如果袖手旁观，所看到的新闻将只是我们想要的新闻，或是当权者希望全民看到的新闻，而不是必要的坦白和共同对话。不能放任我们所受到的全面监控，以之来计算我们的公民分数，或是预测我们的犯罪行为；我们会受什么教育，会找到什么工作，或是能否受教育或找工作；依据金融、法律和医疗记录来歧视我们，更别说还有族群或种族，这些都是我们的资料的构成因素。至于个人最私密的资料，我们的基因信息：如果坐视这种信息被用来辨识我们，那么它也会被用来加害我们，甚至修改我们，按照试图控制全民的科技概念，重新塑造我们的人性本质。</p>
 <p>当然，以上种种全部都已经发生了。</p>
 <p>每当我出门，我都会做一些变装。或者刮掉胡须，或者换不同的眼镜。我从来不喜欢寒冷的天气，直到后来我明白帽子与围巾提供了世上最便利、最不显眼的匿名方式。我改变走路的规律与速度；不听从母亲的明智意见，我过马路时从来不看来车，因此我从来没有被无所不在的行车记录仪给拍到。走过装有监视器的大楼时，我便低着头，所以没人看到我出现在网络上的正面模样。我以前担心搭公交车与地铁，可是现在大家都忙着看手机，根本没人看我一眼。如果我搭出租车，我会叫司机在距离我住处几条街外的公交车站或地铁站接我，让我在距离要去的地方几条街外的一个地点下车。</p>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AA%97%E5%A4%96">第一章 窗外</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E5%A2%99">第二章 看不见的墙</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%8E%AF%E5%9F%8E%E5%85%AC%E8%B7%AF%E7%94%B7%E5%AD%A9">第三章 环城公路男孩</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BE%8E%E5%9B%BD%E5%9C%A8%E7%BA%BF">第四章 美国在线</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E9%BB%91%E5%AE%A2">第五章 黑客</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%9C%AA%E5%AE%8C%E6%88%90">第六章 未完成</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-911%E4%BA%8B%E4%BB%B6">第七章 “9·11”事件</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-9%E6%9C%8812%E6%97%A5">第八章 9月12日</a></li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-x%E5%85%89">第九章 X光</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%AE%89%E5%85%A8%E8%B0%83%E6%9F%A5%E5%92%8C%E5%9D%A0%E5%85%A5%E7%88%B1%E6%B2%B3">第十章 安全调查和坠入爱河</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E7%B3%BB%E7%BB%9F">第十一章 系统</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E5%A5%91%E7%BA%A6%E4%BA%BA">第十二章 契约人</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E5%9F%B9%E8%AE%AD">第十三章 培训</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-%E5%B1%B1%E4%B8%98%E4%B8%8A%E7%9A%84%E4%BC%AF%E7%88%B5">第十四章 山丘上的伯爵</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0-%E6%97%A5%E5%86%85%E7%93%A6">第十五章 日内瓦</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0-%E4%B8%9C%E4%BA%AC">第十六章 东京</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0-%E4%BA%91%E7%AB%AF%E4%B9%8B%E5%AE%B6">第十七章 云端之家</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0-%E6%B2%99%E5%8F%91%E4%B8%8A%E7%9A%84%E6%B2%89%E6%80%9D">第十八章 沙发上的沉思</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0-%E5%9D%91%E9%81%93">第十九章 坑道</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0-%E5%BF%83%E8%B7%B3">第二十章 心跳</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%80%E7%AB%A0-%E5%90%B9%E5%93%A8">第二十一章 吹哨</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E7%AB%A0-%E7%AC%AC%E5%9B%9B%E6%9D%83">第二十二章 第四权</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E7%AB%A0-%E8%AF%BB%E5%8F%96%E5%86%99%E5%85%A5%E6%89%A7%E8%A1%8C">第二十三章 读取、写入、执行</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%AB%A0-%E5%8A%A0%E5%AF%86">第二十四章 加密</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AB%A0-%E7%94%B7%E5%AD%A9">第二十五章 男孩</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E7%AB%A0-%E9%A6%99%E6%B8%AF">第二十六章 香港</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E7%AB%A0-%E8%8E%AB%E6%96%AF%E7%A7%91">第二十七章 莫斯科</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AB%A0-%E7%90%B3%E8%B5%9B%E7%B1%B3%E5%B0%94%E6%96%AF%E7%9A%84%E6%97%A5%E8%AE%B0">第二十八章 琳赛·米尔斯的日记</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B9%9D%E7%AB%A0-%E7%88%B1%E4%B8%8E%E6%B5%81%E4%BA%A1">第二十九章 爱与流亡</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

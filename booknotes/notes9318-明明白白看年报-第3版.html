@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x660e;&#x660e;&#x767d;&#x767d;&#x770b;&#x5e74;&#x62a5;&#xff08;&#x7b2c;3&#x7248;&#xff09;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x660e;&#x660e;&#x767d;&#x767d;&#x770b;&#x5e74;&#x62a5;&#xff08;&#x7b2c;3&#x7248;&#xff09;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -331,10 +430,33 @@ a:target {
 	outline: 0;
 }
 
+/*笔记中的普通表格*/
 table {
-	align-self: center;
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
 }
 
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
 img {
 	align-self: center;
 	max-width: 1000px;
@@ -344,6 +466,20 @@ img {
 /* 选中后背景浅粉色 */
 ::selection {
 	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
 }
 
 
@@ -358,8 +494,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +521,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,72 +550,110 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <div class="content">
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
 <h1 id="明明白白看年报第3版">明明白白看年报（第3版）</h1>
 <h2 id="袁克成-著">袁克成 著</h2>
+<div class="mycomment">
+<p>通俗易懂。普通人以为年报就是三张表，其实一张年报包括了12个部分，除了报表，这本书还介绍了其他11个部分。</p>
+</div>
 <h3 id="推荐序一-巴菲特的三板斧">推荐序一 巴菲特的“三板斧”</h3>
 <p>有记者问过巴菲特，选股有什么诀窍？</p>
 <p>巴菲特说，第一，去学会计，做一个聪明的投资人，而不要做一个冲动的投资人。因为会计是一种通用的商务语言，通过会计财务报表，聪明的投资人会发现企业的内部价值，而冲动的投资人看重的只是股票的外部价格。第二是阅读技能，只投资自己看得明白的公司，如果一个公司的年报让你看不明白，很自然就会怀疑这家公司的诚信度，或者该公司在刻意掩藏什么信息，故意不让投资者明白。第三是耐心等待，一个人一生中真正投资的股票也就四五只，一旦发现了，就要大量买入。</p>
@@ -600,11 +779,11 @@ iPad mini 5：2048*1536
 <h4 id="关注三季报">关注三季报</h4>
 <p>最先透露全年业绩信息的，是上市公司第三季度报告。该报告披露时间是每年的10月1日至31日。</p>
 <p>按照规定：如果上市公司预测全年累计净利润可能为亏损、扭亏为盈，或者与上一年同比会发生大幅度变动（上升或者下降50%以上），应当在其第三季度报告中，予以披露并说明原因。据此，一些上市公司会在其三季报中对全年业绩做出预测（见图1-2）。</p>
-<p><img src="file:///d:\loveFluffy\myBlog\booknotes\img\notes9318-1.jpeg" alt="三季报示例"></p>
+<p><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\img\notes9318-1.jpeg" alt="三季报示例"></p>
 <p>图1-2　三季报示例</p>
 <p>值得注意的是，按照规定，中小板上市公司必须在每年第三季度报告中对全年业绩作预测。这一点与主板上市公司有明显区别。</p>
 <p>当然，与后面将要讲到的业绩预告、业绩快报相比，三季报中对全年业绩做出的预测，准确性要低一些。毕竟，第四季度经营尚未发生，不可预知因素很多。比如，从2008年的情况看，由于全球经济在第四季度加剧衰退，不少上市公司修订了三季报中的盈利预测（见图1-3）。</p>
-<p><img src="file:///d:\loveFluffy\myBlog\booknotes\img\notes9318-2.jpeg" alt="业绩预告修正公告"></p>
+<p><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\img\notes9318-2.jpeg" alt="业绩预告修正公告"></p>
 <p>图1-3　业绩预告修正公告</p>
 <h4 id="业绩预告">业绩预告</h4>
 <p>从每年11月1日至来年1月31日之间（交易所之所以将1月31日作为上市公司披露业绩预告的截止日，是考虑到在1月份之时，公司已可以对去年全年业绩做出较为准确的判断），上市公司若符合下列两项条件之一的，也要对全年业绩进行预告（见图1-4）。</p>
@@ -741,7 +920,7 @@ iPad mini 5：2048*1536
 <li><a href="#%E7%AC%AC29%E7%AB%A0-%E7%BB%99%E4%B8%8A%E5%B8%82%E5%85%AC%E5%8F%B8%E5%8D%B8%E5%A6%86-%E9%9D%9E%E7%BB%8F%E5%B8%B8%E6%80%A7%E6%8D%9F%E7%9B%8A">第29章 给上市公司卸妆 非经常性损益</a></li>
 </ul>
 </div>
-        
-        
-    </body>
-    </html>
+            
+            
+        </body>
+        </html>

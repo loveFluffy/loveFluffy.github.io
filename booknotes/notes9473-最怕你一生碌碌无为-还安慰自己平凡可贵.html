@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x6700;&#x6015;&#x4f60;&#x4e00;&#x751f;&#x788c;&#x788c;&#x65e0;&#x4e3a;&#xff0c;&#x8fd8;&#x5b89;&#x6170;&#x81ea;&#x5df1;&#x5e73;&#x51e1;&#x53ef;&#x8d35;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x6700;&#x6015;&#x4f60;&#x4e00;&#x751f;&#x788c;&#x788c;&#x65e0;&#x4e3a;&#xff0c;&#x8fd8;&#x5b89;&#x6170;&#x81ea;&#x5df1;&#x5e73;&#x51e1;&#x53ef;&#x8d35;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -331,10 +430,33 @@ a:target {
 	outline: 0;
 }
 
+/*笔记中的普通表格*/
 table {
-	align-self: center;
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
 }
 
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
 img {
 	align-self: center;
 	max-width: 1000px;
@@ -344,6 +466,20 @@ img {
 /* 选中后背景浅粉色 */
 ::selection {
 	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
 }
 
 
@@ -358,8 +494,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +521,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,71 +550,110 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="最怕你一生碌碌无为还安慰自己平凡可贵">最怕你一生碌碌无为，还安慰自己平凡可贵</h1>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="最怕你一生碌碌无为还安慰自己平凡可贵">最怕你一生碌碌无为，还安慰自己平凡可贵</h1>
 <h2 id="老杨的猫头鹰-著">老杨的猫头鹰 著</h2>
+<div class="mycomment">
+<p>读起来挺打鸡血的语言，但是实用型不强。能被作者这样批评的人，该是多么可悲的人啊。</p>
+</div>
 <h3 id="01说得那么体面为何活得那么敷衍">01．说得那么体面，为何活得那么敷衍</h3>
 <p>李嘉诚对体面的生活有过这样的阐述：“当年，我只用一分钟的时间就算出了去那个体面的地方上班的结果，于是我离开了。现在，很多人用一生的时间去证实我算的是对的。很多人有体面的工作，但是，并没过上体面的生活！因为体面的工作并不能保证给你体面生活的资本！”</p>
 <h3 id="02这个社会不分男女只分强弱">02．这个社会不分男女，只分强弱</h3>
@@ -517,8 +697,42 @@ iPad mini 5：2048*1536
 <h3 id="28所有的悔不当初都是自食其果">28．所有的悔不当初，都是自食其果</h3>
 <h3 id="29你所谓的迷茫只是清醒地看着自己沉沦">29．你所谓的迷茫，只是清醒地看着自己沉沦</h3>
 <h3 id="30在最容易了不起的年代你怎么敢甘于平凡">30．在最容易了不起的年代，你怎么敢甘于平凡</h3>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#01%E8%AF%B4%E5%BE%97%E9%82%A3%E4%B9%88%E4%BD%93%E9%9D%A2%E4%B8%BA%E4%BD%95%E6%B4%BB%E5%BE%97%E9%82%A3%E4%B9%88%E6%95%B7%E8%A1%8D">01．说得那么体面，为何活得那么敷衍</a></li>
+<li><a href="#02%E8%BF%99%E4%B8%AA%E7%A4%BE%E4%BC%9A%E4%B8%8D%E5%88%86%E7%94%B7%E5%A5%B3%E5%8F%AA%E5%88%86%E5%BC%BA%E5%BC%B1">02．这个社会不分男女，只分强弱</a></li>
+<li><a href="#03%E6%82%84%E6%82%84%E6%AF%81%E6%8E%89%E4%BD%A0%E7%9A%84%E6%98%AF%E9%80%80%E8%80%8C%E6%B1%82%E5%85%B6%E6%AC%A1">03．悄悄毁掉你的，是退而求其次</a></li>
+<li><a href="#04%E8%87%AA%E5%B7%B1%E4%B8%8D%E8%83%BD%E5%B1%95%E9%9C%B2%E5%85%89%E8%8A%92%E5%B0%B1%E4%B8%8D%E8%A6%81%E6%80%AA%E5%88%AB%E4%BA%BA%E6%B2%A1%E7%9C%BC%E5%85%89">04．自己不能展露光芒，就不要怪别人没眼光</a></li>
+<li><a href="#05%E4%BD%A0%E5%8F%AA%E6%98%AF%E7%9C%8B%E8%B5%B7%E6%9D%A5%E5%BE%88%E5%8A%AA%E5%8A%9B">05．你只是看起来很努力</a></li>
+<li><a href="#06sorry%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E6%9C%AC%E6%9D%A5%E5%B0%B1%E4%B8%8D%E5%85%AC%E5%B9%B3">06．Sorry，这个世界本来就不公平</a></li>
+<li><a href="#07%E4%BD%A0%E6%83%B3%E8%A6%81%E7%9A%84%E5%88%AB%E4%BA%BA%E5%87%AD%E4%BB%80%E4%B9%88%E7%BB%99%E4%BD%A0">07．你想要的，别人凭什么给你</a></li>
+<li><a href="#08%E6%AF%94%E4%BD%A0%E4%BC%98%E7%A7%80%E7%9A%84%E4%BA%BA%E5%BE%80%E5%BE%80%E9%83%BD%E6%AF%94%E4%BD%A0%E6%9B%B4%E5%8A%AA%E5%8A%9B">08．比你优秀的人，往往都比你更努力</a></li>
+<li><a href="#09%E7%A1%AC%E5%AE%9E%E5%8A%9B%E4%B8%8D%E8%A1%8C%E6%89%8D%E4%BC%9A%E5%81%87%E6%83%85%E6%80%80%E6%B3%9B%E6%BB%A5">09．硬实力不行，才会假情怀泛滥</a></li>
+<li><a href="#10%E4%B8%8D%E6%80%95%E8%A2%AB%E4%BA%BA%E5%88%A9%E7%94%A8%E5%B0%B1%E6%80%95%E4%BD%A0%E6%B2%A1%E7%94%A8">10．不怕被人利用，就怕你没用</a></li>
+<li><a href="#11%E8%87%AA%E5%B7%B1%E8%BF%87%E5%BE%97%E6%AF%AB%E6%97%A0%E5%B0%8A%E4%B8%A5%E8%BF%98%E5%AF%B9%E5%88%AB%E4%BA%BA%E7%9A%84%E5%8A%AA%E5%8A%9B%E5%97%A4%E4%B9%8B%E4%BB%A5%E9%BC%BB">11．自己过得毫无尊严，还对别人的努力嗤之以鼻</a></li>
+<li><a href="#12%E4%BD%A0%E4%BB%A5%E4%B8%BA%E6%98%AF%E9%87%8D%E5%9C%A8%E5%8F%82%E4%B8%8E%E4%BD%86%E6%80%BB%E6%9C%89%E4%BA%BA%E5%9C%A8%E5%81%B7%E5%81%B7%E4%BD%BF%E5%8A%B2">12．你以为是重在参与，但总有人在偷偷使劲</a></li>
+<li><a href="#13%E6%94%B6%E8%B5%B7%E4%BD%A0%E7%9A%84%E7%8E%BB%E7%92%83%E5%BF%83%E7%A2%8E%E7%BB%99%E8%B0%81%E7%9C%8B%E5%91%A2">13．收起你的玻璃心，碎给谁看呢</a></li>
+<li><a href="#14%E5%B0%B1%E6%80%95%E4%BD%A0%E6%87%92%E8%BF%98%E6%8A%8A%E6%87%92%E5%BD%93%E6%97%B6%E5%B0%9A">14．就怕你懒，还把懒当时尚</a></li>
+<li><a href="#15%E9%80%9E%E5%BC%BA%E5%BE%88%E7%B4%AF%E4%BD%86%E6%98%AF%E4%B8%8D%E5%BC%BA%E6%9B%B4%E7%B4%AF">15．逞强很累，但是不强更累</a></li>
+<li><a href="#16%E6%B2%A1%E6%9C%89%E5%8A%9F%E5%8A%B3%E5%87%AD%E4%BB%80%E4%B9%88%E8%B0%88%E8%8B%A6%E5%8A%B3">16．没有功劳，凭什么谈苦劳</a></li>
+<li><a href="#17%E8%A7%89%E5%BE%97%E4%BB%96%E5%9C%A8%E7%82%AB%E8%80%80%E6%98%AF%E5%9B%A0%E4%B8%BA%E4%BD%A0%E4%B8%8D%E6%9B%BE%E6%8B%A5%E6%9C%89">17．觉得他在炫耀，是因为你不曾拥有</a></li>
+<li><a href="#18%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E9%82%A3%E4%B9%88%E5%BF%99%E5%8D%B4%E8%BF%98%E6%98%AF%E9%82%A3%E4%B9%88%E7%A9%B7">18．为什么你那么忙，却还是那么穷</a></li>
+<li><a href="#19%E5%93%AA%E6%9C%89%E4%BB%80%E4%B9%88%E5%B2%81%E6%9C%88%E9%9D%99%E5%A5%BD%E5%8F%AA%E6%98%AF%E6%9C%89%E4%BA%BA%E6%9B%BF%E4%BD%A0%E8%B4%9F%E9%87%8D%E5%89%8D%E8%A1%8C">19．哪有什么岁月静好，只是有人替你负重前行</a></li>
+<li><a href="#20%E5%85%81%E8%AE%B8%E5%88%AB%E4%BA%BA%E6%8C%87%E7%82%B9%E4%BD%86%E8%B0%A2%E7%BB%9D%E6%8C%87%E6%8C%87%E7%82%B9%E7%82%B9">20．允许别人指点，但谢绝指指点点</a></li>
+<li><a href="#21%E8%BF%87%E8%87%AA%E5%B7%B1%E6%83%B3%E8%A6%81%E7%9A%84%E7%94%9F%E6%B4%BB%E6%98%AF%E9%9C%80%E8%A6%81%E4%BB%98%E5%87%BA%E4%BB%A3%E4%BB%B7%E7%9A%84">21．过自己想要的生活，是需要付出代价的</a></li>
+<li><a href="#22%E5%9C%A8%E4%B8%80%E6%97%A0%E6%89%80%E6%9C%89%E7%9A%84%E5%B9%B4%E7%BA%AA%E9%87%8C%E4%B8%94%E8%BD%AE%E4%B8%8D%E5%88%B0%E4%BD%A0%E6%9D%A5%E4%BA%91%E6%B7%A1%E9%A3%8E%E8%BD%BB">22．在一无所有的年纪里，且轮不到你来云淡风轻</a></li>
+<li><a href="#23%E4%BD%A0%E5%BC%B1%E7%88%86%E4%BA%86%E6%89%8D%E4%BC%9A%E5%80%9F%E5%8F%A3%E5%A4%9A%E5%A4%9A">23．你弱爆了，才会借口多多</a></li>
+<li><a href="#24%E5%9C%A8%E7%AC%BC%E5%AD%90%E9%87%8C%E9%95%BF%E5%A4%A7%E7%9A%84%E5%B0%8F%E9%B8%9F%E4%BC%9A%E4%BB%A5%E4%B8%BA%E9%A3%9E%E7%BF%94%E6%98%AF%E4%B8%80%E7%A7%8D%E7%97%85">24．在笼子里长大的小鸟，会以为飞翔是一种病</a></li>
+<li><a href="#25%E4%BD%A0%E5%8F%AF%E4%BB%A5%E7%88%B1%E6%85%95%E8%99%9A%E8%8D%A3%E4%BD%86%E4%B8%80%E5%AE%9A%E8%A6%81%E9%9D%A0%E8%87%AA%E5%B7%B1">25．你可以爱慕虚荣，但一定要靠自己</a></li>
+<li><a href="#26%E5%BF%83%E8%8B%A5%E6%B2%A1%E6%9C%89%E6%A0%96%E6%81%AF%E7%9A%84%E5%9C%B0%E6%96%B9%E5%88%B0%E5%93%AA%E9%87%8C%E9%83%BD%E6%98%AF%E6%B5%81%E6%B5%AA">26．心若没有栖息的地方，到哪里都是流浪</a></li>
+<li><a href="#27%E4%BD%A0%E6%83%B3%E8%A6%81%E7%9A%84%E5%AE%89%E7%A8%B3%E5%8F%AF%E8%83%BD%E6%98%AF%E5%9C%A8%E5%90%A6%E5%AE%9A%E7%94%9F%E6%B4%BB">27．你想要的安稳，可能是在否定生活</a></li>
+<li><a href="#28%E6%89%80%E6%9C%89%E7%9A%84%E6%82%94%E4%B8%8D%E5%BD%93%E5%88%9D%E9%83%BD%E6%98%AF%E8%87%AA%E9%A3%9F%E5%85%B6%E6%9E%9C">28．所有的悔不当初，都是自食其果</a></li>
+<li><a href="#29%E4%BD%A0%E6%89%80%E8%B0%93%E7%9A%84%E8%BF%B7%E8%8C%AB%E5%8F%AA%E6%98%AF%E6%B8%85%E9%86%92%E5%9C%B0%E7%9C%8B%E7%9D%80%E8%87%AA%E5%B7%B1%E6%B2%89%E6%B2%A6">29．你所谓的迷茫，只是清醒地看着自己沉沦</a></li>
+<li><a href="#30%E5%9C%A8%E6%9C%80%E5%AE%B9%E6%98%93%E4%BA%86%E4%B8%8D%E8%B5%B7%E7%9A%84%E5%B9%B4%E4%BB%A3%E4%BD%A0%E6%80%8E%E4%B9%88%E6%95%A2%E7%94%98%E4%BA%8E%E5%B9%B3%E5%87%A1">30．在最容易了不起的年代，你怎么敢甘于平凡</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

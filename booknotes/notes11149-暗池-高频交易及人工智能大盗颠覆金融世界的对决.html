@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x6697;&#x6c60;&#xff1a;&#x9ad8;&#x9891;&#x4ea4;&#x6613;&#x53ca;&#x4eba;&#x5de5;&#x667a;&#x80fd;&#x5927;&#x76d7;&#x98a0;&#x8986;&#x91d1;&#x878d;&#x4e16;&#x754c;&#x7684;&#x5bf9;&#x51b3;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x6697;&#x6c60;&#xff1a;&#x9ad8;&#x9891;&#x4ea4;&#x6613;&#x53ca;&#x4eba;&#x5de5;&#x667a;&#x80fd;&#x5927;&#x76d7;&#x98a0;&#x8986;&#x91d1;&#x878d;&#x4e16;&#x754c;&#x7684;&#x5bf9;&#x51b3;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -238,12 +337,12 @@ figure img {
 	margin-bottom: 0px;
 }
 
-/* hr 用于创建一条水平线*/
+/* hr 用于创建一条水平线 */
 hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
+	border: 0;
+	padding-top: 1px;
+	margin-bottom: 0.8em;
+	background: linear-gradient(to right, transparent, #d0d0d5, transparent);
 }
 
 ol p,
@@ -331,10 +430,33 @@ a:target {
 	outline: 0;
 }
 
+/*笔记中的普通表格*/
 table {
-	align-self: center;
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
 }
 
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
 img {
 	align-self: center;
 	max-width: 1000px;
@@ -344,6 +466,20 @@ img {
 /* 选中后背景浅粉色 */
 ::selection {
 	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
 }
 
 
@@ -358,8 +494,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +521,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,71 +550,110 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="暗池高频交易及人工智能大盗颠覆金融世界的对决">暗池：高频交易及人工智能大盗颠覆金融世界的对决</h1>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="暗池高频交易及人工智能大盗颠覆金融世界的对决">暗池：高频交易及人工智能大盗颠覆金融世界的对决</h1>
 <h2 id="美斯科特帕特森scott-patterson-著孙豪-王泽宪-李骥宇-等译">[美]斯科特·帕特森（Scott Patterson） 著|孙豪 王泽宪 李骥宇 等译</h2>
+<div class="mycomment">
+<p>因为是讲的量化交易的真人真事，所以真是令人大开眼界。其中不仅仅是股票，还涉及期权交易、人工智能算法的应用等等。因为我无兴趣接触量化交易，所以权当开开眼界的课外读物了。堪称五星推荐的一本课外读物，干货满满，对于一窥量化交易的大门相当有用。只是因为并非我所真正感兴趣的领域，所以并不值得我去多花时间研究这本书。</p>
+</div>
 <h3 id="总序">总序</h3>
 <p>20世纪70年代初开始，欧美国家金融市场发生了深刻变化。1971年，布雷顿森林体系正式解体，浮动汇率制逐渐取代固定汇率制，汇率波动幅度明显加大。同期，各国也在不断推进利率市场化进程。随着欧美国家利率、汇率市场化程度的提升，利率、汇率风险逐渐成为市场风险的主要来源，经济主体对利率、汇率风险管理的需求大幅增加。金融期货期权就是在这样的背景下产生的。1972年，芝加哥商业交易所推出了全球第一个外汇期货交易品种；1973年，芝加哥期权交易所推出了全球第一个场内标准化股票期权；1975年，伴随美国利率市场化进程，芝加哥期货交易所推出了全球第一个利率期货品种——国民抵押协会债券期货；1982年，堪萨斯交易所又推出全球第一个股指期货——价值线指数期货合约。金融期货期权市场自诞生以来，发展一直十分迅猛。近年来，金融期货期权成交量已经占到整个期货期权市场成交量的90%左右，成为金融市场的重要组成部分。</p>
 <p>金融期货期权市场是金融市场发展到一定阶段的必然产物，发达的金融期货期权市场是金融市场成熟的重要标志。金融期货期权能够高效率地实现金融风险在市场参与主体之间的转移，满足经济主体金融风险管理需求。1990年诺贝尔经济学奖获得者默顿·米勒对其有过经典的评价：“金融衍生工具使企业和机构有效和经济地处理困扰其多年的风险成为了可能，世界也因之变得更加安全，而不是变得更加危险。”</p>
@@ -575,8 +755,43 @@ iPad mini 5：2048*1536
 <h3 id="致谢">致谢</h3>
 <h3 id="注释">注释</h3>
 <h3 id="译后记">译后记</h3>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%80%BB%E5%BA%8F">总序</a></li>
+<li><a href="#%E8%AF%91%E8%80%85%E5%BA%8F-%E4%BA%A4%E6%98%93%E9%9D%A9%E5%91%BD%E7%9A%84%E8%AE%B0%E5%BD%95%E8%80%85%E5%92%8C%E8%A7%82%E5%AF%9F%E5%91%98">译者序 交易革命的记录者和观察员</a></li>
+<li><a href="#%E5%BA%8F%E8%A8%80-%E6%98%8E%E6%B1%A0">序言 明池</a></li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E4%BA%A4%E6%98%93%E6%9C%BA%E5%99%A8">第1章 交易机器</a></li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E4%BB%A5%E5%A4%A7%E5%90%83%E5%B0%8F">第2章 以大吃小</a></li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E7%AE%97%E6%B3%95%E6%88%98%E4%BA%89">第3章 算法战争</a></li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E5%89%A5%E5%A4%B4%E7%9A%AE%E7%AD%96%E7%95%A5">第4章 剥头皮策略</a></li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E6%81%B6%E6%A3%8D">第5章 恶棍</a></li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E5%AE%88%E6%9C%9B%E8%80%85">第6章 “守望者”</a></li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E9%97%AA%E7%94%B5%E9%94%AE">第7章 “闪电键”</a></li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E5%B2%9B%E5%B1%BF">第8章 “岛屿”</a></li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E7%BB%BF%E8%89%B2%E7%9A%84%E6%9C%BA%E5%99%A8">第9章 绿色的机器</a></li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E7%BE%A4%E5%B2%9B">第10章 “群岛”</a></li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E4%B8%87%E4%BC%97%E7%9E%A9%E7%9B%AE">第11章 万众瞩目</a></li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0-%E5%AE%AB%E5%BB%B7%E6%94%BF%E5%8F%98">第12章 “宫廷政变”</a></li>
+<li><a href="#%E7%AC%AC13%E7%AB%A0-%E4%B8%8D%E9%80%9F%E4%B9%8B%E5%AE%A2">第13章 不速之客</a></li>
+<li><a href="#%E7%AC%AC14%E7%AB%A0-%E5%82%BB%E9%92%B1">第14章 傻钱</a></li>
+<li><a href="#%E7%AC%AC15%E7%AB%A0-%E4%BA%A4%E6%98%93%E6%9C%BA%E5%99%A8%E4%BA%BA">第15章 交易机器人</a></li>
+<li><a href="#%E7%AC%AC16%E7%AB%A0-%E7%96%AF%E7%8B%82%E7%9A%84%E6%95%B0%E5%AD%97">第16章 疯狂的数字</a></li>
+<li><a href="#%E7%AC%AC17%E7%AB%A0-%E6%88%91%E4%B8%8D%E6%83%B3%E6%88%90%E4%B8%BA%E5%90%8D%E4%BA%BA">第17章 我不想成为名人</a></li>
+<li><a href="#%E7%AC%AC18%E7%AB%A0-%E9%87%8E%E5%85%BD">第18章 野兽</a></li>
+<li><a href="#%E7%AC%AC19%E7%AB%A0-%E7%AB%99%E5%8F%B0">第19章 站台</a></li>
+<li><a href="#%E7%AC%AC20%E7%AB%A0-%E6%81%90%E6%85%8C%E9%99%8D%E4%B8%B4">第20章 恐慌降临</a></li>
+<li><a href="#%E7%AC%AC21%E7%AB%A0-%E9%AB%98%E5%BA%A6%E5%8D%B1%E9%99%A9">第21章 高度危险</a></li>
+<li><a href="#%E7%AC%AC22%E7%AB%A0-%E5%8F%97%E6%93%8D%E7%BA%B5%E7%9A%84%E6%B8%B8%E6%88%8F">第22章 受操纵的游戏</a></li>
+<li><a href="#%E7%AC%AC23%E7%AB%A0-%E5%A4%A7%E6%95%B0%E6%8D%AE">第23章 大数据</a></li>
+<li><a href="#%E7%AC%AC24%E7%AB%A0-%E9%AB%98%E7%BA%A7%E5%AF%B9%E5%BC%88">第24章 高级对弈</a></li>
+<li><a href="#%E7%AC%AC25%E7%AB%A0-%E6%98%8E%E6%98%9F">第25章 明星</a></li>
+<li><a href="#%E8%87%B4%E8%B0%A2">致谢</a></li>
+<li><a href="#%E6%B3%A8%E9%87%8A">注释</a></li>
+<li><a href="#%E8%AF%91%E5%90%8E%E8%AE%B0">译后记</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

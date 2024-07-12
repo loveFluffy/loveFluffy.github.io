@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x884c;&#x4e3a;&#x4e0a;&#x763e;&#xff1a;&#x62ff;&#x5f97;&#x8d77;&#xff0c;&#x653e;&#x5f97;&#x4e0b;&#x7684;&#x5fc3;&#x7406;&#x5b66;&#x79d8;&#x5bc6;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x884c;&#x4e3a;&#x4e0a;&#x763e;&#xff1a;&#x62ff;&#x5f97;&#x8d77;&#xff0c;&#x653e;&#x5f97;&#x4e0b;&#x7684;&#x5fc3;&#x7406;&#x5b66;&#x79d8;&#x5bc6;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,451 +31,115 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="行为上瘾拿得起放得下的心理学秘密">行为上瘾：拿得起，放得下的心理学秘密</h1>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="行为上瘾拿得起放得下的心理学秘密">行为上瘾：拿得起，放得下的心理学秘密</h1>
 <h2 id="何圣君-著">何圣君 著</h2>
+<div class="mycomment">
+<p>这本书里提到不少我看过的关于上瘾、习惯养成方面的其他不错的书籍，可谓有理有据、旁征博引，内容十分充实。</p>
+<p>刚开始看前面一部分的时候，还因为内容不够深刻想要放弃这本书的，结果越看到后面越觉得还不错。可以偶尔再快速翻看一下书上划出来的笔记，或者再多听几次网页版笔记。</p>
+<p>看到后面部分，我对于书里提到的具体方法挺无感的，并不认为有什么稀奇的，大概也不会有什么真正的用处。不过中间对于上瘾行为的介绍，还是有用处的，能够帮助我识别哪些是容易上瘾的行为，以便生活中有意识地去规避。</p>
+</div>
 <h3 id="前言">前言</h3>
 <h3 id="part-1-突破认知你对行为上瘾的认知决定了你能否过好这一生">Part 1 突破认知：你对行为上瘾的认知，决定了你能否过好这一生</h3>
 <h4 id="11-真相是什么让你拿得起却放不下">1.1 真相：是什么让你拿得起却放不下</h4>
@@ -979,8 +645,93 @@ iPad mini 5：2048*1536
 <p>《斗罗大陆》是唐家三少最著名的一个IP。我读唐家三少的作品可以说已经十年有余，他的书几乎陪伴了我不同的阶段。现在，我正在和儿子一起读《斗罗大陆2》，书中对战斗场面和斗争对手的描写让人欲罢不能。</p>
 <p>《斗破苍穹》的作者是天蚕土豆，他特别擅长描写“升级打怪”的故事。这本书里面有九个不同的等级，加上“异火”的元素和一众女子的爱恨情仇，可以说是国内研究行为上瘾的典型范本。</p>
 <p>《罗辑思维》——每个人都有觉醒的时刻，我的觉醒就是从在喜马拉雅上听《罗辑思维》开始的。我认为自己是《罗辑思维》的上瘾者，从2013年首次听到罗胖的知识脱口秀，到现在自己成为知识行业的服务者，这种“上瘾”带给我的是人生的蜕变。</p>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#part-1-%E7%AA%81%E7%A0%B4%E8%AE%A4%E7%9F%A5%E4%BD%A0%E5%AF%B9%E8%A1%8C%E4%B8%BA%E4%B8%8A%E7%98%BE%E7%9A%84%E8%AE%A4%E7%9F%A5%E5%86%B3%E5%AE%9A%E4%BA%86%E4%BD%A0%E8%83%BD%E5%90%A6%E8%BF%87%E5%A5%BD%E8%BF%99%E4%B8%80%E7%94%9F">Part 1 突破认知：你对行为上瘾的认知，决定了你能否过好这一生</a>
+<ul>
+<li><a href="#11-%E7%9C%9F%E7%9B%B8%E6%98%AF%E4%BB%80%E4%B9%88%E8%AE%A9%E4%BD%A0%E6%8B%BF%E5%BE%97%E8%B5%B7%E5%8D%B4%E6%94%BE%E4%B8%8D%E4%B8%8B">1.1 真相：是什么让你拿得起却放不下</a></li>
+<li><a href="#12-%E8%AE%A4%E7%9F%A5%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93%E8%BF%99%E4%BA%9B%E8%A1%8C%E4%B8%BA%E9%83%BD%E6%98%AF%E4%B8%8A%E7%98%BE">1.2 认知：你可能不知道，这些行为都是上瘾</a></li>
+<li><a href="#13-%E8%B6%8B%E5%8A%BF%E4%B8%8A%E7%98%BE%E5%BC%8F%E8%AE%BE%E8%AE%A1%E6%AD%A3%E5%9C%A8%E5%A4%BA%E8%B5%B0%E4%BD%A0%E7%9A%84%E6%97%B6%E9%97%B4%E5%92%8C%E7%B2%BE%E5%8A%9B">1.3 趋势：“上瘾式设计”，正在夺走你的时间和精力</a></li>
+<li><a href="#14-%E8%8D%AF%E7%98%BE%E8%BF%9E%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E4%B9%9F%E6%B2%A1%E9%80%83%E8%BF%87%E7%9A%84%E8%AF%B1%E6%83%91">1.4 药瘾：连弗洛伊德也没逃过的诱惑</a></li>
+<li><a href="#15-%E8%A1%8C%E4%B8%BA%E4%B8%8A%E7%98%BE%E6%AF%94%E8%8D%AF%E7%98%BE%E6%9B%B4%E5%8F%AF%E6%80%95%E7%9A%84%E6%98%AF%E5%BF%83%E7%98%BE">1.5 行为上瘾：比药瘾更可怕的是心瘾</a></li>
+</ul>
+</li>
+<li><a href="#part-2-%E8%A1%8C%E4%B8%BA%E4%B8%8A%E7%98%BE%E5%8E%9F%E7%90%86%E4%B9%8B%E4%B8%80%E8%A1%8C%E4%B8%BA%E8%A7%A6%E5%8F%91%E4%BD%A0%E7%9A%84%E9%A6%96%E6%AC%A1%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%98%AF%E5%A6%82%E4%BD%95%E8%A2%AB%E9%A2%84%E5%AE%9A%E7%9A%84">Part 2 行为上瘾原理之一：行为触发，你的“首次注意力”是如何被预定的</a>
+<ul>
+<li><a href="#21-%E8%A1%8C%E5%8A%A8%E5%8E%9F%E7%90%86-%E6%89%80%E6%9C%89%E4%B8%8A%E7%98%BE%E8%A1%8C%E4%B8%BA%E9%83%BD%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BF%83%E7%90%86%E5%85%AC%E5%BC%8F">2.1 行动原理： 所有上瘾行为都是一个心理公式</a></li>
+<li><a href="#22-%E5%96%9C%E5%A5%BD%E8%A7%A6%E5%8F%91%E6%80%BB%E6%9C%89%E4%B8%80%E6%AC%BE%E9%80%82%E5%90%88%E4%BD%A0%E7%9A%84%E8%88%92%E9%80%82%E5%8C%BA">2.2 喜好触发：“总有一款适合你”的舒适区</a></li>
+<li><a href="#23-%E7%A4%BE%E4%BC%9A%E8%A7%A6%E5%8F%91%E4%B8%A4%E4%B8%AA%E8%A7%A6%E5%8F%91%E4%BD%A0%E5%BF%83%E7%90%86%E6%9C%BA%E5%88%B6%E7%9A%84%E5%BC%BA%E5%8A%9B%E6%8C%89%E9%92%AE">2.3 社会触发：两个触发你心理机制的“强力按钮”</a></li>
+<li><a href="#24-%E4%B8%AA%E4%BD%93%E8%A7%A6%E5%8F%91%E4%BD%A0%E6%98%AF%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E7%9F%A5%E4%B8%8D%E8%A7%89%E9%97%B4%E8%BF%9B%E5%85%A5%E8%A7%92%E8%89%B2%E7%9A%84">2.4 个体触发：你是如何在不知不觉间进入角色的</a></li>
+<li><a href="#25-%E5%B0%8F%E5%A4%8D%E7%9B%98%E8%BF%99%E5%B0%B1%E6%98%AF%E4%BD%A0%E4%B8%8E%E8%A1%8C%E4%B8%BA%E4%B8%8A%E7%98%BE%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%82%82%E9%80%85">2.5 小复盘：这就是你与行为上瘾的第一次“邂逅”</a></li>
+</ul>
+</li>
+<li><a href="#part-3-%E8%A1%8C%E4%B8%BA%E4%B8%8A%E7%98%BE%E5%8E%9F%E7%90%86%E4%B9%8B%E4%BA%8C%E8%BD%BB%E6%9D%BE%E5%85%A5%E5%9D%91%E8%BF%99%E4%BA%9B%E5%BF%83%E7%90%86%E6%9C%BA%E5%88%B6%E5%9C%A8%E6%82%84%E6%82%84%E5%8A%A9%E6%8E%A8">Part 3 行为上瘾原理之二：轻松“入坑”，这些心理机制在悄悄助推</a>
+<ul>
+<li><a href="#31-%E6%96%B0%E6%89%8B%E7%A6%8F%E5%88%A9%E4%BB%8E%E6%8B%92%E7%BB%9D%E5%88%B0%E4%B8%8A%E7%98%BE%E7%9A%84%E9%AD%94%E6%B3%95">3.1 新手福利：从拒绝到上瘾的魔法</a></li>
+<li><a href="#32-%E6%8D%9F%E5%A4%B1%E5%8E%8C%E6%81%B6%E5%B0%8F%E6%81%A9%E5%B0%8F%E6%83%A0vs%E6%97%A0%E4%BC%91%E6%AD%A2%E4%BB%98%E5%87%BA">3.2 “损失厌恶”：小恩小惠VS无休止付出</a></li>
+<li><a href="#33-%E6%B2%89%E6%B2%A1%E6%88%90%E6%9C%AC5%E5%9D%97%E9%92%B1%E5%B0%B1%E8%83%BD%E4%B9%B0%E5%88%B0%E7%9A%84%E6%9E%81%E8%87%B4%E4%BD%93%E9%AA%8C">3.3 沉没成本：5块钱就能买到的“极致体验”</a></li>
+<li><a href="#34-%E7%9B%B2%E7%9B%92%E5%BF%83%E7%90%86%E4%B8%8D%E7%A1%AE%E5%AE%9A%E7%9A%84%E5%A5%96%E5%8A%B1%E8%AE%A9%E4%BD%A0%E6%B2%89%E8%BF%B7">3.4 盲盒心理：不确定的奖励让你沉迷</a></li>
+<li><a href="#35-%E5%B0%8F%E5%A4%8D%E7%9B%98-%E5%85%A5%E5%9D%91%E8%BD%BB%E6%9D%BE%E5%BC%80%E5%A7%8B%E7%9A%84%E4%BB%A3%E4%BB%B7">3.5 小复盘： “入坑”，轻松开始的代价</a></li>
+</ul>
+</li>
+<li><a href="#part-4-%E8%A1%8C%E4%B8%BA%E4%B8%8A%E7%98%BE%E5%8E%9F%E7%90%86%E4%B9%8B%E4%B8%89%E5%8D%B3%E6%97%B6%E5%8F%8D%E9%A6%88%E8%AE%A9%E4%BD%A0%E5%81%9C%E4%B8%8D%E4%B8%8B%E6%9D%A5%E7%9A%84%E9%AD%94%E5%8A%9B">Part 4 行为上瘾原理之三：即时反馈，让你停不下来的魔力</a>
+<ul>
+<li><a href="#41-%E5%8D%B3%E6%97%B6%E5%8F%8D%E9%A6%88%E6%98%AF%E4%BB%80%E4%B9%88%E8%AE%A9%E4%BD%A01%E5%88%86%E9%92%9F%E7%9C%8B%E4%B8%80%E6%AC%A1%E6%89%8B%E6%9C%BA">4.1 即时反馈：是什么让你1分钟看一次手机</a></li>
+<li><a href="#42-%E8%BF%B7%E6%81%8B%E5%B0%8F%E6%A6%82%E7%8E%87%E4%BA%8B%E4%BB%B6%E5%88%B0%E5%BA%95%E6%9C%89%E5%A4%9A%E5%B0%91%E4%BA%BA%E5%8F%AF%E4%BB%A5%E9%9D%A0%E8%80%81%E8%99%8E%E6%9C%BA%E4%B8%80%E5%A4%9C%E6%9A%B4%E5%AF%8C">4.2 迷恋小概率事件：到底有多少人可以靠老虎机“一夜暴富”</a></li>
+<li><a href="#43-%E5%B7%AE%E7%82%B9%E5%B0%B1%E8%B5%A2%E5%86%8D%E6%9D%A5%E4%B8%80%E6%AC%A1%E5%B0%B1%E6%8A%93%E5%88%B0%E5%A8%83%E5%A8%83%E4%BA%86">4.3 差点就赢：“再来一次就抓到娃娃了”</a></li>
+<li><a href="#44-%E9%9A%8F%E6%9C%BA%E5%A5%96%E5%8A%B1%E4%B8%8D%E7%A1%AE%E5%AE%9A%E7%9A%84%E5%BE%97%E5%88%B0%E4%B8%BA%E4%BD%95%E4%BB%A4%E4%BA%BA%E5%85%B4%E5%A5%8B">4.4 随机奖励：不确定的“得到”为何令人兴奋</a></li>
+<li><a href="#45-%E5%B0%8F%E5%A4%8D%E7%9B%98%E8%BF%99%E4%BA%9B%E8%AE%BE%E8%AE%A1%E8%AE%A9%E4%BD%A0%E5%81%9C%E4%B8%8D%E4%B8%8B%E6%9D%A5">4.5 小复盘：这些设计让你停不下来</a></li>
+</ul>
+</li>
+<li><a href="#part-5-%E8%A1%8C%E4%B8%BA%E4%B8%8A%E7%98%BE%E5%8E%9F%E7%90%86%E4%B9%8B%E5%9B%9B%E6%8C%91%E6%88%98%E5%8D%87%E7%BA%A7%E4%B8%8A%E7%98%BE%E5%BC%8F%E7%AD%96%E7%95%A5%E8%AE%A9%E4%BD%A0%E6%AC%B2%E7%BD%A2%E4%B8%8D%E8%83%BD">Part 5 行为上瘾原理之四：挑战升级，上瘾式策略让你欲罢不能</a>
+<ul>
+<li><a href="#51-%E7%88%BD%E7%82%B9%E6%8A%80%E6%9C%AF%E7%BD%91%E7%BB%9C%E5%B0%8F%E8%AF%B4%E4%BD%9C%E5%AE%B6%E7%88%86%E7%BA%A2%E7%9A%84%E7%A7%98%E5%AF%86">5.1 “爽点”技术：网络小说作家爆红的秘密</a></li>
+<li><a href="#52-%E7%94%A8%E6%88%B7%E4%BD%93%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88%E8%AE%A9%E4%BD%A0%E8%A2%AB%E7%BB%91%E6%9E%B6%E8%BF%98%E6%84%9F%E6%81%A9%E6%88%B4%E5%BE%B7">5.2 用户体系：是什么让你被“绑架”还感恩戴德</a></li>
+<li><a href="#53-%E5%BF%83%E6%B5%81%E4%BD%93%E9%AA%8C%E6%BB%A1%E8%B6%B3%E5%BC%BA%E8%BF%AB%E7%97%87%E7%9A%84%E6%9E%81%E5%BA%A6%E8%88%92%E9%80%82%E6%84%9F">5.3 心流体验：满足强迫症的极度舒适感</a></li>
+<li><a href="#54-%E7%A6%80%E8%B5%8B%E6%95%88%E5%BA%94%E8%AF%BA%E8%B4%9D%E5%B0%94%E5%A5%96%E5%BE%97%E4%B8%BB%E5%91%8A%E8%AF%89%E4%BD%A0%E4%BA%BA%E4%BB%AC%E5%A6%82%E4%BD%95%E4%B8%8A%E7%98%BE">5.4 禀赋效应：诺贝尔奖得主告诉你人们如何上瘾</a></li>
+<li><a href="#55-%E5%B0%8F%E5%A4%8D%E7%9B%98%E8%BF%99%E4%BA%9B%E5%BF%83%E7%90%86%E6%9C%AF%E8%AE%A9%E4%BD%A0%E8%BF%B7%E5%A4%B1%E5%9C%A8%E6%89%93%E6%80%AA%E5%8D%87%E7%BA%A7%E7%9A%84%E8%B7%AF%E4%B8%8A">5.5 小复盘：这些心理术让你迷失在“打怪升级”的路上</a></li>
+</ul>
+</li>
+<li><a href="#part-6-%E8%A1%8C%E4%B8%BA%E4%B8%8A%E7%98%BE%E5%8E%9F%E7%90%86%E4%B9%8B%E4%BA%94%E6%9C%AA%E5%AE%8C%E6%88%90%E6%84%9F%E8%AE%A9%E4%BA%BA%E5%BF%83%E7%97%92%E9%9A%BE%E8%80%90">Part 6 行为上瘾原理之五：未完成感让人心痒难耐</a>
+<ul>
+<li><a href="#61-%E6%9C%AA%E7%AB%9F%E4%B9%8B%E4%BA%8B%E6%82%AC%E5%BF%B5%E6%98%AF%E4%B8%80%E5%89%82%E5%8B%BE%E9%AD%82%E8%8D%AF">6.1 未竟之事：悬念是一剂勾魂药</a></li>
+<li><a href="#62-%E8%AE%A4%E7%9F%A5%E7%BC%BA%E5%8F%A3%E4%B8%BA%E4%BD%95%E6%8D%A2%E7%A7%8D%E5%89%AA%E8%BE%91%E6%96%B9%E5%BC%8F%E5%B0%B1%E8%83%BD%E8%AE%A9%E4%BA%BA%E9%80%9A%E5%AE%B5%E8%BF%BD%E5%89%A7">6.2 认知缺口：为何换种剪辑方式就能让人通宵追剧</a></li>
+<li><a href="#63-%E4%B8%8D%E5%8F%AF%E9%A2%84%E7%9F%A5%E5%85%B4%E5%A5%8B%E6%84%9F%E8%AE%A9%E4%BD%A0%E5%85%85%E6%BB%A1%E6%9C%9F%E5%BE%85">6.3 不可预知：兴奋感让你充满期待</a></li>
+<li><a href="#64-%E9%BB%98%E8%AE%A4%E9%80%89%E9%A1%B9%E8%AF%BB%E5%BF%83%E6%AD%8C%E5%8D%95%E8%AE%A9%E4%BD%A0%E6%91%98%E4%B8%8D%E4%B8%8B%E8%80%B3%E6%9C%BA">6.4 默认选项：“读心歌单”让你摘不下耳机</a></li>
+<li><a href="#65-%E5%B0%8F%E5%A4%8D%E7%9B%98%E8%94%A1%E6%A0%BC%E5%B0%BC%E5%85%8B%E6%95%88%E5%BA%94%E7%9A%84%E8%AF%85%E5%92%92%E4%B8%8E%E8%A7%A3%E6%B3%95">6.5 小复盘：蔡格尼克效应的诅咒与解法</a></li>
+</ul>
+</li>
+<li><a href="#part-7-%E8%A1%8C%E4%B8%BA%E4%B8%8A%E7%98%BE%E5%8E%9F%E7%90%86%E4%B9%8B%E5%85%AD%E7%A4%BE%E4%BA%A4%E5%85%83%E7%B4%A0%E8%AE%A9%E4%BA%BA%E9%9A%BE%E4%BB%A5%E8%87%AA%E6%8B%94%E7%9A%84%E7%BD%91%E7%BB%9C%E8%BF%B7%E5%AE%AB">Part 7 行为上瘾原理之六：社交元素，让人难以自拔的网络迷宫</a>
+<ul>
+<li><a href="#71-%E7%BD%91%E7%BB%9C%E7%A4%BE%E4%BA%A4%E6%97%A0%E5%BD%A2%E7%BD%91%E7%BB%9C%E7%BD%91%E4%BD%8F%E6%9C%89%E5%BD%A2%E4%BC%97%E7%94%9F">7.1 网络社交：无形网络网住有形众生</a></li>
+<li><a href="#72-%E4%BA%92%E6%83%A0%E8%A3%82%E5%8F%98%E9%94%80%E5%94%AE%E7%95%8C%E4%B8%BA%E4%B9%8B%E9%A2%A4%E6%A0%97%E7%9A%84%E8%90%A5%E9%94%80%E6%A0%B8%E6%AD%A6%E5%99%A8">7.2 互惠裂变：销售界为之颤栗的营销“核武器”</a></li>
+<li><a href="#73-%E7%A4%BE%E7%BE%A4%E7%A4%BE%E4%BA%A4%E8%AE%A9%E4%BD%A0%E5%A4%A7%E7%98%BE%E7%98%BE%E4%BA%8E%E4%B8%96%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BB%84%E7%BB%87">7.3 社群社交：让你“大瘾瘾于世”的虚拟组织</a></li>
+<li><a href="#74-%E7%9F%A5%E8%AF%86%E7%A4%BE%E4%BA%A4%E5%B9%B3%E5%8F%B0%E5%B8%AE%E4%BD%A0%E5%A4%84%E7%90%86%E7%9F%A5%E8%AF%86%E7%84%A6%E8%99%91">7.4 知识社交：平台帮你处理知识焦虑</a></li>
+<li><a href="#75-%E5%B0%8F%E5%A4%8D%E7%9B%98%E7%A4%BE%E4%BA%A4%E6%98%AF%E4%BA%BA%E7%B1%BB%E6%B0%B8%E6%81%92%E7%9A%84%E8%AF%9D%E9%A2%98">7.5 小复盘：社交是人类永恒的话题</a></li>
+</ul>
+</li>
+<li><a href="#part-8-%E6%B8%85%E9%86%92%E6%80%9D%E8%80%83%E6%9C%89%E6%95%88%E8%84%B1%E7%98%BE%E8%AE%A9%E4%BD%A0%E6%8B%BF%E5%BE%97%E8%B5%B7%E6%94%BE%E5%BE%97%E4%B8%8B%E7%9A%84%E8%A1%8C%E4%B8%BA%E8%AE%AD%E7%BB%83">Part 8 清醒思考：有效脱瘾——让你拿得起、放得下的行为训练</a>
+<ul>
+<li><a href="#81-%E4%B9%A0%E6%83%AF%E7%9A%84%E5%8A%9B%E9%87%8F%E8%AE%A9%E4%B8%80%E4%B8%AA%E5%A5%BD%E4%B9%A0%E6%83%AF%E4%BB%A3%E8%B0%A2%E6%8E%89%E4%B8%80%E4%B8%AA%E5%9D%8F%E4%B9%A0%E6%83%AF">8.1 习惯的力量：让一个好习惯代谢掉一个坏习惯</a></li>
+<li><a href="#82-%E5%BE%AE%E4%B9%A0%E6%83%AF%E7%9A%84%E5%8A%9B%E9%87%8F%E7%93%A6%E8%A7%A3%E4%B8%8A%E7%98%BE%E4%B9%A0%E6%83%AF%E7%9A%84%E7%8B%AC%E5%AE%B6%E7%A7%98%E8%AF%80">8.2 微习惯的力量：瓦解上瘾习惯的独家“秘诀”</a></li>
+<li><a href="#83-%E7%8E%AF%E5%A2%83%E7%9A%84%E5%8A%9B%E9%87%8F%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AA%E6%9C%895%E7%9A%84%E5%A3%AB%E5%85%B5%E6%AF%92%E7%98%BE%E5%A4%8D%E5%8F%91">8.3 环境的力量：为什么只有5%的士兵毒瘾复发</a></li>
+<li><a href="#84-%E5%B7%A5%E5%85%B7%E7%9A%84%E5%8A%9B%E9%87%8F%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95vs%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0">8.4 工具的力量：番茄工作法VS印象笔记</a></li>
+<li><a href="#85-%E5%B0%8F%E5%A4%8D%E7%9B%98%E5%9B%9B%E7%A7%8D%E5%8A%9B%E9%87%8F%E5%B8%AE%E4%BD%A0%E6%8B%BF%E5%BE%97%E8%B5%B7%E6%94%BE%E5%BE%97%E4%B8%8B">8.5 小复盘：四种力量帮你拿得起、放得下</a></li>
+</ul>
+</li>
+<li><a href="#part-9-%E5%A4%BA%E5%9B%9E%E4%B8%BB%E5%8A%A8%E6%9D%83%E8%AE%A9%E8%87%AA%E5%B7%B1%E5%AF%B9%E6%9C%89%E6%84%8F%E4%B9%89%E7%9A%84%E4%BA%8B%E6%88%90%E7%98%BE">Part 9 夺回主动权：让自己对有意义的事“成瘾”</a>
+<ul>
+<li><a href="#91-%E6%B8%B8%E6%88%8F%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%88%A9%E7%94%A8%E5%9B%A2%E9%98%9F%E5%B0%8F%E7%8E%AF%E5%A2%83%E4%BA%92%E7%9B%B8%E6%BF%80%E5%8F%91%E6%AD%A3%E5%90%91%E5%8F%8D%E9%A6%88">9.1 游戏化学习：利用团队小环境互相激发正向反馈</a></li>
+<li><a href="#92-%E6%B8%B8%E6%88%8F%E5%8C%96%E5%B7%A5%E4%BD%9C%E7%94%A8%E9%BC%93%E5%8A%B1%E8%BF%9B%E6%AD%A5%E7%9A%84%E8%A1%8C%E4%B8%BA%E7%A7%AF%E5%88%86%E7%B3%BB%E7%BB%9F%E4%BF%83%E5%8F%91%E7%A7%AF%E6%9E%81%E6%80%A7">9.2 游戏化工作：用鼓励进步的行为积分系统促发积极性</a></li>
+<li><a href="#93-%E6%B8%B8%E6%88%8F%E5%8C%96%E8%82%B2%E5%84%BF%E8%99%9A%E6%8B%9F%E5%A5%96%E5%93%81%E5%92%8C%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E5%B9%B3%E5%8F%B0%E7%82%B9%E7%87%83%E5%AD%A9%E5%AD%90%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%83%AD%E6%83%85">9.3 游戏化育儿：虚拟奖品和游戏学习平台点燃孩子的学习热情</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

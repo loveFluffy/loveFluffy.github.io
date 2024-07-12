@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x521b;&#x4e1a;&#x5b66;&#x7edd;&#x5473;&#xff1a;&#x4e00;&#x6839;&#x9e2d;&#x8116;&#x7684;&#x5546;&#x4e1a;&#x5947;&#x8ff9;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x521b;&#x4e1a;&#x5b66;&#x7edd;&#x5473;&#xff1a;&#x4e00;&#x6839;&#x9e2d;&#x8116;&#x7684;&#x5546;&#x4e1a;&#x5947;&#x8ff9;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -331,10 +430,33 @@ a:target {
 	outline: 0;
 }
 
+/*笔记中的普通表格*/
 table {
-	align-self: center;
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
 }
 
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
 img {
 	align-self: center;
 	max-width: 1000px;
@@ -344,6 +466,20 @@ img {
 /* 选中后背景浅粉色 */
 ::selection {
 	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
 }
 
 
@@ -358,8 +494,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +521,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,165 +550,334 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
-</style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="创业学绝味一根鸭脖的商业奇迹">创业学绝味：一根鸭脖的商业奇迹</h1>
-<h2 id="郭宇宽-著">郭宇宽 著</h2>
-<p>题记</p>
-<p>序二</p>
-<p>序三</p>
-<p>前言</p>
-<p>第一章　从自花授粉到优势杂交——学不会与学得会的商学思想</p>
-<p>学不会的就别学了
-先天条件太优越，我们学不会
-后天条件太独特，我们也学不会
-野蛮成长的，你学不会
-不想学的，你就学不会
-绝味是一株“杂交水稻”
-精英点评
-第二章　“想通了，就能赚到钱”</p>
-<p>中国人不重视理论思维是一种很大的文化缺憾
-想不通害死人
-研究的本质就是要把现象再往深究
-精英点评
-第三章　科学管理和社会学想象力</p>
-<p>艺术是管理的锦上添花
-审视管理的科学性
-想象力与科学的结合
-第四章　一个创业者是怎样炼成的——老戴是谁</p>
-<p>放养出来的孩子
-因为信任而努力
-从小练创业
-在黑暗中寻找曙光
-找一份稳定的工作
-发小广告的冠军
-以学习的心态打工
-到真正的大公司学习
-邂逅“鸭脖王”——好口味加上“看不见的管理”
-看得见的管理与看不见的管理
-精英点评
-第五章　食品连锁是一种高科技行业</p>
-<p>用造飞机的智慧和专注做美食
-绝味的口味挑战
-供应链和物流的挑战
-工艺的挑战
-精英点评
-第六章　流水不争先——绝味营销的定位和实现</p>
-<p>保健品营销的启蒙
-绝味营销的发展历程和营销渠道的变革
-大胆探索，兼听则明
-口号背后的理性
-步步为营的品牌积累
-精英点评
-第七章　食品企业也是IT企业</p>
-<p>IT是什么
-谋定而后动——首战SAP
-运筹帷幄——进行信息化规划
-融会贯通——OA协同办公平台建设
-决胜千里——绝味要打造一个智慧的食品企业
-自我革命——绝味O2O转型实践
-精英点评
-第八章　从子弟兵文化到职业经理人制度</p>
-<p>从“鸿门宴”看楚汉双方的团队建设
-缺乏开放力的子弟兵文化传统
-中国商业传统的真问题
-传统餐饮的师徒制和绝味的职业经理人制度
-传统餐饮的瓶颈和绝味的大扩张
-绝味的“班子”和“队伍”
-绝味版桃园结义
-36岁真正立山头，以能力服人
-老板也有屈膝时——礼贤下士揽人才
-做一个靠谱的团队领袖
-领袖搭台，人才唱戏
-用人格魅力留住人才
-第九章　干净的企业才会有干净的产品——打造一个干净的采购体系</p>
-<p>原料的品质是口味的关键
-路人皆知的潜规则
-第十章　共创双赢——推动产业上游发展</p>
-<p>社会化大分工背景下的生产模式
-社会化分工背景下的大企业胸怀
-绝味对产业上游的推动力
-投资再造“中国鸭”
-精英点评
-第十一章　商业宪政实践——一项了不起的实践</p>
-<p>淘宝商城的企业生态困境
-绝味的加盟商宪政实践
-加盟商委员会的人事安排
-加盟商委员会选举制度
-加盟商委员会的运行
-精英点评
-第十二章　“不想当经理的店员不是好店员”</p>
-<p>基层员工的福利待遇与成长
-初入绝味
-弹性的工资和多元化的福利
-以激励的方式引导员工
-跋</p>
-<p>后记一</p>
-<p>后记二</p>
-<p>致谢</p>
 
-        
-        
-    </body>
-    </html>
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="创业学绝味一根鸭脖的商业奇迹">创业学绝味：一根鸭脖的商业奇迹</h1>
+<h2 id="郭宇宽-著">郭宇宽 著</h2>
+<div class="mycomment">
+<p>绝味的创业故事。整个书一直在将绝味与海底捞进行对比，讲的还是很有深度的，有作者自己独到的见解。可以再偶尔看看划出的笔记。</p>
+</div>
+<h3 id="题记">题记</h3>
+<h3 id="序二">序二</h3>
+<h3 id="序三">序三</h3>
+<h3 id="前言">前言</h3>
+<h3 id="第一章从自花授粉到优势杂交学不会与学得会的商学思想">第一章　从自花授粉到优势杂交——学不会与学得会的商学思想</h3>
+<h4 id="学不会的就别学了">学不会的就别学了</h4>
+<h4 id="先天条件太优越我们学不会">先天条件太优越，我们学不会</h4>
+<h4 id="后天条件太独特我们也学不会">后天条件太独特，我们也学不会</h4>
+<h4 id="野蛮成长的你学不会">野蛮成长的，你学不会</h4>
+<h4 id="不想学的你就学不会">不想学的，你就学不会</h4>
+<h4 id="绝味是一株杂交水稻">绝味是一株“杂交水稻”</h4>
+<h4 id="精英点评">精英点评</h4>
+<h3 id="第二章想通了就能赚到钱">第二章　“想通了，就能赚到钱”</h3>
+<h4 id="中国人不重视理论思维是一种很大的文化缺憾">中国人不重视理论思维是一种很大的文化缺憾</h4>
+<h4 id="想不通害死人">想不通害死人</h4>
+<h4 id="研究的本质就是要把现象再往深究">研究的本质就是要把现象再往深究</h4>
+<h4 id="精英点评-1">精英点评</h4>
+<h3 id="第三章科学管理和社会学想象力">第三章　科学管理和社会学想象力</h3>
+<h4 id="艺术是管理的锦上添花">艺术是管理的锦上添花</h4>
+<h4 id="审视管理的科学性">审视管理的科学性</h4>
+<h4 id="想象力与科学的结合">想象力与科学的结合</h4>
+<h3 id="第四章一个创业者是怎样炼成的老戴是谁">第四章　一个创业者是怎样炼成的——老戴是谁</h3>
+<h4 id="放养出来的孩子">放养出来的孩子</h4>
+<h4 id="因为信任而努力">因为信任而努力</h4>
+<h4 id="从小练创业">从小练创业</h4>
+<h4 id="在黑暗中寻找曙光">在黑暗中寻找曙光</h4>
+<h4 id="找一份稳定的工作">找一份稳定的工作</h4>
+<h4 id="发小广告的冠军">发小广告的冠军</h4>
+<h4 id="以学习的心态打工">以学习的心态打工</h4>
+<h4 id="到真正的大公司学习">到真正的大公司学习</h4>
+<h4 id="邂逅鸭脖王好口味加上看不见的管理">邂逅“鸭脖王”——好口味加上“看不见的管理”</h4>
+<h4 id="看得见的管理与看不见的管理">看得见的管理与看不见的管理</h4>
+<h4 id="精英点评-2">精英点评</h4>
+<h3 id="第五章食品连锁是一种高科技行业">第五章　食品连锁是一种高科技行业</h3>
+<h4 id="用造飞机的智慧和专注做美食">用造飞机的智慧和专注做美食</h4>
+<h4 id="绝味的口味挑战">绝味的口味挑战</h4>
+<h4 id="供应链和物流的挑战">供应链和物流的挑战</h4>
+<h4 id="工艺的挑战">工艺的挑战</h4>
+<h4 id="精英点评-3">精英点评</h4>
+<h3 id="第六章流水不争先绝味营销的定位和实现">第六章　流水不争先——绝味营销的定位和实现</h3>
+<h4 id="保健品营销的启蒙">保健品营销的启蒙</h4>
+<h4 id="绝味营销的发展历程和营销渠道的变革">绝味营销的发展历程和营销渠道的变革</h4>
+<h4 id="大胆探索兼听则明">大胆探索，兼听则明</h4>
+<h4 id="口号背后的理性">口号背后的理性</h4>
+<h4 id="步步为营的品牌积累">步步为营的品牌积累</h4>
+<h4 id="精英点评-4">精英点评</h4>
+<h3 id="第七章食品企业也是it企业">第七章　食品企业也是IT企业</h3>
+<h4 id="it是什么">IT是什么</h4>
+<h4 id="谋定而后动首战sap">谋定而后动——首战SAP</h4>
+<h4 id="运筹帷幄进行信息化规划">运筹帷幄——进行信息化规划</h4>
+<h4 id="融会贯通oa协同办公平台建设">融会贯通——OA协同办公平台建设</h4>
+<h4 id="决胜千里绝味要打造一个智慧的食品企业">决胜千里——绝味要打造一个智慧的食品企业</h4>
+<h4 id="自我革命绝味o2o转型实践">自我革命——绝味O2O转型实践</h4>
+<h4 id="精英点评-5">精英点评</h4>
+<h3 id="第八章从子弟兵文化到职业经理人制度">第八章　从子弟兵文化到职业经理人制度</h3>
+<h4 id="从鸿门宴看楚汉双方的团队建设">从“鸿门宴”看楚汉双方的团队建设</h4>
+<h4 id="缺乏开放力的子弟兵文化传统">缺乏开放力的子弟兵文化传统</h4>
+<h4 id="中国商业传统的真问题">中国商业传统的真问题</h4>
+<h4 id="传统餐饮的师徒制和绝味的职业经理人制度">传统餐饮的师徒制和绝味的职业经理人制度</h4>
+<h4 id="传统餐饮的瓶颈和绝味的大扩张">传统餐饮的瓶颈和绝味的大扩张</h4>
+<h4 id="绝味的班子和队伍">绝味的“班子”和“队伍”</h4>
+<h4 id="绝味版桃园结义">绝味版桃园结义</h4>
+<h4 id="36岁真正立山头以能力服人">36岁真正立山头，以能力服人</h4>
+<h4 id="老板也有屈膝时礼贤下士揽人才">老板也有屈膝时——礼贤下士揽人才</h4>
+<h4 id="做一个靠谱的团队领袖">做一个靠谱的团队领袖</h4>
+<h4 id="领袖搭台人才唱戏">领袖搭台，人才唱戏</h4>
+<h4 id="用人格魅力留住人才">用人格魅力留住人才</h4>
+<h3 id="第九章干净的企业才会有干净的产品打造一个干净的采购体系">第九章　干净的企业才会有干净的产品——打造一个干净的采购体系</h3>
+<h4 id="原料的品质是口味的关键">原料的品质是口味的关键</h4>
+<h4 id="路人皆知的潜规则">路人皆知的潜规则</h4>
+<h3 id="第十章共创双赢推动产业上游发展">第十章　共创双赢——推动产业上游发展</h3>
+<h4 id="社会化大分工背景下的生产模式">社会化大分工背景下的生产模式</h4>
+<h4 id="社会化分工背景下的大企业胸怀">社会化分工背景下的大企业胸怀</h4>
+<h4 id="绝味对产业上游的推动力">绝味对产业上游的推动力</h4>
+<h4 id="投资再造中国鸭">投资再造“中国鸭”</h4>
+<h4 id="精英点评-6">精英点评</h4>
+<h3 id="第十一章商业宪政实践一项了不起的实践">第十一章　商业宪政实践——一项了不起的实践</h3>
+<h4 id="淘宝商城的企业生态困境">淘宝商城的企业生态困境</h4>
+<h4 id="绝味的加盟商宪政实践">绝味的加盟商宪政实践</h4>
+<h4 id="加盟商委员会的人事安排">加盟商委员会的人事安排</h4>
+<h4 id="加盟商委员会选举制度">加盟商委员会选举制度</h4>
+<h4 id="加盟商委员会的运行">加盟商委员会的运行</h4>
+<h4 id="精英点评-7">精英点评</h4>
+<h3 id="第十二章不想当经理的店员不是好店员">第十二章　“不想当经理的店员不是好店员”</h3>
+<h4 id="基层员工的福利待遇与成长">基层员工的福利待遇与成长</h4>
+<h4 id="初入绝味">初入绝味</h4>
+<h4 id="弹性的工资和多元化的福利">弹性的工资和多元化的福利</h4>
+<h4 id="以激励的方式引导员工">以激励的方式引导员工</h4>
+<h3 id="跋">跋</h3>
+<h3 id="后记一">后记一</h3>
+<h3 id="后记二">后记二</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E9%A2%98%E8%AE%B0">题记</a></li>
+<li><a href="#%E5%BA%8F%E4%BA%8C">序二</a></li>
+<li><a href="#%E5%BA%8F%E4%B8%89">序三</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%BB%8E%E8%87%AA%E8%8A%B1%E6%8E%88%E7%B2%89%E5%88%B0%E4%BC%98%E5%8A%BF%E6%9D%82%E4%BA%A4%E5%AD%A6%E4%B8%8D%E4%BC%9A%E4%B8%8E%E5%AD%A6%E5%BE%97%E4%BC%9A%E7%9A%84%E5%95%86%E5%AD%A6%E6%80%9D%E6%83%B3">第一章　从自花授粉到优势杂交——学不会与学得会的商学思想</a>
+<ul>
+<li><a href="#%E5%AD%A6%E4%B8%8D%E4%BC%9A%E7%9A%84%E5%B0%B1%E5%88%AB%E5%AD%A6%E4%BA%86">学不会的就别学了</a></li>
+<li><a href="#%E5%85%88%E5%A4%A9%E6%9D%A1%E4%BB%B6%E5%A4%AA%E4%BC%98%E8%B6%8A%E6%88%91%E4%BB%AC%E5%AD%A6%E4%B8%8D%E4%BC%9A">先天条件太优越，我们学不会</a></li>
+<li><a href="#%E5%90%8E%E5%A4%A9%E6%9D%A1%E4%BB%B6%E5%A4%AA%E7%8B%AC%E7%89%B9%E6%88%91%E4%BB%AC%E4%B9%9F%E5%AD%A6%E4%B8%8D%E4%BC%9A">后天条件太独特，我们也学不会</a></li>
+<li><a href="#%E9%87%8E%E8%9B%AE%E6%88%90%E9%95%BF%E7%9A%84%E4%BD%A0%E5%AD%A6%E4%B8%8D%E4%BC%9A">野蛮成长的，你学不会</a></li>
+<li><a href="#%E4%B8%8D%E6%83%B3%E5%AD%A6%E7%9A%84%E4%BD%A0%E5%B0%B1%E5%AD%A6%E4%B8%8D%E4%BC%9A">不想学的，你就学不会</a></li>
+<li><a href="#%E7%BB%9D%E5%91%B3%E6%98%AF%E4%B8%80%E6%A0%AA%E6%9D%82%E4%BA%A4%E6%B0%B4%E7%A8%BB">绝味是一株“杂交水稻”</a></li>
+<li><a href="#%E7%B2%BE%E8%8B%B1%E7%82%B9%E8%AF%84">精英点评</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%E6%83%B3%E9%80%9A%E4%BA%86%E5%B0%B1%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1">第二章　“想通了，就能赚到钱”</a>
+<ul>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E4%BA%BA%E4%B8%8D%E9%87%8D%E8%A7%86%E7%90%86%E8%AE%BA%E6%80%9D%E7%BB%B4%E6%98%AF%E4%B8%80%E7%A7%8D%E5%BE%88%E5%A4%A7%E7%9A%84%E6%96%87%E5%8C%96%E7%BC%BA%E6%86%BE">中国人不重视理论思维是一种很大的文化缺憾</a></li>
+<li><a href="#%E6%83%B3%E4%B8%8D%E9%80%9A%E5%AE%B3%E6%AD%BB%E4%BA%BA">想不通害死人</a></li>
+<li><a href="#%E7%A0%94%E7%A9%B6%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%B0%B1%E6%98%AF%E8%A6%81%E6%8A%8A%E7%8E%B0%E8%B1%A1%E5%86%8D%E5%BE%80%E6%B7%B1%E7%A9%B6">研究的本质就是要把现象再往深究</a></li>
+<li><a href="#%E7%B2%BE%E8%8B%B1%E7%82%B9%E8%AF%84-1">精英点评</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A7%91%E5%AD%A6%E7%AE%A1%E7%90%86%E5%92%8C%E7%A4%BE%E4%BC%9A%E5%AD%A6%E6%83%B3%E8%B1%A1%E5%8A%9B">第三章　科学管理和社会学想象力</a>
+<ul>
+<li><a href="#%E8%89%BA%E6%9C%AF%E6%98%AF%E7%AE%A1%E7%90%86%E7%9A%84%E9%94%A6%E4%B8%8A%E6%B7%BB%E8%8A%B1">艺术是管理的锦上添花</a></li>
+<li><a href="#%E5%AE%A1%E8%A7%86%E7%AE%A1%E7%90%86%E7%9A%84%E7%A7%91%E5%AD%A6%E6%80%A7">审视管理的科学性</a></li>
+<li><a href="#%E6%83%B3%E8%B1%A1%E5%8A%9B%E4%B8%8E%E7%A7%91%E5%AD%A6%E7%9A%84%E7%BB%93%E5%90%88">想象力与科学的结合</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B8%80%E4%B8%AA%E5%88%9B%E4%B8%9A%E8%80%85%E6%98%AF%E6%80%8E%E6%A0%B7%E7%82%BC%E6%88%90%E7%9A%84%E8%80%81%E6%88%B4%E6%98%AF%E8%B0%81">第四章　一个创业者是怎样炼成的——老戴是谁</a>
+<ul>
+<li><a href="#%E6%94%BE%E5%85%BB%E5%87%BA%E6%9D%A5%E7%9A%84%E5%AD%A9%E5%AD%90">放养出来的孩子</a></li>
+<li><a href="#%E5%9B%A0%E4%B8%BA%E4%BF%A1%E4%BB%BB%E8%80%8C%E5%8A%AA%E5%8A%9B">因为信任而努力</a></li>
+<li><a href="#%E4%BB%8E%E5%B0%8F%E7%BB%83%E5%88%9B%E4%B8%9A">从小练创业</a></li>
+<li><a href="#%E5%9C%A8%E9%BB%91%E6%9A%97%E4%B8%AD%E5%AF%BB%E6%89%BE%E6%9B%99%E5%85%89">在黑暗中寻找曙光</a></li>
+<li><a href="#%E6%89%BE%E4%B8%80%E4%BB%BD%E7%A8%B3%E5%AE%9A%E7%9A%84%E5%B7%A5%E4%BD%9C">找一份稳定的工作</a></li>
+<li><a href="#%E5%8F%91%E5%B0%8F%E5%B9%BF%E5%91%8A%E7%9A%84%E5%86%A0%E5%86%9B">发小广告的冠军</a></li>
+<li><a href="#%E4%BB%A5%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%BF%83%E6%80%81%E6%89%93%E5%B7%A5">以学习的心态打工</a></li>
+<li><a href="#%E5%88%B0%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%A4%A7%E5%85%AC%E5%8F%B8%E5%AD%A6%E4%B9%A0">到真正的大公司学习</a></li>
+<li><a href="#%E9%82%82%E9%80%85%E9%B8%AD%E8%84%96%E7%8E%8B%E5%A5%BD%E5%8F%A3%E5%91%B3%E5%8A%A0%E4%B8%8A%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E7%AE%A1%E7%90%86">邂逅“鸭脖王”——好口味加上“看不见的管理”</a></li>
+<li><a href="#%E7%9C%8B%E5%BE%97%E8%A7%81%E7%9A%84%E7%AE%A1%E7%90%86%E4%B8%8E%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E7%AE%A1%E7%90%86">看得见的管理与看不见的管理</a></li>
+<li><a href="#%E7%B2%BE%E8%8B%B1%E7%82%B9%E8%AF%84-2">精英点评</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0%E9%A3%9F%E5%93%81%E8%BF%9E%E9%94%81%E6%98%AF%E4%B8%80%E7%A7%8D%E9%AB%98%E7%A7%91%E6%8A%80%E8%A1%8C%E4%B8%9A">第五章　食品连锁是一种高科技行业</a>
+<ul>
+<li><a href="#%E7%94%A8%E9%80%A0%E9%A3%9E%E6%9C%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%92%8C%E4%B8%93%E6%B3%A8%E5%81%9A%E7%BE%8E%E9%A3%9F">用造飞机的智慧和专注做美食</a></li>
+<li><a href="#%E7%BB%9D%E5%91%B3%E7%9A%84%E5%8F%A3%E5%91%B3%E6%8C%91%E6%88%98">绝味的口味挑战</a></li>
+<li><a href="#%E4%BE%9B%E5%BA%94%E9%93%BE%E5%92%8C%E7%89%A9%E6%B5%81%E7%9A%84%E6%8C%91%E6%88%98">供应链和物流的挑战</a></li>
+<li><a href="#%E5%B7%A5%E8%89%BA%E7%9A%84%E6%8C%91%E6%88%98">工艺的挑战</a></li>
+<li><a href="#%E7%B2%BE%E8%8B%B1%E7%82%B9%E8%AF%84-3">精英点评</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0%E6%B5%81%E6%B0%B4%E4%B8%8D%E4%BA%89%E5%85%88%E7%BB%9D%E5%91%B3%E8%90%A5%E9%94%80%E7%9A%84%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%AE%9E%E7%8E%B0">第六章　流水不争先——绝味营销的定位和实现</a>
+<ul>
+<li><a href="#%E4%BF%9D%E5%81%A5%E5%93%81%E8%90%A5%E9%94%80%E7%9A%84%E5%90%AF%E8%92%99">保健品营销的启蒙</a></li>
+<li><a href="#%E7%BB%9D%E5%91%B3%E8%90%A5%E9%94%80%E7%9A%84%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B%E5%92%8C%E8%90%A5%E9%94%80%E6%B8%A0%E9%81%93%E7%9A%84%E5%8F%98%E9%9D%A9">绝味营销的发展历程和营销渠道的变革</a></li>
+<li><a href="#%E5%A4%A7%E8%83%86%E6%8E%A2%E7%B4%A2%E5%85%BC%E5%90%AC%E5%88%99%E6%98%8E">大胆探索，兼听则明</a></li>
+<li><a href="#%E5%8F%A3%E5%8F%B7%E8%83%8C%E5%90%8E%E7%9A%84%E7%90%86%E6%80%A7">口号背后的理性</a></li>
+<li><a href="#%E6%AD%A5%E6%AD%A5%E4%B8%BA%E8%90%A5%E7%9A%84%E5%93%81%E7%89%8C%E7%A7%AF%E7%B4%AF">步步为营的品牌积累</a></li>
+<li><a href="#%E7%B2%BE%E8%8B%B1%E7%82%B9%E8%AF%84-4">精英点评</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0%E9%A3%9F%E5%93%81%E4%BC%81%E4%B8%9A%E4%B9%9F%E6%98%AFit%E4%BC%81%E4%B8%9A">第七章　食品企业也是IT企业</a>
+<ul>
+<li><a href="#it%E6%98%AF%E4%BB%80%E4%B9%88">IT是什么</a></li>
+<li><a href="#%E8%B0%8B%E5%AE%9A%E8%80%8C%E5%90%8E%E5%8A%A8%E9%A6%96%E6%88%98sap">谋定而后动——首战SAP</a></li>
+<li><a href="#%E8%BF%90%E7%AD%B9%E5%B8%B7%E5%B9%84%E8%BF%9B%E8%A1%8C%E4%BF%A1%E6%81%AF%E5%8C%96%E8%A7%84%E5%88%92">运筹帷幄——进行信息化规划</a></li>
+<li><a href="#%E8%9E%8D%E4%BC%9A%E8%B4%AF%E9%80%9Aoa%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E5%B9%B3%E5%8F%B0%E5%BB%BA%E8%AE%BE">融会贯通——OA协同办公平台建设</a></li>
+<li><a href="#%E5%86%B3%E8%83%9C%E5%8D%83%E9%87%8C%E7%BB%9D%E5%91%B3%E8%A6%81%E6%89%93%E9%80%A0%E4%B8%80%E4%B8%AA%E6%99%BA%E6%85%A7%E7%9A%84%E9%A3%9F%E5%93%81%E4%BC%81%E4%B8%9A">决胜千里——绝味要打造一个智慧的食品企业</a></li>
+<li><a href="#%E8%87%AA%E6%88%91%E9%9D%A9%E5%91%BD%E7%BB%9D%E5%91%B3o2o%E8%BD%AC%E5%9E%8B%E5%AE%9E%E8%B7%B5">自我革命——绝味O2O转型实践</a></li>
+<li><a href="#%E7%B2%BE%E8%8B%B1%E7%82%B9%E8%AF%84-5">精英点评</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0%E4%BB%8E%E5%AD%90%E5%BC%9F%E5%85%B5%E6%96%87%E5%8C%96%E5%88%B0%E8%81%8C%E4%B8%9A%E7%BB%8F%E7%90%86%E4%BA%BA%E5%88%B6%E5%BA%A6">第八章　从子弟兵文化到职业经理人制度</a>
+<ul>
+<li><a href="#%E4%BB%8E%E9%B8%BF%E9%97%A8%E5%AE%B4%E7%9C%8B%E6%A5%9A%E6%B1%89%E5%8F%8C%E6%96%B9%E7%9A%84%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE">从“鸿门宴”看楚汉双方的团队建设</a></li>
+<li><a href="#%E7%BC%BA%E4%B9%8F%E5%BC%80%E6%94%BE%E5%8A%9B%E7%9A%84%E5%AD%90%E5%BC%9F%E5%85%B5%E6%96%87%E5%8C%96%E4%BC%A0%E7%BB%9F">缺乏开放力的子弟兵文化传统</a></li>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E5%95%86%E4%B8%9A%E4%BC%A0%E7%BB%9F%E7%9A%84%E7%9C%9F%E9%97%AE%E9%A2%98">中国商业传统的真问题</a></li>
+<li><a href="#%E4%BC%A0%E7%BB%9F%E9%A4%90%E9%A5%AE%E7%9A%84%E5%B8%88%E5%BE%92%E5%88%B6%E5%92%8C%E7%BB%9D%E5%91%B3%E7%9A%84%E8%81%8C%E4%B8%9A%E7%BB%8F%E7%90%86%E4%BA%BA%E5%88%B6%E5%BA%A6">传统餐饮的师徒制和绝味的职业经理人制度</a></li>
+<li><a href="#%E4%BC%A0%E7%BB%9F%E9%A4%90%E9%A5%AE%E7%9A%84%E7%93%B6%E9%A2%88%E5%92%8C%E7%BB%9D%E5%91%B3%E7%9A%84%E5%A4%A7%E6%89%A9%E5%BC%A0">传统餐饮的瓶颈和绝味的大扩张</a></li>
+<li><a href="#%E7%BB%9D%E5%91%B3%E7%9A%84%E7%8F%AD%E5%AD%90%E5%92%8C%E9%98%9F%E4%BC%8D">绝味的“班子”和“队伍”</a></li>
+<li><a href="#%E7%BB%9D%E5%91%B3%E7%89%88%E6%A1%83%E5%9B%AD%E7%BB%93%E4%B9%89">绝味版桃园结义</a></li>
+<li><a href="#36%E5%B2%81%E7%9C%9F%E6%AD%A3%E7%AB%8B%E5%B1%B1%E5%A4%B4%E4%BB%A5%E8%83%BD%E5%8A%9B%E6%9C%8D%E4%BA%BA">36岁真正立山头，以能力服人</a></li>
+<li><a href="#%E8%80%81%E6%9D%BF%E4%B9%9F%E6%9C%89%E5%B1%88%E8%86%9D%E6%97%B6%E7%A4%BC%E8%B4%A4%E4%B8%8B%E5%A3%AB%E6%8F%BD%E4%BA%BA%E6%89%8D">老板也有屈膝时——礼贤下士揽人才</a></li>
+<li><a href="#%E5%81%9A%E4%B8%80%E4%B8%AA%E9%9D%A0%E8%B0%B1%E7%9A%84%E5%9B%A2%E9%98%9F%E9%A2%86%E8%A2%96">做一个靠谱的团队领袖</a></li>
+<li><a href="#%E9%A2%86%E8%A2%96%E6%90%AD%E5%8F%B0%E4%BA%BA%E6%89%8D%E5%94%B1%E6%88%8F">领袖搭台，人才唱戏</a></li>
+<li><a href="#%E7%94%A8%E4%BA%BA%E6%A0%BC%E9%AD%85%E5%8A%9B%E7%95%99%E4%BD%8F%E4%BA%BA%E6%89%8D">用人格魅力留住人才</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0%E5%B9%B2%E5%87%80%E7%9A%84%E4%BC%81%E4%B8%9A%E6%89%8D%E4%BC%9A%E6%9C%89%E5%B9%B2%E5%87%80%E7%9A%84%E4%BA%A7%E5%93%81%E6%89%93%E9%80%A0%E4%B8%80%E4%B8%AA%E5%B9%B2%E5%87%80%E7%9A%84%E9%87%87%E8%B4%AD%E4%BD%93%E7%B3%BB">第九章　干净的企业才会有干净的产品——打造一个干净的采购体系</a>
+<ul>
+<li><a href="#%E5%8E%9F%E6%96%99%E7%9A%84%E5%93%81%E8%B4%A8%E6%98%AF%E5%8F%A3%E5%91%B3%E7%9A%84%E5%85%B3%E9%94%AE">原料的品质是口味的关键</a></li>
+<li><a href="#%E8%B7%AF%E4%BA%BA%E7%9A%86%E7%9F%A5%E7%9A%84%E6%BD%9C%E8%A7%84%E5%88%99">路人皆知的潜规则</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0%E5%85%B1%E5%88%9B%E5%8F%8C%E8%B5%A2%E6%8E%A8%E5%8A%A8%E4%BA%A7%E4%B8%9A%E4%B8%8A%E6%B8%B8%E5%8F%91%E5%B1%95">第十章　共创双赢——推动产业上游发展</a>
+<ul>
+<li><a href="#%E7%A4%BE%E4%BC%9A%E5%8C%96%E5%A4%A7%E5%88%86%E5%B7%A5%E8%83%8C%E6%99%AF%E4%B8%8B%E7%9A%84%E7%94%9F%E4%BA%A7%E6%A8%A1%E5%BC%8F">社会化大分工背景下的生产模式</a></li>
+<li><a href="#%E7%A4%BE%E4%BC%9A%E5%8C%96%E5%88%86%E5%B7%A5%E8%83%8C%E6%99%AF%E4%B8%8B%E7%9A%84%E5%A4%A7%E4%BC%81%E4%B8%9A%E8%83%B8%E6%80%80">社会化分工背景下的大企业胸怀</a></li>
+<li><a href="#%E7%BB%9D%E5%91%B3%E5%AF%B9%E4%BA%A7%E4%B8%9A%E4%B8%8A%E6%B8%B8%E7%9A%84%E6%8E%A8%E5%8A%A8%E5%8A%9B">绝味对产业上游的推动力</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E5%86%8D%E9%80%A0%E4%B8%AD%E5%9B%BD%E9%B8%AD">投资再造“中国鸭”</a></li>
+<li><a href="#%E7%B2%BE%E8%8B%B1%E7%82%B9%E8%AF%84-6">精英点评</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%E5%95%86%E4%B8%9A%E5%AE%AA%E6%94%BF%E5%AE%9E%E8%B7%B5%E4%B8%80%E9%A1%B9%E4%BA%86%E4%B8%8D%E8%B5%B7%E7%9A%84%E5%AE%9E%E8%B7%B5">第十一章　商业宪政实践——一项了不起的实践</a>
+<ul>
+<li><a href="#%E6%B7%98%E5%AE%9D%E5%95%86%E5%9F%8E%E7%9A%84%E4%BC%81%E4%B8%9A%E7%94%9F%E6%80%81%E5%9B%B0%E5%A2%83">淘宝商城的企业生态困境</a></li>
+<li><a href="#%E7%BB%9D%E5%91%B3%E7%9A%84%E5%8A%A0%E7%9B%9F%E5%95%86%E5%AE%AA%E6%94%BF%E5%AE%9E%E8%B7%B5">绝味的加盟商宪政实践</a></li>
+<li><a href="#%E5%8A%A0%E7%9B%9F%E5%95%86%E5%A7%94%E5%91%98%E4%BC%9A%E7%9A%84%E4%BA%BA%E4%BA%8B%E5%AE%89%E6%8E%92">加盟商委员会的人事安排</a></li>
+<li><a href="#%E5%8A%A0%E7%9B%9F%E5%95%86%E5%A7%94%E5%91%98%E4%BC%9A%E9%80%89%E4%B8%BE%E5%88%B6%E5%BA%A6">加盟商委员会选举制度</a></li>
+<li><a href="#%E5%8A%A0%E7%9B%9F%E5%95%86%E5%A7%94%E5%91%98%E4%BC%9A%E7%9A%84%E8%BF%90%E8%A1%8C">加盟商委员会的运行</a></li>
+<li><a href="#%E7%B2%BE%E8%8B%B1%E7%82%B9%E8%AF%84-7">精英点评</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%E4%B8%8D%E6%83%B3%E5%BD%93%E7%BB%8F%E7%90%86%E7%9A%84%E5%BA%97%E5%91%98%E4%B8%8D%E6%98%AF%E5%A5%BD%E5%BA%97%E5%91%98">第十二章　“不想当经理的店员不是好店员”</a>
+<ul>
+<li><a href="#%E5%9F%BA%E5%B1%82%E5%91%98%E5%B7%A5%E7%9A%84%E7%A6%8F%E5%88%A9%E5%BE%85%E9%81%87%E4%B8%8E%E6%88%90%E9%95%BF">基层员工的福利待遇与成长</a></li>
+<li><a href="#%E5%88%9D%E5%85%A5%E7%BB%9D%E5%91%B3">初入绝味</a></li>
+<li><a href="#%E5%BC%B9%E6%80%A7%E7%9A%84%E5%B7%A5%E8%B5%84%E5%92%8C%E5%A4%9A%E5%85%83%E5%8C%96%E7%9A%84%E7%A6%8F%E5%88%A9">弹性的工资和多元化的福利</a></li>
+<li><a href="#%E4%BB%A5%E6%BF%80%E5%8A%B1%E7%9A%84%E6%96%B9%E5%BC%8F%E5%BC%95%E5%AF%BC%E5%91%98%E5%B7%A5">以激励的方式引导员工</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B7%8B">跋</a></li>
+<li><a href="#%E5%90%8E%E8%AE%B0%E4%B8%80">后记一</a></li>
+<li><a href="#%E5%90%8E%E8%AE%B0%E4%BA%8C">后记二</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

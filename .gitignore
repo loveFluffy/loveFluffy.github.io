@@ -5,8 +5,8 @@ tmp/
 
 # 大文件
 audio/
+video/
 books/
-courses/
 
 # 原始笔记 md 文件
 booknotes/notes*.md

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x73af;&#x7403;&#x6295;&#x8d44;&#x65c5;&#x884c;&#xff1a;&#x7a7f;&#x8d8a;&#x516d;&#x5927;&#x6d32;&#x7684;&#x6295;&#x8d44;&#x5947;&#x9047;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x73af;&#x7403;&#x6295;&#x8d44;&#x65c5;&#x884c;&#xff1a;&#x7a7f;&#x8d8a;&#x516d;&#x5927;&#x6d32;&#x7684;&#x6295;&#x8d44;&#x5947;&#x9047;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -331,10 +430,33 @@ a:target {
 	outline: 0;
 }
 
+/*笔记中的普通表格*/
 table {
-	align-self: center;
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
 }
 
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
 img {
 	align-self: center;
 	max-width: 1000px;
@@ -344,6 +466,20 @@ img {
 /* 选中后背景浅粉色 */
 ::selection {
 	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
 }
 
 
@@ -358,8 +494,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +521,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,71 +550,110 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="环球投资旅行穿越六大洲的投资奇遇">环球投资旅行：穿越六大洲的投资奇遇</h1>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="环球投资旅行穿越六大洲的投资奇遇">环球投资旅行：穿越六大洲的投资奇遇</h1>
 <h2 id="美克里斯托弗迈耶christopher-mayer-著徐梦蔚-钟娜-译">[美]克里斯托弗·迈耶（Christopher Mayer） 著|徐梦蔚 钟娜 译</h2>
+<div class="mycomment">
+<p>对全球范围内的各个国家经济形势的大概分析，很长见识。可能对个人投资者作用不大，但是对做生意的人还蛮有开阔眼界作用的。</p>
+</div>
 <h3 id="前言">前言</h3>
 <p>我在旅行过程中结交了很多新朋友，积累了珍贵的人脉资源。但其实往往大多数成功的投资并非发掘自我们周围的资源。我众多成功的投资便发生在那些我从未去过的地方、出自那些我从未接触过的公司。投资理应如此。</p>
 <p>出色的投资理念应当简单、明了，且近乎显而易见。我之所以用了“应当”二字，是因为大多情况下都是如此，当然例外也一直存在。投资者怀有秘密，握有内幕，其实这只是人们在解释他们弄不明白的事情时杜撰出来的想法。这种想法被许多商界人士广为传播，对于他们而言，这不失为有利的说法。</p>
@@ -726,8 +906,193 @@ iPad mini 5：2048*1536
 <h4 id="投资s形曲线的另一种途径">投资S形曲线的另一种途径</h4>
 <h2 id="结语">结语</h2>
 <h2 id="最后的小结">最后的小结</h2>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0%E4%B8%96%E7%95%8C%E5%9B%9E%E5%BD%92%E6%AD%A3%E5%B8%B8">第1章　世界回归正常</a>
+<ul>
+<li><a href="#%E8%B6%85%E7%BA%A7%E5%91%A8%E6%9C%9F%E4%BB%8A%E5%A4%A9%E6%88%91%E4%BB%AC%E8%BA%AB%E5%9C%A8%E4%BD%95%E5%A4%84">超级周期：今天我们身在何处</a></li>
+<li><a href="#%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E%E5%8F%B2%E6%97%A0%E5%89%8D%E4%BE%8B%E7%9A%84%E8%A7%84%E6%A8%A1%E4%B8%8E%E5%BC%80%E6%94%BE%E7%A8%8B%E5%BA%A6">世界经济史无前例的规模与开放程度</a></li>
+<li><a href="#%E6%96%B0%E8%80%81%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF">新老丝绸之路</a></li>
+<li><a href="#%E5%AD%A3%E9%A3%8E%E6%B5%B7%E6%B4%8B%E6%9C%AA%E6%9D%A5%E7%BC%A9%E5%BD%B1">季风海洋：未来缩影</a></li>
+<li><a href="#%E9%87%91%E7%A0%96%E5%9B%9B%E5%9B%BD%E4%B8%AD%E4%B8%9C%E5%8C%97%E9%9D%9E">金砖四国？中东北非！</a></li>
+<li><a href="#%E4%BB%8E%E5%87%A0%E5%B8%A7%E5%89%AA%E5%BD%B1%E7%9C%8B%E6%AD%A3%E5%9C%A8%E5%9B%9E%E5%BD%92%E6%AD%A3%E5%B8%B8%E7%9A%84%E4%B8%96%E7%95%8C">从几帧剪影看正在回归正常的世界</a></li>
+<li><a href="#%E7%AC%AC%E6%AF%94%E5%88%A9%E6%96%AF">第比利斯</a></li>
+<li><a href="#%E9%80%9A%E5%BE%80%E8%8E%AB%E6%96%AF%E7%A7%91%E7%9A%84%E8%B7%AF%E4%B8%8A">通往莫斯科的路上</a></li>
+<li><a href="#%E7%A9%BF%E8%B6%8A%E4%BA%9A%E6%B4%B2%E5%A4%A7%E9%99%86%E7%9A%84%E9%81%93%E8%B7%AF%E9%93%81%E8%BD%A8%E5%92%8C%E7%AE%A1%E9%81%93">穿越亚洲大陆的道路、铁轨和管道</a></li>
+<li><a href="#%E4%B8%96%E7%95%8C%E6%98%AF%E6%80%8E%E4%B9%88%E8%8A%B1%E9%92%B1%E7%9A%84">世界是怎么花钱的</a></li>
+<li><a href="#%E6%9C%80%E6%96%B0%E4%BA%A7%E5%93%81%E5%B0%86%E6%9D%A5%E8%87%AA%E5%93%AA%E9%87%8C">最新产品将来自哪里</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A%E6%8E%A2%E5%AF%BB%E4%BC%A0%E8%AF%B4%E4%B8%AD%E7%9A%84%E9%BB%84%E9%87%91%E4%B9%8B%E5%9B%BD">第2章　哥伦比亚：探寻传说中的黄金之国</a>
+<ul>
+<li><a href="#%E5%B1%B1%E7%9A%84%E5%AD%90%E6%B0%91">山的子民</a></li>
+<li><a href="#%E8%BF%99%E9%87%8C%E6%9C%89%E7%9F%B3%E6%B2%B9">这里有石油</a></li>
+<li><a href="#%E6%96%B0%E7%9A%84%E9%BB%84%E9%87%91%E4%B9%8B%E5%9B%BD">新的黄金之国</a></li>
+<li><a href="#%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A%E7%9A%84%E5%85%B6%E4%BB%96%E6%8A%95%E8%B5%84%E6%9C%BA%E4%BC%9A">哥伦比亚的其他投资机会</a></li>
+<li><a href="#%E5%81%87%E5%A6%82%E6%88%91%E5%8F%AA%E8%83%BD%E8%B4%AD%E4%B9%B0%E4%B8%80%E7%A7%8D%E8%82%A1%E7%A5%A8">假如我只能购买一种股票</a></li>
+<li><a href="#%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A%E7%9A%84%E4%BC%81%E4%B8%9A%E8%81%94%E7%9B%9F">哥伦比亚的企业联盟</a></li>
+<li><a href="#%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A%E8%BF%90%E6%B2%B3">哥伦比亚运河</a></li>
+<li><a href="#%E6%8B%89%E7%BE%8E%E6%9C%80%E5%A5%BD%E7%9A%84%E7%BB%8F%E6%B5%8E%E4%BD%93">拉美最好的经济体？</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0%E5%B7%B4%E8%A5%BF%E5%9C%9F%E5%9C%B0%E8%B6%85%E7%BA%A7%E5%A4%A7%E5%9B%BD">第3章　巴西：土地超级大国</a>
+<ul>
+<li><a href="#%E5%B7%B4%E8%A5%BF%E7%9A%84%E8%82%89%E7%B1%BB%E5%A4%A7%E7%8E%8B">巴西的肉类大王</a></li>
+<li><a href="#%E6%97%A5%E6%B8%90%E5%AF%8C%E8%A3%95%E7%9A%84%E5%B7%B4%E8%A5%BF">日渐富裕的巴西</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E5%B7%B4%E8%A5%BF%E6%89%80%E7%BC%BA%E4%B9%8F%E7%9A%84%E9%82%A3%E4%B8%80%E6%A0%B7%E4%B8%9C%E8%A5%BF">投资巴西所缺乏的那一样东西</a></li>
+<li><a href="#%E5%9C%A3%E4%BF%9D%E7%BD%97%E5%B7%B4%E8%A5%BF%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%BF%83%E8%84%8F">圣保罗：巴西的经济心脏</a></li>
+<li><a href="#%E6%B7%B1%E6%8C%96%E5%85%88%E7%94%9F">“深挖先生”</a></li>
+<li><a href="#%E5%BC%97%E6%B4%9B%E9%87%8C%E4%BA%9A%E8%AF%BA%E6%B3%A2%E5%88%A9%E6%96%AF%E7%A9%BF%E7%9D%80%E4%BA%BA%E5%AD%97%E6%8B%96%E6%B8%B8%E8%8D%A1">弗洛里亚诺波利斯：穿着人字拖游荡</a></li>
+<li><a href="#%E5%B7%B4%E8%A5%BF%E8%B4%A7%E5%B8%81%E7%9A%84%E8%BF%94%E5%B7%A5">巴西货币的“返工”</a></li>
+<li><a href="#%E5%B7%B4%E8%A5%BF%E9%B8%A1%E5%B0%BE%E9%85%92%E5%8D%B1%E6%9C%BA">巴西鸡尾酒危机</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-1">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0%E5%B0%BC%E5%8A%A0%E6%8B%89%E7%93%9C%E4%BA%BA%E9%97%B4%E5%A4%A9%E5%A0%82">第4章　尼加拉瓜：人间天堂</a>
+<ul>
+<li><a href="#%E4%B8%AD%E7%BE%8E%E6%B4%B2%E5%86%89%E5%86%89%E5%8D%87%E8%B5%B7%E7%9A%84%E6%98%8E%E6%98%9F">中美洲冉冉升起的明星</a></li>
+<li><a href="#%E6%A0%BC%E6%8B%89%E8%BE%BE%E7%BA%B3%E7%BE%8E%E6%B4%B2%E6%9C%80%E5%8F%A4%E8%80%81%E5%9F%8E%E5%B8%82%E7%9A%84%E5%A4%8D%E5%85%B4">格拉达纳：美洲最古老城市的复兴</a></li>
+<li><a href="#%E8%8E%B1%E6%98%82%E5%A6%82%E4%BD%95%E4%BB%A52000%E7%BE%8E%E5%85%83%E7%9A%84%E6%9C%88%E6%94%B6%E5%85%A5%E5%9C%A8%E5%8E%86%E5%8F%B2%E5%8F%A4%E9%83%BD%E4%BA%AB%E5%8F%97%E8%88%92%E9%80%82%E7%94%9F%E6%B4%BB">莱昂：如何以2000美元的月收入在历史古都享受舒适生活</a></li>
+<li><a href="#%E6%B9%96%E6%B3%8A%E4%B9%8B%E5%9C%B0%E5%92%8C%E7%81%AB%E5%B1%B1%E4%B9%8B%E5%9B%BD%E7%9A%84%E8%B4%A2%E5%AF%8C">湖泊之地和火山之国的财富</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-2">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0%E4%B8%AD%E5%9B%BD%E5%8D%B1%E6%9C%BA%E4%B8%8E%E6%9C%BA%E9%81%87">第5章　中国：危机与机遇</a>
+<ul>
+<li><a href="#%E8%80%81%E5%8C%97%E4%BA%AC%E8%B0%A2%E5%B9%95%E6%96%B0%E5%8C%97%E4%BA%AC%E7%99%BB%E5%8F%B0">老北京谢幕，新北京登台</a></li>
+<li><a href="#%E4%BA%9A%E6%B4%B2%E6%B6%88%E8%B4%B9%E8%80%85%E7%9A%84%E5%B4%9B%E8%B5%B7">亚洲消费者的崛起</a></li>
+<li><a href="#%E5%90%91%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%87%BA%E5%94%AE%E6%B4%81%E5%87%80%E6%B0%B4">向中国人出售洁净水</a></li>
+<li><a href="#%E9%98%BB%E7%A2%8D%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E5%A2%9E%E9%95%BF%E7%9A%84%E6%9C%80%E5%A4%A7%E9%9A%90%E6%82%A3">阻碍中国经济增长的最大隐患</a></li>
+<li><a href="#%E6%B0%B4%E5%A5%B3%E7%9A%87%E9%A9%BE%E5%88%B0">水女皇驾到</a></li>
+<li><a href="#%E9%A2%87%E6%9C%89%E5%90%AF%E5%8F%91%E6%84%8F%E4%B9%89%E7%9A%84%E9%A6%99%E6%B8%AF%E4%B9%8B%E6%97%85">颇有启发意义的香港之旅</a></li>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E7%9A%84%E8%B4%A7%E5%B8%81">中国的货币</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%85%A4%E4%BB%B7%E4%BC%9A%E9%A3%9E%E6%B6%A8">为什么煤价会飞涨</a></li>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E7%89%88%E4%B9%99%E9%86%87">“中国版乙醇”</a></li>
+<li><a href="#%E8%B6%85%E5%87%A1%E7%9A%84%E4%B8%AD%E5%9B%BD%E5%88%B6%E9%80%A0%E4%B8%9A%E5%85%85%E6%BB%A1%E5%8B%87%E6%B0%94%E7%9A%84%E6%80%AA%E6%89%8D">超凡的中国制造业：充满勇气的怪才</a></li>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E8%B6%85%E8%B6%8A%E9%B2%81%E5%B0%94%E5%8C%BA">中国超越鲁尔区</a></li>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E6%B3%A1%E6%B2%AB">中国经济泡沫？</a></li>
+<li><a href="#%E5%88%B0%E8%AE%BF%E8%8F%9C%E7%99%BE%E9%BB%84%E9%87%91%E5%B8%82%E5%9C%BA">到访菜百黄金市场</a></li>
+<li><a href="#%E9%A2%84%E6%8A%A5%E4%B8%AD%E5%9B%BD%E5%A4%A9%E6%B0%94%E9%98%B4%E5%8F%AF%E8%83%BD%E6%9C%89%E9%9B%A8">预报中国天气：阴，可能有雨</a></li>
+<li><a href="#%E5%8D%A1%E5%B0%94%E5%85%8B%E7%BD%97%E7%9A%84%E5%86%92%E9%99%A9">卡尔·克罗的冒险</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-3">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0%E5%8D%B0%E5%BA%A6%E5%88%AB%E5%96%9D%E8%87%AA%E6%9D%A5%E6%B0%B4">第6章　印度：别喝自来水？</a>
+<ul>
+<li><a href="#%E6%8A%95%E8%B5%84%E5%8D%B0%E5%BA%A6%E9%9D%9E%E6%98%93%E4%BA%8B">投资印度非易事</a></li>
+<li><a href="#%E5%8D%B0%E5%BA%A6%E5%A4%8F%E6%97%A5">印度夏日</a></li>
+<li><a href="#%E5%8D%B0%E5%BA%A6%E7%9A%84%E5%AE%9E%E4%BD%93%E7%BB%8F%E6%B5%8E%E5%B9%B6%E9%9D%9E%E5%A6%82%E4%BD%A0%E6%89%80%E6%83%B3">印度的实体经济——并非如你所想</a></li>
+<li><a href="#%E6%8B%89%E8%B4%BE%E6%96%AF%E5%9D%A6%E7%9A%84%E7%9F%B3%E6%B2%B9%E5%AE%9D%E8%97%8F%E5%92%8C%E5%8D%B0%E5%BA%A6%E7%9A%84%E8%83%BD%E6%BA%90%E9%9C%80%E6%B1%82">拉贾斯坦的石油宝藏和印度的能源需求</a></li>
+<li><a href="#%E9%A9%AC%E6%8B%89%E5%B7%B4%E5%B0%94%E6%B5%B7%E5%B2%B8">马拉巴尔海岸</a></li>
+<li><a href="#%E5%B7%A8%E9%A2%9D%E8%B5%84%E9%87%91%E6%B6%8C%E5%85%A5%E5%8D%B0%E5%BA%A6%E6%88%BF%E4%BA%A7%E5%B8%82%E5%9C%BA">巨额资金涌入印度房产市场</a></li>
+<li><a href="#%E6%B5%B7%E5%BE%B7%E6%8B%89%E5%B7%B4%E7%9A%84%E6%99%AF%E8%B1%A1">海德拉巴的景象</a></li>
+<li><a href="#%E5%9C%A8%E5%AD%9F%E4%B9%B0%E4%B9%B0%E9%BB%84%E9%87%91">在孟买买黄金</a></li>
+<li><a href="#%E4%BD%9C%E7%89%A9%E4%BB%B7%E6%A0%BC%E9%9D%9E%E5%90%8C%E5%B0%8F%E5%8F%AF">作物价格非同小可</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-4">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0%E9%98%BF%E8%81%94%E9%85%8B%E5%88%AB%E5%A2%85%E5%90%89%E6%99%AE%E8%B5%9B%E4%BA%BA">第7章　阿联酋：别墅吉普赛人</a>
+<ul>
+<li><a href="#%E8%BF%AA%E6%8B%9C2007%E9%98%BF%E6%8B%89%E4%BC%AF%E7%9A%84%E6%96%B0%E5%85%B4%E4%B9%8B%E5%9F%8E">迪拜2007：阿拉伯的新兴之城</a></li>
+<li><a href="#%E8%BF%AA%E6%8B%9C2009%E6%B3%A1%E6%B2%AB%E7%A0%B4%E8%A3%82">迪拜2009：泡沫破裂</a></li>
+<li><a href="#%E9%98%BF%E5%B8%83%E6%89%8E%E6%AF%94%E5%9C%B0%E7%90%83%E4%B8%8A%E6%9C%80%E5%AF%8C%E8%A3%95%E7%9A%84%E5%9C%B0%E6%96%B9%E4%B9%8B%E4%B8%80">阿布扎比——地球上最富裕的地方之一</a></li>
+<li><a href="#%E8%BF%AA%E6%8B%9C%E7%9A%84%E5%80%BA%E5%8A%A1%E5%8D%B1%E6%9C%BA">迪拜的债务危机</a></li>
+<li><a href="#%E8%BF%AA%E6%8B%9C%E7%9A%84%E6%9C%AA%E6%9D%A5">迪拜的未来</a></li>
+<li><a href="#%E9%98%BF%E8%81%94%E9%85%8B%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88">阿联酋需要什么</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%AA%E6%8B%9C%E4%BE%9D%E7%84%B6%E9%87%8D%E8%A6%81">为什么迪拜依然重要</a></li>
+<li><a href="#%E4%BC%8A%E6%9C%AC%E7%99%BD%E5%9B%BE%E6%B3%B0%E7%9A%84%E6%95%85%E4%BA%8B">伊本·白图泰的故事</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-5">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0%E5%8D%97%E9%9D%9E%E5%BD%A9%E8%99%B9%E4%B9%8B%E5%9B%BD%E7%9A%84%E8%B5%84%E6%9C%AC%E7%BB%8F%E6%B5%8E">第8章　南非：彩虹之国的资本经济</a>
+<ul>
+<li><a href="#%E7%BA%A6%E7%BF%B0%E5%86%85%E6%96%AF%E5%A0%A1%E9%BB%84%E9%87%91%E4%B9%8B%E4%B8%8A%E5%BB%BA%E8%B5%B7%E7%9A%84%E5%9F%8E%E5%B8%82">约翰内斯堡：黄金之上建起的城市</a></li>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E4%BC%81%E4%B8%9A%E6%8D%B7%E8%B6%B3%E5%85%88%E7%99%BB">中国企业捷足先登</a></li>
+<li><a href="#%E5%AF%BB%E6%89%BE%E9%9D%9E%E6%B4%B2%E5%BD%A9%E8%99%B9">寻找非洲彩虹</a></li>
+<li><a href="#%E4%B8%80%E5%BC%A0%E6%9D%A5%E8%87%AA%E5%BC%80%E6%99%AE%E6%95%A6%E7%9A%84%E6%98%8E%E4%BF%A1%E7%89%87">一张来自开普敦的明信片</a></li>
+<li><a href="#%E5%BC%80%E6%99%AE%E6%95%A6%E6%9C%80%E5%A4%A7%E7%9A%84%E5%B7%A5%E4%B8%9A%E5%9B%AD%E5%8C%BA">开普敦最大的工业园区</a></li>
+<li><a href="#%E6%88%91%E6%9C%80%E7%88%B1%E7%9A%84%E6%8A%95%E8%B5%84%E9%9D%9E%E6%B4%B2%E8%B7%AF%E7%BA%BF">我最爱的投资非洲路线</a></li>
+<li><a href="#%E8%B5%8C%E5%A4%A7%E5%8A%BF%E6%89%80%E8%B6%8B%E4%B9%8B%E4%BA%8B">赌大势所趋之事</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-6">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A%E5%92%8C%E6%96%B0%E8%A5%BF%E5%85%B0%E4%B8%8A%E4%B8%8B%E8%80%8C%E6%B1%82%E7%B4%A2">第9章　澳大利亚和新西兰：上下而求索</a>
+<ul>
+<li><a href="#%E4%B8%AD%E4%B8%9C%E7%87%83%E6%B0%94">中东燃气</a></li>
+<li><a href="#lng%E7%9B%B8%E5%85%B3%E4%BB%8B%E7%BB%8D">LNG相关介绍</a></li>
+<li><a href="#%E5%86%9C%E4%B8%9A%E6%8A%95%E8%B5%84%E7%AC%AC%E4%B8%80%E7%BA%BF%E5%A2%A8%E5%B0%94%E6%9C%AC">农业投资第一线：墨尔本</a></li>
+<li><a href="#%E5%88%B0%E6%96%B0%E8%A5%BF%E5%85%B0%E5%8E%BB">到新西兰去</a></li>
+<li><a href="#%E5%B8%B8%E7%BB%BF%E6%A0%91%E4%B8%8B%E7%9A%84%E6%8A%95%E8%B5%84%E5%BB%BA%E8%AE%AE">常绿树下的投资建议</a></li>
+<li><a href="#%E6%96%B0%E8%A5%BF%E5%85%B0%E7%9A%84%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E%E5%9C%B0%E4%BD%8D">新西兰的世界经济地位</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-7">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0%E4%B8%9C%E5%8D%97%E4%BA%9A%E7%8E%AF%E6%B8%B8%E6%B3%B0%E5%9B%BD%E6%9F%AC%E5%9F%94%E5%AF%A8%E5%92%8C%E8%B6%8A%E5%8D%97">第10章　东南亚：环游泰国、柬埔寨和越南</a>
+<ul>
+<li><a href="#%E6%9B%BC%E8%B0%B7%E6%B4%AA%E6%B0%B4%E7%9A%84%E8%83%8C%E5%90%8E">曼谷：洪水的背后</a></li>
+<li><a href="#%E6%B3%B0%E5%9B%BD%E7%9A%84%E6%B2%83%E4%BC%A6%E5%B7%B4%E8%8F%B2%E7%89%B9">泰国的沃伦·巴菲特</a></li>
+<li><a href="#%E6%9F%AC%E5%9F%94%E5%AF%A8%E5%A5%87%E8%BF%B9%E4%B9%8B%E5%9B%BD">柬埔寨：奇迹之国</a></li>
+<li><a href="#%E9%87%91%E8%BE%B9%E4%BA%9A%E6%B4%B2%E4%B9%8B%E7%8F%A0">金边：亚洲之珠</a></li>
+<li><a href="#%E6%9D%8E%E5%A5%A5%E5%B8%95%E8%B5%84%E6%9C%AC%E8%BE%B9%E7%96%86%E5%B8%82%E5%9C%BA%E9%AB%98%E7%9E%BB%E8%BF%9C%E7%9E%A9%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85">李奥帕资本：边疆市场高瞻远瞩的投资者</a></li>
+<li><a href="#%E5%90%B4%E5%93%A5%E7%AA%9F%E6%B4%9E%E9%87%8C%E8%90%A8%E5%92%8C%E6%B9%84%E5%85%AC%E6%B2%B3">吴哥窟、洞里萨和湄公河</a></li>
+<li><a href="#%E8%B6%8A%E5%8D%97%E4%B8%80%E4%B8%AA%E5%9B%BD%E5%AE%B6%E8%80%8C%E4%B8%8D%E6%98%AF%E4%B8%80%E5%9C%BA%E6%88%98%E4%BA%89">越南：一个国家，而不是一场战争</a></li>
+<li><a href="#%E6%B2%B3%E5%86%85%E4%BC%97%E6%B9%96%E4%B9%8B%E5%9F%8E">河内：众湖之城</a></li>
+<li><a href="#%E6%B2%99%E6%99%AE%E4%BC%A6%E5%85%88%E7%94%9F%E7%9A%84%E6%8E%A2%E9%99%A9">沙普伦先生的探险</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-8">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0%E8%92%99%E5%8F%A4%E9%98%BF%E6%A0%B9%E5%BB%B7%E4%BF%84%E7%BD%97%E6%96%AF%E5%9C%9F%E8%80%B3%E5%85%B6%E5%92%8C%E4%B8%AD%E4%BA%9A%E5%9C%B0%E5%8C%BA%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E5%9C%B0%E6%96%B9%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E6%9C%BA%E4%BC%9A">第11章　蒙古、阿根廷、俄罗斯、土耳其和中亚地区：不一样的地方，不一样的机会</a>
+<ul>
+<li><a href="#%E9%98%BF%E6%A0%B9%E5%BB%B7%E6%9A%B4%E6%AE%84%E5%A4%A9%E7%89%A9">阿根廷：暴殄天物</a></li>
+<li><a href="#%E4%BF%84%E7%BD%97%E6%96%AF%E6%AF%8D%E4%BA%B2%E6%83%8A%E5%96%9C%E6%BB%A1%E8%BD%BD">俄罗斯母亲：惊喜满载</a></li>
+<li><a href="#%E4%B8%AD%E4%BA%9A%E5%8E%86%E5%8F%B2%E7%9A%84%E5%9C%B0%E7%90%86%E6%9E%A2%E7%BA%BD">中亚：历史的地理枢纽</a></li>
+<li><a href="#%E6%83%8A%E5%96%9C%E5%9C%9F%E8%80%B3%E5%85%B6">惊喜土耳其</a></li>
+<li><a href="#%E9%BB%91%E6%9A%97%E8%A7%92%E8%90%BD%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%8D%B0%E8%B1%A1%E4%B8%BB%E4%B9%89">黑暗角落的经济印象主义</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-9">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0%E5%8A%A0%E6%8B%BF%E5%A4%A7%E4%BA%A7%E7%B2%AE%E4%B9%8B%E7%AF%AE%E8%8D%A3%E5%BD%92">第12章　加拿大：“产粮之篮”荣归</a>
+<ul>
+<li><a href="#%E5%9C%A8%E8%80%95%E5%9C%B0%E4%B8%8A%E8%AE%A9%E8%B5%84%E4%BA%A7%E7%BF%BB%E5%80%8D">在耕地上让资产翻倍</a></li>
+<li><a href="#%E6%B2%B9%E8%8F%9C%E7%B1%BD%E5%8A%A0%E6%8B%BF%E5%A4%A7%E6%9C%80%E5%80%BC%E9%92%B1%E7%9A%84%E7%BB%8F%E6%B5%8E%E4%BD%9C%E7%89%A9">油菜籽：加拿大最值钱的经济作物</a></li>
+<li><a href="#%E8%A1%A8%E5%B1%82%E5%9C%9F%E5%8D%B1%E6%9C%BA">表层土危机</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E8%80%95%E5%9C%B0%E8%B5%B6%E8%B6%85%E9%80%9A%E8%83%80">投资耕地，赶超通胀</a></li>
+<li><a href="#%E6%B5%85%E8%B0%88%E8%B1%86%E7%B1%BB%E6%A4%8D%E7%89%A9">浅谈豆类植物</a></li>
+<li><a href="#%E5%B0%86%E5%86%9C%E4%BD%9C%E7%89%A9%E4%BB%8E%E7%94%9F%E4%BA%A7%E5%9C%B0%E5%B8%A6%E5%88%B0%E5%85%A8%E4%B8%96%E7%95%8C">将农作物从生产地带到全世界</a></li>
+<li><a href="#%E8%B0%B7%E7%89%A9%E7%9A%84%E6%94%B6%E8%B4%B9%E5%85%AC%E8%B7%AF">谷物的收费公路</a></li>
+<li><a href="#%E5%BD%93%E7%84%B6%E5%8A%A0%E6%8B%BF%E5%A4%A7%E4%B8%8D%E6%98%AF%E5%8F%AA%E6%9C%89%E8%90%A8%E6%96%AF%E5%96%80%E5%BD%BB%E6%B8%A9">当然，加拿大不是只有萨斯喀彻温</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-10">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC13%E7%AB%A0%E7%BE%8E%E5%88%A9%E5%9D%9A%E5%90%88%E4%BC%97%E5%9B%BD%E5%9B%9E%E5%88%B0%E5%AE%B6%E9%97%A8%E5%8F%A3">第13章　美利坚合众国：回到家门口</a>
+<ul>
+<li><a href="#%E4%BD%A0%E9%97%BB%E6%89%80%E6%9C%AA%E9%97%BB%E7%9A%84%E6%9C%80%E4%B8%A5%E5%B3%BB%E7%9A%84%E8%B5%84%E6%BA%90%E7%9F%AD%E7%BC%BA%E9%97%AE%E9%A2%98">你闻所未闻的最严峻的资源短缺问题</a></li>
+<li><a href="#%E6%9D%A5%E8%87%AA%E7%86%8A%E6%B9%96%E7%9A%84%E6%8A%A5%E9%81%93">来自熊湖的报道</a></li>
+<li><a href="#%E5%BD%93%E6%B4%9B%E5%9F%BA%E5%B1%B1%E7%85%A4%E7%9F%BF%E9%81%87%E4%B8%8A%E9%92%A2%E9%93%81%E9%9C%80%E6%B1%82">当洛基山煤矿遇上钢铁需求</a></li>
+<li><a href="#%E5%BA%93%E5%85%8B%E6%B0%B4%E6%B9%BE%E4%B9%8B%E6%97%85">库克水湾之旅</a></li>
+<li><a href="#%E6%B4%9B%E5%9F%BA%E5%B1%B1%E6%8A%95%E6%9C%BA%E5%B7%B4%E8%82%AF%E6%B2%B9%E7%94%B0">洛基山投机：巴肯油田</a></li>
+<li><a href="#%E9%A1%B5%E5%B2%A9%E6%B0%94%E9%9D%A9%E5%91%BD">页岩气革命</a></li>
+<li><a href="#%E7%BE%8E%E5%9B%BD%E5%86%9C%E4%B8%9A%E7%9A%84%E6%84%8F%E5%A4%96%E6%94%B6%E8%8E%B7">美国农业的意外收获</a></li>
+<li><a href="#%E5%88%B6%E9%80%A0%E5%A4%A7%E5%9B%BD%E5%9C%B0%E4%BD%8D%E4%B8%8D%E5%80%92">制造大国地位不倒</a></li>
+<li><a href="#%E7%BE%8E%E5%9B%BD%E8%88%AA%E7%A9%BA%E8%85%BE%E7%A9%BA%E8%B5%B7%E9%A3%9E">美国航空腾空起飞</a></li>
+<li><a href="#%E6%9C%BA%E5%AF%86%E7%BE%8E%E5%9B%BD">机密美国</a></li>
+<li><a href="#%E7%BE%8E%E5%9B%BD%E4%BD%8F%E5%AE%85%E4%B9%B0">美国住宅：买！</a></li>
+<li><a href="#%E5%82%A8%E8%93%84%E9%93%B6%E8%A1%8C%E4%BA%A4%E6%98%93">储蓄银行交易</a></li>
+<li><a href="#%E6%9C%AA%E6%9D%A550%E5%B9%B4%E7%9A%84%E6%9C%80%E4%BD%B3%E6%8A%95%E8%B5%84">未来50年的最佳投资</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-11">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC14%E7%AB%A0%E7%8E%AF%E7%90%83%E6%8A%95%E8%B5%84%E6%97%85%E8%A1%8C%E5%AF%BC%E8%AF%BB">第14章　《环球投资旅行》导读</a>
+<ul>
+<li><a href="#%E6%8A%95%E8%B5%84s%E5%BD%A2%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E9%80%94%E5%BE%84">投资S形曲线的另一种途径</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

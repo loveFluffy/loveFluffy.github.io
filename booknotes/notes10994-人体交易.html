@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x4eba;&#x4f53;&#x4ea4;&#x6613;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x4eba;&#x4f53;&#x4ea4;&#x6613;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,451 +31,124 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="人体交易">人体交易</h1>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="人体交易">人体交易</h1>
 <h2 id="美斯科特卡尼scott-carney-著姚怡平-译">[美]斯科特·卡尼（Scott Carney） 著|姚怡平 译</h2>
+<div class="mycomment">
+<p>从几个方面讲了人体器官组织交易的现状，触目惊心：</p>
+<ol>
+<li>盗墓所得人骨做成标本或者做成宗教道具进行贩卖；</li>
+<li>连忽悠带骗地让难民和穷人卖肾；</li>
+<li>孤儿院为了高额跨国领养费，拐卖儿童；</li>
+<li>印度穷人妇女做代孕孕母；</li>
+<li>被关押当血牛数年之久，每周抽血一两次；</li>
+<li>药物实验被试当小白鼠，风险实际巨大；</li>
+<li>干细胞研究以期长生不老；</li>
+<li>寺庙得到捐赠的头发如何进行贩卖；</li>
+</ol>
+<p>这些事实，除了后面两个以外，基本前几个都是令我震惊的。以前听说过贩卖器官、代孕之类事情的残忍与剥削，但是没有料到竟这么残忍。在利益下，人命就跟牲畜一样，随意圈养和剥削。作为课外读物是很精彩的一本书，可是我不忍心再去多看几遍了。</p>
+</div>
 <h3 id="前言死路">前言　死路</h3>
 <p>这两周以来，我在西孟加拉邦（West Bengal）境内仔细搜索，有人告知我“人骨工厂”的消息，因此我立刻前往调查。一百多年来，印度各地乡间的坟墓陆续遭人挖空，遗体被卖到国外，作为解剖示范用的骨骸。最近，人骨贸易的覆盖范围大为增加，在美国境内每一间教室里的人骨肯定都是来自印度。虽然一九八五年时，印度政府禁止人体组织出口，许多人骨贩子因而被迫歇业，不过，若干人骨贩子至今依然存在，只是他们被迫转入地下，而且正如人体市场的其他生意一样，业务欣欣向荣。</p>
 <p>我好不容易来到了印度和不丹的国界，将某位令人特别不快的解剖专家之供应链给记录下来，据说对方与西方国家的公司仍有联系。虽然做这行的利润很高，但是实际处理人骨的地方却没什么好看的。那些位于隐秘地点的人骨工厂，其实只不过是河岸边用防水帆布搭建的小棚屋，源源不断的无数尸体就在此处缩减到只剩下最基本的部位。人骨贩子雇用了盗墓人和自学而成的解剖专家，除去人骨上的肉，把人骨抛光成洁白的光泽，然后包装出货。</p>
@@ -679,8 +354,25 @@ iPad mini 5：2048*1536
 <p>人体组织的非人格化，是现代医学最显著的一大缺点。在这个世纪，我们的目标应该是把身份还给人体组织，并纳入供应链里。每一袋血液应该标注原捐血者的姓名，每一个被领养的儿童应该可以全权查阅自己的个人履历，每一位移植器官受赠者应该知道是谁给了他器官。</p>
 <p>要达到这个目标的话，人们对人体的利用与再利用所抱持的观念就必须先有大幅度的改变。每一具人体在人体市场里移动时，都需要公开其来历。人类生来就不是那种本质上可简化成商业交易品的中性产品，不过，我们无疑都是人体市场里的顾客。越快接受这件事实，就能越早行动起来。</p>
 <p>购买二手车所采用的标准，也应该能适用在人体部位的购买上。卖赃车和问题车都属于违法行为，精明的顾客在购买二手车前，一定都会先取得事故报告书。如果车子有记录，那么人体也应该要有记录。身为养父母的，难道不该去确认一下有没有可能找到所领养儿童的生父母吗？购买卵子植入子宫的妇女，难道不该去查阅捐卵者的家族病史吗？我们难道不该去了解医生的柜子里挂着的是谁的骨骸吗？</p>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80%E6%AD%BB%E8%B7%AF">前言　死路</a></li>
+<li><a href="#%E5%AF%BC%E8%A8%80%E4%BA%BA%E4%B8%8E%E8%82%89">导言　人与肉</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%BA%BA%E4%BD%93%E7%82%BC%E9%87%91%E6%9C%AF">第一章　人体炼金术</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%BA%BA%E9%AA%A8%E5%B7%A5%E5%8E%82">第二章　人骨工厂</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0%E8%82%BE%E8%84%8F%E5%8B%98%E6%8E%A2">第三章　肾脏勘探</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0%E9%9D%A2%E8%A7%81%E5%AE%B6%E9%95%BF">第四章　面见家长</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0%E5%9C%A3%E6%AF%8D%E6%80%80%E8%83%8E">第五章　圣母怀胎</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0%E5%A9%B4%E5%88%B0%E4%BB%98%E7%8E%B0">第六章　婴到付现</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0%E8%A1%80%E9%92%B1">第七章　血钱</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0%E4%B8%B4%E5%BA%8A%E5%8A%B3%E5%B7%A5%E5%B0%8F%E7%99%BD%E9%BC%A0">第八章　临床劳工小白鼠</a></li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0%E9%95%BF%E7%94%9F%E4%B8%8D%E8%80%81%E7%9A%84%E6%89%BF%E8%AF%BA">第九章　长生不老的承诺</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0%E9%BB%91%E9%87%91">第十章　黑金</a></li>
+<li><a href="#%E5%90%8E%E8%AE%B0%E7%BD%97%E8%8E%89%E5%A1%94%E5%93%88%E4%BB%A3%E6%96%AF%E8%92%82%E4%B9%8B%E9%A2%82">后记　罗莉塔·哈代斯蒂之颂</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

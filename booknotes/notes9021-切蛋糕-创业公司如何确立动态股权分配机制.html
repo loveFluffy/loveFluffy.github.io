@@ -186,9 +186,14 @@ body {
 	font-size: 18pt;
 	color: #333;
 	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
 	padding: 0;
+
+	/*
+	同时声明中文字体的字体名称（英文）和显示名称（中文）
+	主体使用无衬线字体，更清晰
+	*/
+	font-family: Helvetica, Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
 }
 
 h1,
@@ -260,6 +265,8 @@ p {
 	margin: 0 0 1em;
 	padding: 0;
 	line-height: 1.8;
+	/*段落使用衬线字体，更好看*/
+	font-family: Georgia, Arial, "Microsoft YaHei", "微软雅黑", serif;
 }
 
 a:link {
@@ -337,12 +344,12 @@ figure img {
 	margin-bottom: 0px;
 }
 
-/* hr 用于创建一条水平线*/
+/* hr 用于创建一条水平线 */
 hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
+	border: 0;
+	padding-top: 1px;
+	margin-bottom: 0.8em;
+	background: linear-gradient(to right, transparent, #d0d0d5, transparent);
 }
 
 ol p,
@@ -430,10 +437,33 @@ a:target {
 	outline: 0;
 }
 
+/*笔记中的普通表格*/
 table {
-	align-self: center;
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
 }
 
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
 img {
 	align-self: center;
 	max-width: 1000px;
@@ -443,6 +473,20 @@ img {
 /* 选中后背景浅粉色 */
 ::selection {
 	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
 }
 
 
@@ -485,12 +529,13 @@ iPad mini 5：2048*1536
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
 	.content {
-		width: 75%;
+		width: 73%;
 		padding-left: 0.5%;
 	}
 
 	div.toc {
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
 		padding-right: 0;
 
@@ -531,6 +576,13 @@ iPad mini 5：2048*1536
 		/*隐藏链接下划线*/
 		text-decoration: none;
 		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
 	}
 
 	div.toc a:hover {
@@ -593,8 +645,6 @@ iPad mini 5：2048*1536
 	font-size: 0.6em;
 	}
 	*/
-
-
 }
 
 /*
@@ -608,10 +658,12 @@ div.toc ul>li>ul>li>ul>li>ul>li {
             <div class="content">
 <h1 id="切蛋糕创业公司如何确立动态股权分配机制">切蛋糕：创业公司如何确立动态股权分配机制</h1>
 <h2 id="mike-moyer-著王闻-等译">Mike Moyer 著|王闻 等译</h2>
-<h4 id="写给海外读者">写给海外读者</h4>
+<div class="mycomment">
+</div>
+<p><strong>写给海外读者</strong></p>
 <p>在书中我用了“Grunt”这个词，它不太好翻成其他语言，所以我觉得在你开始读这本书之前提供一点背景知识可能会有帮助。</p>
 <p>在美国，Grunt这一俚语起源于军队，用来表示做脏活儿累活儿苦活儿的新上岗的人。“Grunt Work”这个词常见于美国初创企业。</p>
-<h4 id="还有一点">还有一点</h4>
+<p><strong>还有一点</strong></p>
 <p>在本书中我提出了致力于公平公正分配股权的一套规则。如果你不同意我的规则也没什么。制定你自己的规则。只要规则公平，且人们事先达成一致以其为标准就行了。</p>
 <h3 id="前言">前言</h3>
 <p>我想和你一起创办企业，我期待和你一起发现并利用被迟缓的竞争者忽视或被骄傲的竞争者轻视的市场良机。我迫不及待地想要发明一项产品或服务抢走他们的市场份额，一举把他们的客户全部诱惑走。</p>

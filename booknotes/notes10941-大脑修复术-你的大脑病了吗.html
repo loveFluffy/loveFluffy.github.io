@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5927;&#x8111;&#x4fee;&#x590d;&#x672f;&#xff1a;&#x4f60;&#x7684;&#x5927;&#x8111;&#x75c5;&#x4e86;&#x5417;&#xff1f;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5927;&#x8111;&#x4fee;&#x590d;&#x672f;&#xff1a;&#x4f60;&#x7684;&#x5927;&#x8111;&#x75c5;&#x4e86;&#x5417;&#xff1f;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -90,6 +188,7 @@ body {
 	background: #f1e5c9;
 	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
 }
 
 h1,
@@ -118,7 +217,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +227,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -331,10 +430,33 @@ a:target {
 	outline: 0;
 }
 
+/*笔记中的普通表格*/
 table {
-	align-self: center;
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
 }
 
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
 img {
 	align-self: center;
 	max-width: 1000px;
@@ -344,6 +466,20 @@ img {
 /* 选中后背景浅粉色 */
 ::selection {
 	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
 }
 
 
@@ -358,8 +494,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +521,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,25 +550,52 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
 	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
@@ -435,30 +603,41 @@ iPad mini 5：2048*1536
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
 		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
 
 /*
@@ -467,10 +646,14 @@ div.toc ul>li>ul>li>ul>li,
 div.toc ul>li>ul>li>ul>li>ul>li {
 */
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="大脑修复术你的大脑病了吗">大脑修复术：你的大脑病了吗？</h1>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="大脑修复术你的大脑病了吗">大脑修复术：你的大脑病了吗？</h1>
 <h2 id="姚乃琳-著">姚乃琳 著</h2>
+<div class="mycomment">
+<p>学术科普性质，提到了很多小鼠实验结果。相比较看具体的实验内容对于每章标题的解释，其实看看每章的标题了解一下就可以了。</p>
+</div>
 <h3 id="第1章-抑郁是大脑的重感冒也是进化的护身符">第1章 抑郁是大脑的重感冒，也是进化的护身符</h3>
 <p>在全球范围内，每年会有3亿人受到抑郁症的影响，这其中有80万人因抑郁症而自杀。抑郁症导致的死亡已经成为15~29岁的年轻人的第二大致死原因。当一个人抑郁症发作时，做什么都不开心，即使是平时最喜欢的活动，也都提不起兴趣，感觉没有任何事情可以给自己带来快乐。与郁闷不同，抑郁的症状要持续两周以上才可能是抑郁症。我有一个朋友在上大学时，很长一段时间都处于抑郁期。他告诉我，他一开始并没有意识到自己有什么问题，直到有一天他总结最近的生活，发现本来很外向的他竟然几个月都没有和任何人出去玩了。每次答应了别人出去吃饭或者做户外活动，他都在最后一刻满怀愧疚地爽了约，因为“就是不想去”。每当电话铃声响起，对他来说就是一种恐怖的折磨。于是，他觉得自己可能需要看医生了。</p>
 <h4 id="如何自我诊断抑郁症">如何自我诊断抑郁症</h4>
@@ -526,8 +709,40 @@ div.toc ul>li>ul>li>ul>li>ul>li {
 <h3 id="第17章-躁郁症一半是天堂一半是地狱">第17章 躁郁症：一半是天堂，一半是地狱</h3>
 <h3 id="第18章-有人在我大脑里装了芯片监听我">第18章 有人在我大脑里装了芯片监听我！</h3>
 <h3 id="第19章-身体和大脑谁才是主人">第19章 身体和大脑，谁才是主人？</h3>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E6%8A%91%E9%83%81%E6%98%AF%E5%A4%A7%E8%84%91%E7%9A%84%E9%87%8D%E6%84%9F%E5%86%92%E4%B9%9F%E6%98%AF%E8%BF%9B%E5%8C%96%E7%9A%84%E6%8A%A4%E8%BA%AB%E7%AC%A6">第1章 抑郁是大脑的重感冒，也是进化的护身符</a>
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E8%87%AA%E6%88%91%E8%AF%8A%E6%96%AD%E6%8A%91%E9%83%81%E7%97%87">如何自我诊断抑郁症</a></li>
+<li><a href="#%E5%A4%A7%E8%84%91%E5%8F%91%E7%94%9F%E7%9A%84%E5%8F%98%E5%8C%96">大脑发生的变化</a></li>
+<li><a href="#%E9%9B%84%E6%80%A7%E6%9B%B4%E6%93%85%E9%95%BF%E5%BA%94%E5%AF%B9%E6%80%A5%E6%80%A7%E5%8E%8B%E5%8A%9B%E9%9B%8C%E6%80%A7%E6%9B%B4%E6%93%85%E9%95%BF%E5%BA%94%E5%AF%B9%E6%85%A2%E6%80%A7%E5%8E%8B%E5%8A%9B">雄性更擅长应对急性压力，雌性更擅长应对慢性压力</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8A%91%E9%83%81%E7%9A%84%E4%BA%BA%E4%BC%BC%E4%B9%8E%E6%AF%94%E8%BE%83%E7%BC%BA%E4%B9%8F%E6%AF%85%E5%8A%9B">为什么抑郁的人似乎比较缺乏毅力</a></li>
+<li><a href="#%E6%9C%89%E6%8A%91%E9%83%81%E7%97%87%E7%9A%84%E4%BA%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E5%80%BE%E5%90%91%E4%BA%8E%E5%9B%9E%E9%81%BF%E5%86%B2%E7%AA%81">有抑郁症的人为什么倾向于回避冲突</a></li>
+<li><a href="#%E6%8A%91%E9%83%81%E7%97%87%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E7%97%8A%E6%84%88">抑郁症是否可以痊愈</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E7%84%A6%E8%99%91%E6%98%AF%E5%A4%A7%E8%84%91%E7%9A%84%E8%BF%87%E6%97%B6%E6%9C%AC%E8%83%BD">第2章 焦虑是大脑的过时本能</a></li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E6%9C%89%E7%A4%BE%E4%BA%A4%E6%81%90%E6%83%A7%E7%9A%84%E4%BD%A0%E5%8F%AF%E8%83%BD%E5%B9%B6%E4%B8%8D%E7%BC%BA%E4%B9%8F%E7%A4%BE%E4%BA%A4%E6%8A%80%E5%B7%A7">第3章 有社交恐惧的你可能并不缺乏社交技巧</a></li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E5%B9%BB%E8%A7%89%E5%92%8C%E5%A6%84%E6%83%B3%E4%B8%8D%E6%98%AF%E7%B2%BE%E7%A5%9E%E7%97%85%E4%BA%BA%E7%9A%84%E7%89%B9%E6%9D%83">第4章 幻觉和妄想不是精神病人的特权</a></li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E4%B8%8D%E7%9D%A1%E8%A7%89%E4%BC%9A%E6%AD%BB%E4%BA%BA">第5章 不睡觉会死人！</a></li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E4%B8%8A%E7%98%BE%E6%98%AF%E6%AC%B2%E6%9C%9B%E4%B8%8D%E6%98%AF%E5%BF%AB%E4%B9%90">第6章 上瘾是欲望，不是快乐</a></li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E5%A5%BD%E4%BA%86%E4%BC%A4%E7%96%A4%E5%BF%98%E4%BA%86%E7%96%BC%E6%98%AF%E6%88%90%E5%8A%9F%E4%BA%BA%E5%A3%AB%E7%9A%84%E5%BF%85%E5%A4%87%E4%BF%AE%E5%85%BB">第7章 好了伤疤忘了疼是成功人士的必备修养</a></li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E5%A4%A7%E8%84%91%E7%A5%9E%E7%BB%8F%E7%BB%88%E8%BA%AB%E5%8F%AF%E5%8F%91%E8%82%B2%E8%A6%81%E6%B4%BB%E5%88%B0%E8%80%81%E5%AD%A6%E5%88%B0%E8%80%81">第8章 大脑神经终身可发育，要活到老学到老</a></li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E8%80%81%E5%8E%BB">第9章 如何优雅地老去</a></li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E5%A6%82%E4%BD%95%E6%8B%A5%E6%9C%89%E5%BC%BA%E5%A4%A7%E7%9A%84%E8%AE%B0%E5%BF%86%E5%8A%9B">第10章 如何拥有强大的记忆力</a></li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E5%A6%82%E4%BD%95%E5%BA%94%E5%AF%B9%E7%8E%B0%E4%BB%A3%E4%BA%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E5%8D%B1%E6%9C%BA">第11章 如何应对现代人的注意危机</a></li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0-%E4%BD%A0%E5%9C%A8%E5%90%AC%E6%88%91%E8%AF%B4%E8%AF%9D%E5%90%97">第12章 你在听我说话吗？</a></li>
+<li><a href="#%E7%AC%AC13%E7%AB%A0-%E5%88%9B%E9%80%A0%E5%8A%9B%E6%98%AF%E6%AF%94%E8%AE%B0%E5%BF%86%E5%8A%9B%E5%92%8C%E4%B8%93%E6%B3%A8%E5%8A%9B%E6%9B%B4%E9%87%8D%E8%A6%81%E7%9A%84%E5%A4%A7%E8%84%91%E6%A0%B8%E5%BF%83%E7%AB%9E%E4%BA%89%E5%8A%9B">第13章 创造力是比记忆力和专注力更重要的大脑核心竞争力</a></li>
+<li><a href="#%E7%AC%AC14%E7%AB%A0-%E6%8B%96%E5%BB%B6%E7%97%87%E5%92%8C%E6%8F%90%E5%89%8D%E7%97%87">第14章 拖延症和提前症</a></li>
+<li><a href="#%E7%AC%AC15%E7%AB%A0-%E6%AF%8F%E5%A4%A9%E6%B4%97%E5%A4%9A%E5%B0%91%E6%AC%A1%E6%89%8B%E6%89%8D%E7%AE%97%E5%BC%BA%E8%BF%AB%E7%97%87">第15章 每天洗多少次手才算强迫症？</a></li>
+<li><a href="#%E7%AC%AC16%E7%AB%A0-%E5%BF%83%E7%90%86%E5%8F%98%E6%80%81%E7%9A%84%E5%8F%AF%E6%80%95%E4%B8%8E%E5%BC%BA%E5%A4%A7">第16章 心理变态的可怕与强大</a></li>
+<li><a href="#%E7%AC%AC17%E7%AB%A0-%E8%BA%81%E9%83%81%E7%97%87%E4%B8%80%E5%8D%8A%E6%98%AF%E5%A4%A9%E5%A0%82%E4%B8%80%E5%8D%8A%E6%98%AF%E5%9C%B0%E7%8B%B1">第17章 躁郁症：一半是天堂，一半是地狱</a></li>
+<li><a href="#%E7%AC%AC18%E7%AB%A0-%E6%9C%89%E4%BA%BA%E5%9C%A8%E6%88%91%E5%A4%A7%E8%84%91%E9%87%8C%E8%A3%85%E4%BA%86%E8%8A%AF%E7%89%87%E7%9B%91%E5%90%AC%E6%88%91">第18章 有人在我大脑里装了芯片监听我！</a></li>
+<li><a href="#%E7%AC%AC19%E7%AB%A0-%E8%BA%AB%E4%BD%93%E5%92%8C%E5%A4%A7%E8%84%91%E8%B0%81%E6%89%8D%E6%98%AF%E4%B8%BB%E4%BA%BA">第19章 身体和大脑，谁才是主人？</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

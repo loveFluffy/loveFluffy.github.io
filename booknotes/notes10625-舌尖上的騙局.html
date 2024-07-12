@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x820c;&#x5c16;&#x4e0a;&#x7684;&#x9a19;&#x5c40;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x820c;&#x5c16;&#x4e0a;&#x7684;&#x9a19;&#x5c40;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,448 +31,113 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
-		z-index: 1;
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="舌尖上的騙局">舌尖上的騙局</h1>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="舌尖上的騙局">舌尖上的騙局</h1>
 <h2 id="馬克史蓋茲克-mark-schatzker-著邓子衿-译">馬克‧史蓋茲克 (Mark Schatzker) 著|邓子衿 译</h2>
+<div class="mycomment">
+<p>介绍了人工调味剂的发展以及对于健康的直接、间接影响，非常令人震惊。为了收入，现代育种方向都是以快速高产为目标，几乎无人在乎味道。所以，现代的餐厅大量使用中央厨房预制菜，都是添加了很多人工调味剂的。这样的食品虽然美味，却缺乏很多微量元素，身体为了摄取足量的微量元素，驱使我们增加摄食量，这就像牲畜育肥的过程一样，所以产生了大量的肥胖人群。在畜牧业，为了增加牲畜的采食量，也会往饲料中添加人工调味剂，这是我没有想到过的！同样，宠物食品中也有。另外，作者提到一个很有趣的现象，当吃美味的健康食品时，人会自动少吃！在食品加工时，为了增加销量，简直无所不用其极，人工调味剂都变得相形见绌了。比方，有的添加剂只是为了包裹味蕾，让你尝不出食品里不好的味道！</p>
+</div>
 <h3 id="推薦序-雞毛頭髮都能做醬油黑心食品無所不在">推薦序 雞毛、頭髮都能做醬油！黑心食品無所不在</h3>
 <p>前不久聽一位食品加工界的大老細說台灣醬油食品的點滴，我才知道雞毛醬油很可能還在台灣市場流竄。雞毛醬油顧名思義就是用雞毛當原料做成的醬油，原理跟曾經在中國被揭露的頭髮醬油如出一轍，都是用含有蛋白質的天然回收廢棄物，例如理髮院的人髮、屠宰場的雞鴨鵝毛、剝蝦場的下腳料蝦殼等當基底，以鹽酸水解變成氨基酸液，再經過調味調色，甚至混合真的豆製醬油，最後變成有色有味的醬油產品。</p>
 <p>黑心醬油並不是現代產物，早在日據末期時的台灣就曾經被踢爆過。一九五○年代著名的淡水河染黑事件，就是政府將查緝的十四萬公斤假醬油倒入淡水河，致使河水和河裡生物遭到無妄之災的真實故事。</p>
@@ -915,8 +582,119 @@ div.toc ul>li>ul>li>ul>li>ul>li {
 <p>大人總會很享受讓小朋友吃甜食時的那種樂趣。讓孩子們改吃美味的桃子、野生藍莓，或是脆甜微酸的蘋果吧！他們會覺得很好吃的。看著他們臉上驚奇地展露出愉快的模樣，你會感覺很棒。使用真實的味道從不會失手。</p>
 <h4 id="情況會越來越好">情況會越來越好</h4>
 <p>超級市場中的景象看起來讓人覺得無望：農產品區和肉類櫃子中裝滿了大量生產又平淡無味的食物，從第一條到第十二條走道全都擺滿了用調味料騙人的高熱量食品。要讓我們吃的食物品質提高，只有一個方式：提出要求。品質運動已經改革了北美洲人飲用的葡萄酒和啤酒品質，我們的食物也得如此。</p>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%96%A6%E5%BA%8F-%E9%9B%9E%E6%AF%9B%E9%A0%AD%E9%AB%AE%E9%83%BD%E8%83%BD%E5%81%9A%E9%86%AC%E6%B2%B9%E9%BB%91%E5%BF%83%E9%A3%9F%E5%93%81%E7%84%A1%E6%89%80%E4%B8%8D%E5%9C%A8">推薦序 雞毛、頭髮都能做醬油！黑心食品無所不在</a></li>
+<li><a href="#%E6%8E%A8%E8%96%A6%E5%BA%8F-%E6%84%9F%E5%AE%98%E8%A2%AB%E5%81%87%E5%91%B3%E9%81%93%E7%B6%81%E6%9E%B6%E8%AE%93%E4%BA%BA%E9%A1%9E%E6%88%90%E7%82%BA%E7%87%9F%E9%A4%8A%E7%99%BD%E7%99%A1">推薦序 感官被假味道綁架，讓人類成為營養白癡</a></li>
+<li><a href="#1-%E6%9D%B1%E8%A5%BF%E8%AE%8A%E9%A3%9F%E7%89%A9%E7%9A%84%E7%A7%98%E5%AF%86%E5%B0%B1%E8%97%8F%E5%9C%A8%E5%8C%96%E5%AD%B8%E8%AA%BF%E5%91%B3%E5%8A%91%E8%A3%A1">1 「東西」變「食物」的秘密，就藏在化學調味劑裡</a>
+<ul>
+<li><a href="#%E5%BE%9E%E8%83%96%E5%AD%90%E8%81%9A%E6%9C%83%E8%AE%8A%E6%88%90%E4%B8%96%E7%95%8C%E7%9F%A5%E5%90%8D%E7%9A%84%E7%98%A6%E8%BA%AB%E5%85%AC%E5%8F%B8">從胖子聚會，變成世界知名的瘦身公司</a></li>
+<li><a href="#%E7%BE%8E%E5%91%B3%E7%9A%84%E5%81%87%E5%91%B3%E9%81%93%E5%A4%A7%E5%8F%97%E6%AD%A1%E8%BF%8E">美味的假味道大受歡迎</a></li>
+<li><a href="#%E7%94%A8%E5%8A%A0%E5%91%B3%E8%A7%A3%E6%B1%BA%E7%84%A1%E5%91%B3">用「加味」解決「無味」</a></li>
+<li><a href="#%E6%98%AF%E4%BA%BA%E9%A1%9E%E6%94%B9%E8%AE%8A%E4%BA%86%E5%91%B3%E9%81%93%E9%82%84%E6%98%AF%E5%91%B3%E9%81%93%E6%94%B9%E8%AE%8A%E4%BA%86%E4%BA%BA%E9%A1%9E">是人類改變了味道，還是味道改變了人類？</a></li>
+</ul>
+</li>
+<li><a href="#2-%E9%9B%9E%E8%82%89%E7%9A%84%E7%84%A1%E5%91%B3%E6%99%82%E4%BB%A3">2 雞肉的無味時代</a>
+<ul>
+<li><a href="#%E9%95%B7%E5%BE%97%E5%BF%AB%E5%8F%88%E5%A4%A7%E6%89%8D%E6%98%AF%E9%A4%8A%E9%9B%9E%E7%9A%84%E9%87%8D%E9%BB%9E">長得快又大才是養雞的重點</a></li>
+<li><a href="#%E9%9B%9E%E5%8D%9A%E5%A3%AB%E6%89%93%E9%80%A0%E4%B8%89%E5%8D%81%E4%BA%94%E5%A4%A9%E9%80%9F%E6%88%90%E8%82%89%E9%9B%9E%E7%9A%84%E6%96%B0%E4%B8%96%E7%95%8C">「雞博士」打造三十五天速成肉雞的新世界</a></li>
+<li><a href="#%E8%94%AC%E6%9E%9C%E7%9A%84%E7%87%9F%E9%A4%8A%E4%B8%8D%E8%A6%8B%E4%BA%86%E9%82%A3%E6%88%91%E5%80%91%E5%90%83%E9%80%B2%E4%BA%86%E4%BB%80%E9%BA%BC">蔬果的營養不見了！那我們吃進了什麼？</a></li>
+<li><a href="#%E5%91%B3%E9%81%93%E6%B7%A1%E5%A6%82%E6%B0%B4%E4%B8%AD%E7%9C%8B%E4%B8%8D%E4%B8%AD%E5%90%83%E7%9A%84%E8%95%83%E8%8C%84">味道淡如水！中看不中吃的蕃茄</a></li>
+<li><a href="#%E6%94%BE%E9%A4%8A%E9%9B%9Evs%E9%A3%BC%E6%96%99%E9%9B%9E">放養雞V.S.飼料雞</a></li>
+<li><a href="#%E7%95%B6%E6%B7%BB%E5%8A%A0%E7%89%A9%E7%9A%84%E5%91%B3%E9%81%93%E8%AE%8A%E6%88%90%E9%A3%9F%E7%89%A9%E7%9A%84%E6%BB%8B%E5%91%B3">當「添加物的味道」變成「食物的滋味」</a></li>
+</ul>
+</li>
+<li><a href="#3-%E8%88%8C%E5%B0%96%E4%B8%8A%E7%9A%84%E5%8C%96%E5%AD%B8%E4%BA%BA%E5%B7%A5%E8%A3%BD%E9%80%A0%E5%A4%A9%E7%84%B6%E5%91%B3">3 舌尖上的化學──人工製造天然味</a>
+<ul>
+<li><a href="#%E9%A6%AC%E9%81%94%E5%8A%A0%E6%96%AF%E5%8A%A0%E7%9A%84%E9%A6%99%E8%8D%89%E5%9B%B0%E5%A2%83">馬達加斯加的香草困境</a></li>
+<li><a href="#%E4%BF%82%E9%87%91%E3%84%9F%E6%9D%BE%E6%A8%B9%E7%9A%AE%E4%B9%9F%E8%83%BD%E7%94%A2%E7%94%9F%E9%A6%99%E8%8D%89%E5%91%B3">係金ㄟ！松樹皮也能產生香草味</a></li>
+<li><a href="#%E5%98%B4%E9%BC%BB%E8%81%AF%E6%89%8B%E8%AE%93%E5%90%83%E6%88%90%E7%82%BA%E4%BA%AB%E5%8F%97">嘴鼻聯手，讓「吃」成為享受</a></li>
+<li><a href="#%E8%A7%A3%E5%89%96%E9%A6%99%E8%8D%89%E5%91%B3%E8%A3%BD%E4%BD%9C%E5%81%BD%E9%A6%99%E8%8D%89">解剖香草味，製作偽香草</a></li>
+<li><a href="#%E6%B0%A3%E7%9B%B8%E5%B1%A4%E6%9E%90%E5%84%80%E8%AE%93%E5%81%87%E5%91%B3%E6%88%90%E7%9C%9F">氣相層析儀讓假味成真</a></li>
+<li><a href="#%E4%BA%BA%E5%B7%A5%E9%A6%99%E6%96%99%E6%98%AF%E7%9C%9F%E5%91%B3%E9%81%93%E7%9A%84%E8%B6%85%E7%B4%9A%E6%A8%A1%E7%8E%8B">人工香料是真味道的超級模王</a></li>
+<li><a href="#%E7%9C%9F%E7%9A%84%E6%9C%89%E7%AC%AC%E5%85%AD%E7%A8%AE%E5%91%B3%E8%A6%BA">真的有第六種味覺？</a></li>
+<li><a href="#%E6%8E%8C%E6%8F%A1%E5%85%A8%E7%BE%8E%E5%91%B3%E9%81%93%E7%9A%84%E9%9C%B8%E4%B8%BB">掌握全美味道的霸主</a></li>
+<li><a href="#%E9%A0%90%E6%B8%AC%E5%91%B3%E9%81%93%E7%9A%84%E9%9C%80%E6%B1%82%E9%A2%A8%E5%90%91">預測味道的需求風向</a></li>
+<li><a href="#%E9%A4%90%E5%BB%B3%E4%B8%8D%E6%98%AF%E7%83%B9%E7%85%AE%E9%A3%9F%E7%89%A9%E8%80%8C%E6%98%AF%E6%8A%8A%E9%A3%9F%E7%89%A9%E5%8A%A0%E7%86%B1">餐廳不是烹煮食物，而是把食物加熱</a></li>
+<li><a href="#%E9%A3%9F%E7%89%A9%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%98%AF%E5%A4%A9%E7%84%B6%E9%A6%99%E6%96%99%E5%88%A5%E5%82%BB%E4%BA%86">食物添加的是天然香料？別傻了！</a></li>
+<li><a href="#%E6%AC%BA%E9%A8%99%E6%84%9F%E5%AE%98%E5%8F%96%E6%82%85%E5%91%B3%E8%95%BE">欺騙感官，取悅味蕾</a></li>
+<li><a href="#%E5%91%B3%E9%81%93%E9%9A%A8%E9%A3%9F%E7%89%A9%E7%94%A2%E9%87%8F%E8%80%8C%E9%81%9E%E6%B8%9B%E7%9A%84%E7%A8%80%E9%87%8B%E6%95%88%E6%87%89">味道隨食物產量而遞減的稀釋效應</a></li>
+</ul>
+</li>
+<li><a href="#4-%E4%BA%BA%E5%B7%A5%E9%A6%99%E6%96%99%E6%98%AF%E8%82%A5%E8%83%96%E7%9A%84%E5%B9%AB%E5%87%B6">4 人工香料是肥胖的幫凶</a>
+<ul>
+<li><a href="#%E9%9B%A3%E4%BB%A5%E6%BB%BF%E8%B6%B3%E6%B8%B4%E6%9C%9B%E7%9A%84%E5%8F%A3%E8%85%B9%E4%B9%8B%E6%85%BE">難以滿足渴望的口腹之慾</a></li>
+<li><a href="#%E9%B9%BD%E7%B3%96%E7%A2%B3%E6%B0%B4%E5%8C%96%E5%90%88%E7%89%A9%E9%AE%AE%E5%91%B3%E5%92%8C%E8%84%82%E8%82%AA">鹽、糖、碳水化合物、鮮味和脂肪</a></li>
+<li><a href="#%E4%BA%BA%E9%A1%9E%E7%9A%84%E5%AE%B6%E7%95%9C%E5%BC%8F%E9%A3%B2%E9%A3%9F%E6%B3%95%E9%AB%98%E7%86%B1%E9%87%8F%E9%A3%9F%E7%89%A9%E9%A6%99%E6%96%99%E8%AA%BF%E5%91%B3%E5%8A%91">人類的「家畜式飲食法」：高熱量食物＋香料調味劑</a></li>
+</ul>
+</li>
+<li><a href="#5-%E5%91%B3%E9%81%93%E7%9A%84%E6%99%BA%E6%85%A7">5 味道的智慧</a>
+<ul>
+<li><a href="#%E5%91%B3%E9%81%93%E7%9A%84%E6%84%9F%E8%A6%BA%E5%B0%B1%E6%98%AF%E7%87%9F%E9%A4%8A%E7%9A%84%E6%84%9F%E8%A6%BA">味道的感覺就是營養的感覺</a></li>
+</ul>
+</li>
+<li><a href="#6-%E9%A3%9F%E7%89%A9%E8%AA%BF%E5%8C%85%E6%89%8B%E6%B3%95%E9%80%A0%E5%81%87%E7%9A%84%E8%87%AA%E7%84%B6%E8%99%9B%E6%A7%8B%E7%9A%84%E7%87%9F%E9%A4%8A">6 食物調包手法──造假的自然，虛構的營養</a>
+<ul>
+<li><a href="#%E8%AE%93%E5%AC%B0%E5%85%92%E8%87%AA%E4%B8%BB%E6%93%87%E9%A3%9F%E7%9A%84%E5%AF%A6%E9%A9%97">讓嬰兒自主擇食的實驗</a></li>
+<li><a href="#%E5%81%A5%E5%BA%B7%E7%9A%84%E9%A3%9F%E7%89%A9%E6%AF%94%E8%BC%83%E9%9B%A3%E5%90%83">健康的食物比較難吃？</a></li>
+<li><a href="#%E9%A3%BC%E6%96%99%E7%94%9C%E5%91%B3%E5%8A%91%E8%83%BD%E6%8F%90%E9%AB%98%E5%8B%95%E7%89%A9%E7%9A%84%E9%A3%9F%E6%85%BE">飼料甜味劑能提高動物的食慾</a></li>
+<li><a href="#%E4%BA%BA%E5%B7%A5%E7%94%9C%E5%91%B3%E5%8A%91%E9%A8%99%E5%BE%97%E9%81%8E%E5%91%B3%E8%95%BE%E5%8D%BB%E9%A8%99%E4%B8%8D%E4%BA%86%E8%BA%AB%E9%AB%94">人工甜味劑騙得過味蕾，卻騙不了身體</a></li>
+<li><a href="#%E7%84%A1%E5%AD%94%E4%B8%8D%E5%85%A5%E9%80%A3%E9%A6%99%E8%8F%B8%E9%83%BD%E5%8A%A0%E6%96%99">無孔不入，連香菸都「加料」！</a></li>
+<li><a href="#%E5%81%87%E5%A4%A9%E7%84%B6%E7%9C%9F%E6%B7%BB%E5%8A%A0%E7%9A%84%E8%B6%85%E5%B8%82%E9%A3%9F%E7%89%A9">假天然、真添加的超市食物</a></li>
+<li><a href="#%E7%86%B1%E9%87%8F%E5%BE%AE%E9%87%8F%E7%87%9F%E9%A4%8A%E7%B4%A0%E5%90%88%E6%88%90%E9%A6%99%E6%96%99%E9%A3%BC%E6%96%99%E5%90%83%E8%B5%B7%E4%BE%86%E4%B9%9F%E6%9C%83%E5%83%8F%E9%A3%9F%E7%89%A9">熱量＋微量營養素＋合成香料，飼料吃起來也會像食物</a></li>
+</ul>
+</li>
+<li><a href="#7-%E7%82%B8%E9%9B%9E%E5%95%9F%E7%A4%BA%E9%8C%84">7 炸雞啟示錄</a>
+<ul>
+<li><a href="#%E5%8F%B2%E4%B8%8A%E6%9C%80%E7%BE%8E%E5%91%B3%E7%9A%84%E6%AD%BB%E9%B3%A5">史上最美味的死鳥</a></li>
+<li><a href="#%E8%B3%A3%E7%95%B6%E6%82%94%E9%BA%A5%E7%95%B6%E5%8B%9E%E8%AE%93%E4%BA%BA%E8%B6%8A%E5%90%83%E8%B6%8A%E5%BE%8C%E6%82%94">賣當悔──麥當勞讓人越吃越後悔</a></li>
+<li><a href="#%E9%9B%9E%E5%90%83%E4%BB%80%E9%BA%BC%E5%B0%B1%E6%9C%83%E8%AE%8A%E6%88%90%E4%BB%80%E9%BA%BC%E6%A8%A3%E5%AD%90">雞吃什麼，就會變成什麼樣子</a></li>
+<li><a href="#%E7%87%9F%E9%A4%8A%E6%B1%BA%E5%AE%9A%E9%A3%BD%E8%B6%B3%E6%84%9F">營養決定飽足感</a></li>
+<li><a href="#%E6%A4%8D%E7%89%A9%E7%99%BC%E5%87%BA%E7%9A%84%E6%B1%82%E6%95%91%E8%A8%8A%E8%99%9F%E7%9C%9F%E7%BE%8E%E5%91%B3%E5%95%8A">植物發出的求救訊號真美味啊！</a></li>
+<li><a href="#%E8%87%AA%E9%80%A0%E9%A3%9F%E7%89%A9">自造食物</a></li>
+<li><a href="#%E5%90%88%E6%88%90%E9%A6%99%E6%96%99%E6%89%93%E7%A0%B4%E5%91%B3%E9%81%93%E5%92%8C%E7%87%9F%E9%A4%8A%E7%9A%84%E9%97%9C%E8%81%AF%E6%80%A7">合成香料打破味道和營養的關聯性</a></li>
+<li><a href="#%E5%90%83%E9%80%B2%E7%86%B1%E9%87%8F%E6%89%8D%E6%9C%83%E6%9C%89%E6%BB%BF%E8%B6%B3%E6%84%9F">吃進熱量才會有滿足感？</a></li>
+<li><a href="#%E6%8A%8A%E5%91%B3%E9%81%93%E7%9A%84%E6%B1%BA%E5%AE%9A%E6%AC%8A%E9%82%84%E7%B5%A6%E5%A4%A7%E8%87%AA%E7%84%B6">把味道的決定權還給大自然</a></li>
+</ul>
+</li>
+<li><a href="#8-%E8%95%83%E8%8C%84%E7%9A%84%E6%98%8E%E6%97%A5%E4%B8%96%E7%95%8C">8 蕃茄的明日世界</a>
+<ul>
+<li><a href="#%E8%95%83%E8%8C%84%E7%9A%84%E7%87%9F%E9%A4%8A%E5%B0%B1%E8%97%8F%E5%9C%A8%E8%AA%98%E4%BA%BA%E7%9A%84%E8%8A%B3%E9%A6%99%E5%88%86%E5%AD%90%E8%A3%A1">蕃茄的營養，就藏在誘人的芳香分子裡</a></li>
+<li><a href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E6%9C%89%E4%BA%9B%E8%95%83%E8%8C%84%E7%89%B9%E5%88%A5%E7%94%9C">為什麼有些蕃茄特別甜？</a></li>
+<li><a href="#%E6%94%B9%E9%80%B2%E8%95%83%E8%8C%84%E5%91%B3%E9%81%93%E7%9A%84%E6%96%B0%E9%80%94%E5%BE%91">改進蕃茄味道的新途徑</a></li>
+<li><a href="#%E4%BD%A0%E9%A1%98%E6%84%8F%E7%82%BA%E5%A5%BD%E5%91%B3%E9%81%93%E5%A4%9A%E4%BB%98%E4%B8%80%E9%BB%9E%E9%BB%9E%E9%8C%A2%E5%97%8E">你願意為好味道多付一點點錢嗎？</a></li>
+</ul>
+</li>
+<li><a href="#9-%E7%9C%9F%E9%A3%9F%E7%89%A9%E7%9A%84%E7%9B%9B%E5%AE%B4">9 真食物的盛宴</a>
+<ul>
+<li><a href="#%E5%B0%8B%E6%89%BE%E8%88%87%E8%95%83%E8%8C%84%E6%9C%80%E9%80%9F%E9%85%8D%E7%9A%84%E9%A3%9F%E6%9D%90">尋找與蕃茄最速配的食材</a></li>
+<li><a href="#%E9%A6%AC%E9%88%B4%E8%96%AF">馬鈴薯</a></li>
+<li><a href="#%E9%9B%9E%E8%82%89">雞肉</a></li>
+<li><a href="#%E8%90%B5%E8%8B%A3">萵苣</a></li>
+<li><a href="#%E8%95%83%E8%8C%84">蕃茄</a></li>
+<li><a href="#%E5%B0%8F%E9%BA%A5%E5%92%8C%E8%8D%89%E8%8E%93">小麥和草莓</a></li>
+<li><a href="#%E6%99%9A%E5%AE%B4%E7%99%BB%E5%A0%B4">晚宴登場</a></li>
+</ul>
+</li>
+<li><a href="#%E9%99%84%E9%8C%84-%E7%9C%9F%E5%91%B3%E9%81%93%E8%AE%93%E4%BD%A0%E5%90%83%E5%BE%97%E5%A5%BD%E5%8F%88%E6%B4%BB%E5%BE%97%E4%B9%85">附錄 真味道，讓你吃得好又活得久</a>
+<ul>
+<li><a href="#%E5%AD%B8%E7%BF%92%E7%8C%B6%E4%BB%96%E5%B7%9E%E5%B1%B1%E7%BE%8A%E7%9A%84%E5%90%83%E6%B3%95">學習猶他州山羊的吃法</a></li>
+<li><a href="#%E8%83%8E%E5%85%92%E5%B0%B1%E5%B7%B2%E7%B6%93%E6%9C%83%E5%93%81%E5%98%97%E5%91%B3%E9%81%93%E4%BA%86">胎兒就已經會品嘗味道了</a></li>
+<li><a href="#%E5%90%83%E8%8D%89%E9%A3%BC%E8%82%89%E9%A1%9E">吃草飼肉類</a></li>
+<li><a href="#%E9%81%A0%E9%9B%A2%E5%90%88%E6%88%90%E9%A6%99%E6%96%99%E6%8A%80%E8%A1%93">遠離合成香料技術</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81%E5%85%89%E9%A1%A7%E6%9C%83%E4%BD%BF%E7%94%A8%E5%90%88%E6%88%90%E9%A6%99%E6%96%99%E7%9A%84%E9%A4%90%E5%BB%B3">不要光顧會使用合成香料的餐廳</a></li>
+<li><a href="#%E6%9C%89%E6%A9%9F%E5%8F%AF%E8%83%BD%E5%A5%BD%E4%B9%9F%E5%8F%AF%E8%83%BD%E4%B8%8D%E5%A5%BD">有機可能好，也可能不好</a></li>
+<li><a href="#%E5%90%83%E9%A6%99%E8%8D%89%E5%92%8C%E9%A6%99%E6%96%99">吃香草和香料</a></li>
+<li><a href="#%E5%88%A5%E5%90%83%E7%B6%AD%E4%BB%96%E5%91%BD%E8%97%A5%E4%B8%B8">別吃維他命藥丸</a></li>
+<li><a href="#%E5%90%83%E9%BB%91%E5%B7%A7%E5%85%8B%E5%8A%9B%E5%96%9D%E8%91%A1%E8%90%84%E9%85%92%E8%88%87%E7%B2%BE%E9%87%80%E5%95%A4%E9%85%92">吃黑巧克力、喝葡萄酒與精釀啤酒</a></li>
+<li><a href="#%E8%AE%93%E5%B0%8F%E6%9C%8B%E5%8F%8B%E5%90%83%E5%A5%BD%E5%90%83%E7%9A%84%E6%B0%B4%E6%9E%9C">讓小朋友吃好吃的水果</a></li>
+<li><a href="#%E6%83%85%E6%B3%81%E6%9C%83%E8%B6%8A%E4%BE%86%E8%B6%8A%E5%A5%BD">情況會越來越好</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

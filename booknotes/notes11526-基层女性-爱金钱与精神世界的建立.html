@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x57fa;&#x5c42;&#x5973;&#x6027;&#xff1a;&#x7231;&#x3001;&#x91d1;&#x94b1;&#x4e0e;&#x7cbe;&#x795e;&#x4e16;&#x754c;&#x7684;&#x5efa;&#x7acb;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x57fa;&#x5c42;&#x5973;&#x6027;&#xff1a;&#x7231;&#x3001;&#x91d1;&#x94b1;&#x4e0e;&#x7cbe;&#x795e;&#x4e16;&#x754c;&#x7684;&#x5efa;&#x7acb;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,473 +31,139 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
-		z-index: 1;
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="基层女性爱金钱与精神世界的建立">基层女性：爱、金钱与精神世界的建立</h1>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="基层女性爱金钱与精神世界的建立">基层女性：爱、金钱与精神世界的建立</h1>
 <h2 id="王慧玲-著">王慧玲 著</h2>
+<div class="mycomment">
+<p>内容不多的一本小书，语言朴实。一名出身农村、大专文凭、深受原生家庭和社会思想禁锢的女生，一步步走向独立后总结的人生经验。</p>
+<p>内容不多，却处处让我感同身受！非常具有启发意义。</p>
+</div>
 <h3 id="前言-一个基层女性的翻身参考">前言 一个基层女性的翻身参考</h3>
 <p>我出身安徽农村，中专毕业，曾经很长一段时间在生活的阴沟里挣扎。很多人想了解我是如何一步步爬上来，成长为今天这样一个还算优秀的健康快乐的中年人。下面我就跟大家聊聊在我成长的过程中，决定我命运走向的一些背景、关键节点的选择，以及些许感悟，供大家参考。</p>
-<h5 id="第一点独立生活这是决定我人生走向最关键的第一步">第一点，独立生活，这是决定我人生走向最关键的第一步。</h5>
+<h4 id="第一点独立生活这是决定我人生走向最关键的第一步">第一点，独立生活，这是决定我人生走向最关键的第一步。</h4>
 <p>我16岁就离家去安徽省会合肥读中专，读完中专时19岁，又独自到上海打拼。此后将近10年的时间，我基本上都是一个人生活。独立生活是走向经济独立、精神独立的第一步，你必须独自面对并解决生活中的大部分问题。在这个过程中，人格会以令人惊喜的速度成长。绝大部分成年人的悲剧，归根结底就是生活、经济、精神不独立造成的。很多父母没有从小培养孩子独立自主的意识，把孩子的不独立看作对自己的需要和爱，并因此自豪不已，导致孩子5岁还需要喂饭，8岁还跟父母睡一个房间。一些母亲总是抱怨老公不做家务，但从来不培养孩子处理个人事务的能力，不让他承担一部分作为家庭成员的家务责任。孩子长大，变成一个毫无担当、不负责任的“巨婴”，再去坑另外一个女孩，把伴侣拉入坑中，把生活过成一地鸡毛，就这么一代代地恶性循环。</p>
-<h5 id="第二点勇敢离开不对的人这对年轻女孩来说尤其重要">第二点，勇敢离开不对的人，这对年轻女孩来说尤其重要。</h5>
+<h4 id="第二点勇敢离开不对的人这对年轻女孩来说尤其重要">第二点，勇敢离开不对的人，这对年轻女孩来说尤其重要。</h4>
 <p>我在22岁时谈了一个男朋友。女人在脆弱无助的时候，最先想到的，就是找个男人当所谓的靠山，不论是经济上还是精神上。很多女人年纪轻轻就走进婚姻的泥潭，基本上都是出于年幼无知的选择。我和这个男朋友也一度到了谈婚论嫁的地步，后来有一次因为很小的一件事，他动手打了我。当然，我们平常也有很多其他的矛盾，只是我自欺欺人，选择了忽视。但他第一次打我的这天，我不知道哪里来的勇气，收拾好行李当晚就离开了，坐在出租车里一路号啕大哭，去朋友家暂住。虽然舍不得曾经在一起的时光，但我模模糊糊地知道自己的决定是对的，心底有一个声音告诉我：“绝对不要与一个跟你动手的男人在一起。”事实证明，我是对的。后来，我无数次庆幸自己当年勇敢跨出这一步，想想有些后怕，如果22岁时嫁给这个人，结婚生子，我的命运将会是什么景象？可以肯定的是，我永远都不会遇到Peter这个近乎完美的老公，这个我看了13年都看不够的人。</p>
 <p>无论男女，勇敢地离开一个不对的人，勇敢地结束一段糟糕的关系，这对你的一生非常重要。错误的关系只会消耗你的心神、透支你的生命，让你把本可以用来学习、工作、提高生命质量的时间，统统用在了制造痛苦、相互折磨上。</p>
-<h5 id="第三点面对生活有百折不挠的勇气">第三点，面对生活，有百折不挠的勇气。</h5>
+<h4 id="第三点面对生活有百折不挠的勇气">第三点，面对生活，有百折不挠的勇气。</h4>
 <p>我在上海做的第一份工作是上街推销袜子。每天领头的人给我们发一包袜子，我还记得牌子是“梦娜”。我们去居民楼、办公楼、商场等地方推销，一双15元，卖一双赚3元。这份工作虽然只做了3个多月，但对我之后的人生影响是巨大的。一天中遇到的绝大多数人都会拒绝你，有时还会被嘲笑或被保安驱赶。从一开始的害怕，没有勇气上前打招呼，觉得特别难堪，到后来看到目标就冲上去侃侃而谈，被拒绝后也面带微笑地快速收拾好说再见，只想着这个人不行就不要浪费时间，赶紧再去找下一个目标……这段经历让我的内心变得异常强大，现在创业能够坚持下来，是与之分不开的。它让我明白一个道理：不要在乎别人怎么看你，面子、自尊毫无意义，活下去、挣到钱才是最重要的。这里“钱”是价值的体现，当你面对挫败拥有百折不挠的勇气、能够不断挑战自我、实现自我价值，那么钱就是价值水到渠成的附属品。</p>
 <p>所以，要不停地尝试、争取，挑战自己，并且习惯被拒绝，这一点对刚出校门的年轻人来说尤其重要。从踏上社会的那一刻开始，人生的号角就吹响了，你必须要为之不屈不挠地战斗，发掘自我价值，争取想要的生活。</p>
-<h5 id="第四点活在当下做好眼前的事">第四点，活在当下，做好眼前的事。</h5>
+<h4 id="第四点活在当下做好眼前的事">第四点，活在当下，做好眼前的事。</h4>
 <p>刚到上海的头几年，我太穷了，满脑子想的都是怎么才能赚更多的钱。在茶坊做服务员的时候，我发现做吧台的服务员能多赚几百元，我就花几天时间把吧台的饮料名字全部抄下来背会，主动上夜班，在吧台帮忙，不到一星期我就学会了吧台的全部工作。后来我去一个台湾人开的女子美容中心做吧台服务员，发现隔壁部门做足底按摩的姑娘一个月能赚3 000多元，有时还能拿到小费，我就求她教我按摩手艺，回去拿朋友的脚练手，由此学会了足底按摩。但我最后没做这个，因为我发现隔壁的日本料理店招聘服务员，工资也有3 000元，还包吃包住，于是我就去了那里。后来，我想再多一些工作机会，再多赚一点钱，就又学会了日语，月收入多了好几百元。</p>
 <p>很长一段时间里，我就像条蚯蚓，在黑暗里一节一节地向前拱、往前爬，不停地寻找光亮，寻找更好的机会，哪怕只是好一点点。我从来没有什么远大理想，也很少为未来担忧，只想着怎么解决眼前的问题，如何在下个月多赚几百元。很多人整天焦虑未来，但却没有意识到，未来就是由无数个今天、无数个当下组成的，解决好当下的问题，认真做好今天该做的事，未来就会在当下解决的一个个问题中延展出去，水到渠成。</p>
 <p>年轻人越早放弃一夜暴富和走捷径的想法，越早认识到只有靠自己的双手一点一滴地付出、积累，才能换取未来，缓解生活的困顿，从泥坑里爬出来的路程就越短。懒惰让人想走捷径，那些急功近利的想法只会扰乱你的判断，让你掉进一个又一个诱惑的深坑，付出一个又一个沉重的代价。</p>
 <p>即使身处低谷与黑暗，你的内心依然要保持清明，踏踏实实地劳动，解决眼前的问题，不停地升级、优化自己，哪怕每次只进步一点点。</p>
-<h5 id="第五点知道什么对自己最重要学会知足和感恩">第五点，知道什么对自己最重要，学会知足和感恩。</h5>
+<h4 id="第五点知道什么对自己最重要学会知足和感恩">第五点，知道什么对自己最重要，学会知足和感恩。</h4>
 <p>我24岁的时候，血小板减少性紫癜第一次发病，当时医生已经给我开了病危通知单。我在上海第六人民医院血液科住了两个星期左右，我的病床是16号，14号病床住的是一个阿姨，她已经有十几年没下过病床了。我已经忘记她是什么血液病引起的瘫痪，只记得她当时笑着跟我说自己十几年没穿过鞋子了。那是我人生中第一次意识到，原来穿鞋子走路对有的人来说都是一种奢望……因为是在血液科，我还见过好几个得了白血病的孩子，还有一个上午来化疗，中午赶着回学校上课的老师。</p>
 <p>出院那天，我第一次对人生有了很深的感触。我站在宜山路上发了好一会儿呆，第一次发现树真绿啊，天真蓝啊，再看看自己穿着鞋子站在地上，感觉“哎呀，真的好幸福！”这种幸福感一直延续到今天。即使后来的生活也遇到了非常困难的时刻，我仍无比感恩。直到今天，我仍时常感到惶恐，觉得自己何德何能，可以拥有这么多。虽然我和Peter一个38岁，一个43岁，车子、房子都没有，但我们知道，作为有手有脚、耳聪目明的健康人，能拥有彼此，拥有今天的生活，已经是拥有了很多人的奢望。</p>
 <p>这一生，要抱着一颗感恩自足的心，珍惜自己拥有的，明白什么对自己最重要，哪些根本不重要，然后专注地发掘个人价值，追求自己的梦想。以内心滋生的幸福感和快乐来衡量成功与否，而不是为身外之物纠结、烦恼，然后你会发现，你的生命通透明朗，你的人生有无限可能。</p>
-<h5 id="第六点对生活抱有好奇心保持旺盛的求知欲">第六点，对生活抱有好奇心，保持旺盛的求知欲。</h5>
+<h4 id="第六点对生活抱有好奇心保持旺盛的求知欲">第六点，对生活抱有好奇心，保持旺盛的求知欲。</h4>
 <p>我的命运发生实质性变化是在学了日语之后。做再多的思想建设，如果不能付诸行动，都只是空想，只有行动才能带来改变。我学日语的契机是从日本料理店的工作中来的，因为我发现高工资的店长和领班日语都很好。我那时候不知道什么“实现人生价值，知识改变命运，知识可以换取财富”，只是单纯地知道，学会日语，可以多一点工作机会，多赚几百元钱。虽然目的单纯，但是这些对我之后的人生有非常大的帮助。日语考到一级后，我去了一家日企做总务，其实就是打杂，但总算从服务员到坐办公室了，生活也从这里打开了一个新篇章。</p>
 <p>我从小到大好奇心一直特别重，树上有个鸟窝，我一定要爬上去看看；有人围着的地方，我一定要钻进去看看他们在干什么；我也很喜欢看悬疑推理类的小说。这份好奇心对我的成长非常有帮助，它一直驱使着我向未知探索，吸收新的知识，尝试新的体验。虽然这么说有点讽刺，但我一个没怎么上学的人，居然实现了教育的理想——自主教育、自主学习。也因为好奇心，2007年的某天，我听说有Skype这个软件，就下载注册了一个账号，没想到因此得到了生活给我的最大奖赏，遇到了我的今生挚爱、灵魂伴侣，我的爱人Peter。</p>
 <p>希望你也永远对生活抱有好奇心与热情，像海绵一样不停地吸收新知识、体验新事物、接受新想法，抱着开放的心态去面对这个世界，并且把脑子里堆积的想法用行动去折腾、去实现，加快自己生命的新陈代谢。在这个过程中，你会逐渐变得强大、自信、坚定。一旦体验到改变和进步的快乐，你就不会停下来，因为进步的快乐是顶级的快乐，是大脑释放出来的高潮。</p>
 <p>你是有力量的，是可以通过一点一滴的努力改变自己的生活的。世上没有什么事，是比自己相信自己有改变的力量更让人振奋和有安全感的了。</p>
-<h5 id="第七点做一个善良的人">第七点，做一个善良的人。</h5>
+<h4 id="第七点做一个善良的人">第七点，做一个善良的人。</h4>
 <p>无论周围的人或网络舆论如何向你灌输所谓的“怎样才能不吃亏”“聪明人应该这么做”，告诉你多少来自他们自身生活经验的“厚黑学”，你都要知道，那是他们自己的人生经验。如果你仔细观察，就会发现，信奉这一套的人大多是社会底层的人，他们自己都没有把生活过好。如果你希望生命能结出很多好果子，那么善良就是最肥沃的土壤。</p>
 <p>当然，成长的过程中必然会有一些人辜负你的善良，你要做的就是把他们从生活里清除，不要让他们改变你。无论你在经历什么痛苦，走在什么岔路或弯道上，只要你是一个善良的人，善良就会像一盏永不熄灭的指路灯，温暖你，给你力量，把你带到同类人身边，让你最终被温暖的人包围。它可能短时间内不能给你想要的那种好处，但它永远可以阻止你变得更差，堕落到更深的泥坑里。</p>
 <p>无论你的生活在面对什么，你都要坚信一点：你是有力量改变的，你是有选择的，生活没有你想的那么糟糕。相信我。</p>
@@ -854,8 +522,96 @@ div.toc ul>li>ul>li>ul>li>ul>li {
 <p>所以，如果你想拥有良好的夫妻关系和亲子关系，就要认识到夫妻关系才是第一关系，妻子或丈夫才是这一生陪伴你最长最久的人。如果没有这个意识，最好不要轻易走入婚姻。结婚后，要明确与父母之间的界限，传达一个明确清晰的信息：这是我的家庭，我们家庭内的事务由我和我的妻子共同面对、共同解决，希望你们尊重。传达的过程中，你可能会痛苦或心软，但是你要明白，现在的痛苦是为了以后的愉快相处，父母和孩子一样，会看脸色行事，会根据你的态度来试探你的底线，你到底是想要一次痛还是次次烦恼，就要看你自己的选择了。</p>
 <p>另外，父母或者公婆是没有义务给你们带孩子的。如果你对父母或公婆有索取、有所求，他们反过来干涉你们的生活，介入你们的矛盾，扰乱你们的小家庭，那只是你们为不能够独立而付出的代价。</p>
 <p>祝大家都有良好的夫妻关系，健康的亲子关系，家庭和睦，幸福绵长。</p>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80-%E4%B8%80%E4%B8%AA%E5%9F%BA%E5%B1%82%E5%A5%B3%E6%80%A7%E7%9A%84%E7%BF%BB%E8%BA%AB%E5%8F%82%E8%80%83">前言 一个基层女性的翻身参考</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%82%B9%E7%8B%AC%E7%AB%8B%E7%94%9F%E6%B4%BB%E8%BF%99%E6%98%AF%E5%86%B3%E5%AE%9A%E6%88%91%E4%BA%BA%E7%94%9F%E8%B5%B0%E5%90%91%E6%9C%80%E5%85%B3%E9%94%AE%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AD%A5">第一点，独立生活，这是决定我人生走向最关键的第一步。</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%82%B9%E5%8B%87%E6%95%A2%E7%A6%BB%E5%BC%80%E4%B8%8D%E5%AF%B9%E7%9A%84%E4%BA%BA%E8%BF%99%E5%AF%B9%E5%B9%B4%E8%BD%BB%E5%A5%B3%E5%AD%A9%E6%9D%A5%E8%AF%B4%E5%B0%A4%E5%85%B6%E9%87%8D%E8%A6%81">第二点，勇敢离开不对的人，这对年轻女孩来说尤其重要。</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%82%B9%E9%9D%A2%E5%AF%B9%E7%94%9F%E6%B4%BB%E6%9C%89%E7%99%BE%E6%8A%98%E4%B8%8D%E6%8C%A0%E7%9A%84%E5%8B%87%E6%B0%94">第三点，面对生活，有百折不挠的勇气。</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%82%B9%E6%B4%BB%E5%9C%A8%E5%BD%93%E4%B8%8B%E5%81%9A%E5%A5%BD%E7%9C%BC%E5%89%8D%E7%9A%84%E4%BA%8B">第四点，活在当下，做好眼前的事。</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%82%B9%E7%9F%A5%E9%81%93%E4%BB%80%E4%B9%88%E5%AF%B9%E8%87%AA%E5%B7%B1%E6%9C%80%E9%87%8D%E8%A6%81%E5%AD%A6%E4%BC%9A%E7%9F%A5%E8%B6%B3%E5%92%8C%E6%84%9F%E6%81%A9">第五点，知道什么对自己最重要，学会知足和感恩。</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%82%B9%E5%AF%B9%E7%94%9F%E6%B4%BB%E6%8A%B1%E6%9C%89%E5%A5%BD%E5%A5%87%E5%BF%83%E4%BF%9D%E6%8C%81%E6%97%BA%E7%9B%9B%E7%9A%84%E6%B1%82%E7%9F%A5%E6%AC%B2">第六点，对生活抱有好奇心，保持旺盛的求知欲。</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%82%B9%E5%81%9A%E4%B8%80%E4%B8%AA%E5%96%84%E8%89%AF%E7%9A%84%E4%BA%BA">第七点，做一个善良的人。</a></li>
+</ul>
+</li>
+<li><a href="#1-%E5%8E%9F%E7%94%9F%E5%AE%B6%E5%BA%AD%E5%88%92%E6%B8%85%E7%95%8C%E9%99%90%E7%81%B5%E9%AD%82%E6%96%AD%E5%A5%B6">1 原生家庭——划清界限，灵魂断奶</a>
+<ul>
+<li><a href="#%E5%AE%8C%E6%88%90%E7%B2%BE%E7%A5%9E%E4%B8%8A%E7%9A%84%E6%96%AD%E5%A5%B6">完成精神上的断奶</a></li>
+<li><a href="#%E5%92%8C%E7%88%B6%E6%AF%8D%E5%88%92%E6%B8%85%E7%95%8C%E9%99%90">和父母划清界限</a></li>
+<li><a href="#%E7%B2%BE%E7%A5%9E%E7%89%A9%E8%B4%A8%E7%8B%AC%E7%AB%8B%E6%98%AF%E5%94%AF%E4%B8%80%E5%87%BA%E8%B7%AF">精神、物质独立是唯一出路</a></li>
+<li><a href="#%E4%BD%A0%E6%B0%B8%E8%BF%9C%E6%98%AF%E6%9C%89%E9%80%89%E6%8B%A9%E7%9A%84">你永远是有选择的</a></li>
+<li><a href="#%E6%9C%89%E7%88%B1%E7%9A%84%E8%A1%80%E7%BC%98%E5%85%B3%E7%B3%BB%E6%89%8D%E6%98%AF%E5%AE%B6%E4%BA%BA">有爱的血缘关系才是家人</a></li>
+</ul>
+</li>
+<li><a href="#2-%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF%E7%B2%BE%E7%A5%9E%E4%B8%8E%E7%89%A9%E8%B4%A8%E5%8F%8C%E7%8B%AC%E7%AB%8B">2 自我成长——精神与物质双独立</a>
+<ul>
+<li><a href="#20%E5%B2%81%E5%88%B030%E5%B2%81%E8%BF%9910%E5%B9%B4%E5%BA%94%E8%AF%A5%E5%81%9A%E4%BB%80%E4%B9%88">20岁到30岁，这10年应该做什么</a>
+<ul>
+<li><a href="#-%E7%8B%AC%E7%AB%8B%E7%94%9F%E6%B4%BB%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E7%89%A9%E8%B4%A8%E5%92%8C%E7%B2%BE%E7%A5%9E%E4%B8%96%E7%95%8C-">· 独立生活，建立自己的物质和精神世界 ·</a></li>
+<li><a href="#-%E5%83%8F%E6%B5%B7%E7%BB%B5%E4%B8%80%E6%A0%B7%E5%8E%BB%E5%AD%A6%E4%B9%A0-">· 像海绵一样去学习 ·</a></li>
+<li><a href="#-%E4%B8%8D%E8%A6%81%E8%BD%BB%E7%8E%87%E5%9C%B0%E8%B5%B0%E8%BF%9B%E5%A9%9A%E5%A7%BB-">· 不要轻率地走进婚姻 ·</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B9%81%E8%8D%A3%E8%87%AA%E5%B7%B1%E7%9A%84%E7%B2%BE%E7%A5%9E%E7%8E%8B%E5%9B%BD">繁荣自己的精神王国</a></li>
+<li><a href="#%E4%BD%A0%E6%98%AF%E8%87%AA%E5%B7%B1%E7%9A%84%E5%94%AF%E4%B8%80%E9%9D%A0%E5%B1%B1">你是自己的唯一靠山</a></li>
+<li><a href="#%E5%8E%BB%E8%BF%87%E4%B8%8D%E8%A2%AB%E7%BB%91%E6%9E%B6%E7%9A%84%E4%BA%BA%E7%94%9F">去过不被绑架的人生</a></li>
+<li><a href="#%E7%9C%9F%E6%AD%A3%E7%9A%84%E8%87%AA%E7%A7%81%E6%98%AF%E4%BB%A5%E7%88%B1%E4%B9%8B%E5%90%8D%E7%9A%84%E6%83%85%E6%84%9F%E5%8B%92%E7%B4%A2">真正的自私是以爱之名的情感勒索</a></li>
+<li><a href="#%E5%85%8B%E6%9C%8D%E6%80%9D%E6%83%B3%E4%B8%8A%E7%9A%84%E8%B4%AB%E7%A9%B7">克服思想上的贫穷</a></li>
+<li><a href="#%E5%AE%89%E5%85%A8%E6%84%9F%E6%98%AF%E4%BD%A0%E6%89%8B%E5%A4%B4%E7%9A%84%E7%A7%8D%E6%A4%8D%E6%9C%AF">安全感是你手头的种植术</a></li>
+<li><a href="#%E4%B8%8D%E8%A2%AB%E7%A4%BE%E4%BC%9A%E8%90%A5%E9%94%80%E7%9A%84%E6%B8%B8%E6%88%8F%E4%B9%B1%E4%BA%86%E5%BF%83%E6%99%BA">不被社会营销的游戏乱了心智</a></li>
+<li><a href="#%E5%83%8F%E6%B0%B4%E4%B8%80%E6%A0%B7%E5%8E%BB%E7%94%9F%E6%B4%BB">像水一样去生活</a></li>
+<li><a href="#%E6%91%86%E8%84%B1%E5%AE%B9%E8%B2%8C%E7%84%A6%E8%99%91%E7%BE%8E%E7%94%B1%E8%87%AA%E5%B7%B1%E5%AE%9A%E4%B9%89">摆脱容貌焦虑，美由自己定义</a></li>
+<li><a href="#%E8%87%AA%E4%BF%A1%E6%9D%A5%E8%87%AA%E5%A4%A7%E9%87%8F%E7%9A%84%E7%BB%8F%E9%AA%8C">自信来自大量的经验</a></li>
+<li><a href="#%E6%94%B9%E5%8F%98%E4%BB%8E%E8%A1%8C%E5%8A%A8%E5%BC%80%E5%A7%8B">改变，从行动开始</a>
+<ul>
+<li><a href="#-%E5%81%9A%E5%A5%BD%E5%87%86%E5%A4%87-">· 做好准备 ·</a></li>
+<li><a href="#-%E5%88%9B%E4%B8%9A%E8%A6%81%E9%80%89%E6%8B%A9%E7%86%9F%E6%82%89%E7%9A%84%E9%A2%86%E5%9F%9F-">· 创业要选择熟悉的领域 ·</a></li>
+<li><a href="#-%E5%AF%BB%E6%B1%82%E7%AA%81%E7%A0%B4%E5%92%8C%E5%A2%9E%E5%8A%A0%E6%A0%B8%E5%BF%83%E7%AB%9E%E4%BA%89%E5%8A%9B-">· 寻求突破和增加核心竞争力 ·</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%BA%E7%94%9F%E5%91%BD%E8%B4%9F%E8%B4%A3%E6%89%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E7%88%B1%E8%87%AA%E5%B7%B1">为生命负责，才是真正的“爱自己”</a></li>
+</ul>
+</li>
+<li><a href="#3-%E4%B8%A4%E6%80%A7%E5%85%B3%E7%B3%BB%E5%88%9B%E9%80%A0%E4%BB%B7%E5%80%BC%E5%88%86%E4%BA%AB%E5%88%A9%E7%9B%8A">3 两性关系——创造价值，分享利益</a>
+<ul>
+<li><a href="#%E7%94%B7%E5%A5%B3%E6%84%8F%E8%AF%86%E5%81%8F%E5%B7%AE%E9%80%A0%E6%88%90%E7%9A%84%E6%8B%A9%E5%81%B6%E7%9F%9B%E7%9B%BE">男女意识偏差造成的择偶矛盾</a></li>
+<li><a href="#%E9%81%BF%E5%85%8D%E5%A0%95%E5%85%A5%E5%8D%B1%E9%99%A9%E7%9A%84%E4%B8%A4%E6%80%A7%E5%85%B3%E7%B3%BB">避免堕入危险的两性关系</a>
+<ul>
+<li><a href="#-%E8%AD%A6%E6%83%95%E7%B2%BE%E7%A5%9E%E8%B4%AB%E5%9B%B0%E7%9A%84%E5%BC%82%E6%80%A7-">· 警惕精神贫困的异性 ·</a></li>
+<li><a href="#-%E8%AD%A6%E6%83%95%E5%8D%A0%E6%9C%89%E6%AC%B2%E5%BC%BA%E7%9A%84%E5%BC%82%E6%80%A7-">· 警惕占有欲强的异性 ·</a></li>
+<li><a href="#-%E8%AD%A6%E6%83%95%E6%9C%89%E6%9A%B4%E5%8A%9B%E5%80%BE%E5%90%91%E7%9A%84%E5%BC%82%E6%80%A7-">· 警惕有暴力倾向的异性 ·</a></li>
+<li><a href="#-%E8%AD%A6%E6%83%95%E6%B2%A1%E6%9C%89%E4%BB%80%E4%B9%88%E5%8F%AF%E5%A4%B1%E5%8E%BB%E7%9A%84%E4%BA%BA-">· 警惕没有什么可失去的人 ·</a></li>
+<li><a href="#-%E8%AD%A6%E6%83%95%E8%99%90%E5%BE%85%E5%B0%8F%E5%8A%A8%E7%89%A9%E7%9A%84%E4%BA%BA-">· 警惕虐待小动物的人 ·</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B9%B4%E8%BD%BB%E4%BA%BA%E8%A6%81%E5%A4%9A%E8%B0%88%E6%81%8B%E7%88%B1">年轻人要多谈恋爱</a></li>
+<li><a href="#%E5%BD%A9%E7%A4%BC%E5%AF%B9%E5%A5%B3%E6%80%A7%E7%9A%84%E6%84%8F%E4%B9%89">彩礼对女性的意义</a></li>
+<li><a href="#%E7%94%9F%E8%82%B2%E7%9A%84%E4%BB%B7%E5%80%BC">生育的价值</a></li>
+<li><a href="#%E4%B8%BA%E7%A4%BE%E4%BC%9A%E6%89%93%E5%B7%A5%E6%8D%A2%E5%8F%96%E5%88%A9%E7%9B%8A%E4%BF%9D%E9%9A%9C">为社会打工换取利益保障</a></li>
+<li><a href="#%E5%A9%9A%E5%A7%BB%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E5%85%B1%E5%90%8C%E5%88%9B%E9%80%A0%E5%88%A9%E7%9B%8A%E4%BB%B7%E5%80%BC">婚姻的本质是共同创造利益价值</a></li>
+<li><a href="#%E6%81%8B%E7%88%B1%E5%A9%9A%E5%A7%BB%E7%94%9F%E8%82%B2%E6%98%AF%E4%B8%89%E4%BB%B6%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8B">恋爱、婚姻、生育是三件不同的事</a></li>
+<li><a href="#%E4%B8%BA%E5%AE%B6%E5%BA%AD%E6%89%93%E5%B7%A5%E6%B2%A1%E6%9C%89%E5%87%BA%E8%B7%AF">为家庭打工没有出路</a></li>
+<li><a href="#%E8%BF%9C%E7%A6%BB%E7%B2%BE%E7%A5%9E%E8%B4%AB%E7%98%A0%E7%9A%84%E7%94%B7%E6%80%A7">远离精神贫瘠的男性</a></li>
+<li><a href="#%E4%B8%A4%E6%80%A7%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E6%80%A7%E5%B9%B3%E7%AD%89">两性关系中的性平等</a></li>
+<li><a href="#%E8%A6%81%E4%B8%BA%E8%87%AA%E5%B7%B1%E7%94%9F%E5%AD%A9%E5%AD%90">要为自己生孩子</a>
+<ul>
+<li><a href="#-%E5%A5%B3%E6%80%A7%E7%9A%84%E7%94%9F%E8%82%B2%E6%88%90%E6%9C%AC-">· 女性的生育成本 ·</a></li>
+<li><a href="#-%E9%9B%84%E6%80%A7%E5%9F%BA%E5%9B%A0%E7%9A%84%E8%82%B2%E5%84%BF%E8%A7%82-">· 雄性基因的育儿观 ·</a></li>
+<li><a href="#-%E5%A5%B3%E4%BA%BA%E4%B8%BA%E8%87%AA%E5%B7%B1%E7%94%9F%E5%AD%A9%E5%AD%90%E7%9A%84%E6%84%8F%E4%B9%89-">· 女人为自己生孩子的意义 ·</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BC%A0%E7%BB%9F%E5%AB%81%E5%A8%B6%E6%A8%A1%E5%BC%8F%E6%B6%88%E8%80%97%E5%A5%B3%E6%80%A7%E8%83%BD%E9%87%8F">传统嫁娶模式消耗女性能量</a></li>
+<li><a href="#%E7%94%9F%E6%B4%BB%E4%B8%8D%E5%9C%A8%E4%B9%8E%E4%BD%A0%E7%9A%84%E6%80%A7%E5%88%AB">生活不在乎你的性别</a></li>
+<li><a href="#%E7%88%B1%E6%98%AF%E7%B2%BE%E7%A5%9E%E7%9A%84%E5%A5%A2%E4%BE%88%E5%93%81">爱是精神的“奢侈品”</a></li>
+<li><a href="#%E7%94%B7%E5%A5%B3%E5%AF%B9%E7%AB%8B%E4%B8%8B%E7%9A%84%E6%83%85%E7%BB%AA%E6%9A%B4%E5%8A%9B">男女对立下的情绪暴力</a></li>
+<li><a href="#%E6%94%BE%E4%B8%8B%E5%A9%86%E5%AA%B3%E4%B9%8B%E9%97%B4%E7%9A%84%E9%81%93%E5%BE%B7%E7%BB%91%E6%9E%B6">放下婆媳之间的道德绑架</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

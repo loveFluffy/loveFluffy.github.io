@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x8de8;&#x5883;&#x7535;&#x5546;&#x4e0e;&#x56fd;&#x9645;&#x7269;&#x6d41;&#xff1a;&#x673a;&#x9047;&#x3001;&#x6a21;&#x5f0f;&#x53ca;&#x8fd0;&#x4f5c;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x8de8;&#x5883;&#x7535;&#x5546;&#x4e0e;&#x56fd;&#x9645;&#x7269;&#x6d41;&#xff1a;&#x673a;&#x9047;&#x3001;&#x6a21;&#x5f0f;&#x53ca;&#x8fd0;&#x4f5c;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -28,6 +30,102 @@
     vertical-align: middle;
     pointer-events: none;
 }
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
 </style>
         <style>
 @charset "utf-8";
@@ -88,8 +186,14 @@ body {
 	font-size: 18pt;
 	color: #333;
 	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
 	height: 100%;
+	padding: 0;
+
+	/*
+	同时声明中文字体的字体名称（英文）和显示名称（中文）
+	主体使用无衬线字体，更清晰
+	*/
+	font-family: Helvetica, Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
 }
 
 h1,
@@ -118,7 +222,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 10px 0 5px;
+	margin: 30px 0 5px;
 	padding-left: 9px;
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -128,13 +232,13 @@ h4 {
 	font-size: 1.4em;
 	margin: 10px 0 5px;
 	padding-left: 9px;
-	border-left: 6px solid #666;
+	border-left: 6px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
 	padding-left: 9px;
-	border-left: 6px double #666;
+	border-left: 4px solid #ffcc99;
 }
 
 h6 {
@@ -161,6 +265,8 @@ p {
 	margin: 0 0 1em;
 	padding: 0;
 	line-height: 1.8;
+	/*段落使用衬线字体，更好看*/
+	font-family: Georgia, Arial, "Microsoft YaHei", "微软雅黑", serif;
 }
 
 a:link {
@@ -238,12 +344,12 @@ figure img {
 	margin-bottom: 0px;
 }
 
-/* hr 用于创建一条水平线*/
+/* hr 用于创建一条水平线 */
 hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
+	border: 0;
+	padding-top: 1px;
+	margin-bottom: 0.8em;
+	background: linear-gradient(to right, transparent, #d0d0d5, transparent);
 }
 
 ol p,
@@ -331,10 +437,33 @@ a:target {
 	outline: 0;
 }
 
+/*笔记中的普通表格*/
 table {
-	align-self: center;
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
 }
 
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
 img {
 	align-self: center;
 	max-width: 1000px;
@@ -344,6 +473,20 @@ img {
 /* 选中后背景浅粉色 */
 ::selection {
 	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
 }
 
 
@@ -358,8 +501,9 @@ img {
 
 	/* 滚动条 */
 	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
 
 	scroll-behavior: smooth;
 }
@@ -384,14 +528,18 @@ iPad mini 5：2048*1536
 
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
 	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
+		/*max-width: 29%;*/
+		width: 26%;
 		height: 100vh;
-		padding-right: 0.5%;
+		padding-right: 0;
 
 		float: left;
-		font-size: 0.7em;
 		overflow: auto;
 		overflow-x: hidden;
 
@@ -409,72 +557,110 @@ iPad mini 5：2048*1536
 		scrollbar-color: rgb(178, 216, 232) #ededed;
 	}
 
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
 	div.toc ul {
 		margin: 0;
 		padding: 0;
-		background-color: #f1e5c9;
 	}
 
 	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
 	}
 
 	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
 		/* Safari 及其他兼容 */
 		position: -webkit-sticky;
 		position: -ms-sticky;
 		position: -o-sticky;
 		position: sticky;
 		top: 0;
-	}
 
-	div.toc ul>li {
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
 		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
 	}
 
 	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
 	}
 
 	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
 	}
 
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
 	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
 	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
+	*/
 }
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <div class="content">
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
 <h1 id="跨境电商与国际物流机遇模式及运作">跨境电商与国际物流：机遇、模式及运作</h1>
 <h2 id="孙韬-著">孙韬 著</h2>
+<div class="mycomment">
+<p>作者的水平看得出来很高，数据和内容都非常详实，有很强的参考性，有助于全面了解跨境电商的现状。</p>
+</div>
 <p>全书围绕“Shopping Globally, Shipping Locally（全球买卖，递送全球）”这个中心主题，介绍了“跨境贸易电子商务”即跨境电商的发展历程及火爆现状，对跨境电商的概念范畴及国家政策利好从不同视角进行了分析，并从跨境出口、跨境进口及供应链、海外仓、国际物流、跨境创新等不同章节介绍了当前行业的热点问题，解析了各种进出口市场机遇及业务模式，让读者较为全面和深入地了解外贸零售、海淘代购、跨境物流、跨境支付、通关税费及配套服务等领域的具体运作。尤为着重阐释了“国际物流”如何助力跨境电商的发展。</p>
 <h2 id="自序">自序</h2>
 <p>跨境电商和国内电商在产品属性、供应链、支付、通关、物流等方面都有显著差异，尤其是跨境物流，交付难于交易，周期长、成本占比高、流程复杂，风吹草动都将直接影响电商运作。随着全球和区域自由贸易的深度推进，全球物流业的发展经历了深刻的变革并获得了越来越多的关注。物流像是电商的军备竞赛，“Fast Shipping”成为境外买家的最佳评价，电子商务不仅带动了快递业的爆发，还促进了传统物流向“可视、可控、可量化”的智能化提升，中国物流业将展现强劲的发展潜力。诸如，跨境试点、通关模式、外贸营销、进口供应链、跨境支付等话题深处行业潜水区，以及算得上年度热词的“海外仓”亦分别予以呈现。</p>
@@ -490,7 +676,7 @@ iPad mini 5：2048*1536
 <p>跨境电商作为一种被国家认可的贸易通道，跨境进口可以满足境内消费者全球化的需求，并合法地纳入监管与统计。目前，跨境电商占外贸进出口的比重大约是17%，其中又有90%是B2B模式，<strong>跨境零售部分只占外贸进出口的3%左右</strong>（张周平，中国电子商务研究中心，2015—2016年中国出口跨境电子商务发展报告，<a href="http://www.100ec.cn/">http://www.100ec.cn/</a> ，2016-8-10）。跨境电商的快速发展和“碎片化”特点，对人民币这种新兴的国际货币提供了一次良好的国际化机遇，但交易的虚拟化增加了获取税收证据的难度，国际避税问题突出，查验走私与侵权问题剧增，也是当前面临的一些新情况。</p>
 <h4 id="11-跨境概念">1.1 跨境概念</h4>
 <p>跨境电商，即“跨境贸易电子商务”，国际上流行的说法叫Cross-border eCommerce，特指跨境网络零售，如外贸小额批发及2C类。所谓跨境，就是交易主体分属于不同“关境”，包括进出口，借助互联网达成交易、进行支付结算，并采用快件、包裹等方式通过国际物流将商品送达消费者手中的交易过程，是一种国际商业活动。从严格意义上说，跨境零售是贸易的组成。跨境消费者中也会含有一部分碎片化小额买卖的B类商家用户，现实中这种B类商家和C类个人消费者很难区分。通常，从海关角度来说，跨境电商等同于在网上进行小包的买卖，主要是针对消费者。<strong>传统进出口B2B货物只能销售给进口商，需要签订传统的外贸购销合同，准备箱单、纸质发票、报关单等纸质单证，不属于跨境电商范畴</strong>。跨境电商将传统贸易流程数字化、网络化、碎片化，购买特点以小批量、多批次、单笔交易金额小为主，包括直接交易和相关服务，即“产品+服务”，可按进出口方向、交易模式、平台运营方、服务类型等角度分类。新的全渠道（Omni-Channel）零售是指通过跨越实体和线上多购物渠道，随时随地始终连接，实现无缝的购物体验，<strong>因为面临来自整合独立线上和实体店铺的政策风险和物流业挑战</strong>，所以它一直被视为零售业最难以捉摸的“圣杯”。</p>
-<p><img src="file:///d:\loveFluffy\myBlog\booknotes\img\notes9382-1.png" alt="跨境电商流程示意"></p>
+<p><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\img\notes9382-1.png" alt="跨境电商流程示意"></p>
 <p>跨境电商流程示意</p>
 <h5 id="111跨境电商行业范畴">1.1.1　跨境电商行业范畴</h5>
 <p>电子商务概念的内涵与外延非常宽泛，跨境电商也类似，是一个空间很大但极度分散的行业，在国际贸易环节中只要涉及到电子商务应用都可以纳入这个范畴。在WTO框架下，纯粹电子交易适用于GATS服务贸易规则，而通过跨境运输运送至购买人所在地，则归入货物贸易范畴，属于关税及贸易GATT协定，因此跨境电商面临不少模糊的贸易监管。</p>
@@ -625,7 +811,7 @@ iPad mini 5：2048*1536
 <p>在2015年，我国跨境电商出口轻小件包裹约10亿件，如果粗算物流环节成本占比为25%，那么2015年这部分跨境B2C物流的市场规模已达1196亿，而且未来几年将保持35%以上年复合增速。</p>
 <p>跨境物流递送涉及环节较多，包括国内外的仓储、运输、配送及海关等，以及整合订单管理、库存管理、配送管理及运输管理。因此，跨境物流全程服务可分为三部分，一是支持B2B较大额业务为主的海运拼箱及空运等业务；二是支持跨境小包快递等业务；三是外贸服务，围绕贸易过程中的验厂、检测验货、跟单等环节，以及一般的通关、货代业务等展开。目前，这部分服务主要是线下贸易服务商服务跨境电商买、卖家，有些还进入了线上服务市场。</p>
 <p>随着“电商+贸易”的业务模式变化，尤其是与外贸综合服务及金融增值服务结合后，跨境物流涵盖的范围被无限放大，物流企业通常需要具备几个主要能力，一是国际运输，如货代、仓位、专线、保险等，以对货源和服务质量进行把控；二是清关、资质及口岸对接；三是技术平台，如电商集成、状态可视、过程可控；四是境外操作能力，如海外仓、传统零售的跨境货代、海外采购及供应链；五是跨境保税操作能力，如保税区入驻、保税仓运营；六是国内派送及目的国落地配合合作，提供低价、高效与增值服务。</p>
-<p><img src="file:///d:\loveFluffy\myBlog\booknotes\img\notes9382-2.jpeg" alt="跨境物流图谱"></p>
+<p><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\img\notes9382-2.jpeg" alt="跨境物流图谱"></p>
 <p>目前，满足跨境电商的国际物流模式有：<strong>邮政包裹、商业快递、专线物流、保税仓和海外仓</strong>等模式。物流模式的多样性使得商家在选择时可以着重考虑产品特点、物流成本和时效稳定性。跨境电商商品种类繁多、小批量、多频次，体积重量差别很大，不同品类所需运输和仓储解决方案各异，跨境物流要实现一站式、门到门的服务，尤其需要做到国际段和国内段物流的有效衔接。跨境物流的发展仍滞后于电商市场的要求，货物积压、延误或丢失破损等问题突出，海量分散的订单下仓储体系不完善，面对客户多样化和复杂化的需求不能高效解决。还有一些国家当地的物流系统不是很发达，缺少国外的物流分配中心，导致消费者体验较差，配送时间长，包裹无法全程跟踪，退换货不方便，出现清关障碍等问题。</p>
 <h4 id="12宏观环境与政策">1.2　宏观环境与政策</h4>
 <p>中国互联网经济占GDP的比重已超过欧美，但中国小微企业对GDP的贡献率为35%～40%，它们也是就业和创新的重要来源，而在德国，小微企业的GDP贡献率达52%，墨西哥为54%，法国为58%，意大利高达67%。查验侵权行为的难度加大，通过网络跨地域、跨国界销售侵犯知识产权物品的违法行为目前不断出现，对外贸易核销监管难、外汇收支性质归属难。在网络直销模式下，个人涉外贸易经营无登记、无备案、无报关、无核销，直接通过个人外币卡账户结算，游离于跨境贸易物流和资金流监管体系之外。在新形势下，受全球范围内经济持续疲软、外需不振等因素影响，叠加国内要素成本上升、人民币升值及产品结构低端化等因素影响，我国传统的外贸优势逐步丧失。在外贸形势不断恶化的背景下，政策部门接连部署跨境电商出口业务规范，试图从政策面为出口业务注入源头活水，促进外贸转型升级。</p>
@@ -751,7 +937,7 @@ iPad mini 5：2048*1536
 <p>产业政策往往都存在自上而下又自下而上反复修正的过程，不同时期的政策有明显的层级性。通常是某个市场先于政策，表现出独特的成长前景，政府希望培育这样的产业机遇。例如跨境，国务院确定总体方向，商务部和发改委等做计划指引，财、税、汇及海关总署等部委做顶层设计，各省商务厅、经贸委及属地海关等推进模式落地，实际执行过程要接触到城市级的商贸主管部门、口岸或监管区的管委会、区内海关及商检、保税区经营者等。因此，产业早期方向性的政策，往往会被解读成千人千面，操作层面不甚规范统一。如“外贸国六条”曾明确积极扩大商品进口，增加进口贴息资金规模，但在市场草莽成长和“浑水摸鱼”一段时间后，政府势必要再出新规以“校正”。市场赖以运作的规则基础，一旦随政策发生变化，连锁反应将远超预期。显然，不仅跨境电商，很多新兴行业都有这样的经历。经验证明，在市场经济及全球化趋势下，国家层面制定具有可持续的、制度性的产业政策，要好过短期倾向性扶持，而地方政府抛出的实惠，对于招商引资而言效果却立等可见。目前，政策的操作层面还有要细化的，出口无票免征还未大范围试行，退税门槛高，出口后免于征税，国税和外管有待突破，出口报关的商品编码没有简化归类、工作量大；各试点城市监管不统一，不仅造成“窗口”重复建设，而且增加企业对接成本；快件、邮件方式通关的跨境电商，还未很好地纳入贸易统计；跨境进口的达摩克利斯之剑“正面清单”仍悬而未决。</p>
 <h5 id="124跨境电商一带一路">1.2.4　跨境电商“一带一路”</h5>
 <p>回到2013年跨境电商“元年”，适逢习总书记提出“一带一路”即“丝绸之路经济带”和“21世纪海上丝绸之路”的远瞻构想，市场发展与国家战略契合一致，通过双多边机制、区域合作平台探索国际合作及全球治理新模式。2015年国务院正式发布“一带一路”具体愿景与行动，强调消除贸易壁垒，大力发展电商平台。共建“一带一路”旨在促进经济要素有序自由流动、资源高效配置和市场深度融合，共同打造开放、包容、均衡、普惠的区域经济合作架构，维护全球自由贸易体系和开放型世界经济，缓冲TPP及TTIP带来的贸易壁垒风险，推动区域中各国的自贸协定谈判，有利于我国建设国际经济、金融、贸易、航运中心，掌控国际贸易主导权、定价权和资源配置权。“一带一路”主要包括新亚欧陆桥经济带、中蒙俄经济带、中国—南亚—西亚经济带、海上丝绸之路经济带，沿线总人口约44亿，经济总量约21万亿美元，分别约占全球的63%和29%。从国外需求看，相关国家和我国经济互补性强，各沿线发展呈现较大的差异，洲际铁路运输线建成，运输时间和成本大降，有利于突破跨境电商发展的物流瓶颈。</p>
-<p><img src="file:///d:\loveFluffy\myBlog\booknotes\img\notes9382-3.jpeg" alt="“一带一路”"></p>
+<p><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\img\notes9382-3.jpeg" alt="“一带一路”"></p>
 <p>从产业发展看，跨境电商涵盖营销、支付、物流和金融服务的完整产业链，把投资和贸易有机结合起来，以投资带动贸易发展，积极同沿线国家和地区共同商建自贸区，加强信息互换、监管互认、执法互助的海关合作，降低非关税壁垒，共同提高技术性贸易措施透明度，提高贸易自由化和便利化水平。</p>
 <h6 id="1北线中国东三省蒙古国俄罗斯北欧波罗的海沿岸">1.北线，中国（东三省）—蒙古国—俄罗斯—北欧（波罗的海沿岸）</h6>
 <p>蒙古国人口约300万，人口少、电商体量小，网民约占总人口七成，年轻人是网购主要群体，性价比高的日用品是网购的重点商品。蒙古国物流配送体系尚可，其自2011年起实行户户通邮政，乌兰巴托等市内递送服务开始发展，基本能够满足网购配送需求，目前“中俄蒙跨境经济合作区”三方已签约。俄罗斯是跨境必争之地，规模可观、增速很快，我国网店在俄罗斯跨境电商中的份额超过2/3，占据主导，后文有详述。在北欧，电商在瑞典、芬兰、挪威、丹麦四国稳步增长，近年保持两位数增长，例如，跨境电商占瑞典网购额的三成，<strong>速卖通曾称，其在瑞典的在线购物应用中已经排到了第一</strong>。</p>
@@ -766,7 +952,7 @@ iPad mini 5：2048*1536
 <p>跨境电商成为新时期我国深化国内改革和对外开放的新窗口，通过打造一条“网上丝绸之路”，促进我国与“一带一路”国家的贸易往来和中小企业发展，增进各国企业和人民之间的互信合作和共同发展。而国家层面的协调，通过与相关国家推进跨境电子商务规则、条约的研究和制定工作，包括跨境电商通关服务相关的配套管理制度和标准规范、邮件快件通关商检的监管模式、产品质量的安全监管和溯源机制等，健全跨境电商国际合作机制，进一步促进跨境电商的国际拓展。在各种双边、多边谈判中，也考虑了我国跨境电商发展的实际问题，帮助国内企业处理跨境电商贸易纠纷。</p>
 <h5 id="125互联网外贸">1.2.5　互联网+外贸</h5>
 <p>“大众创业、万众创新”与“互联网+”行动计划在全国遍地开花，电子商务已不仅是虚拟经济，更是数字化的实体经济。百花齐放的互联网创业群体，“中国梦”迎来“众创、众享、众智”的时代。跨境电商是“互联网+外贸”的具体创新形式，为各种创新产品和服务创造了平台，提高了中小企业出口能力，降低了行业进入门槛，使得他们成为“小微跨国企业”；让我国消费者轻松、便捷地获得多样化的世界各地商品，满足群众对高质量消费品的诉求，也激活了一批最具创新精神的企业的成长，并帮助市场机制和有效竞争的形成。政府之所以选择跨境电商作为外贸转型升级的突破口，主要是出于贸易模式、技术提升及产品特征等方面的综合考量。跨境电商的发展有利于优化外贸产业链，帮助传统外贸企业转型升级，帮助创业创新和中小微企业快速进入外贸市场，捕捉市场新变化，打造更多国际品牌。</p>
-<p><img src="file:///d:\loveFluffy\myBlog\booknotes\img\notes9382-4.jpeg" alt="全球供应链价值曲线"></p>
+<p><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\img\notes9382-4.jpeg" alt="全球供应链价值曲线"></p>
 <p>根据世贸组织的报告，国际贸易的基础就是规则，是建立信任的保障。跨境电商，让中国更好地参与到国际经贸治理中，参与到更多的数字商务市场中。过去，中国在整个经济贸易活动中经常陷入被动的局面，不能在复杂的国际经贸中掌握主动。信息经济下的“制造大国”更加国际化，开放互联的环境有利于用更低的成本覆盖更多的目标客户，让中国制造直接面向更充分的市场化竞争。另外，跨境电商为小企业和消费者迎来“普惠贸易”时代。互联网的蓬勃发展带来的商业模式、产品及市场结构的变化，使得国际贸易出现了新机遇和转型。消费者、企业和更多在传统贸易中的弱势群体都可以参与到国际贸易中来，获得更优质的资源、服务和多种多样的渠道，国际市场信息更加透明，贸易流程也更加方便。“普惠贸易”又称包容性贸易，是指各个阶层的贸易主体，尤其是贸易弱势群体能够参与到贸易中来的服务，其核心是有效、全方位地为社会所有阶层和群体提供贸易服务。我国正因为具有互联网技术和制造业基地的优势，才抢得先机与美国一道成为全球跨境电商中心。</p>
 <p>跨境电商实现了小订单与小需求的对接，符合消费模式转换的新特点，满足了多元化需求。中国消费升级和高性价比制造业输出，“全球采购、全球销售、全球消费”！学者看到议题，创业者看到商机，“互联网+外贸”使我国对外贸易及进出口相关产业快速创新融合，跨境支付、外贸服务、物流网络等创业机遇成为对外贸易及口岸经济增长的新动力。</p>
 <h4 id="13趋势与探索">1.3　趋势与探索</h4>
@@ -779,7 +965,7 @@ iPad mini 5：2048*1536
 5.信用保障。电商平台发挥聚合效应；跨境支付体系日益成熟；在线交易衍生更多金融服务。</p>
 <h5 id="1消费全球化">1.消费全球化</h5>
 <p>经济学里强调需求决定市场，跨境电商的产生就是跟全球大众的需求有关，网购已经成为全球性的消费习惯。我国传统中低端消费品制造能力非常大，供给严重过剩，但同类高品质消费品却供给不足，跨境电商为这部分需求涌向海外提供了渠道。我国外贸政策一直是“奖出限入”，多关注出口，出口可以带动投资、就业、拉动GDP。在消费带动的经济增长新结构中，进口市场将不被忽略，以进带出，通过大量引进高端产品，来倒逼中国制造产业升级。我国中产阶级的人数在未来20年将从2.3亿人增加到6.3亿人，在历史上出现一个庞大的消费者人群，他们愿意购买物美且价格适中的商品，青睐国际品牌的产品价值，出于对产品质量安全性的担忧避开选择本土品牌。</p>
-<p><img src="file:///d:\loveFluffy\myBlog\booknotes\img\notes9382-5.jpeg" alt="“电子商务实现“外需+WTO”及“内需+互联网””"></p>
+<p><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\img\notes9382-5.jpeg" alt="“电子商务实现“外需+WTO”及“内需+互联网””"></p>
 <p>电子商务实现“外需+WTO”及“内需+互联网”</p>
 <p>需求驱动市场，传统外贸业态下滑。订单碎片化、去渠道化、消费者对产品种类的需求，以及随着互联网的发展，国与国之间的商品价格进一步透明。通过跨境网购，消费者发现在国外平台购买的商品即使加上运费和关税也比海外品牌在国内直销的价格便宜，平台售卖的商品种类齐全，商品品质普遍优良。互联网的应用及其交易的自动化可以使企业用更低的成本满足更多元小众市场和定制产品的需求。例如，<strong>亚马逊正在全世界范围内进行翻译工作</strong>，这意味着也许再过一段时间，当消费者进入亚马逊网站，就可以通过普通的搜索界面看到美国、日本、韩国亚马逊的价格。那么，全球品牌的价格策略就会被这样一个翻译工作全盘打破，国与国之间的汇率汇差会在一个互联网页面上全盘衡量比较，消费者能够在全世界范围内用同一种语言去比较商品价格。简单的一个翻译工作，未来可能给行业带来的革命是致命性的。</p>
 <h5 id="2产业升级转型">2.产业升级转型</h5>
@@ -1115,13 +1301,7 @@ iPad mini 5：2048*1536
 <li><a href="#121%E7%BB%8F%E6%B5%8E%E8%B4%B8%E6%98%93%E7%8E%AF%E5%A2%83">1.2.1　经济贸易环境</a></li>
 <li><a href="#122%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86%E7%9A%84%E7%93%B6%E9%A2%88">1.2.2　跨境电商的瓶颈</a></li>
 <li><a href="#123%E6%94%BF%E7%AD%96%E7%BA%A2%E5%88%A9">1.2.3　政策红利</a></li>
-<li><a href="#124%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86%E4%B8%80%E5%B8%A6%E4%B8%80%E8%B7%AF">1.2.4　跨境电商“一带一路”</a>
-<ul>
-<li><a href="#1%E5%8C%97%E7%BA%BF%E4%B8%AD%E5%9B%BD%E4%B8%9C%E4%B8%89%E7%9C%81%E8%92%99%E5%8F%A4%E5%9B%BD%E4%BF%84%E7%BD%97%E6%96%AF%E5%8C%97%E6%AC%A7%E6%B3%A2%E7%BD%97%E7%9A%84%E6%B5%B7%E6%B2%BF%E5%B2%B8">1.北线，中国（东三省）—蒙古国—俄罗斯—北欧（波罗的海沿岸）</a></li>
-<li><a href="#2%E4%B8%AD%E7%BA%BF%E4%B8%AD%E5%9B%BD%E4%B8%AD%E4%BA%9A%E8%A5%BF%E4%BA%9A%E5%8F%8A%E4%B8%AD%E4%B8%9C%E4%B8%AD%E6%AC%A7%E8%A5%BF%E6%AC%A7">2.中线，中国—中亚—西亚及中东—中欧—西欧</a></li>
-<li><a href="#3%E5%8D%97%E7%BA%BF%E4%B8%AD%E5%9B%BD%E4%B8%9C%E5%8D%97%E4%BA%9A%E5%8D%97%E4%BA%9A%E4%B8%9C%E9%9D%9E%E5%8D%97%E6%AC%A7%E5%9C%B0%E4%B8%AD%E6%B5%B7%E6%B2%BF%E5%B2%B8">3.南线，中国—东南亚—南亚—东非—南欧（地中海沿岸）</a></li>
-</ul>
-</li>
+<li><a href="#124%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86%E4%B8%80%E5%B8%A6%E4%B8%80%E8%B7%AF">1.2.4　跨境电商“一带一路”</a></li>
 <li><a href="#125%E4%BA%92%E8%81%94%E7%BD%91%E5%A4%96%E8%B4%B8">1.2.5　互联网+外贸</a></li>
 </ul>
 </li>
@@ -1334,7 +1514,7 @@ iPad mini 5：2048*1536
 </li>
 </ul>
 </div>
-        
-        
-    </body>
-    </html>
+            
+            
+        </body>
+        </html>

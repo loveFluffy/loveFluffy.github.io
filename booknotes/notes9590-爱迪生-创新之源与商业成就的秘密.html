@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x7231;&#x8fea;&#x751f;&#xff1a;&#x521b;&#x65b0;&#x4e4b;&#x6e90;&#x4e0e;&#x5546;&#x4e1a;&#x6210;&#x5c31;&#x7684;&#x79d8;&#x5bc6;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x7231;&#x8fea;&#x751f;&#xff1a;&#x521b;&#x65b0;&#x4e4b;&#x6e90;&#x4e0e;&#x5546;&#x4e1a;&#x6210;&#x5c31;&#x7684;&#x79d8;&#x5bc6;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,448 +31,115 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
-		z-index: 1;
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="爱迪生创新之源与商业成就的秘密">爱迪生：创新之源与商业成就的秘密</h1>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="爱迪生创新之源与商业成就的秘密">爱迪生：创新之源与商业成就的秘密</h1>
 <h2 id="美里昂纳多迪格拉夫-著周海燕-译">[美]里昂纳多·迪格拉夫 著|周海燕 译</h2>
+<div class="mycomment">
+<p>描述了爱迪生本人的发明历程、开办实验室、公司的详实历程。对于电灯的发明、直流电和交流电的竞争等等描述十分详实。得益于他严格记录的习惯，历史事件的情况可以精确到具体的年月日。</p>
+<p>他的事业从电报开始，从纽约开始。涉及了他事业起步时寻求合作的其他大人物名字，作为一本了解历史故事的读物，非常不错。书里插入了很多老照片，也介绍了很多老资料里的内容，可见作者是下了很大功夫研究历史资料的。</p>
+<p>涉及的发明项目包括了电台、留声机、电灯、蓄电池、电影、矿石加工、水泥、橡胶，有的项目都是同时进行的，这种发明速度真是令人震撼。这不禁令我想到，在背靠中国强大生产力的时代下，当代中国也该有类似的发明家了才是。</p>
+</div>
 <h3 id="序">序</h3>
 <p>很显然，爱迪生的发明是史无前例的。但正如这本书中明确指出的，他的工作方式也是他取得成功的关键。例如，爱迪生有意识地借鉴了同辈人的想法，同时也不断吸取前人的经验教训。同样重要的是，他召集了一群人组建了一支团队——工程师、化学家、数学家和机械师——他信任这支团队，并赋予他们权力实现他的想法。直到今天，有些名字可能都不为人所知，像巴彻勒和克鲁西，但当初如果没有他们的贡献，爱迪生也不可能做出今天这么大的成就。</p>
 <p>其次，爱迪生是一个非常实际的人。他很早就认为，凭空冒出一些奇思妙想是远远不够的，他要发明一些人们想要的东西。这就意味着他要了解市场，设计的产品要满足顾客需求，而且他还得说服投资者来支持和推广他的想法。比如电灯泡，爱迪生发明的可不仅仅是一个电灯泡，他发明的是一个能实际使用，也能销售的电灯泡。</p>
@@ -1048,8 +717,69 @@ div.toc ul>li>ul>li>ul>li>ul>li {
 <p>作为电报发明家，爱迪生的成就使西部联盟等公司的管理者确信赞助爱迪生的实验室将能高效开发出公司所需的技术，进而控制市场，并扩大市场占有率。通过打造可靠的声誉，发明生产研究工具，爱迪生又向那些控制西部联盟等公司的资本家们证明，与其等待独立的发明者携创意上门寻求合作，不如创建长久的工业研究实验室，显然后者效率更高。也正是爱迪生使得技术创新成为安全可靠的投资，同时也证明了企业资本主义可以长期稳定地创造并控制生产工具，使其产生新观念，生产新产品。</p>
 <p>因为爱迪生的影响，以团队为基础的工业研究成为19世纪末20世纪初的重要创新模式。在这一时期，许多大型企业，如通用电气、杜邦、美国电话电报公司、康宁、西方电气等陆续建立了自己的研究实验室。历史学家卡罗尔·珀塞尔说，第一次世界大战前，美国有375个研究实验室，到1931年增加到1600个 3 。那些无力建立实验室的公司可以有偿使用合同研究人员的服务，比如亚瑟·D.理特咨询顾问公司。亚瑟·D.理特是一位受训于麻省理工学院的化学家，1886年他创立了理特咨询顾问公司。当然，像航空先驱莱特兄弟（奥维尔·莱特和威尔伯·莱特）这样的独立发明家也能够做出贡献，不过在20世纪，技术创新的动力还是那些在工业公司、政府和大学实验室里工作的研究团队，这些团队在化学、药品和核能等方面都取得了重要进展。</p>
 <p>近年来，也有一些公司为了降低成本，纷纷缩减研发经费或关闭实验室。那么问题来了，这些公司如何在竞争激烈、迅速变化的经济体制中保持创新呢？爱迪生的经验今天仍有借鉴意义，因为他遇到过同样的问题，我们希望能从他的例子中看到他在经营盈利性企业时是如何迎接挑战的；我们可以到他的实验室里看看他是如何组织工人工作的；我们能从实验室的笔记本中了解他是如何把想法变成有形产品的；我们还能从他同员工、合伙人、消费者的信件中学习他是如何应对有关设计、制造和销售问题的。爱迪生不仅发展了形成全部新产业基础的新技术，还倡导投资者把资本投入到公司中——直到今天，这种投资方式仍是我们经济发展的动力。</p>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BA%8F">序</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E5%BC%95%E8%A8%80">引言</a></li>
+<li><a href="#1-%E4%B8%80%E4%B8%AA%E5%88%9B%E6%96%B0%E8%80%85%E7%9A%84%E6%95%99%E8%82%B2%E7%BB%8F%E5%8E%86">1 一个创新者的教育经历</a>
+<ul>
+<li><a href="#%E7%94%B5%E7%AC%94">电笔</a></li>
+</ul>
+</li>
+<li><a href="#2-%E5%8F%91%E6%98%8E%E5%B7%A5%E5%8E%82">2 发明工厂</a>
+<ul>
+<li><a href="#%E7%88%B1%E8%BF%AA%E7%94%9F%E7%9A%84%E7%AC%94%E8%AE%B0%E6%9C%AC">爱迪生的笔记本</a></li>
+</ul>
+</li>
+<li><a href="#3-%E9%94%A1%E7%AE%94%E7%95%99%E5%A3%B0%E6%9C%BA">3 锡箔留声机</a></li>
+<li><a href="#4-%E4%B8%80%E7%AC%94%E5%B7%A8%E9%A2%9D%E8%B4%A2%E5%AF%8C%E7%88%B1%E8%BF%AA%E7%94%9F%E7%9A%84%E7%94%B5%E6%B0%94%E7%85%A7%E6%98%8E%E7%B3%BB%E7%BB%9F">4 一笔巨额财富：爱迪生的电气照明系统</a>
+<ul>
+<li><a href="#%E7%94%B5%E6%B0%94%E5%8C%96%E9%93%81%E8%B7%AF">电气化铁路</a></li>
+</ul>
+</li>
+<li><a href="#5-%E4%BB%8E%E9%97%A8%E7%BD%97%E5%B8%95%E5%85%8B%E5%88%B0%E8%A5%BF%E5%A5%A5%E5%85%B0%E6%B2%BB">5 从门罗帕克到西奥兰治</a>
+<ul>
+<li><a href="#%E4%BA%A4%E6%B5%81%E7%94%B5%E4%B8%8E%E7%9B%B4%E6%B5%81%E7%94%B5%E4%B9%8B%E4%BA%89">交流电与直流电之争</a></li>
+</ul>
+</li>
+<li><a href="#6-%E7%95%99%E5%A3%B0%E6%9C%BA%E8%B5%B0%E8%BF%9B%E5%8D%83%E5%AE%B6%E4%B8%87%E6%88%B7">6 留声机走进千家万户</a>
+<ul>
+<li><a href="#%E4%BC%9A%E8%AF%B4%E8%AF%9D%E7%9A%84%E6%B4%8B%E5%A8%83%E5%A8%83">会说话的洋娃娃</a></li>
+<li><a href="#%E7%88%B1%E8%BF%AA%E7%94%9F%E7%94%B5%E8%AF%9D">爱迪生电话</a></li>
+</ul>
+</li>
+<li><a href="#7-%E7%94%B5%E5%BD%B1">7 电影</a>
+<ul>
+<li><a href="#%E7%88%B1%E8%BF%AA%E7%94%9F%E5%AE%B6%E7%94%A8%E6%8A%95%E5%BD%B1%E6%94%BE%E6%98%A0%E6%9C%BA">爱迪生家用投影放映机</a></li>
+</ul>
+</li>
+<li><a href="#8-%E7%9F%BF%E7%9F%B3%E5%8A%A0%E5%B7%A5">8 矿石加工</a>
+<ul>
+<li><a href="#x%E5%B0%84%E7%BA%BF">X射线</a></li>
+</ul>
+</li>
+<li><a href="#9-%E6%B3%A2%E7%89%B9%E5%85%B0%E6%B0%B4%E6%B3%A5">9 波特兰水泥</a></li>
+<li><a href="#10-%E8%93%84%E7%94%B5%E6%B1%A0">10 蓄电池</a></li>
+<li><a href="#11-%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%B8%96%E7%95%8C%E5%A4%A7%E6%88%98%E4%B8%AD%E7%9A%84%E7%88%B1%E8%BF%AA%E7%94%9F">11 第一次世界大战中的爱迪生</a>
+<ul>
+<li><a href="#1914%E5%B9%B4%E7%81%AB%E7%81%BE">1914年火灾</a></li>
+</ul>
+</li>
+<li><a href="#12-%E6%A9%A1%E8%83%B6">12 橡胶</a>
+<ul>
+<li><a href="#%E7%88%B1%E8%BF%AA%E7%94%9F%E7%89%8C%E7%94%B5%E5%99%A8">爱迪生牌电器</a></li>
+</ul>
+</li>
+<li><a href="#13-%E8%BF%BD%E5%BF%86%E5%A5%87%E6%89%8D">13 追忆奇才</a>
+<ul>
+<li><a href="#%E7%88%B1%E8%BF%AA%E7%94%9F%E7%9A%84%E9%95%BF%E5%AF%BF%E7%A7%98%E8%AF%80">爱迪生的长寿秘诀</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

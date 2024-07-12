@@ -1,178 +1,782 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x56fe;&#x7a77;&#x5bf9;&#x8bdd;&#x5f55;&#xff1a;&#x6211;&#x7684;&#x65b0;&#x4e1c;&#x65b9;&#x4eba;&#x751f;&#x54a8;&#x8be2;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="../stylesheets/notestyles.css" />
-    <title>图穷对话录——我的新东方人生咨询</title>
-    <link rel="icon" href="../images/x.ico" />
-</head>
-<body> <!-- CHANGE HERE -->
-    <h1>Notes#9003: 图穷对话录——我的新东方人生咨询</h1>
-    <h2>徐小平 著</h2>
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
 
-    <h4>第1篇 丹麦童话公主</h4>
-    <p></p>
-    <p></p>
+</style>
+            
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
 
-    <h4>第2篇 醉酒当歌钟图洛</h4>
-    <p>新的价值体系给你带来的虽然是新的价值。但是，要获得这个巨大的价值，人人都必须经历巨大的挑战和改变。并非所有人都能适应市场经济时代的竞争和取胜压力的。</p>
-    <p>钟图洛的痛苦，与其说是不满足于现状的痛苦，不如说是潜意识里发现自己无法适应现实的痛苦。</p>
-    <p></p>
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
 
-    <h4>第3篇 可控人生核聚变</h4>
-    <p>虚荣和自卑、面子与浮华，是多少人人生的陷阱、青春的敌人？</p>
-    <p>你的同学，也许会在听说你出国消息后祝贺你一分钟，但他们转眼就会为自己的心思而烦恼。</p>
-    <p><strong>教育与经验，是人生飞精华；名声与羡慕，是青春的浮华。要酿集精华，而不要采揽浮华。</strong></p>
-    <p>惰性常常会使人做出看上去比较容易、但很可能毁了自己一生的选择。这无异于饮鸩止渴。这个毒药之所以迷人，在于它的毒性不通过其他人更高的成功、社会更好的发展是看不出来的。</p>
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
-    <h4>第4篇 四月是残忍的季节</h4>
-    <p>四月十五日，是美国大学奖学金截止的日子。</p>
-    <p>这种几乎要出人命的冲突，其实本来完全是可以避免的，而且可以避免出浪漫情怀出来。想想：如果罗娑这样的妙龄女郎，在兼职之前和他打个招呼，在拿了外快之后向他挤个媚眼，送点秋波，赠点水果，其实问题就解决啦。领导也是人，理解万岁嘛！</p>
-    <p>中国社会有许多东西，看上去神圣无比，其实一钱不值。许多在今天搞的别人走投无路的价值标准和政策权威，明天可能就是狗屎一堆。政府有时候出于无聊会做一些规定让你感到幽默，有时候又会出台一些东西让你看见希望。</p>
-    <p>俞敏洪点评：她认为丢了户口和分配的工作就是丢了生命。陷入了这样的误区，生活永远不能开阔。有些人一生没有辉煌，并不是因为他们不能辉煌，而是因为他们的头脑中没有闪过辉煌的念头，或者不知道应该如何辉煌。罗娑被户口、单位这样庸俗的东西窒息了。如果当初我留在北大不出来，结果也是一样的。</p>
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
 
-    <h4>第5篇 在水一方</h4>
-    <p>二十五岁，是人生的一个分水岭。在这个年龄，你如果已经找到了自己的奋斗方向，你的奋斗之程就不会那么空虚缥缈，而将一路高歌、阳光明媚——因为他知道他的人生之车要驶向哪里。如果这个时候，你并不知道你自己想做什么、爱做什么、能做什么，你的未来就有可能黑云压城，就潜伏者如磐风雨。你就必须从噩梦中大叫一声惊醒自己：我的事业在哪里？我的一生做什么？</p>
-    <p><strong>不要被别人的成功所煎熬，为自己的失落而沮丧，否则，你已经浪费的宝贵青春，势必将继续被浪费。</strong></p>
-    <p>为了留学而留学。我相信她去日本背后的原因，就是把出国本身当成了一个事业，这就是出国的无意识。</p>
-    <p></p>
+.markdown-alert>:first-child {
+  margin-top: 0
+}
 
-    <h4>第6篇 治疗药剂师的处方</h4>
-    <p>幸福的人生包含这么几个东西，好的教育，好的职业，好的家庭。但是何乃悟在得到了好的教育之后，恰恰没有顺着这个道路去追求：追求好的职业，追求爱情与爱情的果实——家庭，却要把自己的未来投入新的知识和新学位。这实际上是整个留学集体无意识的集中体现，造成了对现实生命的践踏，否决了奋斗的真正价值和留学的真正目的。更不可原谅的是，他还沉迷于其中，居然还为之骄傲！</p>
-    <p></p>
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
 
-    <h4>第7篇 留学新婚别</h4>
-    <p></p>
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
 
-    <h4>第8篇 不留学一代女</h4>
-    <p>一个宝贵的人生诀窍：将来你有关键的问题需要关键的人来解决，最好的办法是绕过秘书，直接抓住最高负责人。这是成功者们经常交流的智慧。</p>
-    <p>中央电视台六套节目是电影频道，需要大量的国产电影。但是由于种种原因，节目来源匮乏，所以电影频道向制片行业的人推出了一个供片协议：制片商把剧本提供给电影频道审查，通过审查后电影频道保证以一定价格收购，这样双方都保证有利可图：电影频道有了源源不断的节目来源，制片商的投资和创造有了受益和播出的保证。一般现在电影频道播出的这种类型的片子，制作成本都在三十至五十万人民币之间，收购价一般是保证有个百分之十到二十的利润。</p>
-    <p>因为是预先审查制度，所以，投资基本上是百分之百的保证。利润不算高，但却非常实在，非常稳定。</p>
-    <p>难怪步卓月走进来的时候给我一个馄饨铺小老板娘的感觉。原来她确实是在做着文化快餐呢！唯一的区别，从她的眼中看来，馄饨是快餐文化，而电影电视呢，是文化快餐！</p>
-    <p>留学的意义有三种：曰走出困境，获得竞争能力；曰走上佳境，获得领导能力；曰走入意境，获得预见能力。</p>
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
 
-    <h4>第9篇 “哈佛女孩”李菲雅</h4>
-    <p>留学摸象主义：面对自己的未来，人们在看到全部面貌之前，抓住什么就吊在什么上面，根本不去为自己的未来进行全面设计和综合考虑。</p>
-    <p></p>
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
 
-    <h4>第10篇 沙玫十日谈</h4>
-    <p><strong>第一日：我和沙玫谈思想</strong></p>
-    <p>我认为沙玫到了必须出国的时候，<br/>
-        第一个原因是考虑到沙玫的年龄因素。沙玫三十已经出头，在国内的奋斗已经达到极限。<br/>
-        第二个原因，是因为我看到她能力和学历的巨大落差。沙玫属于高能低分的人。<br/>
-        第三个原因，是因为沙玫已经具备出国的必备条件。<br/>第四个原因，是她一无所有的生活状况。沙玫在北京没有任何可供利用的资源和关系、更谈不上什么特权。<br/>
-        最后一个原因，并非是最小的因素，我想帮助沙玫迅速出国，是因为她的单身状态。通过出国，也许能够改变她的爱情观和婚姻观，给她带来新的机会。</p>
-    <p>就像穷山沟里的孩子，拔掉农根的唯一出路就是高考那样，沙玫改变人生困境的重要通路，似乎就是出国了。除此之外，对于沙玫这样的女性，还有多少更好的选择呢？</p>
-    <p><strong>第二日：我和沙玫谈留学</strong></p>
-    <p>留学必须有长期的人生设计概念。在留学前，就必须考虑到留学后到底在哪里、做什么！出国前的背景、出国后的学位、毕业后的工作，这三点必须专业相等或行业相等，至少必须是大致相等。只有这样，留学奋斗者才能击中目标，获得成功。</p>
-    <p>留学、移民以及立足国内积累出国的资本或接着在国内奋斗的基础，这三点思想，基本能够覆盖一个“适龄出国青年”奋斗的几个主要方向。而且，这三个方向并不矛盾、并无冲突，而是互为补充：<br/>
-        <strong>*国内的价值</strong>：在国内努力做好哪怕是最简单的工作，积累重要的行业经验，这个经验对于一个人无论是去加拿大移民还是去美国留学，都是非常宝贵的求职和入学资历资本；<br/>
-        <strong>*留学的价值</strong>：获得北美MBA（即使是MBA，如果没有特定行业经验其价值也会大打折扣）对于回到中国发展或去加拿大谋生，她的竞争力就有了本质的提升、对于获得一份像样的职业会有决定性的帮助（否则她去了加拿大也没有什么出路）；<br/>
-        <strong>*移民的价值</strong>：加拿大移民身份可以确保沙玫进入北美，确保沙玫以低廉的学费在世界一流的加拿大高等学府里面，完成她所紧迫需要的海外高等教育，同样对她一生的事业，无论她在北美还是在中国，都有决定性的意义；</p>
-    <p><strong>第三日：我和沙玫谈婚姻</strong></p>
-    <p>“沙玫同志，‘人最宝贵的是生命，生命于我们只有一次’——虽然婚姻可以有好多，只要不是同时并发就行，但我们依然要像珍重生命那样珍重自己的爱情啊。”</p>
-    <p><strong>第四日：我和沙玫谈职业</strong></p>
-    <p><strong>一、沙玫的铁屋子</strong></p>
-    <p></p>
-    <p><strong>二、沙玫的金钥匙</strong></p>
-    <p></p>
-    <p><strong>第五日：我和沙玫谈</strong></p>
-    <p></p>
-    <p><strong>第六日：我和沙玫谈</strong></p>
-    <p></p>
-    <p><strong>第七日：我和沙玫谈</strong></p>
-    <p></p>
-    <p><strong>第八日：我和沙玫谈</strong></p>
-    <p></p>
-    <p><strong>第九日：我和沙玫谈</strong></p>
-    <p></p>
-    <p><strong>第十日：我和沙玫谈</strong></p>
-    <p></p>
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
 
-    <h4>第11篇 柯莲九歌</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
 
-    <h4>第12篇 陈章良与季新音</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
 
-    <h4>第13篇 施雨前途失落园</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
 
-    <h4>第14篇 夏天第一朵玫瑰</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
 
-    <h4>第15篇 三十而立的本质</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
 
-    <h4>第16篇 薛宝失败的秘密</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
 
-    <h4>第17篇 仇伍的愤怒</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
 
-    <h4>第18篇 大连的海伦·凯勒</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
 
-    <h4>第19篇 杭州的比尔·盖茨</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+</style>
+        <style>
+@charset "utf-8";
 
-    <h4>第20篇 落杉的留学抉择</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
 
-    <h4>第21篇 乔麦的第二学位</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
 
-    <h4>第22篇 云云的青春欢歌</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+	padding: 0;
+}
 
-    <h4>第23篇 现代范进情结与未来胡屠精神</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
 
-    <h4>第24篇 背离马列主义的马列主义研究生</h4>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
 
-</body>
-</html>
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 30px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ffcccc;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 4px solid #ffcc99;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+/*笔记中的普通表格*/
+table {
+	/*居中*/
+	margin: 0 auto;
+	max-width: 80%;
+	font-size: smaller;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	background-color: transparent;
+	border: solid rgb(80, 80, 80) 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: rgb(221, 221, 221);
+	text-align: center;
+	font-weight: bold;
+}
+
+/*笔记中的普通图片*/
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 笔记里插入我的评价 ======== */
+div.mycomment {
+	font-size: smaller;
+
+	padding: 20px 20px 5px 30px;
+	margin: 40px 5%;
+	background-color: #e5eecc;
+
+	border: solid 2px #8ca86d;
+	border-radius: 30px;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track 
+	scrollbar-color: skyblue #ededed;*/
+	scrollbar-color: rgb(178, 216, 232) #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	.content {
+		width: 73%;
+		padding-left: 0.5%;
+	}
+
+	div.toc {
+		/*max-width: 29%;*/
+		width: 26%;
+		height: 100vh;
+		padding-right: 0;
+
+		float: left;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		/* list-style-position: inside; */
+		line-height: 1.8;
+	}
+
+	div.toc a {
+		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
+		display: block;
+		/*隐藏链接下划线*/
+		text-decoration: none;
+		color: white;
+
+		/*禁止换行*/
+		white-space: nowrap;
+		/*超出部分直接隐藏不显示*/
+		overflow: hidden;
+		/* 超出部分虽不显示但末尾添加省略号
+		text-overflow: ellipsis;*/
+	}
+
+	div.toc a:hover {
+		color: black;
+	}
+
+	div.toc ul>li>a:hover {
+		background-color: #ff7e79;
+	}
+
+	div.toc ul>li>ul>li>a:hover {
+		background-color: #ffcccc;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a:hover {
+		background-color: #ffcc99;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
+	div.toc ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+
+		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
+		z-index: 1;
+		/*skyblue*/
+		background-color: #1c1b22;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: white;
+	}
+
+	div.toc ul>li>ul>li {
+		padding-left: 20px;
+
+		/*rgb(178, 216, 232)*/
+		background-color: #42414d;
+		font-weight: normal;
+		font-size: 0.8em;
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		padding-left: 20px;
+
+		/*background-color: rgb(210, 231, 239);*/
+		font-weight: normal;
+		font-size: 0.75em;
+	}
+
+	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
+	div.toc ul>li>ul>li>ul>li>ul>li {
+	background-color: rgb(228, 235, 238);
+	font-weight: normal;
+	padding-left: 20px;
+	font-size: 0.6em;
+	}
+	*/
+}
+
+/*
+div.toc ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li,
+div.toc ul>li>ul>li>ul>li>ul>li {
+*/
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="content">
+<h1 id="图穷对话录我的新东方人生咨询">图穷对话录：我的新东方人生咨询</h1>
+<h2 id="徐小平">徐小平</h2>
+<div class="mycomment">
+</div>
+<h3 id="第1篇-丹麦童话公主">第1篇 丹麦童话公主</h3>
+<h3 id="第2篇-醉酒当歌钟图洛">第2篇 醉酒当歌钟图洛</h3>
+<p>新的价值体系给你带来的虽然是新的价值。但是，要获得这个巨大的价值，人人都必须经历巨大的挑战和改变。并非所有人都能适应市场经济时代的竞争和取胜压力的。</p>
+<p>钟图洛的痛苦，与其说是不满足于现状的痛苦，不如说是潜意识里发现自己无法适应现实的痛苦。</p>
+<h3 id="第3篇-可控人生核聚变">第3篇 可控人生核聚变</h3>
+<p>虚荣和自卑、面子与浮华，是多少人人生的陷阱、青春的敌人？</p>
+<p>你的同学，也许会在听说你出国消息后祝贺你一分钟，但他们转眼就会为自己的心思而烦恼。</p>
+<blockquote>
+<p>教育与经验，是人生飞精华；<br>
+名声与羡慕，是青春的浮华。<br>
+要酿集精华，而不要采揽浮华。</p>
+</blockquote>
+<p>惰性常常会使人做出看上去比较容易、但很可能毁了自己一生的选择。这无异于饮鸩止渴。这个毒药之所以迷人，在于它的毒性不通过其他人更高的成功、社会更好的发展是看不出来的。</p>
+<h3 id="第4篇-四月是残忍的季节">第4篇 四月是残忍的季节</h3>
+<p>四月十五日，是美国大学奖学金截止的日子。</p>
+<p>这种几乎要出人命的冲突，其实本来完全是可以避免的，而且可以避免出浪漫情怀出来。想想：如果罗娑这样的妙龄女郎，在兼职之前和他打个招呼，在拿了外快之后向他挤个媚眼，送点秋波，赠点水果，其实问题就解决啦。领导也是人，理解万岁嘛！</p>
+<p>中国社会有许多东西，看上去神圣无比，其实一钱不值。许多在今天搞的别人走投无路的价值标准和政策权威，明天可能就是狗屎一堆。政府有时候出于无聊会做一些规定让你感到幽默，有时候又会出台一些东西让你看见希望。</p>
+<p>俞敏洪点评：她认为丢了户口和分配的工作就是丢了生命。陷入了这样的误区，生活永远不能开阔。有些人一生没有辉煌，并不是因为他们不能辉煌，而是因为他们的头脑中没有闪过辉煌的念头，或者不知道应该如何辉煌。罗娑被户口、单位这样庸俗的东西窒息了。如果当初我留在北大不出来，结果也是一样的。</p>
+<h3 id="第5篇-在水一方">第5篇 在水一方</h3>
+<p>二十五岁，是人生的一个分水岭。在这个年龄，你如果已经找到了自己的奋斗方向，你的奋斗之程就不会那么空虚缥缈，而将一路高歌、阳光明媚——因为他知道他的人生之车要驶向哪里。如果这个时候，你并不知道你自己想做什么、爱做什么、能做什么，你的未来就有可能黑云压城，就潜伏者如磐风雨。你就必须从噩梦中大叫一声惊醒自己：我的事业在哪里？我的一生做什么？</p>
+<p><strong>不要被别人的成功所煎熬，为自己的失落而沮丧，否则，你已经浪费的宝贵青春，势必将继续被浪费</strong>。</p>
+<p>为了留学而留学。我相信她去日本背后的原因，就是把出国本身当成了一个事业，这就是出国的无意识。</p>
+<h3 id="第6篇-治疗药剂师的处方">第6篇 治疗药剂师的处方</h3>
+<p>幸福的人生包含这么几个东西，好的教育，好的职业，好的家庭。但是何乃悟在得到了好的教育之后，恰恰没有顺着这个道路去追求：追求好的职业，追求爱情与爱情的果实——家庭，却要把自己的未来投入新的知识和新学位。这实际上是整个留学集体无意识的集中体现，造成了对现实生命的践踏，否决了奋斗的真正价值和留学的真正目的。更不可原谅的是，他还沉迷于其中，居然还为之骄傲！</p>
+<h3 id="第7篇-留学新婚别">第7篇 留学新婚别</h3>
+<h3 id="第8篇-不留学一代女">第8篇 不留学一代女</h3>
+<p>一个宝贵的人生诀窍：将来你有关键的问题需要关键的人来解决，最好的办法是绕过秘书，直接抓住最高负责人。这是成功者们经常交流的智慧。</p>
+<p>中央电视台六套节目是电影频道，需要大量的国产电影。但是由于种种原因，节目来源匮乏，所以电影频道向制片行业的人推出了一个供片协议：制片商把剧本提供给电影频道审查，通过审查后电影频道保证以一定价格收购，这样双方都保证有利可图：电影频道有了源源不断的节目来源，制片商的投资和创造有了受益和播出的保证。一般现在电影频道播出的这种类型的片子，制作成本都在三十至五十万人民币之间，收购价一般是保证有个百分之十到二十的利润。</p>
+<p>因为是预先审查制度，所以，投资基本上是百分之百的保证。利润不算高，但却非常实在，非常稳定。</p>
+<p>难怪步卓月走进来的时候给我一个馄饨铺小老板娘的感觉。原来她确实是在做着文化快餐呢！唯一的区别，从她的眼中看来，馄饨是快餐文化，而电影电视呢，是文化快餐！</p>
+<p>留学的意义有三种：曰走出困境，获得竞争能力；曰走上佳境，获得领导能力；曰走入意境，获得预见能力。</p>
+<h3 id="第9篇-哈佛女孩李菲雅">第9篇 “哈佛女孩”李菲雅</h3>
+<p>留学摸象主义：面对自己的未来，人们在看到全部面貌之前，抓住什么就吊在什么上面，根本不去为自己的未来进行全面设计和综合考虑。</p>
+<h3 id="第10篇-沙玫十日谈">第10篇 沙玫十日谈</h3>
+<h4 id="第一日我和沙玫谈思想">第一日：我和沙玫谈思想</h4>
+<p>我认为沙玫到了必须出国的时候，<br>
+第一个原因是考虑到沙玫的年龄因素。沙玫三十已经出头，在国内的奋斗已经达到极限。<br>
+第二个原因，是因为我看到她能力和学历的巨大落差。沙玫属于高能低分的人。<br>
+第三个原因，是因为沙玫已经具备出国的必备条件。<br>
+第四个原因，是她一无所有的生活状况。沙玫在北京没有任何可供利用的资源和关系、更谈不上什么特权。<br>
+最后一个原因，并非是最小的因素，我想帮助沙玫迅速出国，是因为她的单身状态。通过出国，也许能够改变她的爱情观和婚姻观，给她带来新的机会。</p>
+<p>就像穷山沟里的孩子，拔掉农根的唯一出路就是高考那样，沙玫改变人生困境的重要通路，似乎就是出国了。除此之外，对于沙玫这样的女性，还有多少更好的选择呢？</p>
+<h4 id="第二日我和沙玫谈留学">第二日：我和沙玫谈留学</h4>
+<p>留学必须有长期的人生设计概念。在留学前，就必须考虑到留学后到底在哪里、做什么！出国前的背景、出国后的学位、毕业后的工作，这三点必须专业相等或行业相等，至少必须是大致相等。只有这样，留学奋斗者才能击中目标，获得成功。</p>
+<p>留学、移民以及立足国内积累出国的资本或接着在国内奋斗的基础，这三点思想，基本能够覆盖一个“适龄出国青年”奋斗的几个主要方向。而且，这三个方向并不矛盾、并无冲突，而是互为补充：</p>
+<ul>
+<li><strong>国内的价值</strong>：在国内努力做好哪怕是最简单的工作，积累重要的行业经验，这个经验对于一个人无论是去加拿大移民还是去美国留学，都是非常宝贵的求职和入学资历资本；</li>
+<li><strong>留学的价值</strong>：获得北美MBA（即使是MBA，如果没有特定行业经验其价值也会大打折扣）对于回到中国发展或去加拿大谋生，她的竞争力就有了本质的提升、对于获得一份像样的职业会有决定性的帮助（否则她去了加拿大也没有什么出路）；</li>
+<li><strong>移民的价值</strong>：加拿大移民身份可以确保沙玫进入北美，确保沙玫以低廉的学费在世界一流的加拿大高等学府里面，完成她所紧迫需要的海外高等教育，同样对她一生的事业，无论她在北美还是在中国，都有决定性的意义；</li>
+</ul>
+<h4 id="第三日我和沙玫谈婚姻">第三日：我和沙玫谈婚姻</h4>
+<p>“沙玫同志，‘人最宝贵的是生命，生命于我们只有一次’——虽然婚姻可以有好多，只要不是同时并发就行，但我们依然要像珍重生命那样珍重自己的爱情啊。”</p>
+<h4 id="第四日我和沙玫谈职业">第四日：我和沙玫谈职业</h4>
+<h5 id="一沙玫的铁屋子">一、沙玫的铁屋子</h5>
+<h5 id="二沙玫的金钥匙">二、沙玫的金钥匙</h5>
+<h4 id="第五日我和沙玫谈">第五日：我和沙玫谈</h4>
+<h4 id="第六日我和沙玫谈">第六日：我和沙玫谈</h4>
+<h4 id="第七日我和沙玫谈">第七日：我和沙玫谈</h4>
+<h4 id="第八日我和沙玫谈">第八日：我和沙玫谈</h4>
+<h4 id="第九日我和沙玫谈">第九日：我和沙玫谈</h4>
+<h4 id="第十日我和沙玫谈">第十日：我和沙玫谈</h4>
+<h3 id="第11篇-柯莲九歌">第11篇 柯莲九歌</h3>
+<h3 id="第12篇-陈章良与季新音">第12篇 陈章良与季新音</h3>
+<h3 id="第13篇-施雨前途失落园">第13篇 施雨前途失落园</h3>
+<h3 id="第14篇-夏天第一朵玫瑰">第14篇 夏天第一朵玫瑰</h3>
+<h3 id="第15篇-三十而立的本质">第15篇 三十而立的本质</h3>
+<h3 id="第16篇-薛宝失败的秘密">第16篇 薛宝失败的秘密</h3>
+<h3 id="第17篇-仇伍的愤怒">第17篇 仇伍的愤怒</h3>
+<h3 id="第18篇-大连的海伦凯勒">第18篇 大连的海伦·凯勒</h3>
+<h3 id="第19篇-杭州的比尔盖茨">第19篇 杭州的比尔·盖茨</h3>
+<h3 id="第20篇-落杉的留学抉择">第20篇 落杉的留学抉择</h3>
+<h3 id="第21篇-乔麦的第二学位">第21篇 乔麦的第二学位</h3>
+<h3 id="第22篇-云云的青春欢歌">第22篇 云云的青春欢歌</h3>
+<h3 id="第23篇-现代范进情结与未来胡屠精神">第23篇 现代范进情结与未来胡屠精神</h3>
+<h3 id="第24篇-背离马列主义的马列主义研究生">第24篇 背离马列主义的马列主义研究生</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E7%AC%AC1%E7%AF%87-%E4%B8%B9%E9%BA%A6%E7%AB%A5%E8%AF%9D%E5%85%AC%E4%B8%BB">第1篇 丹麦童话公主</a></li>
+<li><a href="#%E7%AC%AC2%E7%AF%87-%E9%86%89%E9%85%92%E5%BD%93%E6%AD%8C%E9%92%9F%E5%9B%BE%E6%B4%9B">第2篇 醉酒当歌钟图洛</a></li>
+<li><a href="#%E7%AC%AC3%E7%AF%87-%E5%8F%AF%E6%8E%A7%E4%BA%BA%E7%94%9F%E6%A0%B8%E8%81%9A%E5%8F%98">第3篇 可控人生核聚变</a></li>
+<li><a href="#%E7%AC%AC4%E7%AF%87-%E5%9B%9B%E6%9C%88%E6%98%AF%E6%AE%8B%E5%BF%8D%E7%9A%84%E5%AD%A3%E8%8A%82">第4篇 四月是残忍的季节</a></li>
+<li><a href="#%E7%AC%AC5%E7%AF%87-%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9">第5篇 在水一方</a></li>
+<li><a href="#%E7%AC%AC6%E7%AF%87-%E6%B2%BB%E7%96%97%E8%8D%AF%E5%89%82%E5%B8%88%E7%9A%84%E5%A4%84%E6%96%B9">第6篇 治疗药剂师的处方</a></li>
+<li><a href="#%E7%AC%AC7%E7%AF%87-%E7%95%99%E5%AD%A6%E6%96%B0%E5%A9%9A%E5%88%AB">第7篇 留学新婚别</a></li>
+<li><a href="#%E7%AC%AC8%E7%AF%87-%E4%B8%8D%E7%95%99%E5%AD%A6%E4%B8%80%E4%BB%A3%E5%A5%B3">第8篇 不留学一代女</a></li>
+<li><a href="#%E7%AC%AC9%E7%AF%87-%E5%93%88%E4%BD%9B%E5%A5%B3%E5%AD%A9%E6%9D%8E%E8%8F%B2%E9%9B%85">第9篇 “哈佛女孩”李菲雅</a></li>
+<li><a href="#%E7%AC%AC10%E7%AF%87-%E6%B2%99%E7%8E%AB%E5%8D%81%E6%97%A5%E8%B0%88">第10篇 沙玫十日谈</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%97%A5%E6%88%91%E5%92%8C%E6%B2%99%E7%8E%AB%E8%B0%88%E6%80%9D%E6%83%B3">第一日：我和沙玫谈思想</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%97%A5%E6%88%91%E5%92%8C%E6%B2%99%E7%8E%AB%E8%B0%88%E7%95%99%E5%AD%A6">第二日：我和沙玫谈留学</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%97%A5%E6%88%91%E5%92%8C%E6%B2%99%E7%8E%AB%E8%B0%88%E5%A9%9A%E5%A7%BB">第三日：我和沙玫谈婚姻</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E6%97%A5%E6%88%91%E5%92%8C%E6%B2%99%E7%8E%AB%E8%B0%88%E8%81%8C%E4%B8%9A">第四日：我和沙玫谈职业</a>
+<ul>
+<li><a href="#%E4%B8%80%E6%B2%99%E7%8E%AB%E7%9A%84%E9%93%81%E5%B1%8B%E5%AD%90">一、沙玫的铁屋子</a></li>
+<li><a href="#%E4%BA%8C%E6%B2%99%E7%8E%AB%E7%9A%84%E9%87%91%E9%92%A5%E5%8C%99">二、沙玫的金钥匙</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E6%97%A5%E6%88%91%E5%92%8C%E6%B2%99%E7%8E%AB%E8%B0%88">第五日：我和沙玫谈</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E6%97%A5%E6%88%91%E5%92%8C%E6%B2%99%E7%8E%AB%E8%B0%88">第六日：我和沙玫谈</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E6%97%A5%E6%88%91%E5%92%8C%E6%B2%99%E7%8E%AB%E8%B0%88">第七日：我和沙玫谈</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E6%97%A5%E6%88%91%E5%92%8C%E6%B2%99%E7%8E%AB%E8%B0%88">第八日：我和沙玫谈</a></li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E6%97%A5%E6%88%91%E5%92%8C%E6%B2%99%E7%8E%AB%E8%B0%88">第九日：我和沙玫谈</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E6%97%A5%E6%88%91%E5%92%8C%E6%B2%99%E7%8E%AB%E8%B0%88">第十日：我和沙玫谈</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC11%E7%AF%87-%E6%9F%AF%E8%8E%B2%E4%B9%9D%E6%AD%8C">第11篇 柯莲九歌</a></li>
+<li><a href="#%E7%AC%AC12%E7%AF%87-%E9%99%88%E7%AB%A0%E8%89%AF%E4%B8%8E%E5%AD%A3%E6%96%B0%E9%9F%B3">第12篇 陈章良与季新音</a></li>
+<li><a href="#%E7%AC%AC13%E7%AF%87-%E6%96%BD%E9%9B%A8%E5%89%8D%E9%80%94%E5%A4%B1%E8%90%BD%E5%9B%AD">第13篇 施雨前途失落园</a></li>
+<li><a href="#%E7%AC%AC14%E7%AF%87-%E5%A4%8F%E5%A4%A9%E7%AC%AC%E4%B8%80%E6%9C%B5%E7%8E%AB%E7%91%B0">第14篇 夏天第一朵玫瑰</a></li>
+<li><a href="#%E7%AC%AC15%E7%AF%87-%E4%B8%89%E5%8D%81%E8%80%8C%E7%AB%8B%E7%9A%84%E6%9C%AC%E8%B4%A8">第15篇 三十而立的本质</a></li>
+<li><a href="#%E7%AC%AC16%E7%AF%87-%E8%96%9B%E5%AE%9D%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%A7%98%E5%AF%86">第16篇 薛宝失败的秘密</a></li>
+<li><a href="#%E7%AC%AC17%E7%AF%87-%E4%BB%87%E4%BC%8D%E7%9A%84%E6%84%A4%E6%80%92">第17篇 仇伍的愤怒</a></li>
+<li><a href="#%E7%AC%AC18%E7%AF%87-%E5%A4%A7%E8%BF%9E%E7%9A%84%E6%B5%B7%E4%BC%A6%E5%87%AF%E5%8B%92">第18篇 大连的海伦·凯勒</a></li>
+<li><a href="#%E7%AC%AC19%E7%AF%87-%E6%9D%AD%E5%B7%9E%E7%9A%84%E6%AF%94%E5%B0%94%E7%9B%96%E8%8C%A8">第19篇 杭州的比尔·盖茨</a></li>
+<li><a href="#%E7%AC%AC20%E7%AF%87-%E8%90%BD%E6%9D%89%E7%9A%84%E7%95%99%E5%AD%A6%E6%8A%89%E6%8B%A9">第20篇 落杉的留学抉择</a></li>
+<li><a href="#%E7%AC%AC21%E7%AF%87-%E4%B9%94%E9%BA%A6%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%AD%A6%E4%BD%8D">第21篇 乔麦的第二学位</a></li>
+<li><a href="#%E7%AC%AC22%E7%AF%87-%E4%BA%91%E4%BA%91%E7%9A%84%E9%9D%92%E6%98%A5%E6%AC%A2%E6%AD%8C">第22篇 云云的青春欢歌</a></li>
+<li><a href="#%E7%AC%AC23%E7%AF%87-%E7%8E%B0%E4%BB%A3%E8%8C%83%E8%BF%9B%E6%83%85%E7%BB%93%E4%B8%8E%E6%9C%AA%E6%9D%A5%E8%83%A1%E5%B1%A0%E7%B2%BE%E7%A5%9E">第23篇 现代范进情结与未来胡屠精神</a></li>
+<li><a href="#%E7%AC%AC24%E7%AF%87-%E8%83%8C%E7%A6%BB%E9%A9%AC%E5%88%97%E4%B8%BB%E4%B9%89%E7%9A%84%E9%A9%AC%E5%88%97%E4%B8%BB%E4%B9%89%E7%A0%94%E7%A9%B6%E7%94%9F">第24篇 背离马列主义的马列主义研究生</a></li>
+</ul>
+</div>
+
+            
+            
+        </body>
+        </html>

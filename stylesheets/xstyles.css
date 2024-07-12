@@ -57,7 +57,7 @@ section {
 body {
     /* 上、右、下、左： 左右居中 */
     margin: 0px auto 0px;
-    font-family: Georgia, Helvetica, sans-serif, Arial;
+    font-family: Helvetica, Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
     font-size: 16pt;
 }
 
@@ -173,25 +173,32 @@ table.gridtable th {
     background-color: #dedede;
 }
 
-table.gridtable th:nth-child(1) {
-    width: 25%;
-}
-
-table.gridtable th:nth-child(2) {
-    width: 25%;
-}
-
-table.gridtable th:nth-child(3) {
-    width: 15%;
-}
-
-table.gridtable th:nth-child(4) {
-    width: 35%;
-}
-
 table.gridtable td {
     padding: 4px 0px 4px 4px;
     background-color: #ffffff;
+}
+
+table.gridtable th:nth-child(1),
+table.gridtable td:nth-child(1),
+table.gridtable th:nth-child(2),
+table.gridtable td:nth-child(2) {
+    width: 30%;
+}
+
+table.gridtable th:nth-child(3),
+table.gridtable td:nth-child(3) {
+    width: 20%;
+}
+
+table.gridtable th:nth-child(4),
+table.gridtable td:nth-child(4) {
+    width: 20%;
+}
+
+/*第3列、第4列用小号字体*/
+table.gridtable td:nth-child(3),
+table.gridtable td:nth-child(4) {
+    font-size: smaller;
 }
 
 /*============下面是比较相关的细致设置============*/
@@ -304,12 +311,18 @@ a:hover img {
     animation: swing 0.5s;
 }
 
-/* hr 用于创建一条水平线*/
+/* 水平线分割线 */
+/* 普通实线风格
+margin: 0.8em 0;
+border: none;
+border-bottom: 1px solid #cfcfcf;
+height: 10px;
+*/
+/* 两端渐变风格 */
 hr {
-    margin: 0.8em 0;
-    border: none;
-    border-bottom: 1px solid #cfcfcf;
-    height: 10px;
+    border: 0;
+    padding-top: 1px;
+    background: linear-gradient(to right, transparent, #d0d0d5, transparent);
 }
 
 
@@ -370,6 +383,7 @@ h4 img {
     height: 40px;
 }
 
+
 canvas {
     width: 800px;
     height: 400px;
@@ -377,9 +391,7 @@ canvas {
     border: #000 1px solid;
     margin: auto;
     align-self: center;
-
 }
-
 
 
 
