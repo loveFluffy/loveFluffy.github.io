@@ -127,547 +127,84 @@
 }
 
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
-}
-
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	height: 100%;
-	padding: 0;
-
-	/*
-	同时声明中文字体的字体名称（英文）和显示名称（中文）
-	主体使用无衬线字体，更清晰
-	*/
-	font-family: Helvetica, Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 30px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ffcccc;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 4px solid #ffcc99;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-	/*段落使用衬线字体，更好看*/
-	font-family: Georgia, Arial, "Microsoft YaHei", "微软雅黑", serif;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线 */
-hr {
-	border: 0;
-	padding-top: 1px;
-	margin-bottom: 0.8em;
-	background: linear-gradient(to right, transparent, #d0d0d5, transparent);
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-/*笔记中的普通表格*/
-table {
-	/*居中*/
-	margin: 0 auto;
-	max-width: 80%;
-	font-size: smaller;
-
-	border-width: 1px;
-	border-style: solid;
-	border-color: #666666;
-	border-collapse: collapse;
-}
-
-th,
-td {
-	background-color: transparent;
-	border: solid rgb(80, 80, 80) 1px;
-	padding: 5px;
-}
-
-th {
-	background-color: rgb(221, 221, 221);
-	text-align: center;
-	font-weight: bold;
-}
-
-/*笔记中的普通图片*/
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 笔记里插入我的评价 ======== */
-div.mycomment {
-	font-size: smaller;
-
-	padding: 20px 20px 5px 30px;
-	margin: 40px 5%;
-	background-color: #e5eecc;
-
-	border: solid 2px #8ca86d;
-	border-radius: 30px;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	/*文本部分：水平方向禁止显示滚动条*/
-	overflow-x: hidden;
-	/*文本部分：竖直平方向超出屏幕时会显示滚动条*/
-	overflow-y: auto;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track 
-	scrollbar-color: skyblue #ededed;*/
-	scrollbar-color: rgb(178, 216, 232) #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	.content {
-		width: 73%;
-		padding-left: 0.5%;
-	}
-
-	div.toc {
-		/*max-width: 29%;*/
-		width: 26%;
-		height: 100vh;
-		padding-right: 0;
-		float: left;
-
-		/*目录部分：水平方向禁止显示滚动条*/
-		overflow-x: hidden;
-		/*目录部分：竖直平方向超出屏幕时会显示滚动条*/
-		overflow-y: auto;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		/* list-style-position: inside; */
-		line-height: 1.8;
-	}
-
-	div.toc a {
-		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
-		display: block;
-		/*隐藏链接下划线*/
-		text-decoration: none;
-		color: white;
-
-		/*禁止换行*/
-		white-space: nowrap;
-		/*超出部分直接隐藏不显示*/
-		overflow: hidden;
-		/* 超出部分虽不显示但末尾添加省略号
-		text-overflow: ellipsis;*/
-	}
-
-	/* 鼠标指向目录的时候变色 */
-	div.toc a:hover {
-		color: black;
-	}
-
-	div.toc ul>li>a:hover {
-		background-color: #ff7e79;
-	}
-
-	div.toc ul>li>ul>li>a:hover {
-		background-color: #ffcccc;
-	}
-
-	div.toc ul>li>ul>li>ul>li>a:hover {
-		background-color: #ffcc99;
-	}
-
-	/* h3 滚动时固定在屏幕顶端 */
-	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
-	/*注意：这种设置方式具有递归性，影响的不仅仅h3，同时也影响了h4 h5，只是通过后面进一步的设置重新修改h4 h5*/
-	div.toc ul>li>a {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-
-		background-color: #1c1b22;
-		font-weight: bold;
-		font-size: 0.8em;
-
-		/* h4 h5 级目录随滚动插入 h3 级目录底下 */
-		z-index: 3;
-	}
-
-	div.toc ul>li>ul>li>a {
-		padding-left: 5px;
-		background-color: #42414d;
-		font-weight: normal;
-		font-size: 0.7em;
-
-		/*因为递归性，此次设置z-index后，不必再在h5中写了；font-weight亦如此；*/
-		z-index: 0;
-	}
-
-	div.toc ul>li>ul>li>ul>li>a {
-		padding-left: 20px;
-		font-size: 0.6em;
-	}
-
-	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
-	div.toc ul>li>ul>li>ul>li>ul>li {
-	background-color: rgb(228, 235, 238);
-	font-weight: normal;
-	padding-left: 20px;
-	font-size: 0.6em;
-	}
-	*/
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
-</style>
+        
         </head>
         <body class="vscode-body vscode-light">
-            <div class="content">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
 <h1 id="投资最重要的事顶尖价值投资者的忠告">投资最重要的事：顶尖价值投资者的忠告</h1>
 <h2 id="美霍华德马克斯howard-marks-著李莉-石继志-译">[美]霍华德·马克斯（Howard Marks） 著|李莉 石继志 译</h2>
 <div class="mycomment">
 </div>
-<h3 id=""></h3>
+<h3 id="推荐序1-买好的更要买的好">推荐序1 买好的，更要买的好</h3>
+<p>价值投资者与成长投资者的一个区别是，价值投资者是防守型投资，他们不主动出击去追捧股票，他们相信时间的价值，愿意寂寞地等待价值的回归，并坚信最终的荣耀属于价值投资者。要更好地理解价值与价格的一体两面的关系，我们一定要加入时间的坐标。</p>
+<h3 id="推荐序2-一本巴菲特读了两遍的投资书">推荐序2 一本巴菲特读了两遍的投资书</h3>
+<p>霍华德·马克斯的投资业绩接近于巴菲特，他的投资理念和巴菲特非常相似，他对巴菲特非常推崇：“我认为巴菲特是一个伟大的投资者。”</p>
+<p>他们两个人还有一点相似的是，全球投资者非常期待巴菲特每年写给股东的信，而专业投资者同样非常期待霍华德·马克斯写的投资备忘录。</p>
+<hr>
+<p>巴菲特擅长把非常复杂的投资哲理用非常简单易懂的话说出来；霍华德·马克斯则擅长结合自己的投资经验把价值投资基本原则的实践应用解释得非常务实，并结合最新的经济情况和市场情况提出自己的独到见解。</p>
+<p>巴菲特最初主要是投资股票，后来更多是收购和经营企业，而霍华德·马克斯完全是证券投资，而且主要是股票投资。所以说从这一点来看，霍华德·马克斯的这本书相当于专门解读自己的股票投资想法、操作方法和心法，他和巴菲特的投资基本原则完全相同，但他讲的比巴菲特更加专注于股票投资，更加详细，更加具有操作性，所以这本书对于以股票为主的投资者更有实践上的借鉴意义。</p>
+<hr>
+<p>霍华德·马克斯这本书的中心思想非常明确：如何取得超越市场平均水平的投资业绩？</p>
+<p>这个投资目标看似简单，但是要做到相当不简单。他一开始就引用格雷厄姆的话：“投资艺术有一个特点不为大众所知。门外汉只需些微努力与能力，便可以取得令人尊敬（即使并不可观）的结果。但是如果想在这个容易获取的标准上更进一步，则需要更多的实践和智慧。”</p>
+<p>如何才能战胜市场呢？</p>
+<p>格雷厄姆给出的答案非常精辟：“要想在证券市场上取得投资成功，第一要正确思考，第二要独立思考。”</p>
+<p>巴菲特强调投资成功必须将用脑和用心相结合：“要想在一生中获得投资的成功，并不需要顶级的智商、超凡的商业头脑或秘密的信息，而是需要一个稳妥的思考框架作为决策的基础，并且有能力控制自己的情绪，使其不会对这种思考框架造成侵蚀。格雷厄姆的书能够准确和清晰地提供这种思考框架，但对情绪的约束是你自己必须做到的。”</p>
+<hr>
+<h3 id="中文版作者序">中文版作者序</h3>
+<h3 id="全新升级版前言">全新升级版前言</h3>
+<h3 id="简介">简介</h3>
+<h3 id="第1章-学习第二层次思维">第1章 学习第二层次思维</h3>
+<h3 id="第2章-理解市场有效性及局限性">第2章 理解市场有效性及局限性</h3>
+<h3 id="第3章-准确估计价值">第3章 准确估计价值</h3>
+<h3 id="第4章-价格与价值的关系">第4章 价格与价值的关系</h3>
+<h3 id="第5章-理解风险">第5章 理解风险</h3>
+<h3 id="第6章-识别风险">第6章 识别风险</h3>
+<h3 id="第7章-控制风险">第7章 控制风险</h3>
+<h3 id="第8章-关注周期">第8章 关注周期</h3>
+<h3 id="第9章-钟摆意识">第9章 钟摆意识</h3>
+<h3 id="第10章-抵御消极影响">第10章 抵御消极影响</h3>
+<h3 id="第11章-逆向投资">第11章 逆向投资</h3>
+<h3 id="第12章-寻找便宜货">第12章 寻找便宜货</h3>
+<h3 id="第13章-耐心等待机会">第13章 耐心等待机会</h3>
+<h3 id="第14章-认识预测的局限性">第14章 认识预测的局限性</h3>
+<h3 id="第15章-正确认识自身">第15章 正确认识自身</h3>
+<h3 id="第16章-重视运气">第16章 重视运气</h3>
+<h3 id="第17章-多元化投资">第17章 多元化投资</h3>
+<h3 id="第18章-避免错误">第18章 避免错误</h3>
+<h3 id="第19章-增值的意义">第19章 增值的意义</h3>
+<h3 id="第20章-合理预期">第20章 合理预期</h3>
+<h3 id="第21章-最重要的事">第21章 最重要的事</h3>
 </div>
 <div class="toc">
 <ul>
-<li><a href="#-2"></a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F1-%E4%B9%B0%E5%A5%BD%E7%9A%84%E6%9B%B4%E8%A6%81%E4%B9%B0%E7%9A%84%E5%A5%BD">推荐序1 买好的，更要买的好</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F2-%E4%B8%80%E6%9C%AC%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%AF%BB%E4%BA%86%E4%B8%A4%E9%81%8D%E7%9A%84%E6%8A%95%E8%B5%84%E4%B9%A6">推荐序2 一本巴菲特读了两遍的投资书</a></li>
+<li><a href="#%E4%B8%AD%E6%96%87%E7%89%88%E4%BD%9C%E8%80%85%E5%BA%8F">中文版作者序</a></li>
+<li><a href="#%E5%85%A8%E6%96%B0%E5%8D%87%E7%BA%A7%E7%89%88%E5%89%8D%E8%A8%80">全新升级版前言</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%BA%8C%E5%B1%82%E6%AC%A1%E6%80%9D%E7%BB%B4">第1章 学习第二层次思维</a></li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E7%90%86%E8%A7%A3%E5%B8%82%E5%9C%BA%E6%9C%89%E6%95%88%E6%80%A7%E5%8F%8A%E5%B1%80%E9%99%90%E6%80%A7">第2章 理解市场有效性及局限性</a></li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E5%87%86%E7%A1%AE%E4%BC%B0%E8%AE%A1%E4%BB%B7%E5%80%BC">第3章 准确估计价值</a></li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E4%BB%B7%E6%A0%BC%E4%B8%8E%E4%BB%B7%E5%80%BC%E7%9A%84%E5%85%B3%E7%B3%BB">第4章 价格与价值的关系</a></li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E7%90%86%E8%A7%A3%E9%A3%8E%E9%99%A9">第5章 理解风险</a></li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E8%AF%86%E5%88%AB%E9%A3%8E%E9%99%A9">第6章 识别风险</a></li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E6%8E%A7%E5%88%B6%E9%A3%8E%E9%99%A9">第7章 控制风险</a></li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E5%85%B3%E6%B3%A8%E5%91%A8%E6%9C%9F">第8章 关注周期</a></li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E9%92%9F%E6%91%86%E6%84%8F%E8%AF%86">第9章 钟摆意识</a></li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E6%8A%B5%E5%BE%A1%E6%B6%88%E6%9E%81%E5%BD%B1%E5%93%8D">第10章 抵御消极影响</a></li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E9%80%86%E5%90%91%E6%8A%95%E8%B5%84">第11章 逆向投资</a></li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0-%E5%AF%BB%E6%89%BE%E4%BE%BF%E5%AE%9C%E8%B4%A7">第12章 寻找便宜货</a></li>
+<li><a href="#%E7%AC%AC13%E7%AB%A0-%E8%80%90%E5%BF%83%E7%AD%89%E5%BE%85%E6%9C%BA%E4%BC%9A">第13章 耐心等待机会</a></li>
+<li><a href="#%E7%AC%AC14%E7%AB%A0-%E8%AE%A4%E8%AF%86%E9%A2%84%E6%B5%8B%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7">第14章 认识预测的局限性</a></li>
+<li><a href="#%E7%AC%AC15%E7%AB%A0-%E6%AD%A3%E7%A1%AE%E8%AE%A4%E8%AF%86%E8%87%AA%E8%BA%AB">第15章 正确认识自身</a></li>
+<li><a href="#%E7%AC%AC16%E7%AB%A0-%E9%87%8D%E8%A7%86%E8%BF%90%E6%B0%94">第16章 重视运气</a></li>
+<li><a href="#%E7%AC%AC17%E7%AB%A0-%E5%A4%9A%E5%85%83%E5%8C%96%E6%8A%95%E8%B5%84">第17章 多元化投资</a></li>
+<li><a href="#%E7%AC%AC18%E7%AB%A0-%E9%81%BF%E5%85%8D%E9%94%99%E8%AF%AF">第18章 避免错误</a></li>
+<li><a href="#%E7%AC%AC19%E7%AB%A0-%E5%A2%9E%E5%80%BC%E7%9A%84%E6%84%8F%E4%B9%89">第19章 增值的意义</a></li>
+<li><a href="#%E7%AC%AC20%E7%AB%A0-%E5%90%88%E7%90%86%E9%A2%84%E6%9C%9F">第20章 合理预期</a></li>
+<li><a href="#%E7%AC%AC21%E7%AB%A0-%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B">第21章 最重要的事</a></li>
 </ul>
 </div>
             
