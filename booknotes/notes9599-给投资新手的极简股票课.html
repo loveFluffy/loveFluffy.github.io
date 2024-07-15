@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x7ed9;&#x6295;&#x8d44;&#x65b0;&#x624b;&#x7684;&#x6781;&#x7b80;&#x80a1;&#x7968;&#x8bfe;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x7ed9;&#x6295;&#x8d44;&#x65b0;&#x624b;&#x7684;&#x6781;&#x7b80;&#x80a1;&#x7968;&#x8bfe;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,451 +31,113 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="给投资新手的极简股票课">给投资新手的极简股票课</h1>
-<h2 id="lip师兄-著">lip师兄 著</h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="给投资新手的极简股票课">给投资新手的极简股票课</h1>
+<h2 id="lip师兄">lip师兄</h2>
+<div class="mycomment">
+<p>后半段介绍了点基础知识，然后介绍根据股指买卖股票操作的方法，我并不认同这种方法。</p>
+</div>
 <h3 id="序">序</h3>
 <p>长期而言，股票是收益最高的资产。提供这些证据的不是统计专家，就是投资大师，其准确性和真实性毋庸置疑。即使在股票市场不那么成熟的中国，其最大的股票指数——上证指数，27年来同样上涨了31倍，年化收益率超过13%，但是余额宝等货币基金只有3%~4%。</p>
 <h3 id="赵铁柱和王小花">赵铁柱和王小花</h3>
@@ -511,8 +175,36 @@ iPad mini 5：2048*1536
 <h3 id="坚持自己">坚持自己</h3>
 <h3 id="故事结尾">故事结尾</h3>
 <h3 id="附时间表">附：时间表</h3>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BA%8F">序</a></li>
+<li><a href="#%E8%B5%B5%E9%93%81%E6%9F%B1%E5%92%8C%E7%8E%8B%E5%B0%8F%E8%8A%B1">赵铁柱和王小花</a></li>
+<li><a href="#%E7%A9%BF%E8%B6%8A">穿越</a></li>
+<li><a href="#%E9%87%8D%E7%94%9F">重生</a></li>
+<li><a href="#%E6%9C%89%E9%92%B1%E4%BA%BA%E7%9A%84%E4%B8%80%E4%B8%AA%E9%87%8D%E8%A6%81%E8%A1%A1%E9%87%8F%E6%8C%87%E6%A0%87%E8%A2%AB%E5%8A%A8%E6%94%B6%E5%85%A5">有钱人的一个重要衡量指标：被动收入</a></li>
+<li><a href="#%E6%80%8E%E6%A0%B7%E8%AE%A9%E4%BD%A0%E7%9A%84%E9%92%B1%E4%B8%8D%E8%BA%BA%E5%9C%A8%E9%93%B6%E8%A1%8C%E7%9D%A1%E5%A4%A7%E8%A7%89">怎样让你的钱不躺在银行睡大觉？</a></li>
+<li><a href="#%E5%81%87%E5%A6%82%E5%8D%B0%E7%AC%AC%E5%AE%89%E4%BA%BA%E6%B2%A1%E6%9C%89%E5%8D%96%E6%8E%89%E6%9B%BC%E5%93%88%E9%A1%BF%E5%B2%9B">假如印第安人没有卖掉曼哈顿岛</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E7%9A%84%E6%A0%B8%E5%BF%83%E7%AB%9F%E7%84%B6%E9%9A%90%E8%97%8F%E5%9C%A8%E4%B8%80%E9%81%93%E5%B0%8F%E5%AD%A6%E9%A2%98%E9%87%8C">投资的核心竟然隐藏在一道小学题里！</a></li>
+<li><a href="#%E7%89%9B%E5%B8%82%E6%98%AF%E6%8A%95%E8%B5%84%E8%80%85%E4%BA%8F%E6%8D%9F%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8E%9F%E5%9B%A0">牛市是投资者亏损的主要原因！</a></li>
+<li><a href="#%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E4%BB%80%E4%B9%88">股票的本质是什么？</a></li>
+<li><a href="#%E8%82%A1%E7%A5%A8%E4%BD%A0%E6%B0%B8%E8%BF%9C%E4%B9%9F%E9%81%BF%E4%B8%8D%E5%BC%80%E7%9A%84%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB">股票，你永远也避不开的日常生活</a></li>
+<li><a href="#%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E4%B8%AD%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E7%8E%AF%E8%8A%82%E6%98%AF%E4%BB%80%E4%B9%88">股票投资中，最重要的环节是什么？</a></li>
+<li><a href="#%E8%82%A1%E5%B8%82%E6%98%AF%E8%B0%81%E7%9A%84%E8%B5%8C%E5%9C%BA%E5%8F%88%E6%98%AF%E8%B0%81%E7%9A%84%E6%8F%90%E6%AC%BE%E6%9C%BA">股市是谁的赌场？又是谁的“提款机”？</a></li>
+<li><a href="#%E6%98%AF%E4%BB%80%E4%B9%88%E5%8A%9B%E9%87%8F%E9%A9%B1%E4%BD%BF%E7%9D%80%E8%82%A1%E7%A5%A8%E4%B8%8A%E6%B6%A8%E6%88%96%E4%B8%8B%E8%B7%8C">是什么力量驱使着股票上涨或下跌？</a></li>
+<li><a href="#%E8%82%A1%E7%A5%A8%E4%BD%93%E6%A3%80%E6%8C%87%E6%A0%87%E4%B9%8B%E5%B8%82%E7%9B%88%E7%8E%87">股票体检指标之市盈率</a></li>
+<li><a href="#%E8%82%A1%E7%A5%A8%E4%BD%93%E6%A3%80%E6%8C%87%E6%A0%87%E4%B9%8B%E5%B8%82%E5%87%80%E7%8E%87">股票体检指标之市净率</a></li>
+<li><a href="#%E8%82%A1%E7%A5%A8%E4%BD%93%E6%A3%80%E6%8C%87%E6%A0%87%E4%B9%8B%E8%82%A1%E6%81%AF%E7%8E%87">股票体检指标之股息率</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%98%AF%E8%BF%9B%E5%9C%BA%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA">什么时候是进场的最佳时机?</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%BE%BF%E5%AE%9C%E7%9A%84%E8%82%A1%E7%A5%A8%E7%BB%84%E5%90%88">如何构建一个便宜的股票组合</a></li>
+<li><a href="#%E7%9F%A5%E6%98%93%E8%A1%8C%E9%9A%BE">知易行难</a></li>
+<li><a href="#%E4%B8%8E%E6%97%B6%E9%97%B4%E5%81%9A%E6%9C%8B%E5%8F%8B">与时间做朋友</a></li>
+<li><a href="#%E5%9D%9A%E6%8C%81%E8%87%AA%E5%B7%B1">坚持自己</a></li>
+<li><a href="#%E6%95%85%E4%BA%8B%E7%BB%93%E5%B0%BE">故事结尾</a></li>
+<li><a href="#%E9%99%84%E6%97%B6%E9%97%B4%E8%A1%A8">附：时间表</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

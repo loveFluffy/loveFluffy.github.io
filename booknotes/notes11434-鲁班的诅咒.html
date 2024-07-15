@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x9c81;&#x73ed;&#x7684;&#x8bc5;&#x5492;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x9c81;&#x73ed;&#x7684;&#x8bc5;&#x5492;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,684 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="鲁班的诅咒">鲁班的诅咒</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="鲁班的诅咒">鲁班的诅咒</h1>
+<h2 id="圆太极">圆太极</h2>
+<div class="mycomment">
+<p>玄幻小说诡谈类</p>
+</div>
+<h2 id="鲁班的诅咒1">鲁班的诅咒1</h2>
+<h3 id="引子">引子</h3>
+<h3 id="第一章-我的祖师爷是2400年前的木匠鲁班">第一章 我的祖师爷是2400年前的木匠鲁班</h3>
+<h4 id="夜袭人">夜袭人</h4>
+<h4 id="气波动">气波动</h4>
+<h4 id="千山阻">千山阻</h4>
+<h3 id="第二章-踏入古老机关中永无尽头的回廊">第二章 踏入古老机关中永无尽头的回廊</h3>
+<h4 id="门扉开">门扉开</h4>
+<h4 id="鬼壁现">鬼壁现</h4>
+<h4 id="门泊船">门泊船</h4>
+<h4 id="眉目间">眉目间</h4>
+<h4 id="颠扑道">颠扑道</h4>
+<h4 id="燕归廊">燕归廊</h4>
+<h4 id="蒙目解">蒙目解</h4>
+<h4 id="乱红飞">乱红飞</h4>
+<h4 id="镜中路">镜中路</h4>
+<h3 id="第三章-尸犬石一颗远古狗王的心">第三章 尸犬石：一颗远古狗王的心</h3>
+<h4 id="五足兽">五足兽</h4>
+<h4 id="三更寒">三更寒</h4>
+<h4 id="天罡围">天罡围</h4>
+<h4 id="虫破体">虫破体</h4>
+<h3 id="第四章-遭遇巧夺天工的机械尸偶">第四章 遭遇巧夺天工的机械尸偶</h3>
+<h4 id="螟蛉子">螟蛉子</h4>
+<h4 id="鬼压身">鬼压身</h4>
+<h4 id="寒窗雪">寒窗雪</h4>
+<h3 id="第五章-大战形如婴儿的-阉人杀手">第五章 大战形如婴儿的 阉人杀手</h3>
+<h4 id="千目望">千目望</h4>
+<h4 id="小人袭">小人袭</h4>
+<h4 id="百岁婴">百岁婴</h4>
+<h4 id="花熔金">花熔金</h4>
+<h3 id="第六章-班门弄斧鲁班留给班门门长的神秘信物">第六章 班门“弄斧”：鲁班留给班门门长的神秘信物</h3>
+<h4 id="院中院">院中院</h4>
+<h4 id="三圣石">三圣石</h4>
+<h4 id="班门斧">班门斧</h4>
+<h3 id="第七章-养鬼婢-一个养鬼的女人">第七章 养鬼婢： 一个养鬼的女人</h3>
+<h4 id="冲破雪">冲破雪</h4>
+<h4 id="尸王眼">尸王眼</h4>
+<h4 id="斯人归">斯人归</h4>
+<h4 id="雪中行">雪中行</h4>
+<h2 id="鲁班的诅咒2-苏州园林风水阵">鲁班的诅咒2 苏州园林风水阵</h2>
+<h3 id="第一章-冒死闯入机关重重的苏州园林">第一章 冒死闯入机关重重的苏州园林</h3>
+<h4 id="活坞头">活坞头</h4>
+<h4 id="九宫启">九宫启</h4>
+<h4 id="人踪无">人踪无</h4>
+<h4 id="鸟逞凶">鸟逞凶</h4>
+<h3 id="第二章-吴舞伕如影随形的暗杀舞者">第二章 吴舞伕：如影随形的暗杀舞者</h3>
+<h4 id="弦音寻">弦音寻</h4>
+<h4 id="匣中刺">匣中刺</h4>
+<h4 id="炸鬼嚎">炸鬼嚎</h4>
+<h4 id="战三重">战三重</h4>
+<h4 id="情襟断">情襟断</h4>
+<h3 id="第三章-凭空飞来的致命暗器五指锥合罩">第三章 凭空飞来的致命暗器“五指锥合罩”</h3>
+<h4 id="牵刀射">牵刀射</h4>
+<h4 id="碧池红">碧池红</h4>
+<h4 id="火欲旺">火欲旺</h4>
+<h3 id="第四章-身陷暗合北斗七星的鬼障园">第四章 身陷暗合北斗七星的鬼障园</h3>
+<h4 id="琵琶射">琵琶射</h4>
+<h4 id="荷叶转">荷叶转</h4>
+<h4 id="邪雨下">邪雨下</h4>
+<h4 id="遣枯尸">遣枯尸</h4>
+<h3 id="第五章-身上暗藏十六扇刀锋的恐怖刀人">第五章 身上暗藏十六扇刀锋的恐怖“刀人”</h3>
+<h4 id="寻隙逃">寻隙逃</h4>
+<h4 id="刀锋人">刀锋人</h4>
+<h4 id="阴气升">阴气升</h4>
+<h4 id="观明阁">观明阁</h4>
+<h3 id="第六章-神秘的姑苏水坟神秘的水猴子">第六章 神秘的姑苏水坟，神秘的水猴子</h3>
+<h4 id="驭龙格">驭龙格</h4>
+<h4 id="碎尸雨">碎尸雨</h4>
+<h4 id="下龙鼻">下龙鼻</h4>
+<h4 id="鬼火竹">鬼火竹</h4>
+<h4 id="淤掩身">淤掩身</h4>
+<h4 id="启移茔">启移茔</h4>
+<h3 id="第七章-七狸锁山塘">第七章 七狸锁山塘</h3>
+<h4 id="锁龙栅">锁龙栅</h4>
+<h4 id="冰精寒">冰精寒</h4>
+<h4 id="七狸破">七狸破</h4>
+<h4 id="水自流">水自流</h4>
+<h4 id="水自流-1">水自流</h4>
+<h2 id="鲁班的诅咒3-大兴安岭火山阵">鲁班的诅咒3 大兴安岭火山阵</h2>
+<h3 id="第一章-铁鹰云杀人如麻的机械乌云">第一章 铁鹰云：杀人如麻的机械乌云</h3>
+<h4 id="如梦醒">如梦醒</h4>
+<h4 id="二老诉">二老诉</h4>
+<h4 id="蓦惊觉">蓦惊觉</h4>
+<h4 id="谁宵猎">谁宵猎</h4>
+<h4 id="声嘹唳">声嘹唳</h4>
+<h4 id="搏冰梁">搏冰梁</h4>
+<h4 id="碎云天">碎云天</h4>
+<h3 id="第二章-隐居在大兴安岭的鲁班后裔">第二章 隐居在大兴安岭的鲁班后裔</h3>
+<h4 id="闹处袭">闹处袭</h4>
+<h4 id="众援手">众援手</h4>
+<h4 id="疑初起">疑初起</h4>
+<h3 id="第三章-金家寨隔墙有耳的机关房子">第三章 金家寨：隔墙有耳的机关房子</h3>
+<h4 id="难寻规">难寻规</h4>
+<h4 id="多重射">多重射</h4>
+<h4 id="路径疑">路径疑</h4>
+<h4 id="霍然觉">霍然觉</h4>
+<h4 id="难识卿">难识卿</h4>
+<h3 id="第四章-妖弓射月无坚不摧的三截箭">第四章 妖弓射月：无坚不摧的三截箭</h3>
+<h4 id="杀阵对">杀阵对</h4>
+<h4 id="踏成道">踏成道</h4>
+<h4 id="器更利">器更利</h4>
+<h3 id="第五章-龙盘鳌鼎得此局象者得天下">第五章 龙盘鳌鼎：得此局象者得天下</h3>
+<h4 id="手无措">手无措</h4>
+<h4 id="奔洪道">奔洪道</h4>
+<h4 id="高低错">高低错</h4>
+<h4 id="瓦如龟">瓦如龟</h4>
+<h4 id="人亦鬼">人亦鬼</h4>
+<h3 id="第六章-被困地底数百米的冰火牢笼">第六章 被困地底数百米的冰火牢笼</h3>
+<h4 id="三峰回">三峰回</h4>
+<h4 id="壁空压">壁空压</h4>
+<h4 id="垂底穗">垂底穗</h4>
+<h4 id="殿无梁">殿无梁</h4>
+<h4 id="冷热熬">冷热熬</h4>
+<h4 id="涨破穴">涨破穴</h4>
+<h3 id="第七章-扑面而来的巨石大斧">第七章 扑面而来的巨石大斧</h3>
+<h4 id="地火烈">地火烈</h4>
+<h4 id="飞鼎破">飞鼎破</h4>
+<h4 id="迷宫逃">迷宫逃</h4>
+<h4 id="近宝怯">近宝怯</h4>
+<h4 id="辨魑魅">辨魑魅</h4>
+<h3 id="第八章-火尸蟛潜伏在火山中上千年的食人虫群">第八章 火尸蟛：潜伏在火山中上千年的食人虫群</h3>
+<h4 id="山崩裂">山崩裂</h4>
+<h4 id="赐我亡">赐我亡</h4>
+<h4 id="壑难过">壑难过</h4>
+<h4 id="刑天斩">刑天斩</h4>
+<h4 id="硕野金">硕野金</h4>
+<h2 id="鲁班的诅咒4-武夷竹海阴宅村">鲁班的诅咒4 武夷竹海阴宅村</h2>
+<h3 id="第一章-黄海之中神秘莫测的百变鬼礁">第一章 黄海之中神秘莫测的百变鬼礁</h3>
+<h4 id="入海流">入海流</h4>
+<h4 id="鬼操船">鬼操船</h4>
+<h4 id="浪峰行">浪峰行</h4>
+<h4 id="剪子潮">剪子潮</h4>
+<h3 id="第二章-船影子海上沉船的不散幽魂">第二章 船影子：海上沉船的不散幽魂</h3>
+<h4 id="盏茶约">盏茶约</h4>
+<h4 id="船影子">船影子</h4>
+<h4 id="尽浮沉">尽浮沉</h4>
+<h4 id="海粽子">海粽子</h4>
+<h4 id="探没舟">探没舟</h4>
+<h4 id="倒海楼">倒海楼</h4>
+<h4 id="逼形显">逼形显</h4>
+<h3 id="第三章-立浪冲滩以命搏命的连环杀局">第三章 立浪冲滩：以命搏命的连环杀局</h3>
+<h4 id="海飘魂">海飘魂</h4>
+<h4 id="水落砂">水落砂</h4>
+<h4 id="还其道">还其道</h4>
+<h4 id="浪冲滩">浪冲滩</h4>
+<h3 id="第四章-老锡匠的嗜血红绫鬼头刀">第四章 老锡匠的嗜血红绫鬼头刀</h3>
+<h4 id="至灵地">至灵地</h4>
+<h4 id="触壁知">触壁知</h4>
+<h4 id="华阴玉">华阴玉</h4>
+<h4 id="破困逃">破困逃</h4>
+<h4 id="独步行">独步行</h4>
+<h3 id="第五章-独闯空无一人的阴宅村">第五章 独闯空无一人的阴宅村</h3>
+<h4 id="意难悟">意难悟</h4>
+<h4 id="泪犹存">泪犹存</h4>
+<h4 id="道迷踪">道迷踪</h4>
+<h4 id="水若翎">水若翎</h4>
+<h4 id="八卦引">八卦引</h4>
+<h4 id="阴阳辨">阴阳辨</h4>
+<h4 id="又玄意">又玄意</h4>
+<h3 id="第六章-踏入养尸地鬼爪缠身">第六章 踏入养尸地，鬼爪缠身</h3>
+<h4 id="匿蒿深">匿蒿深</h4>
+<h4 id="晨林诡">晨林诡</h4>
+<h4 id="回头道">回头道</h4>
+<h4 id="急奔走">急奔走</h4>
+<h4 id="入尸地">入尸地</h4>
+<h4 id="天禽镇">天禽镇</h4>
+<h4 id="碎身果">碎身果</h4>
+<h3 id="第七章-鬼婴壁鲁班家族的梦魇">第七章 鬼婴壁：鲁班家族的梦魇</h3>
+<h4 id="参差竹">参差竹</h4>
+<h4 id="梦醒觉">梦醒觉</h4>
+<h4 id="倒柱行">倒柱行</h4>
+<h4 id="花开石">花开石</h4>
+<h4 id="鬼婴壁">鬼婴壁</h4>
+<h4 id="顺出否">顺出否</h4>
+<h2 id="鲁班的诅咒5-鬼斧神工大结局">鲁班的诅咒5 鬼斧神工大结局</h2>
+<h3 id="第一章-水宝定西南鲁天柳解开身世之谜">第一章 水宝定西南，鲁天柳解开身世之谜</h3>
+<h4 id="无影杀">无影杀</h4>
+<h4 id="辨魍魉">辨魍魉</h4>
+<h4 id="杀无途">杀无途</h4>
+<h4 id="凭何遁">凭何遁</h4>
+<h4 id="跃天涡">跃天涡</h4>
+<h4 id="早已觉">早已觉</h4>
+<h4 id="水回天">水回天</h4>
+<h3 id="第二章-屠龙匕被盗朱门长身陷锢魂绝气台">第二章 屠龙匕被盗，朱门长身陷锢魂绝气台</h3>
+<h4 id="电抹宵">电抹宵</h4>
+<h4 id="三丘土">三丘土</h4>
+<h4 id="天将淋">天将淋</h4>
+<h4 id="飘磷骨">飘磷骨</h4>
+<h4 id="地下天">地下天</h4>
+<h4 id="循气墙">循气墙</h4>
+<h4 id="骨形道">骨形道</h4>
+<h4 id="局压局">局压局</h4>
+<h4 id="地惊变">地惊变</h4>
+<h3 id="第三章-决战仙脐湖鬼骑羊大破奔射山形压">第三章 决战仙脐湖，“鬼骑羊”大破“奔射山形压”</h3>
+<h4 id="人迹西">人迹西</h4>
+<h4 id="以计突">以计突</h4>
+<h4 id="转雕鞍">转雕鞍</h4>
+<h4 id="复虞诈">复虞诈</h4>
+<h4 id="山形压">山形压</h4>
+<h4 id="不容轻">不容轻</h4>
+<h4 id="断然杀">断然杀</h4>
+<h4 id="疯绞杀">疯绞杀</h4>
+<h4 id="毒火烈">毒火烈</h4>
+<h3 id="第四章-阴世更道通往天梯山的死亡之路">第四章 阴世更道，通往天梯山的死亡之路</h3>
+<h4 id="阴世道">阴世道</h4>
+<h4 id="伏石梦">伏石梦</h4>
+<h4 id="三刀对">三刀对</h4>
+<h4 id="又恶阻">又恶阻</h4>
+<h4 id="论输赢">论输赢</h4>
+<h4 id="难了步">难了步</h4>
+<h4 id="辨断弦">辨断弦</h4>
+<h4 id="刹石崩">刹石崩</h4>
+<h3 id="第五章-金顶寺朱家最后一步棋">第五章 金顶寺：朱家最后一步棋</h3>
+<h4 id="辨异相">辨异相</h4>
+<h4 id="踪被觉">踪被觉</h4>
+<h4 id="赌为行">赌为行</h4>
+<h4 id="双强闯">双强闯</h4>
+<h4 id="血溅佛">血溅佛</h4>
+<h4 id="杀为度">杀为度</h4>
+<h4 id="涅槃杀">涅槃杀</h4>
+<h4 id="双奇解">双奇解</h4>
+<h3 id="第六章-五行天宝现身鲁一弃舍身定凶穴">第六章 五行天宝现身，鲁一弃舍身定凶穴</h3>
+<h4 id="皆狡杀">皆狡杀</h4>
+<h4 id="同百碎">同百碎</h4>
+<h4 id="凶局变">凶局变</h4>
+<h4 id="流露形">流露形</h4>
+<h4 id="雀在后">雀在后</h4>
+<h4 id="火行局">火行局</h4>
+<h4 id="开凶脉">开凶脉</h4>
+<h3 id="尾-声">尾 声</h3>
+<h4 id="天沟对">天沟对</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BC%95%E5%AD%90">引子</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%88%91%E7%9A%84%E7%A5%96%E5%B8%88%E7%88%B7%E6%98%AF2400%E5%B9%B4%E5%89%8D%E7%9A%84%E6%9C%A8%E5%8C%A0%E9%B2%81%E7%8F%AD">第一章 我的祖师爷是2400年前的木匠鲁班</a>
+<ul>
+<li><a href="#%E5%A4%9C%E8%A2%AD%E4%BA%BA">夜袭人</a></li>
+<li><a href="#%E6%B0%94%E6%B3%A2%E5%8A%A8">气波动</a></li>
+<li><a href="#%E5%8D%83%E5%B1%B1%E9%98%BB">千山阻</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%B8%8F%E5%85%A5%E5%8F%A4%E8%80%81%E6%9C%BA%E5%85%B3%E4%B8%AD%E6%B0%B8%E6%97%A0%E5%B0%BD%E5%A4%B4%E7%9A%84%E5%9B%9E%E5%BB%8A">第二章 踏入古老机关中永无尽头的回廊</a>
+<ul>
+<li><a href="#%E9%97%A8%E6%89%89%E5%BC%80">门扉开</a></li>
+<li><a href="#%E9%AC%BC%E5%A3%81%E7%8E%B0">鬼壁现</a></li>
+<li><a href="#%E9%97%A8%E6%B3%8A%E8%88%B9">门泊船</a></li>
+<li><a href="#%E7%9C%89%E7%9B%AE%E9%97%B4">眉目间</a></li>
+<li><a href="#%E9%A2%A0%E6%89%91%E9%81%93">颠扑道</a></li>
+<li><a href="#%E7%87%95%E5%BD%92%E5%BB%8A">燕归廊</a></li>
+<li><a href="#%E8%92%99%E7%9B%AE%E8%A7%A3">蒙目解</a></li>
+<li><a href="#%E4%B9%B1%E7%BA%A2%E9%A3%9E">乱红飞</a></li>
+<li><a href="#%E9%95%9C%E4%B8%AD%E8%B7%AF">镜中路</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%B0%B8%E7%8A%AC%E7%9F%B3%E4%B8%80%E9%A2%97%E8%BF%9C%E5%8F%A4%E7%8B%97%E7%8E%8B%E7%9A%84%E5%BF%83">第三章 尸犬石：一颗远古狗王的心</a>
+<ul>
+<li><a href="#%E4%BA%94%E8%B6%B3%E5%85%BD">五足兽</a></li>
+<li><a href="#%E4%B8%89%E6%9B%B4%E5%AF%92">三更寒</a></li>
+<li><a href="#%E5%A4%A9%E7%BD%A1%E5%9B%B4">天罡围</a></li>
+<li><a href="#%E8%99%AB%E7%A0%B4%E4%BD%93">虫破体</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E9%81%AD%E9%81%87%E5%B7%A7%E5%A4%BA%E5%A4%A9%E5%B7%A5%E7%9A%84%E6%9C%BA%E6%A2%B0%E5%B0%B8%E5%81%B6">第四章 遭遇巧夺天工的机械尸偶</a>
+<ul>
+<li><a href="#%E8%9E%9F%E8%9B%89%E5%AD%90">螟蛉子</a></li>
+<li><a href="#%E9%AC%BC%E5%8E%8B%E8%BA%AB">鬼压身</a></li>
+<li><a href="#%E5%AF%92%E7%AA%97%E9%9B%AA">寒窗雪</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%A4%A7%E6%88%98%E5%BD%A2%E5%A6%82%E5%A9%B4%E5%84%BF%E7%9A%84-%E9%98%89%E4%BA%BA%E6%9D%80%E6%89%8B">第五章 大战形如婴儿的 阉人杀手</a>
+<ul>
+<li><a href="#%E5%8D%83%E7%9B%AE%E6%9C%9B">千目望</a></li>
+<li><a href="#%E5%B0%8F%E4%BA%BA%E8%A2%AD">小人袭</a></li>
+<li><a href="#%E7%99%BE%E5%B2%81%E5%A9%B4">百岁婴</a></li>
+<li><a href="#%E8%8A%B1%E7%86%94%E9%87%91">花熔金</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8F%AD%E9%97%A8%E5%BC%84%E6%96%A7%E9%B2%81%E7%8F%AD%E7%95%99%E7%BB%99%E7%8F%AD%E9%97%A8%E9%97%A8%E9%95%BF%E7%9A%84%E7%A5%9E%E7%A7%98%E4%BF%A1%E7%89%A9">第六章 班门“弄斧”：鲁班留给班门门长的神秘信物</a>
+<ul>
+<li><a href="#%E9%99%A2%E4%B8%AD%E9%99%A2">院中院</a></li>
+<li><a href="#%E4%B8%89%E5%9C%A3%E7%9F%B3">三圣石</a></li>
+<li><a href="#%E7%8F%AD%E9%97%A8%E6%96%A7">班门斧</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%85%BB%E9%AC%BC%E5%A9%A2-%E4%B8%80%E4%B8%AA%E5%85%BB%E9%AC%BC%E7%9A%84%E5%A5%B3%E4%BA%BA">第七章 养鬼婢： 一个养鬼的女人</a>
+<ul>
+<li><a href="#%E5%86%B2%E7%A0%B4%E9%9B%AA">冲破雪</a></li>
+<li><a href="#%E5%B0%B8%E7%8E%8B%E7%9C%BC">尸王眼</a></li>
+<li><a href="#%E6%96%AF%E4%BA%BA%E5%BD%92">斯人归</a></li>
+<li><a href="#%E9%9B%AA%E4%B8%AD%E8%A1%8C">雪中行</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%86%92%E6%AD%BB%E9%97%AF%E5%85%A5%E6%9C%BA%E5%85%B3%E9%87%8D%E9%87%8D%E7%9A%84%E8%8B%8F%E5%B7%9E%E5%9B%AD%E6%9E%97">第一章 冒死闯入机关重重的苏州园林</a>
+<ul>
+<li><a href="#%E6%B4%BB%E5%9D%9E%E5%A4%B4">活坞头</a></li>
+<li><a href="#%E4%B9%9D%E5%AE%AB%E5%90%AF">九宫启</a></li>
+<li><a href="#%E4%BA%BA%E8%B8%AA%E6%97%A0">人踪无</a></li>
+<li><a href="#%E9%B8%9F%E9%80%9E%E5%87%B6">鸟逞凶</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%90%B4%E8%88%9E%E4%BC%95%E5%A6%82%E5%BD%B1%E9%9A%8F%E5%BD%A2%E7%9A%84%E6%9A%97%E6%9D%80%E8%88%9E%E8%80%85">第二章 吴舞伕：如影随形的暗杀舞者</a>
+<ul>
+<li><a href="#%E5%BC%A6%E9%9F%B3%E5%AF%BB">弦音寻</a></li>
+<li><a href="#%E5%8C%A3%E4%B8%AD%E5%88%BA">匣中刺</a></li>
+<li><a href="#%E7%82%B8%E9%AC%BC%E5%9A%8E">炸鬼嚎</a></li>
+<li><a href="#%E6%88%98%E4%B8%89%E9%87%8D">战三重</a></li>
+<li><a href="#%E6%83%85%E8%A5%9F%E6%96%AD">情襟断</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%87%AD%E7%A9%BA%E9%A3%9E%E6%9D%A5%E7%9A%84%E8%87%B4%E5%91%BD%E6%9A%97%E5%99%A8%E4%BA%94%E6%8C%87%E9%94%A5%E5%90%88%E7%BD%A9">第三章 凭空飞来的致命暗器“五指锥合罩”</a>
+<ul>
+<li><a href="#%E7%89%B5%E5%88%80%E5%B0%84">牵刀射</a></li>
+<li><a href="#%E7%A2%A7%E6%B1%A0%E7%BA%A2">碧池红</a></li>
+<li><a href="#%E7%81%AB%E6%AC%B2%E6%97%BA">火欲旺</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E8%BA%AB%E9%99%B7%E6%9A%97%E5%90%88%E5%8C%97%E6%96%97%E4%B8%83%E6%98%9F%E7%9A%84%E9%AC%BC%E9%9A%9C%E5%9B%AD">第四章 身陷暗合北斗七星的鬼障园</a>
+<ul>
+<li><a href="#%E7%90%B5%E7%90%B6%E5%B0%84">琵琶射</a></li>
+<li><a href="#%E8%8D%B7%E5%8F%B6%E8%BD%AC">荷叶转</a></li>
+<li><a href="#%E9%82%AA%E9%9B%A8%E4%B8%8B">邪雨下</a></li>
+<li><a href="#%E9%81%A3%E6%9E%AF%E5%B0%B8">遣枯尸</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%BA%AB%E4%B8%8A%E6%9A%97%E8%97%8F%E5%8D%81%E5%85%AD%E6%89%87%E5%88%80%E9%94%8B%E7%9A%84%E6%81%90%E6%80%96%E5%88%80%E4%BA%BA">第五章 身上暗藏十六扇刀锋的恐怖“刀人”</a>
+<ul>
+<li><a href="#%E5%AF%BB%E9%9A%99%E9%80%83">寻隙逃</a></li>
+<li><a href="#%E5%88%80%E9%94%8B%E4%BA%BA">刀锋人</a></li>
+<li><a href="#%E9%98%B4%E6%B0%94%E5%8D%87">阴气升</a></li>
+<li><a href="#%E8%A7%82%E6%98%8E%E9%98%81">观明阁</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%A5%9E%E7%A7%98%E7%9A%84%E5%A7%91%E8%8B%8F%E6%B0%B4%E5%9D%9F%E7%A5%9E%E7%A7%98%E7%9A%84%E6%B0%B4%E7%8C%B4%E5%AD%90">第六章 神秘的姑苏水坟，神秘的水猴子</a>
+<ul>
+<li><a href="#%E9%A9%AD%E9%BE%99%E6%A0%BC">驭龙格</a></li>
+<li><a href="#%E7%A2%8E%E5%B0%B8%E9%9B%A8">碎尸雨</a></li>
+<li><a href="#%E4%B8%8B%E9%BE%99%E9%BC%BB">下龙鼻</a></li>
+<li><a href="#%E9%AC%BC%E7%81%AB%E7%AB%B9">鬼火竹</a></li>
+<li><a href="#%E6%B7%A4%E6%8E%A9%E8%BA%AB">淤掩身</a></li>
+<li><a href="#%E5%90%AF%E7%A7%BB%E8%8C%94">启移茔</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E4%B8%83%E7%8B%B8%E9%94%81%E5%B1%B1%E5%A1%98">第七章 七狸锁山塘</a>
+<ul>
+<li><a href="#%E9%94%81%E9%BE%99%E6%A0%85">锁龙栅</a></li>
+<li><a href="#%E5%86%B0%E7%B2%BE%E5%AF%92">冰精寒</a></li>
+<li><a href="#%E4%B8%83%E7%8B%B8%E7%A0%B4">七狸破</a></li>
+<li><a href="#%E6%B0%B4%E8%87%AA%E6%B5%81">水自流</a></li>
+<li><a href="#%E6%B0%B4%E8%87%AA%E6%B5%81-1">水自流</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E9%93%81%E9%B9%B0%E4%BA%91%E6%9D%80%E4%BA%BA%E5%A6%82%E9%BA%BB%E7%9A%84%E6%9C%BA%E6%A2%B0%E4%B9%8C%E4%BA%91">第一章 铁鹰云：杀人如麻的机械乌云</a>
+<ul>
+<li><a href="#%E5%A6%82%E6%A2%A6%E9%86%92">如梦醒</a></li>
+<li><a href="#%E4%BA%8C%E8%80%81%E8%AF%89">二老诉</a></li>
+<li><a href="#%E8%93%A6%E6%83%8A%E8%A7%89">蓦惊觉</a></li>
+<li><a href="#%E8%B0%81%E5%AE%B5%E7%8C%8E">谁宵猎</a></li>
+<li><a href="#%E5%A3%B0%E5%98%B9%E5%94%B3">声嘹唳</a></li>
+<li><a href="#%E6%90%8F%E5%86%B0%E6%A2%81">搏冰梁</a></li>
+<li><a href="#%E7%A2%8E%E4%BA%91%E5%A4%A9">碎云天</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%9A%90%E5%B1%85%E5%9C%A8%E5%A4%A7%E5%85%B4%E5%AE%89%E5%B2%AD%E7%9A%84%E9%B2%81%E7%8F%AD%E5%90%8E%E8%A3%94">第二章 隐居在大兴安岭的鲁班后裔</a>
+<ul>
+<li><a href="#%E9%97%B9%E5%A4%84%E8%A2%AD">闹处袭</a></li>
+<li><a href="#%E4%BC%97%E6%8F%B4%E6%89%8B">众援手</a></li>
+<li><a href="#%E7%96%91%E5%88%9D%E8%B5%B7">疑初起</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%87%91%E5%AE%B6%E5%AF%A8%E9%9A%94%E5%A2%99%E6%9C%89%E8%80%B3%E7%9A%84%E6%9C%BA%E5%85%B3%E6%88%BF%E5%AD%90">第三章 金家寨：隔墙有耳的机关房子</a>
+<ul>
+<li><a href="#%E9%9A%BE%E5%AF%BB%E8%A7%84">难寻规</a></li>
+<li><a href="#%E5%A4%9A%E9%87%8D%E5%B0%84">多重射</a></li>
+<li><a href="#%E8%B7%AF%E5%BE%84%E7%96%91">路径疑</a></li>
+<li><a href="#%E9%9C%8D%E7%84%B6%E8%A7%89">霍然觉</a></li>
+<li><a href="#%E9%9A%BE%E8%AF%86%E5%8D%BF">难识卿</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%A6%96%E5%BC%93%E5%B0%84%E6%9C%88%E6%97%A0%E5%9D%9A%E4%B8%8D%E6%91%A7%E7%9A%84%E4%B8%89%E6%88%AA%E7%AE%AD">第四章 妖弓射月：无坚不摧的三截箭</a>
+<ul>
+<li><a href="#%E6%9D%80%E9%98%B5%E5%AF%B9">杀阵对</a></li>
+<li><a href="#%E8%B8%8F%E6%88%90%E9%81%93">踏成道</a></li>
+<li><a href="#%E5%99%A8%E6%9B%B4%E5%88%A9">器更利</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E9%BE%99%E7%9B%98%E9%B3%8C%E9%BC%8E%E5%BE%97%E6%AD%A4%E5%B1%80%E8%B1%A1%E8%80%85%E5%BE%97%E5%A4%A9%E4%B8%8B">第五章 龙盘鳌鼎：得此局象者得天下</a>
+<ul>
+<li><a href="#%E6%89%8B%E6%97%A0%E6%8E%AA">手无措</a></li>
+<li><a href="#%E5%A5%94%E6%B4%AA%E9%81%93">奔洪道</a></li>
+<li><a href="#%E9%AB%98%E4%BD%8E%E9%94%99">高低错</a></li>
+<li><a href="#%E7%93%A6%E5%A6%82%E9%BE%9F">瓦如龟</a></li>
+<li><a href="#%E4%BA%BA%E4%BA%A6%E9%AC%BC">人亦鬼</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E8%A2%AB%E5%9B%B0%E5%9C%B0%E5%BA%95%E6%95%B0%E7%99%BE%E7%B1%B3%E7%9A%84%E5%86%B0%E7%81%AB%E7%89%A2%E7%AC%BC">第六章 被困地底数百米的冰火牢笼</a>
+<ul>
+<li><a href="#%E4%B8%89%E5%B3%B0%E5%9B%9E">三峰回</a></li>
+<li><a href="#%E5%A3%81%E7%A9%BA%E5%8E%8B">壁空压</a></li>
+<li><a href="#%E5%9E%82%E5%BA%95%E7%A9%97">垂底穗</a></li>
+<li><a href="#%E6%AE%BF%E6%97%A0%E6%A2%81">殿无梁</a></li>
+<li><a href="#%E5%86%B7%E7%83%AD%E7%86%AC">冷热熬</a></li>
+<li><a href="#%E6%B6%A8%E7%A0%B4%E7%A9%B4">涨破穴</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%89%91%E9%9D%A2%E8%80%8C%E6%9D%A5%E7%9A%84%E5%B7%A8%E7%9F%B3%E5%A4%A7%E6%96%A7">第七章 扑面而来的巨石大斧</a>
+<ul>
+<li><a href="#%E5%9C%B0%E7%81%AB%E7%83%88">地火烈</a></li>
+<li><a href="#%E9%A3%9E%E9%BC%8E%E7%A0%B4">飞鼎破</a></li>
+<li><a href="#%E8%BF%B7%E5%AE%AB%E9%80%83">迷宫逃</a></li>
+<li><a href="#%E8%BF%91%E5%AE%9D%E6%80%AF">近宝怯</a></li>
+<li><a href="#%E8%BE%A8%E9%AD%91%E9%AD%85">辨魑魅</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E7%81%AB%E5%B0%B8%E8%9F%9B%E6%BD%9C%E4%BC%8F%E5%9C%A8%E7%81%AB%E5%B1%B1%E4%B8%AD%E4%B8%8A%E5%8D%83%E5%B9%B4%E7%9A%84%E9%A3%9F%E4%BA%BA%E8%99%AB%E7%BE%A4">第八章 火尸蟛：潜伏在火山中上千年的食人虫群</a>
+<ul>
+<li><a href="#%E5%B1%B1%E5%B4%A9%E8%A3%82">山崩裂</a></li>
+<li><a href="#%E8%B5%90%E6%88%91%E4%BA%A1">赐我亡</a></li>
+<li><a href="#%E5%A3%91%E9%9A%BE%E8%BF%87">壑难过</a></li>
+<li><a href="#%E5%88%91%E5%A4%A9%E6%96%A9">刑天斩</a></li>
+<li><a href="#%E7%A1%95%E9%87%8E%E9%87%91">硕野金</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E9%BB%84%E6%B5%B7%E4%B9%8B%E4%B8%AD%E7%A5%9E%E7%A7%98%E8%8E%AB%E6%B5%8B%E7%9A%84%E7%99%BE%E5%8F%98%E9%AC%BC%E7%A4%81">第一章 黄海之中神秘莫测的百变鬼礁</a>
+<ul>
+<li><a href="#%E5%85%A5%E6%B5%B7%E6%B5%81">入海流</a></li>
+<li><a href="#%E9%AC%BC%E6%93%8D%E8%88%B9">鬼操船</a></li>
+<li><a href="#%E6%B5%AA%E5%B3%B0%E8%A1%8C">浪峰行</a></li>
+<li><a href="#%E5%89%AA%E5%AD%90%E6%BD%AE">剪子潮</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%88%B9%E5%BD%B1%E5%AD%90%E6%B5%B7%E4%B8%8A%E6%B2%89%E8%88%B9%E7%9A%84%E4%B8%8D%E6%95%A3%E5%B9%BD%E9%AD%82">第二章 船影子：海上沉船的不散幽魂</a>
+<ul>
+<li><a href="#%E7%9B%8F%E8%8C%B6%E7%BA%A6">盏茶约</a></li>
+<li><a href="#%E8%88%B9%E5%BD%B1%E5%AD%90">船影子</a></li>
+<li><a href="#%E5%B0%BD%E6%B5%AE%E6%B2%89">尽浮沉</a></li>
+<li><a href="#%E6%B5%B7%E7%B2%BD%E5%AD%90">海粽子</a></li>
+<li><a href="#%E6%8E%A2%E6%B2%A1%E8%88%9F">探没舟</a></li>
+<li><a href="#%E5%80%92%E6%B5%B7%E6%A5%BC">倒海楼</a></li>
+<li><a href="#%E9%80%BC%E5%BD%A2%E6%98%BE">逼形显</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%AB%8B%E6%B5%AA%E5%86%B2%E6%BB%A9%E4%BB%A5%E5%91%BD%E6%90%8F%E5%91%BD%E7%9A%84%E8%BF%9E%E7%8E%AF%E6%9D%80%E5%B1%80">第三章 立浪冲滩：以命搏命的连环杀局</a>
+<ul>
+<li><a href="#%E6%B5%B7%E9%A3%98%E9%AD%82">海飘魂</a></li>
+<li><a href="#%E6%B0%B4%E8%90%BD%E7%A0%82">水落砂</a></li>
+<li><a href="#%E8%BF%98%E5%85%B6%E9%81%93">还其道</a></li>
+<li><a href="#%E6%B5%AA%E5%86%B2%E6%BB%A9">浪冲滩</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E8%80%81%E9%94%A1%E5%8C%A0%E7%9A%84%E5%97%9C%E8%A1%80%E7%BA%A2%E7%BB%AB%E9%AC%BC%E5%A4%B4%E5%88%80">第四章 老锡匠的嗜血红绫鬼头刀</a>
+<ul>
+<li><a href="#%E8%87%B3%E7%81%B5%E5%9C%B0">至灵地</a></li>
+<li><a href="#%E8%A7%A6%E5%A3%81%E7%9F%A5">触壁知</a></li>
+<li><a href="#%E5%8D%8E%E9%98%B4%E7%8E%89">华阴玉</a></li>
+<li><a href="#%E7%A0%B4%E5%9B%B0%E9%80%83">破困逃</a></li>
+<li><a href="#%E7%8B%AC%E6%AD%A5%E8%A1%8C">独步行</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E7%8B%AC%E9%97%AF%E7%A9%BA%E6%97%A0%E4%B8%80%E4%BA%BA%E7%9A%84%E9%98%B4%E5%AE%85%E6%9D%91">第五章 独闯空无一人的阴宅村</a>
+<ul>
+<li><a href="#%E6%84%8F%E9%9A%BE%E6%82%9F">意难悟</a></li>
+<li><a href="#%E6%B3%AA%E7%8A%B9%E5%AD%98">泪犹存</a></li>
+<li><a href="#%E9%81%93%E8%BF%B7%E8%B8%AA">道迷踪</a></li>
+<li><a href="#%E6%B0%B4%E8%8B%A5%E7%BF%8E">水若翎</a></li>
+<li><a href="#%E5%85%AB%E5%8D%A6%E5%BC%95">八卦引</a></li>
+<li><a href="#%E9%98%B4%E9%98%B3%E8%BE%A8">阴阳辨</a></li>
+<li><a href="#%E5%8F%88%E7%8E%84%E6%84%8F">又玄意</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E8%B8%8F%E5%85%A5%E5%85%BB%E5%B0%B8%E5%9C%B0%E9%AC%BC%E7%88%AA%E7%BC%A0%E8%BA%AB">第六章 踏入养尸地，鬼爪缠身</a>
+<ul>
+<li><a href="#%E5%8C%BF%E8%92%BF%E6%B7%B1">匿蒿深</a></li>
+<li><a href="#%E6%99%A8%E6%9E%97%E8%AF%A1">晨林诡</a></li>
+<li><a href="#%E5%9B%9E%E5%A4%B4%E9%81%93">回头道</a></li>
+<li><a href="#%E6%80%A5%E5%A5%94%E8%B5%B0">急奔走</a></li>
+<li><a href="#%E5%85%A5%E5%B0%B8%E5%9C%B0">入尸地</a></li>
+<li><a href="#%E5%A4%A9%E7%A6%BD%E9%95%87">天禽镇</a></li>
+<li><a href="#%E7%A2%8E%E8%BA%AB%E6%9E%9C">碎身果</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E9%AC%BC%E5%A9%B4%E5%A3%81%E9%B2%81%E7%8F%AD%E5%AE%B6%E6%97%8F%E7%9A%84%E6%A2%A6%E9%AD%87">第七章 鬼婴壁：鲁班家族的梦魇</a>
+<ul>
+<li><a href="#%E5%8F%82%E5%B7%AE%E7%AB%B9">参差竹</a></li>
+<li><a href="#%E6%A2%A6%E9%86%92%E8%A7%89">梦醒觉</a></li>
+<li><a href="#%E5%80%92%E6%9F%B1%E8%A1%8C">倒柱行</a></li>
+<li><a href="#%E8%8A%B1%E5%BC%80%E7%9F%B3">花开石</a></li>
+<li><a href="#%E9%AC%BC%E5%A9%B4%E5%A3%81">鬼婴壁</a></li>
+<li><a href="#%E9%A1%BA%E5%87%BA%E5%90%A6">顺出否</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%B0%B4%E5%AE%9D%E5%AE%9A%E8%A5%BF%E5%8D%97%E9%B2%81%E5%A4%A9%E6%9F%B3%E8%A7%A3%E5%BC%80%E8%BA%AB%E4%B8%96%E4%B9%8B%E8%B0%9C">第一章 水宝定西南，鲁天柳解开身世之谜</a>
+<ul>
+<li><a href="#%E6%97%A0%E5%BD%B1%E6%9D%80">无影杀</a></li>
+<li><a href="#%E8%BE%A8%E9%AD%8D%E9%AD%89">辨魍魉</a></li>
+<li><a href="#%E6%9D%80%E6%97%A0%E9%80%94">杀无途</a></li>
+<li><a href="#%E5%87%AD%E4%BD%95%E9%81%81">凭何遁</a></li>
+<li><a href="#%E8%B7%83%E5%A4%A9%E6%B6%A1">跃天涡</a></li>
+<li><a href="#%E6%97%A9%E5%B7%B2%E8%A7%89">早已觉</a></li>
+<li><a href="#%E6%B0%B4%E5%9B%9E%E5%A4%A9">水回天</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%B1%A0%E9%BE%99%E5%8C%95%E8%A2%AB%E7%9B%97%E6%9C%B1%E9%97%A8%E9%95%BF%E8%BA%AB%E9%99%B7%E9%94%A2%E9%AD%82%E7%BB%9D%E6%B0%94%E5%8F%B0">第二章 屠龙匕被盗，朱门长身陷锢魂绝气台</a>
+<ul>
+<li><a href="#%E7%94%B5%E6%8A%B9%E5%AE%B5">电抹宵</a></li>
+<li><a href="#%E4%B8%89%E4%B8%98%E5%9C%9F">三丘土</a></li>
+<li><a href="#%E5%A4%A9%E5%B0%86%E6%B7%8B">天将淋</a></li>
+<li><a href="#%E9%A3%98%E7%A3%B7%E9%AA%A8">飘磷骨</a></li>
+<li><a href="#%E5%9C%B0%E4%B8%8B%E5%A4%A9">地下天</a></li>
+<li><a href="#%E5%BE%AA%E6%B0%94%E5%A2%99">循气墙</a></li>
+<li><a href="#%E9%AA%A8%E5%BD%A2%E9%81%93">骨形道</a></li>
+<li><a href="#%E5%B1%80%E5%8E%8B%E5%B1%80">局压局</a></li>
+<li><a href="#%E5%9C%B0%E6%83%8A%E5%8F%98">地惊变</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%86%B3%E6%88%98%E4%BB%99%E8%84%90%E6%B9%96%E9%AC%BC%E9%AA%91%E7%BE%8A%E5%A4%A7%E7%A0%B4%E5%A5%94%E5%B0%84%E5%B1%B1%E5%BD%A2%E5%8E%8B">第三章 决战仙脐湖，“鬼骑羊”大破“奔射山形压”</a>
+<ul>
+<li><a href="#%E4%BA%BA%E8%BF%B9%E8%A5%BF">人迹西</a></li>
+<li><a href="#%E4%BB%A5%E8%AE%A1%E7%AA%81">以计突</a></li>
+<li><a href="#%E8%BD%AC%E9%9B%95%E9%9E%8D">转雕鞍</a></li>
+<li><a href="#%E5%A4%8D%E8%99%9E%E8%AF%88">复虞诈</a></li>
+<li><a href="#%E5%B1%B1%E5%BD%A2%E5%8E%8B">山形压</a></li>
+<li><a href="#%E4%B8%8D%E5%AE%B9%E8%BD%BB">不容轻</a></li>
+<li><a href="#%E6%96%AD%E7%84%B6%E6%9D%80">断然杀</a></li>
+<li><a href="#%E7%96%AF%E7%BB%9E%E6%9D%80">疯绞杀</a></li>
+<li><a href="#%E6%AF%92%E7%81%AB%E7%83%88">毒火烈</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E9%98%B4%E4%B8%96%E6%9B%B4%E9%81%93%E9%80%9A%E5%BE%80%E5%A4%A9%E6%A2%AF%E5%B1%B1%E7%9A%84%E6%AD%BB%E4%BA%A1%E4%B9%8B%E8%B7%AF">第四章 阴世更道，通往天梯山的死亡之路</a>
+<ul>
+<li><a href="#%E9%98%B4%E4%B8%96%E9%81%93">阴世道</a></li>
+<li><a href="#%E4%BC%8F%E7%9F%B3%E6%A2%A6">伏石梦</a></li>
+<li><a href="#%E4%B8%89%E5%88%80%E5%AF%B9">三刀对</a></li>
+<li><a href="#%E5%8F%88%E6%81%B6%E9%98%BB">又恶阻</a></li>
+<li><a href="#%E8%AE%BA%E8%BE%93%E8%B5%A2">论输赢</a></li>
+<li><a href="#%E9%9A%BE%E4%BA%86%E6%AD%A5">难了步</a></li>
+<li><a href="#%E8%BE%A8%E6%96%AD%E5%BC%A6">辨断弦</a></li>
+<li><a href="#%E5%88%B9%E7%9F%B3%E5%B4%A9">刹石崩</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E9%87%91%E9%A1%B6%E5%AF%BA%E6%9C%B1%E5%AE%B6%E6%9C%80%E5%90%8E%E4%B8%80%E6%AD%A5%E6%A3%8B">第五章 金顶寺：朱家最后一步棋</a>
+<ul>
+<li><a href="#%E8%BE%A8%E5%BC%82%E7%9B%B8">辨异相</a></li>
+<li><a href="#%E8%B8%AA%E8%A2%AB%E8%A7%89">踪被觉</a></li>
+<li><a href="#%E8%B5%8C%E4%B8%BA%E8%A1%8C">赌为行</a></li>
+<li><a href="#%E5%8F%8C%E5%BC%BA%E9%97%AF">双强闯</a></li>
+<li><a href="#%E8%A1%80%E6%BA%85%E4%BD%9B">血溅佛</a></li>
+<li><a href="#%E6%9D%80%E4%B8%BA%E5%BA%A6">杀为度</a></li>
+<li><a href="#%E6%B6%85%E6%A7%83%E6%9D%80">涅槃杀</a></li>
+<li><a href="#%E5%8F%8C%E5%A5%87%E8%A7%A3">双奇解</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E4%BA%94%E8%A1%8C%E5%A4%A9%E5%AE%9D%E7%8E%B0%E8%BA%AB%E9%B2%81%E4%B8%80%E5%BC%83%E8%88%8D%E8%BA%AB%E5%AE%9A%E5%87%B6%E7%A9%B4">第六章 五行天宝现身，鲁一弃舍身定凶穴</a>
+<ul>
+<li><a href="#%E7%9A%86%E7%8B%A1%E6%9D%80">皆狡杀</a></li>
+<li><a href="#%E5%90%8C%E7%99%BE%E7%A2%8E">同百碎</a></li>
+<li><a href="#%E5%87%B6%E5%B1%80%E5%8F%98">凶局变</a></li>
+<li><a href="#%E6%B5%81%E9%9C%B2%E5%BD%A2">流露形</a></li>
+<li><a href="#%E9%9B%80%E5%9C%A8%E5%90%8E">雀在后</a></li>
+<li><a href="#%E7%81%AB%E8%A1%8C%E5%B1%80">火行局</a></li>
+<li><a href="#%E5%BC%80%E5%87%B6%E8%84%89">开凶脉</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B0%BE-%E5%A3%B0">尾 声</a>
+<ul>
+<li><a href="#%E5%A4%A9%E6%B2%9F%E5%AF%B9">天沟对</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

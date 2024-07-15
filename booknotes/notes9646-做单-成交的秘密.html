@@ -127,538 +127,186 @@
 }
 
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
-}
-
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-	padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 30px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ffcccc;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 4px solid #ffcc99;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-/*笔记中的普通表格*/
-table {
-	/*居中*/
-	margin: 0 auto;
-	max-width: 80%;
-	font-size: smaller;
-
-	border-width: 1px;
-	border-style: solid;
-	border-color: #666666;
-	border-collapse: collapse;
-}
-
-th,
-td {
-	background-color: transparent;
-	border: solid rgb(80, 80, 80) 1px;
-	padding: 5px;
-}
-
-th {
-	background-color: rgb(221, 221, 221);
-	text-align: center;
-	font-weight: bold;
-}
-
-/*笔记中的普通图片*/
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 笔记里插入我的评价 ======== */
-div.mycomment {
-	font-size: smaller;
-
-	padding: 20px 20px 5px 30px;
-	margin: 40px 5%;
-	background-color: #e5eecc;
-
-	border: solid 2px #8ca86d;
-	border-radius: 30px;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track 
-	scrollbar-color: skyblue #ededed;*/
-	scrollbar-color: rgb(178, 216, 232) #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	.content {
-		width: 73%;
-		padding-left: 0.5%;
-	}
-
-	div.toc {
-		/*max-width: 29%;*/
-		width: 26%;
-		height: 100vh;
-		padding-right: 0;
-
-		float: left;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		/* list-style-position: inside; */
-		line-height: 1.8;
-	}
-
-	div.toc a {
-		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
-		display: block;
-		/*隐藏链接下划线*/
-		text-decoration: none;
-		color: white;
-
-		/*禁止换行*/
-		white-space: nowrap;
-		/*超出部分直接隐藏不显示*/
-		overflow: hidden;
-		/* 超出部分虽不显示但末尾添加省略号
-		text-overflow: ellipsis;*/
-	}
-
-	div.toc a:hover {
-		color: black;
-	}
-
-	div.toc ul>li>a:hover {
-		background-color: #ff7e79;
-	}
-
-	div.toc ul>li>ul>li>a:hover {
-		background-color: #ffcccc;
-	}
-
-	div.toc ul>li>ul>li>ul>li>a:hover {
-		background-color: #ffcc99;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
-	div.toc ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-
-		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
-		z-index: 1;
-		/*skyblue*/
-		background-color: #1c1b22;
-		font-weight: bold;
-		font-size: 0.8em;
-		color: white;
-	}
-
-	div.toc ul>li>ul>li {
-		padding-left: 20px;
-
-		/*rgb(178, 216, 232)*/
-		background-color: #42414d;
-		font-weight: normal;
-		font-size: 0.8em;
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		padding-left: 20px;
-
-		/*background-color: rgb(210, 231, 239);*/
-		font-weight: normal;
-		font-size: 0.75em;
-	}
-
-	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
-	div.toc ul>li>ul>li>ul>li>ul>li {
-	background-color: rgb(228, 235, 238);
-	font-weight: normal;
-	padding-left: 20px;
-	font-size: 0.6em;
-	}
-	*/
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
-</style>
+        
         </head>
         <body class="vscode-body vscode-light">
-            <div class="content">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
 <h1 id="做单成交的秘密">做单：成交的秘密</h1>
 <h2 id="胡震生-著">胡震生 著</h2>
 <div class="mycomment">
 <p>小说性质。</p>
 </div>
-<h3 id=""></h3>
+<h3 id="员工和老板的差别">员工和老板的差别</h3>
+<h3 id="销售魔鬼训练营">销售魔鬼训练营</h3>
+<h3 id="被远想买走的远想员工">被远想买走的“远想”员工</h3>
+<h3 id="寻找客户的生死需求">寻找客户的生死需求</h3>
+<h3 id="成交前的临门一脚">成交前的临门一脚</h3>
+<h3 id="生活就是做单爱情就是上床">生活就是做单，爱情就是上床</h3>
+<h3 id="一个活着的销售传奇">一个活着的销售传奇</h3>
+<h3 id="不可能完成的任务">不可能完成的任务</h3>
+<h3 id="三权分立下的个人沉淀">三权分立下的个人沉淀</h3>
+<h3 id="似曾相识的味道">似曾相识的味道</h3>
+<h3 id="拼凑起来的团队">拼凑起来的团队</h3>
+<h3 id="上了大当的远想">上了大当的远想</h3>
+<h3 id="竞争的秘密武器">竞争的秘密武器</h3>
+<h3 id="获取老板的信任">获取老板的信任</h3>
+<h3 id="毕业如何就业">毕业如何就业</h3>
+<h3 id="简历里的秘密">简历里的秘密</h3>
+<h3 id="新来的炮灰">新来的炮灰</h3>
+<h3 id="mbi和普惠的区别">MBI和普惠的区别</h3>
+<h3 id="面对拒绝的客户">面对拒绝的客户</h3>
+<h3 id="老总的三种类型">老总的三种类型</h3>
+<h3 id="最高境界之代代相传">最高境界之代代相传</h3>
+<h3 id="外企和民企的区别">外企和民企的区别</h3>
+<h3 id="20的利润">20%的利润</h3>
+<h3 id="刀子和钻戒">刀子和钻戒</h3>
+<h3 id="女人都相信缘分">女人都相信缘分</h3>
+<h3 id="销售的三个最大缺点">销售的三个最大缺点</h3>
+<h3 id="拜访前必须预热">拜访前必须预热</h3>
+<h3 id="剩者为王">剩者为王</h3>
+<h3 id="控制才能解决问题">控制才能解决问题</h3>
+<h3 id="矛盾期的合作">矛盾期的合作</h3>
+<h3 id="长板打倒短板">长板打倒短板</h3>
+<h3 id="不按常规出牌的对手">不按常规出牌的对手</h3>
+<h3 id="白买的鲜花">白买的鲜花</h3>
+<h3 id="面试你的面试">面试你的面试</h3>
+<h3 id="清者自清赢者自赢">清者自清、赢者自赢</h3>
+<h3 id="谈判需要筹码">谈判需要筹码</h3>
+<h3 id="管理自己的职业生涯">管理自己的职业生涯</h3>
+<h3 id="不表态的决定">不表态的决定</h3>
+<h3 id="真实的谎言">真实的谎言</h3>
+<h3 id="成功者的孤独">成功者的孤独</h3>
+<h3 id="满足所有人利益的人民币">满足所有人利益的“人民币”</h3>
+<h3 id="放弃才能拥有更多">放弃才能拥有更多</h3>
+<h3 id="内部的决策链">内部的决策链</h3>
+<h3 id="要清楚下属的需求">要清楚下属的需求</h3>
+<h3 id="玛丽莲梦露的睡衣">玛丽莲梦露的睡衣</h3>
+<h3 id="内斗先撤">内斗？先撤</h3>
+<h3 id="利益驱动型管理">利益驱动型管理</h3>
+<h3 id="谁也别当替罪羊">谁也别当替罪羊</h3>
+<h3 id="乱世出英豪">乱世出英豪</h3>
+<h3 id="合理的官僚主义">合理的官僚主义</h3>
+<h3 id="最快吃掉机会">最快吃掉机会</h3>
+<h3 id="原来是家的感觉">原来是家的感觉</h3>
+<h3 id="人生是短跑长跑">人生是短跑？长跑？</h3>
+<h3 id="你不仁我不义">你不仁、我不义</h3>
+<h3 id="老板的老板的任务">老板的老板的任务</h3>
+<h3 id="兼职的mbi人">兼职的MBI人</h3>
+<h3 id="执迷着01">执迷着0.1</h3>
+<h3 id="mbi的特种部队">MBI的特种部队</h3>
+<h3 id="谈判之神是怎样的炼成的">谈判之神是怎样的炼成的</h3>
+<h3 id="跨三级的review">跨三级的Review</h3>
+<h3 id="弹弓和ak47的较量">弹弓和AK47的较量</h3>
+<h3 id="商场上的马拉松">商场上的马拉松</h3>
+<h3 id="搞不定的采购">搞不定的采购</h3>
+<h3 id="谈判的致命武器">谈判的致命武器</h3>
+<h3 id="软件和毒品一样暴利">软件和毒品一样暴利</h3>
+<h3 id="完美的理由">完美的理由</h3>
+<h3 id="暴利的矿泉水">暴利的矿泉水</h3>
+<h3 id="谁决定和谁谈">谁决定和谁谈</h3>
+<h3 id="只能听天由命">只能听天由命</h3>
+<h3 id="打垮心理和生理">打垮心理和生理</h3>
+<h3 id="还是保命最重要">还是保命最重要</h3>
+<h3 id="成本是最高机密">成本是最高机密</h3>
+<h3 id="没有控制权">没有控制权</h3>
+<h3 id="客户的面子工程">客户的面子工程</h3>
+<h3 id="这样就连升三级">这样就连升三级</h3>
+<h3 id="击败mbi的方法">击败MBI的方法</h3>
+<h3 id="商场计中计">商场计中计</h3>
+<h3 id="永远不要沟通的话题">永远不要沟通的话题</h3>
+<h3 id="新一代的木马屠城">新一代的木马屠城</h3>
+<h3 id="可以主动要求降价">可以主动要求降价</h3>
+<h3 id="到底签还是不签">到底签还是不签</h3>
+<h3 id="有效但不健康的透支">有效但不健康的透支</h3>
+<h3 id="没有家的夜归人">没有家的夜归人</h3>
 </div>
 <div class="toc">
 <ul>
-<li><a href="#"></a></li>
+<li><a href="#%E5%91%98%E5%B7%A5%E5%92%8C%E8%80%81%E6%9D%BF%E7%9A%84%E5%B7%AE%E5%88%AB">员工和老板的差别</a></li>
+<li><a href="#%E9%94%80%E5%94%AE%E9%AD%94%E9%AC%BC%E8%AE%AD%E7%BB%83%E8%90%A5">销售魔鬼训练营</a></li>
+<li><a href="#%E8%A2%AB%E8%BF%9C%E6%83%B3%E4%B9%B0%E8%B5%B0%E7%9A%84%E8%BF%9C%E6%83%B3%E5%91%98%E5%B7%A5">被远想买走的“远想”员工</a></li>
+<li><a href="#%E5%AF%BB%E6%89%BE%E5%AE%A2%E6%88%B7%E7%9A%84%E7%94%9F%E6%AD%BB%E9%9C%80%E6%B1%82">寻找客户的生死需求</a></li>
+<li><a href="#%E6%88%90%E4%BA%A4%E5%89%8D%E7%9A%84%E4%B8%B4%E9%97%A8%E4%B8%80%E8%84%9A">成交前的临门一脚</a></li>
+<li><a href="#%E7%94%9F%E6%B4%BB%E5%B0%B1%E6%98%AF%E5%81%9A%E5%8D%95%E7%88%B1%E6%83%85%E5%B0%B1%E6%98%AF%E4%B8%8A%E5%BA%8A">生活就是做单，爱情就是上床</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E6%B4%BB%E7%9D%80%E7%9A%84%E9%94%80%E5%94%AE%E4%BC%A0%E5%A5%87">一个活着的销售传奇</a></li>
+<li><a href="#%E4%B8%8D%E5%8F%AF%E8%83%BD%E5%AE%8C%E6%88%90%E7%9A%84%E4%BB%BB%E5%8A%A1">不可能完成的任务</a></li>
+<li><a href="#%E4%B8%89%E6%9D%83%E5%88%86%E7%AB%8B%E4%B8%8B%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%B2%89%E6%B7%80">三权分立下的个人沉淀</a></li>
+<li><a href="#%E4%BC%BC%E6%9B%BE%E7%9B%B8%E8%AF%86%E7%9A%84%E5%91%B3%E9%81%93">似曾相识的味道</a></li>
+<li><a href="#%E6%8B%BC%E5%87%91%E8%B5%B7%E6%9D%A5%E7%9A%84%E5%9B%A2%E9%98%9F">拼凑起来的团队</a></li>
+<li><a href="#%E4%B8%8A%E4%BA%86%E5%A4%A7%E5%BD%93%E7%9A%84%E8%BF%9C%E6%83%B3">上了大当的远想</a></li>
+<li><a href="#%E7%AB%9E%E4%BA%89%E7%9A%84%E7%A7%98%E5%AF%86%E6%AD%A6%E5%99%A8">竞争的秘密武器</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E8%80%81%E6%9D%BF%E7%9A%84%E4%BF%A1%E4%BB%BB">获取老板的信任</a></li>
+<li><a href="#%E6%AF%95%E4%B8%9A%E5%A6%82%E4%BD%95%E5%B0%B1%E4%B8%9A">毕业如何就业</a></li>
+<li><a href="#%E7%AE%80%E5%8E%86%E9%87%8C%E7%9A%84%E7%A7%98%E5%AF%86">简历里的秘密</a></li>
+<li><a href="#%E6%96%B0%E6%9D%A5%E7%9A%84%E7%82%AE%E7%81%B0">新来的炮灰</a></li>
+<li><a href="#mbi%E5%92%8C%E6%99%AE%E6%83%A0%E7%9A%84%E5%8C%BA%E5%88%AB">MBI和普惠的区别</a></li>
+<li><a href="#%E9%9D%A2%E5%AF%B9%E6%8B%92%E7%BB%9D%E7%9A%84%E5%AE%A2%E6%88%B7">面对拒绝的客户</a></li>
+<li><a href="#%E8%80%81%E6%80%BB%E7%9A%84%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B">老总的三种类型</a></li>
+<li><a href="#%E6%9C%80%E9%AB%98%E5%A2%83%E7%95%8C%E4%B9%8B%E4%BB%A3%E4%BB%A3%E7%9B%B8%E4%BC%A0">最高境界之代代相传</a></li>
+<li><a href="#%E5%A4%96%E4%BC%81%E5%92%8C%E6%B0%91%E4%BC%81%E7%9A%84%E5%8C%BA%E5%88%AB">外企和民企的区别</a></li>
+<li><a href="#20%E7%9A%84%E5%88%A9%E6%B6%A6">20%的利润</a></li>
+<li><a href="#%E5%88%80%E5%AD%90%E5%92%8C%E9%92%BB%E6%88%92">刀子和钻戒</a></li>
+<li><a href="#%E5%A5%B3%E4%BA%BA%E9%83%BD%E7%9B%B8%E4%BF%A1%E7%BC%98%E5%88%86">女人都相信缘分</a></li>
+<li><a href="#%E9%94%80%E5%94%AE%E7%9A%84%E4%B8%89%E4%B8%AA%E6%9C%80%E5%A4%A7%E7%BC%BA%E7%82%B9">销售的三个最大缺点</a></li>
+<li><a href="#%E6%8B%9C%E8%AE%BF%E5%89%8D%E5%BF%85%E9%A1%BB%E9%A2%84%E7%83%AD">拜访前必须预热</a></li>
+<li><a href="#%E5%89%A9%E8%80%85%E4%B8%BA%E7%8E%8B">剩者为王</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E6%89%8D%E8%83%BD%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">控制才能解决问题</a></li>
+<li><a href="#%E7%9F%9B%E7%9B%BE%E6%9C%9F%E7%9A%84%E5%90%88%E4%BD%9C">矛盾期的合作</a></li>
+<li><a href="#%E9%95%BF%E6%9D%BF%E6%89%93%E5%80%92%E7%9F%AD%E6%9D%BF">长板打倒短板</a></li>
+<li><a href="#%E4%B8%8D%E6%8C%89%E5%B8%B8%E8%A7%84%E5%87%BA%E7%89%8C%E7%9A%84%E5%AF%B9%E6%89%8B">不按常规出牌的对手</a></li>
+<li><a href="#%E7%99%BD%E4%B9%B0%E7%9A%84%E9%B2%9C%E8%8A%B1">白买的鲜花</a></li>
+<li><a href="#%E9%9D%A2%E8%AF%95%E4%BD%A0%E7%9A%84%E9%9D%A2%E8%AF%95">面试你的面试</a></li>
+<li><a href="#%E6%B8%85%E8%80%85%E8%87%AA%E6%B8%85%E8%B5%A2%E8%80%85%E8%87%AA%E8%B5%A2">清者自清、赢者自赢</a></li>
+<li><a href="#%E8%B0%88%E5%88%A4%E9%9C%80%E8%A6%81%E7%AD%B9%E7%A0%81">谈判需要筹码</a></li>
+<li><a href="#%E7%AE%A1%E7%90%86%E8%87%AA%E5%B7%B1%E7%9A%84%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF">管理自己的职业生涯</a></li>
+<li><a href="#%E4%B8%8D%E8%A1%A8%E6%80%81%E7%9A%84%E5%86%B3%E5%AE%9A">不表态的决定</a></li>
+<li><a href="#%E7%9C%9F%E5%AE%9E%E7%9A%84%E8%B0%8E%E8%A8%80">真实的谎言</a></li>
+<li><a href="#%E6%88%90%E5%8A%9F%E8%80%85%E7%9A%84%E5%AD%A4%E7%8B%AC">成功者的孤独</a></li>
+<li><a href="#%E6%BB%A1%E8%B6%B3%E6%89%80%E6%9C%89%E4%BA%BA%E5%88%A9%E7%9B%8A%E7%9A%84%E4%BA%BA%E6%B0%91%E5%B8%81">满足所有人利益的“人民币”</a></li>
+<li><a href="#%E6%94%BE%E5%BC%83%E6%89%8D%E8%83%BD%E6%8B%A5%E6%9C%89%E6%9B%B4%E5%A4%9A">放弃才能拥有更多</a></li>
+<li><a href="#%E5%86%85%E9%83%A8%E7%9A%84%E5%86%B3%E7%AD%96%E9%93%BE">内部的决策链</a></li>
+<li><a href="#%E8%A6%81%E6%B8%85%E6%A5%9A%E4%B8%8B%E5%B1%9E%E7%9A%84%E9%9C%80%E6%B1%82">要清楚下属的需求</a></li>
+<li><a href="#%E7%8E%9B%E4%B8%BD%E8%8E%B2%E6%A2%A6%E9%9C%B2%E7%9A%84%E7%9D%A1%E8%A1%A3">玛丽莲梦露的睡衣</a></li>
+<li><a href="#%E5%86%85%E6%96%97%E5%85%88%E6%92%A4">内斗？先撤</a></li>
+<li><a href="#%E5%88%A9%E7%9B%8A%E9%A9%B1%E5%8A%A8%E5%9E%8B%E7%AE%A1%E7%90%86">利益驱动型管理</a></li>
+<li><a href="#%E8%B0%81%E4%B9%9F%E5%88%AB%E5%BD%93%E6%9B%BF%E7%BD%AA%E7%BE%8A">谁也别当替罪羊</a></li>
+<li><a href="#%E4%B9%B1%E4%B8%96%E5%87%BA%E8%8B%B1%E8%B1%AA">乱世出英豪</a></li>
+<li><a href="#%E5%90%88%E7%90%86%E7%9A%84%E5%AE%98%E5%83%9A%E4%B8%BB%E4%B9%89">合理的官僚主义</a></li>
+<li><a href="#%E6%9C%80%E5%BF%AB%E5%90%83%E6%8E%89%E6%9C%BA%E4%BC%9A">最快吃掉机会</a></li>
+<li><a href="#%E5%8E%9F%E6%9D%A5%E6%98%AF%E5%AE%B6%E7%9A%84%E6%84%9F%E8%A7%89">原来是家的感觉</a></li>
+<li><a href="#%E4%BA%BA%E7%94%9F%E6%98%AF%E7%9F%AD%E8%B7%91%E9%95%BF%E8%B7%91">人生是短跑？长跑？</a></li>
+<li><a href="#%E4%BD%A0%E4%B8%8D%E4%BB%81%E6%88%91%E4%B8%8D%E4%B9%89">你不仁、我不义</a></li>
+<li><a href="#%E8%80%81%E6%9D%BF%E7%9A%84%E8%80%81%E6%9D%BF%E7%9A%84%E4%BB%BB%E5%8A%A1">老板的老板的任务</a></li>
+<li><a href="#%E5%85%BC%E8%81%8C%E7%9A%84mbi%E4%BA%BA">兼职的MBI人</a></li>
+<li><a href="#%E6%89%A7%E8%BF%B7%E7%9D%8001">执迷着0.1</a></li>
+<li><a href="#mbi%E7%9A%84%E7%89%B9%E7%A7%8D%E9%83%A8%E9%98%9F">MBI的特种部队</a></li>
+<li><a href="#%E8%B0%88%E5%88%A4%E4%B9%8B%E7%A5%9E%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%E7%82%BC%E6%88%90%E7%9A%84">谈判之神是怎样的炼成的</a></li>
+<li><a href="#%E8%B7%A8%E4%B8%89%E7%BA%A7%E7%9A%84review">跨三级的Review</a></li>
+<li><a href="#%E5%BC%B9%E5%BC%93%E5%92%8Cak47%E7%9A%84%E8%BE%83%E9%87%8F">弹弓和AK47的较量</a></li>
+<li><a href="#%E5%95%86%E5%9C%BA%E4%B8%8A%E7%9A%84%E9%A9%AC%E6%8B%89%E6%9D%BE">商场上的马拉松</a></li>
+<li><a href="#%E6%90%9E%E4%B8%8D%E5%AE%9A%E7%9A%84%E9%87%87%E8%B4%AD">搞不定的采购</a></li>
+<li><a href="#%E8%B0%88%E5%88%A4%E7%9A%84%E8%87%B4%E5%91%BD%E6%AD%A6%E5%99%A8">谈判的致命武器</a></li>
+<li><a href="#%E8%BD%AF%E4%BB%B6%E5%92%8C%E6%AF%92%E5%93%81%E4%B8%80%E6%A0%B7%E6%9A%B4%E5%88%A9">软件和毒品一样暴利</a></li>
+<li><a href="#%E5%AE%8C%E7%BE%8E%E7%9A%84%E7%90%86%E7%94%B1">完美的理由</a></li>
+<li><a href="#%E6%9A%B4%E5%88%A9%E7%9A%84%E7%9F%BF%E6%B3%89%E6%B0%B4">暴利的矿泉水</a></li>
+<li><a href="#%E8%B0%81%E5%86%B3%E5%AE%9A%E5%92%8C%E8%B0%81%E8%B0%88">谁决定和谁谈</a></li>
+<li><a href="#%E5%8F%AA%E8%83%BD%E5%90%AC%E5%A4%A9%E7%94%B1%E5%91%BD">只能听天由命</a></li>
+<li><a href="#%E6%89%93%E5%9E%AE%E5%BF%83%E7%90%86%E5%92%8C%E7%94%9F%E7%90%86">打垮心理和生理</a></li>
+<li><a href="#%E8%BF%98%E6%98%AF%E4%BF%9D%E5%91%BD%E6%9C%80%E9%87%8D%E8%A6%81">还是保命最重要</a></li>
+<li><a href="#%E6%88%90%E6%9C%AC%E6%98%AF%E6%9C%80%E9%AB%98%E6%9C%BA%E5%AF%86">成本是最高机密</a></li>
+<li><a href="#%E6%B2%A1%E6%9C%89%E6%8E%A7%E5%88%B6%E6%9D%83">没有控制权</a></li>
+<li><a href="#%E5%AE%A2%E6%88%B7%E7%9A%84%E9%9D%A2%E5%AD%90%E5%B7%A5%E7%A8%8B">客户的面子工程</a></li>
+<li><a href="#%E8%BF%99%E6%A0%B7%E5%B0%B1%E8%BF%9E%E5%8D%87%E4%B8%89%E7%BA%A7">这样就连升三级</a></li>
+<li><a href="#%E5%87%BB%E8%B4%A5mbi%E7%9A%84%E6%96%B9%E6%B3%95">击败MBI的方法</a></li>
+<li><a href="#%E5%95%86%E5%9C%BA%E8%AE%A1%E4%B8%AD%E8%AE%A1">商场计中计</a></li>
+<li><a href="#%E6%B0%B8%E8%BF%9C%E4%B8%8D%E8%A6%81%E6%B2%9F%E9%80%9A%E7%9A%84%E8%AF%9D%E9%A2%98">永远不要沟通的话题</a></li>
+<li><a href="#%E6%96%B0%E4%B8%80%E4%BB%A3%E7%9A%84%E6%9C%A8%E9%A9%AC%E5%B1%A0%E5%9F%8E">新一代的木马屠城</a></li>
+<li><a href="#%E5%8F%AF%E4%BB%A5%E4%B8%BB%E5%8A%A8%E8%A6%81%E6%B1%82%E9%99%8D%E4%BB%B7">可以主动要求降价</a></li>
+<li><a href="#%E5%88%B0%E5%BA%95%E7%AD%BE%E8%BF%98%E6%98%AF%E4%B8%8D%E7%AD%BE">到底签还是不签</a></li>
+<li><a href="#%E6%9C%89%E6%95%88%E4%BD%86%E4%B8%8D%E5%81%A5%E5%BA%B7%E7%9A%84%E9%80%8F%E6%94%AF">有效但不健康的透支</a></li>
+<li><a href="#%E6%B2%A1%E6%9C%89%E5%AE%B6%E7%9A%84%E5%A4%9C%E5%BD%92%E4%BA%BA">没有家的夜归人</a></li>
 </ul>
 </div>
             

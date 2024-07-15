@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x601d;&#x8003;&#x81f4;&#x5bcc;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x601d;&#x8003;&#x81f4;&#x5bcc;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,549 +31,352 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="思考致富">思考致富</h1>
-<h2 id="美希尔-著王勇-编译">[美]希尔 著|王勇 编译</h2>
-<h3 id="序言">序言</h3>
-<h2 id="第一章-心想才能事成">第一章 心想才能事成</h2>
-<h3 id="一-你只需要一个好点子">一 你只需要一个好点子</h3>
-<h3 id="二-流浪汉走近发明家">二 “流浪汉”走近发明家</h3>
-<h3 id="三-抓住机会财富才会来临">三 抓住机会，财富才会来临</h3>
-<h3 id="四-距离黄金三尺">四 距离黄金三尺</h3>
-<h3 id="五-坚持5角钱的教训">五 坚持5角钱的教训</h3>
-<h3 id="六-我将获得我想要的">六 我将获得我想要的</h3>
-<h3 id="七-改变命运的原则">七 改变命运的原则</h3>
-<h2 id="第二章-渴望所有成就的起点">第二章 渴望——所有成就的起点</h2>
-<h3 id="一-燃烧的欲望">一 燃烧的欲望</h3>
-<h3 id="二-使渴望变成财富的六个步骤">二 使渴望变成财富的六个步骤</h3>
-<h3 id="三-欲望可以创造奇迹">三 欲望可以创造奇迹</h3>
-<h3 id="四-让梦想起飞">四 让梦想起飞</h3>
-<h2 id="第三章-信心具体描摹并且信以为真">第三章 信心——具体描摹并且信以为真</h2>
-<h3 id="一-信心的威力">一 信心的威力</h3>
-<h3 id="二-抛弃自卑">二 抛弃自卑</h3>
-<h3 id="三-神奇的自我暗示">三 神奇的自我暗示</h3>
-<h3 id="四-如何培养你的信心">四 如何培养你的信心</h3>
-<h3 id="五-价值10万美元的精彩演说">五 价值10万美元的精彩演说</h3>
-<h2 id="第四章-伟大的潜意识">第四章 伟大的潜意识</h2>
-<h3 id="一-肥沃的田园">一 肥沃的田园</h3>
-<h3 id="二-刺激潜意识的三步曲">二 刺激潜意识的三步曲</h3>
-<h3 id="三-利用想象力播种潜意识的种子">三 利用想象力播种潜意识的种子</h3>
-<h3 id="四-想象力的培养训练">四 想象力的培养训练</h3>
-<h3 id="五-积极的态度积极的情感">五 积极的态度积极的情感</h3>
-<h2 id="第五章-专业知识获得财富的工具">第五章 专业知识——获得财富的工具</h2>
-<h3 id="一-无知的致富者">一 “无知”的致富者</h3>
-<h3 id="二-如何成为需求的人才">二 如何成为需求的人才</h3>
-<h3 id="三-专业知识的创富路">三 专业知识的创富路</h3>
-<h3 id="四-同事是你的宝贵资源">四 同事是你的宝贵资源</h3>
-<h2 id="第六章-智囊团鞭策驱动的力量">第六章 智囊团——鞭策驱动的力量</h2>
-<h3 id="一-制定完善的成功步骤">一 制定完善的成功步骤</h3>
-<h3 id="二-借智囊团获取力量">二 借“智囊团”获取力量</h3>
-<h3 id="三-领导好你的智囊团">三 领导好你的智囊团</h3>
-<h3 id="四-招致失败的因素">四 招致失败的因素</h3>
-<h3 id="五-你知道自己的价值吗">五 你知道自己的价值吗</h3>
-<h2 id="第七章-决心和毅力致富的保障">第七章 决心和毅力——致富的保障</h2>
-<h3 id="一-勇敢果断地做出自己的决定">一 勇敢果断地做出自己的决定</h3>
-<h3 id="二-决定成为有钱的人">二 决定成为有钱的人</h3>
-<h3 id="三-要自由还是死亡">三 要自由还是死亡</h3>
-<h3 id="四-顽强的毅力">四 顽强的毅力</h3>
-<h3 id="五-我不怕困难">五 我不怕困难</h3>
-<h2 id="第八章-头脑开启财富城堡的万能钥匙">第八章 头脑——开启财富城堡的万能钥匙</h2>
-<h3 id="一-学会创新">一 学会创新</h3>
-<h3 id="二-不放过偶然现象">二 不放过偶然现象</h3>
-<h3 id="三-机遇实力成功">三 机遇＋实力＝成功</h3>
-<h2 id="第九章-神秘的性刺激能量">第九章 神秘的性刺激能量</h2>
-<h3 id="一-成就与性的关系">一 成就与性的关系</h3>
-<h3 id="二-培养创造力">二 培养创造力</h3>
-<h3 id="三-40岁以后的成功">三 40岁以后的成功</h3>
-<h3 id="四-女性的力量">四 女性的力量</h3>
-<h2 id="第十章-致富路上的六种恐惧">第十章 致富路上的六种恐惧</h2>
-<h3 id="一-恐惧的六大基本形态">一 恐惧的六大基本形态</h3>
-<h3 id="二-向钱伸出我们的手">二 向钱伸出我们的手</h3>
-<h2 id="第十一章-方法制胜的宝典">第十一章 方法——制胜的宝典</h2>
-<h3 id="一-确定办事目的">一 确定办事目的</h3>
-<h3 id="二-方法是主动想出来的">二 方法是主动想出来的</h3>
-<h3 id="三-做事前先找靶心后射击">三 做事前先找靶心后射击</h3>
-<h3 id="四-天下的事永远做不完">四 天下的事永远做不完</h3>
-<h3 id="五-别让你的汗水白流">五 别让你的汗水白流</h3>
-<h2 id="第十二章-信义并举以义制利">第十二章 信义并举以义制利</h2>
-<h3 id="一-信义为处世立业之本">一 信义为处世立业之本</h3>
-<h3 id="二-人格修养和信誉是盈利的命根">二 人格修养和信誉是盈利的命根</h3>
-<h3 id="三-珍惜声誉犹如珍惜生命">三 珍惜声誉犹如珍惜生命</h3>
-<h2 id="第十三章-益寿必须遵循的人生20个定律">第十三章 益寿必须遵循的人生20个定律</h2>
-<h3 id="一-拜伦法则">一 拜伦法则</h3>
-<h3 id="二-牢骚效应">二 牢骚效应</h3>
-<h3 id="三-犬獒效应">三 犬獒效应</h3>
-<h3 id="四-洛克忠告">四 洛克忠告</h3>
-<h3 id="五-吉格勒定理">五 吉格勒定理</h3>
-<h3 id="六-洛克定律">六 洛克定律</h3>
-<h3 id="七-韦特莱法则">七 韦特莱法则</h3>
-<h3 id="八-贝尔效应">八 贝尔效应</h3>
-<h3 id="九-杜根定律">九 杜根定律</h3>
-<h3 id="十-蜕皮效应">十 蜕皮效应</h3>
-<h3 id="十一-迪斯忠告">十一 迪斯忠告</h3>
-<h3 id="十二-罗伯特定理">十二 罗伯特定理</h3>
-<h3 id="十三-杜利奥定理">十三 杜利奥定理</h3>
-<h3 id="十四-吉格定理">十四 吉格定理</h3>
-<h3 id="十五-隧道视野效应">十五 隧道视野效应</h3>
-<h3 id="十六-皮尔斯定理">十六 皮尔斯定理</h3>
-<h3 id="十七-特里法则">十七 特里法则</h3>
-<h3 id="十八-比伦定律">十八 比伦定律</h3>
-<h3 id="十九-基利定理">十九 基利定理</h3>
-<h3 id="二十-卡贝定理">二十 卡贝定理</h3>
-<h2 id="第十四章-全新人生八理念">第十四章 全新人生八理念</h2>
-<h3 id="一-言必行行必果">一 言必行，行必果</h3>
-<h3 id="二-让礼物传递心意">二 让礼物传递心意</h3>
-<h3 id="三-把握分寸恰到好处">三 把握分寸，恰到好处</h3>
-<h3 id="四-真实的谦逊">四 真实的谦逊</h3>
-<h3 id="五-适当的举止">五 适当的举止</h3>
-<h3 id="六-学会说不">六 学会说“不”</h3>
-<h3 id="七-面对嫉妒心理">七 面对“嫉妒”心理</h3>
-<h3 id="八-用诚恳打动人心">八 用诚恳打动人心</h3>
-<h2 id="后记">后记</h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="思考致富">思考致富</h1>
+<h2 id="美拿破仑希尔napoleon-hill-著王勇-译">[美]拿破仑·希尔（Napoleon Hill） 著|王勇 译</h2>
+<div class="mycomment">
+</div>
+<h3 id="序言">序言</h3>
+<h3 id="第一章-心想才能事成">第一章 心想才能事成</h3>
+<h4 id="一-你只需要一个好点子">一 你只需要一个好点子</h4>
+<h4 id="二-流浪汉走近发明家">二 “流浪汉”走近发明家</h4>
+<h4 id="三-抓住机会财富才会来临">三 抓住机会，财富才会来临</h4>
+<h4 id="四-距离黄金三尺">四 距离黄金三尺</h4>
+<h4 id="五-坚持5角钱的教训">五 坚持5角钱的教训</h4>
+<h4 id="六-我将获得我想要的">六 我将获得我想要的</h4>
+<h4 id="七-改变命运的原则">七 改变命运的原则</h4>
+<h3 id="第二章-渴望所有成就的起点">第二章 渴望——所有成就的起点</h3>
+<h4 id="一-燃烧的欲望">一 燃烧的欲望</h4>
+<h4 id="二-使渴望变成财富的六个步骤">二 使渴望变成财富的六个步骤</h4>
+<h4 id="三-欲望可以创造奇迹">三 欲望可以创造奇迹</h4>
+<h4 id="四-让梦想起飞">四 让梦想起飞</h4>
+<h3 id="第三章-信心具体描摹并且信以为真">第三章 信心——具体描摹并且信以为真</h3>
+<h4 id="一-信心的威力">一 信心的威力</h4>
+<h4 id="二-抛弃自卑">二 抛弃自卑</h4>
+<h4 id="三-神奇的自我暗示">三 神奇的自我暗示</h4>
+<h4 id="四-如何培养你的信心">四 如何培养你的信心</h4>
+<h4 id="五-价值10万美元的精彩演说">五 价值10万美元的精彩演说</h4>
+<h3 id="第四章-伟大的潜意识">第四章 伟大的潜意识</h3>
+<h4 id="一-肥沃的田园">一 肥沃的田园</h4>
+<h4 id="二-刺激潜意识的三步曲">二 刺激潜意识的三步曲</h4>
+<h4 id="三-利用想象力播种潜意识的种子">三 利用想象力播种潜意识的种子</h4>
+<h4 id="四-想象力的培养训练">四 想象力的培养训练</h4>
+<h4 id="五-积极的态度积极的情感">五 积极的态度积极的情感</h4>
+<h3 id="第五章-专业知识获得财富的工具">第五章 专业知识——获得财富的工具</h3>
+<h4 id="一-无知的致富者">一 “无知”的致富者</h4>
+<h4 id="二-如何成为需求的人才">二 如何成为需求的人才</h4>
+<h4 id="三-专业知识的创富路">三 专业知识的创富路</h4>
+<h4 id="四-同事是你的宝贵资源">四 同事是你的宝贵资源</h4>
+<h3 id="第六章-智囊团鞭策驱动的力量">第六章 智囊团——鞭策驱动的力量</h3>
+<h4 id="一-制定完善的成功步骤">一 制定完善的成功步骤</h4>
+<h4 id="二-借智囊团获取力量">二 借“智囊团”获取力量</h4>
+<h4 id="三-领导好你的智囊团">三 领导好你的智囊团</h4>
+<h4 id="四-招致失败的因素">四 招致失败的因素</h4>
+<h4 id="五-你知道自己的价值吗">五 你知道自己的价值吗</h4>
+<h3 id="第七章-决心和毅力致富的保障">第七章 决心和毅力——致富的保障</h3>
+<h4 id="一-勇敢果断地做出自己的决定">一 勇敢果断地做出自己的决定</h4>
+<h4 id="二-决定成为有钱的人">二 决定成为有钱的人</h4>
+<h4 id="三-要自由还是死亡">三 要自由还是死亡</h4>
+<h4 id="四-顽强的毅力">四 顽强的毅力</h4>
+<h4 id="五-我不怕困难">五 我不怕困难</h4>
+<h3 id="第八章-头脑开启财富城堡的万能钥匙">第八章 头脑——开启财富城堡的万能钥匙</h3>
+<h4 id="一-学会创新">一 学会创新</h4>
+<h4 id="二-不放过偶然现象">二 不放过偶然现象</h4>
+<h4 id="三-机遇实力成功">三 机遇＋实力＝成功</h4>
+<h3 id="第九章-神秘的性刺激能量">第九章 神秘的性刺激能量</h3>
+<h4 id="一-成就与性的关系">一 成就与性的关系</h4>
+<h4 id="二-培养创造力">二 培养创造力</h4>
+<h4 id="三-40岁以后的成功">三 40岁以后的成功</h4>
+<h4 id="四-女性的力量">四 女性的力量</h4>
+<h3 id="第十章-致富路上的六种恐惧">第十章 致富路上的六种恐惧</h3>
+<h4 id="一-恐惧的六大基本形态">一 恐惧的六大基本形态</h4>
+<h4 id="二-向钱伸出我们的手">二 向钱伸出我们的手</h4>
+<h3 id="第十一章-方法制胜的宝典">第十一章 方法——制胜的宝典</h3>
+<h4 id="一-确定办事目的">一 确定办事目的</h4>
+<h4 id="二-方法是主动想出来的">二 方法是主动想出来的</h4>
+<h4 id="三-做事前先找靶心后射击">三 做事前先找靶心后射击</h4>
+<h4 id="四-天下的事永远做不完">四 天下的事永远做不完</h4>
+<h4 id="五-别让你的汗水白流">五 别让你的汗水白流</h4>
+<h3 id="第十二章-信义并举以义制利">第十二章 信义并举以义制利</h3>
+<h4 id="一-信义为处世立业之本">一 信义为处世立业之本</h4>
+<h4 id="二-人格修养和信誉是盈利的命根">二 人格修养和信誉是盈利的命根</h4>
+<h4 id="三-珍惜声誉犹如珍惜生命">三 珍惜声誉犹如珍惜生命</h4>
+<h3 id="第十三章-益寿必须遵循的人生20个定律">第十三章 益寿必须遵循的人生20个定律</h3>
+<h4 id="一-拜伦法则">一 拜伦法则</h4>
+<h4 id="二-牢骚效应">二 牢骚效应</h4>
+<h4 id="三-犬獒效应">三 犬獒效应</h4>
+<h4 id="四-洛克忠告">四 洛克忠告</h4>
+<h4 id="五-吉格勒定理">五 吉格勒定理</h4>
+<h4 id="六-洛克定律">六 洛克定律</h4>
+<h4 id="七-韦特莱法则">七 韦特莱法则</h4>
+<h4 id="八-贝尔效应">八 贝尔效应</h4>
+<h4 id="九-杜根定律">九 杜根定律</h4>
+<h4 id="十-蜕皮效应">十 蜕皮效应</h4>
+<h4 id="十一-迪斯忠告">十一 迪斯忠告</h4>
+<h4 id="十二-罗伯特定理">十二 罗伯特定理</h4>
+<h4 id="十三-杜利奥定理">十三 杜利奥定理</h4>
+<h4 id="十四-吉格定理">十四 吉格定理</h4>
+<h4 id="十五-隧道视野效应">十五 隧道视野效应</h4>
+<h4 id="十六-皮尔斯定理">十六 皮尔斯定理</h4>
+<h4 id="十七-特里法则">十七 特里法则</h4>
+<h4 id="十八-比伦定律">十八 比伦定律</h4>
+<h4 id="十九-基利定理">十九 基利定理</h4>
+<h4 id="二十-卡贝定理">二十 卡贝定理</h4>
+<h3 id="第十四章-全新人生八理念">第十四章 全新人生八理念</h3>
+<h4 id="一-言必行行必果">一 言必行，行必果</h4>
+<h4 id="二-让礼物传递心意">二 让礼物传递心意</h4>
+<h4 id="三-把握分寸恰到好处">三 把握分寸，恰到好处</h4>
+<h4 id="四-真实的谦逊">四 真实的谦逊</h4>
+<h4 id="五-适当的举止">五 适当的举止</h4>
+<h4 id="六-学会说不">六 学会说“不”</h4>
+<h4 id="七-面对嫉妒心理">七 面对“嫉妒”心理</h4>
+<h4 id="八-用诚恳打动人心">八 用诚恳打动人心</h4>
+<h3 id="后记">后记</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BA%8F%E8%A8%80">序言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BF%83%E6%83%B3%E6%89%8D%E8%83%BD%E4%BA%8B%E6%88%90">第一章 心想才能事成</a>
+<ul>
+<li><a href="#%E4%B8%80-%E4%BD%A0%E5%8F%AA%E9%9C%80%E8%A6%81%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%82%B9%E5%AD%90">一 你只需要一个好点子</a></li>
+<li><a href="#%E4%BA%8C-%E6%B5%81%E6%B5%AA%E6%B1%89%E8%B5%B0%E8%BF%91%E5%8F%91%E6%98%8E%E5%AE%B6">二 “流浪汉”走近发明家</a></li>
+<li><a href="#%E4%B8%89-%E6%8A%93%E4%BD%8F%E6%9C%BA%E4%BC%9A%E8%B4%A2%E5%AF%8C%E6%89%8D%E4%BC%9A%E6%9D%A5%E4%B8%B4">三 抓住机会，财富才会来临</a></li>
+<li><a href="#%E5%9B%9B-%E8%B7%9D%E7%A6%BB%E9%BB%84%E9%87%91%E4%B8%89%E5%B0%BA">四 距离黄金三尺</a></li>
+<li><a href="#%E4%BA%94-%E5%9D%9A%E6%8C%815%E8%A7%92%E9%92%B1%E7%9A%84%E6%95%99%E8%AE%AD">五 坚持5角钱的教训</a></li>
+<li><a href="#%E5%85%AD-%E6%88%91%E5%B0%86%E8%8E%B7%E5%BE%97%E6%88%91%E6%83%B3%E8%A6%81%E7%9A%84">六 我将获得我想要的</a></li>
+<li><a href="#%E4%B8%83-%E6%94%B9%E5%8F%98%E5%91%BD%E8%BF%90%E7%9A%84%E5%8E%9F%E5%88%99">七 改变命运的原则</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B8%B4%E6%9C%9B%E6%89%80%E6%9C%89%E6%88%90%E5%B0%B1%E7%9A%84%E8%B5%B7%E7%82%B9">第二章 渴望——所有成就的起点</a>
+<ul>
+<li><a href="#%E4%B8%80-%E7%87%83%E7%83%A7%E7%9A%84%E6%AC%B2%E6%9C%9B">一 燃烧的欲望</a></li>
+<li><a href="#%E4%BA%8C-%E4%BD%BF%E6%B8%B4%E6%9C%9B%E5%8F%98%E6%88%90%E8%B4%A2%E5%AF%8C%E7%9A%84%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4">二 使渴望变成财富的六个步骤</a></li>
+<li><a href="#%E4%B8%89-%E6%AC%B2%E6%9C%9B%E5%8F%AF%E4%BB%A5%E5%88%9B%E9%80%A0%E5%A5%87%E8%BF%B9">三 欲望可以创造奇迹</a></li>
+<li><a href="#%E5%9B%9B-%E8%AE%A9%E6%A2%A6%E6%83%B3%E8%B5%B7%E9%A3%9E">四 让梦想起飞</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E4%BF%A1%E5%BF%83%E5%85%B7%E4%BD%93%E6%8F%8F%E6%91%B9%E5%B9%B6%E4%B8%94%E4%BF%A1%E4%BB%A5%E4%B8%BA%E7%9C%9F">第三章 信心——具体描摹并且信以为真</a>
+<ul>
+<li><a href="#%E4%B8%80-%E4%BF%A1%E5%BF%83%E7%9A%84%E5%A8%81%E5%8A%9B">一 信心的威力</a></li>
+<li><a href="#%E4%BA%8C-%E6%8A%9B%E5%BC%83%E8%87%AA%E5%8D%91">二 抛弃自卑</a></li>
+<li><a href="#%E4%B8%89-%E7%A5%9E%E5%A5%87%E7%9A%84%E8%87%AA%E6%88%91%E6%9A%97%E7%A4%BA">三 神奇的自我暗示</a></li>
+<li><a href="#%E5%9B%9B-%E5%A6%82%E4%BD%95%E5%9F%B9%E5%85%BB%E4%BD%A0%E7%9A%84%E4%BF%A1%E5%BF%83">四 如何培养你的信心</a></li>
+<li><a href="#%E4%BA%94-%E4%BB%B7%E5%80%BC10%E4%B8%87%E7%BE%8E%E5%85%83%E7%9A%84%E7%B2%BE%E5%BD%A9%E6%BC%94%E8%AF%B4">五 价值10万美元的精彩演说</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%BC%9F%E5%A4%A7%E7%9A%84%E6%BD%9C%E6%84%8F%E8%AF%86">第四章 伟大的潜意识</a>
+<ul>
+<li><a href="#%E4%B8%80-%E8%82%A5%E6%B2%83%E7%9A%84%E7%94%B0%E5%9B%AD">一 肥沃的田园</a></li>
+<li><a href="#%E4%BA%8C-%E5%88%BA%E6%BF%80%E6%BD%9C%E6%84%8F%E8%AF%86%E7%9A%84%E4%B8%89%E6%AD%A5%E6%9B%B2">二 刺激潜意识的三步曲</a></li>
+<li><a href="#%E4%B8%89-%E5%88%A9%E7%94%A8%E6%83%B3%E8%B1%A1%E5%8A%9B%E6%92%AD%E7%A7%8D%E6%BD%9C%E6%84%8F%E8%AF%86%E7%9A%84%E7%A7%8D%E5%AD%90">三 利用想象力播种潜意识的种子</a></li>
+<li><a href="#%E5%9B%9B-%E6%83%B3%E8%B1%A1%E5%8A%9B%E7%9A%84%E5%9F%B9%E5%85%BB%E8%AE%AD%E7%BB%83">四 想象力的培养训练</a></li>
+<li><a href="#%E4%BA%94-%E7%A7%AF%E6%9E%81%E7%9A%84%E6%80%81%E5%BA%A6%E7%A7%AF%E6%9E%81%E7%9A%84%E6%83%85%E6%84%9F">五 积极的态度积极的情感</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86%E8%8E%B7%E5%BE%97%E8%B4%A2%E5%AF%8C%E7%9A%84%E5%B7%A5%E5%85%B7">第五章 专业知识——获得财富的工具</a>
+<ul>
+<li><a href="#%E4%B8%80-%E6%97%A0%E7%9F%A5%E7%9A%84%E8%87%B4%E5%AF%8C%E8%80%85">一 “无知”的致富者</a></li>
+<li><a href="#%E4%BA%8C-%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E9%9C%80%E6%B1%82%E7%9A%84%E4%BA%BA%E6%89%8D">二 如何成为需求的人才</a></li>
+<li><a href="#%E4%B8%89-%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86%E7%9A%84%E5%88%9B%E5%AF%8C%E8%B7%AF">三 专业知识的创富路</a></li>
+<li><a href="#%E5%9B%9B-%E5%90%8C%E4%BA%8B%E6%98%AF%E4%BD%A0%E7%9A%84%E5%AE%9D%E8%B4%B5%E8%B5%84%E6%BA%90">四 同事是你的宝贵资源</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%99%BA%E5%9B%8A%E5%9B%A2%E9%9E%AD%E7%AD%96%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%8A%9B%E9%87%8F">第六章 智囊团——鞭策驱动的力量</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%88%B6%E5%AE%9A%E5%AE%8C%E5%96%84%E7%9A%84%E6%88%90%E5%8A%9F%E6%AD%A5%E9%AA%A4">一 制定完善的成功步骤</a></li>
+<li><a href="#%E4%BA%8C-%E5%80%9F%E6%99%BA%E5%9B%8A%E5%9B%A2%E8%8E%B7%E5%8F%96%E5%8A%9B%E9%87%8F">二 借“智囊团”获取力量</a></li>
+<li><a href="#%E4%B8%89-%E9%A2%86%E5%AF%BC%E5%A5%BD%E4%BD%A0%E7%9A%84%E6%99%BA%E5%9B%8A%E5%9B%A2">三 领导好你的智囊团</a></li>
+<li><a href="#%E5%9B%9B-%E6%8B%9B%E8%87%B4%E5%A4%B1%E8%B4%A5%E7%9A%84%E5%9B%A0%E7%B4%A0">四 招致失败的因素</a></li>
+<li><a href="#%E4%BA%94-%E4%BD%A0%E7%9F%A5%E9%81%93%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BB%B7%E5%80%BC%E5%90%97">五 你知道自己的价值吗</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%86%B3%E5%BF%83%E5%92%8C%E6%AF%85%E5%8A%9B%E8%87%B4%E5%AF%8C%E7%9A%84%E4%BF%9D%E9%9A%9C">第七章 决心和毅力——致富的保障</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%8B%87%E6%95%A2%E6%9E%9C%E6%96%AD%E5%9C%B0%E5%81%9A%E5%87%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%86%B3%E5%AE%9A">一 勇敢果断地做出自己的决定</a></li>
+<li><a href="#%E4%BA%8C-%E5%86%B3%E5%AE%9A%E6%88%90%E4%B8%BA%E6%9C%89%E9%92%B1%E7%9A%84%E4%BA%BA">二 决定成为有钱的人</a></li>
+<li><a href="#%E4%B8%89-%E8%A6%81%E8%87%AA%E7%94%B1%E8%BF%98%E6%98%AF%E6%AD%BB%E4%BA%A1">三 要自由还是死亡</a></li>
+<li><a href="#%E5%9B%9B-%E9%A1%BD%E5%BC%BA%E7%9A%84%E6%AF%85%E5%8A%9B">四 顽强的毅力</a></li>
+<li><a href="#%E4%BA%94-%E6%88%91%E4%B8%8D%E6%80%95%E5%9B%B0%E9%9A%BE">五 我不怕困难</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E5%A4%B4%E8%84%91%E5%BC%80%E5%90%AF%E8%B4%A2%E5%AF%8C%E5%9F%8E%E5%A0%A1%E7%9A%84%E4%B8%87%E8%83%BD%E9%92%A5%E5%8C%99">第八章 头脑——开启财富城堡的万能钥匙</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%AD%A6%E4%BC%9A%E5%88%9B%E6%96%B0">一 学会创新</a></li>
+<li><a href="#%E4%BA%8C-%E4%B8%8D%E6%94%BE%E8%BF%87%E5%81%B6%E7%84%B6%E7%8E%B0%E8%B1%A1">二 不放过偶然现象</a></li>
+<li><a href="#%E4%B8%89-%E6%9C%BA%E9%81%87%E5%AE%9E%E5%8A%9B%E6%88%90%E5%8A%9F">三 机遇＋实力＝成功</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E7%A5%9E%E7%A7%98%E7%9A%84%E6%80%A7%E5%88%BA%E6%BF%80%E8%83%BD%E9%87%8F">第九章 神秘的性刺激能量</a>
+<ul>
+<li><a href="#%E4%B8%80-%E6%88%90%E5%B0%B1%E4%B8%8E%E6%80%A7%E7%9A%84%E5%85%B3%E7%B3%BB">一 成就与性的关系</a></li>
+<li><a href="#%E4%BA%8C-%E5%9F%B9%E5%85%BB%E5%88%9B%E9%80%A0%E5%8A%9B">二 培养创造力</a></li>
+<li><a href="#%E4%B8%89-40%E5%B2%81%E4%BB%A5%E5%90%8E%E7%9A%84%E6%88%90%E5%8A%9F">三 40岁以后的成功</a></li>
+<li><a href="#%E5%9B%9B-%E5%A5%B3%E6%80%A7%E7%9A%84%E5%8A%9B%E9%87%8F">四 女性的力量</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E8%87%B4%E5%AF%8C%E8%B7%AF%E4%B8%8A%E7%9A%84%E5%85%AD%E7%A7%8D%E6%81%90%E6%83%A7">第十章 致富路上的六种恐惧</a>
+<ul>
+<li><a href="#%E4%B8%80-%E6%81%90%E6%83%A7%E7%9A%84%E5%85%AD%E5%A4%A7%E5%9F%BA%E6%9C%AC%E5%BD%A2%E6%80%81">一 恐惧的六大基本形态</a></li>
+<li><a href="#%E4%BA%8C-%E5%90%91%E9%92%B1%E4%BC%B8%E5%87%BA%E6%88%91%E4%BB%AC%E7%9A%84%E6%89%8B">二 向钱伸出我们的手</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E6%96%B9%E6%B3%95%E5%88%B6%E8%83%9C%E7%9A%84%E5%AE%9D%E5%85%B8">第十一章 方法——制胜的宝典</a>
+<ul>
+<li><a href="#%E4%B8%80-%E7%A1%AE%E5%AE%9A%E5%8A%9E%E4%BA%8B%E7%9B%AE%E7%9A%84">一 确定办事目的</a></li>
+<li><a href="#%E4%BA%8C-%E6%96%B9%E6%B3%95%E6%98%AF%E4%B8%BB%E5%8A%A8%E6%83%B3%E5%87%BA%E6%9D%A5%E7%9A%84">二 方法是主动想出来的</a></li>
+<li><a href="#%E4%B8%89-%E5%81%9A%E4%BA%8B%E5%89%8D%E5%85%88%E6%89%BE%E9%9D%B6%E5%BF%83%E5%90%8E%E5%B0%84%E5%87%BB">三 做事前先找靶心后射击</a></li>
+<li><a href="#%E5%9B%9B-%E5%A4%A9%E4%B8%8B%E7%9A%84%E4%BA%8B%E6%B0%B8%E8%BF%9C%E5%81%9A%E4%B8%8D%E5%AE%8C">四 天下的事永远做不完</a></li>
+<li><a href="#%E4%BA%94-%E5%88%AB%E8%AE%A9%E4%BD%A0%E7%9A%84%E6%B1%97%E6%B0%B4%E7%99%BD%E6%B5%81">五 别让你的汗水白流</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E4%BF%A1%E4%B9%89%E5%B9%B6%E4%B8%BE%E4%BB%A5%E4%B9%89%E5%88%B6%E5%88%A9">第十二章 信义并举以义制利</a>
+<ul>
+<li><a href="#%E4%B8%80-%E4%BF%A1%E4%B9%89%E4%B8%BA%E5%A4%84%E4%B8%96%E7%AB%8B%E4%B8%9A%E4%B9%8B%E6%9C%AC">一 信义为处世立业之本</a></li>
+<li><a href="#%E4%BA%8C-%E4%BA%BA%E6%A0%BC%E4%BF%AE%E5%85%BB%E5%92%8C%E4%BF%A1%E8%AA%89%E6%98%AF%E7%9B%88%E5%88%A9%E7%9A%84%E5%91%BD%E6%A0%B9">二 人格修养和信誉是盈利的命根</a></li>
+<li><a href="#%E4%B8%89-%E7%8F%8D%E6%83%9C%E5%A3%B0%E8%AA%89%E7%8A%B9%E5%A6%82%E7%8F%8D%E6%83%9C%E7%94%9F%E5%91%BD">三 珍惜声誉犹如珍惜生命</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E7%9B%8A%E5%AF%BF%E5%BF%85%E9%A1%BB%E9%81%B5%E5%BE%AA%E7%9A%84%E4%BA%BA%E7%94%9F20%E4%B8%AA%E5%AE%9A%E5%BE%8B">第十三章 益寿必须遵循的人生20个定律</a>
+<ul>
+<li><a href="#%E4%B8%80-%E6%8B%9C%E4%BC%A6%E6%B3%95%E5%88%99">一 拜伦法则</a></li>
+<li><a href="#%E4%BA%8C-%E7%89%A2%E9%AA%9A%E6%95%88%E5%BA%94">二 牢骚效应</a></li>
+<li><a href="#%E4%B8%89-%E7%8A%AC%E7%8D%92%E6%95%88%E5%BA%94">三 犬獒效应</a></li>
+<li><a href="#%E5%9B%9B-%E6%B4%9B%E5%85%8B%E5%BF%A0%E5%91%8A">四 洛克忠告</a></li>
+<li><a href="#%E4%BA%94-%E5%90%89%E6%A0%BC%E5%8B%92%E5%AE%9A%E7%90%86">五 吉格勒定理</a></li>
+<li><a href="#%E5%85%AD-%E6%B4%9B%E5%85%8B%E5%AE%9A%E5%BE%8B">六 洛克定律</a></li>
+<li><a href="#%E4%B8%83-%E9%9F%A6%E7%89%B9%E8%8E%B1%E6%B3%95%E5%88%99">七 韦特莱法则</a></li>
+<li><a href="#%E5%85%AB-%E8%B4%9D%E5%B0%94%E6%95%88%E5%BA%94">八 贝尔效应</a></li>
+<li><a href="#%E4%B9%9D-%E6%9D%9C%E6%A0%B9%E5%AE%9A%E5%BE%8B">九 杜根定律</a></li>
+<li><a href="#%E5%8D%81-%E8%9C%95%E7%9A%AE%E6%95%88%E5%BA%94">十 蜕皮效应</a></li>
+<li><a href="#%E5%8D%81%E4%B8%80-%E8%BF%AA%E6%96%AF%E5%BF%A0%E5%91%8A">十一 迪斯忠告</a></li>
+<li><a href="#%E5%8D%81%E4%BA%8C-%E7%BD%97%E4%BC%AF%E7%89%B9%E5%AE%9A%E7%90%86">十二 罗伯特定理</a></li>
+<li><a href="#%E5%8D%81%E4%B8%89-%E6%9D%9C%E5%88%A9%E5%A5%A5%E5%AE%9A%E7%90%86">十三 杜利奥定理</a></li>
+<li><a href="#%E5%8D%81%E5%9B%9B-%E5%90%89%E6%A0%BC%E5%AE%9A%E7%90%86">十四 吉格定理</a></li>
+<li><a href="#%E5%8D%81%E4%BA%94-%E9%9A%A7%E9%81%93%E8%A7%86%E9%87%8E%E6%95%88%E5%BA%94">十五 隧道视野效应</a></li>
+<li><a href="#%E5%8D%81%E5%85%AD-%E7%9A%AE%E5%B0%94%E6%96%AF%E5%AE%9A%E7%90%86">十六 皮尔斯定理</a></li>
+<li><a href="#%E5%8D%81%E4%B8%83-%E7%89%B9%E9%87%8C%E6%B3%95%E5%88%99">十七 特里法则</a></li>
+<li><a href="#%E5%8D%81%E5%85%AB-%E6%AF%94%E4%BC%A6%E5%AE%9A%E5%BE%8B">十八 比伦定律</a></li>
+<li><a href="#%E5%8D%81%E4%B9%9D-%E5%9F%BA%E5%88%A9%E5%AE%9A%E7%90%86">十九 基利定理</a></li>
+<li><a href="#%E4%BA%8C%E5%8D%81-%E5%8D%A1%E8%B4%9D%E5%AE%9A%E7%90%86">二十 卡贝定理</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-%E5%85%A8%E6%96%B0%E4%BA%BA%E7%94%9F%E5%85%AB%E7%90%86%E5%BF%B5">第十四章 全新人生八理念</a>
+<ul>
+<li><a href="#%E4%B8%80-%E8%A8%80%E5%BF%85%E8%A1%8C%E8%A1%8C%E5%BF%85%E6%9E%9C">一 言必行，行必果</a></li>
+<li><a href="#%E4%BA%8C-%E8%AE%A9%E7%A4%BC%E7%89%A9%E4%BC%A0%E9%80%92%E5%BF%83%E6%84%8F">二 让礼物传递心意</a></li>
+<li><a href="#%E4%B8%89-%E6%8A%8A%E6%8F%A1%E5%88%86%E5%AF%B8%E6%81%B0%E5%88%B0%E5%A5%BD%E5%A4%84">三 把握分寸，恰到好处</a></li>
+<li><a href="#%E5%9B%9B-%E7%9C%9F%E5%AE%9E%E7%9A%84%E8%B0%A6%E9%80%8A">四 真实的谦逊</a></li>
+<li><a href="#%E4%BA%94-%E9%80%82%E5%BD%93%E7%9A%84%E4%B8%BE%E6%AD%A2">五 适当的举止</a></li>
+<li><a href="#%E5%85%AD-%E5%AD%A6%E4%BC%9A%E8%AF%B4%E4%B8%8D">六 学会说“不”</a></li>
+<li><a href="#%E4%B8%83-%E9%9D%A2%E5%AF%B9%E5%AB%89%E5%A6%92%E5%BF%83%E7%90%86">七 面对“嫉妒”心理</a></li>
+<li><a href="#%E5%85%AB-%E7%94%A8%E8%AF%9A%E6%81%B3%E6%89%93%E5%8A%A8%E4%BA%BA%E5%BF%83">八 用诚恳打动人心</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

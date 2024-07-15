@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x771f;&#x5e0c;&#x671b;&#x6211;20&#x51e0;&#x5c81;&#x5c31;&#x77e5;&#x9053;&#x7684;&#x4e8b;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x771f;&#x5e0c;&#x671b;&#x6211;20&#x51e0;&#x5c81;&#x5c31;&#x77e5;&#x9053;&#x7684;&#x4e8b;&#xff1a;&#x5199;&#x7ed9;&#x672a;&#x6765;50&#x5e74;&#x793e;&#x4f1a;&#x7cbe;&#x82f1;&#x7684;&#x4eba;&#x751f;&#x521b;&#x610f;&#x4e66;&#xff01;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,361 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="真希望我20几岁就知道的事">真希望我20几岁就知道的事</h1>
-<h2 id="美蒂娜齐莉格tina-seeling-著邢爽-裴卫芳-译">[美]蒂娜·齐莉格（Tina Seeling） 著|邢爽 裴卫芳 译</h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="真希望我20几岁就知道的事写给未来50年社会精英的人生创意书">真希望我20几岁就知道的事：写给未来50年社会精英的人生创意书！</h1>
+<h2 id="美蒂娜齐莉格tina-seeling-著邢爽-裴卫芳-译">[美]蒂娜·齐莉格（Tina Seeling） 著|邢爽 裴卫芳 译</h2>
+<div class="mycomment">
+<p>书里时不时地会出现一些令人感到很受启发的观点。</p>
+</div>
+<h3 id="作者简介">作者简介</h3>
+<p>除了这本《科学爆米花：不可思议的厨房实验室》，她总共写过14本科普书籍，此外，齐莉格教授的儿子小时候对魔术和棒球卡很有兴趣，她从中得到灵感，创造出一系列《头脑游戏》，用卡片教导小孩子各种科学观念。</p>
+<h3 id="前言-假设是可以推翻的">前言 假设是可以推翻的</h3>
+<h4 id="在一无所有的时候如何赚钱">在一无所有的时候如何赚钱</h4>
+<p>而另一个小组的方法更简单。他们在学生宿舍前面支了一个摊位，免费检测自行车轮胎的气压，如果轮胎需要充气的话，就收取1美元的费用。一开始他们觉得自己占了同学们的便宜，因为同学们本来可以到附近的加油站去免费充气。不过在做了几笔生意之后，他们发现顾客们其实对他们很是感激。尽管他们的服务没什么难度，而且附近也有的是充气的地方，但是，他们提供的服务无疑是更方便和有价值的。在规定时间刚到一半的时候，这组队员就改变了策略，由原来的固定收费改为顾客自愿付款的形式，这样一来，他们的营业额开始突飞猛进。显然，顾客们更愿意为这项有可能免费的服务多付一些酬劳。</p>
+<h4 id="别针换别墅的启示">“别针换别墅”的启示</h4>
+<h4 id="从问题中发现机遇">从问题中发现机遇</h4>
+<p>我一直都给学生安排一些类似的任务，只是每次的启动材料略有不同，可以是回形针、便笺纸，也可以是橡皮筋或者水瓶。每次他们都充分利用这些有限的时间和资源，取得了令我们彼此都感到惊讶的好成绩。比如，有一组学生，利用一小盒便笺纸，完成了合作创作音乐、普及心脏病知识和宣传节能环保等一系列活动，这次行动最后演化成为了现在著名的“创新大赛”（Innovation Tournament），吸引了很多国家的人来参赛。参赛者们把每次比赛都看作是一个重新审视周遭世界，把握时机的好机会。他们敢于挑战传统观念，在几乎两手空空的情况下，创造了巨大的价值。而且，那个从便笺纸起步的比赛还被拍成了电影，后来更成为专业纪录片《<strong>想象一下</strong>》（Imagine It）的基本素材。</p>
+<hr>
+<p>就像那位成功的企业家——升阳电脑公司（Sun Microsystems）创始人维诺德·科斯拉（Vinod Khosla）所说的“问题越大，机会也就越大，没人会花钱请你去解决不是问题的问题”。</p>
+<h4 id="创新力是可以培养的">创新力是可以培养的</h4>
+<p>同时，我还在斯坦福大学的<strong>哈索·普莱特纳设计研究院（Hasso Plattner Institute of Design）<strong>担任教师，人们经常亲切地把它叫作“设计学院（D. school）”。设计属于交叉学科，吸纳了来自学校工程学院、医学院、商学院以及教育学院等诸多专业学科的教师资源。这所学院由机械工程学教授</strong>大卫·凯利（David Kelly）<strong>筹划并建立，他也是著名</strong>设计公司IDEO的创始人</strong>，因为能设计出极端创新的产品而闻名。设计学院每门课程都要由至少两个学科的教师来教授，并且课题覆盖的范围也十分广泛，从最低成本控制到创意活动规划，再到老年人保健等都是我们讨论的话题。在给学生们布置一些让师生都很头大、没有标准答案的问题时，我亲身感受到了那种团结协作、绞尽脑汁和奇思妙想如泉涌的激情。</p>
+<h4 id="人生是一场开卷考试">人生是一场开卷考试</h4>
+<h4 id="openmind-练习册">Openmind 练习册</h4>
+<h4 id="阿西莫夫当我谈创造力时我谈些什么">阿西莫夫：当我谈创造力时，我谈些什么</h4>
+<p>艾萨克·阿西莫夫（Isaac Asimov），美国科幻小说黄金时代的代表人物之一，作家，生物化学教授，门萨学会会员。</p>
+<p>一个有创意的人需要在他感兴趣的方向有一个优秀的知识背景，并且有一些特立独行的习惯（成为一个疯子可不够）。</p>
+<h3 id="chapter1-问题中都隐藏机遇">Chapter1 问题中都隐藏机遇</h3>
+<p>为什么在日常生活中，大多数人都不能把问题看成机遇呢？为什么前文中提到的学生团队，一定要等到布置了课堂作业，才能努力超越自己的极限，发挥想象力呢？究其根源，是因为我们总是被教导要避免问题，抱怨问题，不能拥抱欢迎它们。</p>
+<p>有一次，我受邀在一个企业管理人员培训会议上演讲，我在讲话中播放了几段创新大赛的视频。下午的时候，<strong>一位公司CEO走到我面前感慨地说，他特别希望能重返校园，接受各种开放式问题的挑战，以便提升自己的创新能力。我看着他，有些疑惑。我敢肯定，这位CEO每天都会面对来自现实生活的形形色色的挑战，并不自觉地以创新的思维方式思考着问题，而且他已从中获益匪浅</strong>。遗憾的是，他没发现创新其实是与他的生活和工作息息相关的，他以为我布置的任务只有在学校这样的可控环境下才能操作。当然事实远非如此。</p>
+<h4 id="对抗苹果公司">对抗苹果公司</h4>
+<p>杰夫还领导团队解决了令人头痛的问题——用户该如何往这个小巧的新型设备中输入信息。杰夫认为，除小型键盘外，实现用户手写输入至关重要，这样能让输入过程更加人性化。然而，当时手写识别程序还不成熟，无法实现他的设想。于是，杰夫和他的团队开发了<strong>更易于电脑识别的新语言Graffiti</strong>。推行新语言的提议在公司内部激起一片反对之声，不过杰夫很有信心，他认为为了日后节约更多的时间，用户是愿意为此事先花费一点时间的。Graffiti是极为大胆的创新，它挑战了一切规则，却真正解决了问题。</p>
+<div class="mycomment">
+<p>从Wikipedia上查到的Graffiti：</p>
+<p>所有字母都被简化至只须写一划（X 除外），当笔或手指离开触屏时系统自动即时识别。由于字体简化至只得一划，电脑较容易识别，而简化的同时也尽量保持原有字形特点，使得用户容易学懂。因此提高了书写速度及辨别正确率，使得整体速度达至与真正的手写（用纸笔书写）一样。</p>
+<p>另一好处是用户写时无需看着屏幕也能有有相当高的辨别正确率。此外，每个字母也可重叠写于同一位置上，这样只需足够写一个字母的面积就可以快速进行书写，在面积细小而触屏解象度有限的掌上电子产品上，这点相当有用。</p>
+<p>如此，Graffiti解决了掌上电子产品上输入不便的问题。</p>
+<p>除了英文外，Graffiti也可以写阿拉伯数字，在输写位置分成左右两区，左面较大，用作写英文，右面较细，用作写数字。</p>
+</div>
+<p>杰夫·霍金斯是绝佳的问题解决者典型，他能以全新的视角看待这个世界。杰夫的新公司Numenta，是基于他自己的大脑工作理论成立的。为了探寻人类的思维方式，杰夫耗时数年自学神经系统科学，并抛出了颇具说服力的震撼理论。这个理论是关于大脑新皮层处理信息的过程的，在其著作——《人工智能的未来》（On Intelligence）中对此有详细阐述。杰夫决定以这些理论为基础，研发模拟人类大脑处理信息的“更聪敏”的电脑。</p>
+<hr>
+<p>我经常讲到的一个年轻女孩搬家的例子。那个女孩有一些大件家具要搬到新公寓去，但女孩不知道凭一己之力，怎样才能搬动那些大家伙。正一筹莫展之际，她突然瞥见了公寓中的一箱葡萄酒，那还是几周前开晚会剩下的。女孩灵机一动，有了！她登录了一家社区论坛网Craigslist，在上面发布信息说：谁能把我的家具载过海湾大桥，就送他一箱葡萄酒。几小时后，女孩搬走了所有家具。那箱葡萄酒原来只能躺在角落里落灰，这下却变成了有价值的“货币”。当然，不是说葡萄酒真的变成了钱，但是眼前的困难给予了女孩能力和动力，她看到了那些剩余葡萄酒有货币价值的一面。</p>
+<h4 id="挖掘需求和问题无视症">挖掘需求和“问题无视症”</h4>
+<p>解决问题的第一步，是发现问题。在产品设计领域，发现问题被称之为“<strong>需求挖掘</strong>”，是一项可以通过学习掌握的技能。实际上，这也是斯坦福大学“<strong>生物设计计划</strong>”的研究生们的一门必修课。该计划的研究生们以前是专修工程学、医学或商科的，他们集中在一起，用一年的时间去寻找医学领域的重大需求，并针对这些需求设计出相应的产品。这项“生物设计计划 （BioDesign Program）”由**保罗·约克（Paul Yock）**主持，他是心脏病专家、发明家，同时也是一名创业家。保罗认为，“一个分析详尽的需求好比一项发明的DNA”，换言之，<strong>只要问题得到明确的界定，解决方法自然而然就会浮出水面</strong>。</p>
+<hr>
+<p>有意思的是，很多时候，<strong>那些最接近这些问题的人由于熟视无睹，反倒无法发现这些问题，或者即便发现也不会去思考彻底解决的办法</strong>。保罗·约克讲了<strong>球囊血管成形术</strong>得以实现和利用的故事。球囊血管成形术是向动脉中插入可扩张的球囊，通过它来疏通阻塞的动脉血管。在这一突破性发明出现之前，多数心脏病专家认为，切除受损血管的心脏搭桥手术是治疗血管阻塞的唯一方法。不过，心脏搭桥手术需要打开胸腔，危险性极大。尽管球囊血管成形术没那么危险，也无须开刀，但它刚开始被引入治疗时，遭到了医生们的强烈质疑和抵制，外科医生尤其如此，因为他们自认为最“了解”这类疾病的诊治。倡导球囊血管成形术的开拓者们因此遭遇了无数阻碍，例如，<strong>发明人之一约翰·辛普森（John Simpson）最终不得不离开大学，去了一家私人诊所继续自己的研究</strong>。然而，随着时间的推移，球囊血管成形术的功效得到了证实，如今已成为血管阻塞疾病的标准治疗方法。从这个故事可见，当现状已经根深蒂固的时候，那些最接近现状的人们很难从另一个角度看问题。</p>
+<hr>
+<p>迈克尔讲了一个他为金佰利（Kimberly-Clark，生产的产品包括舒洁、Scott纸巾、好奇纸尿裤）工作期间的精彩故事。与宝洁公司帮宝适纸尿裤产品的销量相比，金佰利对自己纸尿裤产品的销售情况非常失望。因此，公司请来了迈克尔的团队，让他们帮忙找到提升业绩的办法。经过仔细观察纸尿裤市场的销售现状，评估纸尿裤外包装信息，以及采访幼儿家长后，迈克尔发现，金佰利公司忽略了很重要的一点：<strong>金佰利销售纸尿裤时，把它们当做有害的东西，是要废弃的物品，但婴儿家长们并不这么看待纸尿裤。在年轻的父母看来，穿纸尿裤是为了让宝宝更舒适，纸尿裤的处理是婴儿护理工作的一部分，它被当成是宝宝的一件衣服</strong>。这些观察结果成为金佰利改良“好奇”系列产品包装和定位的出发点。接着，通过更细致的研究，迈克尔发现了一个更大的机遇。他注意到，<strong>家长每逢被问到宝宝还穿不穿纸尿裤时，总是显得特别尴尬</strong>。对啦，这就是家长们和学习如厕的宝宝们烦恼的事情！有法子改变这种情况就好了。可是怎样摆脱这种尴尬，让纸尿裤摇身一变，成为成功的象征呢？<strong>迈克尔提出了“拉拉裤 （Pull-Ups）”的构思，作为纸尿裤和内裤之间的过渡。脱掉纸尿裤，穿上拉拉裤，对宝宝和家长而言，都是一个重要的里程碑。而且，宝宝可以自己穿拉拉裤，不再需要大人帮忙，这一成就也能让宝宝感到自豪</strong>。迈克尔洞察到的问题让金佰利的年销售额增加了10亿美元，金佰利也因此在市场竞争中领先于对手。拉拉裤这一新产品的诞生，源于专注的需求挖掘，问题的明确界定，以及及时将问题转化成机遇。</p>
+<h4 id="没有动物和小丑的马戏团">没有动物和小丑的马戏团</h4>
+<h4 id="有意义vs有钱赚">有意义VS有钱赚</h4>
+<h4 id="做好挑战一切的心理准备">做好挑战一切的心理准备</h4>
+<h4 id="openmind-练习册-1">Openmind 练习册</h4>
+<h4 id="鼓励创新或许只是说说而已">鼓励创新？或许只是说说而已</h4>
+<h3 id="chapter2-规则是可以被打破的">Chapter2 规则是可以被打破的</h3>
+<h4 id="没有不可克服的问题">没有不可克服的问题</h4>
+<h4 id="把所有烂点子都变成好主意">把所有烂点子都变成好主意</h4>
+<h4 id="史上最疯狂的推荐信">史上最疯狂的推荐信</h4>
+<h4 id="不要轻易否定烂点子">不要轻易否定“烂点子”</h4>
+<h4 id="别出新裁的招聘模式">别出新裁的招聘模式</h4>
+<h4 id="勇于打破规则">勇于打破规则</h4>
+<h4 id="改变期望">改变期望</h4>
+<h4 id="openmind-练习册-2">Openmind 练习册</h4>
+<h4 id="创造力公式">创造力公式</h4>
+<h3 id="chapter3-别等待什么救世主">Chapter3 别等待什么救世主</h3>
+<h4 id="看见近在眼前的机会">看见近在眼前的机会</h4>
+<h4 id="转化技能为自己创造机会">转化技能为自己创造机会</h4>
+<h4 id="甲之砒霜乙之蜜糖">甲之砒霜，乙之蜜糖</h4>
+<h4 id="制造一个超级钱包">制造一个“超级钱包”</h4>
+<h4 id="超级精英是怎么行动的">超级精英是怎么行动的</h4>
+<h4 id="openmind-练习册-3">Openmind 练习册</h4>
+<h4 id="提高智力的另外三种方法">提高智力的另外三种方法</h4>
+<h3 id="chapter4-屡败屡战">Chapter4 屡败……屡战</h3>
+<h4 id="学习都来自于失败">学习都来自于失败</h4>
+<h4 id="放弃的力量">放弃的力量</h4>
+<h4 id="妥善地放弃">妥善地放弃</h4>
+<h4 id="如何处理不可避免的失败">如何处理不可避免的失败</h4>
+<h4 id="每个人都会经历职业曲线">每个人都会经历职业曲线</h4>
+<h4 id="轰轰烈烈的失败好过平淡无奇的成功">轰轰烈烈的失败好过平淡无奇的成功</h4>
+<h4 id="成败只在一线间">成败只在一线间</h4>
+<h4 id="找出你能承担的风险类型">找出你能承担的风险类型</h4>
+<h4 id="借力发力">借力发力</h4>
+<h4 id="openmind-练习册-4">Openmind 练习册</h4>
+<h4 id="绝对会失败的人生计划定还是不定">绝对会失败的人生计划，定还是不定？</h4>
+<h3 id="chapter5-别太重视职业建议">Chapter5 别太重视“职业建议”</h3>
+<h4 id="找到个人爱好技能和市场的契合点">找到个人爱好，技能和市场的契合点</h4>
+<h4 id="你的理想是">你的理想是？</h4>
+<h4 id="做你自己最想做的事">做你自己最想做的事</h4>
+<h4 id="职业也需要尝试">“职业”也需要尝试</h4>
+<h4 id="职业机会是自己制造出来的">职业机会是自己制造出来的</h4>
+<h4 id="重新评估与调整">重新评估与调整</h4>
+<h4 id="openmind-练习册-5">Openmind 练习册</h4>
+<h4 id="什么样的创新才是最好的创新">什么样的创新才是最好的创新？</h4>
+<h3 id="chapter6-怎么让自己变得幸运">Chapter6 怎么让自己变得“幸运”</h3>
+<h4 id="努力才会幸运">努力才会幸运</h4>
+<h4 id="幸运的人为何幸运">幸运的人为何幸运</h4>
+<h4 id="观察细节带来好运">观察细节带来好运</h4>
+<h4 id="永远不要轻视你的经验">永远不要轻视你的经验</h4>
+<h4 id="创意是什么">创意是什么</h4>
+<h4 id="噩运也可变幸运">噩运也可变幸运</h4>
+<h4 id="无畏者创造幸运">无畏者创造幸运</h4>
+<h4 id="openmind-练习册-6">Openmind 练习册</h4>
+<h4 id="设计出的产品价值">设计出的“产品价值”</h4>
+<h3 id="chapter7-改变人生的简单小事">Chapter7 改变人生的简单小事</h3>
+<h4 id="世界上只有50个人">世界上只有50个人</h4>
+<h4 id="用将来的眼光看现在">用将来的眼光看现在</h4>
+<h4 id="及时弥补过失">及时弥补过失</h4>
+<h4 id="谈判中最重要的事">谈判中最重要的事</h4>
+<h4 id="双赢永远是可能的">双赢永远是可能的</h4>
+<h4 id="最佳替代方案">最佳替代方案</h4>
+<h4 id="不要小看助人为乐">不要小看助人为乐</h4>
+<h4 id="根据箭的方向绘制靶子">根据箭的方向绘制靶子</h4>
+<h4 id="做对的事而不单是聪明的事">做“对”的事，而不单是“聪明”的事</h4>
+<h4 id="简化生活的三法则">简化生活的“三法则”</h4>
+<h4 id="openmind-练习册-7">Openmind 练习册</h4>
+<h4 id="斯蒂芬沃尔夫勒姆宇宙的本质是计算">斯蒂芬·沃尔夫勒姆：宇宙的本质是计算</h4>
+<h3 id="chapter8-不错过任何机会就是胜利">Chapter8 不错过任何机会，就是胜利</h3>
+<h4 id="尽己所能大放异彩">尽己所能，大放异彩</h4>
+<h4 id="尝试去做vs真正去做">尝试去做VS真正去做</h4>
+<h4 id="积极进取vs争强好胜">积极进取VS争强好胜</h4>
+<h4 id="顾客真的是第一">顾客真的是第一</h4>
+<h4 id="openmind-练习册-8">Openmind 练习册</h4>
+<h4 id="12种创造性思维工具">12种创造性思维工具</h4>
+<h3 id="chapter9-笑望不确定的未来">Chapter9 笑望不确定的未来</h3>
+<h4 id="开放性问题带来创造性思考">开放性问题带来创造性思考</h4>
+<h4 id="自己决定看世界的方式">自己决定看世界的方式</h4>
+<h4 id="宽容自己与他人">宽容自己与他人</h4>
+<h4 id="迷茫意味着各种可能性">“迷茫”意味着各种可能性</h4>
+<h4 id="openmind-练习册-9">Openmind 练习册</h4>
+<h4 id="8-types-of-innovation">8 types of innovation</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E4%BD%9C%E8%80%85%E7%AE%80%E4%BB%8B">作者简介</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80-%E5%81%87%E8%AE%BE%E6%98%AF%E5%8F%AF%E4%BB%A5%E6%8E%A8%E7%BF%BB%E7%9A%84">前言 假设是可以推翻的</a>
+<ul>
+<li><a href="#%E5%9C%A8%E4%B8%80%E6%97%A0%E6%89%80%E6%9C%89%E7%9A%84%E6%97%B6%E5%80%99%E5%A6%82%E4%BD%95%E8%B5%9A%E9%92%B1">在一无所有的时候如何赚钱</a></li>
+<li><a href="#%E5%88%AB%E9%92%88%E6%8D%A2%E5%88%AB%E5%A2%85%E7%9A%84%E5%90%AF%E7%A4%BA">“别针换别墅”的启示</a></li>
+<li><a href="#%E4%BB%8E%E9%97%AE%E9%A2%98%E4%B8%AD%E5%8F%91%E7%8E%B0%E6%9C%BA%E9%81%87">从问题中发现机遇</a></li>
+<li><a href="#%E5%88%9B%E6%96%B0%E5%8A%9B%E6%98%AF%E5%8F%AF%E4%BB%A5%E5%9F%B9%E5%85%BB%E7%9A%84">创新力是可以培养的</a></li>
+<li><a href="#%E4%BA%BA%E7%94%9F%E6%98%AF%E4%B8%80%E5%9C%BA%E5%BC%80%E5%8D%B7%E8%80%83%E8%AF%95">人生是一场开卷考试</a></li>
+<li><a href="#openmind-%E7%BB%83%E4%B9%A0%E5%86%8C">Openmind 练习册</a></li>
+<li><a href="#%E9%98%BF%E8%A5%BF%E8%8E%AB%E5%A4%AB%E5%BD%93%E6%88%91%E8%B0%88%E5%88%9B%E9%80%A0%E5%8A%9B%E6%97%B6%E6%88%91%E8%B0%88%E4%BA%9B%E4%BB%80%E4%B9%88">阿西莫夫：当我谈创造力时，我谈些什么</a></li>
+</ul>
+</li>
+<li><a href="#chapter1-%E9%97%AE%E9%A2%98%E4%B8%AD%E9%83%BD%E9%9A%90%E8%97%8F%E6%9C%BA%E9%81%87">Chapter1 问题中都隐藏机遇</a>
+<ul>
+<li><a href="#%E5%AF%B9%E6%8A%97%E8%8B%B9%E6%9E%9C%E5%85%AC%E5%8F%B8">对抗苹果公司</a></li>
+<li><a href="#%E6%8C%96%E6%8E%98%E9%9C%80%E6%B1%82%E5%92%8C%E9%97%AE%E9%A2%98%E6%97%A0%E8%A7%86%E7%97%87">挖掘需求和“问题无视症”</a></li>
+<li><a href="#%E6%B2%A1%E6%9C%89%E5%8A%A8%E7%89%A9%E5%92%8C%E5%B0%8F%E4%B8%91%E7%9A%84%E9%A9%AC%E6%88%8F%E5%9B%A2">没有动物和小丑的马戏团</a></li>
+<li><a href="#%E6%9C%89%E6%84%8F%E4%B9%89vs%E6%9C%89%E9%92%B1%E8%B5%9A">有意义VS有钱赚</a></li>
+<li><a href="#%E5%81%9A%E5%A5%BD%E6%8C%91%E6%88%98%E4%B8%80%E5%88%87%E7%9A%84%E5%BF%83%E7%90%86%E5%87%86%E5%A4%87">做好挑战一切的心理准备</a></li>
+<li><a href="#openmind-%E7%BB%83%E4%B9%A0%E5%86%8C-1">Openmind 练习册</a></li>
+<li><a href="#%E9%BC%93%E5%8A%B1%E5%88%9B%E6%96%B0%E6%88%96%E8%AE%B8%E5%8F%AA%E6%98%AF%E8%AF%B4%E8%AF%B4%E8%80%8C%E5%B7%B2">鼓励创新？或许只是说说而已</a></li>
+</ul>
+</li>
+<li><a href="#chapter2-%E8%A7%84%E5%88%99%E6%98%AF%E5%8F%AF%E4%BB%A5%E8%A2%AB%E6%89%93%E7%A0%B4%E7%9A%84">Chapter2 规则是可以被打破的</a>
+<ul>
+<li><a href="#%E6%B2%A1%E6%9C%89%E4%B8%8D%E5%8F%AF%E5%85%8B%E6%9C%8D%E7%9A%84%E9%97%AE%E9%A2%98">没有不可克服的问题</a></li>
+<li><a href="#%E6%8A%8A%E6%89%80%E6%9C%89%E7%83%82%E7%82%B9%E5%AD%90%E9%83%BD%E5%8F%98%E6%88%90%E5%A5%BD%E4%B8%BB%E6%84%8F">把所有烂点子都变成好主意</a></li>
+<li><a href="#%E5%8F%B2%E4%B8%8A%E6%9C%80%E7%96%AF%E7%8B%82%E7%9A%84%E6%8E%A8%E8%8D%90%E4%BF%A1">史上最疯狂的推荐信</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81%E8%BD%BB%E6%98%93%E5%90%A6%E5%AE%9A%E7%83%82%E7%82%B9%E5%AD%90">不要轻易否定“烂点子”</a></li>
+<li><a href="#%E5%88%AB%E5%87%BA%E6%96%B0%E8%A3%81%E7%9A%84%E6%8B%9B%E8%81%98%E6%A8%A1%E5%BC%8F">别出新裁的招聘模式</a></li>
+<li><a href="#%E5%8B%87%E4%BA%8E%E6%89%93%E7%A0%B4%E8%A7%84%E5%88%99">勇于打破规则</a></li>
+<li><a href="#%E6%94%B9%E5%8F%98%E6%9C%9F%E6%9C%9B">改变期望</a></li>
+<li><a href="#openmind-%E7%BB%83%E4%B9%A0%E5%86%8C-2">Openmind 练习册</a></li>
+<li><a href="#%E5%88%9B%E9%80%A0%E5%8A%9B%E5%85%AC%E5%BC%8F">创造力公式</a></li>
+</ul>
+</li>
+<li><a href="#chapter3-%E5%88%AB%E7%AD%89%E5%BE%85%E4%BB%80%E4%B9%88%E6%95%91%E4%B8%96%E4%B8%BB">Chapter3 别等待什么救世主</a>
+<ul>
+<li><a href="#%E7%9C%8B%E8%A7%81%E8%BF%91%E5%9C%A8%E7%9C%BC%E5%89%8D%E7%9A%84%E6%9C%BA%E4%BC%9A">看见近在眼前的机会</a></li>
+<li><a href="#%E8%BD%AC%E5%8C%96%E6%8A%80%E8%83%BD%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%88%9B%E9%80%A0%E6%9C%BA%E4%BC%9A">转化技能为自己创造机会</a></li>
+<li><a href="#%E7%94%B2%E4%B9%8B%E7%A0%92%E9%9C%9C%E4%B9%99%E4%B9%8B%E8%9C%9C%E7%B3%96">甲之砒霜，乙之蜜糖</a></li>
+<li><a href="#%E5%88%B6%E9%80%A0%E4%B8%80%E4%B8%AA%E8%B6%85%E7%BA%A7%E9%92%B1%E5%8C%85">制造一个“超级钱包”</a></li>
+<li><a href="#%E8%B6%85%E7%BA%A7%E7%B2%BE%E8%8B%B1%E6%98%AF%E6%80%8E%E4%B9%88%E8%A1%8C%E5%8A%A8%E7%9A%84">超级精英是怎么行动的</a></li>
+<li><a href="#openmind-%E7%BB%83%E4%B9%A0%E5%86%8C-3">Openmind 练习册</a></li>
+<li><a href="#%E6%8F%90%E9%AB%98%E6%99%BA%E5%8A%9B%E7%9A%84%E5%8F%A6%E5%A4%96%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95">提高智力的另外三种方法</a></li>
+</ul>
+</li>
+<li><a href="#chapter4-%E5%B1%A1%E8%B4%A5%E5%B1%A1%E6%88%98">Chapter4 屡败……屡战</a>
+<ul>
+<li><a href="#%E5%AD%A6%E4%B9%A0%E9%83%BD%E6%9D%A5%E8%87%AA%E4%BA%8E%E5%A4%B1%E8%B4%A5">学习都来自于失败</a></li>
+<li><a href="#%E6%94%BE%E5%BC%83%E7%9A%84%E5%8A%9B%E9%87%8F">放弃的力量</a></li>
+<li><a href="#%E5%A6%A5%E5%96%84%E5%9C%B0%E6%94%BE%E5%BC%83">妥善地放弃</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E4%B8%8D%E5%8F%AF%E9%81%BF%E5%85%8D%E7%9A%84%E5%A4%B1%E8%B4%A5">如何处理不可避免的失败</a></li>
+<li><a href="#%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E4%BC%9A%E7%BB%8F%E5%8E%86%E8%81%8C%E4%B8%9A%E6%9B%B2%E7%BA%BF">每个人都会经历职业曲线</a></li>
+<li><a href="#%E8%BD%B0%E8%BD%B0%E7%83%88%E7%83%88%E7%9A%84%E5%A4%B1%E8%B4%A5%E5%A5%BD%E8%BF%87%E5%B9%B3%E6%B7%A1%E6%97%A0%E5%A5%87%E7%9A%84%E6%88%90%E5%8A%9F">轰轰烈烈的失败好过平淡无奇的成功</a></li>
+<li><a href="#%E6%88%90%E8%B4%A5%E5%8F%AA%E5%9C%A8%E4%B8%80%E7%BA%BF%E9%97%B4">成败只在一线间</a></li>
+<li><a href="#%E6%89%BE%E5%87%BA%E4%BD%A0%E8%83%BD%E6%89%BF%E6%8B%85%E7%9A%84%E9%A3%8E%E9%99%A9%E7%B1%BB%E5%9E%8B">找出你能承担的风险类型</a></li>
+<li><a href="#%E5%80%9F%E5%8A%9B%E5%8F%91%E5%8A%9B">借力发力</a></li>
+<li><a href="#openmind-%E7%BB%83%E4%B9%A0%E5%86%8C-4">Openmind 练习册</a></li>
+<li><a href="#%E7%BB%9D%E5%AF%B9%E4%BC%9A%E5%A4%B1%E8%B4%A5%E7%9A%84%E4%BA%BA%E7%94%9F%E8%AE%A1%E5%88%92%E5%AE%9A%E8%BF%98%E6%98%AF%E4%B8%8D%E5%AE%9A">绝对会失败的人生计划，定还是不定？</a></li>
+</ul>
+</li>
+<li><a href="#chapter5-%E5%88%AB%E5%A4%AA%E9%87%8D%E8%A7%86%E8%81%8C%E4%B8%9A%E5%BB%BA%E8%AE%AE">Chapter5 别太重视“职业建议”</a>
+<ul>
+<li><a href="#%E6%89%BE%E5%88%B0%E4%B8%AA%E4%BA%BA%E7%88%B1%E5%A5%BD%E6%8A%80%E8%83%BD%E5%92%8C%E5%B8%82%E5%9C%BA%E7%9A%84%E5%A5%91%E5%90%88%E7%82%B9">找到个人爱好，技能和市场的契合点</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E7%90%86%E6%83%B3%E6%98%AF">你的理想是？</a></li>
+<li><a href="#%E5%81%9A%E4%BD%A0%E8%87%AA%E5%B7%B1%E6%9C%80%E6%83%B3%E5%81%9A%E7%9A%84%E4%BA%8B">做你自己最想做的事</a></li>
+<li><a href="#%E8%81%8C%E4%B8%9A%E4%B9%9F%E9%9C%80%E8%A6%81%E5%B0%9D%E8%AF%95">“职业”也需要尝试</a></li>
+<li><a href="#%E8%81%8C%E4%B8%9A%E6%9C%BA%E4%BC%9A%E6%98%AF%E8%87%AA%E5%B7%B1%E5%88%B6%E9%80%A0%E5%87%BA%E6%9D%A5%E7%9A%84">职业机会是自己制造出来的</a></li>
+<li><a href="#%E9%87%8D%E6%96%B0%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B0%83%E6%95%B4">重新评估与调整</a></li>
+<li><a href="#openmind-%E7%BB%83%E4%B9%A0%E5%86%8C-5">Openmind 练习册</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%88%9B%E6%96%B0%E6%89%8D%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E5%88%9B%E6%96%B0">什么样的创新才是最好的创新？</a></li>
+</ul>
+</li>
+<li><a href="#chapter6-%E6%80%8E%E4%B9%88%E8%AE%A9%E8%87%AA%E5%B7%B1%E5%8F%98%E5%BE%97%E5%B9%B8%E8%BF%90">Chapter6 怎么让自己变得“幸运”</a>
+<ul>
+<li><a href="#%E5%8A%AA%E5%8A%9B%E6%89%8D%E4%BC%9A%E5%B9%B8%E8%BF%90">努力才会幸运</a></li>
+<li><a href="#%E5%B9%B8%E8%BF%90%E7%9A%84%E4%BA%BA%E4%B8%BA%E4%BD%95%E5%B9%B8%E8%BF%90">幸运的人为何幸运</a></li>
+<li><a href="#%E8%A7%82%E5%AF%9F%E7%BB%86%E8%8A%82%E5%B8%A6%E6%9D%A5%E5%A5%BD%E8%BF%90">观察细节带来好运</a></li>
+<li><a href="#%E6%B0%B8%E8%BF%9C%E4%B8%8D%E8%A6%81%E8%BD%BB%E8%A7%86%E4%BD%A0%E7%9A%84%E7%BB%8F%E9%AA%8C">永远不要轻视你的经验</a></li>
+<li><a href="#%E5%88%9B%E6%84%8F%E6%98%AF%E4%BB%80%E4%B9%88">创意是什么</a></li>
+<li><a href="#%E5%99%A9%E8%BF%90%E4%B9%9F%E5%8F%AF%E5%8F%98%E5%B9%B8%E8%BF%90">噩运也可变幸运</a></li>
+<li><a href="#%E6%97%A0%E7%95%8F%E8%80%85%E5%88%9B%E9%80%A0%E5%B9%B8%E8%BF%90">无畏者创造幸运</a></li>
+<li><a href="#openmind-%E7%BB%83%E4%B9%A0%E5%86%8C-6">Openmind 练习册</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E5%87%BA%E7%9A%84%E4%BA%A7%E5%93%81%E4%BB%B7%E5%80%BC">设计出的“产品价值”</a></li>
+</ul>
+</li>
+<li><a href="#chapter7-%E6%94%B9%E5%8F%98%E4%BA%BA%E7%94%9F%E7%9A%84%E7%AE%80%E5%8D%95%E5%B0%8F%E4%BA%8B">Chapter7 改变人生的简单小事</a>
+<ul>
+<li><a href="#%E4%B8%96%E7%95%8C%E4%B8%8A%E5%8F%AA%E6%9C%8950%E4%B8%AA%E4%BA%BA">世界上只有50个人</a></li>
+<li><a href="#%E7%94%A8%E5%B0%86%E6%9D%A5%E7%9A%84%E7%9C%BC%E5%85%89%E7%9C%8B%E7%8E%B0%E5%9C%A8">用将来的眼光看现在</a></li>
+<li><a href="#%E5%8F%8A%E6%97%B6%E5%BC%A5%E8%A1%A5%E8%BF%87%E5%A4%B1">及时弥补过失</a></li>
+<li><a href="#%E8%B0%88%E5%88%A4%E4%B8%AD%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B">谈判中最重要的事</a></li>
+<li><a href="#%E5%8F%8C%E8%B5%A2%E6%B0%B8%E8%BF%9C%E6%98%AF%E5%8F%AF%E8%83%BD%E7%9A%84">双赢永远是可能的</a></li>
+<li><a href="#%E6%9C%80%E4%BD%B3%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88">最佳替代方案</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81%E5%B0%8F%E7%9C%8B%E5%8A%A9%E4%BA%BA%E4%B8%BA%E4%B9%90">不要小看助人为乐</a></li>
+<li><a href="#%E6%A0%B9%E6%8D%AE%E7%AE%AD%E7%9A%84%E6%96%B9%E5%90%91%E7%BB%98%E5%88%B6%E9%9D%B6%E5%AD%90">根据箭的方向绘制靶子</a></li>
+<li><a href="#%E5%81%9A%E5%AF%B9%E7%9A%84%E4%BA%8B%E8%80%8C%E4%B8%8D%E5%8D%95%E6%98%AF%E8%81%AA%E6%98%8E%E7%9A%84%E4%BA%8B">做“对”的事，而不单是“聪明”的事</a></li>
+<li><a href="#%E7%AE%80%E5%8C%96%E7%94%9F%E6%B4%BB%E7%9A%84%E4%B8%89%E6%B3%95%E5%88%99">简化生活的“三法则”</a></li>
+<li><a href="#openmind-%E7%BB%83%E4%B9%A0%E5%86%8C-7">Openmind 练习册</a></li>
+<li><a href="#%E6%96%AF%E8%92%82%E8%8A%AC%E6%B2%83%E5%B0%94%E5%A4%AB%E5%8B%92%E5%A7%86%E5%AE%87%E5%AE%99%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E8%AE%A1%E7%AE%97">斯蒂芬·沃尔夫勒姆：宇宙的本质是计算</a></li>
+</ul>
+</li>
+<li><a href="#chapter8-%E4%B8%8D%E9%94%99%E8%BF%87%E4%BB%BB%E4%BD%95%E6%9C%BA%E4%BC%9A%E5%B0%B1%E6%98%AF%E8%83%9C%E5%88%A9">Chapter8 不错过任何机会，就是胜利</a>
+<ul>
+<li><a href="#%E5%B0%BD%E5%B7%B1%E6%89%80%E8%83%BD%E5%A4%A7%E6%94%BE%E5%BC%82%E5%BD%A9">尽己所能，大放异彩</a></li>
+<li><a href="#%E5%B0%9D%E8%AF%95%E5%8E%BB%E5%81%9Avs%E7%9C%9F%E6%AD%A3%E5%8E%BB%E5%81%9A">尝试去做VS真正去做</a></li>
+<li><a href="#%E7%A7%AF%E6%9E%81%E8%BF%9B%E5%8F%96vs%E4%BA%89%E5%BC%BA%E5%A5%BD%E8%83%9C">积极进取VS争强好胜</a></li>
+<li><a href="#%E9%A1%BE%E5%AE%A2%E7%9C%9F%E7%9A%84%E6%98%AF%E7%AC%AC%E4%B8%80">顾客真的是第一</a></li>
+<li><a href="#openmind-%E7%BB%83%E4%B9%A0%E5%86%8C-8">Openmind 练习册</a></li>
+<li><a href="#12%E7%A7%8D%E5%88%9B%E9%80%A0%E6%80%A7%E6%80%9D%E7%BB%B4%E5%B7%A5%E5%85%B7">12种创造性思维工具</a></li>
+</ul>
+</li>
+<li><a href="#chapter9-%E7%AC%91%E6%9C%9B%E4%B8%8D%E7%A1%AE%E5%AE%9A%E7%9A%84%E6%9C%AA%E6%9D%A5">Chapter9 笑望不确定的未来</a>
+<ul>
+<li><a href="#%E5%BC%80%E6%94%BE%E6%80%A7%E9%97%AE%E9%A2%98%E5%B8%A6%E6%9D%A5%E5%88%9B%E9%80%A0%E6%80%A7%E6%80%9D%E8%80%83">开放性问题带来创造性思考</a></li>
+<li><a href="#%E8%87%AA%E5%B7%B1%E5%86%B3%E5%AE%9A%E7%9C%8B%E4%B8%96%E7%95%8C%E7%9A%84%E6%96%B9%E5%BC%8F">自己决定看世界的方式</a></li>
+<li><a href="#%E5%AE%BD%E5%AE%B9%E8%87%AA%E5%B7%B1%E4%B8%8E%E4%BB%96%E4%BA%BA">宽容自己与他人</a></li>
+<li><a href="#%E8%BF%B7%E8%8C%AB%E6%84%8F%E5%91%B3%E7%9D%80%E5%90%84%E7%A7%8D%E5%8F%AF%E8%83%BD%E6%80%A7">“迷茫”意味着各种可能性</a></li>
+<li><a href="#openmind-%E7%BB%83%E4%B9%A0%E5%86%8C-9">Openmind 练习册</a></li>
+<li><a href="#8-types-of-innovation">8 types of innovation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

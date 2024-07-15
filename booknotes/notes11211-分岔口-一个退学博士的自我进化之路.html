@@ -127,538 +127,189 @@
 }
 
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
-}
-
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-	padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 30px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ffcccc;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 4px solid #ffcc99;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-/*笔记中的普通表格*/
-table {
-	/*居中*/
-	margin: 0 auto;
-	max-width: 80%;
-	font-size: smaller;
-
-	border-width: 1px;
-	border-style: solid;
-	border-color: #666666;
-	border-collapse: collapse;
-}
-
-th,
-td {
-	background-color: transparent;
-	border: solid rgb(80, 80, 80) 1px;
-	padding: 5px;
-}
-
-th {
-	background-color: rgb(221, 221, 221);
-	text-align: center;
-	font-weight: bold;
-}
-
-/*笔记中的普通图片*/
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 笔记里插入我的评价 ======== */
-div.mycomment {
-	font-size: smaller;
-
-	padding: 20px 20px 5px 30px;
-	margin: 40px 5%;
-	background-color: #e5eecc;
-
-	border: solid 2px #8ca86d;
-	border-radius: 30px;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track 
-	scrollbar-color: skyblue #ededed;*/
-	scrollbar-color: rgb(178, 216, 232) #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	.content {
-		width: 73%;
-		padding-left: 0.5%;
-	}
-
-	div.toc {
-		/*max-width: 29%;*/
-		width: 26%;
-		height: 100vh;
-		padding-right: 0;
-
-		float: left;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		/* list-style-position: inside; */
-		line-height: 1.8;
-	}
-
-	div.toc a {
-		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
-		display: block;
-		/*隐藏链接下划线*/
-		text-decoration: none;
-		color: white;
-
-		/*禁止换行*/
-		white-space: nowrap;
-		/*超出部分直接隐藏不显示*/
-		overflow: hidden;
-		/* 超出部分虽不显示但末尾添加省略号
-		text-overflow: ellipsis;*/
-	}
-
-	div.toc a:hover {
-		color: black;
-	}
-
-	div.toc ul>li>a:hover {
-		background-color: #ff7e79;
-	}
-
-	div.toc ul>li>ul>li>a:hover {
-		background-color: #ffcccc;
-	}
-
-	div.toc ul>li>ul>li>ul>li>a:hover {
-		background-color: #ffcc99;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
-	div.toc ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-
-		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
-		z-index: 1;
-		/*skyblue*/
-		background-color: #1c1b22;
-		font-weight: bold;
-		font-size: 0.8em;
-		color: white;
-	}
-
-	div.toc ul>li>ul>li {
-		padding-left: 20px;
-
-		/*rgb(178, 216, 232)*/
-		background-color: #42414d;
-		font-weight: normal;
-		font-size: 0.8em;
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		padding-left: 20px;
-
-		/*background-color: rgb(210, 231, 239);*/
-		font-weight: normal;
-		font-size: 0.75em;
-	}
-
-	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
-	div.toc ul>li>ul>li>ul>li>ul>li {
-	background-color: rgb(228, 235, 238);
-	font-weight: normal;
-	padding-left: 20px;
-	font-size: 0.6em;
-	}
-	*/
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
-</style>
+        
         </head>
         <body class="vscode-body vscode-light">
-            <div class="content">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
 <h1 id="分岔口一个退学博士的自我进化之路">分岔口：一个退学博士的自我进化之路</h1>
 <h2 id="刘怡">刘怡</h2>
 <div class="mycomment">
-<p>在我看来，作者对于别人的评价有点过于敏感，人际交往能力不足。书里对于细节的记录非常充分，甚至包括非常多的当时的心理活动描写，像看小说和电影似的。</p>
+<p>在我看来，作者对于别人的评价有点过于敏感，人际交往能力不足。书里对于细节的记录非常充分，甚至包括非常多当时的心理活动描写，像看小说和电影似的。</p>
+<p>即便只是把这本书当成个故事来看看，语言和行文风格本身也让我提不起兴趣。所以还是不继续看了。</p>
 </div>
-<h3 id=""></h3>
+<h3 id="自序一我能为你带来什么">自序一：我能为你带来什么</h3>
+<p>二战期间，美国人类学家本尼迪克特应美国政府的要求，调查和研究日本文化。之后将其研究成果写成《菊与刀》，其中一个重要发现便是确定日本文化是与罪感文化相对的耻感文化。所谓耻感文化，是指依靠外部强制力来做善行，而非罪恶感在内心的反映。因此耻感文化一定需要外人或外在力量，因为这是行动的准则和判断的依据。我觉得这其实与日本人强调集体文化有关，其实这一点跟中国文化十分相似，生活在庞大群体的社会里，每个人都特别在意别人对自己的看法和评价，却并不特别在意绝对真理和绝对标准。我常常在想，像东亚这样的耻感文化究竟有什么样的问题和劣势。除了人云亦云，不推崇绝对主义之外，一个极大的弊端恐怕就是造成个人真正内驱力不足。因为所有的注意力都被分散在周遭事物，心思都集中在如何迎合和顺从外在，千方百计避免自己出格。放在留学或者读博这些事上也是同理可见。许多人留学或者读博，不是自己真心想做这些事，而是因为社会流行这些，或者做这些事有利可图，总之是手段而不是目的。究竟他们的目的是什么，很多人实际上也根本搞不清楚。但至少清楚的是，倘若遇见了失败和挫折，那一定要家丑不可外扬。</p>
+<hr>
+<p>物质生活的进步和提高或许真带来了精神上更加自由和富足的体验。相比于老一辈人，我能看见我们这一代人以及更年轻一代，敢于分享且乐于分享。当我创建豆瓣小组“博士，退学了嘛？”时，我不知道能吸引多少人，也不知道能走多远。但事实上，现在我们组已经有超过一万组员。而且，更重要的是，我看见学业受阻受挫变成了一件很普遍的事，且不论是在国外还是国内。造成这种局面，我相信原因肯定有很多，但我们的教育似乎真的有点跟不上时代的节奏，不仅不能满足我们的需求，反而还令我们感到痛苦。或者说，是我们这一代人正在经历真正意义上的觉醒，一方面想要无愧于自我，另一方面却又被既定文化所钳制。夹在中间，左右不是，颇不自在。</p>
+<hr>
+<p>我 2013 年自国内研究生毕业后陪同先生赴美攻读博士。后来，我自己坚持不懈，也分别申请到硕士和博士，在美生活近八年，辗转过四个主要城市。感恩于出国前曾接受过人类学训练，让我对生活一直抱有冷静的观察和不停的思考。在这本书里，我将以我的亲身经历讲述一个鲜活又生动的求学“失败”故事。之所以给失败打上引号，是因为按照旧有的认识，我的确没能获得博士学历，是一个失败。但我自己早已不为其所惑，无所谓争论这是失败亦或者成功。在这段经历里，你们将看到我是如何遭遇种种困难和挑战，并一步步走向退学。</p>
+<h3 id="自序二我不炖鸡汤">自序二：我不炖鸡汤</h3>
+<p>当我在 2019 年三月彻底决定退学的时候，在豆瓣网上组建了一个小组，取名“博士，退学了嘛？”那时，我的身体里似乎住着两个人，一个人充满愤懑不平，想要一吐为快；而另一个则觉得是时候放下了，应该寻找新的方向。退学之后，我就积极投入到发帖的工作中。生怕记忆离我远去，忘却了那些折磨我的人和事。</p>
+<h2 id="第一部-博士历险记">第一部 博士历险记</h2>
+<h3 id="第一章-冲击与震惊">第一章 冲击与震惊</h3>
+<h4 id="一new-school-new-shock惊奇无限惊恐连连">一、New School, New Shock（惊奇无限，惊恐连连）</h4>
+<p>读博前，我就读于美国某城市圈内某知名小型规模私立学校。来到上事山这所大型公立大学读博，一开始便感到极其不适。除了明显的地域上的城乡区别，就数学校规模的差别。那时我还不懂学校规模与公立私立之间的联系，只是单纯从直观感受上觉得上事山地大人多。背着沉重的书包穿梭在诺大的校园中，总是匆忙又不停地辗转于不同教室，感觉有走不完的路。同时，人多带来的直接结果就是资源稀缺。不仅是学习和生活上的资源，也包括得到帮助的专业和行政资源。</p>
+<p>跟美硕学校相比，上事山这所大型、堪比巨型的公立大学，在行政方面，不管是学校级别还是院系层面，办公效率都级低，并且十分官僚，常常遇见张三推李四，李四推王五，王五再推赵六的状况。工作也不够专业和细致，连冠词“这”（the）都拼不全，邮件往来中此类拼写错误遍地都是，真叫人怀疑是一群领着州政府或联邦钱的饭桶在做事，缺乏敬业精神。</p>
+<p>具体到教学层面也非常令人失望。系里刚开学便预备了两周新生介绍会（orientation），主题只有一个：如何做个好助教。不能说没用，毕竟老师们倾其所有，不厌其烦地传授了很多如何对付学生和处理课堂冲突的技巧。但是，基本上没提博士的培养机制，甚至也没有关于具体如何选课、如何做研究、如何毕业这些与博士生切身利益相关的问题。这真的是本末倒置吗？我忘了，其实还有另一种表述，叫，别有用心；或者更糟，他们就是一路靠奇技淫巧+雕虫小技上位和混日子，怎么能奢望兜里有别的好东西。</p>
+<hr>
+<p>还有一门研讨课，任课老师要求每周写书评，却评论道：“在你们这个阶段，写清楚这本书的逻辑论证（argument）就可以了，不用评价，你们还不够水平做评价。”脑袋里嗡的一声，什么？！现在不训练批判性阅读和写作，什么时候训练？现在都没资格批评一本书，什么时候有资格？批判性阅读和写作的能力，谁天生就有，难道不都是在日积月累的学习中积累起来的吗？为什么还不尽早开始培养呢？再就是，凭什么剥夺我训练这种能力的机会和发表见解的权利？只可惜我那时候还不懂，<strong>学术也是分级的，金字塔顶端的人负责创新，而绝大部分人不过用来搬砖</strong>。所以，怎么能指望搬砖型的老师有能力教学生批判性阅读和写作这样的绝杀本领呢？</p>
+<h4 id="二遭遇种族歧视">二、遭遇种族歧视</h4>
+<p>开学的第三天，作为助教（Teaching Assistant），跟另外两名助教一起被老师聚在他的办公室，为统一标准，讨论如何给学生的小测（quiz）打分。另外两个助教分别是白人女生凯多麻和黑人男生李德查，加上我这个亚裔外国人，这样的助教组合非常政治正确。</p>
+<h4 id="三996-算什么博士连吃饭时间都没有">三、996 算什么，博士连吃饭时间都没有</h4>
+<h4 id="四助教停职">四、助教停职</h4>
+<h3 id="第二章-休学与生病">第二章 休学与生病</h3>
+<h4 id="一居不择邻">一、居不择邻</h4>
+<p>佟末箭本来在海外休假，恰好最近几周回来。我跟他讲述了整个事情的来龙去脉，同时谈了我的博士论文设想和与他的研究联系的可能性。只是我没想到，他直接说，“我不能做你的导师，”爽快而干脆。不过他提议，“你可以好好表现，在学期末的时候再跟雷格史谈谈，希望他可以做回你的导师。”再有，大牛居然跟我讲，“你把助教这些事情的材料都保存好，系主任又不会一直在那。”听得我心潮澎湃。</p>
+<p>这世界，希望果然是个好东西啊！带着要赢回雷格史做我导师的希望，我又安下心来。</p>
+<p>之前说过，这是一间大型或者说巨型公立大学，言下之意就是学生非常非常多，并且不怎么学习的人也很多很多。再翻译一下，就是我的左邻右舍都很吵，白天打游戏，晚上开派对。美国的公寓楼，楼板薄似纸，音乐声、叫喊声、脚步声、声声入耳。开学一周内，我就因为被各种噪音骚扰，连叫了三次警察。再就是，楼上的韩国人几乎每晚 12 点开始用韩语嘶吼般煲电话粥，然后接着洗澡或者洗漱。浴室里排气扇发出的巨大声响就这样肆无忌惮地弥漫在漫漫长夜里。</p>
+<p>我开始失眠，一方面是因为噪音，另一方面则是因为担忧，担忧自己睡不好，白天起不来，精神不好便不能读好书、写好文章。而我这样该怎么挽回雷格史做导师？这就像是一个死循环，失眠导致担忧，担忧反过来又导致失眠。无解。就这样断断续续地失眠了一个月左右。中间，我手写了一封长信塞进楼上的门缝里，坦诚地说明情况并希望他可以走路轻一点，洗漱早一点，并且不要半夜打电话。</p>
+<h4 id="二身心崩溃">二、身心崩溃</h4>
+<p>这学期我选的一门叫做亚洲研究的研讨课，任课老师是一位母语非英语的犹太人。他叫冉自为，人极其聪明，但英语口音非常重，听他讲课特别费劲。我不确定他究竟出于什么原因和目的，<strong>从开学不久就三番五次地催我抽空去找他聊，还说他知道我有很多很深刻的想法但是因为语言缘故没有很好的表达出来，他想要帮助我</strong>。我之所以一直对该老师的盛邀表示闪躲，主要是当我了解到我们系和亚洲研究之间存在着深刻矛盾之后，觉得有必要采取自保。关于具体的两系矛盾是怎么摧残和压迫学生，我会在下一章里谈。也许是因为看过医生拿到助眠药心情放松了一些，也许是因为内心深处觉得是时候应该直面或者回应老师的邀约，在周一课后冉自为再一次提及此事时，我遂答应去跟他谈谈。可是没想到，这次会谈竟成了压倒我的倒数第二根稻草。</p>
+<h4 id="三孤军奋战">三、孤军奋战</h4>
+<p>艾：有一个事情要考虑就是你与项目是否适合，刚刚那安白讲了，他们不会变的，我担心你如果认为跟他们之前的互动会影响到给你打低分。这是一个严肃的指控，如果是真的，我们会调查。但是根据我的经验，我没见过这样的个案，或者类似的发生。我们期望教授打分时分开个人牵涉，但这不确保你可以得到好成绩，他们会按照你的表现来评判。这就是为什么你看教学大纲，上面会有具体怎么评分的概要，我们鼓励教授……</p>
+<p>见此状，我就跟他们讲了<strong>卫大仁叫我们平时不要打高分，学期末为了满足正态分布再对学生成绩进行调整</strong>的事。那安白和艾莎莎都表示理解我的担心，但也都极力为教授事后调整分数的行为而辩护，指出这是针对班上所有人，而非个别人。那安白甚至还强调只要没有什么不道德（unethical），“教授是有权力，可以决定怎么评判成绩，以及诸如标准是什么。只要这里没有几分心存偏见的人、不公正的人，以及不道德和非法的事情发生。这就是学术圈怎样运作的部分规则，教授决定怎么教。”</p>
+<hr>
+<p>绕了一大圈，我听明白了，还是劝我回去坚持工作。</p>
+<hr>
+<p><strong>我当时想离开和我想春天回来这两件事并不矛盾，但似乎每个人都倾向于认为离开就是不再回来</strong>。或许我表述的有问题，不够完整，甚至最终伤害了系里老师敏感又脆弱的神经。所以做为惩罚，就要反过来置我于死地，让我滚蛋？一个人在最艰难的时候说几句带情绪的话就要为此付出如此代价，这是什么？诛心吗？如果系主任和雷格史当自己是精神警察，那么我动了离开的念头的确有错，说出来就是大逆不道。</p>
+<h4 id="四必须有病">四、必须有病</h4>
+<p>见到安娜，我接着上回的内容继续叙说。她还是一如既往的平静，不过尽管很克制，在当我提到那些系里做事出格的地方，仍然可以看见她有一些微表情的变化。所以在跟咨询师交流的过程中，我也逐步确定历史系和学校老师以及工作人员在很多地方是不专业、不称职的。不知道是否有出于正义感要保护我这样的弱者的原因存在，最后安娜答应帮我写证明信。安娜当时认为我有三种症状：anxious（焦虑）、low motivation（做事没动力）和 cognitive distortion（认知扭曲）。出于对我的隐私保护，她并没有在证明信里具体说我有什么问题，而是简单地说我目前的症状无法应付这三门课的学习。</p>
+<h4 id="五无尽纠缠">五、无尽纠缠</h4>
+<p>我感到绝望，就跟几个好友说了此事。其中一个工作时间比较久的建议我从此写邮件时抄送所有跟此事相关的人，以保证信息对等公开，防止他们在背后推诿；再有，把安娜的证明信扫描件贴在邮件正文，以防止附件没被看到或者打不开之类的状况。尽力做到滴水不漏地把信息传送出去。</p>
+<h3 id="第三章-天真与陷阱">第三章 天真与陷阱</h3>
+<h4 id="一庙小妖风大">一、庙小妖风大</h4>
+<p>还记得三月份我来学校参观时，因为系里没有安排任何中国学生跟我见面，而我事先特意研究过系主页知道系里有不少中国人，便主动跟他们群发邮件，想见面聊聊。有意思的是，实际上最终我只见到其中两位师兄，并且请他们一起吃午饭。两位师兄的精神面貌不是很好，也许是因为学习压力过大，可以明显感觉到他们紧张、局促，并且说话非常小心谨慎。</p>
+<p>六位同学中有五位陆续给了我回应，其中一位当时在国外，剩下两位当天都比较忙就没有见成。这其中一位女生当天正忙着准备第二天的演讲，欢迎我第二天还在的话过去听。但后来当我入学之后，发现那个女生不在历史系。就在那次系里聚餐上，与栾冠妮聊天才知道，那个叫龚大乖的女生竟然被系里撵走了。</p>
+<p>栾冠妮的意思是龚大乖比较傻，想要申请去其他地方结果还找系里的老师写推荐信，因此系里不满这一行为让她走人。可惜也暂未申请到其他地方，所以龚大乖现在在北京教书。</p>
+<p>这个消息给我很大冲击，<strong>读到四年级，资格考都通过了，还能被撵走！我当时便问，“她为什么要申请其他地方，以及为什么她的导师不留她呢</strong>？”栾冠妮说具体的情况不太清楚，但<strong>提到一个重要细节，即龚大乖的导师是亚洲研究项目的系主任邱恩武</strong>！这条信息的爆炸程度叫我不寒而栗。也就是说，<strong>一个握有权力的头头居然无法保住自己的学生</strong>？！</p>
+<h4 id="二选课难题">二、选课难题</h4>
+<p>课上见到石楠老师，这次有点阴阳怪气的。课后她还是一如既往地热衷八卦。</p>
+<p>“你怎么还回来了？”她见到我好像见到外星人一般惊讶，惊叹道。甚至直言不讳地说，“你上学期休学撤销了三门课可把系主任给惹恼了，赶紧想想退路吧。”此外，还特别补充说，“招一个博士生是很贵的。”</p>
+<h4 id="三灵活的霸王条款">三、灵活的霸王条款</h4>
+<h4 id="四确定导师">四、“确定”导师</h4>
+<h3 id="第四章-算计与报复">第四章 算计与报复</h3>
+<h4 id="一友爱还是什么别的">一、友？爱？还是什么别的？</h4>
+<h4 id="二沉默的羔羊">二、沉默的羔羊</h4>
+<h4 id="三you-have-nothing-to-lose你没有什么好失去的">三、You have nothing to lose?（你没有什么好失去的？）</h4>
+<h4 id="四永别而非再见">四、永别而非再见</h4>
+<h2 id="第二部-反思的力量">第二部 反思的力量</h2>
+<h3 id="第五章-申请与择校">第五章 申请与择校</h3>
+<h4 id="一对时空的选择">一、对时空的选择</h4>
+<h4 id="二读懂老师">二、读懂老师</h4>
+<h4 id="三实地调研">三、实地调研</h4>
+<h4 id="四系组织结构和系主任的权力">四、系组织结构和系主任的权力</h4>
+<h4 id="五申请辩证法">五、申请辩证法</h4>
+<h3 id="第六章-学习与理解">第六章 学习与理解</h3>
+<h4 id="一quietanti-social安静反社交">一、quiet=anti-social?（安静=反社交？）</h4>
+<h4 id="二有事就说且找当事人说">二、有事就说，且找当事人说</h4>
+<h4 id="三来自写作中心的建议">三、来自写作中心的建议</h4>
+<h4 id="四语言帮助更是文化帮助">四、语言帮助更是文化帮助</h4>
+<h3 id="第七章-知识与技能">第七章 知识与技能</h3>
+<h4 id="一史学学习心得">一、史学学习心得</h4>
+<h4 id="二心理咨询师教我的事">二、心理咨询师教我的事</h4>
+<h4 id="三学生心理辅导的技艺">三、学生心理辅导的技艺</h4>
+<h4 id="四少数退学赞成派的声音">四、少数退学赞成派的声音</h4>
+<h4 id="五学者人生分享">五、学者人生分享</h4>
+<h3 id="第八章-追问与探索">第八章 追问与探索</h3>
+<h4 id="一苏格拉底式追问">一、苏格拉底式追问</h4>
+<h4 id="二直面终极害怕">二、直面终极害怕</h4>
+<h4 id="三建立小组">三、建立小组</h4>
+<h2 id="第三部-后校园生活">第三部 后校园生活</h2>
+<h3 id="第九章-恢复与健康">第九章 恢复与健康</h3>
+<h4 id="一冥想">一、冥想</h4>
+<h4 id="二瑜伽">二、瑜伽</h4>
+<h3 id="第十章-工作与尝试">第十章 工作与尝试</h3>
+<h4 id="一解释等于掩饰">一、解释等于掩饰？</h4>
+<h4 id="二巨大鸿沟">二、巨大鸿沟</h4>
+<h4 id="三路在脚下">三、路在脚下</h4>
+<h3 id="结语活着不是为了受难而是为了经历">结语：活着不是为了受难，而是为了经历</h3>
 </div>
 <div class="toc">
 <ul>
-<li><a href="#"></a></li>
+<li><a href="#%E8%87%AA%E5%BA%8F%E4%B8%80%E6%88%91%E8%83%BD%E4%B8%BA%E4%BD%A0%E5%B8%A6%E6%9D%A5%E4%BB%80%E4%B9%88">自序一：我能为你带来什么</a></li>
+<li><a href="#%E8%87%AA%E5%BA%8F%E4%BA%8C%E6%88%91%E4%B8%8D%E7%82%96%E9%B8%A1%E6%B1%A4">自序二：我不炖鸡汤</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%86%B2%E5%87%BB%E4%B8%8E%E9%9C%87%E6%83%8A">第一章 冲击与震惊</a>
+<ul>
+<li><a href="#%E4%B8%80new-school-new-shock%E6%83%8A%E5%A5%87%E6%97%A0%E9%99%90%E6%83%8A%E6%81%90%E8%BF%9E%E8%BF%9E">一、New School, New Shock（惊奇无限，惊恐连连）</a></li>
+<li><a href="#%E4%BA%8C%E9%81%AD%E9%81%87%E7%A7%8D%E6%97%8F%E6%AD%A7%E8%A7%86">二、遭遇种族歧视</a></li>
+<li><a href="#%E4%B8%89996-%E7%AE%97%E4%BB%80%E4%B9%88%E5%8D%9A%E5%A3%AB%E8%BF%9E%E5%90%83%E9%A5%AD%E6%97%B6%E9%97%B4%E9%83%BD%E6%B2%A1%E6%9C%89">三、996 算什么，博士连吃饭时间都没有</a></li>
+<li><a href="#%E5%9B%9B%E5%8A%A9%E6%95%99%E5%81%9C%E8%81%8C">四、助教停职</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%BC%91%E5%AD%A6%E4%B8%8E%E7%94%9F%E7%97%85">第二章 休学与生病</a>
+<ul>
+<li><a href="#%E4%B8%80%E5%B1%85%E4%B8%8D%E6%8B%A9%E9%82%BB">一、居不择邻</a></li>
+<li><a href="#%E4%BA%8C%E8%BA%AB%E5%BF%83%E5%B4%A9%E6%BA%83">二、身心崩溃</a></li>
+<li><a href="#%E4%B8%89%E5%AD%A4%E5%86%9B%E5%A5%8B%E6%88%98">三、孤军奋战</a></li>
+<li><a href="#%E5%9B%9B%E5%BF%85%E9%A1%BB%E6%9C%89%E7%97%85">四、必须有病</a></li>
+<li><a href="#%E4%BA%94%E6%97%A0%E5%B0%BD%E7%BA%A0%E7%BC%A0">五、无尽纠缠</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%A4%A9%E7%9C%9F%E4%B8%8E%E9%99%B7%E9%98%B1">第三章 天真与陷阱</a>
+<ul>
+<li><a href="#%E4%B8%80%E5%BA%99%E5%B0%8F%E5%A6%96%E9%A3%8E%E5%A4%A7">一、庙小妖风大</a></li>
+<li><a href="#%E4%BA%8C%E9%80%89%E8%AF%BE%E9%9A%BE%E9%A2%98">二、选课难题</a></li>
+<li><a href="#%E4%B8%89%E7%81%B5%E6%B4%BB%E7%9A%84%E9%9C%B8%E7%8E%8B%E6%9D%A1%E6%AC%BE">三、灵活的霸王条款</a></li>
+<li><a href="#%E5%9B%9B%E7%A1%AE%E5%AE%9A%E5%AF%BC%E5%B8%88">四、“确定”导师</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%AE%97%E8%AE%A1%E4%B8%8E%E6%8A%A5%E5%A4%8D">第四章 算计与报复</a>
+<ul>
+<li><a href="#%E4%B8%80%E5%8F%8B%E7%88%B1%E8%BF%98%E6%98%AF%E4%BB%80%E4%B9%88%E5%88%AB%E7%9A%84">一、友？爱？还是什么别的？</a></li>
+<li><a href="#%E4%BA%8C%E6%B2%89%E9%BB%98%E7%9A%84%E7%BE%94%E7%BE%8A">二、沉默的羔羊</a></li>
+<li><a href="#%E4%B8%89you-have-nothing-to-lose%E4%BD%A0%E6%B2%A1%E6%9C%89%E4%BB%80%E4%B9%88%E5%A5%BD%E5%A4%B1%E5%8E%BB%E7%9A%84">三、You have nothing to lose?（你没有什么好失去的？）</a></li>
+<li><a href="#%E5%9B%9B%E6%B0%B8%E5%88%AB%E8%80%8C%E9%9D%9E%E5%86%8D%E8%A7%81">四、永别而非再见</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E7%94%B3%E8%AF%B7%E4%B8%8E%E6%8B%A9%E6%A0%A1">第五章 申请与择校</a>
+<ul>
+<li><a href="#%E4%B8%80%E5%AF%B9%E6%97%B6%E7%A9%BA%E7%9A%84%E9%80%89%E6%8B%A9">一、对时空的选择</a></li>
+<li><a href="#%E4%BA%8C%E8%AF%BB%E6%87%82%E8%80%81%E5%B8%88">二、读懂老师</a></li>
+<li><a href="#%E4%B8%89%E5%AE%9E%E5%9C%B0%E8%B0%83%E7%A0%94">三、实地调研</a></li>
+<li><a href="#%E5%9B%9B%E7%B3%BB%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84%E5%92%8C%E7%B3%BB%E4%B8%BB%E4%BB%BB%E7%9A%84%E6%9D%83%E5%8A%9B">四、系组织结构和系主任的权力</a></li>
+<li><a href="#%E4%BA%94%E7%94%B3%E8%AF%B7%E8%BE%A9%E8%AF%81%E6%B3%95">五、申请辩证法</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%90%86%E8%A7%A3">第六章 学习与理解</a>
+<ul>
+<li><a href="#%E4%B8%80quietanti-social%E5%AE%89%E9%9D%99%E5%8F%8D%E7%A4%BE%E4%BA%A4">一、quiet=anti-social?（安静=反社交？）</a></li>
+<li><a href="#%E4%BA%8C%E6%9C%89%E4%BA%8B%E5%B0%B1%E8%AF%B4%E4%B8%94%E6%89%BE%E5%BD%93%E4%BA%8B%E4%BA%BA%E8%AF%B4">二、有事就说，且找当事人说</a></li>
+<li><a href="#%E4%B8%89%E6%9D%A5%E8%87%AA%E5%86%99%E4%BD%9C%E4%B8%AD%E5%BF%83%E7%9A%84%E5%BB%BA%E8%AE%AE">三、来自写作中心的建议</a></li>
+<li><a href="#%E5%9B%9B%E8%AF%AD%E8%A8%80%E5%B8%AE%E5%8A%A9%E6%9B%B4%E6%98%AF%E6%96%87%E5%8C%96%E5%B8%AE%E5%8A%A9">四、语言帮助更是文化帮助</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E7%9F%A5%E8%AF%86%E4%B8%8E%E6%8A%80%E8%83%BD">第七章 知识与技能</a>
+<ul>
+<li><a href="#%E4%B8%80%E5%8F%B2%E5%AD%A6%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97">一、史学学习心得</a></li>
+<li><a href="#%E4%BA%8C%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E5%B8%88%E6%95%99%E6%88%91%E7%9A%84%E4%BA%8B">二、心理咨询师教我的事</a></li>
+<li><a href="#%E4%B8%89%E5%AD%A6%E7%94%9F%E5%BF%83%E7%90%86%E8%BE%85%E5%AF%BC%E7%9A%84%E6%8A%80%E8%89%BA">三、学生心理辅导的技艺</a></li>
+<li><a href="#%E5%9B%9B%E5%B0%91%E6%95%B0%E9%80%80%E5%AD%A6%E8%B5%9E%E6%88%90%E6%B4%BE%E7%9A%84%E5%A3%B0%E9%9F%B3">四、少数退学赞成派的声音</a></li>
+<li><a href="#%E4%BA%94%E5%AD%A6%E8%80%85%E4%BA%BA%E7%94%9F%E5%88%86%E4%BA%AB">五、学者人生分享</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E8%BF%BD%E9%97%AE%E4%B8%8E%E6%8E%A2%E7%B4%A2">第八章 追问与探索</a>
+<ul>
+<li><a href="#%E4%B8%80%E8%8B%8F%E6%A0%BC%E6%8B%89%E5%BA%95%E5%BC%8F%E8%BF%BD%E9%97%AE">一、苏格拉底式追问</a></li>
+<li><a href="#%E4%BA%8C%E7%9B%B4%E9%9D%A2%E7%BB%88%E6%9E%81%E5%AE%B3%E6%80%95">二、直面终极害怕</a></li>
+<li><a href="#%E4%B8%89%E5%BB%BA%E7%AB%8B%E5%B0%8F%E7%BB%84">三、建立小组</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E6%81%A2%E5%A4%8D%E4%B8%8E%E5%81%A5%E5%BA%B7">第九章 恢复与健康</a>
+<ul>
+<li><a href="#%E4%B8%80%E5%86%A5%E6%83%B3">一、冥想</a></li>
+<li><a href="#%E4%BA%8C%E7%91%9C%E4%BC%BD">二、瑜伽</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%B7%A5%E4%BD%9C%E4%B8%8E%E5%B0%9D%E8%AF%95">第十章 工作与尝试</a>
+<ul>
+<li><a href="#%E4%B8%80%E8%A7%A3%E9%87%8A%E7%AD%89%E4%BA%8E%E6%8E%A9%E9%A5%B0">一、解释等于掩饰？</a></li>
+<li><a href="#%E4%BA%8C%E5%B7%A8%E5%A4%A7%E9%B8%BF%E6%B2%9F">二、巨大鸿沟</a></li>
+<li><a href="#%E4%B8%89%E8%B7%AF%E5%9C%A8%E8%84%9A%E4%B8%8B">三、路在脚下</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%93%E8%AF%AD%E6%B4%BB%E7%9D%80%E4%B8%8D%E6%98%AF%E4%B8%BA%E4%BA%86%E5%8F%97%E9%9A%BE%E8%80%8C%E6%98%AF%E4%B8%BA%E4%BA%86%E7%BB%8F%E5%8E%86">结语：活着不是为了受难，而是为了经历</a></li>
 </ul>
 </div>
 
