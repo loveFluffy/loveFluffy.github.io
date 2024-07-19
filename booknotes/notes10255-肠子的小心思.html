@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x80a0;&#x5b50;&#x7684;&#x5c0f;&#x5fc3;&#x601d;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x80a0;&#x5b50;&#x7684;&#x5c0f;&#x5fc3;&#x601d;&#xff1a;&#x4e00;&#x4e2a;&#x88ab;&#x4eba;&#x7c7b;&#x4f4e;&#x4f30;&#x4e86;&#x7684;&#x8d85;&#x7ea7;&#x5668;&#x5b98;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,338 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="肠子的小心思">肠子的小心思</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="肠子的小心思一个被人类低估了的超级器官">肠子的小心思：一个被人类低估了的超级器官</h1>
+<h2 id="德朱莉娅恩德斯-giulia-enders-著钱为-译">[德]朱莉娅·恩德斯 (Giulia Enders) 著|钱为 译</h2>
+<div class="mycomment">
+<p>这是本科普书，语言风格十分幽默，翻译也表达地非常传神生动，读起来很舒畅。科普内容也比较有深度，涉及不少脑科学、消化方面的科研成果，各种知识点都被作者顺手拈来。另外，书里配的插画也非常搞笑好玩~</p>
+</div>
+<h3 id="作者序">作者序</h3>
+<p><strong>我是剖腹产临世的，也没有被母乳喂养过，这让我成为21世纪肠道科学领域最佳的研究对象</strong>。要是当初我对肠道了解得更多些的话，估计我之后得的病自己都能预估出大半来。</p>
+<p>最早我患有乳糖不耐症，可是5岁之后就突然神奇地好了。之后我的体重一直莫名其妙地上下波动。后来总算一切正常了一段时间，就在我以为日子从此太平了的时候，大麻烦来了。</p>
+<p>我17岁那年，右腿上突然毫无征兆地出现了一个小伤口，一直都愈合不了。拖了一个月我终于去看了医生，可是医生也无法确诊，就随便给我开了点药膏。三个星期后，伤口不但没有愈合，反而扩散到整条右腿。不久我的两条腿、胳膊还有后背全都烂光了，有时甚至脸上也是。幸好那是个冬天，我可以把自己裹得严严实实的，大家都以为我是疱疹烂到了脸上还留了疤。</p>
+<p>所有的医生都没法解释我得的到底是什么病：“也许、可能、大概是某种神经性皮炎。”最常见的推断，要么是因为压力太大，要么就是因为心情不好。也就“可的松”（肾上腺皮质激素类药物）还算有点效果，但只要一停用，一切又都回到了老样子。就这样整整一年，不论春夏秋冬我都在裤子里紧紧裹一层连裤袜，只有这样伤口的脓水才不会渗出来弄脏裤子。终于有一天我忍无可忍，决定开始自己着手研究这个问题。一次偶然的机会我读到一篇报道，说的是一名男子在服用抗生素之后得了与我极其相似的皮肤病。凑巧的是，我在伤口第一次出现之前的数周里也服用过抗生素！</p>
+<p>从这一刻起，我发觉我得的应该不是单纯的皮肤病，而是由肠道疾病引发的皮肤问题。我开始把自己当成肠道病人来对待，远离所有奶制品，几乎不碰任何含麦胶（Gluten）的食物，服用各种各样的益生菌，尽量把自己的饮食结构调整得更健康。那段时间里，我把自己当成小白鼠做了若干大胆的试验—— 现在回想起来，如果我那时候就懂医学，估计里面有一半的试验借我个胆我也不敢做。<strong>比如有一次，我连续几个星期服用了过量的锌，之后几个月我的嗅觉比狗还灵敏</strong>。</p>
+<hr>
+<p>左思右想了整整一周，我把我的猜测悄悄说给了一个闺密听。几个月后，闺密得了很严重的胃肠感冒，饱受折磨。当我们再见面时她告诉我，她觉得我的猜想确有几分道理，这次胃肠感冒让她心力交瘁，无论肉体上还是精神上，她都很久没有这么痛苦过了。闺密的支持让我更加有了研究动力，由此踏入了一个冷门的研究领域——<strong>肠道和大脑的关系</strong>。</p>
+<p>近年来这个研究领域发展迅猛。<strong>就在10年前，这个领域能找到的科学发表物还屈指可数，而现如今，已经有数以百计的科学文献如雨后春笋般涌现</strong>。肠道究竟如何影响着人类健康，这已然成为我们这个时代的新的研究方向！著名的美国生物化学家罗布·内特（Rob Knight）在《自然》（Nature）杂志中曾提到：这一领域的研究堪比干细胞的研究，甚至前景更好。</p>
+<hr>
+<p>确实，通常情况下，严谨的科学态度要远远胜于草率定论，但是，有时候过于小心翼翼也会让我们错失良机。比如，科学界公认，<strong>有消化问题的病人往往伴有肠道神经紊乱。肠道会向大脑的某个区域发出信号，而该区域主要负责处理接收身体不适的信息。这时候病人会感到很不舒服，却对不适的原因一无所知</strong>。如果医生把它当成主观的心理问题来治疗，效果只会适得其反。类似的例子不胜枚举，但都在告诉我们，有些科学研究还是应该尽早普及！</p>
+<h2 id="part-1-迷人的肠子">Part 1 迷人的肠子</h2>
+<p>所有的器官组成一支训练有素的队伍，完美配合、高效运作。而运作这样一支强大的队伍，一个成年人每小时所需要的能量仅和一只100瓦的电灯泡一样多。</p>
+<p>肺的结构设定是超节能型的，只有吸气的时候耗能，呼气则是全自动的。如果身体是透明的，你就能看到肺有多奇特多漂亮，它就像个设计精密的发条机器，却又如此柔软、安静。</p>
+<p>简单地说，我们差不多是由三根“管带”衍生而来。第一根管带贯穿我们全身并在中间打了个结，这个是<strong>血管</strong>系统，中间的结就是所有血液汇集的地方——心脏。第二根管带几乎与脊背平行，这是脊髓中的<strong>神经</strong>系统，从这里衍生出遍布全身的大小神经。管带的一头向上生长膨大，在身体的顶端形成了一个复杂的神经囊，最后成为大脑。第三根管带由上而下、纵向贯穿整个身体，这是原始<strong>肠管</strong>（简称原肠）。</p>
+<p>原肠负责构建身体的内部结构。它向左向右隆起两个细胞团，它们将长成我们的两片肺。原肠往下面的一小段则向外翻转形成我们的肝，同时也将形成胆囊和胰腺。至此，原肠的宏伟工程才刚刚步入正轨。它开始投身于复杂的消化系统建设工程，先建了根灵活矫健的<strong>食管</strong>，又建了个可以储藏食物数小时的<strong>胃囊</strong>，最终原肠完成了它最伟大的作品：以它命名的<strong>肠子</strong>！</p>
+<h3 id="排便便的奥秘">排便便的奥秘</h3>
+<p>就先从肠子的出口——肛门说起，这里就用上了一套精妙的肌肉闭合机制。你能有意识地收缩和放松的那部分，叫<strong>外括约肌</strong>，是不是已经感觉到了？肛门向里的几厘米处有一块功能相似的肌肉，叫<strong>内括约肌</strong>，但这块肌肉我们是无法自主控制的。</p>
+<p>这两块括约肌各事其主，分别效命于两大神经系统。<strong>外括约肌服务于较为高级的主观意识，如果大脑认为现在还不是上厕所的时候，外括约肌就会忠实地听从指挥，尽力缩紧，严防死守。内括约肌则隶属于不受主观意识控制的体内世界，它才不在乎你身处何方，想不想留下仙气，只要是对身体有益处的事，它就坚决执行</strong>。要是全听它的，估计到处都屁声阵阵、仙气飘飘了。</p>
+<p>所幸两块括约肌配合紧密，让我们避免了“大便无法自理”的尴尬。<strong>当便便到达内括约肌时，它会反射性地张开</strong>。但是它可不会一下就大开绿灯，不给外括约肌一点准备时间，<strong>它会先试探性地放出一支小分队去侦查一下情况。在两块括约肌之间布满了传感细胞，它们会先分析一下小分队的性质，比如是固态的还是气态的，再将信息上传至大脑</strong>。这时大脑会收到信号：“军情紧急”或者“没什么，就是个幌子”。同时，大脑会借助耳朵、眼睛传来的信息，并综合以往的经验对外界环境做出评估，并制定相应措施。数秒内，大脑便做出初步决策，并把它下达给外括约肌：“我观察过了，你现在可是在阿姨的客厅里，最多只能让气体部分悄悄通行，固体部分要守住！”</p>
+<hr>
+<p>经常憋着不去厕所，内括约肌就会越来越倦怠，甚至可能180度大转性。当外扩约肌过于经常地约束内括约肌及其周围的肌肉，就会严重打击到它们的积极性。如果内、外括约肌沟通变得越来越困难，你离便秘就不远了。</p>
+<p>对于孕妇来说，即便没有故意忍着不上厕所，也可能出现<strong>产后便秘</strong>。这是因为，<strong>负责在内、外括约肌之间传递信息的神经纤维极为纤细，分娩时它们很容易断裂</strong>。好在人类的神经可以自行生长愈合，不管是分娩还是其他原因导致的损伤，都可以用一种<strong>生物反馈疗法</strong>来医治，这种疗法可以帮助被隔断的内、外括约肌重新架起传递信息的桥梁。</p>
+<h3 id="你坐在马桶上的姿势很可能不正确">你坐在马桶上的姿势很可能不正确</h3>
+<p>实验结果非常明朗：蹲坑式平均耗时50秒，而且实验对象一致认为便便过程很舒爽。相比之下，坐便式如厕平均耗时130秒，而且似乎还有些意犹未尽。（插嘴一句，想象一下坐在一个迷你马桶上，真是可爱屎了！）</p>
+<p>为什么会出现这样的结果呢？<strong>因为我们的肠道闭合机制不是为坐着上厕所设计的，在坐姿状态下它没法完全打开出舱口</strong>。不管站着还是坐着的时候，肠道外围都有一块肌肉像套索一样包裹着它、向一个方向牵引着它，这就产生了一道弯曲的折痕。这种类似于弯曲扣锁的机关可以为肛门括约肌减轻不少负担。你可以把它想象成花园里浇水用的橡胶管。浇水的时候突然不出水了，多半是管道的哪个地方打了个结，只要把打结的地方撸直，过不了多久水管就又通了。</p>
+<p>还是说回肠子里的弯弯绕吧。<strong>在肛门附近，从降结肠（倒数第二节大肠）到直肠（最后一节大肠）拐了个大弯，这有什么用呢？这是为了让粪便在拐弯处顿一顿，就像在高速公路的出口处不得不刹车放慢速度一样</strong>。再加上刚才说的肌肉套索，这样不管站着或坐着，肛门括约肌都可以不太费力地就将粪便憋住。一旦包裹大肠的肌肉放松，折弯就消失了，路障解除，随之而来的就是一泻千里。</p>
+<hr>
+<p><strong>痔疮和肠道内憩室这样的肠道疾病，还有便秘，似乎只集中爆发于那些习惯用坐便器的国家</strong>。肌肉组织松弛并非罪魁祸首，原因另有所在，尤其是对于年轻人来说，<strong>很多人发病的原因是肠道受到的压力过大。有些人在压力大、精神紧张的情况下就会绷紧腹肌，有时绷了整整一天自己还对此毫不察觉</strong>，痔疮自然不愿意待在压力过大的地方，还是溜到身体外面轻松自在。同理，肠子内部的组织如果不堪压力也只好向外边跑，于是肠壁上冒出一个个灯泡状的外翻小瘤子，就形成了肠内憩室。</p>
+<h3 id="通往消化道的入口也很神奇">通往消化道的入口也很神奇</h3>
+<h4 id="唾液腺抗菌镇痛助消化的全才">唾液腺：抗菌、镇痛、助消化的全才</h4>
+<p>现在就用你的舌头去感受一下第一个神秘之处吧。它们是四个小凸点，其中两个分布在我们腮帮子内侧靠中间的位置，正对着上颌第二磨牙。你找到<strong>左右两边腮帮子里隆起的这两个小点</strong>了吗？<strong>许多人都误以为，这两个凸点是不知道什么时候被咬到肿起来的</strong>。其实不然，这两个略微鼓起的小凸点每个人都有，而且长在同一个位置。另外两个小凸点位于舌头下面的舌根处，在舌系带的两侧，左右各一个。可别小看了这四个小凸点，它们是唾液腺导管在口腔开口处形成的黏膜乳头，我们的唾液就源自于此。</p>
+<p><strong>腮帮子内侧的黏膜乳头只有在特定情况下才会分泌唾液，比如吃饭的时候；而舌头下面的黏膜乳头则会全天无间隙地分泌唾液</strong>。如果钻进舌头底下的黏膜乳头、顺着唾液导管逆流而上，就能追踪到唾液腺里的大佬了。大部分的唾液都由这里生产，<strong>每天可产0.7~1升</strong>。从喉咙沿着下颌方向往上走，那里有两块圆圆的隆起，请允许我介绍一下，这就是产量惊人的唾液腺大佬。</p>
+<p><strong>由于正对着源源不断分泌唾液的舌下腺开口处，下门牙的里侧很容易形成牙结石。唾液中的含钙物质可以帮助加固牙釉质，可是作为牙齿，长期不断地接受四面八方唾液的礼遇，还是有些招架不住的</strong>。不仅是牙齿上，那些在牙缝和口腔晃荡着的无辜小颗粒也顺带着被钙化，成了牙结石。牙结石本身也不是什么大问题，关键是相较于我们自身光滑的牙釉质而言，它的表面实在太粗糙了，很容易沦为引起牙周病或龋齿的病源微生物的寄居之地。</p>
+<p>可是我们唾液里怎么会有含钙的物质呢？这是因为，<strong>唾液其实是被过滤了的血液</strong>，血液经由唾液腺过滤形成唾液。<strong>唾液腺负责把红血球筛选、拦截在血管里，我们的口腔可不需要血盆大口。相反地，钙、激素或者免疫系统的抗体则会顺利通过唾液腺的筛选被保留在唾液中</strong>。正因为如此，<strong>人与人的唾液成分会有所差异</strong>，医生甚至可以通过对唾液样本的检测来诊断某些免疫性疾病或者某些特定的激素。<strong>当然唾液腺除了筛滤功能，还会往唾液里添加一些额外的物质，比如之前说过的含钙物质，甚至有镇痛功能的物质</strong>。</p>
+<p>我们的<strong>唾液中存在着一种比吗啡还强效的镇痛成分，这种物质一直到2006年才被发现，并被命名为“唾液镇痛剂”（Opiorphin）</strong>。当然了，该成分在唾液中的含量是微乎其微的，不然的话我们估计每天都会处于“嗨了”的状态。但即使只是微量，它也帮了大忙，因为<strong>我们的口腔其实是特别敏感的娇小姐！这里是全身上下神经末梢最集中的地方</strong>，即便卡了一粒最小的草莓籽都会引起不适，更别说饭里掺着的沙子，每一颗都不会被放过。同样的小伤口，在手肘上我们可能都不会有所察觉，可要是换到嘴里，立马疼得撕心裂肺，以为是腮帮子被戳得裂了大洞。</p>
+<p>而且，这还是在有镇痛剂的情况下呢！要是唾液里没有这种镇痛成分，那痛感简直无法想象。<strong>我们在咀嚼食物的过程中，唾液腺会分泌出大量的口水，也就夹带着释放出额外量的镇痛物质，所以通常喉咙疼的时候，吃完饭会觉得好很多，或者吃完饭后口腔里的小伤口也没那么疼了</strong>。当然了，不一定非要是吃饭，嚼嚼口香糖，我们的口腔也能自发分泌这种镇痛剂。</p>
+<p>不仅如此，最近一些新的研究表明，这种<strong>唾液镇痛剂甚至还具有抗抑郁的作用。有些人心情差的时候喜欢暴饮暴食，这是否恰是潜意识急需大量唾液镇痛剂的外在表现呢</strong>？我想，也许几年后，镇痛及抗抑郁领域的医学研究就能给这个问题一个合理的解释了。</p>
+<p>唾液不仅能帮助口腔娇小姐免受疼痛的折磨，还能帮助它抵御各种有害细菌的入侵。其中一位超级英雄叫作黏液素。<strong>黏液素</strong>，顾名思义，就是黏液状的分泌物。如果你用口水吹过泡泡的话，那你对它一定不陌生。黏液素<strong>从唾液腺出口喷射而出，像一张大网一样包裹住我们的牙齿和牙龈</strong>，颇有蜘蛛侠射出蜘蛛网的风范。如此一来，<strong>有害细菌在攻击到牙齿和牙龈之前，就会被这张网困住，动弹不得，随后被唾液中的抗菌成分一举消灭</strong>。</p>
+<p>跟唾液镇痛剂一样，唾液中抗菌成分的浓度也不高，唾沫无法对口腔实现彻底的消毒。当然，也没有这个必要，人类和细菌的关系不是势不两立的，我们还要考虑口腔里的“常住居民”，不能把它们都赶尽杀绝了。这些常住居民是一些无害的口腔细菌，只要有它们占着位置，那些真正有害的细菌就无法在口腔里找到容身之所了。</p>
+<p><strong>睡觉时我们几乎不会分泌唾液</strong>，对睡觉会流哈喇子的人来说，这绝对是个值得欣慰的好消息。假设在夜里我们也和白天一样分泌1~1.5升的唾液，睡觉流哈喇子该是个多么痛苦的习惯啊。但也正因为我们夜里几乎不会分泌什么唾液，所以<strong>很多人早上醒来会口臭或者觉得嗓子疼</strong>。一整夜近八个小时没有唾液冲洗，对于口腔里的微生物来说只意味着一件事——彻夜狂欢。有害细菌终于可以冲出牢笼肆意妄为了，而口腔和喉咙处的黏膜却没有唾液灭火队来救援。</p>
+<p>所以，<strong>睡觉前、起床后刷牙是个好习惯</strong>。睡前刷牙可以大大减少口腔内的细菌数目，当我们熟睡时，活跃在嘴巴里的细菌就只剩残兵败将了；而清晨醒来刷牙则可以帮助我们清扫掉“一夜狂欢”后的混乱。幸好我们的唾液腺是只勤劳的小蜜蜂，只要我们一醒来它也会立刻醒来开工。再爱赖床的唾液腺，只要我们开始刷牙或者咬第一口早餐，也会汩汩分泌唾液、开始兢兢业业地打扫卫生，要么奋勇抗敌要么干脆直接把细菌冲进胃里。之后的事就都交给胃酸来搞定了。</p>
+<h4 id="扁桃体对我好点就不摘掉你">扁桃体：对我好点就不摘掉你</h4>
+<p><strong>舌根</strong>处风景独好，这里<strong>布满了连绵起伏的粉红色小丘壑</strong>。如果你的喉咙不是那么敏感、一碰就吐的话，你可以小心地把手指伸到舌头的最深处，那里能摸到舌黏膜下有许多向上隆起的小结节。<strong>这些小结节的任务是负责检查所有我们吞下去的东西。无论是吃的、喝的还是吸入的空气，它们会连最细小的颗粒都挑出来抓回自己的领地细细审查</strong>，而在那里，有一支由免疫细胞组成的精锐部队正时刻准备着。像是苹果香蕉这类的老熟人可以很快通过安检，但是那些会引起咽痛的病原体可绝对不会被放过。说了这么半天，你找到那支隐秘部队了吗？如果你在舌根后面摸了半天也没对上哪儿是哪儿，没关系，因为这一大圈都属于同一个组织——<strong>免疫组织</strong>，它是我们全身上下有名的好奇宝宝。</p>
+<p>准确地说，<strong>整个咽喉这一圈都有被免疫组织覆盖，医学术语把这个地带叫作“瓦尔代尔氏扁桃体环”（Waldeyer's tonsillar ring）——咽淋巴环</strong>。咽淋巴环里又有几个大的探测热点：最下面是<strong>舌扁桃体</strong>，就是之前提到的舌根处的小丘壑；左右两侧是<strong>腭扁桃体</strong>，就是我们通常说的扁桃体；上侧还有<strong>咽扁桃体</strong>，临近鼻子和耳朵（小孩子患扁桃体炎的时候经常会这里肿很大）。<strong>如果你以前做过扁桃体切除手术，于是觉得自己不再有扁桃体了，这个想法可是大错特错哦</strong>，至少从医学上来说是不成立的。就像刚才所说的，舌扁桃体、腭扁桃体、咽扁桃体——整个咽淋巴环都属于扁桃体，而它们的职责也全都一样：发现入侵异物、训练免疫细胞。</p>
+<p>如果不是万不得已，扁桃体还是不要轻易摘除的好。<strong>在舌根后的丘壑地貌中，扁桃体的结构其实不是“丘”而是“壑”：扁桃体的黏膜上皮向扁桃体内部陷入形成隐窝，就像是形成了一道道沟壑一样</strong>。这种结构的意义在于最大限度扩大表皮面积，便于部署最多的部队。在这些沟壑里藏着脱落的上皮细胞、淋巴细胞及细菌等，有时候里面藏污纳垢太多又一时半会儿去除不掉的话就会导致扁桃体发炎。这也是扁桃体过于好奇勤劳的副作用。</p>
+<p>现在说回到口臭的问题，如果你已经清洁了舌头和牙齿，却还是有口臭，那你不妨检查下扁桃体，如果它还没被切掉的话。因为这里有时候会藏着一些臭不可闻的白色小结石哦！很多人都不知道还有这个玄机，无论怎么刷牙、漱口或者刷舌头，整整几个星期该怎么臭还是怎么臭。其实不去弄它，这些小结石过段时间也会自己乖乖跑出来的，那时一切就又都会恢复正常了。要是你想变被动为主动的话，<strong>也可以用手把它们挤出来，口臭一秒之内就消失，当然这需要点小技巧</strong>。</p>
+<p>首先，<strong>要确定口臭是否真的来自这里。最好的办法就是用手指或棉签在自己的扁桃体上擦拭一下，如果取出来闻着有臭味，那你就可以开始“寻宝”游戏了</strong>。去耳鼻喉科医生那里是比较舒适安全的选择。但是如果你更喜欢DIY的话，网上有大把的专业视频展示五花八门的按压除石技术，运气“好”的话还能看到一些极端案例。胆小者慎入哦。</p>
+<hr>
+<p>对于患有<strong>牛皮癣（俗称银屑病）<strong>的人来说就是如此。因为自身的免疫系统过于紧张敏感，患者饱受皮肤瘙痒和皮肤炎症（往往从头部开始）或者关节疼痛的折磨。另外</strong>患牛皮癣的人比一般人更容易嗓子痛。一个可能的原因就是那些细菌长期藏身于扁桃体中，连续不间断地挑战免疫系统</strong>。30多年来，很多病例有案可查：<strong>一旦割除扁桃体，病人的皮肤病随之大大好转</strong>，有的甚至能自然痊愈。2012年的时候，有队来自冰岛和美国的研究人员决定好好研究一下扁桃体和牛皮癣的关系：他们把29位患有牛皮癣并伴有嗓子痛的病人分成两组，一组人割除扁桃体而另一组保留。共有15位患者割除了扁桃体，其中有13人病情明显好转，之后也没有再恶化，而没有割除扁桃体的那一组病情则毫无起色。同理，最近患有风湿类疾病的病人也越来越多地尝试割除扁桃体疗法，当然，前提条件是已经有足够多的证据表明这是扁桃体惹的祸。</p>
+<h3 id="肠胃系统越靠近越美丽">肠胃系统越靠近越美丽</h3>
+<p>总之看外表的话，整个肠道系统惨不忍睹，简直就是一条既不对称又不精致，还毫无形状可言的软管子。</p>
+<h4 id="鼓鼓囊囊的食道">“鼓鼓囊囊”的食道</h4>
+<p>看看食道的路线图，你不觉得这家伙也太没方向感了吗？明明最直接的路径是径直插进胃的顶端，可它非要绕到胃的右侧从那儿接上。非也！人家这么做可是为了曲线救国。这个<strong>食道和胃的连接处被外科大夫称为贲门。尽管绕了一点弯路，但这完全是值得的，因为我们走路迈每一步时都会自动绷紧腹部肌肉，这时腹部的压力差不多是平时的两倍</strong>。当我们大笑或者咳嗽时，腹部的压力甚至会增加到四倍。这个压力会由下往上传给胃。假设食道正正地接在胃上方，那就出大事了，饭后百步走，每一步都会把刚才吃下去的给挤上来。<strong>多亏了贲门的侧面设计和胃囊巧妙的倾斜角度，自腹部上来的压力得以被分散掉很多，最后落在食管上的压力只有很小一部分</strong>。所以你大可放心，即使你笑得再放肆，也最多就是笑出个屁来，笑到吐还闻所未闻。</p>
+<p>贲门的侧面设计虽然好处多多，但也有一个副作用——<strong>胃气泡</strong>。在所有X光片里你都能看到<strong>胃的上方有个小气泡</strong>，那就是它啦。气体的密度小，经过一段时间后都会飘到胃的顶部，而这里离侧面的出口（贲门）还有一段距离。<strong>这就是为什么很多人打嗝前会下意识地张嘴“喝下”一口气，因为吸气时吞咽的动作可以让食道的接口处接近气泡，只要一有机会，气泡就可以顺着食道“嗝”的一声奔向自由啦</strong>。如果是躺着打嗝的话，<strong>向左侧躺打嗝会容易很多</strong>。要是你习惯向右侧躺，那胃胀气的时候麻烦你放弃这个习惯，换个方向睡会让你舒服很多。</p>
+<p>了解了食道的功能和构造后，是不是觉得它鼓鼓囊囊的外形顺眼多了？让我们再走近看一下，<strong>食道整体上是被几根肌肉纤维螺旋式包裹住的，这也是它能一鼓一鼓、波浪式蠕动的原因</strong>。如果把食道纵向拉伸，它不会被撕裂，而是会像电话线圈那样螺旋式伸展开。食道紧贴脊椎的腹侧，当你挺身仰头的时候，食道也会被纵向拉长，这时候食道变窄，上下闭合得更紧。所以，<strong>饱餐一顿后，挺起背坐直可以更有效地预防胃酸倒流</strong>。</p>
+<h4 id="斜挂着的胃囊">斜挂着的胃囊</h4>
+<h4 id="蜿蜒曲折的小肠">蜿蜒曲折的小肠</h4>
+<h4 id="多余的盲肠和肥嘟嘟的大肠">多余的盲肠和肥嘟嘟的大肠</h4>
+<h3 id="肠子需要什么样的食物">肠子需要什么样的食物？</h3>
+<h4 id="碳水化合物最容易被消化肠子说我要我要">碳水化合物：最容易被消化，肠子说“我要！我要！”</h4>
+<h4 id="脂肪让我们慢慢把你米西米西掉">脂肪：让我们慢慢把你米西米西掉</h4>
+<h4 id="氨基酸我们小肠的呵呵真爱">氨基酸：我们小肠的呵呵，真爱！</h4>
+<h3 id="好胃口不能理解的食物过敏和食物不耐症">好胃口不能理解的食物过敏和食物不耐症</h3>
+<h4 id="乳糜泻和麦胶蛋白过敏">乳糜泻和麦胶蛋白过敏</h4>
+<h4 id="总有些糖吃不得乳糖不耐受和果糖不耐受">总有些“糖”吃不得：乳糖不耐受和果糖不耐受</h4>
+<h3 id="便便外刊">便便外刊</h3>
+<h2 id="part-2-有趣的肠神经">Part 2 有趣的肠神经</h2>
+<h3 id="食物在我们体内的旅程">食物在我们体内的旅程</h3>
+<h4 id="眼睛看见食物她最激动">眼睛：看见食物她最激动</h4>
+<h4 id="鼻子等候区的嗅觉感受器们">鼻子：等候区的嗅觉感受器们</h4>
+<h4 id="口腔最高配置的通力合作">口腔：最高配置的通力合作</h4>
+<h4 id="咽喉演员请走这边">咽喉：“演员请走这边！”</h4>
+<h4 id="食道不走回头路">食道：不走回头路！</h4>
+<h4 id="胃亲你是来找我的吧">胃：亲，你是来找我的吧！</h4>
+<h4 id="小肠向前向前向前">小肠：向前！向前！向前！</h4>
+<h4 id="大肠静止中蕴藏着力量">大肠：静止中蕴藏着力量</h4>
+<h3 id="反酸亲兄弟也难免有打架的时候">反酸：亲兄弟也难免有打架的时候</h3>
+<h4 id="反酸的原因都是神经惹的祸">反酸的原因：都是神经惹的祸</h4>
+<h4 id="少分泌就少出错">少分泌就少出错</h4>
+<h4 id="中和一下只是权宜之计">中和一下，只是权宜之计</h4>
+<h3 id="呕吐不想要的都统统吐出去">呕吐：不想要的都统统吐出去</h3>
+<h4 id="准备好了吗呕">准备好了吗？呕⋯⋯</h4>
+<h4 id="呕吐的原因人体装机必备功能">呕吐的原因：人体装机必备功能</h4>
+<h4 id="古今中外都适用的防吐窍门">古今中外都适用的防吐窍门</h4>
+<h3 id="便秘今天你拉了吗">便秘：今天，你拉了吗？</h3>
+<h4 id="我可以让你拉拉拉">我可以让你拉拉拉~~~</h4>
+<h4 id="实在不行来点泻药">实在不行，来点泻药</h4>
+<h4 id="吃药虽好别忘了三日定律">吃药虽好，别忘了“三日定律”</h4>
+<h3 id="大脑和肠子到底谁指挥谁">大脑和肠子，到底谁指挥谁？</h3>
+<h4 id="肠子是如何影响大脑的">肠子是如何影响大脑的？</h4>
+<h4 id="压力抑郁和容易受刺激的肠道">压力、抑郁和容易受刺激的肠道</h4>
+<h4 id="自我意识从何而来">“自我”意识从何而来？</h4>
+<h2 id="part-3-喧闹的微生物世界">Part 3 喧闹的微生物世界</h2>
+<h3 id="一个人就是一个生态系统">一个人就是一个生态系统</h3>
+<h3 id="免疫系统和肠道细菌的爱恨纠葛">免疫系统和肠道细菌的爱恨纠葛</h3>
+<h3 id="肠道菌群进化论">肠道菌群进化论</h3>
+<h3 id="成年人体内的肠道居民">成年人体内的肠道居民</h3>
+<h4 id="细菌的遗传基因">细菌的遗传基因</h4>
+<h4 id="三种肠道型">三种肠道型</h4>
+<h3 id="肠道菌群所扮演的角色">肠道菌群所扮演的角色</h3>
+<h4 id="细菌导致增肥阴谋论的三种假说">细菌导致增肥阴谋论的三种假说</h4>
+<h4 id="胆固醇和肠道细菌">胆固醇和肠道细菌</h4>
+<h3 id="健康的元凶坏细菌和寄生虫">健康的元凶：坏细菌和寄生虫</h3>
+<h4 id="被戴帽子的沙门氏菌">被戴“帽子”的沙门氏菌</h4>
+<h4 id="幽门螺杆菌人类最早的宠物">幽门螺杆菌：人类最早的“宠物”</h4>
+<h4 id="弓形虫让人忘却恐惧的喵星来客">弓形虫：让人忘却恐惧的喵星来客</h4>
+<h4 id="蛲虫一生总会遇见一次的过客">蛲虫：一生总会遇见一次的过客</h4>
+<h3 id="清洁卫生和益生菌">清洁卫生和益生菌</h3>
+<h4 id="日常清洁到底多干净才行">日常清洁，到底多干净才行？</h4>
+<h4 id="抗生素真的需要赶尽杀绝吗">抗生素：真的需要赶尽杀绝吗？</h4>
+<h4 id="益生菌吃吃更健康">益生菌：吃吃更健康</h4>
+<h4 id="益生元利己又助人的热心肠">益生元：利己又助人的热心肠</h4>
+<h3 id="致谢">致谢</h3>
+<h3 id="重要参考资料">重要参考资料</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E4%BD%9C%E8%80%85%E5%BA%8F">作者序</a></li>
+<li><a href="#%E6%8E%92%E4%BE%BF%E4%BE%BF%E7%9A%84%E5%A5%A5%E7%A7%98">排便便的奥秘</a></li>
+<li><a href="#%E4%BD%A0%E5%9D%90%E5%9C%A8%E9%A9%AC%E6%A1%B6%E4%B8%8A%E7%9A%84%E5%A7%BF%E5%8A%BF%E5%BE%88%E5%8F%AF%E8%83%BD%E4%B8%8D%E6%AD%A3%E7%A1%AE">你坐在马桶上的姿势很可能不正确</a></li>
+<li><a href="#%E9%80%9A%E5%BE%80%E6%B6%88%E5%8C%96%E9%81%93%E7%9A%84%E5%85%A5%E5%8F%A3%E4%B9%9F%E5%BE%88%E7%A5%9E%E5%A5%87">通往消化道的入口也很神奇</a>
+<ul>
+<li><a href="#%E5%94%BE%E6%B6%B2%E8%85%BA%E6%8A%97%E8%8F%8C%E9%95%87%E7%97%9B%E5%8A%A9%E6%B6%88%E5%8C%96%E7%9A%84%E5%85%A8%E6%89%8D">唾液腺：抗菌、镇痛、助消化的全才</a></li>
+<li><a href="#%E6%89%81%E6%A1%83%E4%BD%93%E5%AF%B9%E6%88%91%E5%A5%BD%E7%82%B9%E5%B0%B1%E4%B8%8D%E6%91%98%E6%8E%89%E4%BD%A0">扁桃体：对我好点就不摘掉你</a></li>
+</ul>
+</li>
+<li><a href="#%E8%82%A0%E8%83%83%E7%B3%BB%E7%BB%9F%E8%B6%8A%E9%9D%A0%E8%BF%91%E8%B6%8A%E7%BE%8E%E4%B8%BD">肠胃系统越靠近越美丽</a>
+<ul>
+<li><a href="#%E9%BC%93%E9%BC%93%E5%9B%8A%E5%9B%8A%E7%9A%84%E9%A3%9F%E9%81%93">“鼓鼓囊囊”的食道</a></li>
+<li><a href="#%E6%96%9C%E6%8C%82%E7%9D%80%E7%9A%84%E8%83%83%E5%9B%8A">斜挂着的胃囊</a></li>
+<li><a href="#%E8%9C%BF%E8%9C%92%E6%9B%B2%E6%8A%98%E7%9A%84%E5%B0%8F%E8%82%A0">蜿蜒曲折的小肠</a></li>
+<li><a href="#%E5%A4%9A%E4%BD%99%E7%9A%84%E7%9B%B2%E8%82%A0%E5%92%8C%E8%82%A5%E5%98%9F%E5%98%9F%E7%9A%84%E5%A4%A7%E8%82%A0">多余的盲肠和肥嘟嘟的大肠</a></li>
+</ul>
+</li>
+<li><a href="#%E8%82%A0%E5%AD%90%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E9%A3%9F%E7%89%A9">肠子需要什么样的食物？</a>
+<ul>
+<li><a href="#%E7%A2%B3%E6%B0%B4%E5%8C%96%E5%90%88%E7%89%A9%E6%9C%80%E5%AE%B9%E6%98%93%E8%A2%AB%E6%B6%88%E5%8C%96%E8%82%A0%E5%AD%90%E8%AF%B4%E6%88%91%E8%A6%81%E6%88%91%E8%A6%81">碳水化合物：最容易被消化，肠子说“我要！我要！”</a></li>
+<li><a href="#%E8%84%82%E8%82%AA%E8%AE%A9%E6%88%91%E4%BB%AC%E6%85%A2%E6%85%A2%E6%8A%8A%E4%BD%A0%E7%B1%B3%E8%A5%BF%E7%B1%B3%E8%A5%BF%E6%8E%89">脂肪：让我们慢慢把你米西米西掉</a></li>
+<li><a href="#%E6%B0%A8%E5%9F%BA%E9%85%B8%E6%88%91%E4%BB%AC%E5%B0%8F%E8%82%A0%E7%9A%84%E5%91%B5%E5%91%B5%E7%9C%9F%E7%88%B1">氨基酸：我们小肠的呵呵，真爱！</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A5%BD%E8%83%83%E5%8F%A3%E4%B8%8D%E8%83%BD%E7%90%86%E8%A7%A3%E7%9A%84%E9%A3%9F%E7%89%A9%E8%BF%87%E6%95%8F%E5%92%8C%E9%A3%9F%E7%89%A9%E4%B8%8D%E8%80%90%E7%97%87">好胃口不能理解的食物过敏和食物不耐症</a>
+<ul>
+<li><a href="#%E4%B9%B3%E7%B3%9C%E6%B3%BB%E5%92%8C%E9%BA%A6%E8%83%B6%E8%9B%8B%E7%99%BD%E8%BF%87%E6%95%8F">乳糜泻和麦胶蛋白过敏</a></li>
+<li><a href="#%E6%80%BB%E6%9C%89%E4%BA%9B%E7%B3%96%E5%90%83%E4%B8%8D%E5%BE%97%E4%B9%B3%E7%B3%96%E4%B8%8D%E8%80%90%E5%8F%97%E5%92%8C%E6%9E%9C%E7%B3%96%E4%B8%8D%E8%80%90%E5%8F%97">总有些“糖”吃不得：乳糖不耐受和果糖不耐受</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BE%BF%E4%BE%BF%E5%A4%96%E5%88%8A">便便外刊</a></li>
+<li><a href="#%E9%A3%9F%E7%89%A9%E5%9C%A8%E6%88%91%E4%BB%AC%E4%BD%93%E5%86%85%E7%9A%84%E6%97%85%E7%A8%8B">食物在我们体内的旅程</a>
+<ul>
+<li><a href="#%E7%9C%BC%E7%9D%9B%E7%9C%8B%E8%A7%81%E9%A3%9F%E7%89%A9%E5%A5%B9%E6%9C%80%E6%BF%80%E5%8A%A8">眼睛：看见食物她最激动</a></li>
+<li><a href="#%E9%BC%BB%E5%AD%90%E7%AD%89%E5%80%99%E5%8C%BA%E7%9A%84%E5%97%85%E8%A7%89%E6%84%9F%E5%8F%97%E5%99%A8%E4%BB%AC">鼻子：等候区的嗅觉感受器们</a></li>
+<li><a href="#%E5%8F%A3%E8%85%94%E6%9C%80%E9%AB%98%E9%85%8D%E7%BD%AE%E7%9A%84%E9%80%9A%E5%8A%9B%E5%90%88%E4%BD%9C">口腔：最高配置的通力合作</a></li>
+<li><a href="#%E5%92%BD%E5%96%89%E6%BC%94%E5%91%98%E8%AF%B7%E8%B5%B0%E8%BF%99%E8%BE%B9">咽喉：“演员请走这边！”</a></li>
+<li><a href="#%E9%A3%9F%E9%81%93%E4%B8%8D%E8%B5%B0%E5%9B%9E%E5%A4%B4%E8%B7%AF">食道：不走回头路！</a></li>
+<li><a href="#%E8%83%83%E4%BA%B2%E4%BD%A0%E6%98%AF%E6%9D%A5%E6%89%BE%E6%88%91%E7%9A%84%E5%90%A7">胃：亲，你是来找我的吧！</a></li>
+<li><a href="#%E5%B0%8F%E8%82%A0%E5%90%91%E5%89%8D%E5%90%91%E5%89%8D%E5%90%91%E5%89%8D">小肠：向前！向前！向前！</a></li>
+<li><a href="#%E5%A4%A7%E8%82%A0%E9%9D%99%E6%AD%A2%E4%B8%AD%E8%95%B4%E8%97%8F%E7%9D%80%E5%8A%9B%E9%87%8F">大肠：静止中蕴藏着力量</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%8D%E9%85%B8%E4%BA%B2%E5%85%84%E5%BC%9F%E4%B9%9F%E9%9A%BE%E5%85%8D%E6%9C%89%E6%89%93%E6%9E%B6%E7%9A%84%E6%97%B6%E5%80%99">反酸：亲兄弟也难免有打架的时候</a>
+<ul>
+<li><a href="#%E5%8F%8D%E9%85%B8%E7%9A%84%E5%8E%9F%E5%9B%A0%E9%83%BD%E6%98%AF%E7%A5%9E%E7%BB%8F%E6%83%B9%E7%9A%84%E7%A5%B8">反酸的原因：都是神经惹的祸</a></li>
+<li><a href="#%E5%B0%91%E5%88%86%E6%B3%8C%E5%B0%B1%E5%B0%91%E5%87%BA%E9%94%99">少分泌就少出错</a></li>
+<li><a href="#%E4%B8%AD%E5%92%8C%E4%B8%80%E4%B8%8B%E5%8F%AA%E6%98%AF%E6%9D%83%E5%AE%9C%E4%B9%8B%E8%AE%A1">中和一下，只是权宜之计</a></li>
+</ul>
+</li>
+<li><a href="#%E5%91%95%E5%90%90%E4%B8%8D%E6%83%B3%E8%A6%81%E7%9A%84%E9%83%BD%E7%BB%9F%E7%BB%9F%E5%90%90%E5%87%BA%E5%8E%BB">呕吐：不想要的都统统吐出去</a>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%A5%BD%E4%BA%86%E5%90%97%E5%91%95">准备好了吗？呕⋯⋯</a></li>
+<li><a href="#%E5%91%95%E5%90%90%E7%9A%84%E5%8E%9F%E5%9B%A0%E4%BA%BA%E4%BD%93%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87%E5%8A%9F%E8%83%BD">呕吐的原因：人体装机必备功能</a></li>
+<li><a href="#%E5%8F%A4%E4%BB%8A%E4%B8%AD%E5%A4%96%E9%83%BD%E9%80%82%E7%94%A8%E7%9A%84%E9%98%B2%E5%90%90%E7%AA%8D%E9%97%A8">古今中外都适用的防吐窍门</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BE%BF%E7%A7%98%E4%BB%8A%E5%A4%A9%E4%BD%A0%E6%8B%89%E4%BA%86%E5%90%97">便秘：今天，你拉了吗？</a>
+<ul>
+<li><a href="#%E6%88%91%E5%8F%AF%E4%BB%A5%E8%AE%A9%E4%BD%A0%E6%8B%89%E6%8B%89%E6%8B%89">我可以让你拉拉拉~~~</a></li>
+<li><a href="#%E5%AE%9E%E5%9C%A8%E4%B8%8D%E8%A1%8C%E6%9D%A5%E7%82%B9%E6%B3%BB%E8%8D%AF">实在不行，来点泻药</a></li>
+<li><a href="#%E5%90%83%E8%8D%AF%E8%99%BD%E5%A5%BD%E5%88%AB%E5%BF%98%E4%BA%86%E4%B8%89%E6%97%A5%E5%AE%9A%E5%BE%8B">吃药虽好，别忘了“三日定律”</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%A7%E8%84%91%E5%92%8C%E8%82%A0%E5%AD%90%E5%88%B0%E5%BA%95%E8%B0%81%E6%8C%87%E6%8C%A5%E8%B0%81">大脑和肠子，到底谁指挥谁？</a>
+<ul>
+<li><a href="#%E8%82%A0%E5%AD%90%E6%98%AF%E5%A6%82%E4%BD%95%E5%BD%B1%E5%93%8D%E5%A4%A7%E8%84%91%E7%9A%84">肠子是如何影响大脑的？</a></li>
+<li><a href="#%E5%8E%8B%E5%8A%9B%E6%8A%91%E9%83%81%E5%92%8C%E5%AE%B9%E6%98%93%E5%8F%97%E5%88%BA%E6%BF%80%E7%9A%84%E8%82%A0%E9%81%93">压力、抑郁和容易受刺激的肠道</a></li>
+<li><a href="#%E8%87%AA%E6%88%91%E6%84%8F%E8%AF%86%E4%BB%8E%E4%BD%95%E8%80%8C%E6%9D%A5">“自我”意识从何而来？</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E4%BA%BA%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AA%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F">一个人就是一个生态系统</a></li>
+<li><a href="#%E5%85%8D%E7%96%AB%E7%B3%BB%E7%BB%9F%E5%92%8C%E8%82%A0%E9%81%93%E7%BB%86%E8%8F%8C%E7%9A%84%E7%88%B1%E6%81%A8%E7%BA%A0%E8%91%9B">免疫系统和肠道细菌的爱恨纠葛</a></li>
+<li><a href="#%E8%82%A0%E9%81%93%E8%8F%8C%E7%BE%A4%E8%BF%9B%E5%8C%96%E8%AE%BA">肠道菌群进化论</a></li>
+<li><a href="#%E6%88%90%E5%B9%B4%E4%BA%BA%E4%BD%93%E5%86%85%E7%9A%84%E8%82%A0%E9%81%93%E5%B1%85%E6%B0%91">成年人体内的肠道居民</a>
+<ul>
+<li><a href="#%E7%BB%86%E8%8F%8C%E7%9A%84%E9%81%97%E4%BC%A0%E5%9F%BA%E5%9B%A0">细菌的遗传基因</a></li>
+<li><a href="#%E4%B8%89%E7%A7%8D%E8%82%A0%E9%81%93%E5%9E%8B">三种肠道型</a></li>
+</ul>
+</li>
+<li><a href="#%E8%82%A0%E9%81%93%E8%8F%8C%E7%BE%A4%E6%89%80%E6%89%AE%E6%BC%94%E7%9A%84%E8%A7%92%E8%89%B2">肠道菌群所扮演的角色</a>
+<ul>
+<li><a href="#%E7%BB%86%E8%8F%8C%E5%AF%BC%E8%87%B4%E5%A2%9E%E8%82%A5%E9%98%B4%E8%B0%8B%E8%AE%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E5%81%87%E8%AF%B4">细菌导致增肥阴谋论的三种假说</a></li>
+<li><a href="#%E8%83%86%E5%9B%BA%E9%86%87%E5%92%8C%E8%82%A0%E9%81%93%E7%BB%86%E8%8F%8C">胆固醇和肠道细菌</a></li>
+</ul>
+</li>
+<li><a href="#%E5%81%A5%E5%BA%B7%E7%9A%84%E5%85%83%E5%87%B6%E5%9D%8F%E7%BB%86%E8%8F%8C%E5%92%8C%E5%AF%84%E7%94%9F%E8%99%AB">健康的元凶：坏细菌和寄生虫</a>
+<ul>
+<li><a href="#%E8%A2%AB%E6%88%B4%E5%B8%BD%E5%AD%90%E7%9A%84%E6%B2%99%E9%97%A8%E6%B0%8F%E8%8F%8C">被戴“帽子”的沙门氏菌</a></li>
+<li><a href="#%E5%B9%BD%E9%97%A8%E8%9E%BA%E6%9D%86%E8%8F%8C%E4%BA%BA%E7%B1%BB%E6%9C%80%E6%97%A9%E7%9A%84%E5%AE%A0%E7%89%A9">幽门螺杆菌：人类最早的“宠物”</a></li>
+<li><a href="#%E5%BC%93%E5%BD%A2%E8%99%AB%E8%AE%A9%E4%BA%BA%E5%BF%98%E5%8D%B4%E6%81%90%E6%83%A7%E7%9A%84%E5%96%B5%E6%98%9F%E6%9D%A5%E5%AE%A2">弓形虫：让人忘却恐惧的喵星来客</a></li>
+<li><a href="#%E8%9B%B2%E8%99%AB%E4%B8%80%E7%94%9F%E6%80%BB%E4%BC%9A%E9%81%87%E8%A7%81%E4%B8%80%E6%AC%A1%E7%9A%84%E8%BF%87%E5%AE%A2">蛲虫：一生总会遇见一次的过客</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B8%85%E6%B4%81%E5%8D%AB%E7%94%9F%E5%92%8C%E7%9B%8A%E7%94%9F%E8%8F%8C">清洁卫生和益生菌</a>
+<ul>
+<li><a href="#%E6%97%A5%E5%B8%B8%E6%B8%85%E6%B4%81%E5%88%B0%E5%BA%95%E5%A4%9A%E5%B9%B2%E5%87%80%E6%89%8D%E8%A1%8C">日常清洁，到底多干净才行？</a></li>
+<li><a href="#%E6%8A%97%E7%94%9F%E7%B4%A0%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E8%B5%B6%E5%B0%BD%E6%9D%80%E7%BB%9D%E5%90%97">抗生素：真的需要赶尽杀绝吗？</a></li>
+<li><a href="#%E7%9B%8A%E7%94%9F%E8%8F%8C%E5%90%83%E5%90%83%E6%9B%B4%E5%81%A5%E5%BA%B7">益生菌：吃吃更健康</a></li>
+<li><a href="#%E7%9B%8A%E7%94%9F%E5%85%83%E5%88%A9%E5%B7%B1%E5%8F%88%E5%8A%A9%E4%BA%BA%E7%9A%84%E7%83%AD%E5%BF%83%E8%82%A0">益生元：利己又助人的热心肠</a></li>
+</ul>
+</li>
+<li><a href="#%E8%87%B4%E8%B0%A2">致谢</a></li>
+<li><a href="#%E9%87%8D%E8%A6%81%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">重要参考资料</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>
