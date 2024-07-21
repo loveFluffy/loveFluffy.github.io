@@ -4,7 +4,7 @@
 
 # 
 
-## 
+## [美]（） 著| 译
 
 <div class="mycomment">
 
@@ -15,6 +15,6 @@
 </div>
 <div class="toc">
 
-- [](#-2)
+- [](#-1)
 
 </div>
