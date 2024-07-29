@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5df4;&#x83f2;&#x7279;&#x7684;&#x7b2c;&#x4e00;&#x6876;&#x91d1;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5df4;&#x83f2;&#x7279;&#x7684;&#x7b2c;&#x4e00;&#x6876;&#x91d1;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,524 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="巴菲特的第一桶金">巴菲特的第一桶金</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="巴菲特的第一桶金">巴菲特的第一桶金</h1>
+<h2 id="英格伦阿诺德glen-arnold-著杨天南-译">[英]格伦·阿诺德（Glen Arnold） 著|杨天南 译</h2>
+<div class="mycomment">
+<p>系列书第1本，共3本。这是一本不厚的小书，对于按照时间顺序研究巴菲特这一路走来的故事很有用。因为是故事形式，读起来很快，笔记摘抄的内容并不多。以后遇到相关案例的话，可以按照笔记的目录再回翻此书。</p>
+</div>
+<h3 id="译者序-巴菲特资金超越主意的分水岭">译者序 巴菲特“资金超越主意”的分水岭</h3>
+<p>这本书实际上是“巴菲特投资案例集”系列丛书的第一卷（共4卷）。</p>
+<h3 id="导言-48岁赚得1亿美元">导言 48岁赚得1亿美元</h3>
+<p>我发现如果我必须将自己如何配置资本清晰地表达出来，而且需要公之于众，这种压力反而起到了某种激励作用。</p>
+<p>在奥马哈之行中，我最为津津乐道的趣闻轶事是：我促成了巴菲特捐款400亿美元。没错，就是我促成了这件事。</p>
+<h2 id="第一部分-人物与情景">第一部分 人物与情景</h2>
+<h3 id="沃伦巴菲特的故事">沃伦·巴菲特的故事</h3>
+<h4 id="青年时代与合伙企业">青年时代与合伙企业</h4>
+<h4 id="伯克希尔-哈撒韦进入视野">伯克希尔-哈撒韦进入视野</h4>
+<h4 id="跟本杰明格雷厄姆学投资">跟本杰明·格雷厄姆学投资</h4>
+<h4 id="巴菲特向格雷厄姆学到的其他理念">巴菲特向格雷厄姆学到的其他理念</h4>
+<h2 id="第二部分-投资案例">第二部分 投资案例</h2>
+<h3 id="案例1-城市服务cities-services">案例1 城市服务（Cities Services）</h3>
+<h4 id="孩童时代">孩童时代</h4>
+<p>15岁时，他就能拿出1200美元，买下一个距离奥马哈70英里的占地42英亩的农场，由此大赚一笔（五年之后，该农场以2倍的价格出售）。</p>
+<h4 id="第一只股票">第一只股票</h4>
+<h4 id="大学时光">大学时光</h4>
+<h4 id="像投机者一样追逐股票">像投机者一样追逐股票</h4>
+<h3 id="案例2-盖可保险geico">案例2 盖可保险（Geico）</h3>
+<h4 id="盖可保险的历史">盖可保险的历史</h4>
+<p>盖可保险始创于1936年，它向那些在政府体制内工作的人提供汽车保险，它采取了一种非同寻常的销售手段。<strong>大多数保险同行都是通过代理人销售保险，但盖可保险认为这种销售方式的成本过于昂贵。公司认为如果能以邮件的形式直接将保险卖给客户，就可以为客户提供更为优惠的费率，并同时获得更佳的利润率</strong>。</p>
+<h4 id="周六巴菲特来敲门">周六，巴菲特来敲门</h4>
+<p>经过四个小时的交流，巴菲特对于一家保险公司的运作已经有了相当的了解，戴维森给他上了精彩的一课。他可以清楚地看到盖可保险公司具有两大竞争优势：</p>
+<ol>
+<li>盖可公司销售保险的方式具有极大的<strong>低成本优势</strong>。</li>
+<li>盖可公司的<strong>客户群体具有精准的定位</strong>，习惯于从盖可购买保险的群体是一个安全驾驶的群体，因此，保险风险很低。</li>
+</ol>
+<p>盖可具有良好的发展前景，不仅是因为公司拥有一个精干的销售团队。盖可的利润率是同业平均水平的五倍。比这更令人惊喜的是，盖可公司还拥有数量可观的浮存金（即已经收取、尚未赔付的保费收入），这些现金可供投资之用。</p>
+<p>从这里，我们看到了巴菲特早期深入分析企业的案例，看到他在心中树立的内在价值的观念。我们还可以看到巴菲特如何坚持独立判断，而不是简单听从所谓的专家意见。<strong>此行之前，他就与几位保险专家进行过交流，这些专家都认为盖可估值过高。当时，盖可保险的市场份额仅为1%，并被认为竞争能力脆弱，尤其是经纪人分销队伍薄弱</strong>。但是，巴菲特从格雷厄姆那里学到一个真理：<strong>你既不会因为大众同意你而正确，也不会因为大众反对你而错误</strong>。一切以事实为根据，而不是大众的看法。</p>
+<h3 id="案例34-克利夫兰精纺厂和加油站cleveland-worsted-mills-and-a-gas-station">案例3&amp;4 克利夫兰精纺厂和加油站（Cleveland Worsted Mills And a Gas Station）</h3>
+<h4 id="投资">投资</h4>
+<p><strong>1951年年底，巴菲特已经将自有资金增值到20000美元</strong>。此时，这个世界上他最尊重的两个人——<strong>格雷厄姆和他的父亲，都建议他不要进入股市，因为他们认为股价已经太高了</strong>。巴菲特并不同意他们的逻辑，他自作主张，认为1951年是进场买入好公司的绝佳时机。他认为潜在回报是如此诱人，以至于第一次借钱买了股票（他借了5000美元，相当于他净资产的1/4）。</p>
+<h4 id="失败案例1克利夫兰精纺厂">失败案例1：克利夫兰精纺厂</h4>
+<p><strong>除了股价仅有净资产价值的一半以外，该公司还有高比例的分红</strong>。这些综合在一起，使得该公司显然是一项很有吸引力的投资，巴菲特将它推荐给奥马哈股票经纪公司的客户们。但是接下来，情况发生了变化：<strong>公司面临来自美国南部各州纺织厂以及合成纤维的激烈竞争，出现巨额亏损，只得削减分红，股价也随之大跌</strong>。</p>
+<h4 id="净流动资产价值投资法">净流动资产价值投资法</h4>
+<p>在公司资产负债表上，流动资产的估值数字并非以面值入账，在你对存货进行估值时，可能希望留有一个安全边际。例如，公司管理层通过会计师，得出某一个会计记账日的<strong>库存</strong>数字，包括仓库里的原材料、生产线上的半成品，以及尚未出售的成品。<strong>其中不乏某些公司高管带着乐观预期评估这些数字</strong>。</p>
+<p>作为价值投资者，我们必须构建自己的安全边际，拒绝那些建立在最佳假设结果上的估值。<strong>也许一些旧有的库存现在已经过时，无法再按照原来的成本出售</strong>。</p>
+<h4 id="失败案例2加油站">失败案例2：加油站</h4>
+<p>巴菲特曾经以合伙公司的形式，与一个朋友合伙在奥马哈买过一个加油站。不幸的是，<strong>这个加油站恰好位于德士古（Texaco）加油站的对面，而后者的生意一直比巴菲特的加油站好。令人惊讶的是，巴菲特曾经亲自上阵，充当工作人员，每个周末他都亲临现场，直接服务客户</strong>。</p>
+<p>在这里，巴菲特学到了什么是竞争优势：<strong>德士古公司的加油站“运作成熟，拥有客户的忠诚，我们做什么都无法改变这些”</strong>。这次教训启发他后来做出了一些最佳投资，他学会了寻找那些在行业中客户忠诚度最高的公司，如可口可乐。</p>
+<h4 id="保持与格雷厄姆的联系">保持与格雷厄姆的联系</h4>
+<h3 id="案例5-洛克伍德公司rockwoodco">案例5 洛克伍德公司（Rockwood&amp;Co.）</h3>
+<p>跟随格雷厄姆工作的两年是紧张忙碌的，巴菲特的主要工作，是在一间没有窗户的办公室里，研究数以百计的公司的数据。他整理出那些符合格雷厄姆标准的有关公司的简报，特别是净流动资产价值，将它们分门别类为：<strong>便宜</strong>的公司、<strong>被忽略</strong>的公司和<strong>失宠</strong>的公司。</p>
+<h4 id="洛克伍德公司">洛克伍德公司</h4>
+<p>洛克伍德公司是一家巧克力豆（用于生产饼干）制造商，它长年亏损，但拥有大量的可可豆库存。更重要的是，当年可可豆的价格在飙升。如果洛克伍德公司直接在市场上出售可可豆，需要交纳数额不菲的税金。作为替代方案，公司的董事们找到格雷厄姆-纽曼公司，问他们是否有意收购，但洛克伍德公司的要价很高。</p>
+<p>于是，洛克伍德公司找到另一位能干的投资人<strong>杰伊·普里茨克</strong>，问他是否愿意收购该公司。由于出售可可豆要被征收50%的重税，普里茨克想到了一个可以避税的办法。当时的一项新税法规定，如果一个公司缩小其经营范围，那么它清算相应部分的库存就可以免税。于是，普里茨克买下了公司的控股权，着手清算公司仓库里价值1300万美元的可可豆。但他没有选择直接卖掉这些可可豆。他的方案是，每个股东都可以用一股股票换取36美元的可可豆，而此时市场的股价是34美元。这样，就有了一个非常明确的套利机会。格雷厄姆察觉到了这个机会，他指示巴菲特买入洛克伍德股票，用于交换可可豆，然后再卖掉可可豆，这样，每一股就可以获得2美元的回报。</p>
+<p>洛克伍德公司并不是直接给大家一袋袋的可可豆，实际上，它给每个买家开具显示持有可可豆的仓库仓单。为了防止可可豆仓单价格下跌，格雷厄姆-纽曼公司同时卖出可可期货（它可以保证在未来一个日期，可以某个固定价格提供固定数量的可可豆），如此一来就可以锁定他们的套利利润。一周又一周，巴菲特都在干着“买进股票、卖出可可期货”的工作。</p>
+<h4 id="巴菲特的困扰">巴菲特的困扰</h4>
+<p>这单套利交易，格雷厄姆-纽曼公司干得非常漂亮，但巴菲特相信自己可以做得更好。于是，他直接买进了222股洛克伍德的股票，他的逻辑是这样的：</p>
+<ul>
+<li>约定的出价为每股可交换80磅可可豆。</li>
+<li>洛克伍德公司拥有的可可豆数量，远远超出流通股数所对应的数量。</li>
+<li>所以，如果你是公司股东之一，选择不将股票卖给公司，那么首先，你持有的股票每股所对应的，由公司持有的可可豆价值，应该超过36美元；其次，你的持股所对应的可可豆数量，会由于其他人出售股票给公司而增加。</li>
+<li>除了可可豆，公司拥有的工厂、机器、设备、现金、应收账款等，也是有价值的。</li>
+</ul>
+<p>普里茨克对此了如指掌，他是个非常聪明的家伙。巴菲特选择和他站在一起——买进股票。</p>
+<h4 id="结局">结局</h4>
+<p>在普里茨克出价之前， 洛克伍德的股价是15美元， 后来涨到了大约100美元。 巴菲特赚了13000美元。</p>
+<h3 id="案例6-桑伯恩地图公司sanborn-maps">案例6 桑伯恩地图公司（Sanborn Maps）</h3>
+<h4 id="巴菲特合伙公司取费模式及其表现">巴菲特合伙公司取费模式及其表现</h4>
+<p>他约定如果某一年他的回报低于4%，那一年就不收费（这发生在1956～1961年期间）。高于4%回报的部分，巴菲特会得到分成。这种绩效费最初可以高达50%。从1961年开始，不收费门槛被重新设定为6%，超出的部分，绩效费为25%。</p>
+<h4 id="桑伯恩地图公司">桑伯恩地图公司</h4>
+<h4 id="巴菲特不但买了而且需要控制甚至改变公司">巴菲特不但买了，而且需要控制甚至改变公司</h4>
+<h3 id="案例7-邓普斯特农机制造公司dempster-mill">案例7 邓普斯特农机制造公司（Dempster Mill）</h3>
+<h4 id="邓普斯特农机制造公司">邓普斯特农机制造公司</h4>
+<h4 id="邓普斯特公司的麻烦">邓普斯特公司的麻烦</h4>
+<h4 id="查理芒格">查理·芒格</h4>
+<h4 id="起死回生">起死回生</h4>
+<p>1962年4月，波特尔搬到了比阿特丽斯，主要工作是搞清楚邓普斯特公司亏损的原因，以及裁员。这不是一件容易的事，但必须这么干。</p>
+<h4 id="实现投资回报">实现投资回报</h4>
+<h3 id="案例8-美国运通american-express">案例8 美国运通（American Express）</h3>
+<h4 id="重要的变化">重要的变化</h4>
+<h4 id="美国运通">美国运通</h4>
+<h4 id="巴菲特出手">巴菲特出手</h4>
+<h3 id="案例9-迪士尼disney">案例9 迪士尼（Disney）</h3>
+<h4 id="巴菲特的行动">巴菲特的行动</h4>
+<p>沃尔特向巴菲特展示了一项刚建成的娱乐设施，名为《加勒比海盗》，仅此一项设施就花费了1700万美元，这个数字相当于当时迪士尼公司总市值的1/5。巴菲特后来开玩笑说：“可以想象我是多么激动——<strong>一家公司的市值仅仅是一个娱乐设施造价的5倍</strong>！”</p>
+<h4 id="巴菲特的逻辑费雪和芒格的因素多于格雷厄姆">巴菲特的逻辑——费雪和芒格的因素多于格雷厄姆</h4>
+<h3 id="案例10-伯克希尔-哈撒韦berkshire-hathaway">案例10 伯克希尔-哈撒韦（Berkshire Hathaway）</h3>
+<h4 id="伯克希尔">伯克希尔</h4>
+<h4 id="1955年之后的下滑">1955年之后的下滑</h4>
+<h4 id="巴菲特一个里程碑式的愚蠢决定">巴菲特一个“里程碑式的愚蠢”决定</h4>
+<h4 id="决定性的回购">决定性的回购</h4>
+<h4 id="伯克希尔-哈撒韦一个老板一个总裁和一个不赚钱的生意">伯克希尔-哈撒韦：一个老板、一个总裁和一个不赚钱的生意</h4>
+<p><strong>巴菲特不喜欢用期权作为奖励方式，因为这种方式不承担下跌的风险，它实际上是鼓励管理层用股东的钱去赌博</strong>。取而代之的是，他给肯·蔡斯提供了一个购买1000股股票的机会。蔡斯当时的年薪只有3万美元，没有足够的钱买这些股票。巴菲特提议借给他1.8万美元，蔡斯接受了这个提议。蔡斯凭着实力证明了自己的忠诚可靠，无论是作为一个职业经理人，还是对他的老板巴菲特。巴菲特现在可以用这家小公司做些伟大的事了。</p>
+<h4 id="最初的两年">最初的两年</h4>
+<h3 id="案例11-国民赔偿保险公司national-indemnity-insurance">案例11 国民赔偿保险公司（National Indemnity Insurance）</h3>
+<h4 id="杰克林沃尔特">杰克·林沃尔特</h4>
+<h4 id="1967年的国民赔偿保险公司">1967年的国民赔偿保险公司</h4>
+<h4 id="收购国民赔偿保险公司">收购国民赔偿保险公司</h4>
+<h4 id="1967年2月">1967年2月</h4>
+<h4 id="巴菲特接手国民赔偿保险公司">巴菲特接手国民赔偿保险公司</h4>
+<h4 id="一个律己保险商的肖像">一个律己保险商的肖像</h4>
+<h4 id="严重的失策">严重的失策</h4>
+<h3 id="案例12-霍希尔德-科恩公司hochschild-kohn">案例12 霍希尔德-科恩公司（Hochschild-Kohn）</h3>
+<h4 id="霍希尔德-科恩公司">霍希尔德-科恩公司</h4>
+<p>1966年1月，巴菲特的一个朋友、投资银行家大卫·桑迪·戈特斯曼提醒巴菲特，一家位于巴尔的摩的百货公司处境不佳，可能有机会收购。这家公司就是霍希尔德-科恩，该公司<strong>竞争力疲弱，需要大量投资进行翻新改造</strong>。这是一家由科恩家族持有的私人公司，家族的下一代中几乎没有人愿意接班继承这项事业，而且他们知道公司支付不了太多现金股息。公司CEO马丁·科恩告诉戈特斯曼，他们打算卖掉公司，即便是“折扣价”也能接受。</p>
+<p>从一开始巴菲特就明白，这项交易是“以三流的价格买进一个二流的百货公司”。但他喜欢资产负债表上的净资产情况（比公司市值高），以及<strong>隐匿性资产</strong>（没有记录在案的房地产价值），以及<strong>后进先出记账法下的库存</strong>，这意味着旧库存按照以前的价格估值，而不使用现在的价格。</p>
+<h4 id="结果如何">结果如何</h4>
+<p>对霍希尔德-科恩投资案，芒格表示：“<strong>我们深受格雷厄姆思想的影响，我们认为如果你付出的资金能够获得足够的资产，无论如何都不会得到太坏的结果。我们没有考虑到在巴尔的摩有4家百货公司，竞争十分激烈</strong>。”</p>
+<hr>
+<p>在这次三方合作对霍希尔德-科恩公司的投资中，巴菲特合伙公司、查理·芒格的基金和戈特斯曼先生的基金都录得了数额不大的亏损。<strong>零售业的问题是管理层要一直面对来自竞争对手的挑战。如果他们想出了一个好主意提升产品销量，竞争对手很快就会如法炮制，他们必须始终处于游戏的顶端才行</strong>。除此之外，他们还必须跟上竞争对手层出不穷的创新步伐。</p>
+<p>正如巴菲特所说，<strong>零售业的管理层必须“每一天都保持聪明”，而其他行业的管理层即便在一段时间里表现平庸，也不会对公司造成毁灭性影响</strong>。所以，具有品牌的公司，例如《华盛顿邮报》、可口可乐和迪士尼，这些公司的管理层即便有一两年表现很差，他们也能维持特许权（在客户心中的地位）不受太大影响。百货公司没有这样宽松的环境。当然，也有卓越的零售商，他们每一天都很聪明，能年复一年地击败对手，但是这样的零售商很少。</p>
+<h4 id="学到了什么">学到了什么</h4>
+<h3 id="案例13-联合棉纺公司associated-cotton-shops">案例13 联合棉纺公司（Associated Cotton Shops）</h3>
+<h4 id="联合棉纺公司的生意">联合棉纺公司的生意</h4>
+<h4 id="交易">交易</h4>
+<h4 id="后来">后来</h4>
+<h3 id="案例14-投资人关系investing-in-relationships">案例14 投资人关系（Investing In Relationships）</h3>
+<h4 id="狂野年代">狂野年代</h4>
+<h4 id="巴菲特不是普通的基金经理人">巴菲特不是普通的基金经理人</h4>
+<h4 id="1967年的挫折与困惑">1967年的挫折与困惑</h4>
+<h4 id="巴菲特的困惑">巴菲特的困惑</h4>
+<h4 id="应该怎么办">应该怎么办</h4>
+<h4 id="误导投资人的短期绩效指标">误导投资人的短期绩效指标</h4>
+<h4 id="转向拥抱品质但并未放弃定量分析">转向拥抱品质（但并未放弃定量分析）</h4>
+<h4 id="不因对合伙人的承诺而改变信念">不因对合伙人的承诺而改变信念</h4>
+<h4 id="个人动力">个人动力</h4>
+<h4 id="再次表现超群">再次表现超群</h4>
+<h4 id="终结合伙公司">终结合伙公司？</h4>
+<h4 id="解决方案">解决方案</h4>
+<h3 id="案例15-伊利诺伊国民银行信托公司illinois-national-bank-and-trust">案例15 伊利诺伊国民银行信托公司（Illinois National Bank And Trust）</h3>
+<h4 id="一家赚钱的小银行">一家赚钱的小银行</h4>
+<h4 id="交易-1">交易</h4>
+<h4 id="伊利诺伊国民银行的愉快之旅">伊利诺伊国民银行的愉快之旅</h4>
+<h4 id="你打算如何拥有这家银行">你打算如何拥有这家银行</h4>
+<h3 id="但是必须与伊利诺伊国民银行分手">但是，必须与伊利诺伊国民银行分手</h3>
+<h4 id="巴菲特的赞美">巴菲特的赞美</h4>
+<h3 id="案例16-奥马哈太阳报omaha-sun-newspapers">案例16 《奥马哈太阳报》（Omaha Sun Newspapers）</h3>
+<h4 id="巴菲特的态度">巴菲特的态度</h4>
+<h4 id="投机游戏">投机游戏</h4>
+<h4 id="奥马哈太阳报">《奥马哈太阳报》</h4>
+<h4 id="赢得普利策新闻大奖">赢得普利策新闻大奖</h4>
+<h3 id="案例17-更多保险公司more-insurance">案例17 更多保险公司（More Insurance）</h3>
+<h4 id="伯克希尔-哈撒韦变身为控股公司王国">伯克希尔-哈撒韦变身为控股公司王国</h4>
+<h4 id="更多公司汇聚旗下">更多公司汇聚旗下</h4>
+<h4 id="资本使用">资本使用</h4>
+<h3 id="案例18-巴菲特合伙公司的终结buffetts-investment-in-sanity">案例18 巴菲特合伙公司的终结（Buffett's Investment In Sanity）</h3>
+<h4 id="没有股票可买">没有股票可买</h4>
+<h4 id="低成本运营">低成本运营</h4>
+<h4 id="巴菲特决定退休">巴菲特决定退休</h4>
+<h3 id="合伙公司解散后合伙人资金的去向">合伙公司解散后合伙人资金的去向</h3>
+<h4 id="推荐比尔鲁安接手资金管理">推荐比尔·鲁安接手资金管理</h4>
+<h4 id="巴菲特合伙公司的终结">巴菲特合伙公司的终结</h4>
+<h3 id="案例19-蓝筹印花公司blue-chip-stamps">案例19 蓝筹印花公司（Blue Chip Stamps）</h3>
+<h4 id="印花业务">印花业务</h4>
+<h4 id="为何蓝筹印花公司的股票便宜">为何蓝筹印花公司的股票便宜</h4>
+<h4 id="巴菲特运用蓝筹印花公司资金的案例">巴菲特运用蓝筹印花公司资金的案例</h4>
+<h3 id="案例20-喜诗糖果sees-candies">案例20 喜诗糖果（See's Candies）</h3>
+<h4 id="日常工作">日常工作</h4>
+<h4 id="赚钱机器">赚钱机器</h4>
+<h4 id="巴菲特在1970年持有的三只潜力股">巴菲特在1970年持有的三只潜力股</h4>
+<h4 id="你会在1970年投资伯克希尔-哈撒韦吗">你会在1970年投资伯克希尔-哈撒韦吗</h4>
+<h4 id="喜诗糖果">喜诗糖果</h4>
+<h4 id="收购喜诗">收购喜诗</h4>
+<h4 id="收购之后">收购之后</h4>
+<h4 id="特许经营权">特许经营权</h4>
+<h4 id="扩张的尝试">扩张的尝试</h4>
+<h4 id="定价权">定价权</h4>
+<h4 id="是什么成就了好企业">是什么成就了好企业</h4>
+<h4 id="喜诗糖果的经济商誉">喜诗糖果的经济商誉</h4>
+<h3 id="案例21-华盛顿邮报washington-post">案例21 《华盛顿邮报》（Washington Post）</h3>
+<h4 id="漂亮50">漂亮50</h4>
+<h4 id="在非理性年代巴菲特没有虚度光阴">在非理性年代，巴菲特没有虚度光阴</h4>
+<h4 id="举债投资华盛顿邮报">举债投资《华盛顿邮报》</h4>
+<h4 id="巴菲特对于邮报价值的判断">巴菲特对于邮报价值的判断</h4>
+<h4 id="交易-2">交易</h4>
+<h4 id="收购之后-1">收购之后</h4>
+<h4 id="我们擅长有米之炊">我们擅长有米之炊</h4>
+<h4 id="华盛顿邮报对伯克希尔的贡献">《华盛顿邮报》对伯克希尔的贡献</h4>
+<h4 id="巴菲特在华盛顿邮报公司贡献的管理才能">巴菲特在《华盛顿邮报》公司贡献的管理才能</h4>
+<h4 id="注定发生的事">注定发生的事</h4>
+<h4 id="唐纳德格雷厄姆第二位关键人">唐纳德·格雷厄姆：第二位关键人</h4>
+<h4 id="经营特许权的丧失">经营特许权的丧失</h4>
+<h4 id="巴菲特对于他最为伟大的投资案例的思考以及对学院派及其追随者的嘲讽">巴菲特对于他最为伟大的投资案例的思考，以及对学院派及其追随者的嘲讽</h4>
+<h4 id="投资组合的周转率">投资组合的周转率</h4>
+<h3 id="案例22-韦斯科金融公司wesco-financial">案例22 韦斯科金融公司（Wesco Financial）</h3>
+<h4 id="韦斯科的生意">韦斯科的生意</h4>
+<h4 id="芒格和巴菲特的兴趣">芒格和巴菲特的兴趣</h4>
+<h4 id="一个糟糕的出价">一个糟糕的出价</h4>
+<h4 id="沃伦巴菲特接手韦斯科金融公司">沃伦·巴菲特接手韦斯科金融公司</h4>
+<h4 id="韦斯科早期的奋斗">韦斯科早期的奋斗</h4>
+<h4 id="转型开始">转型开始</h4>
+<h4 id="韦斯科的保险业务">韦斯科的保险业务</h4>
+<h4 id="迷你型企业集团">迷你型企业集团</h4>
+<h3 id="大整合-伯克希尔-哈撒韦帝国">大整合 伯克希尔-哈撒韦帝国</h3>
+<h3 id="附录-案例总结">附录 案例总结</h3>
+<h3 id="注释">注释</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E8%AF%91%E8%80%85%E5%BA%8F-%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%B5%84%E9%87%91%E8%B6%85%E8%B6%8A%E4%B8%BB%E6%84%8F%E7%9A%84%E5%88%86%E6%B0%B4%E5%B2%AD">译者序 巴菲特“资金超越主意”的分水岭</a></li>
+<li><a href="#%E5%AF%BC%E8%A8%80-48%E5%B2%81%E8%B5%9A%E5%BE%971%E4%BA%BF%E7%BE%8E%E5%85%83">导言 48岁赚得1亿美元</a></li>
+<li><a href="#%E6%B2%83%E4%BC%A6%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E6%95%85%E4%BA%8B">沃伦·巴菲特的故事</a>
+<ul>
+<li><a href="#%E9%9D%92%E5%B9%B4%E6%97%B6%E4%BB%A3%E4%B8%8E%E5%90%88%E4%BC%99%E4%BC%81%E4%B8%9A">青年时代与合伙企业</a></li>
+<li><a href="#%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94-%E5%93%88%E6%92%92%E9%9F%A6%E8%BF%9B%E5%85%A5%E8%A7%86%E9%87%8E">伯克希尔-哈撒韦进入视野</a></li>
+<li><a href="#%E8%B7%9F%E6%9C%AC%E6%9D%B0%E6%98%8E%E6%A0%BC%E9%9B%B7%E5%8E%84%E5%A7%86%E5%AD%A6%E6%8A%95%E8%B5%84">跟本杰明·格雷厄姆学投资</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%90%91%E6%A0%BC%E9%9B%B7%E5%8E%84%E5%A7%86%E5%AD%A6%E5%88%B0%E7%9A%84%E5%85%B6%E4%BB%96%E7%90%86%E5%BF%B5">巴菲特向格雷厄姆学到的其他理念</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B1-%E5%9F%8E%E5%B8%82%E6%9C%8D%E5%8A%A1cities-services">案例1 城市服务（Cities Services）</a>
+<ul>
+<li><a href="#%E5%AD%A9%E7%AB%A5%E6%97%B6%E4%BB%A3">孩童时代</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E5%8F%AA%E8%82%A1%E7%A5%A8">第一只股票</a></li>
+<li><a href="#%E5%A4%A7%E5%AD%A6%E6%97%B6%E5%85%89">大学时光</a></li>
+<li><a href="#%E5%83%8F%E6%8A%95%E6%9C%BA%E8%80%85%E4%B8%80%E6%A0%B7%E8%BF%BD%E9%80%90%E8%82%A1%E7%A5%A8">像投机者一样追逐股票</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B2-%E7%9B%96%E5%8F%AF%E4%BF%9D%E9%99%A9geico">案例2 盖可保险（Geico）</a>
+<ul>
+<li><a href="#%E7%9B%96%E5%8F%AF%E4%BF%9D%E9%99%A9%E7%9A%84%E5%8E%86%E5%8F%B2">盖可保险的历史</a></li>
+<li><a href="#%E5%91%A8%E5%85%AD%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%9D%A5%E6%95%B2%E9%97%A8">周六，巴菲特来敲门</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B34-%E5%85%8B%E5%88%A9%E5%A4%AB%E5%85%B0%E7%B2%BE%E7%BA%BA%E5%8E%82%E5%92%8C%E5%8A%A0%E6%B2%B9%E7%AB%99cleveland-worsted-mills-and-a-gas-station">案例3&amp;4 克利夫兰精纺厂和加油站（Cleveland Worsted Mills And a Gas Station）</a>
+<ul>
+<li><a href="#%E6%8A%95%E8%B5%84">投资</a></li>
+<li><a href="#%E5%A4%B1%E8%B4%A5%E6%A1%88%E4%BE%8B1%E5%85%8B%E5%88%A9%E5%A4%AB%E5%85%B0%E7%B2%BE%E7%BA%BA%E5%8E%82">失败案例1：克利夫兰精纺厂</a></li>
+<li><a href="#%E5%87%80%E6%B5%81%E5%8A%A8%E8%B5%84%E4%BA%A7%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84%E6%B3%95">净流动资产价值投资法</a></li>
+<li><a href="#%E5%A4%B1%E8%B4%A5%E6%A1%88%E4%BE%8B2%E5%8A%A0%E6%B2%B9%E7%AB%99">失败案例2：加油站</a></li>
+<li><a href="#%E4%BF%9D%E6%8C%81%E4%B8%8E%E6%A0%BC%E9%9B%B7%E5%8E%84%E5%A7%86%E7%9A%84%E8%81%94%E7%B3%BB">保持与格雷厄姆的联系</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B5-%E6%B4%9B%E5%85%8B%E4%BC%8D%E5%BE%B7%E5%85%AC%E5%8F%B8rockwoodco">案例5 洛克伍德公司（Rockwood&amp;Co.）</a>
+<ul>
+<li><a href="#%E6%B4%9B%E5%85%8B%E4%BC%8D%E5%BE%B7%E5%85%AC%E5%8F%B8">洛克伍德公司</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E5%9B%B0%E6%89%B0">巴菲特的困扰</a></li>
+<li><a href="#%E7%BB%93%E5%B1%80">结局</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B6-%E6%A1%91%E4%BC%AF%E6%81%A9%E5%9C%B0%E5%9B%BE%E5%85%AC%E5%8F%B8sanborn-maps">案例6 桑伯恩地图公司（Sanborn Maps）</a>
+<ul>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%90%88%E4%BC%99%E5%85%AC%E5%8F%B8%E5%8F%96%E8%B4%B9%E6%A8%A1%E5%BC%8F%E5%8F%8A%E5%85%B6%E8%A1%A8%E7%8E%B0">巴菲特合伙公司取费模式及其表现</a></li>
+<li><a href="#%E6%A1%91%E4%BC%AF%E6%81%A9%E5%9C%B0%E5%9B%BE%E5%85%AC%E5%8F%B8">桑伯恩地图公司</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E4%B8%8D%E4%BD%86%E4%B9%B0%E4%BA%86%E8%80%8C%E4%B8%94%E9%9C%80%E8%A6%81%E6%8E%A7%E5%88%B6%E7%94%9A%E8%87%B3%E6%94%B9%E5%8F%98%E5%85%AC%E5%8F%B8">巴菲特不但买了，而且需要控制甚至改变公司</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B7-%E9%82%93%E6%99%AE%E6%96%AF%E7%89%B9%E5%86%9C%E6%9C%BA%E5%88%B6%E9%80%A0%E5%85%AC%E5%8F%B8dempster-mill">案例7 邓普斯特农机制造公司（Dempster Mill）</a>
+<ul>
+<li><a href="#%E9%82%93%E6%99%AE%E6%96%AF%E7%89%B9%E5%86%9C%E6%9C%BA%E5%88%B6%E9%80%A0%E5%85%AC%E5%8F%B8">邓普斯特农机制造公司</a></li>
+<li><a href="#%E9%82%93%E6%99%AE%E6%96%AF%E7%89%B9%E5%85%AC%E5%8F%B8%E7%9A%84%E9%BA%BB%E7%83%A6">邓普斯特公司的麻烦</a></li>
+<li><a href="#%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC">查理·芒格</a></li>
+<li><a href="#%E8%B5%B7%E6%AD%BB%E5%9B%9E%E7%94%9F">起死回生</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0%E6%8A%95%E8%B5%84%E5%9B%9E%E6%8A%A5">实现投资回报</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B8-%E7%BE%8E%E5%9B%BD%E8%BF%90%E9%80%9Aamerican-express">案例8 美国运通（American Express）</a>
+<ul>
+<li><a href="#%E9%87%8D%E8%A6%81%E7%9A%84%E5%8F%98%E5%8C%96">重要的变化</a></li>
+<li><a href="#%E7%BE%8E%E5%9B%BD%E8%BF%90%E9%80%9A">美国运通</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%87%BA%E6%89%8B">巴菲特出手</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B9-%E8%BF%AA%E5%A3%AB%E5%B0%BCdisney">案例9 迪士尼（Disney）</a>
+<ul>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E8%A1%8C%E5%8A%A8">巴菲特的行动</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E9%80%BB%E8%BE%91%E8%B4%B9%E9%9B%AA%E5%92%8C%E8%8A%92%E6%A0%BC%E7%9A%84%E5%9B%A0%E7%B4%A0%E5%A4%9A%E4%BA%8E%E6%A0%BC%E9%9B%B7%E5%8E%84%E5%A7%86">巴菲特的逻辑——费雪和芒格的因素多于格雷厄姆</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B10-%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94-%E5%93%88%E6%92%92%E9%9F%A6berkshire-hathaway">案例10 伯克希尔-哈撒韦（Berkshire Hathaway）</a>
+<ul>
+<li><a href="#%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94">伯克希尔</a></li>
+<li><a href="#1955%E5%B9%B4%E4%B9%8B%E5%90%8E%E7%9A%84%E4%B8%8B%E6%BB%91">1955年之后的下滑</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E4%B8%80%E4%B8%AA%E9%87%8C%E7%A8%8B%E7%A2%91%E5%BC%8F%E7%9A%84%E6%84%9A%E8%A0%A2%E5%86%B3%E5%AE%9A">巴菲特一个“里程碑式的愚蠢”决定</a></li>
+<li><a href="#%E5%86%B3%E5%AE%9A%E6%80%A7%E7%9A%84%E5%9B%9E%E8%B4%AD">决定性的回购</a></li>
+<li><a href="#%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94-%E5%93%88%E6%92%92%E9%9F%A6%E4%B8%80%E4%B8%AA%E8%80%81%E6%9D%BF%E4%B8%80%E4%B8%AA%E6%80%BB%E8%A3%81%E5%92%8C%E4%B8%80%E4%B8%AA%E4%B8%8D%E8%B5%9A%E9%92%B1%E7%9A%84%E7%94%9F%E6%84%8F">伯克希尔-哈撒韦：一个老板、一个总裁和一个不赚钱的生意</a></li>
+<li><a href="#%E6%9C%80%E5%88%9D%E7%9A%84%E4%B8%A4%E5%B9%B4">最初的两年</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B11-%E5%9B%BD%E6%B0%91%E8%B5%94%E5%81%BF%E4%BF%9D%E9%99%A9%E5%85%AC%E5%8F%B8national-indemnity-insurance">案例11 国民赔偿保险公司（National Indemnity Insurance）</a>
+<ul>
+<li><a href="#%E6%9D%B0%E5%85%8B%E6%9E%97%E6%B2%83%E5%B0%94%E7%89%B9">杰克·林沃尔特</a></li>
+<li><a href="#1967%E5%B9%B4%E7%9A%84%E5%9B%BD%E6%B0%91%E8%B5%94%E5%81%BF%E4%BF%9D%E9%99%A9%E5%85%AC%E5%8F%B8">1967年的国民赔偿保险公司</a></li>
+<li><a href="#%E6%94%B6%E8%B4%AD%E5%9B%BD%E6%B0%91%E8%B5%94%E5%81%BF%E4%BF%9D%E9%99%A9%E5%85%AC%E5%8F%B8">收购国民赔偿保险公司</a></li>
+<li><a href="#1967%E5%B9%B42%E6%9C%88">1967年2月</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%8E%A5%E6%89%8B%E5%9B%BD%E6%B0%91%E8%B5%94%E5%81%BF%E4%BF%9D%E9%99%A9%E5%85%AC%E5%8F%B8">巴菲特接手国民赔偿保险公司</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E5%BE%8B%E5%B7%B1%E4%BF%9D%E9%99%A9%E5%95%86%E7%9A%84%E8%82%96%E5%83%8F">一个律己保险商的肖像</a></li>
+<li><a href="#%E4%B8%A5%E9%87%8D%E7%9A%84%E5%A4%B1%E7%AD%96">严重的失策</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B12-%E9%9C%8D%E5%B8%8C%E5%B0%94%E5%BE%B7-%E7%A7%91%E6%81%A9%E5%85%AC%E5%8F%B8hochschild-kohn">案例12 霍希尔德-科恩公司（Hochschild-Kohn）</a>
+<ul>
+<li><a href="#%E9%9C%8D%E5%B8%8C%E5%B0%94%E5%BE%B7-%E7%A7%91%E6%81%A9%E5%85%AC%E5%8F%B8">霍希尔德-科恩公司</a></li>
+<li><a href="#%E7%BB%93%E6%9E%9C%E5%A6%82%E4%BD%95">结果如何</a></li>
+<li><a href="#%E5%AD%A6%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88">学到了什么</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B13-%E8%81%94%E5%90%88%E6%A3%89%E7%BA%BA%E5%85%AC%E5%8F%B8associated-cotton-shops">案例13 联合棉纺公司（Associated Cotton Shops）</a>
+<ul>
+<li><a href="#%E8%81%94%E5%90%88%E6%A3%89%E7%BA%BA%E5%85%AC%E5%8F%B8%E7%9A%84%E7%94%9F%E6%84%8F">联合棉纺公司的生意</a></li>
+<li><a href="#%E4%BA%A4%E6%98%93">交易</a></li>
+<li><a href="#%E5%90%8E%E6%9D%A5">后来</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B14-%E6%8A%95%E8%B5%84%E4%BA%BA%E5%85%B3%E7%B3%BBinvesting-in-relationships">案例14 投资人关系（Investing In Relationships）</a>
+<ul>
+<li><a href="#%E7%8B%82%E9%87%8E%E5%B9%B4%E4%BB%A3">狂野年代</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E4%B8%8D%E6%98%AF%E6%99%AE%E9%80%9A%E7%9A%84%E5%9F%BA%E9%87%91%E7%BB%8F%E7%90%86%E4%BA%BA">巴菲特不是普通的基金经理人</a></li>
+<li><a href="#1967%E5%B9%B4%E7%9A%84%E6%8C%AB%E6%8A%98%E4%B8%8E%E5%9B%B0%E6%83%91">1967年的挫折与困惑</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E5%9B%B0%E6%83%91">巴菲特的困惑</a></li>
+<li><a href="#%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E">应该怎么办</a></li>
+<li><a href="#%E8%AF%AF%E5%AF%BC%E6%8A%95%E8%B5%84%E4%BA%BA%E7%9A%84%E7%9F%AD%E6%9C%9F%E7%BB%A9%E6%95%88%E6%8C%87%E6%A0%87">误导投资人的短期绩效指标</a></li>
+<li><a href="#%E8%BD%AC%E5%90%91%E6%8B%A5%E6%8A%B1%E5%93%81%E8%B4%A8%E4%BD%86%E5%B9%B6%E6%9C%AA%E6%94%BE%E5%BC%83%E5%AE%9A%E9%87%8F%E5%88%86%E6%9E%90">转向拥抱品质（但并未放弃定量分析）</a></li>
+<li><a href="#%E4%B8%8D%E5%9B%A0%E5%AF%B9%E5%90%88%E4%BC%99%E4%BA%BA%E7%9A%84%E6%89%BF%E8%AF%BA%E8%80%8C%E6%94%B9%E5%8F%98%E4%BF%A1%E5%BF%B5">不因对合伙人的承诺而改变信念</a></li>
+<li><a href="#%E4%B8%AA%E4%BA%BA%E5%8A%A8%E5%8A%9B">个人动力</a></li>
+<li><a href="#%E5%86%8D%E6%AC%A1%E8%A1%A8%E7%8E%B0%E8%B6%85%E7%BE%A4">再次表现超群</a></li>
+<li><a href="#%E7%BB%88%E7%BB%93%E5%90%88%E4%BC%99%E5%85%AC%E5%8F%B8">终结合伙公司？</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">解决方案</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B15-%E4%BC%8A%E5%88%A9%E8%AF%BA%E4%BC%8A%E5%9B%BD%E6%B0%91%E9%93%B6%E8%A1%8C%E4%BF%A1%E6%89%98%E5%85%AC%E5%8F%B8illinois-national-bank-and-trust">案例15 伊利诺伊国民银行信托公司（Illinois National Bank And Trust）</a>
+<ul>
+<li><a href="#%E4%B8%80%E5%AE%B6%E8%B5%9A%E9%92%B1%E7%9A%84%E5%B0%8F%E9%93%B6%E8%A1%8C">一家赚钱的小银行</a></li>
+<li><a href="#%E4%BA%A4%E6%98%93-1">交易</a></li>
+<li><a href="#%E4%BC%8A%E5%88%A9%E8%AF%BA%E4%BC%8A%E5%9B%BD%E6%B0%91%E9%93%B6%E8%A1%8C%E7%9A%84%E6%84%89%E5%BF%AB%E4%B9%8B%E6%97%85">伊利诺伊国民银行的愉快之旅</a></li>
+<li><a href="#%E4%BD%A0%E6%89%93%E7%AE%97%E5%A6%82%E4%BD%95%E6%8B%A5%E6%9C%89%E8%BF%99%E5%AE%B6%E9%93%B6%E8%A1%8C">你打算如何拥有这家银行</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%86%E6%98%AF%E5%BF%85%E9%A1%BB%E4%B8%8E%E4%BC%8A%E5%88%A9%E8%AF%BA%E4%BC%8A%E5%9B%BD%E6%B0%91%E9%93%B6%E8%A1%8C%E5%88%86%E6%89%8B">但是，必须与伊利诺伊国民银行分手</a>
+<ul>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E8%B5%9E%E7%BE%8E">巴菲特的赞美</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B16-%E5%A5%A5%E9%A9%AC%E5%93%88%E5%A4%AA%E9%98%B3%E6%8A%A5omaha-sun-newspapers">案例16 《奥马哈太阳报》（Omaha Sun Newspapers）</a>
+<ul>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E6%80%81%E5%BA%A6">巴菲特的态度</a></li>
+<li><a href="#%E6%8A%95%E6%9C%BA%E6%B8%B8%E6%88%8F">投机游戏</a></li>
+<li><a href="#%E5%A5%A5%E9%A9%AC%E5%93%88%E5%A4%AA%E9%98%B3%E6%8A%A5">《奥马哈太阳报》</a></li>
+<li><a href="#%E8%B5%A2%E5%BE%97%E6%99%AE%E5%88%A9%E7%AD%96%E6%96%B0%E9%97%BB%E5%A4%A7%E5%A5%96">赢得普利策新闻大奖</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B17-%E6%9B%B4%E5%A4%9A%E4%BF%9D%E9%99%A9%E5%85%AC%E5%8F%B8more-insurance">案例17 更多保险公司（More Insurance）</a>
+<ul>
+<li><a href="#%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94-%E5%93%88%E6%92%92%E9%9F%A6%E5%8F%98%E8%BA%AB%E4%B8%BA%E6%8E%A7%E8%82%A1%E5%85%AC%E5%8F%B8%E7%8E%8B%E5%9B%BD">伯克希尔-哈撒韦变身为控股公司王国</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9A%E5%85%AC%E5%8F%B8%E6%B1%87%E8%81%9A%E6%97%97%E4%B8%8B">更多公司汇聚旗下</a></li>
+<li><a href="#%E8%B5%84%E6%9C%AC%E4%BD%BF%E7%94%A8">资本使用</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B18-%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%90%88%E4%BC%99%E5%85%AC%E5%8F%B8%E7%9A%84%E7%BB%88%E7%BB%93buffetts-investment-in-sanity">案例18 巴菲特合伙公司的终结（Buffett's Investment In Sanity）</a>
+<ul>
+<li><a href="#%E6%B2%A1%E6%9C%89%E8%82%A1%E7%A5%A8%E5%8F%AF%E4%B9%B0">没有股票可买</a></li>
+<li><a href="#%E4%BD%8E%E6%88%90%E6%9C%AC%E8%BF%90%E8%90%A5">低成本运营</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%86%B3%E5%AE%9A%E9%80%80%E4%BC%91">巴菲特决定退休</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%88%E4%BC%99%E5%85%AC%E5%8F%B8%E8%A7%A3%E6%95%A3%E5%90%8E%E5%90%88%E4%BC%99%E4%BA%BA%E8%B5%84%E9%87%91%E7%9A%84%E5%8E%BB%E5%90%91">合伙公司解散后合伙人资金的去向</a>
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E6%AF%94%E5%B0%94%E9%B2%81%E5%AE%89%E6%8E%A5%E6%89%8B%E8%B5%84%E9%87%91%E7%AE%A1%E7%90%86">推荐比尔·鲁安接手资金管理</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%90%88%E4%BC%99%E5%85%AC%E5%8F%B8%E7%9A%84%E7%BB%88%E7%BB%93">巴菲特合伙公司的终结</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B19-%E8%93%9D%E7%AD%B9%E5%8D%B0%E8%8A%B1%E5%85%AC%E5%8F%B8blue-chip-stamps">案例19 蓝筹印花公司（Blue Chip Stamps）</a>
+<ul>
+<li><a href="#%E5%8D%B0%E8%8A%B1%E4%B8%9A%E5%8A%A1">印花业务</a></li>
+<li><a href="#%E4%B8%BA%E4%BD%95%E8%93%9D%E7%AD%B9%E5%8D%B0%E8%8A%B1%E5%85%AC%E5%8F%B8%E7%9A%84%E8%82%A1%E7%A5%A8%E4%BE%BF%E5%AE%9C">为何蓝筹印花公司的股票便宜</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%BF%90%E7%94%A8%E8%93%9D%E7%AD%B9%E5%8D%B0%E8%8A%B1%E5%85%AC%E5%8F%B8%E8%B5%84%E9%87%91%E7%9A%84%E6%A1%88%E4%BE%8B">巴菲特运用蓝筹印花公司资金的案例</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B20-%E5%96%9C%E8%AF%97%E7%B3%96%E6%9E%9Csees-candies">案例20 喜诗糖果（See's Candies）</a>
+<ul>
+<li><a href="#%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C">日常工作</a></li>
+<li><a href="#%E8%B5%9A%E9%92%B1%E6%9C%BA%E5%99%A8">赚钱机器</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%9C%A81970%E5%B9%B4%E6%8C%81%E6%9C%89%E7%9A%84%E4%B8%89%E5%8F%AA%E6%BD%9C%E5%8A%9B%E8%82%A1">巴菲特在1970年持有的三只潜力股</a></li>
+<li><a href="#%E4%BD%A0%E4%BC%9A%E5%9C%A81970%E5%B9%B4%E6%8A%95%E8%B5%84%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94-%E5%93%88%E6%92%92%E9%9F%A6%E5%90%97">你会在1970年投资伯克希尔-哈撒韦吗</a></li>
+<li><a href="#%E5%96%9C%E8%AF%97%E7%B3%96%E6%9E%9C">喜诗糖果</a></li>
+<li><a href="#%E6%94%B6%E8%B4%AD%E5%96%9C%E8%AF%97">收购喜诗</a></li>
+<li><a href="#%E6%94%B6%E8%B4%AD%E4%B9%8B%E5%90%8E">收购之后</a></li>
+<li><a href="#%E7%89%B9%E8%AE%B8%E7%BB%8F%E8%90%A5%E6%9D%83">特许经营权</a></li>
+<li><a href="#%E6%89%A9%E5%BC%A0%E7%9A%84%E5%B0%9D%E8%AF%95">扩张的尝试</a></li>
+<li><a href="#%E5%AE%9A%E4%BB%B7%E6%9D%83">定价权</a></li>
+<li><a href="#%E6%98%AF%E4%BB%80%E4%B9%88%E6%88%90%E5%B0%B1%E4%BA%86%E5%A5%BD%E4%BC%81%E4%B8%9A">是什么成就了好企业</a></li>
+<li><a href="#%E5%96%9C%E8%AF%97%E7%B3%96%E6%9E%9C%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%95%86%E8%AA%89">喜诗糖果的经济商誉</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B21-%E5%8D%8E%E7%9B%9B%E9%A1%BF%E9%82%AE%E6%8A%A5washington-post">案例21 《华盛顿邮报》（Washington Post）</a>
+<ul>
+<li><a href="#%E6%BC%82%E4%BA%AE50">漂亮50</a></li>
+<li><a href="#%E5%9C%A8%E9%9D%9E%E7%90%86%E6%80%A7%E5%B9%B4%E4%BB%A3%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%B2%A1%E6%9C%89%E8%99%9A%E5%BA%A6%E5%85%89%E9%98%B4">在非理性年代，巴菲特没有虚度光阴</a></li>
+<li><a href="#%E4%B8%BE%E5%80%BA%E6%8A%95%E8%B5%84%E5%8D%8E%E7%9B%9B%E9%A1%BF%E9%82%AE%E6%8A%A5">举债投资《华盛顿邮报》</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%AF%B9%E4%BA%8E%E9%82%AE%E6%8A%A5%E4%BB%B7%E5%80%BC%E7%9A%84%E5%88%A4%E6%96%AD">巴菲特对于邮报价值的判断</a></li>
+<li><a href="#%E4%BA%A4%E6%98%93-2">交易</a></li>
+<li><a href="#%E6%94%B6%E8%B4%AD%E4%B9%8B%E5%90%8E-1">收购之后</a></li>
+<li><a href="#%E6%88%91%E4%BB%AC%E6%93%85%E9%95%BF%E6%9C%89%E7%B1%B3%E4%B9%8B%E7%82%8A">我们擅长有米之炊</a></li>
+<li><a href="#%E5%8D%8E%E7%9B%9B%E9%A1%BF%E9%82%AE%E6%8A%A5%E5%AF%B9%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94%E7%9A%84%E8%B4%A1%E7%8C%AE">《华盛顿邮报》对伯克希尔的贡献</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%9C%A8%E5%8D%8E%E7%9B%9B%E9%A1%BF%E9%82%AE%E6%8A%A5%E5%85%AC%E5%8F%B8%E8%B4%A1%E7%8C%AE%E7%9A%84%E7%AE%A1%E7%90%86%E6%89%8D%E8%83%BD">巴菲特在《华盛顿邮报》公司贡献的管理才能</a></li>
+<li><a href="#%E6%B3%A8%E5%AE%9A%E5%8F%91%E7%94%9F%E7%9A%84%E4%BA%8B">注定发生的事</a></li>
+<li><a href="#%E5%94%90%E7%BA%B3%E5%BE%B7%E6%A0%BC%E9%9B%B7%E5%8E%84%E5%A7%86%E7%AC%AC%E4%BA%8C%E4%BD%8D%E5%85%B3%E9%94%AE%E4%BA%BA">唐纳德·格雷厄姆：第二位关键人</a></li>
+<li><a href="#%E7%BB%8F%E8%90%A5%E7%89%B9%E8%AE%B8%E6%9D%83%E7%9A%84%E4%B8%A7%E5%A4%B1">经营特许权的丧失</a></li>
+<li><a href="#%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%AF%B9%E4%BA%8E%E4%BB%96%E6%9C%80%E4%B8%BA%E4%BC%9F%E5%A4%A7%E7%9A%84%E6%8A%95%E8%B5%84%E6%A1%88%E4%BE%8B%E7%9A%84%E6%80%9D%E8%80%83%E4%BB%A5%E5%8F%8A%E5%AF%B9%E5%AD%A6%E9%99%A2%E6%B4%BE%E5%8F%8A%E5%85%B6%E8%BF%BD%E9%9A%8F%E8%80%85%E7%9A%84%E5%98%B2%E8%AE%BD">巴菲特对于他最为伟大的投资案例的思考，以及对学院派及其追随者的嘲讽</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E7%BB%84%E5%90%88%E7%9A%84%E5%91%A8%E8%BD%AC%E7%8E%87">投资组合的周转率</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B22-%E9%9F%A6%E6%96%AF%E7%A7%91%E9%87%91%E8%9E%8D%E5%85%AC%E5%8F%B8wesco-financial">案例22 韦斯科金融公司（Wesco Financial）</a>
+<ul>
+<li><a href="#%E9%9F%A6%E6%96%AF%E7%A7%91%E7%9A%84%E7%94%9F%E6%84%8F">韦斯科的生意</a></li>
+<li><a href="#%E8%8A%92%E6%A0%BC%E5%92%8C%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E5%85%B4%E8%B6%A3">芒格和巴菲特的兴趣</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E7%B3%9F%E7%B3%95%E7%9A%84%E5%87%BA%E4%BB%B7">一个糟糕的出价</a></li>
+<li><a href="#%E6%B2%83%E4%BC%A6%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%8E%A5%E6%89%8B%E9%9F%A6%E6%96%AF%E7%A7%91%E9%87%91%E8%9E%8D%E5%85%AC%E5%8F%B8">沃伦·巴菲特接手韦斯科金融公司</a></li>
+<li><a href="#%E9%9F%A6%E6%96%AF%E7%A7%91%E6%97%A9%E6%9C%9F%E7%9A%84%E5%A5%8B%E6%96%97">韦斯科早期的奋斗</a></li>
+<li><a href="#%E8%BD%AC%E5%9E%8B%E5%BC%80%E5%A7%8B">转型开始</a></li>
+<li><a href="#%E9%9F%A6%E6%96%AF%E7%A7%91%E7%9A%84%E4%BF%9D%E9%99%A9%E4%B8%9A%E5%8A%A1">韦斯科的保险业务</a></li>
+<li><a href="#%E8%BF%B7%E4%BD%A0%E5%9E%8B%E4%BC%81%E4%B8%9A%E9%9B%86%E5%9B%A2">迷你型企业集团</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%A7%E6%95%B4%E5%90%88-%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94-%E5%93%88%E6%92%92%E9%9F%A6%E5%B8%9D%E5%9B%BD">大整合 伯克希尔-哈撒韦帝国</a></li>
+<li><a href="#%E9%99%84%E5%BD%95-%E6%A1%88%E4%BE%8B%E6%80%BB%E7%BB%93">附录 案例总结</a></li>
+<li><a href="#%E6%B3%A8%E9%87%8A">注释</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>
