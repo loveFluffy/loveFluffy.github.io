@@ -12,6 +12,7 @@ books/
 booknotes/notes*.md
 csbooknotes/notes*.md
 coursenotes/course*.md
+newstv/newstv*.md
 
 # 涉及隐私文件
 business/

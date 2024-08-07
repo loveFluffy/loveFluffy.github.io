@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x623f;&#x503a;&#xff1a;&#x4e3a;&#x4ec0;&#x4e48;&#x4f1a;&#x51fa;&#x73b0;&#x5927;&#x8870;&#x9000;&#xff0c;&#x5982;&#x4f55;&#x907f;&#x514d;&#x91cd;&#x8e48;&#x8986;&#x8f99;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x623f;&#x503a;&#xff1a;&#x4e3a;&#x4ec0;&#x4e48;&#x4f1a;&#x51fa;&#x73b0;&#x5927;&#x8870;&#x9000;&#xff0c;&#x5982;&#x4f55;&#x907f;&#x514d;&#x91cd;&#x8e48;&#x8986;&#x8f99;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,310 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="房债为什么会出现大衰退如何避免重蹈覆辙">房债：为什么会出现大衰退，如何避免重蹈覆辙</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="房债为什么会出现大衰退如何避免重蹈覆辙">房债：为什么会出现大衰退，如何避免重蹈覆辙</h1>
+<h2 id="美阿蒂夫迈恩atif-mian-美阿米尔苏非amir-sufi-著何志强-邢增艺-译">[美]阿蒂夫·迈恩（Atif Mian） [美]阿米尔·苏非（Amir Sufi） 著|何志强 邢增艺 译</h2>
+<div class="mycomment">
+<p>从经济层面讲解负债购房的潜在风险，非常深刻。列举几条非常引人深思的：</p>
+<p>当房价下跌，负债购房者实际上是承担风险的第一人。如果房主是负债80%购买的房产，哪怕房价只下跌20%，那么此时对房主来说，房产实际已经是0资产价值！杠杆放大了损失！以前我从未从这个角度考虑过这个问题。我想大部分人应该也都没有认真考虑过，如果房价下跌的话，自己面临的风险到底有多大这个问题。</p>
+<p>负债购房是反保险的。比方房产自然灾害保险可以让你控制风险，避免遭遇不测的时候一蹶不振，然而负债购房却把房价下跌的全部风险集中在买家一人身上！</p>
+</div>
+<h3 id="第1章-波西米亚丑闻">第1章 波西米亚丑闻</h3>
+<h4 id="凶杀悬疑小说">凶杀悬疑小说？</h4>
+<h4 id="国际证据">国际证据</h4>
+<h4 id="其他观点">其他观点</h4>
+<h4 id="大蓝图">大蓝图</h4>
+<h2 id="第一篇-大毁坏">第一篇 大毁坏</h2>
+<h3 id="第2章-债务与毁灭">第2章 债务与毁灭</h3>
+<h4 id="严峻的债务">严峻的债务</h4>
+<h4 id="大衰退期间的债务与财富不平等">大衰退期间的债务与财富不平等</h4>
+<h4 id="穷人是如何变得更穷的">穷人是如何变得更穷的</h4>
+<h4 id="净值损失的地理分布">净值损失的地理分布</h4>
+<h4 id="止赎与大甩卖">止赎与大甩卖</h4>
+<h4 id="债务反保险">债务：反保险</h4>
+<h3 id="第3章-减少支出">第3章 减少支出</h3>
+<h4 id="消费驱动式衰退">消费驱动式衰退</h4>
+<h4 id="哪些地方的支出下降了">哪些地方的支出下降了</h4>
+<h4 id="与债务有何关系">与债务有何关系？</h4>
+<h4 id="超越财富效应">超越财富效应</h4>
+<h4 id="对证据的总结">对证据的总结</h4>
+<h3 id="第4章-杠杆化损失理论">第4章 杠杆化损失：理论</h3>
+<h4 id="基本面与罗宾逊克鲁索">基本面与罗宾逊·克鲁索</h4>
+<h4 id="杠杆化损失框架">杠杆化损失框架</h4>
+<h4 id="经济体如何反应">经济体如何反应？</h4>
+<h4 id="摩擦">摩擦</h4>
+<h4 id="无一幸免">无一幸免</h4>
+<h4 id="重新配置">重新配置？</h4>
+<h3 id="第5章-对失业的解释">第5章 对失业的解释</h3>
+<h4 id="量化失去的工作岗位">量化失去的工作岗位</h4>
+<h4 id="摩擦摩擦">摩擦，摩擦</h4>
+<h4 id="为什么会失业">为什么会失业？</h4>
+<h4 id="杠杆化损失小结">杠杆化损失：小结</h4>
+<h2 id="第二篇-沸腾与泡沫">第二篇 沸腾与泡沫</h2>
+<h3 id="第6章-信贷扩张">第6章 信贷扩张</h3>
+<h4 id="有强劲的经济基本面吗">有强劲的经济基本面吗？</h4>
+<h4 id="动物精神">动物精神？</h4>
+<h4 id="原因结果及住房供给弹性">原因、结果及住房供给弹性</h4>
+<h4 id="房产所有者的反应">房产所有者的反应</h4>
+<h4 id="搭泡沫的便车">搭泡沫的便车</h4>
+<h3 id="第7章-灾难的传输渠道">第7章 灾难的传输渠道</h3>
+<h4 id="储蓄过度">储蓄过度</h4>
+<h4 id="资产证券化">资产证券化</h4>
+<h4 id="制造安全的债务">制造安全的债务</h4>
+<h4 id="愚人链">愚人链</h4>
+<h4 id="不可避免的崩溃">不可避免的崩溃</h4>
+<h3 id="第8章-债务与泡沫">第8章 债务与泡沫</h3>
+<h4 id="泡沫的科学">泡沫的科学</h4>
+<h4 id="什么是泡沫">什么是泡沫？</h4>
+<h4 id="为什么债务可以助推泡沫">为什么债务可以助推泡沫？</h4>
+<h4 id="为什么贷款导致了泡沫">为什么贷款导致了泡沫？</h4>
+<h2 id="第三篇-阻止恶性循环">第三篇 阻止恶性循环</h2>
+<h3 id="第9章-救银行救经济">第9章 救银行，救经济？</h3>
+<h4 id="挽救银行">挽救银行</h4>
+<h4 id="最后贷款人">最后贷款人</h4>
+<h4 id="恢复信贷流动">恢复信贷流动</h4>
+<h4 id="是银行贷款渠道导致了大萧条吗">是银行贷款渠道导致了大萧条吗？</h4>
+<h4 id="银行借贷观的影响力">银行借贷观的影响力</h4>
+<h3 id="第10章-债务减免">第10章 债务减免</h3>
+<h4 id="干预的经济学原理">干预的经济学原理</h4>
+<h4 id="宏观经济失灵">宏观经济失灵</h4>
+<h4 id="历史教训">历史教训</h4>
+<h4 id="特别措施">特别措施</h4>
+<h4 id="道德风险">道德风险</h4>
+<h3 id="第11章-货币与财政政策">第11章 货币与财政政策</h3>
+<h4 id="通货膨胀的魔术按钮">通货膨胀的魔术按钮？</h4>
+<h4 id="利率渠道">利率渠道</h4>
+<h4 id="通货膨胀预期">通货膨胀预期</h4>
+<h4 id="财政政策是可行的选择吗">财政政策是可行的选择吗？</h4>
+<h4 id="政治瘫痪">政治瘫痪</h4>
+<h3 id="第12章-责任分担">第12章 责任分担</h3>
+<h4 id="风险分担原则">风险分担原则</h4>
+<h4 id="责任分担式住房抵押贷款">责任分担式住房抵押贷款</h4>
+<h4 id="量化分析责任分担式住房抵押贷款的收益">量化分析责任分担式住房抵押贷款的收益</h4>
+<h4 id="阻止工作岗位丢失">阻止工作岗位丢失</h4>
+<h4 id="其他收益">其他收益</h4>
+<h4 id="为什么我们对责任分担式按揭贷款无动于衷">为什么我们对责任分担式按揭贷款无动于衷？</h4>
+<h4 id="债务是如此便宜">债务是如此便宜！</h4>
+<h4 id="更广泛地分担风险">更广泛地分担风险</h4>
+<h4 id="为我们服务的金融体系">为我们服务的金融体系</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E6%B3%A2%E8%A5%BF%E7%B1%B3%E4%BA%9A%E4%B8%91%E9%97%BB">第1章 波西米亚丑闻</a>
+<ul>
+<li><a href="#%E5%87%B6%E6%9D%80%E6%82%AC%E7%96%91%E5%B0%8F%E8%AF%B4">凶杀悬疑小说？</a></li>
+<li><a href="#%E5%9B%BD%E9%99%85%E8%AF%81%E6%8D%AE">国际证据</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96%E8%A7%82%E7%82%B9">其他观点</a></li>
+<li><a href="#%E5%A4%A7%E8%93%9D%E5%9B%BE">大蓝图</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E5%80%BA%E5%8A%A1%E4%B8%8E%E6%AF%81%E7%81%AD">第2章 债务与毁灭</a>
+<ul>
+<li><a href="#%E4%B8%A5%E5%B3%BB%E7%9A%84%E5%80%BA%E5%8A%A1">严峻的债务</a></li>
+<li><a href="#%E5%A4%A7%E8%A1%B0%E9%80%80%E6%9C%9F%E9%97%B4%E7%9A%84%E5%80%BA%E5%8A%A1%E4%B8%8E%E8%B4%A2%E5%AF%8C%E4%B8%8D%E5%B9%B3%E7%AD%89">大衰退期间的债务与财富不平等</a></li>
+<li><a href="#%E7%A9%B7%E4%BA%BA%E6%98%AF%E5%A6%82%E4%BD%95%E5%8F%98%E5%BE%97%E6%9B%B4%E7%A9%B7%E7%9A%84">穷人是如何变得更穷的</a></li>
+<li><a href="#%E5%87%80%E5%80%BC%E6%8D%9F%E5%A4%B1%E7%9A%84%E5%9C%B0%E7%90%86%E5%88%86%E5%B8%83">净值损失的地理分布</a></li>
+<li><a href="#%E6%AD%A2%E8%B5%8E%E4%B8%8E%E5%A4%A7%E7%94%A9%E5%8D%96">止赎与大甩卖</a></li>
+<li><a href="#%E5%80%BA%E5%8A%A1%E5%8F%8D%E4%BF%9D%E9%99%A9">债务：反保险</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E5%87%8F%E5%B0%91%E6%94%AF%E5%87%BA">第3章 减少支出</a>
+<ul>
+<li><a href="#%E6%B6%88%E8%B4%B9%E9%A9%B1%E5%8A%A8%E5%BC%8F%E8%A1%B0%E9%80%80">消费驱动式衰退</a></li>
+<li><a href="#%E5%93%AA%E4%BA%9B%E5%9C%B0%E6%96%B9%E7%9A%84%E6%94%AF%E5%87%BA%E4%B8%8B%E9%99%8D%E4%BA%86">哪些地方的支出下降了</a></li>
+<li><a href="#%E4%B8%8E%E5%80%BA%E5%8A%A1%E6%9C%89%E4%BD%95%E5%85%B3%E7%B3%BB">与债务有何关系？</a></li>
+<li><a href="#%E8%B6%85%E8%B6%8A%E8%B4%A2%E5%AF%8C%E6%95%88%E5%BA%94">超越财富效应</a></li>
+<li><a href="#%E5%AF%B9%E8%AF%81%E6%8D%AE%E7%9A%84%E6%80%BB%E7%BB%93">对证据的总结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E6%9D%A0%E6%9D%86%E5%8C%96%E6%8D%9F%E5%A4%B1%E7%90%86%E8%AE%BA">第4章 杠杆化损失：理论</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E9%9D%A2%E4%B8%8E%E7%BD%97%E5%AE%BE%E9%80%8A%E5%85%8B%E9%B2%81%E7%B4%A2">基本面与罗宾逊·克鲁索</a></li>
+<li><a href="#%E6%9D%A0%E6%9D%86%E5%8C%96%E6%8D%9F%E5%A4%B1%E6%A1%86%E6%9E%B6">杠杆化损失框架</a></li>
+<li><a href="#%E7%BB%8F%E6%B5%8E%E4%BD%93%E5%A6%82%E4%BD%95%E5%8F%8D%E5%BA%94">经济体如何反应？</a></li>
+<li><a href="#%E6%91%A9%E6%93%A6">摩擦</a></li>
+<li><a href="#%E6%97%A0%E4%B8%80%E5%B9%B8%E5%85%8D">无一幸免</a></li>
+<li><a href="#%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AE">重新配置？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E5%AF%B9%E5%A4%B1%E4%B8%9A%E7%9A%84%E8%A7%A3%E9%87%8A">第5章 对失业的解释</a>
+<ul>
+<li><a href="#%E9%87%8F%E5%8C%96%E5%A4%B1%E5%8E%BB%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%B2%97%E4%BD%8D">量化失去的工作岗位</a></li>
+<li><a href="#%E6%91%A9%E6%93%A6%E6%91%A9%E6%93%A6">摩擦，摩擦</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%A4%B1%E4%B8%9A">为什么会失业？</a></li>
+<li><a href="#%E6%9D%A0%E6%9D%86%E5%8C%96%E6%8D%9F%E5%A4%B1%E5%B0%8F%E7%BB%93">杠杆化损失：小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E4%BF%A1%E8%B4%B7%E6%89%A9%E5%BC%A0">第6章 信贷扩张</a>
+<ul>
+<li><a href="#%E6%9C%89%E5%BC%BA%E5%8A%B2%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%9F%BA%E6%9C%AC%E9%9D%A2%E5%90%97">有强劲的经济基本面吗？</a></li>
+<li><a href="#%E5%8A%A8%E7%89%A9%E7%B2%BE%E7%A5%9E">动物精神？</a></li>
+<li><a href="#%E5%8E%9F%E5%9B%A0%E7%BB%93%E6%9E%9C%E5%8F%8A%E4%BD%8F%E6%88%BF%E4%BE%9B%E7%BB%99%E5%BC%B9%E6%80%A7">原因、结果及住房供给弹性</a></li>
+<li><a href="#%E6%88%BF%E4%BA%A7%E6%89%80%E6%9C%89%E8%80%85%E7%9A%84%E5%8F%8D%E5%BA%94">房产所有者的反应</a></li>
+<li><a href="#%E6%90%AD%E6%B3%A1%E6%B2%AB%E7%9A%84%E4%BE%BF%E8%BD%A6">搭泡沫的便车</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E7%81%BE%E9%9A%BE%E7%9A%84%E4%BC%A0%E8%BE%93%E6%B8%A0%E9%81%93">第7章 灾难的传输渠道</a>
+<ul>
+<li><a href="#%E5%82%A8%E8%93%84%E8%BF%87%E5%BA%A6">储蓄过度</a></li>
+<li><a href="#%E8%B5%84%E4%BA%A7%E8%AF%81%E5%88%B8%E5%8C%96">资产证券化</a></li>
+<li><a href="#%E5%88%B6%E9%80%A0%E5%AE%89%E5%85%A8%E7%9A%84%E5%80%BA%E5%8A%A1">制造安全的债务</a></li>
+<li><a href="#%E6%84%9A%E4%BA%BA%E9%93%BE">愚人链</a></li>
+<li><a href="#%E4%B8%8D%E5%8F%AF%E9%81%BF%E5%85%8D%E7%9A%84%E5%B4%A9%E6%BA%83">不可避免的崩溃</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E5%80%BA%E5%8A%A1%E4%B8%8E%E6%B3%A1%E6%B2%AB">第8章 债务与泡沫</a>
+<ul>
+<li><a href="#%E6%B3%A1%E6%B2%AB%E7%9A%84%E7%A7%91%E5%AD%A6">泡沫的科学</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%B3%A1%E6%B2%AB">什么是泡沫？</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%80%BA%E5%8A%A1%E5%8F%AF%E4%BB%A5%E5%8A%A9%E6%8E%A8%E6%B3%A1%E6%B2%AB">为什么债务可以助推泡沫？</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B4%B7%E6%AC%BE%E5%AF%BC%E8%87%B4%E4%BA%86%E6%B3%A1%E6%B2%AB">为什么贷款导致了泡沫？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E6%95%91%E9%93%B6%E8%A1%8C%E6%95%91%E7%BB%8F%E6%B5%8E">第9章 救银行，救经济？</a>
+<ul>
+<li><a href="#%E6%8C%BD%E6%95%91%E9%93%B6%E8%A1%8C">挽救银行</a></li>
+<li><a href="#%E6%9C%80%E5%90%8E%E8%B4%B7%E6%AC%BE%E4%BA%BA">最后贷款人</a></li>
+<li><a href="#%E6%81%A2%E5%A4%8D%E4%BF%A1%E8%B4%B7%E6%B5%81%E5%8A%A8">恢复信贷流动</a></li>
+<li><a href="#%E6%98%AF%E9%93%B6%E8%A1%8C%E8%B4%B7%E6%AC%BE%E6%B8%A0%E9%81%93%E5%AF%BC%E8%87%B4%E4%BA%86%E5%A4%A7%E8%90%A7%E6%9D%A1%E5%90%97">是银行贷款渠道导致了大萧条吗？</a></li>
+<li><a href="#%E9%93%B6%E8%A1%8C%E5%80%9F%E8%B4%B7%E8%A7%82%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8A%9B">银行借贷观的影响力</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E5%80%BA%E5%8A%A1%E5%87%8F%E5%85%8D">第10章 债务减免</a>
+<ul>
+<li><a href="#%E5%B9%B2%E9%A2%84%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8E%9F%E7%90%86">干预的经济学原理</a></li>
+<li><a href="#%E5%AE%8F%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%A4%B1%E7%81%B5">宏观经济失灵</a></li>
+<li><a href="#%E5%8E%86%E5%8F%B2%E6%95%99%E8%AE%AD">历史教训</a></li>
+<li><a href="#%E7%89%B9%E5%88%AB%E6%8E%AA%E6%96%BD">特别措施</a></li>
+<li><a href="#%E9%81%93%E5%BE%B7%E9%A3%8E%E9%99%A9">道德风险</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E8%B4%A7%E5%B8%81%E4%B8%8E%E8%B4%A2%E6%94%BF%E6%94%BF%E7%AD%96">第11章 货币与财政政策</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%B4%A7%E8%86%A8%E8%83%80%E7%9A%84%E9%AD%94%E6%9C%AF%E6%8C%89%E9%92%AE">通货膨胀的魔术按钮？</a></li>
+<li><a href="#%E5%88%A9%E7%8E%87%E6%B8%A0%E9%81%93">利率渠道</a></li>
+<li><a href="#%E9%80%9A%E8%B4%A7%E8%86%A8%E8%83%80%E9%A2%84%E6%9C%9F">通货膨胀预期</a></li>
+<li><a href="#%E8%B4%A2%E6%94%BF%E6%94%BF%E7%AD%96%E6%98%AF%E5%8F%AF%E8%A1%8C%E7%9A%84%E9%80%89%E6%8B%A9%E5%90%97">财政政策是可行的选择吗？</a></li>
+<li><a href="#%E6%94%BF%E6%B2%BB%E7%98%AB%E7%97%AA">政治瘫痪</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0-%E8%B4%A3%E4%BB%BB%E5%88%86%E6%8B%85">第12章 责任分担</a>
+<ul>
+<li><a href="#%E9%A3%8E%E9%99%A9%E5%88%86%E6%8B%85%E5%8E%9F%E5%88%99">风险分担原则</a></li>
+<li><a href="#%E8%B4%A3%E4%BB%BB%E5%88%86%E6%8B%85%E5%BC%8F%E4%BD%8F%E6%88%BF%E6%8A%B5%E6%8A%BC%E8%B4%B7%E6%AC%BE">责任分担式住房抵押贷款</a></li>
+<li><a href="#%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90%E8%B4%A3%E4%BB%BB%E5%88%86%E6%8B%85%E5%BC%8F%E4%BD%8F%E6%88%BF%E6%8A%B5%E6%8A%BC%E8%B4%B7%E6%AC%BE%E7%9A%84%E6%94%B6%E7%9B%8A">量化分析责任分担式住房抵押贷款的收益</a></li>
+<li><a href="#%E9%98%BB%E6%AD%A2%E5%B7%A5%E4%BD%9C%E5%B2%97%E4%BD%8D%E4%B8%A2%E5%A4%B1">阻止工作岗位丢失</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96%E6%94%B6%E7%9B%8A">其他收益</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E5%AF%B9%E8%B4%A3%E4%BB%BB%E5%88%86%E6%8B%85%E5%BC%8F%E6%8C%89%E6%8F%AD%E8%B4%B7%E6%AC%BE%E6%97%A0%E5%8A%A8%E4%BA%8E%E8%A1%B7">为什么我们对责任分担式按揭贷款无动于衷？</a></li>
+<li><a href="#%E5%80%BA%E5%8A%A1%E6%98%AF%E5%A6%82%E6%AD%A4%E4%BE%BF%E5%AE%9C">债务是如此便宜！</a></li>
+<li><a href="#%E6%9B%B4%E5%B9%BF%E6%B3%9B%E5%9C%B0%E5%88%86%E6%8B%85%E9%A3%8E%E9%99%A9">更广泛地分担风险</a></li>
+<li><a href="#%E4%B8%BA%E6%88%91%E4%BB%AC%E6%9C%8D%E5%8A%A1%E7%9A%84%E9%87%91%E8%9E%8D%E4%BD%93%E7%B3%BB">为我们服务的金融体系</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

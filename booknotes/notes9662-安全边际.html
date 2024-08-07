@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5b89;&#x5168;&#x8fb9;&#x9645;&#xff1a;&#x6709;&#x601d;&#x60f3;&#x6295;&#x8d44;&#x8005;&#x7684;&#x4ef7;&#x503c;&#x6295;&#x8d44;&#x907f;&#x9669;&#x7b56;&#x7565;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5b89;&#x5168;&#x8fb9;&#x9645;&#xff1a;&#x6709;&#x601d;&#x60f3;&#x6295;&#x8d44;&#x8005;&#x7684;&#x4ef7;&#x503c;&#x6295;&#x8d44;&#x907f;&#x9669;&#x7b56;&#x7565;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,451 +31,112 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="安全边际有思想投资者的价值投资避险策略">安全边际：有思想投资者的价值投资避险策略</h1>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<h1 id="安全边际有思想投资者的价值投资避险策略">安全边际：有思想投资者的价值投资避险策略</h1>
 <h2 id="美塞斯卡拉曼seth-a-klarman-著张志雄-译">[美]塞斯·卡拉曼（Seth A. Klarman） 著|张志雄 译</h2>
+<div class="mycomment">
+</div>
 <h3 id="简介">简介</h3>
 <p>塞思·卡拉曼（SethA Klarman），Baupost基金公司总裁，本杰明·格雷厄姆《证券分析阅读指南》一书的主要作者，一位对价值投资有着深刻理解的大师级投资家。他的《安全边际》一书出版于1991年，此后就没有再版，据说有人在eBay上偶尔看到它，标价超过了1000美元，可见其十分珍贵，难得。目前我读到的是由张志雄先生主编、叶茂青先生翻译的译本，它只以内部报告的形式让《Value》的读者独家分享。国内目前尚未有出版社正式出版发行。</p>
 <p>这本书还有一个重要的副标题——“有思想投资者的价值投资避险策略”，可以说为本书做了一个很明确的注脚，揭示了本书的主题思想。这本书字数不多，译成中文也就是13万字，但是对于价值投资者而言，却相当重要，它与本杰明·格雷厄姆《聪明的投资者》相得益彰，是《聪明的投资者》的补充和延伸。阅读本书，可以让我们更好地理解并掌握价值投资的方略。</p>
@@ -860,8 +523,233 @@ iPad mini 5：2048*1536
 <h4 id="卡拉曼在mit斯隆管理学院的演讲2007年10月20日">卡拉曼在MIT斯隆管理学院的演讲2007年10月20日</h4>
 <h3 id="附录三-卡拉曼访谈永远不要停止阅读">附录三 卡拉曼访谈：永远不要停止阅读</h3>
 <h3 id="编后记-投资真的不简单">编后记 投资真的不简单</h3>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%AF%BC%E8%A8%80">导言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8A%95%E6%9C%BA%E8%80%85%E5%92%8C%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85">第一章 投机者和失败的投资者</a>
+<ul>
+<li><a href="#%E6%8A%95%E8%B5%84%E4%B8%8E%E6%8A%95%E6%9C%BA%E7%9A%84%E5%AF%B9%E6%AF%94">投资与投机的对比</a></li>
+<li><a href="#%E4%BA%A4%E6%98%93%E7%94%A8%E6%B2%99%E4%B8%81%E9%B1%BC%E5%92%8C%E9%A3%9F%E7%94%A8%E6%B2%99%E4%B8%81%E9%B1%BC%E6%8A%95%E6%9C%BA%E7%9A%84%E7%89%B9%E6%80%A7">交易用沙丁鱼和食用沙丁鱼：投机的特性</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E5%93%81%E5%92%8C%E6%8A%95%E6%9C%BA%E5%93%81">投资品和投机品</a></li>
+<li><a href="#%E6%88%90%E5%8A%9F%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85%E5%92%8C%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB">成功的投资者和失败的投资者的区别</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8%E5%B8%82%E5%9C%BA%E5%85%88%E7%94%9F">利用“市场先生”</a></li>
+<li><a href="#%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85%E5%92%8C%E4%BB%96%E4%BB%AC%E6%98%82%E8%B4%B5%E7%9A%84%E6%83%85%E7%BB%AA">失败的投资者和他们昂贵的情绪</a></li>
+<li><a href="#20%E4%B8%96%E7%BA%AA80%E5%B9%B4%E4%BB%A3%E7%9A%84%E8%B4%AA%E5%A9%AA%E5%92%8C%E6%94%B6%E7%9B%8A%E7%8C%AA">20世纪80年代的贪婪和“收益猪”</a></li>
+<li><a href="#%E5%AF%BB%E6%89%BE%E6%8A%95%E8%B5%84%E5%85%AC%E5%BC%8F">寻找投资公式</a></li>
+<li><a href="#%E7%BB%93%E8%AE%BA">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%B8%8E%E6%8A%95%E8%B5%84%E8%80%85%E5%AF%B9%E7%AB%8B%E7%9A%84%E5%8D%8E%E5%B0%94%E8%A1%97%E6%9C%AC%E8%B4%A8">第二章 与投资者对立的华尔街本质</a>
+<ul>
+<li><a href="#%E9%A2%84%E4%BB%98%E8%B4%B9%E7%94%A8%E5%92%8C%E4%BD%A3%E9%87%91%E5%8D%8E%E5%B0%94%E8%A1%97%E7%9A%84%E4%B8%BB%E8%A6%81%E5%88%A9%E7%9B%8A%E5%86%B2%E7%AA%81">预付费用和佣金：华尔街的主要利益冲突</a></li>
+<li><a href="#%E5%8D%8E%E5%B0%94%E8%A1%97%E5%AF%B9%E6%89%BF%E9%94%80%E4%B8%9A%E5%8A%A1%E7%9A%84%E5%96%9C%E6%AC%A2%E7%94%9A%E4%BA%8E%E4%BA%8C%E7%BA%A7%E5%B8%82%E5%9C%BA%E4%BA%A4%E6%98%93%E4%B8%9A%E5%8A%A1">华尔街对承销业务的喜欢甚于二级市场交易业务</a></li>
+<li><a href="#%E5%8D%8E%E5%B0%94%E8%A1%97%E7%9A%84%E7%9C%BC%E5%89%8D%E5%88%A9%E7%9B%8A">华尔街的眼前利益</a></li>
+<li><a href="#%E5%8D%8E%E5%B0%94%E8%A1%97%E7%9A%84%E7%9C%8B%E6%B6%A8%E5%80%BE%E5%90%91">华尔街的看涨倾向</a></li>
+<li><a href="#%E9%87%91%E8%9E%8D%E5%B8%82%E5%9C%BA%E5%88%9B%E6%96%B0%E6%9C%89%E5%88%A9%E4%BA%8E%E5%8D%8E%E5%B0%94%E8%A1%97%E4%BD%86%E4%B8%8D%E5%88%A9%E4%BA%8E%E5%AE%A2%E6%88%B7">金融市场创新有利于华尔街但不利于客户</a></li>
+<li><a href="#ios%E5%92%8Cpos%E6%8A%B5%E6%8A%BC%E8%B4%B7%E6%AC%BE%E8%AF%81%E5%88%B8%E5%B8%82%E5%9C%BA%E7%9A%84%E5%88%9B%E6%96%B0pos">IOs和POs：抵押贷款证券市场的创新POs</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E7%8B%82%E6%BD%AE">投资狂潮</a></li>
+<li><a href="#%E7%BB%93%E8%AE%BA-1">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%9C%BA%E6%9E%84%E8%A1%A8%E6%BC%94%E7%AB%9E%E8%B5%9B%E5%AE%A2%E6%88%B7%E6%98%AF%E8%BE%93%E5%AE%B6">第三章 机构表演竞赛：客户是输家</a>
+<ul>
+<li><a href="#%E8%B5%84%E9%87%91%E7%AE%A1%E7%90%86%E4%B8%9A%E5%8A%A1">资金管理业务</a></li>
+<li><a href="#%E7%9F%AD%E6%9C%9F%E7%9B%B8%E5%AF%B9%E8%A1%A8%E7%8E%B0%E7%AB%9E%E8%B5%9B">短期相对表现竞赛</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96%E4%BA%BA%E7%9A%84%E8%B5%84%E9%87%91%E5%AF%B9%E6%AF%94%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E8%B5%84%E9%87%91">其他人的资金对比你自己的资金</a></li>
+<li><a href="#%E6%9C%BA%E6%9E%84%E5%8F%96%E5%BE%97%E5%87%BA%E8%89%B2%E6%8A%95%E8%B5%84%E8%A1%A8%E7%8E%B0%E6%89%80%E9%9D%A2%E4%B8%B4%E7%9A%84%E9%9A%9C%E7%A2%8D">机构取得出色投资表现所面临的障碍</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E7%BB%84%E5%90%88%E8%A7%84%E6%A8%A1%E7%9A%84%E6%9A%97%E7%A4%BA">投资组合规模的暗示</a></li>
+<li><a href="#%E6%9C%BA%E6%9E%84%E6%8A%95%E8%B5%84%E8%80%85%E8%87%AA%E6%84%BF%E6%8E%A5%E5%8F%97%E7%9A%84%E7%BA%A6%E6%9D%9F">机构投资者自愿接受的约束</a></li>
+<li><a href="#%E4%BB%BB%E4%BD%95%E6%97%B6%E5%80%99%E9%83%BD%E4%BF%9D%E6%8C%81%E6%BB%A1%E4%BB%93%E6%8A%95%E8%B5%84">任何时候都保持满仓投资</a></li>
+<li><a href="#%E8%BF%87%E4%BA%8E%E7%BB%86%E5%8C%96%E7%9A%84%E5%88%86%E7%B1%BB">过于细化的分类</a></li>
+<li><a href="#%E8%B4%A6%E9%9D%A2%E7%B2%89%E9%A5%B0">账面粉饰</a></li>
+<li><a href="#%E6%9C%BA%E6%9E%84%E6%8A%95%E8%B5%84%E8%80%85%E6%94%BE%E5%BC%83%E5%9F%BA%E6%9C%AC%E9%9D%A2%E6%8A%95%E8%B5%84%E5%88%86%E6%9E%90">机构投资者放弃基本面投资分析</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E7%BB%84%E5%90%88%E4%BF%9D%E9%99%A9%E7%AD%96%E7%95%A5">投资组合保险策略</a></li>
+<li><a href="#%E6%88%98%E6%9C%AF%E6%80%A7%E8%B5%84%E4%BA%A7%E9%85%8D%E7%BD%AE%E7%AD%96%E7%95%A5">战术性资产配置策略</a></li>
+<li><a href="#%E6%8C%87%E6%95%B0%E5%9F%BA%E9%87%91%E4%B8%8D%E7%94%A8%E8%84%91%E5%AD%90%E8%BF%9B%E8%A1%8C%E6%8A%95%E8%B5%84%E7%9A%84%E5%80%BE%E5%90%91">指数基金：不用脑子进行投资的倾向</a></li>
+<li><a href="#%E7%BB%93%E8%AE%BA-2">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%BB%B7%E5%80%BC%E9%94%99%E8%A7%8920%E4%B8%96%E7%BA%AA80%E5%B9%B4%E4%BB%A3%E5%AF%B9%E5%9E%83%E5%9C%BE%E5%80%BA%E7%9A%84%E8%BF%B7%E6%80%9D%E5%92%8C%E9%94%99%E8%AF%AF%E8%A7%82%E5%BF%B5">第四章 价值错觉：20世纪80年代对垃圾债的迷思和错误观念</a>
+<ul>
+<li><a href="#%E5%9E%83%E5%9C%BE%E5%80%BA%E5%B8%82%E5%9C%BA%E7%AE%80%E5%8F%B2">垃圾债市场简史</a></li>
+<li><a href="#%E8%BF%9D%E7%BA%A6%E7%8E%87%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84%E7%BC%BA%E9%99%B7">违约率计算中的缺陷</a></li>
+<li><a href="#%E5%9E%83%E5%9C%BE%E5%80%BA%E6%94%B9%E9%9D%A9%E8%BF%90%E5%8A%A8">垃圾债改革运动</a></li>
+<li><a href="#%E5%9E%83%E5%9C%BE%E5%80%BA%E6%8A%95%E8%B5%84%E8%80%85%E6%97%A9%E6%9C%9F%E7%9A%84%E6%88%90%E5%8A%9F%E5%BC%95%E5%8F%91%E4%BA%86%E8%84%B1%E7%A6%BB%E7%8E%B0%E5%AE%9E%E7%9A%84%E9%A2%84%E6%9C%9F">垃圾债投资者早期的成功引发了脱离现实的预期</a></li>
+<li><a href="#%E5%9E%83%E5%9C%BE%E5%80%BA%E4%B8%BB%E8%A6%81%E4%B9%B0%E5%AE%B6">垃圾债主要买家</a>
+<ul>
+<li><a href="#%E9%AB%98%E6%94%B6%E7%9B%8A%E7%8E%87%E5%80%BA%E5%88%B8%E5%9E%8B%E5%85%B1%E5%90%8C%E5%9F%BA%E9%87%91">高收益率债券型共同基金</a></li>
+<li><a href="#%E5%82%A8%E8%93%84%E9%93%B6%E8%A1%8C">储蓄银行</a></li>
+<li><a href="#%E4%BF%9D%E9%99%A9%E5%85%AC%E5%8F%B8">保险公司</a></li>
+</ul>
+</li>
+<li><a href="#%E6%94%BE%E6%9D%BE%E6%8A%95%E8%B5%84%E6%A0%87%E5%87%86">放松投资标准</a></li>
+<li><a href="#%E9%9B%B6%E6%81%AF%E5%80%BA%E5%88%B8%E5%92%8Cpik%E5%80%BA%E5%88%B8%E5%85%81%E8%AE%B8%E9%87%91%E8%9E%8D%E4%B8%8A%E7%9A%84%E9%B2%81%E8%8E%BD%E8%A1%8C%E4%B8%BA">零息债券和PIK债券允许金融上的鲁莽行为</a></li>
+<li><a href="#%E5%88%A9%E6%81%AF%E7%8E%87%E9%87%8D%E8%AE%BE%E5%8F%AA%E4%BC%9A%E6%9C%9D%E4%B8%80%E4%B8%AA%E6%96%B9%E5%90%91%E8%BF%90%E8%A1%8C">利息率重设只会朝一个方向运行</a></li>
+<li><a href="#%E5%9E%83%E5%9C%BE%E5%80%BA%E6%8A%95%E8%B5%84%E8%80%85%E7%9A%84%E4%B8%80%E4%B8%AA%E5%88%86%E6%9E%90%E9%94%99%E8%AF%AF">垃圾债投资者的一个分析错误</a></li>
+<li><a href="#%E5%AF%B9%E7%8E%B0%E9%87%91%E6%B5%81%E5%92%8Cebitda%E6%9C%89%E7%BC%BA%E9%99%B7%E7%9A%84%E5%AE%9A%E4%B9%89%E9%80%A0%E6%88%90%E4%BA%86%E9%AB%98%E4%BC%B0ebitda">对现金流和EBITDA有缺陷的定义造成了高估EBITDA</a></li>
+<li><a href="#ebitda%E5%88%86%E6%9E%90%E6%A8%A1%E7%B3%8A%E4%BA%86%E5%A5%BD%E4%BC%81%E4%B8%9A%E4%B8%8E%E5%9D%8F%E4%BC%81%E4%B8%9A%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB">EBITDA分析模糊了好企业与坏企业之间的区别</a></li>
+<li><a href="#%E5%9E%83%E5%9C%BE%E5%80%BA%E5%88%B8%E6%8A%B5%E6%8A%BC%E5%80%BA%E5%88%B8">垃圾债券抵押债券</a></li>
+<li><a href="#%E7%BB%93%E8%AE%BA-3">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%98%8E%E7%A1%AE%E4%BD%A0%E7%9A%84%E6%8A%95%E8%B5%84%E7%9B%AE%E6%A0%87">第五章 明确你的投资目标</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%AE%89%E5%85%A8%E8%BE%B9%E9%99%85%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">第六章 安全边际的重要性</a>
+<ul>
+<li><a href="#%E7%AD%89%E5%BE%85%E5%90%88%E9%80%82%E7%9A%84%E6%8A%95%E7%90%83">等待合适的投球</a></li>
+<li><a href="#%E4%BC%81%E4%B8%9A%E8%AF%84%E4%BC%B0%E7%9A%84%E5%A4%8D%E6%9D%82%E6%80%A7%E5%92%8C%E6%98%93%E5%8F%98%E6%80%A7">企业评估的复杂性和易变性</a></li>
+<li><a href="#%E5%AE%89%E5%85%A8%E8%BE%B9%E9%99%85%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">安全边际的重要性</a></li>
+<li><a href="#%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84%E5%9C%A8%E4%B8%8B%E8%B7%8C%E7%9A%84%E5%B8%82%E5%9C%BA%E4%B8%AD%E9%97%AA%E9%97%AA%E5%8F%91%E5%85%89">价值投资在下跌的市场中闪闪发光</a></li>
+<li><a href="#%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84%E7%9A%84%E5%9F%BA%E7%A1%80%E6%98%AF%E6%9C%89%E6%95%88%E5%B8%82%E5%9C%BA%E5%81%87%E8%AE%BE%E6%98%AF%E9%94%99%E8%AF%AF%E7%9A%84">价值投资的基础是有效市场假设是错误的</a></li>
+<li><a href="#%E8%AD%A6%E6%83%95%E4%BB%B7%E5%80%BC%E9%AA%97%E5%AD%90">警惕价值骗子</a></li>
+<li><a href="#%E7%BB%93%E8%AE%BA-4">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84%E5%93%B2%E5%AD%A6%E8%B5%B7%E6%BA%90">第七章 价值投资哲学起源</a>
+<ul>
+<li><a href="#%E8%87%AA%E4%B8%8B%E5%BE%80%E4%B8%8A%E6%8A%95%E8%B5%84%E6%B3%95%E7%9A%84%E4%BC%98%E7%82%B9">自下往上投资法的优点</a></li>
+<li><a href="#%E9%87%87%E7%94%A8%E7%BB%9D%E5%AF%B9%E8%A1%A8%E7%8E%B0%E5%AE%9A%E4%BD%8D">采用绝对表现定位</a></li>
+<li><a href="#%E9%A3%8E%E9%99%A9%E5%92%8C%E5%9B%9E%E6%8A%A5">风险和回报</a></li>
+<li><a href="#%E9%A3%8E%E9%99%A9%E7%9A%84%E6%9C%AC%E8%B4%A8">风险的本质</a></li>
+<li><a href="#beta%E5%80%BC%E6%88%96%E6%9B%B4%E7%B3%9F">Beta值或更糟</a></li>
+<li><a href="#%E4%BB%B7%E6%A0%BC%E6%9A%82%E6%97%B6%E6%80%A7%E6%B3%A2%E5%8A%A8%E7%9A%84%E5%AE%9E%E7%94%A8%E6%80%A7">价格暂时性波动的实用性</a></li>
+<li><a href="#%E7%BB%93%E8%AE%BA-5">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E4%BC%81%E4%B8%9A%E8%AF%84%E4%BC%B0%E8%89%BA%E6%9C%AF">第八章 企业评估艺术</a>
+<ul>
+<li><a href="#%E4%BB%B7%E5%80%BC%E8%8C%83%E5%9B%B4">价值范围</a></li>
+<li><a href="#%E4%BC%81%E4%B8%9A%E8%AF%84%E4%BC%B0">企业评估</a></li>
+<li><a href="#%E7%8E%B0%E5%80%BC%E5%88%86%E6%9E%90%E6%B3%95%E5%92%8C%E9%A2%84%E6%B5%8B%E6%9C%AA%E6%9D%A5%E7%8E%B0%E9%87%91%E6%B5%81%E4%B8%AD%E7%9A%84%E5%9B%B0%E9%9A%BE">现值分析法和预测未来现金流中的困难</a></li>
+<li><a href="#%E8%B4%B4%E7%8E%B0%E7%8E%87%E7%9A%84%E9%80%89%E6%8B%A9">贴现率的选择</a></li>
+<li><a href="#%E7%A7%81%E6%9C%89%E5%B8%82%E5%9C%BA%E4%BB%B7%E5%80%BC%E6%B3%95">私有市场价值法</a></li>
+<li><a href="#%E6%B8%85%E7%AE%97%E4%BB%B7%E5%80%BC">清算价值</a></li>
+<li><a href="#%E8%82%A1%E5%B8%82%E4%BB%B7%E5%80%BC%E6%B3%95">股市价值法</a></li>
+<li><a href="#%E9%80%89%E6%8B%A9%E4%BB%B7%E5%80%BC%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95">选择价值评估方法</a></li>
+<li><a href="#%E5%B8%82%E5%9C%BA%E4%BB%B7%E6%A0%BC%E4%B8%8E%E6%BD%9C%E5%9C%A8%E4%BB%B7%E5%80%BC%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8F%8D%E5%B0%84%E5%85%B3%E7%B3%BB">市场价格与潜在价值之间的反射关系</a></li>
+<li><a href="#esco%E7%94%B5%E5%AD%90%E5%85%AC%E5%8F%B8%E8%AF%81%E5%88%B8%E8%AF%84%E4%BC%B0%E5%AE%9E%E4%BE%8B">Esco电子公司：证券评估实例</a></li>
+<li><a href="#%E4%BC%A0%E7%BB%9F%E7%9A%84%E8%AF%84%E4%BC%B0%E5%87%86%E7%A5%9E-%E6%94%B6%E7%9B%8A%E8%B4%A6%E9%9D%A2%E4%BB%B7%E5%80%BC%E5%8F%8A%E8%82%A1%E6%81%AF%E6%94%B6%E7%9B%8A%E7%8E%87">传统的评估准神-收益、账面价值及股息收益率</a>
+<ul>
+<li><a href="#%E6%94%B6%E7%9B%8A%E5%92%8C%E6%94%B6%E7%9B%8A%E5%A2%9E%E9%95%BF">收益和收益增长</a></li>
+<li><a href="#%E8%B4%A6%E9%9D%A2%E4%BB%B7%E5%80%BC">账面价值</a></li>
+<li><a href="#%E8%82%A1%E6%81%AF%E6%94%B6%E7%9B%8A%E7%8E%87">股息收益率</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%93%E8%AE%BA-6">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E6%8A%95%E8%B5%84%E7%A0%94%E7%A9%B6%E6%89%BE%E5%88%B0%E8%AF%B1%E4%BA%BA%E6%8A%95%E8%B5%84%E7%9A%84%E6%8C%91%E6%88%98">第九章 投资研究：找到诱人投资的挑战</a>
+<ul>
+<li><a href="#%E5%B8%82%E5%9C%BA%E4%B8%8E%E6%9C%BA%E6%9E%84%E9%99%90%E5%88%B6">市场与机构限制</a></li>
+<li><a href="#%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84%E5%92%8C%E9%80%86%E5%90%91%E6%80%9D%E7%BB%B4">价值投资和逆向思维</a></li>
+<li><a href="#%E5%A4%9A%E5%B0%91%E7%A0%94%E7%A9%B6%E5%92%8C%E5%88%86%E6%9E%90%E6%89%8D%E8%B6%B3%E5%A4%9F">多少研究和分析才足够？</a></li>
+<li><a href="#%E5%86%85%E9%83%A8%E4%BA%BA%E5%A3%AB%E4%B9%B0%E5%85%A5%E5%92%8C%E7%AE%A1%E7%90%86%E5%B1%82%E8%82%A1%E7%A5%A8%E6%9C%9F%E6%9D%83%E8%83%BD%E5%AF%B9%E6%9C%BA%E4%BC%9A%E7%BB%99%E5%87%BA%E6%9A%97%E7%A4%BA">内部人士买入和管理层股票期权能对机会给出暗示</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E7%A0%94%E7%A9%B6%E5%92%8C%E5%86%85%E9%83%A8%E4%BF%A1%E6%81%AF">投资研究和内部信息</a></li>
+<li><a href="#%E7%BB%93%E8%AE%BA-7">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E6%9C%BA%E4%BC%9A%E6%89%80%E5%9C%A8%E5%82%AC%E5%8C%96%E5%89%82%E5%B8%82%E5%9C%BA%E6%97%A0%E6%95%88%E5%92%8C%E6%9C%BA%E6%9E%84%E9%99%90%E5%88%B6">第十章 机会所在：催化剂、市场无效和机构限制</a>
+<ul>
+<li><a href="#%E6%8A%95%E8%B5%84%E4%BC%81%E4%B8%9A%E6%B8%85%E7%AE%97">投资企业清算</a></li>
+<li><a href="#%E5%9F%8E%E5%B8%82%E6%8A%95%E8%B5%84%E6%B8%85%E7%AE%97%E4%BF%A1%E6%89%98">城市投资清算信托</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E5%A4%8D%E6%9D%82%E8%AF%81%E5%88%B8">投资复杂证券</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E8%AE%A4%E8%82%A1%E6%9D%83%E9%85%8D%E5%94%AE">投资认股权配售</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E9%A3%8E%E9%99%A9%E5%A5%97%E5%88%A9">投资风险套利</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E5%B8%82%E5%9C%BA%E4%B9%8B%E5%91%A8%E6%9C%9F%E9%A3%8E%E9%99%A9%E5%A5%97%E5%88%A9%E5%91%A8%E6%9C%9F">投资市场之周期：风险套利周期</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E5%88%86%E6%8B%86%E4%BC%81%E4%B8%9A">投资分拆企业</a></li>
+<li><a href="#%E7%BB%93%E8%AE%BA-8">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E6%8A%95%E8%B5%84%E5%82%A8%E8%93%84%E6%9C%BA%E6%9E%84%E8%BD%AC%E5%88%B6">第十一章 投资储蓄机构转制</a>
+<ul>
+<li><a href="#%E7%89%99%E4%B9%B0%E5%8A%A0%E5%82%A8%E8%93%84%E9%93%B6%E8%A1%8C">牙买加储蓄银行</a></li>
+<li><a href="#%E7%BB%93%E8%AE%BA-9">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E6%8A%95%E8%B5%84%E8%B4%A2%E6%94%BF%E9%99%B7%E5%85%A5%E5%9B%B0%E5%A2%83%E5%92%8C%E7%A0%B4%E4%BA%A7%E7%9A%84%E8%AF%81%E5%88%B8">第十二章 投资财政陷入困境和破产的证券</a>
+<ul>
+<li><a href="#%E8%B4%A2%E6%94%BF%E9%99%B7%E5%85%A5%E5%9B%B0%E5%A2%83%E5%92%8C%E7%A0%B4%E4%BA%A7%E7%9A%84%E4%BC%81%E4%B8%9A">财政陷入困境和破产的企业</a></li>
+<li><a href="#%E5%8F%91%E8%A1%8C%E4%BA%BA%E5%AF%B9%E8%B4%A2%E6%94%BF%E5%9B%B0%E5%A2%83%E7%9A%84%E5%9B%9E%E5%BA%94">发行人对财政困境的回应</a></li>
+<li><a href="#%E7%A0%B4%E4%BA%A7%E7%94%B3%E8%AF%B7%E7%9A%84%E6%9A%97%E7%A4%BA">破产申请的暗示</a></li>
+<li><a href="#%E7%A0%B4%E4%BA%A7%E6%8A%95%E8%B5%84%E7%9A%84%E8%AF%B1%E4%BA%BA%E4%B9%8B%E5%A4%84">破产投资的诱人之处</a></li>
+<li><a href="#%E7%A0%B4%E4%BA%A7%E6%8A%95%E8%B5%84%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5">破产投资的三个阶段</a></li>
+<li><a href="#%E8%B4%A2%E6%94%BF%E9%99%B7%E5%85%A5%E5%9B%B0%E5%A2%83%E5%92%8C%E7%A0%B4%E4%BA%A7%E7%9A%84%E8%AF%81%E5%88%B8%E7%9A%84%E6%8A%95%E8%B5%84%E9%A3%8E%E9%99%A9">财政陷入困境和破产的证券的投资风险</a></li>
+<li><a href="#%E5%AF%B9%E8%B4%A2%E6%94%BF%E9%99%B7%E5%85%A5%E5%9B%B0%E5%A2%83%E5%92%8C%E7%A0%B4%E4%BA%A7%E7%9A%84%E8%AF%81%E5%88%B8%E7%9A%84%E6%8A%95%E8%B5%84%E8%BF%9B%E7%A8%8B">对财政陷入困境和破产的证券的投资进程</a></li>
+<li><a href="#hbj%E5%85%AC%E5%8F%B8%E7%9A%84%E9%99%A8%E8%90%BD%E8%B4%A2%E6%94%BF%E9%99%B7%E5%85%A5%E5%9B%B0%E5%A2%83%E8%AF%81%E5%88%B8%E4%B8%AD%E7%9A%84%E4%B8%80%E4%B8%AA%E6%9C%BA%E4%BC%9A">HBJ公司的陨落：财政陷入困境证券中的一个机会</a></li>
+<li><a href="#%E9%97%AE%E9%A2%98%E5%80%BA%E5%88%B8%E5%AF%B9%E6%AF%94%E4%B9%90%E8%A7%82%E8%82%A1%E7%A5%A8">问题债券对比乐观股票：</a>
+<ul>
+<li><a href="#%E5%AF%B9%E6%96%B0%E8%8B%B1%E6%A0%BC%E5%85%B0%E9%93%B6%E8%A1%8C%E8%AF%81%E5%88%B8%E8%BF%9B%E8%A1%8C%E5%B8%82%E5%9C%BA%E9%97%B4%E5%A5%97%E5%88%A9">对新英格兰银行证券进行市场间套利</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%93%E8%AE%BA-10">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E6%8A%95%E8%B5%84%E7%BB%84%E5%90%88%E7%AE%A1%E7%90%86%E5%92%8C%E4%BA%A4%E6%98%93">第十三章 投资组合管理和交易</a>
+<ul>
+<li><a href="#%E7%AE%A1%E7%90%86%E6%8A%95%E8%B5%84%E7%BB%84%E5%90%88%E6%97%B6%E6%B5%81%E5%8A%A8%E6%80%A7%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">管理投资组合时流动性的重要性</a></li>
+<li><a href="#%E9%99%8D%E4%BD%8E%E6%8A%95%E8%B5%84%E7%BB%84%E5%90%88%E9%A3%8E%E9%99%A9">降低投资组合风险</a>
+<ul>
+<li><a href="#%E5%90%88%E7%90%86%E7%9A%84%E5%A4%9A%E6%A0%B7%E5%8C%96%E6%8A%95%E8%B5%84">合理的多样化投资</a></li>
+<li><a href="#%E5%AF%B9%E5%86%B2">对冲</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%A4%E6%98%93%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">交易的重要性</a></li>
+<li><a href="#%E4%B8%8E%E5%B8%82%E5%9C%BA%E4%BF%9D%E6%8C%81%E8%81%94%E7%B3%BB">与市场保持联系</a></li>
+<li><a href="#%E4%B9%B0%E5%85%A5%E4%B8%BA%E4%BB%A5%E4%BD%8E%E4%BA%8E%E5%B9%B3%E5%9D%87%E4%BB%B7%E6%A0%BC%E4%B9%B0%E8%BF%9B%E7%95%99%E5%87%BA%E7%A9%BA%E9%97%B4">买入：为以低于平均价格买进留出空间</a></li>
+<li><a href="#%E5%8D%96%E5%87%BA%E6%9C%80%E8%89%B0%E9%9A%BE%E7%9A%84%E5%86%B3%E5%AE%9A">卖出：最艰难的决定</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8%E6%8A%8A%E4%BD%A0%E7%9C%8B%E4%BD%9C%E9%87%8D%E8%A6%81%E5%AE%A2%E6%88%B7%E7%9A%84%E7%BB%8F%E7%BA%AA%E4%BA%BA">利用把你看作重要客户的经纪人</a></li>
+<li><a href="#%E7%BB%93%E8%AE%BA-11">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-%E4%B8%AA%E4%BA%BA%E6%8A%95%E8%B5%84%E8%80%85%E7%9A%84%E6%8A%95%E8%B5%84%E6%9B%BF%E4%BB%A3%E5%93%81">第十四章 个人投资者的投资替代品</a>
+<ul>
+<li><a href="#%E5%85%B1%E5%90%8C%E5%9F%BA%E9%87%91">共同基金</a></li>
+<li><a href="#%E8%AF%84%E4%BC%B0%E5%85%A8%E6%9D%83%E8%82%A1%E7%A5%A8%E7%BB%8F%E7%BA%AA%E4%BA%BA%E5%92%8C%E8%B5%84%E9%87%91%E7%AE%A1%E7%90%86%E4%BA%BA">评估全权股票经纪人和资金管理人</a></li>
+<li><a href="#%E8%AF%84%E4%BC%B0%E6%8A%95%E8%B5%84%E7%BB%A9%E6%95%88">评估投资绩效</a></li>
+<li><a href="#%E7%BB%93%E8%AE%BA-12">结论</a></li>
+</ul>
+</li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%B8%80-%E5%AE%89%E5%85%A8%E8%BE%B9%E9%99%85%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%9E%AF%E8%8D%A3">附录一 《安全边际》读书笔记——枯荣</a>
+<ul>
+<li><a href="#%E4%B8%80">（一）</a>
+<ul>
+<li><a href="#1%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84%E7%9F%A5%E6%98%93%E8%A1%8C%E9%9A%BE">1、价值投资知易行难</a></li>
+<li><a href="#2%E6%8A%95%E8%B5%84%E4%B8%8E%E6%8A%95%E6%9C%BA%E7%9A%84%E5%B7%AE%E5%BC%82">2、投资与投机的差异</a></li>
+<li><a href="#3%E6%88%90%E5%8A%9F%E6%8A%95%E8%B5%84%E8%80%85%E5%92%8C%E5%A4%B1%E8%B4%A5%E6%8A%95%E8%B5%84%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB">3、成功投资者和失败投资者的区别</a></li>
+<li><a href="#4%E5%A4%B1%E8%B4%A5%E6%8A%95%E8%B5%84%E8%80%85%E5%92%8C%E4%BB%96%E4%BB%AC%E6%98%82%E8%B4%B5%E7%9A%84%E6%83%85%E7%BB%AA">4、失败投资者和他们昂贵的情绪</a></li>
+<li><a href="#5%E5%8D%8E%E5%B0%94%E8%A1%97%E7%9A%84%E8%B4%AA%E5%A9%AA%E5%92%8C%E5%9E%83%E5%9C%BE%E5%80%BA%E5%88%B8%E7%9A%84%E7%8B%82%E6%BD%AE">5、华尔街的贪婪和垃圾债券的狂潮</a></li>
+<li><a href="#6%E5%A6%82%E4%BD%95%E6%98%8E%E7%A1%AE%E6%8A%95%E8%B5%84%E7%9B%AE%E6%A0%87">6、如何明确投资目标</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C">((二))</a>
+<ul>
+<li><a href="#1%E6%8A%95%E8%B5%84%E8%80%85%E5%AF%B9%E5%BE%85%E9%A3%8E%E9%99%A9%E7%9A%84%E6%80%81%E5%BA%A6">1、投资者对待风险的态度</a></li>
+<li><a href="#2%E5%AE%89%E5%85%A8%E8%BE%B9%E9%99%85%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">2、安全边际的重要性</a></li>
+<li><a href="#3%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84%E5%9C%A8%E4%B8%8B%E8%B7%8C%E7%9A%84%E5%B8%82%E5%9C%BA%E4%B8%AD%E9%97%AA%E9%97%AA%E5%8F%91%E5%85%89">3、价值投资在下跌的市场中闪闪发光</a></li>
+<li><a href="#4%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84%E5%93%B2%E5%AD%A6%E4%B8%89%E4%B8%AA%E8%A6%81%E7%B4%A0">4、价值投资哲学三个要素</a></li>
+<li><a href="#5%E4%BC%81%E4%B8%9A%E8%AF%84%E4%BC%B0%E8%89%BA%E6%9C%AF">5、企业评估艺术</a></li>
+<li><a href="#6%E5%B8%82%E5%9C%BA%E4%BB%B7%E6%A0%BC%E4%B8%8E%E6%BD%9C%E5%9C%A8%E4%BB%B7%E5%80%BC%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8F%8D%E5%B0%84%E5%85%B3%E7%B3%BB">6、市场价格与潜在价值之间的反射关系</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89">((三))</a>
+<ul>
+<li><a href="#1%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84%E5%92%8C%E9%80%86%E5%90%91%E6%80%9D%E7%BB%B4">1、价值投资和逆向思维</a></li>
+<li><a href="#2%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84%E8%80%85%E9%9C%80%E8%A6%81%E5%A4%9A%E5%B0%91%E7%9A%84%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%88%86%E6%9E%90%E6%89%8D%E5%A4%9F">2、价值投资者需要多少的研究与分析才够？</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%BA%8C-%E6%99%9A%E4%B8%8A%E7%9D%A1%E5%BE%97%E9%A6%99%E6%AF%94%E4%BB%80%E4%B9%88%E9%83%BD%E9%87%8D%E8%A6%81">附录二 晚上睡得香比什么都重要</a>
+<ul>
+<li><a href="#%E5%8D%A1%E6%8B%89%E6%9B%BC%E5%9C%A8mit%E6%96%AF%E9%9A%86%E7%AE%A1%E7%90%86%E5%AD%A6%E9%99%A2%E7%9A%84%E6%BC%94%E8%AE%B22007%E5%B9%B410%E6%9C%8820%E6%97%A5">卡拉曼在MIT斯隆管理学院的演讲2007年10月20日</a></li>
+</ul>
+</li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%B8%89-%E5%8D%A1%E6%8B%89%E6%9B%BC%E8%AE%BF%E8%B0%88%E6%B0%B8%E8%BF%9C%E4%B8%8D%E8%A6%81%E5%81%9C%E6%AD%A2%E9%98%85%E8%AF%BB">附录三 卡拉曼访谈：永远不要停止阅读</a></li>
+<li><a href="#%E7%BC%96%E5%90%8E%E8%AE%B0-%E6%8A%95%E8%B5%84%E7%9C%9F%E7%9A%84%E4%B8%8D%E7%AE%80%E5%8D%95">编后记 投资真的不简单</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>
