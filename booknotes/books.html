@@ -2,9 +2,29 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="../stylesheets/toc.css" />
     <link rel="stylesheet" href="../stylesheets/xstyles.css" />
     <link rel="icon" href="../favicon.ico" />
     <title>Books</title>
+    <style type="text/css">
+        /* ======== 侧边的目录基于toc.css进行微调 这部分还有bug ======== */
+
+        /* 宽屏幕：电脑、手机横屏、iPad横屏 */
+        @media (min-width: 1537px) {
+            div.content {
+                width: 90%;
+            }
+
+            div.toc {
+                width: 9%;
+                height: 90vh;
+
+                position: fixed;
+                left: 0px;
+                top: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
     <iframe src="../menu.html" class="menu"></iframe>
@@ -51,6 +71,24 @@
                 <th>其他</th>
             </tr>
 
+            <tr class="bk1">
+                <td><a href="notes11958-吴英-亿万富姐的罪与罚.html">吴英：亿万富姐的罪与罚</a></td>
+                <td></td>
+                <td>万茵</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="notes9165-人人时代.html">人人时代：无组织的组织力量</a></td>
+                <td>Here Comes Everybody: The Power of Organizing Without Organizations</td>
+                <td>[美]克莱·舍基（Clay Shirky） 著|胡泳 译</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="notes11820-认知盈余-自由时间的力量.html">认知盈余：自由时间的力量</a></td>
+                <td><a href="../audio/1570-Cognitive-Surplus"><img src="../icon/audio.png"></a> <a href="notes1570-Cognitive-Surplus.html">Cognitive Surplus: Creativity and Generosity in a Connected Age</a></td>
+                <td>[美]克莱·舍基（Clay Shirky） 著|胡泳 哈丽丝 译</td>
+                <td></td>
+            </tr>
             <tr>
                 <td><a href="notes9318-明明白白看年报-第3版.html"><img src="../icon/bookmark.png">明明白白看年报（第3版）</a></td>
                 <td></td>
@@ -560,24 +598,6 @@
                 <td><a href="../audio/0585-The-Surrender-Experiment"><img src="../icon/audio.png"></a> <a href="notes0585-The-Surrender-Experiment.html">The Surrender Experiment: My Journey into Life's Perfection</a></td>
                 <td>[美]迈克·A·辛格（Michael A. Singer） 著|易灵运 译</td>
                 <td>已读完，笔记待整理。只有PDF</td>
-            </tr>
-            <tr class="bk1">
-                <td><a href="notes9646-做单-成交的秘密.html">做单：成交的秘密</a></td>
-                <td></td>
-                <td>胡震生</td>
-                <td>已读完，笔记找不到了</td>
-            </tr>
-            <tr class="bk1">
-                <td><a href="notes10071-谎报-一件发生在美国的真实性侵案.html"><img src="../icon/bookmark.png">谎报：一件发生在美国的真实性侵案</a></td>
-                <td>A False Report: A True Story of Rape in America</td>
-                <td>[美]T.克里斯汀·米勒（T. Christian Miller） [美]肯·阿姆斯特朗（Ken Armstrong） 著|邓南君 译</td>
-                <td>已读完，笔记待整理 Boox里无书，可能读的英文版。电视剧<i>Unbelievable</i></td>
-            </tr>
-            <tr class="bk1">
-                <td><a href="notes9179-天才在左疯子在右.html">天才在左疯子在右</a></td>
-                <td></td>
-                <td>高铭</td>
-                <td>已读完，笔记待整理。笔记找不到了</td>
             </tr>
             <tr class="bk1">
                 <td><a href="notes9032-有钱人的秘密.html"><img src="../icon/bookmark.png">有钱人的秘密</a></td>
@@ -24422,18 +24442,6 @@
                 <td></td>
             </tr>
             <tr>
-                <td><a href="notes11820-认知盈余-自由时间的力量.html">认知盈余：自由时间的力量</a></td>
-                <td><a href="../audio/1570-Cognitive-Surplus"><img src="../icon/audio.png"></a> <a href="notes1570-Cognitive-Surplus.html">Cognitive Surplus: Creativity and Generosity in a Connected Age</a></td>
-                <td>[美]克莱·舍基（Clay Shirky） 著|胡泳 哈丽丝 译</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><a href="notes9165-人人时代.html">人人时代：无组织的组织力量</a></td>
-                <td>Here Comes Everybody: The Power of Organizing Without Organizations</td>
-                <td>[美]克莱·舍基（Clay Shirky） 著|胡泳 译</td>
-                <td></td>
-            </tr>
-            <tr>
                 <td><a href=""></a></td>
                 <td><a href="../audio/1571-Murder-Beyond-the-Grave"><img src="../icon/audio.png"></a> <a href="notes1571-Murder-Beyond-the-Grave.html">Murder Beyond the Grave</a></td>
                 <td>James Patterson</td>
@@ -26078,9 +26086,9 @@
                 <td></td>
             </tr>
             <tr>
-                <td><a href="notes11958-吴英-亿万富姐的罪与罚.html">吴英：亿万富姐的罪与罚</a></td>
+                <td><a href="notes11142-傻子别传.html">傻子别传</a></td>
                 <td></td>
-                <td>万茵</td>
+                <td>朱华 解正中 呼安泰</td>
                 <td></td>
             </tr>
             <tr>
@@ -26691,20 +26699,20 @@
             </tr>
             <tr>
                 <td><a href=""></a></td>
+                <td><a href="../audio/1764-Harry-S-Truman"><img src="../icon/audio.png"></a> <a href="notes1764-Harry-S-Truman.html">Harry S. Truman: The 33rd President, 1945-1953</a></td>
+                <td>Robert Dallek</td>
+                <td>The American Presidents Series</td>
+            </tr>
+            <tr>
                 <td><a href=""></a></td>
-                <td></td>
+                <td><a href="../audio/1765-Hero-of-Two-Worlds"><img src="../icon/audio.png"></a> <a href="notes1765-Hero-of-Two-Worlds.html">Hero of Two Worlds: The Marquis de Lafayette in the Age of Revolution</a></td>
+                <td>Mike Duncan</td>
                 <td></td>
             </tr>
             <tr>
                 <td><a href=""></a></td>
-                <td><a href=""></a></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><a href=""></a></td>
-                <td><a href=""></a></td>
-                <td></td>
+                <td><a href="../audio/1062-Sure-Ill-Join-Your-Cult"><img src="../icon/audio.png"></a> <a href="notes1062-Sure-Ill-Join-Your-Cult.html">Sure, I'll Join Your Cult: A Memoir of Mental Illness and the Quest to Belong Anywhere</a></td>
+                <td>Maria Bamford</td>
                 <td></td>
             </tr>
             <tr>
@@ -28383,6 +28391,24 @@
                 <td>[美]裕德龄（Princess Der Ling） 著|郝金茹 译</td>
                 <td></td>
             </tr>
+            <tr class="bk1">
+                <td><a href="notes9646-做单-成交的秘密.html">做单：成交的秘密</a></td>
+                <td></td>
+                <td>胡震生</td>
+                <td></td>
+            </tr>
+            <tr class="bk1">
+                <td><a href="notes10071-谎报-一件发生在美国的真实性侵案.html">谎报：一件发生在美国的真实性侵案</a></td>
+                <td>A False Report: A True Story of Rape in America</td>
+                <td>[美]T.克里斯汀·米勒（T. Christian Miller） [美]肯·阿姆斯特朗（Ken Armstrong） 著|邓南君 译</td>
+                <td>电视剧<i>Unbelievable</i></td>
+            </tr>
+            <tr class="bk1">
+                <td><a href="notes9179-天才在左疯子在右.html">天才在左疯子在右</a></td>
+                <td></td>
+                <td>高铭</td>
+                <td></td>
+            </tr>
             <tr class="bk0">
                 <td>缠中说禅</td>
                 <td></td>
@@ -28702,15 +28728,30 @@
                 <td></td>
             </tr>
         </table>
-
     </div>
 
+    <div class="toc">
+        <ul>
+            <li><a href="#Recent"><img src="../icon/bookmark.png">近期在读/听的书</a></li>
+            <li><a href="#Finished432"><img src="../icon/goodbook.png">已读完4~2</a></td>
+            <li><a href="#BookPile"><img src="../icon/bookpile.png">书堆</a>
+                <ul>
+                    <li><a href="#NotVeryInterested"><img src="../icon/shrug.png">兴趣不大</a></li>
+                    <li><a href="#Fiction"><img src="../icon/fiction.png">虚构小说</a></li>
+                    <li><a href="#Reference"><img src="../icon/referencebook.png">工具书</a></li>
+                </ul>
+            </li>
+            <li><a href="#RareBook"><img src="../icon/rare.png">暂无资源</a></li>
+            <li><a href="#Finished10"><img src="../icon/badbook.png">已读完1~0</a></li>
+        </ul>
+    </div>
     <!--
     <a href="../audio/"><img src="../icon/audio.png"></a> 
     <img src="../icon/notes.png">
     <img src="../icon/bookmark.png">
     <script src="https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@latest/index.min.js" id="lovefluffy-github-io-954u56xwu"></script>
     -->
+
     <iframe src="../copyright.html" class="copyright"></iframe>
     <div id="backtotop"><a href="#"><img src="../icon/backtotop.png"></a></div>
     <script src="../js/x.js"></script>
