@@ -4,14 +4,6 @@ div.content {
 	height: 100%;
 	/*文本部分：水平方向禁止显示滚动条*/
 	overflow-x: hidden;
-	/*文本部分：竖直平方向超出屏幕时会显示滚动条*/
-	overflow-y: auto;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track 
-	scrollbar-color: skyblue #ededed;*/
-	scrollbar-color: rgb(178, 216, 232) #ededed;
 }
 
 /* 
@@ -157,6 +149,7 @@ iPad mini 5：2048*宽1536
 	div.toc a img {
 		width: 20px;
 		height: 20px;
+		vertical-align: middle;
 	}
 
 }
