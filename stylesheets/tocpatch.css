@@ -1,0 +1,51 @@
+/* ======== 侧边的目录基于toc.css进行微调，用于给非笔记页面也添加侧边目录 这部分还有bug ======== */
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.content table.toolbox {
+		display: none;
+	}
+
+	div.content {
+		max-width: none;
+		width: 85%;
+	}
+
+	div.toc {
+		width: 14%;
+		height: 90vh;
+
+		position: fixed;
+		left: 0px;
+		top: 100px;
+	}
+
+	div.toc a {
+		color: #666;
+	}
+
+	div.toc ul>li>a,
+	div.toc ul>li>ul>li>a,
+	div.toc ul>li>ul>li>ul>li>a {
+		background-color: #f1e5c9;
+	}
+
+	div.toc ul>li>a {
+		/* 不知道为何sticky在booknotes里生效很好，但是在其他页面不生效，所以下面top设置也暂时是无用的 */
+		/*设置top值的时候需要让出顶部menu的宽度
+		top: 200px;*/
+
+		padding-left: 5px;
+		font-size: 1em;
+	}
+
+	div.toc ul>li>ul>li>a {
+		padding-left: 15px;
+		font-size: 0.8em;
+	}
+
+	div.toc ul>li>ul>li>ul>li>a {
+		padding-left: 25px;
+		font-size: 0.6em;
+	}
+}

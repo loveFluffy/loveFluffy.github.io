@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="../stylesheets/xstyles.css" />
+	<link rel="stylesheet" href="../stylesheets/toc.css" />
+	<link rel="stylesheet" href="../stylesheets/tocpatch.css" />
 	<link rel="icon" href="../favicon.ico" />
 	<title>Find eBooks</title>
 </head>
@@ -13,7 +15,6 @@
 		<table class="toolbox">
 			<tr>
 				<!--
-				<td><a href="#"><img src=""><br /></a></td>
 				<td><a href="#"><img src=""><br /></a></td>
 				<td><a href="#"><img src=""><br /></a></td>
 				-->
@@ -76,7 +77,7 @@
 
 
 		<h3 id="AudioBooks"><img src="../icon/audio.png"> Audio Books</h3>
-		<h4><img src="../icon/yuntuys.png"> 云图有声账号</h4>
+		<h4 id="Yuntuys"><img src="../icon/yuntuys.png"> 云图有声</h4>
 		<ul class="list">
 			<li style="background-image: url(../icon/clcn.png);"><a href="https://st.yuntuys.com/login">首都图书馆</a></li>
 			<li style="background-image: url(../icon/zslib.png);"><a href="http://sso.zslib.cn/interlibSSO/goto/122/+khaq-qx9xtmstxr9bnl/">中山纪念图书馆</a></li>
@@ -86,7 +87,7 @@
 			<li><a href=""></a></li>
 		</ul>
 
-		<h4><img src="../icon/xinyulib.png"> 新语听书账号</h4>
+		<h4 id="Xinyulib"><img src="../icon/xinyulib.png"> 新语听书</h4>
 		<ul class="list">
 			<li style="background-image: url(../icon/zslib.png);"><a href="http://sso.zslib.cn/interlibSSO/goto/111/==9whmxtkha9bnl9bm/lib/index/index.jsp">中山纪念图书馆</a></li>
 			<li style="background-image: url(../icon/zjlib.png);">浙江图书馆：不太稳定 <img src="../icon/dislike.png"></li><!--有时出现额外登录界面，却不知账号密码为何，不是图书馆账号密码-->
@@ -490,6 +491,30 @@
 		</ul>
 
 	</div>
+
+	<div class="toc">
+		<ul>
+			<li><a href="#Recent"><img src="../icon/recent.png"> Recent</a></li>
+			<li><a href="#AudioBooks"><img src="../icon/audio.png"> Audio Books</a></li>
+			<li>
+				<ul>
+					<li><a href="#Yuntuys"><img src="../icon/yuntuys.png"> 云图有声</a></li>
+					<li><a href="#Xinyulib"><img src="../icon/xinyulib.png"> 新语听书</a></li>
+				</ul>
+			</li>
+			<li><a href="#CNLibrary"><img src="../icon/library.png"> 中国图书馆</a></li>
+			<li><a href="#USLibrary"><img src="../icon/library.png"> US Library</a></li>
+			<li><a href="./myID.html" target="_blank"><img src="../icon/idcard.png"> My ID</a></li>
+		</ul>
+		<ul>
+			<li><a href="#BookList"><img src="../icon/booklist.png"> Book List</a></li>
+			<li><a href="#TipsTools"><img src="../icon/tipstools.png"> Tips&Tools</a></li>
+			<li><a href="#RarelyUsed"><img src="../icon/rarelyused.png"> Rarely Used</a></li>
+			<li><a href="#CloudEngine"><img src="../icon/cloudengine.png"> Cloud Engine</a></li>
+			<li><a href="#ForKids"><img src="../icon/kids.png"> For Kids</a></li>
+		</ul>
+	</div>
+
 	<iframe src="../copyright.html" class="copyright"></iframe>
 	<div id="backtotop"><a href="#"><img src="../icon/backtotop.png"></a></div>
 	<script src="../js/x.js"></script>

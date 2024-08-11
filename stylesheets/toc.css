@@ -1,8 +1,6 @@
 /* ======== 侧边的目录 ======== */
 
-.content {
-	max-width: none;
-	float: right;
+div.content {
 	height: 100%;
 	/*文本部分：水平方向禁止显示滚动条*/
 	overflow-x: hidden;
@@ -14,14 +12,12 @@
 	/* thumb & track 
 	scrollbar-color: skyblue #ededed;*/
 	scrollbar-color: rgb(178, 216, 232) #ededed;
-
-	scroll-behavior: smooth;
 }
 
 /* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
+手机：2400*宽1080
+iPad mini 5：2048*宽1536
+电脑：宽1920*1200 
 */
 /* 窄屏幕：手机竖屏、iPad竖屏 */
 @media (max-width: 1536px) {
@@ -39,16 +35,16 @@ iPad mini 5：2048*1536
 /* 宽屏幕：电脑、手机横屏、iPad横屏 */
 @media (min-width: 1537px) {
 	div.content {
+		float: right;
 		width: 73%;
 		padding-left: 0.5%;
 	}
 
 	div.toc {
-		/*max-width: 29%;*/
+		float: left;
 		width: 26%;
 		height: 100vh;
 		padding-right: 0;
-		float: left;
 
 		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
 		/* 现在因为toc与body等高，所以不起作用，也无须起作用
@@ -157,6 +153,12 @@ iPad mini 5：2048*1536
 	font-size: 0.6em;
 	}
 	*/
+
+	div.toc a img {
+		width: 20px;
+		height: 20px;
+	}
+
 }
 
 /*

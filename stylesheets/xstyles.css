@@ -9,8 +9,8 @@ body {
 }
 
 .content {
-    /* 手机屏幕宽度1080px 
-    max-width: 1080px;*/
+    /* 手机屏幕宽度1080px */
+    max-width: 1080px;
     /* 左右居中 */
     margin: 0px auto;
 }
@@ -41,7 +41,7 @@ table.legend td {
 
 
 
-/* ======== book list table style ======== */
+/* ======== List Table Style ======== */
 
 table.gridtable {
     width: 100%;
@@ -79,7 +79,7 @@ table.gridtable td:nth-child(4) {
 /*第3列、第4列用小号字体*/
 table.gridtable td:nth-child(3),
 table.gridtable td:nth-child(4) {
-    font-size: smaller;
+    font-size: 9pt;
 }
 
 /***下面是比较相关的细致设置***/
@@ -115,7 +115,9 @@ table.gridtable td:nth-child(4) {
 }
 
 
-
+div.toolbox li {
+    display: inline;
+}
 
 table.toolbox {
     width: 100%;
@@ -231,11 +233,10 @@ h4 img {
 
 /* 设置backtotop按钮 */
 #backtotop {
-    /* Fixed/sticky position */
     position: fixed;
     /* Place the button at the bottom right of the page */
-    bottom: 25%;
-    right: 5%;
+    bottom: 12%;
+    right: 2%;
     /* Make sure it does not overlap */
     z-index: 99;
     /* Hidden by default */
