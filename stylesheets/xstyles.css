@@ -8,7 +8,7 @@ body {
     font-size: 16pt;
 }
 
-.content {
+div.content {
     /* 手机屏幕宽度1080px */
     max-width: 1080px;
     /* 左右居中 */
@@ -28,7 +28,6 @@ li {
 }
 
 table {
-    align-self: center;
     font-size: 14pt;
 }
 
@@ -175,7 +174,7 @@ iframe.menu {
     position: sticky;
     top: 0;
 
-    height: 100px;
+    height: 80px;
 }
 
 iframe.copyright {

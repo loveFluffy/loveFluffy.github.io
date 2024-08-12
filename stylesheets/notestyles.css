@@ -5,16 +5,7 @@
 body {
 	font-size: 18pt;
 	height: 100%;
-	padding: 0;
 }
-
-/*
-h1 {
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下
-	好像又不存在这个问题了，就先注释掉了吧
-border-bottom-style: none;
-}
-*/
 
 /* 水平线分割线 */
 hr {
@@ -32,7 +23,6 @@ img {
 
 /*笔记中的普通表格*/
 table {
-	/*居中*/
 	max-width: 80%;
 	font-size: smaller;
 }
@@ -67,17 +57,16 @@ p {
 
 /* 块/段落引用 */
 blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
+	font-size: 0.8em;
 	color: #666;
-	border-left: 2px solid #fbb;
+	border-left: 2px solid #c9c9c9;
 	padding-left: 1em;
 	margin: 1em 3em 1em 2em;
 }
 
 blockquote p {
 	margin: 0 0 1em;
+	line-height: 1.8;
 }
 
 strong,
@@ -111,99 +100,6 @@ p>code {
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
 }
 
 

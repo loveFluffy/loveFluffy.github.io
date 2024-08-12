@@ -7,6 +7,7 @@
 	}
 
 	div.content {
+		/* 这里max-width的设置是为了覆盖xstyle.css中的设置，不可删除*/
 		max-width: none;
 		width: 85%;
 	}
@@ -15,9 +16,7 @@
 		width: 14%;
 		height: 90vh;
 
-		position: fixed;
-		left: 0px;
-		top: 100px;
+		top: 80px;
 	}
 
 	div.toc a {

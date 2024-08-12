@@ -1,9 +1,11 @@
 /* ======== 侧边的目录 ======== */
 
 div.content {
-	height: 100%;
-	/*文本部分：水平方向禁止显示滚动条*/
+	padding-left: 0.5%;
+
+	/*目录部分：水平方向禁止显示滚动条、竖直平方向超出屏幕时会显示滚动条*/
 	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 /* 
@@ -15,7 +17,6 @@ iPad mini 5：2048*宽1536
 @media (max-width: 1536px) {
 	div.content {
 		width: 99.5%;
-		padding-left: 0.5%;
 	}
 
 	/* 不显示目录 */
@@ -29,29 +30,29 @@ iPad mini 5：2048*宽1536
 	div.content {
 		float: right;
 		width: 73%;
-		padding-left: 0.5%;
 	}
 
 	div.toc {
 		float: left;
 		width: 26%;
 		height: 100vh;
-		padding-right: 0;
+
+		position: fixed;
+		left: 0;
+		top: 0;
 
 		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
 		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-        position: -webkit-sticky;
-        position: -ms-sticky;
-        position: -o-sticky;
-        position: sticky;
-        top: 0px;
-        */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0px;
+		*/
 
-		/*目录部分：水平方向禁止显示滚动条*/
+		/*目录部分：水平方向禁止显示滚动条、竖直平方向超出屏幕时会显示滚动条*/
 		overflow-x: hidden;
-		/*目录部分：竖直平方向超出屏幕时会显示滚动条*/
 		overflow-y: auto;
-
 		/* 滚动条 */
 		scrollbar-width: thin;
 		/* thumb & track */
