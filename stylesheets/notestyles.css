@@ -105,14 +105,47 @@ p>code {
 
 
 
+/* ======== 笔记里插入封面图 ======== */
+
+table.covertitle {
+	border: none;
+	max-width: 90%;
+	/*列宽固定为设置值，不根据内容调整*/
+	table-layout: fixed;
+}
+
+table.covertitle td {
+	border: none;
+}
+
+table.covertitle td:nth-child(1) {
+	padding: 20px 5px 0px;
+	width: 20%;
+}
+
+table.covertitle td:nth-child(2) {
+	width: 80%;
+}
+
+table.covertitle img {
+	max-width: 240px;
+}
+
+
+
+
 /* ======== 笔记里插入我的评价 ======== */
 div.mycomment {
 	font-size: smaller;
 
 	padding: 20px 20px 5px 30px;
-	margin: 40px 5%;
+	margin: 20px 5%;
 	background-color: #e5eecc;
 
 	border: solid 2px #8ca86d;
 	border-radius: 30px;
+}
+
+div.mycomment img {
+	max-width: 90%;
 }

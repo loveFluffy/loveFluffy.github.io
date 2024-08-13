@@ -86,31 +86,34 @@ table.gridtable td:nth-child(4) {
 .gridtable tr.bk0 td,
 .legend td#bk0 {
     /* 未读完不值得读-灰色 bk0 */
-    background-color: #C0C0C0;
+    background-color: #b3b3b3;
 }
 
 .gridtable tr.bk1 td,
 .legend td#bk1 {
-    /* 读完不值得再读-棕色 bk1 */
-    background-color: #D2B48C;
+    /* 读完不值得再读-石色 bk1 D2B48C E8D098*/
+    background-color: #c4c9ad;
 }
 
 .gridtable tr.bk2 td,
 .legend td#bk2 {
-    /* 笔记值得反复看-绿色 bk2 */
-    background-color: #99CC99;
+    /* 笔记值得反复看-绿色 bk2 99CC99 CCFF99 D5F3F4*/
+    /*
+    background-color: #D5F3F4;
+    */
+    background-color: #ecffb7;
 }
 
 .gridtable tr.bk3 td,
 .legend td#bk3 {
-    /* 原作值得反复读-蓝色 bk3 */
-    background-color: #99CCFF;
+    /* 原作值得反复读-橙色 bk3 99CCFF*/
+    background-color: #ffdea1;
 }
 
 .gridtable tr.bk4 td,
 .legend td#bk4 {
-    /* 原作可买来收藏-红色 bk4 */
-    background-color: #FF9999;
+    /* 原作可买来收藏-红色 bk4 FF9999 F0DAD2*/
+    background-color: #ffbdbd;
 }
 
 
@@ -208,9 +211,13 @@ ul.list {
     background-size: 1.5em;
     background-repeat: no-repeat;
     background-position: 0 center;
-    line-height: 2em;
+    line-height: 1.3em;
     text-indent: 2em;
     list-style-type: none;
+}
+
+ul.peoplelist {
+    column-count: 1;
 }
 
 #icon img,

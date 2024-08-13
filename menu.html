@@ -46,7 +46,12 @@
 			/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
 			display: block;
 			text-decoration: none;
-			color: black;
+			color: white;
+			filter: invert(80%);
+		}
+
+		td a:hover {
+			filter: invert(50%);
 		}
 
 		a img {

@@ -135,7 +135,7 @@ a:visited {
 
 a:hover,
 a:active {
-	color: #d3595e;
+	color: #9e0000;
 }
 
 
@@ -170,9 +170,11 @@ table {
 
 /* ======== 其他杂项 ======== */
 
-/* 内容选中后背景浅粉色 */
-::selection {
+/* 内容选中后背景浅粉色 
 	background-color: #fbb;
+*/
+::selection {
+	background-color: #ccff99;
 }
 
 /* 水平线分割线 */
