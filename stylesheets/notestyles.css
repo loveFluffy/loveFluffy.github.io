@@ -29,15 +29,7 @@ table {
 
 th,
 td {
-	background-color: transparent;
-	border: solid rgb(80, 80, 80) 1px;
 	padding: 5px;
-}
-
-th {
-	background-color: #dedede;
-	text-align: center;
-	font-weight: bold;
 }
 
 dl,

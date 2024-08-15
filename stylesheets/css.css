@@ -146,10 +146,20 @@ table {
 	/*居中*/
 	margin: 0 auto;
 	color: #333333;
-	border: #666666 1px solid;
 	border-collapse: collapse;
 }
 
+th,
+td {
+	border: #666666 1px solid;
+}
+
+th {
+	background-color: #dedede;
+	color: #3b3b3b;
+	text-align: center;
+	font-weight: bold;
+}
 
 
 
