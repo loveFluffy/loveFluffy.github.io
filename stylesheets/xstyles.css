@@ -175,9 +175,7 @@ table.toolbox td a {
 
 iframe.menu,
 iframe.copyright {
-    margin: 0px;
-    padding: 0px;
-    border-style: none;
+    border: none;
     width: 100%;
 }
 

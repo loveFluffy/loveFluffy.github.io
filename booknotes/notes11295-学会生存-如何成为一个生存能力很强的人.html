@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5b66;&#x4f1a;&#x751f;&#x5b58;&#xff1a;&#x5982;&#x4f55;&#x6210;&#x4e3a;&#x4e00;&#x4e2a;&#x751f;&#x5b58;&#x80fd;&#x529b;&#x5f88;&#x5f3a;&#x7684;&#x4eba;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5b66;&#x4f1a;&#x751f;&#x5b58;&#xff1a;&#x5982;&#x4f55;&#x6210;&#x4e3a;&#x4e00;&#x4e2a;&#x751f;&#x5b58;&#x80fd;&#x529b;&#x5f88;&#x5f3a;&#x7684;&#x4eba;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,317 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="学会生存如何成为一个生存能力很强的人">学会生存：如何成为一个生存能力很强的人</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\cover\11295.jpg"></td><td>
+<h1 id="学会生存如何成为一个生存能力很强的人">学会生存：如何成为一个生存能力很强的人</h1>
+<center>[英]约翰·哈德森（John Hudson） 著|夏南 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="前言-为什么有的人可以幸存">前言 为什么有的人可以幸存？</h3>
+<h4 id="我为什么要写这本书">我为什么要写这本书？</h4>
+<h4 id="你最重要的装备">你最重要的装备</h4>
+<h4 id="我们都可以有更大的生还机会">我们都可以有更大的生还机会</h4>
+<h4 id="生存三角">生存三角</h4>
+<h4 id="重要的事情放前头">重要的事情放前头</h4>
+<h4 id="意外">意外</h4>
+<h3 id="第一章-为失败做好准备">第一章 为失败做好准备</h3>
+<h4 id="奖励的重要性">奖励的重要性</h4>
+<h4 id="学会演练">学会演练</h4>
+<h4 id="现在该怎么做">现在该怎么做？</h4>
+<h4 id="如何做好备用方案">如何做好备用方案？</h4>
+<h4 id="弹射出去以后">弹射出去以后</h4>
+<h4 id="如何让身心做好准备">如何让身心做好准备？</h4>
+<h4 id="试着给自己找一个待在降落伞下的时间">试着给自己找一个待在降落伞下的时间</h4>
+<h4 id="搞清楚自己的方位">搞清楚自己的方位</h4>
+<h4 id="改变思维方式">改变思维方式</h4>
+<h4 id="什么事都做好记录">什么事都做好记录</h4>
+<h4 id="心理预演">心理预演</h4>
+<h4 id="提高做准备的水平">提高做准备的水平</h4>
+<h4 id="演练">演练</h4>
+<h4 id="你的功课">你的功课</h4>
+<h3 id="第二章-分清轻重缓急">第二章 分清轻重缓急</h3>
+<h4 id="你的荒岛">你的荒岛</h4>
+<h4 id="你的大脑并不善于分清轻重缓急">你的大脑并不善于分清轻重缓急</h4>
+<h4 id="你的身体需要什么">你的身体需要什么</h4>
+<h4 id="制订plan">制订PLAN</h4>
+<h4 id="一张办公桌就像一个荒岛">一张办公桌就像一个荒岛</h4>
+<h4 id="阿梅利亚怎么样了">阿梅利亚怎么样了？</h4>
+<h3 id="第三章-如何有效率地工作">第三章 如何有效率地工作</h3>
+<h4 id="疼痛管理">疼痛管理</h4>
+<h4 id="不挨疼难成事">不挨疼难成事</h4>
+<h4 id="不要无视你的极限">不要无视你的极限</h4>
+<h4 id="哪些小事会让我们难以成功">哪些小事会让我们难以成功？</h4>
+<h4 id="给自己点甜头很重要">给自己点甜头很重要</h4>
+<h4 id="总是分心怎么办">总是分心怎么办？</h4>
+<h4 id="练练你的开溜本事">练练你的开溜本事</h4>
+<h4 id="发邮件的原则">发邮件的原则</h4>
+<h4 id="不该有办公桌">不该有办公桌</h4>
+<h4 id="保持运动">保持运动</h4>
+<h4 id="不一般的动力">不一般的动力</h4>
+<h4 id="兰斯希扬">兰斯·希扬</h4>
+<h4 id="归属感的重要性">归属感的重要性</h4>
+<h4 id="搞清楚你想要什么和你是谁">搞清楚你想要什么和你是谁</h4>
+<h3 id="第四章-满怀希望小步前进">第四章 满怀希望，小步前进</h3>
+<h4 id="可行的目标">可行的目标</h4>
+<h4 id="弗兰克菲尔和乔治">弗兰克、菲尔和乔治</h4>
+<h4 id="你可以随波逐流也可以迎难而上">你可以随波逐流，也可以迎难而上</h4>
+<h4 id="拥有脚踏实地的乐观精神">拥有脚踏实地的乐观精神</h4>
+<h4 id="切实可行的方法">切实可行的方法</h4>
+<h3 id="第五章-他人因素的重要性">第五章 他人因素的重要性</h3>
+<h4 id="不仅仅要活下来">不仅仅要活下来</h4>
+<h4 id="他人的目的">他人的目的</h4>
+<h4 id="他人的行为">他人的行为</h4>
+<h4 id="找到你们的共同点">找到你们的共同点</h4>
+<h4 id="让别人站在你这一边">让别人站在你这一边</h4>
+<h4 id="人靠衣装">人靠衣装</h4>
+<h4 id="细节的作用">细节的作用</h4>
+<h4 id="训练学习的最佳实践方法">训练、学习的最佳实践方法</h4>
+<h4 id="放下你的手机">放下你的手机</h4>
+<h4 id="如何批评人">如何批评人</h4>
+<h4 id="如何表扬人">如何表扬人</h4>
+<h4 id="对人好不仅是件美事还是聪明之举">对人好不仅是件美事，还是聪明之举</h4>
+<h4 id="幽默障碍">幽默障碍</h4>
+<h4 id="不是有头有脸才能当好领导">不是有头有脸才能当好领导</h4>
+<h3 id="第六章-适应的重要性">第六章 适应的重要性</h3>
+<h4 id="谦逊的重要性">谦逊的重要性</h4>
+<h4 id="约翰雷">约翰·雷</h4>
+<h4 id="拜格诺沙漠生存">拜格诺——沙漠生存</h4>
+<h4 id="突破我们的局限">突破我们的局限</h4>
+<h4 id="捉雾人">捉雾人</h4>
+<h3 id="第七章-根据周围环境调整自己的频率">第七章 根据周围环境，调整自己的频率</h3>
+<h4 id="多接触大自然对你有好处">多接触大自然对你有好处</h4>
+<h4 id="电子时代的逃亡">电子时代的逃亡</h4>
+<h4 id="如何利用月亮辨明方位">如何利用月亮辨明方位</h4>
+<h3 id="第八章-要么赢要么学到东西">第八章 要么赢，要么学到东西</h3>
+<h4 id="深入丛林">深入丛林</h4>
+<h4 id="关于丛林的荒诞说法">关于丛林的荒诞说法</h4>
+<h4 id="不断努力">不断努力</h4>
+<h4 id="渐入佳境">渐入佳境</h4>
+<h4 id="一会儿湿一会儿干">一会儿湿一会儿干</h4>
+<h4 id="学会伊班族的节奏">学会伊班族的节奏</h4>
+<h3 id="总结">总结</h3>
+<h3 id="附录一-如何生火">附录一 如何生火</h3>
+<h3 id="附录二-如何搭冰屋">附录二 如何搭冰屋</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89%E7%9A%84%E4%BA%BA%E5%8F%AF%E4%BB%A5%E5%B9%B8%E5%AD%98">前言 为什么有的人可以幸存？</a>
+<ul>
+<li><a href="#%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E8%BF%99%E6%9C%AC%E4%B9%A6">我为什么要写这本书？</a></li>
+<li><a href="#%E4%BD%A0%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E8%A3%85%E5%A4%87">你最重要的装备</a></li>
+<li><a href="#%E6%88%91%E4%BB%AC%E9%83%BD%E5%8F%AF%E4%BB%A5%E6%9C%89%E6%9B%B4%E5%A4%A7%E7%9A%84%E7%94%9F%E8%BF%98%E6%9C%BA%E4%BC%9A">我们都可以有更大的生还机会</a></li>
+<li><a href="#%E7%94%9F%E5%AD%98%E4%B8%89%E8%A7%92">生存三角</a></li>
+<li><a href="#%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B%E6%83%85%E6%94%BE%E5%89%8D%E5%A4%B4">重要的事情放前头</a></li>
+<li><a href="#%E6%84%8F%E5%A4%96">意外</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E4%B8%BA%E5%A4%B1%E8%B4%A5%E5%81%9A%E5%A5%BD%E5%87%86%E5%A4%87">第一章 为失败做好准备</a>
+<ul>
+<li><a href="#%E5%A5%96%E5%8A%B1%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">奖励的重要性</a></li>
+<li><a href="#%E5%AD%A6%E4%BC%9A%E6%BC%94%E7%BB%83">学会演练</a></li>
+<li><a href="#%E7%8E%B0%E5%9C%A8%E8%AF%A5%E6%80%8E%E4%B9%88%E5%81%9A">现在该怎么做？</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E5%A4%87%E7%94%A8%E6%96%B9%E6%A1%88">如何做好备用方案？</a></li>
+<li><a href="#%E5%BC%B9%E5%B0%84%E5%87%BA%E5%8E%BB%E4%BB%A5%E5%90%8E">弹射出去以后</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E8%AE%A9%E8%BA%AB%E5%BF%83%E5%81%9A%E5%A5%BD%E5%87%86%E5%A4%87">如何让身心做好准备？</a></li>
+<li><a href="#%E8%AF%95%E7%9D%80%E7%BB%99%E8%87%AA%E5%B7%B1%E6%89%BE%E4%B8%80%E4%B8%AA%E5%BE%85%E5%9C%A8%E9%99%8D%E8%90%BD%E4%BC%9E%E4%B8%8B%E7%9A%84%E6%97%B6%E9%97%B4">试着给自己找一个待在降落伞下的时间</a></li>
+<li><a href="#%E6%90%9E%E6%B8%85%E6%A5%9A%E8%87%AA%E5%B7%B1%E7%9A%84%E6%96%B9%E4%BD%8D">搞清楚自己的方位</a></li>
+<li><a href="#%E6%94%B9%E5%8F%98%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F">改变思维方式</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E4%BA%8B%E9%83%BD%E5%81%9A%E5%A5%BD%E8%AE%B0%E5%BD%95">什么事都做好记录</a></li>
+<li><a href="#%E5%BF%83%E7%90%86%E9%A2%84%E6%BC%94">心理预演</a></li>
+<li><a href="#%E6%8F%90%E9%AB%98%E5%81%9A%E5%87%86%E5%A4%87%E7%9A%84%E6%B0%B4%E5%B9%B3">提高做准备的水平</a></li>
+<li><a href="#%E6%BC%94%E7%BB%83">演练</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E5%8A%9F%E8%AF%BE">你的功课</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%88%86%E6%B8%85%E8%BD%BB%E9%87%8D%E7%BC%93%E6%80%A5">第二章 分清轻重缓急</a>
+<ul>
+<li><a href="#%E4%BD%A0%E7%9A%84%E8%8D%92%E5%B2%9B">你的荒岛</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E5%A4%A7%E8%84%91%E5%B9%B6%E4%B8%8D%E5%96%84%E4%BA%8E%E5%88%86%E6%B8%85%E8%BD%BB%E9%87%8D%E7%BC%93%E6%80%A5">你的大脑并不善于分清轻重缓急</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E8%BA%AB%E4%BD%93%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88">你的身体需要什么</a></li>
+<li><a href="#%E5%88%B6%E8%AE%A2plan">制订PLAN</a></li>
+<li><a href="#%E4%B8%80%E5%BC%A0%E5%8A%9E%E5%85%AC%E6%A1%8C%E5%B0%B1%E5%83%8F%E4%B8%80%E4%B8%AA%E8%8D%92%E5%B2%9B">一张办公桌就像一个荒岛</a></li>
+<li><a href="#%E9%98%BF%E6%A2%85%E5%88%A9%E4%BA%9A%E6%80%8E%E4%B9%88%E6%A0%B7%E4%BA%86">阿梅利亚怎么样了？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E7%8E%87%E5%9C%B0%E5%B7%A5%E4%BD%9C">第三章 如何有效率地工作</a>
+<ul>
+<li><a href="#%E7%96%BC%E7%97%9B%E7%AE%A1%E7%90%86">疼痛管理</a></li>
+<li><a href="#%E4%B8%8D%E6%8C%A8%E7%96%BC%E9%9A%BE%E6%88%90%E4%BA%8B">不挨疼难成事</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81%E6%97%A0%E8%A7%86%E4%BD%A0%E7%9A%84%E6%9E%81%E9%99%90">不要无视你的极限</a></li>
+<li><a href="#%E5%93%AA%E4%BA%9B%E5%B0%8F%E4%BA%8B%E4%BC%9A%E8%AE%A9%E6%88%91%E4%BB%AC%E9%9A%BE%E4%BB%A5%E6%88%90%E5%8A%9F">哪些小事会让我们难以成功？</a></li>
+<li><a href="#%E7%BB%99%E8%87%AA%E5%B7%B1%E7%82%B9%E7%94%9C%E5%A4%B4%E5%BE%88%E9%87%8D%E8%A6%81">给自己点甜头很重要</a></li>
+<li><a href="#%E6%80%BB%E6%98%AF%E5%88%86%E5%BF%83%E6%80%8E%E4%B9%88%E5%8A%9E">总是分心怎么办？</a></li>
+<li><a href="#%E7%BB%83%E7%BB%83%E4%BD%A0%E7%9A%84%E5%BC%80%E6%BA%9C%E6%9C%AC%E4%BA%8B">练练你的开溜本事</a></li>
+<li><a href="#%E5%8F%91%E9%82%AE%E4%BB%B6%E7%9A%84%E5%8E%9F%E5%88%99">发邮件的原则</a></li>
+<li><a href="#%E4%B8%8D%E8%AF%A5%E6%9C%89%E5%8A%9E%E5%85%AC%E6%A1%8C">不该有办公桌</a></li>
+<li><a href="#%E4%BF%9D%E6%8C%81%E8%BF%90%E5%8A%A8">保持运动</a></li>
+<li><a href="#%E4%B8%8D%E4%B8%80%E8%88%AC%E7%9A%84%E5%8A%A8%E5%8A%9B">不一般的动力</a></li>
+<li><a href="#%E5%85%B0%E6%96%AF%E5%B8%8C%E6%89%AC">兰斯·希扬</a></li>
+<li><a href="#%E5%BD%92%E5%B1%9E%E6%84%9F%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">归属感的重要性</a></li>
+<li><a href="#%E6%90%9E%E6%B8%85%E6%A5%9A%E4%BD%A0%E6%83%B3%E8%A6%81%E4%BB%80%E4%B9%88%E5%92%8C%E4%BD%A0%E6%98%AF%E8%B0%81">搞清楚你想要什么和你是谁</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%BB%A1%E6%80%80%E5%B8%8C%E6%9C%9B%E5%B0%8F%E6%AD%A5%E5%89%8D%E8%BF%9B">第四章 满怀希望，小步前进</a>
+<ul>
+<li><a href="#%E5%8F%AF%E8%A1%8C%E7%9A%84%E7%9B%AE%E6%A0%87">可行的目标</a></li>
+<li><a href="#%E5%BC%97%E5%85%B0%E5%85%8B%E8%8F%B2%E5%B0%94%E5%92%8C%E4%B9%94%E6%B2%BB">弗兰克、菲尔和乔治</a></li>
+<li><a href="#%E4%BD%A0%E5%8F%AF%E4%BB%A5%E9%9A%8F%E6%B3%A2%E9%80%90%E6%B5%81%E4%B9%9F%E5%8F%AF%E4%BB%A5%E8%BF%8E%E9%9A%BE%E8%80%8C%E4%B8%8A">你可以随波逐流，也可以迎难而上</a></li>
+<li><a href="#%E6%8B%A5%E6%9C%89%E8%84%9A%E8%B8%8F%E5%AE%9E%E5%9C%B0%E7%9A%84%E4%B9%90%E8%A7%82%E7%B2%BE%E7%A5%9E">拥有脚踏实地的乐观精神</a></li>
+<li><a href="#%E5%88%87%E5%AE%9E%E5%8F%AF%E8%A1%8C%E7%9A%84%E6%96%B9%E6%B3%95">切实可行的方法</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E4%BB%96%E4%BA%BA%E5%9B%A0%E7%B4%A0%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">第五章 他人因素的重要性</a>
+<ul>
+<li><a href="#%E4%B8%8D%E4%BB%85%E4%BB%85%E8%A6%81%E6%B4%BB%E4%B8%8B%E6%9D%A5">不仅仅要活下来</a></li>
+<li><a href="#%E4%BB%96%E4%BA%BA%E7%9A%84%E7%9B%AE%E7%9A%84">他人的目的</a></li>
+<li><a href="#%E4%BB%96%E4%BA%BA%E7%9A%84%E8%A1%8C%E4%B8%BA">他人的行为</a></li>
+<li><a href="#%E6%89%BE%E5%88%B0%E4%BD%A0%E4%BB%AC%E7%9A%84%E5%85%B1%E5%90%8C%E7%82%B9">找到你们的共同点</a></li>
+<li><a href="#%E8%AE%A9%E5%88%AB%E4%BA%BA%E7%AB%99%E5%9C%A8%E4%BD%A0%E8%BF%99%E4%B8%80%E8%BE%B9">让别人站在你这一边</a></li>
+<li><a href="#%E4%BA%BA%E9%9D%A0%E8%A1%A3%E8%A3%85">人靠衣装</a></li>
+<li><a href="#%E7%BB%86%E8%8A%82%E7%9A%84%E4%BD%9C%E7%94%A8">细节的作用</a></li>
+<li><a href="#%E8%AE%AD%E7%BB%83%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%96%B9%E6%B3%95">训练、学习的最佳实践方法</a></li>
+<li><a href="#%E6%94%BE%E4%B8%8B%E4%BD%A0%E7%9A%84%E6%89%8B%E6%9C%BA">放下你的手机</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%89%B9%E8%AF%84%E4%BA%BA">如何批评人</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E8%A1%A8%E6%89%AC%E4%BA%BA">如何表扬人</a></li>
+<li><a href="#%E5%AF%B9%E4%BA%BA%E5%A5%BD%E4%B8%8D%E4%BB%85%E6%98%AF%E4%BB%B6%E7%BE%8E%E4%BA%8B%E8%BF%98%E6%98%AF%E8%81%AA%E6%98%8E%E4%B9%8B%E4%B8%BE">对人好不仅是件美事，还是聪明之举</a></li>
+<li><a href="#%E5%B9%BD%E9%BB%98%E9%9A%9C%E7%A2%8D">幽默障碍</a></li>
+<li><a href="#%E4%B8%8D%E6%98%AF%E6%9C%89%E5%A4%B4%E6%9C%89%E8%84%B8%E6%89%8D%E8%83%BD%E5%BD%93%E5%A5%BD%E9%A2%86%E5%AF%BC">不是有头有脸才能当好领导</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E9%80%82%E5%BA%94%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">第六章 适应的重要性</a>
+<ul>
+<li><a href="#%E8%B0%A6%E9%80%8A%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">谦逊的重要性</a></li>
+<li><a href="#%E7%BA%A6%E7%BF%B0%E9%9B%B7">约翰·雷</a></li>
+<li><a href="#%E6%8B%9C%E6%A0%BC%E8%AF%BA%E6%B2%99%E6%BC%A0%E7%94%9F%E5%AD%98">拜格诺——沙漠生存</a></li>
+<li><a href="#%E7%AA%81%E7%A0%B4%E6%88%91%E4%BB%AC%E7%9A%84%E5%B1%80%E9%99%90">突破我们的局限</a></li>
+<li><a href="#%E6%8D%89%E9%9B%BE%E4%BA%BA">捉雾人</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%A0%B9%E6%8D%AE%E5%91%A8%E5%9B%B4%E7%8E%AF%E5%A2%83%E8%B0%83%E6%95%B4%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A2%91%E7%8E%87">第七章 根据周围环境，调整自己的频率</a>
+<ul>
+<li><a href="#%E5%A4%9A%E6%8E%A5%E8%A7%A6%E5%A4%A7%E8%87%AA%E7%84%B6%E5%AF%B9%E4%BD%A0%E6%9C%89%E5%A5%BD%E5%A4%84">多接触大自然对你有好处</a></li>
+<li><a href="#%E7%94%B5%E5%AD%90%E6%97%B6%E4%BB%A3%E7%9A%84%E9%80%83%E4%BA%A1">电子时代的逃亡</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E6%9C%88%E4%BA%AE%E8%BE%A8%E6%98%8E%E6%96%B9%E4%BD%8D">如何利用月亮辨明方位</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E8%A6%81%E4%B9%88%E8%B5%A2%E8%A6%81%E4%B9%88%E5%AD%A6%E5%88%B0%E4%B8%9C%E8%A5%BF">第八章 要么赢，要么学到东西</a>
+<ul>
+<li><a href="#%E6%B7%B1%E5%85%A5%E4%B8%9B%E6%9E%97">深入丛林</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E4%B8%9B%E6%9E%97%E7%9A%84%E8%8D%92%E8%AF%9E%E8%AF%B4%E6%B3%95">关于丛林的荒诞说法</a></li>
+<li><a href="#%E4%B8%8D%E6%96%AD%E5%8A%AA%E5%8A%9B">不断努力</a></li>
+<li><a href="#%E6%B8%90%E5%85%A5%E4%BD%B3%E5%A2%83">渐入佳境</a></li>
+<li><a href="#%E4%B8%80%E4%BC%9A%E5%84%BF%E6%B9%BF%E4%B8%80%E4%BC%9A%E5%84%BF%E5%B9%B2">一会儿湿一会儿干</a></li>
+<li><a href="#%E5%AD%A6%E4%BC%9A%E4%BC%8A%E7%8F%AD%E6%97%8F%E7%9A%84%E8%8A%82%E5%A5%8F">学会伊班族的节奏</a></li>
+</ul>
+</li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%B8%80-%E5%A6%82%E4%BD%95%E7%94%9F%E7%81%AB">附录一 如何生火</a></li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%BA%8C-%E5%A6%82%E4%BD%95%E6%90%AD%E5%86%B0%E5%B1%8B">附录二 如何搭冰屋</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

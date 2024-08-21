@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x90a3;&#x4e9b;&#x6bd4;&#x62fc;&#x547d;&#x52aa;&#x529b;&#x66f4;&#x91cd;&#x8981;&#x7684;&#x4e8b;&#xff1a;&#x54c8;&#x4f5b;&#x5927;&#x5b66;&#x7814;&#x7a76;&#x4e86;75&#x5e74;&#x7684;&#x5e78;&#x798f;&#x8bfe;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x90a3;&#x4e9b;&#x6bd4;&#x62fc;&#x547d;&#x52aa;&#x529b;&#x66f4;&#x91cd;&#x8981;&#x7684;&#x4e8b;&#xff1a;&#x54c8;&#x4f5b;&#x5927;&#x5b66;&#x7814;&#x7a76;&#x4e86;75&#x5e74;&#x7684;&#x5e78;&#x798f;&#x8bfe;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,368 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="那些比拼命努力更重要的事哈佛大学研究了75年的幸福课">那些比拼命努力更重要的事：哈佛大学研究了75年的幸福课</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\cover\9751.jpg"></td><td>
+<h1 id="那些比拼命努力更重要的事哈佛大学研究了75年的幸福课">那些比拼命努力更重要的事：哈佛大学研究了75年的幸福课</h1>
+<center>[美]乔治·维兰特（George E. Vaillant） 著|刘晓同 牛津 李囡 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="01-时过境迁记忆改变">01 时过境迁，记忆改变</h3>
+<h4 id="经过时间修正的结论">经过时间修正的结论</h4>
+<h4 id="成年人的成长">成年人的成长</h4>
+<h4 id="关于人生可能性的艺术">关于人生可能性的艺术</h4>
+<h4 id="瞬间不能捕捉历史全貌所以我们需要长期研究">瞬间不能捕捉历史全貌，所以我们需要长期研究</h4>
+<h4 id="每个故事都是真实的人生">每个故事都是真实的人生</h4>
+<h4 id="亚当纽曼时间身份记忆和变化">亚当·纽曼：时间、身份、记忆和变化</h4>
+<h4 id="对人生我们永远充满好奇">对人生我们永远充满好奇</h4>
+<h3 id="02-实践揭示真理用什么来衡量人生">02 实践揭示真理——用什么来衡量人生</h3>
+<h4 id="人生赢家的十项指标">人生赢家的“十项指标”</h4>
+<h4 id="判断人生不是一件小事">判断人生不是一件小事</h4>
+<h4 id="成功的先天条件">成功的先天条件</h4>
+<h4 id="哪些变量最能决定人生">哪些变量最能决定人生</h4>
+<h4 id="戈弗雷卡米尔爱的表现形式">戈弗雷·卡米尔：爱的表现形式</h4>
+<h4 id="人生的变化从未间断">人生的变化从未间断</h4>
+<h3 id="03-哈佛大学格兰特研究那些事儿">03 哈佛大学格兰特研究那些事儿</h3>
+<h4 id="一项哈佛研究的启动">一项哈佛研究的启动</h4>
+<h4 id="从生物学到心理学">从生物学到心理学</h4>
+<h4 id="受研究对象">受研究对象</h4>
+<h4 id="怎样对受研究对象进行研究">怎样对受研究对象进行研究</h4>
+<h4 id="一开始我们这么做数据分析">一开始我们这么做数据分析</h4>
+<h4 id="结论总是需要不断更正的">结论总是需要不断更正的</h4>
+<h4 id="天堂里的烦恼">“天堂里的烦恼”</h4>
+<h4 id="二战的影响">“二战”的影响</h4>
+<h4 id="西方社会的变化对研究的影响">西方社会的变化对研究的影响</h4>
+<h4 id="关系驱动发展模式">关系驱动发展模式</h4>
+<h4 id="进一步数据分析">进一步数据分析</h4>
+<h4 id="我的研究方式">我的研究方式</h4>
+<h4 id="研究是一件很花钱的事情">研究是一件很花钱的事情</h4>
+<h4 id="他们的视角和我们的视角">他们的视角和我们的视角</h4>
+<h4 id="阿特米勒创伤后的成长">阿特·米勒：创伤后的成长</h4>
+<h4 id="永恒的快乐">永恒的快乐</h4>
+<h4 id="亲密关系对人生的绝对影响">亲密关系对人生的绝对影响</h4>
+<h3 id="04-儿童和青少年时期对人生的影响">04 儿童和青少年时期对人生的影响</h3>
+<h4 id="重新评估童年环境">重新评估童年环境</h4>
+<h4 id="奥利弗福尔摩斯童年舒适对老年的影响">奥利弗·福尔摩斯：童年舒适对老年的影响</h4>
+<h4 id="萨姆拉弗雷斯童年悲惨的持久诅咒">萨姆·拉弗雷斯：童年悲惨的持久诅咒</h4>
+<h4 id="无论好坏童年影响一生">无论好坏，童年影响一生</h4>
+<h4 id="遗传与环境对人的影响">遗传与环境对人的影响</h4>
+<h4 id="父子和母子关系对人生的影响还是有区别的">父子和母子关系对人生的影响还是有区别的</h4>
+<h4 id="恢复失去的爱">恢复失去的爱</h4>
+<h4 id="童年并不总会影响整个人生">童年并不总会影响整个人生</h4>
+<h4 id="整体童年而非单一方面与未来的关系">整体童年而非单一方面与未来的关系</h4>
+<h3 id="05-人生的成熟">05 人生的成熟</h3>
+<h4 id="埃里克森的模式主题与变奏">埃里克森的模式：主题与变奏</h4>
+<h4 id="埃里克森式的生活">埃里克森式的生活</h4>
+<h4 id="查尔斯博特赖特同理心的典范">查尔斯·博特赖特：同理心的典范</h4>
+<h4 id="彼得佩恩当人们不成长">彼得·佩恩：当人们不成长</h4>
+<h4 id="比尔迪马吉奥不需要多高的智商也能成为受尊敬的人">比尔·迪马吉奥：不需要多高的智商也能成为受尊敬的人</h4>
+<h4 id="毛毛虫和蝴蝶">毛毛虫和蝴蝶</h4>
+<h4 id="阿尔杰农扬成长的挫败">阿尔杰农·扬：成长的挫败</h4>
+<h4 id="最后的岁月">最后的岁月</h4>
+<h4 id="人生的完整">人生的完整</h4>
+<h3 id="06-如果你有一个爱你的人">06 如果你有一个爱你的人</h3>
+<h4 id="婚姻里如何衡量幸福">婚姻里如何衡量幸福？</h4>
+<h4 id="用足够长的时间去理解婚姻">用足够长的时间去理解婚姻</h4>
+<h4 id="三个关于婚姻的故事">三个关于婚姻的故事</h4>
+<h4 id="婚姻的好坏统计上的差异">婚姻的好坏：统计上的差异</h4>
+<h4 id="婚姻与性">婚姻与性</h4>
+<h4 id="对离婚的再度评价">对离婚的再度评价</h4>
+<h4 id="能长久地爱一个人是有益的">能长久地爱一个人是有益的</h4>
+<h3 id="07-活到90岁">07 活到90岁</h3>
+<h4 id="两种生活">两种生活</h4>
+<h4 id="通往健康衰老的道路">通往健康衰老的道路</h4>
+<h4 id="四个有关衰老的研究">四个有关衰老的研究</h4>
+<h4 id="怎样避免早亡">怎样避免早亡</h4>
+<h4 id="我们无法控制">我们无法控制？</h4>
+<h4 id="年龄和认知">年龄和认知</h4>
+<h4 id="有关衰老什么不重要">有关衰老什么不重要</h4>
+<h4 id="如何活到90岁">如何活到90岁</h4>
+<h3 id="08-应该如何应对这个世界">08 应该如何应对这个世界</h3>
+<h4 id="什么是防御机制">什么是防御机制</h4>
+<h4 id="防御等级">防御等级</h4>
+<h4 id="识别防御性风格">识别防御性风格</h4>
+<h4 id="防御风格仍然重要吗">防御风格仍然重要吗？</h4>
+<h4 id="狄伦布莱特用竞争精神应对世界">狄伦·布莱特：用竞争精神应对世界</h4>
+<h4 id="弗兰西斯德米尔压抑的防御">弗兰西斯·德米尔：压抑的防御</h4>
+<h4 id="等级的前瞻性证实">等级的前瞻性证实</h4>
+<h4 id="防御机制的种类性别教育和权利">防御机制的种类，性别、教育和权利</h4>
+<h4 id="关于防御机制的结论">关于防御机制的结论</h4>
+<h3 id="09-酗酒要比你知道的还严重">09 酗酒要比你知道的还严重</h3>
+<h4 id="七个问题">七个问题</h4>
+<h4 id="詹姆斯奥尼尔酗酒是一种疾病">詹姆斯·奥尼尔：酗酒是一种疾病？</h4>
+<h4 id="弗朗西斯洛维尔可以被控制的酒精">弗朗西斯·洛维尔：可以被控制的酒精</h4>
+<h4 id="比尔罗曼酗酒者的不稳定">比尔·罗曼：酗酒者的不稳定</h4>
+<h4 id="酗酒是原因而不是结果">酗酒是原因而不是结果</h4>
+<h3 id="10-人生的意外发现">10 人生的意外发现</h3>
+<h4 id="为什么富人比穷人活得久">为什么富人比穷人活得久？</h4>
+<h4 id="创伤后应激障碍是经历造成还是人格障碍">创伤后应激障碍是经历造成还是人格障碍？</h4>
+<h4 id="政治精神健康与性">政治、精神健康与性</h4>
+<h4 id="宗教对人生的影响不只是信仰本身">宗教对人生的影响不只是信仰本身</h4>
+<h4 id="外祖父的重要性">外祖父的重要性</h4>
+<h3 id="11-持续的总结总能带来惊喜">11 持续的总结总能带来惊喜</h3>
+<h4 id="关于人生的研究必然要贯穿一生">关于人生的研究必然要贯穿一生</h4>
+<h4 id="持续的预测研究是一份礼物">持续的预测研究是一份礼物</h4>
+<h4 id="无意识适应">无意识适应</h4>
+<h4 id="欧内斯特克洛维斯真正的艺术家">欧内斯特·克洛维斯：真正的艺术家</h4>
+<h4 id="如果愿望成真">如果愿望成真……</h4>
+<h4 id="结语简单看完人的一生">结语：简单看完人的一生</h4>
+<h3 id="附录">附录</h3>
+<h4 id="附录一采访安排">附录一：采访安排</h4>
+<h4 id="附录二波士顿贫民区男性研究对象与特曼女性研究对象">附录二：波士顿贫民区男性研究对象与特曼女性研究对象</h4>
+<h4 id="附录三童年评估量表">附录三：童年评估量表</h4>
+<h4 id="附录四成人发展量表">附录四：成人发展量表</h4>
+<h4 id="附录五显性大学人格特征">附录五：显性大学人格特征</h4>
+<h4 id="附录六事例人物介绍">附录六：事例人物介绍</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#01-%E6%97%B6%E8%BF%87%E5%A2%83%E8%BF%81%E8%AE%B0%E5%BF%86%E6%94%B9%E5%8F%98">01 时过境迁，记忆改变</a>
+<ul>
+<li><a href="#%E7%BB%8F%E8%BF%87%E6%97%B6%E9%97%B4%E4%BF%AE%E6%AD%A3%E7%9A%84%E7%BB%93%E8%AE%BA">经过时间修正的结论</a></li>
+<li><a href="#%E6%88%90%E5%B9%B4%E4%BA%BA%E7%9A%84%E6%88%90%E9%95%BF">成年人的成长</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E4%BA%BA%E7%94%9F%E5%8F%AF%E8%83%BD%E6%80%A7%E7%9A%84%E8%89%BA%E6%9C%AF">关于人生可能性的艺术</a></li>
+<li><a href="#%E7%9E%AC%E9%97%B4%E4%B8%8D%E8%83%BD%E6%8D%95%E6%8D%89%E5%8E%86%E5%8F%B2%E5%85%A8%E8%B2%8C%E6%89%80%E4%BB%A5%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E9%95%BF%E6%9C%9F%E7%A0%94%E7%A9%B6">瞬间不能捕捉历史全貌，所以我们需要长期研究</a></li>
+<li><a href="#%E6%AF%8F%E4%B8%AA%E6%95%85%E4%BA%8B%E9%83%BD%E6%98%AF%E7%9C%9F%E5%AE%9E%E7%9A%84%E4%BA%BA%E7%94%9F">每个故事都是真实的人生</a></li>
+<li><a href="#%E4%BA%9A%E5%BD%93%E7%BA%BD%E6%9B%BC%E6%97%B6%E9%97%B4%E8%BA%AB%E4%BB%BD%E8%AE%B0%E5%BF%86%E5%92%8C%E5%8F%98%E5%8C%96">亚当·纽曼：时间、身份、记忆和变化</a></li>
+<li><a href="#%E5%AF%B9%E4%BA%BA%E7%94%9F%E6%88%91%E4%BB%AC%E6%B0%B8%E8%BF%9C%E5%85%85%E6%BB%A1%E5%A5%BD%E5%A5%87">对人生我们永远充满好奇</a></li>
+</ul>
+</li>
+<li><a href="#02-%E5%AE%9E%E8%B7%B5%E6%8F%AD%E7%A4%BA%E7%9C%9F%E7%90%86%E7%94%A8%E4%BB%80%E4%B9%88%E6%9D%A5%E8%A1%A1%E9%87%8F%E4%BA%BA%E7%94%9F">02 实践揭示真理——用什么来衡量人生</a>
+<ul>
+<li><a href="#%E4%BA%BA%E7%94%9F%E8%B5%A2%E5%AE%B6%E7%9A%84%E5%8D%81%E9%A1%B9%E6%8C%87%E6%A0%87">人生赢家的“十项指标”</a></li>
+<li><a href="#%E5%88%A4%E6%96%AD%E4%BA%BA%E7%94%9F%E4%B8%8D%E6%98%AF%E4%B8%80%E4%BB%B6%E5%B0%8F%E4%BA%8B">判断人生不是一件小事</a></li>
+<li><a href="#%E6%88%90%E5%8A%9F%E7%9A%84%E5%85%88%E5%A4%A9%E6%9D%A1%E4%BB%B6">成功的先天条件</a></li>
+<li><a href="#%E5%93%AA%E4%BA%9B%E5%8F%98%E9%87%8F%E6%9C%80%E8%83%BD%E5%86%B3%E5%AE%9A%E4%BA%BA%E7%94%9F">哪些变量最能决定人生</a></li>
+<li><a href="#%E6%88%88%E5%BC%97%E9%9B%B7%E5%8D%A1%E7%B1%B3%E5%B0%94%E7%88%B1%E7%9A%84%E8%A1%A8%E7%8E%B0%E5%BD%A2%E5%BC%8F">戈弗雷·卡米尔：爱的表现形式</a></li>
+<li><a href="#%E4%BA%BA%E7%94%9F%E7%9A%84%E5%8F%98%E5%8C%96%E4%BB%8E%E6%9C%AA%E9%97%B4%E6%96%AD">人生的变化从未间断</a></li>
+</ul>
+</li>
+<li><a href="#03-%E5%93%88%E4%BD%9B%E5%A4%A7%E5%AD%A6%E6%A0%BC%E5%85%B0%E7%89%B9%E7%A0%94%E7%A9%B6%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF">03 哈佛大学格兰特研究那些事儿</a>
+<ul>
+<li><a href="#%E4%B8%80%E9%A1%B9%E5%93%88%E4%BD%9B%E7%A0%94%E7%A9%B6%E7%9A%84%E5%90%AF%E5%8A%A8">一项哈佛研究的启动</a></li>
+<li><a href="#%E4%BB%8E%E7%94%9F%E7%89%A9%E5%AD%A6%E5%88%B0%E5%BF%83%E7%90%86%E5%AD%A6">从生物学到心理学</a></li>
+<li><a href="#%E5%8F%97%E7%A0%94%E7%A9%B6%E5%AF%B9%E8%B1%A1">受研究对象</a></li>
+<li><a href="#%E6%80%8E%E6%A0%B7%E5%AF%B9%E5%8F%97%E7%A0%94%E7%A9%B6%E5%AF%B9%E8%B1%A1%E8%BF%9B%E8%A1%8C%E7%A0%94%E7%A9%B6">怎样对受研究对象进行研究</a></li>
+<li><a href="#%E4%B8%80%E5%BC%80%E5%A7%8B%E6%88%91%E4%BB%AC%E8%BF%99%E4%B9%88%E5%81%9A%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">一开始我们这么做数据分析</a></li>
+<li><a href="#%E7%BB%93%E8%AE%BA%E6%80%BB%E6%98%AF%E9%9C%80%E8%A6%81%E4%B8%8D%E6%96%AD%E6%9B%B4%E6%AD%A3%E7%9A%84">结论总是需要不断更正的</a></li>
+<li><a href="#%E5%A4%A9%E5%A0%82%E9%87%8C%E7%9A%84%E7%83%A6%E6%81%BC">“天堂里的烦恼”</a></li>
+<li><a href="#%E4%BA%8C%E6%88%98%E7%9A%84%E5%BD%B1%E5%93%8D">“二战”的影响</a></li>
+<li><a href="#%E8%A5%BF%E6%96%B9%E7%A4%BE%E4%BC%9A%E7%9A%84%E5%8F%98%E5%8C%96%E5%AF%B9%E7%A0%94%E7%A9%B6%E7%9A%84%E5%BD%B1%E5%93%8D">西方社会的变化对研究的影响</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E9%A9%B1%E5%8A%A8%E5%8F%91%E5%B1%95%E6%A8%A1%E5%BC%8F">关系驱动发展模式</a></li>
+<li><a href="#%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">进一步数据分析</a></li>
+<li><a href="#%E6%88%91%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%BC%8F">我的研究方式</a></li>
+<li><a href="#%E7%A0%94%E7%A9%B6%E6%98%AF%E4%B8%80%E4%BB%B6%E5%BE%88%E8%8A%B1%E9%92%B1%E7%9A%84%E4%BA%8B%E6%83%85">研究是一件很花钱的事情</a></li>
+<li><a href="#%E4%BB%96%E4%BB%AC%E7%9A%84%E8%A7%86%E8%A7%92%E5%92%8C%E6%88%91%E4%BB%AC%E7%9A%84%E8%A7%86%E8%A7%92">他们的视角和我们的视角</a></li>
+<li><a href="#%E9%98%BF%E7%89%B9%E7%B1%B3%E5%8B%92%E5%88%9B%E4%BC%A4%E5%90%8E%E7%9A%84%E6%88%90%E9%95%BF">阿特·米勒：创伤后的成长</a></li>
+<li><a href="#%E6%B0%B8%E6%81%92%E7%9A%84%E5%BF%AB%E4%B9%90">永恒的快乐</a></li>
+<li><a href="#%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB%E5%AF%B9%E4%BA%BA%E7%94%9F%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%BD%B1%E5%93%8D">亲密关系对人生的绝对影响</a></li>
+</ul>
+</li>
+<li><a href="#04-%E5%84%BF%E7%AB%A5%E5%92%8C%E9%9D%92%E5%B0%91%E5%B9%B4%E6%97%B6%E6%9C%9F%E5%AF%B9%E4%BA%BA%E7%94%9F%E7%9A%84%E5%BD%B1%E5%93%8D">04 儿童和青少年时期对人生的影响</a>
+<ul>
+<li><a href="#%E9%87%8D%E6%96%B0%E8%AF%84%E4%BC%B0%E7%AB%A5%E5%B9%B4%E7%8E%AF%E5%A2%83">重新评估童年环境</a></li>
+<li><a href="#%E5%A5%A5%E5%88%A9%E5%BC%97%E7%A6%8F%E5%B0%94%E6%91%A9%E6%96%AF%E7%AB%A5%E5%B9%B4%E8%88%92%E9%80%82%E5%AF%B9%E8%80%81%E5%B9%B4%E7%9A%84%E5%BD%B1%E5%93%8D">奥利弗·福尔摩斯：童年舒适对老年的影响</a></li>
+<li><a href="#%E8%90%A8%E5%A7%86%E6%8B%89%E5%BC%97%E9%9B%B7%E6%96%AF%E7%AB%A5%E5%B9%B4%E6%82%B2%E6%83%A8%E7%9A%84%E6%8C%81%E4%B9%85%E8%AF%85%E5%92%92">萨姆·拉弗雷斯：童年悲惨的持久诅咒</a></li>
+<li><a href="#%E6%97%A0%E8%AE%BA%E5%A5%BD%E5%9D%8F%E7%AB%A5%E5%B9%B4%E5%BD%B1%E5%93%8D%E4%B8%80%E7%94%9F">无论好坏，童年影响一生</a></li>
+<li><a href="#%E9%81%97%E4%BC%A0%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%AF%B9%E4%BA%BA%E7%9A%84%E5%BD%B1%E5%93%8D">遗传与环境对人的影响</a></li>
+<li><a href="#%E7%88%B6%E5%AD%90%E5%92%8C%E6%AF%8D%E5%AD%90%E5%85%B3%E7%B3%BB%E5%AF%B9%E4%BA%BA%E7%94%9F%E7%9A%84%E5%BD%B1%E5%93%8D%E8%BF%98%E6%98%AF%E6%9C%89%E5%8C%BA%E5%88%AB%E7%9A%84">父子和母子关系对人生的影响还是有区别的</a></li>
+<li><a href="#%E6%81%A2%E5%A4%8D%E5%A4%B1%E5%8E%BB%E7%9A%84%E7%88%B1">恢复失去的爱</a></li>
+<li><a href="#%E7%AB%A5%E5%B9%B4%E5%B9%B6%E4%B8%8D%E6%80%BB%E4%BC%9A%E5%BD%B1%E5%93%8D%E6%95%B4%E4%B8%AA%E4%BA%BA%E7%94%9F">童年并不总会影响整个人生</a></li>
+<li><a href="#%E6%95%B4%E4%BD%93%E7%AB%A5%E5%B9%B4%E8%80%8C%E9%9D%9E%E5%8D%95%E4%B8%80%E6%96%B9%E9%9D%A2%E4%B8%8E%E6%9C%AA%E6%9D%A5%E7%9A%84%E5%85%B3%E7%B3%BB">整体童年而非单一方面与未来的关系</a></li>
+</ul>
+</li>
+<li><a href="#05-%E4%BA%BA%E7%94%9F%E7%9A%84%E6%88%90%E7%86%9F">05 人生的成熟</a>
+<ul>
+<li><a href="#%E5%9F%83%E9%87%8C%E5%85%8B%E6%A3%AE%E7%9A%84%E6%A8%A1%E5%BC%8F%E4%B8%BB%E9%A2%98%E4%B8%8E%E5%8F%98%E5%A5%8F">埃里克森的模式：主题与变奏</a></li>
+<li><a href="#%E5%9F%83%E9%87%8C%E5%85%8B%E6%A3%AE%E5%BC%8F%E7%9A%84%E7%94%9F%E6%B4%BB">埃里克森式的生活</a></li>
+<li><a href="#%E6%9F%A5%E5%B0%94%E6%96%AF%E5%8D%9A%E7%89%B9%E8%B5%96%E7%89%B9%E5%90%8C%E7%90%86%E5%BF%83%E7%9A%84%E5%85%B8%E8%8C%83">查尔斯·博特赖特：同理心的典范</a></li>
+<li><a href="#%E5%BD%BC%E5%BE%97%E4%BD%A9%E6%81%A9%E5%BD%93%E4%BA%BA%E4%BB%AC%E4%B8%8D%E6%88%90%E9%95%BF">彼得·佩恩：当人们不成长</a></li>
+<li><a href="#%E6%AF%94%E5%B0%94%E8%BF%AA%E9%A9%AC%E5%90%89%E5%A5%A5%E4%B8%8D%E9%9C%80%E8%A6%81%E5%A4%9A%E9%AB%98%E7%9A%84%E6%99%BA%E5%95%86%E4%B9%9F%E8%83%BD%E6%88%90%E4%B8%BA%E5%8F%97%E5%B0%8A%E6%95%AC%E7%9A%84%E4%BA%BA">比尔·迪马吉奥：不需要多高的智商也能成为受尊敬的人</a></li>
+<li><a href="#%E6%AF%9B%E6%AF%9B%E8%99%AB%E5%92%8C%E8%9D%B4%E8%9D%B6">毛毛虫和蝴蝶</a></li>
+<li><a href="#%E9%98%BF%E5%B0%94%E6%9D%B0%E5%86%9C%E6%89%AC%E6%88%90%E9%95%BF%E7%9A%84%E6%8C%AB%E8%B4%A5">阿尔杰农·扬：成长的挫败</a></li>
+<li><a href="#%E6%9C%80%E5%90%8E%E7%9A%84%E5%B2%81%E6%9C%88">最后的岁月</a></li>
+<li><a href="#%E4%BA%BA%E7%94%9F%E7%9A%84%E5%AE%8C%E6%95%B4">人生的完整</a></li>
+</ul>
+</li>
+<li><a href="#06-%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%9C%89%E4%B8%80%E4%B8%AA%E7%88%B1%E4%BD%A0%E7%9A%84%E4%BA%BA">06 如果你有一个爱你的人</a>
+<ul>
+<li><a href="#%E5%A9%9A%E5%A7%BB%E9%87%8C%E5%A6%82%E4%BD%95%E8%A1%A1%E9%87%8F%E5%B9%B8%E7%A6%8F">婚姻里如何衡量幸福？</a></li>
+<li><a href="#%E7%94%A8%E8%B6%B3%E5%A4%9F%E9%95%BF%E7%9A%84%E6%97%B6%E9%97%B4%E5%8E%BB%E7%90%86%E8%A7%A3%E5%A9%9A%E5%A7%BB">用足够长的时间去理解婚姻</a></li>
+<li><a href="#%E4%B8%89%E4%B8%AA%E5%85%B3%E4%BA%8E%E5%A9%9A%E5%A7%BB%E7%9A%84%E6%95%85%E4%BA%8B">三个关于婚姻的故事</a></li>
+<li><a href="#%E5%A9%9A%E5%A7%BB%E7%9A%84%E5%A5%BD%E5%9D%8F%E7%BB%9F%E8%AE%A1%E4%B8%8A%E7%9A%84%E5%B7%AE%E5%BC%82">婚姻的好坏：统计上的差异</a></li>
+<li><a href="#%E5%A9%9A%E5%A7%BB%E4%B8%8E%E6%80%A7">婚姻与性</a></li>
+<li><a href="#%E5%AF%B9%E7%A6%BB%E5%A9%9A%E7%9A%84%E5%86%8D%E5%BA%A6%E8%AF%84%E4%BB%B7">对离婚的再度评价</a></li>
+<li><a href="#%E8%83%BD%E9%95%BF%E4%B9%85%E5%9C%B0%E7%88%B1%E4%B8%80%E4%B8%AA%E4%BA%BA%E6%98%AF%E6%9C%89%E7%9B%8A%E7%9A%84">能长久地爱一个人是有益的</a></li>
+</ul>
+</li>
+<li><a href="#07-%E6%B4%BB%E5%88%B090%E5%B2%81">07 活到90岁</a>
+<ul>
+<li><a href="#%E4%B8%A4%E7%A7%8D%E7%94%9F%E6%B4%BB">两种生活</a></li>
+<li><a href="#%E9%80%9A%E5%BE%80%E5%81%A5%E5%BA%B7%E8%A1%B0%E8%80%81%E7%9A%84%E9%81%93%E8%B7%AF">通往健康衰老的道路</a></li>
+<li><a href="#%E5%9B%9B%E4%B8%AA%E6%9C%89%E5%85%B3%E8%A1%B0%E8%80%81%E7%9A%84%E7%A0%94%E7%A9%B6">四个有关衰老的研究</a></li>
+<li><a href="#%E6%80%8E%E6%A0%B7%E9%81%BF%E5%85%8D%E6%97%A9%E4%BA%A1">怎样避免早亡</a></li>
+<li><a href="#%E6%88%91%E4%BB%AC%E6%97%A0%E6%B3%95%E6%8E%A7%E5%88%B6">我们无法控制？</a></li>
+<li><a href="#%E5%B9%B4%E9%BE%84%E5%92%8C%E8%AE%A4%E7%9F%A5">年龄和认知</a></li>
+<li><a href="#%E6%9C%89%E5%85%B3%E8%A1%B0%E8%80%81%E4%BB%80%E4%B9%88%E4%B8%8D%E9%87%8D%E8%A6%81">有关衰老什么不重要</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%B4%BB%E5%88%B090%E5%B2%81">如何活到90岁</a></li>
+</ul>
+</li>
+<li><a href="#08-%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E5%BA%94%E5%AF%B9%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C">08 应该如何应对这个世界</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%98%B2%E5%BE%A1%E6%9C%BA%E5%88%B6">什么是防御机制</a></li>
+<li><a href="#%E9%98%B2%E5%BE%A1%E7%AD%89%E7%BA%A7">防御等级</a></li>
+<li><a href="#%E8%AF%86%E5%88%AB%E9%98%B2%E5%BE%A1%E6%80%A7%E9%A3%8E%E6%A0%BC">识别防御性风格</a></li>
+<li><a href="#%E9%98%B2%E5%BE%A1%E9%A3%8E%E6%A0%BC%E4%BB%8D%E7%84%B6%E9%87%8D%E8%A6%81%E5%90%97">防御风格仍然重要吗？</a></li>
+<li><a href="#%E7%8B%84%E4%BC%A6%E5%B8%83%E8%8E%B1%E7%89%B9%E7%94%A8%E7%AB%9E%E4%BA%89%E7%B2%BE%E7%A5%9E%E5%BA%94%E5%AF%B9%E4%B8%96%E7%95%8C">狄伦·布莱特：用竞争精神应对世界</a></li>
+<li><a href="#%E5%BC%97%E5%85%B0%E8%A5%BF%E6%96%AF%E5%BE%B7%E7%B1%B3%E5%B0%94%E5%8E%8B%E6%8A%91%E7%9A%84%E9%98%B2%E5%BE%A1">弗兰西斯·德米尔：压抑的防御</a></li>
+<li><a href="#%E7%AD%89%E7%BA%A7%E7%9A%84%E5%89%8D%E7%9E%BB%E6%80%A7%E8%AF%81%E5%AE%9E">等级的前瞻性证实</a></li>
+<li><a href="#%E9%98%B2%E5%BE%A1%E6%9C%BA%E5%88%B6%E7%9A%84%E7%A7%8D%E7%B1%BB%E6%80%A7%E5%88%AB%E6%95%99%E8%82%B2%E5%92%8C%E6%9D%83%E5%88%A9">防御机制的种类，性别、教育和权利</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E9%98%B2%E5%BE%A1%E6%9C%BA%E5%88%B6%E7%9A%84%E7%BB%93%E8%AE%BA">关于防御机制的结论</a></li>
+</ul>
+</li>
+<li><a href="#09-%E9%85%97%E9%85%92%E8%A6%81%E6%AF%94%E4%BD%A0%E7%9F%A5%E9%81%93%E7%9A%84%E8%BF%98%E4%B8%A5%E9%87%8D">09 酗酒要比你知道的还严重</a>
+<ul>
+<li><a href="#%E4%B8%83%E4%B8%AA%E9%97%AE%E9%A2%98">七个问题</a></li>
+<li><a href="#%E8%A9%B9%E5%A7%86%E6%96%AF%E5%A5%A5%E5%B0%BC%E5%B0%94%E9%85%97%E9%85%92%E6%98%AF%E4%B8%80%E7%A7%8D%E7%96%BE%E7%97%85">詹姆斯·奥尼尔：酗酒是一种疾病？</a></li>
+<li><a href="#%E5%BC%97%E6%9C%97%E8%A5%BF%E6%96%AF%E6%B4%9B%E7%BB%B4%E5%B0%94%E5%8F%AF%E4%BB%A5%E8%A2%AB%E6%8E%A7%E5%88%B6%E7%9A%84%E9%85%92%E7%B2%BE">弗朗西斯·洛维尔：可以被控制的酒精</a></li>
+<li><a href="#%E6%AF%94%E5%B0%94%E7%BD%97%E6%9B%BC%E9%85%97%E9%85%92%E8%80%85%E7%9A%84%E4%B8%8D%E7%A8%B3%E5%AE%9A">比尔·罗曼：酗酒者的不稳定</a></li>
+<li><a href="#%E9%85%97%E9%85%92%E6%98%AF%E5%8E%9F%E5%9B%A0%E8%80%8C%E4%B8%8D%E6%98%AF%E7%BB%93%E6%9E%9C">酗酒是原因而不是结果</a></li>
+</ul>
+</li>
+<li><a href="#10-%E4%BA%BA%E7%94%9F%E7%9A%84%E6%84%8F%E5%A4%96%E5%8F%91%E7%8E%B0">10 人生的意外发现</a>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AF%8C%E4%BA%BA%E6%AF%94%E7%A9%B7%E4%BA%BA%E6%B4%BB%E5%BE%97%E4%B9%85">为什么富人比穷人活得久？</a></li>
+<li><a href="#%E5%88%9B%E4%BC%A4%E5%90%8E%E5%BA%94%E6%BF%80%E9%9A%9C%E7%A2%8D%E6%98%AF%E7%BB%8F%E5%8E%86%E9%80%A0%E6%88%90%E8%BF%98%E6%98%AF%E4%BA%BA%E6%A0%BC%E9%9A%9C%E7%A2%8D">创伤后应激障碍是经历造成还是人格障碍？</a></li>
+<li><a href="#%E6%94%BF%E6%B2%BB%E7%B2%BE%E7%A5%9E%E5%81%A5%E5%BA%B7%E4%B8%8E%E6%80%A7">政治、精神健康与性</a></li>
+<li><a href="#%E5%AE%97%E6%95%99%E5%AF%B9%E4%BA%BA%E7%94%9F%E7%9A%84%E5%BD%B1%E5%93%8D%E4%B8%8D%E5%8F%AA%E6%98%AF%E4%BF%A1%E4%BB%B0%E6%9C%AC%E8%BA%AB">宗教对人生的影响不只是信仰本身</a></li>
+<li><a href="#%E5%A4%96%E7%A5%96%E7%88%B6%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">外祖父的重要性</a></li>
+</ul>
+</li>
+<li><a href="#11-%E6%8C%81%E7%BB%AD%E7%9A%84%E6%80%BB%E7%BB%93%E6%80%BB%E8%83%BD%E5%B8%A6%E6%9D%A5%E6%83%8A%E5%96%9C">11 持续的总结总能带来惊喜</a>
+<ul>
+<li><a href="#%E5%85%B3%E4%BA%8E%E4%BA%BA%E7%94%9F%E7%9A%84%E7%A0%94%E7%A9%B6%E5%BF%85%E7%84%B6%E8%A6%81%E8%B4%AF%E7%A9%BF%E4%B8%80%E7%94%9F">关于人生的研究必然要贯穿一生</a></li>
+<li><a href="#%E6%8C%81%E7%BB%AD%E7%9A%84%E9%A2%84%E6%B5%8B%E7%A0%94%E7%A9%B6%E6%98%AF%E4%B8%80%E4%BB%BD%E7%A4%BC%E7%89%A9">持续的预测研究是一份礼物</a></li>
+<li><a href="#%E6%97%A0%E6%84%8F%E8%AF%86%E9%80%82%E5%BA%94">无意识适应</a></li>
+<li><a href="#%E6%AC%A7%E5%86%85%E6%96%AF%E7%89%B9%E5%85%8B%E6%B4%9B%E7%BB%B4%E6%96%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E8%89%BA%E6%9C%AF%E5%AE%B6">欧内斯特·克洛维斯：真正的艺术家</a></li>
+<li><a href="#%E5%A6%82%E6%9E%9C%E6%84%BF%E6%9C%9B%E6%88%90%E7%9C%9F">如果愿望成真……</a></li>
+<li><a href="#%E7%BB%93%E8%AF%AD%E7%AE%80%E5%8D%95%E7%9C%8B%E5%AE%8C%E4%BA%BA%E7%9A%84%E4%B8%80%E7%94%9F">结语：简单看完人的一生</a></li>
+</ul>
+</li>
+<li><a href="#%E9%99%84%E5%BD%95">附录</a>
+<ul>
+<li><a href="#%E9%99%84%E5%BD%95%E4%B8%80%E9%87%87%E8%AE%BF%E5%AE%89%E6%8E%92">附录一：采访安排</a></li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%BA%8C%E6%B3%A2%E5%A3%AB%E9%A1%BF%E8%B4%AB%E6%B0%91%E5%8C%BA%E7%94%B7%E6%80%A7%E7%A0%94%E7%A9%B6%E5%AF%B9%E8%B1%A1%E4%B8%8E%E7%89%B9%E6%9B%BC%E5%A5%B3%E6%80%A7%E7%A0%94%E7%A9%B6%E5%AF%B9%E8%B1%A1">附录二：波士顿贫民区男性研究对象与特曼女性研究对象</a></li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%B8%89%E7%AB%A5%E5%B9%B4%E8%AF%84%E4%BC%B0%E9%87%8F%E8%A1%A8">附录三：童年评估量表</a></li>
+<li><a href="#%E9%99%84%E5%BD%95%E5%9B%9B%E6%88%90%E4%BA%BA%E5%8F%91%E5%B1%95%E9%87%8F%E8%A1%A8">附录四：成人发展量表</a></li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%BA%94%E6%98%BE%E6%80%A7%E5%A4%A7%E5%AD%A6%E4%BA%BA%E6%A0%BC%E7%89%B9%E5%BE%81">附录五：显性大学人格特征</a></li>
+<li><a href="#%E9%99%84%E5%BD%95%E5%85%AD%E4%BA%8B%E4%BE%8B%E4%BA%BA%E7%89%A9%E4%BB%8B%E7%BB%8D">附录六：事例人物介绍</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

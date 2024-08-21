@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x65e0;&#x5904;&#x4e0d;&#x5728;&#xff1a;&#x5feb;&#x9012;&#x6539;&#x53d8;&#x4e2d;&#x56fd;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x65e0;&#x5904;&#x4e0d;&#x5728;&#xff1a;&#x5feb;&#x9012;&#x6539;&#x53d8;&#x4e2d;&#x56fd;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,450 +31,230 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
-		z-index: 1;
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="无处不在快递改变中国">无处不在：快递改变中国</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\cover\11528.jpg"></td><td>
+<h1 id="无处不在快递改变中国">无处不在：快递改变中国</h1>
+<center>中国邮政快递报社</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="序言一">序言一</h3>
+<h3 id="序言二">序言二</h3>
+<h3 id="自序">自序</h3>
+<h3 id="01-19781992-不再犹豫">01 1978—1992 不再犹豫</h3>
+<h4 id="1978潜流和潮水">1978，潜流和潮水</h4>
+<h4 id="1979万物生长">1979，万物生长</h4>
+<h4 id="1980开闸放水">1980，开闸放水</h4>
+<h4 id="1981摸着石头过河">1981，摸着石头过河</h4>
+<h4 id="1982在希望的田野上">1982，在希望的田野上</h4>
+<h4 id="1983步履不停">1983，步履不停</h4>
+<h4 id="1984激情燃烧">1984，激情燃烧</h4>
+<h4 id="1985命运的伏笔">1985，命运的伏笔</h4>
+<h4 id="1986生于毫末">1986，生于毫末</h4>
+<h4 id="1987越过长城">1987，越过长城</h4>
+<h4 id="1988隧道渐短">1988，隧道渐短</h4>
+<h4 id="1989沉舟侧畔">1989，沉舟侧畔</h4>
+<h4 id="1990起承转合">1990，起承转合</h4>
+<h4 id="1991不安分的青春">1991，不安分的青春</h4>
+<h4 id="1992浩荡东风里">1992，浩荡东风里</h4>
+<h3 id="02-19931998-伴你闯荡">02 1993—1998 伴你闯荡</h3>
+<h4 id="1993向上生长">1993，向上生长</h4>
+<h4 id="1994无惧未来">1994，无惧未来</h4>
+<h4 id="1995命运交集">1995，命运交集</h4>
+<h4 id="1996暗语297">1996，暗语297</h4>
+<h4 id="1997香江两岸">1997，香江两岸</h4>
+<h4 id="1998高掌远跖">1998，高掌远跖</h4>
+<h3 id="03-19992006-冲开一切">03 1999—2006 冲开一切</h3>
+<h4 id="1999芝麻开门">1999，芝麻开门</h4>
+<h4 id="2000重新想象">2000，重新想象</h4>
+<h4 id="2001世界之外">2001，世界之外</h4>
+<h4 id="2002快递风波">2002，快递风波</h4>
+<h4 id="2003关键一役">2003，关键一役</h4>
+<h4 id="2004飞翔">2004，飞翔</h4>
+<h4 id="2005买和卖">2005，买和卖</h4>
+<h4 id="2006曙光初现">2006，曙光初现</h4>
+<h3 id="04-20072018-海阔天空">04 2007—2018 海阔天空</h3>
+<h4 id="2007前路是光">2007，前路是光</h4>
+<h4 id="2008翻越高山">2008，翻越高山</h4>
+<h4 id="2009拨云见日">2009，拨云见日</h4>
+<h4 id="2010梦想重塑">2010，梦想重塑</h4>
+<h4 id="2011再次定义">2011，再次定义</h4>
+<h4 id="2012向死求生">2012，向死求生</h4>
+<h4 id="2013资本时代">2013，资本时代</h4>
+<h4 id="2014黑马奔腾">2014，“黑马”奔腾</h4>
+<h4 id="2015合纵连横">2015，合纵连横</h4>
+<h4 id="2016鸣锣敲钟">2016，鸣锣敲钟</h4>
+<h4 id="2017全能大战">2017，全能大战</h4>
+<h4 id="2018未来的样子">2018，未来的样子</h4>
+<h3 id="后记">后记</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BA%8F%E8%A8%80%E4%B8%80">序言一</a></li>
+<li><a href="#%E5%BA%8F%E8%A8%80%E4%BA%8C">序言二</a></li>
+<li><a href="#%E8%87%AA%E5%BA%8F">自序</a></li>
+<li><a href="#01-19781992-%E4%B8%8D%E5%86%8D%E7%8A%B9%E8%B1%AB">01 1978—1992 不再犹豫</a>
+<ul>
+<li><a href="#1978%E6%BD%9C%E6%B5%81%E5%92%8C%E6%BD%AE%E6%B0%B4">1978，潜流和潮水</a></li>
+<li><a href="#1979%E4%B8%87%E7%89%A9%E7%94%9F%E9%95%BF">1979，万物生长</a></li>
+<li><a href="#1980%E5%BC%80%E9%97%B8%E6%94%BE%E6%B0%B4">1980，开闸放水</a></li>
+<li><a href="#1981%E6%91%B8%E7%9D%80%E7%9F%B3%E5%A4%B4%E8%BF%87%E6%B2%B3">1981，摸着石头过河</a></li>
+<li><a href="#1982%E5%9C%A8%E5%B8%8C%E6%9C%9B%E7%9A%84%E7%94%B0%E9%87%8E%E4%B8%8A">1982，在希望的田野上</a></li>
+<li><a href="#1983%E6%AD%A5%E5%B1%A5%E4%B8%8D%E5%81%9C">1983，步履不停</a></li>
+<li><a href="#1984%E6%BF%80%E6%83%85%E7%87%83%E7%83%A7">1984，激情燃烧</a></li>
+<li><a href="#1985%E5%91%BD%E8%BF%90%E7%9A%84%E4%BC%8F%E7%AC%94">1985，命运的伏笔</a></li>
+<li><a href="#1986%E7%94%9F%E4%BA%8E%E6%AF%AB%E6%9C%AB">1986，生于毫末</a></li>
+<li><a href="#1987%E8%B6%8A%E8%BF%87%E9%95%BF%E5%9F%8E">1987，越过长城</a></li>
+<li><a href="#1988%E9%9A%A7%E9%81%93%E6%B8%90%E7%9F%AD">1988，隧道渐短</a></li>
+<li><a href="#1989%E6%B2%89%E8%88%9F%E4%BE%A7%E7%95%94">1989，沉舟侧畔</a></li>
+<li><a href="#1990%E8%B5%B7%E6%89%BF%E8%BD%AC%E5%90%88">1990，起承转合</a></li>
+<li><a href="#1991%E4%B8%8D%E5%AE%89%E5%88%86%E7%9A%84%E9%9D%92%E6%98%A5">1991，不安分的青春</a></li>
+<li><a href="#1992%E6%B5%A9%E8%8D%A1%E4%B8%9C%E9%A3%8E%E9%87%8C">1992，浩荡东风里</a></li>
+</ul>
+</li>
+<li><a href="#02-19931998-%E4%BC%B4%E4%BD%A0%E9%97%AF%E8%8D%A1">02 1993—1998 伴你闯荡</a>
+<ul>
+<li><a href="#1993%E5%90%91%E4%B8%8A%E7%94%9F%E9%95%BF">1993，向上生长</a></li>
+<li><a href="#1994%E6%97%A0%E6%83%A7%E6%9C%AA%E6%9D%A5">1994，无惧未来</a></li>
+<li><a href="#1995%E5%91%BD%E8%BF%90%E4%BA%A4%E9%9B%86">1995，命运交集</a></li>
+<li><a href="#1996%E6%9A%97%E8%AF%AD297">1996，暗语297</a></li>
+<li><a href="#1997%E9%A6%99%E6%B1%9F%E4%B8%A4%E5%B2%B8">1997，香江两岸</a></li>
+<li><a href="#1998%E9%AB%98%E6%8E%8C%E8%BF%9C%E8%B7%96">1998，高掌远跖</a></li>
+</ul>
+</li>
+<li><a href="#03-19992006-%E5%86%B2%E5%BC%80%E4%B8%80%E5%88%87">03 1999—2006 冲开一切</a>
+<ul>
+<li><a href="#1999%E8%8A%9D%E9%BA%BB%E5%BC%80%E9%97%A8">1999，芝麻开门</a></li>
+<li><a href="#2000%E9%87%8D%E6%96%B0%E6%83%B3%E8%B1%A1">2000，重新想象</a></li>
+<li><a href="#2001%E4%B8%96%E7%95%8C%E4%B9%8B%E5%A4%96">2001，世界之外</a></li>
+<li><a href="#2002%E5%BF%AB%E9%80%92%E9%A3%8E%E6%B3%A2">2002，快递风波</a></li>
+<li><a href="#2003%E5%85%B3%E9%94%AE%E4%B8%80%E5%BD%B9">2003，关键一役</a></li>
+<li><a href="#2004%E9%A3%9E%E7%BF%94">2004，飞翔</a></li>
+<li><a href="#2005%E4%B9%B0%E5%92%8C%E5%8D%96">2005，买和卖</a></li>
+<li><a href="#2006%E6%9B%99%E5%85%89%E5%88%9D%E7%8E%B0">2006，曙光初现</a></li>
+</ul>
+</li>
+<li><a href="#04-20072018-%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA">04 2007—2018 海阔天空</a>
+<ul>
+<li><a href="#2007%E5%89%8D%E8%B7%AF%E6%98%AF%E5%85%89">2007，前路是光</a></li>
+<li><a href="#2008%E7%BF%BB%E8%B6%8A%E9%AB%98%E5%B1%B1">2008，翻越高山</a></li>
+<li><a href="#2009%E6%8B%A8%E4%BA%91%E8%A7%81%E6%97%A5">2009，拨云见日</a></li>
+<li><a href="#2010%E6%A2%A6%E6%83%B3%E9%87%8D%E5%A1%91">2010，梦想重塑</a></li>
+<li><a href="#2011%E5%86%8D%E6%AC%A1%E5%AE%9A%E4%B9%89">2011，再次定义</a></li>
+<li><a href="#2012%E5%90%91%E6%AD%BB%E6%B1%82%E7%94%9F">2012，向死求生</a></li>
+<li><a href="#2013%E8%B5%84%E6%9C%AC%E6%97%B6%E4%BB%A3">2013，资本时代</a></li>
+<li><a href="#2014%E9%BB%91%E9%A9%AC%E5%A5%94%E8%85%BE">2014，“黑马”奔腾</a></li>
+<li><a href="#2015%E5%90%88%E7%BA%B5%E8%BF%9E%E6%A8%AA">2015，合纵连横</a></li>
+<li><a href="#2016%E9%B8%A3%E9%94%A3%E6%95%B2%E9%92%9F">2016，鸣锣敲钟</a></li>
+<li><a href="#2017%E5%85%A8%E8%83%BD%E5%A4%A7%E6%88%98">2017，全能大战</a></li>
+<li><a href="#2018%E6%9C%AA%E6%9D%A5%E7%9A%84%E6%A0%B7%E5%AD%90">2018，未来的样子</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x7231;&#x7684;&#x516b;&#x6b21;&#x7ea6;&#x4f1a;&#xff1a;&#x521b;&#x9020;&#x4e00;&#x751f;&#x7684;&#x4eb2;&#x5bc6;&#x5173;&#x7cfb;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x7231;&#x7684;&#x516b;&#x6b21;&#x7ea6;&#x4f1a;&#xff1a;&#x521b;&#x9020;&#x4e00;&#x751f;&#x7684;&#x4eb2;&#x5bc6;&#x5173;&#x7cfb;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,295 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="爱的八次约会创造一生的亲密关系">爱的八次约会：创造一生的亲密关系</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\cover\10882.jpg"></td><td>
+<h1 id="爱的八次约会创造一生的亲密关系">爱的八次约会：创造一生的亲密关系</h1>
+<center>[美]约翰·戈特曼（John Gottman） [美]朱莉·施瓦茨·戈特曼（Julie Schwartz Gottman） [美]瑞秋·卡尔顿·艾布拉姆斯（Rachel Carlton Abrams） [美]道格·艾布拉姆斯（Doug Abrams） 著|王姗姗 译</center>
+</td></tr></table>
+<div class="mycomment">
+<p>非常短的一本书</p>
+</div>
+<h3 id="第1章-一生的亲密关系始于有意义的对话">第1章 一生的亲密关系始于有意义的对话</h3>
+<h4 id="完美爱情的8个关键对话">完美爱情的8个关键对话</h4>
+<p>知道让彼此白头偕老、爱情天长地久、浓情蜜意与日俱增的终极奥秘是什么吗？就是把留出固定的时间专心陪伴爱人当作生命的重中之重，并保持对爱人的好奇心。不要觉得你们昨晚同床共枕，你就足够了解今天的他（她）。总而言之，要保持向伴侣提问的习惯，而且要问到点子上。</p>
+<p>我们所指的，不是简单的“你饿了吗”这种封闭式问题，而是需要思索的开放式问题。这些问题其实是一种邀请，因此答案绝不是一两个字。恰当的问题能够让你和你的伴侣进行深入的对话，让你的伴侣敞开心扉和你分享他（她）的感受。一问一答间，你就能进一步了解自己的伴侣：他（她）为什么有这样的想法？为什么有这样的行为？他（她）是怎样的人？开放式问题能帮助你们深入对话，加深你们的爱，帮助你们下决心做出长期承诺，或帮助你们在一起慢慢变老时仍爱意不减。</p>
+<p>几十年的研究成果让我们发现，最伟大的关系的基石是互相尊重、共情，以及对对方的深刻理解。一旦停止交流，亲密关系就很难维系。即便是一方好谈一方寡言，也需要进行对话。不管你们是还未立下誓言，还是已经互许终身，甚至已经共度多年岁月，都可以根据本书给出的八次约会的框架，共赴约会，在这些亲密时光中创造你们独一无二的爱情故事。不管你们处在人生的哪个阶段，如养育小孩、经历失业、患上重病，或是激情逐渐退去日趋平淡，都可以尝试这些约会。</p>
+<p>因为有一点是可以确定的：永远幸福不代表没有挑战或矛盾。不管你在情感中多么成功，都要知道，没有无矛盾的关系，这就是生活。生活总是伴随着压力甚至危机，但你处理问题的方式最终可以成就你或者毁灭你（我们会在“处理矛盾”一章详细阐述这一点）。永远幸福，只是因为两个人做到了互相了解、互相珍惜，并接受伴侣现在和未来的样子。本书的目的是帮助读者在今后与伴侣相伴的岁月中始终保持良好的关系，并且越爱越深。</p>
+<h5 id="对话永远都不嫌早不嫌晚">对话永远都不嫌早，不嫌晚</h5>
+<p>我们之所以写这本书，是因为鲜少有夫妻或情侣会主动接受亲密关系方面的指导。我们邀请了许多教授亲密关系的专家作为我们的智囊团，并和他们成为朋友。这些专家的研究领域包括科学、心理学、性别学。显而易见的是，大多数夫妻或情侣都没有接受过任何亲密关系方面的培训。等他们不得不接受专业指导时，往往为时已晚。最初，我们设想本书的读者应该是那些刚刚确定关系的情侣，但是通过询问参加我们研究项目的志愿者，我们惊喜地发现，处于任何阶段的夫妻或情侣都愿意进行这八次约会。不管两个人是刚刚确定关系，还是处于同居阶段；不管是刚刚订婚，还是处于新婚阶段，都很喜欢这些约会。此外，那些老夫老妻也对这些约会深感兴趣，因为他们渴望让已经很牢固的感情更上一层楼，或者为日趋平淡的日子注入一些新鲜空气。生活中的各种事情，如工作、孩子、健康等，都会对亲密关系造成影响。所以需要通过这些约会对爱情进行保鲜。这八次约会的核心是深度倾听，以帮助亲密关系回到应有的轨道上。</p>
+<p>如果你们刚刚确定关系，不确定对方是不是你们将与之共度一生的人，那么现在可以花一些时间，谈论书中的主题，这些主题能决定你们今后共度的人生基调是幸福还是苦闷。如果通过这些对话，你发现对方并不是你要找的那个人，那么恭喜你，因为这意味着你免去了可能会折磨你一生的痛苦。而如果你发现和他（她）很合拍，那么这些约会能帮助你更好地了解你们之间的差异，避免今后因为一些“永久性问题”或难以改变的差异发生矛盾。如果你们正处于一段稳定的长期关系中，这些对话则能帮助你们增进感情，减少矛盾——或许它们也能帮你们重新认识对方，让你们重新回到刚恋爱时那种一刻也不想与对方分开、对对方充满好奇的状态。</p>
+<p>爱情中的互相吸引是一个神秘的话题。最近的一项研究再次表明，很难找出一项指标来准确预测两个人是否会喜欢上对方，或者摩擦出爱情的火花。这项研究是由犹他大学的心理学家萨莎·乔尔开展的，她选择了100个指标来进行实验，包括自尊、目标、价值观、孤独感、渴望伴侣拥有的品质等。但是，在一次短期的约会之后，测试人员无法根据这些指标预测出两个人是否会喜欢上对方。</p>
+<p>事实上，这已经不是新发现了。大部分情况下，几乎所有对爱情进行配对的算法都没有什么价值。为什么会这样呢？</p>
+<p>生物学家克劳斯·维得坎德在德国主持过一个经典的研究，名为“T恤研究”。在研究中，女性需要闻由不同的男士穿过两天的T恤，并选出她们觉得最好闻的那些。维得坎德发现，女士最喜欢的T恤的主人恰恰是和这些女士基因差异最大的（基因方面主要检测免疫系统的主要组织相容性复合体）。所以，从生理角度来看，我们不想找一个与自己基因相近的另一半，反而会被那些和我们基因差异很大的人吸引。2006年，新墨西哥大学针对48对夫妻开展了一项研究。研究表明，那些和丈夫基因差异较大的女性的性满意度更高，而那些和丈夫基因相近的女性则容易对其他男子产生性幻想，并且更容易出轨。所以，单身人士与其去婚恋网站上尝试各种算法配对，还不如去随便找个陌生人。</p>
+<p>既然爱情中相互吸引的原因是个无解的问题，那么是不是面对爱情，我们就别无选择、手足无措了呢？事实上，我们发现，只要观察完两个人的交流方式，我们就能准确预测出这段关系能否进行下去，或者这段关系以后将是幸福的还是不幸的。基于这些发现，我们可以指导你和你的伴侣进行八次对话；而基于你们对话时的感受，我们可以预测这段关系的幸福指数，评估你们的投入程度，并告诉你们需要怎么做才能一直相爱，白头偕老。和之前所开展的实验一样，我们以约会作为开始。两人自愿去参加这些约会，同意让我们录下他们最亲密的谈话，并让我们上传到一个安全的网站。在此，感谢那些同意让我们录制谈话并分享信息的志愿者。为了保护参与者的隐私，对于本书中所有的故事和对话，我们已经修改了主人公的身份细节，并进行了匿名处理。书中的这些对话很勇敢，也触及了这些人内心深处的脆弱。参与者的年龄从21岁到67岁不等。在这些志愿者夫妻或情侣中，25%的人处于确定关系前的约会阶段，11%的人在谈恋爱，但还没有结婚的打算，32%的人已经订婚或正在谈婚论嫁，32%的人已婚；其中有异性恋，也有同性恋。我们收集了这些夫妻、情侣间上百个小时的约会对话录音，并在一次线上研讨会上和很多对夫妻、情侣跟进讨论了这些约会。我们还对约会的质量进行了测试。</p>
+<h5 id="关于爱情的科学实验">关于爱情的科学实验</h5>
+<h5 id="决定婚姻成败的因素">决定婚姻成败的因素</h5>
+<h5 id="为什么要挽救你的亲密关系">为什么要挽救你的亲密关系</h5>
+<h4 id="完美爱情的秘诀约会之夜">完美爱情的秘诀：约会之夜</h4>
+<h5 id="感情中的重要约定">感情中的重要约定</h5>
+<h5 id="专属两人的内心交流">专属两人的内心交流</h5>
+<h5 id="约会之夜的拦路虎">约会之夜的拦路虎</h5>
+<h5 id="完美爱情的原则">完美爱情的原则</h5>
+<h4 id="亲密对话的四大技巧">亲密对话的四大技巧</h4>
+<h5 id="技巧1-如何在交谈中加入自己的感受">技巧1 如何在交谈中加入自己的感受？</h5>
+<h5 id="技巧2-如何聊得更深入">技巧2 如何聊得更深入？</h5>
+<h5 id="技巧3-如何帮助另一半敞开心扉滔滔不绝">技巧3 如何帮助另一半敞开心扉、滔滔不绝？</h5>
+<h5 id="技巧4-如何表达包容共情理解">技巧4 如何表达包容、共情、理解？</h5>
+<h4 id="倾听的艺术">倾听的艺术</h4>
+<h3 id="第2章-如何避免婚内孤独">第2章 如何避免“婚内孤独”</h3>
+<h4 id="忠诚就是全情投入">忠诚就是全情投入</h4>
+<h4 id="信任就是完全接受对方">信任就是完全接受对方</h4>
+<h4 id="坦诚相待建立信任机制">坦诚相待，建立信任机制</h4>
+<h4 id="当信任已经遭到破坏时怎么解决">当信任已经遭到破坏时怎么解决</h4>
+<h4 id="培养你的喜爱与赞美">培养你的喜爱与赞美</h4>
+<h3 id="第3章-为什么会吵架">第3章 为什么会吵架</h3>
+<h4 id="冲突不一定要解决">冲突不一定要解决</h4>
+<h4 id="如何解决僵局">如何解决僵局</h4>
+<h4 id="如何正确地吵架">如何正确地吵架</h4>
+<h3 id="第4章-别让爱情死于无性婚姻">第4章 别让爱情死于“无性婚姻”</h3>
+<h4 id="什么频率的性生活算正常">什么频率的性生活算正常</h4>
+<h4 id="为人父母后的性生活">为人父母后的性生活</h4>
+<h4 id="谈论性生活才能改善性生活">谈论性生活才能改善性生活</h4>
+<h4 id="如何发起性邀请">如何发起性邀请</h4>
+<h4 id="维持满意性生活的两大方法激吻和赞美">维持满意性生活的两大方法：激吻和赞美</h4>
+<h3 id="第5章-爱情的代价">第5章 爱情的代价</h3>
+<h4 id="爱情与面包并非不可兼得">爱情与面包并非不可兼得</h4>
+<h4 id="婚姻杀手工作与家务分工">婚姻杀手：工作与家务分工</h4>
+<h4 id="当工作挣钱影响亲密关系该怎么办">当工作挣钱影响亲密关系该怎么办</h4>
+<h4 id="当工作成为爱情中的第三者">当工作成为爱情中的第三者</h4>
+<h4 id="理解彼此与金钱有关的经历">理解彼此与金钱有关的经历</h4>
+<h4 id="多少钱才算足够">多少钱才算足够？</h4>
+<h3 id="第6章-成长的空间">第6章 成长的空间</h3>
+<h4 id="伴侣第一孩子第二">伴侣第一，孩子第二</h4>
+<h4 id="养育孩子会遇到的问题">养育孩子会遇到的问题</h4>
+<h3 id="第7章-让爱情充满新鲜感">第7章 让爱情充满新鲜感</h3>
+<h4 id="玩乐是促进亲密的灵药">玩乐是促进亲密的灵药</h4>
+<h4 id="玩不到一起时怎么办">玩不到一起时怎么办</h4>
+<h4 id="找到有共同乐趣的活动">找到有共同乐趣的活动</h4>
+<h4 id="一同冒险点燃生命的激情">一同冒险，点燃生命的激情</h4>
+<h4 id="如何对另一半保持热恋感">如何对另一半保持热恋感</h4>
+<h4 id="规划你们的冒险活动">规划你们的冒险活动</h4>
+<h3 id="第8章-好的爱情是共同成长">第8章 好的爱情是共同成长</h3>
+<h4 id="创造共同的人生意义">创造共同的人生意义</h4>
+<h4 id="适应伴侣的成长和改变">适应伴侣的成长和改变</h4>
+<h3 id="第9章-让彼此发光">第9章 让彼此发光</h3>
+<h4 id="轮流妥协帮助对方追逐梦想">轮流妥协，帮助对方追逐梦想</h4>
+<h4 id="组成一个梦之队">组成一个梦之队</h4>
+<h3 id="结语">结语</h3>
+<h4 id="感情生活且行且珍惜">感情生活，且行且珍惜</h4>
+<h3 id="附录">附录</h3>
+<h4 id="一更多开放式问题">一、更多开放式问题</h4>
+<h4 id="二额外的约会演练">二、额外的约会演练</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E4%B8%80%E7%94%9F%E7%9A%84%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB%E5%A7%8B%E4%BA%8E%E6%9C%89%E6%84%8F%E4%B9%89%E7%9A%84%E5%AF%B9%E8%AF%9D">第1章 一生的亲密关系始于有意义的对话</a>
+<ul>
+<li><a href="#%E5%AE%8C%E7%BE%8E%E7%88%B1%E6%83%85%E7%9A%848%E4%B8%AA%E5%85%B3%E9%94%AE%E5%AF%B9%E8%AF%9D">完美爱情的8个关键对话</a>
+<ul>
+<li><a href="#%E5%AF%B9%E8%AF%9D%E6%B0%B8%E8%BF%9C%E9%83%BD%E4%B8%8D%E5%AB%8C%E6%97%A9%E4%B8%8D%E5%AB%8C%E6%99%9A">对话永远都不嫌早，不嫌晚</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E7%88%B1%E6%83%85%E7%9A%84%E7%A7%91%E5%AD%A6%E5%AE%9E%E9%AA%8C">关于爱情的科学实验</a></li>
+<li><a href="#%E5%86%B3%E5%AE%9A%E5%A9%9A%E5%A7%BB%E6%88%90%E8%B4%A5%E7%9A%84%E5%9B%A0%E7%B4%A0">决定婚姻成败的因素</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8C%BD%E6%95%91%E4%BD%A0%E7%9A%84%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB">为什么要挽救你的亲密关系</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%8C%E7%BE%8E%E7%88%B1%E6%83%85%E7%9A%84%E7%A7%98%E8%AF%80%E7%BA%A6%E4%BC%9A%E4%B9%8B%E5%A4%9C">完美爱情的秘诀：约会之夜</a>
+<ul>
+<li><a href="#%E6%84%9F%E6%83%85%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E7%BA%A6%E5%AE%9A">感情中的重要约定</a></li>
+<li><a href="#%E4%B8%93%E5%B1%9E%E4%B8%A4%E4%BA%BA%E7%9A%84%E5%86%85%E5%BF%83%E4%BA%A4%E6%B5%81">专属两人的内心交流</a></li>
+<li><a href="#%E7%BA%A6%E4%BC%9A%E4%B9%8B%E5%A4%9C%E7%9A%84%E6%8B%A6%E8%B7%AF%E8%99%8E">约会之夜的拦路虎</a></li>
+<li><a href="#%E5%AE%8C%E7%BE%8E%E7%88%B1%E6%83%85%E7%9A%84%E5%8E%9F%E5%88%99">完美爱情的原则</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%B2%E5%AF%86%E5%AF%B9%E8%AF%9D%E7%9A%84%E5%9B%9B%E5%A4%A7%E6%8A%80%E5%B7%A7">亲密对话的四大技巧</a>
+<ul>
+<li><a href="#%E6%8A%80%E5%B7%A71-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%BA%A4%E8%B0%88%E4%B8%AD%E5%8A%A0%E5%85%A5%E8%87%AA%E5%B7%B1%E7%9A%84%E6%84%9F%E5%8F%97">技巧1 如何在交谈中加入自己的感受？</a></li>
+<li><a href="#%E6%8A%80%E5%B7%A72-%E5%A6%82%E4%BD%95%E8%81%8A%E5%BE%97%E6%9B%B4%E6%B7%B1%E5%85%A5">技巧2 如何聊得更深入？</a></li>
+<li><a href="#%E6%8A%80%E5%B7%A73-%E5%A6%82%E4%BD%95%E5%B8%AE%E5%8A%A9%E5%8F%A6%E4%B8%80%E5%8D%8A%E6%95%9E%E5%BC%80%E5%BF%83%E6%89%89%E6%BB%94%E6%BB%94%E4%B8%8D%E7%BB%9D">技巧3 如何帮助另一半敞开心扉、滔滔不绝？</a></li>
+<li><a href="#%E6%8A%80%E5%B7%A74-%E5%A6%82%E4%BD%95%E8%A1%A8%E8%BE%BE%E5%8C%85%E5%AE%B9%E5%85%B1%E6%83%85%E7%90%86%E8%A7%A3">技巧4 如何表达包容、共情、理解？</a></li>
+</ul>
+</li>
+<li><a href="#%E5%80%BE%E5%90%AC%E7%9A%84%E8%89%BA%E6%9C%AF">倾听的艺术</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%A9%9A%E5%86%85%E5%AD%A4%E7%8B%AC">第2章 如何避免“婚内孤独”</a>
+<ul>
+<li><a href="#%E5%BF%A0%E8%AF%9A%E5%B0%B1%E6%98%AF%E5%85%A8%E6%83%85%E6%8A%95%E5%85%A5">忠诚就是全情投入</a></li>
+<li><a href="#%E4%BF%A1%E4%BB%BB%E5%B0%B1%E6%98%AF%E5%AE%8C%E5%85%A8%E6%8E%A5%E5%8F%97%E5%AF%B9%E6%96%B9">信任就是完全接受对方</a></li>
+<li><a href="#%E5%9D%A6%E8%AF%9A%E7%9B%B8%E5%BE%85%E5%BB%BA%E7%AB%8B%E4%BF%A1%E4%BB%BB%E6%9C%BA%E5%88%B6">坦诚相待，建立信任机制</a></li>
+<li><a href="#%E5%BD%93%E4%BF%A1%E4%BB%BB%E5%B7%B2%E7%BB%8F%E9%81%AD%E5%88%B0%E7%A0%B4%E5%9D%8F%E6%97%B6%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3">当信任已经遭到破坏时怎么解决</a></li>
+<li><a href="#%E5%9F%B9%E5%85%BB%E4%BD%A0%E7%9A%84%E5%96%9C%E7%88%B1%E4%B8%8E%E8%B5%9E%E7%BE%8E">培养你的喜爱与赞美</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%90%B5%E6%9E%B6">第3章 为什么会吵架</a>
+<ul>
+<li><a href="#%E5%86%B2%E7%AA%81%E4%B8%8D%E4%B8%80%E5%AE%9A%E8%A6%81%E8%A7%A3%E5%86%B3">冲突不一定要解决</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%83%B5%E5%B1%80">如何解决僵局</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E5%90%B5%E6%9E%B6">如何正确地吵架</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E5%88%AB%E8%AE%A9%E7%88%B1%E6%83%85%E6%AD%BB%E4%BA%8E%E6%97%A0%E6%80%A7%E5%A9%9A%E5%A7%BB">第4章 别让爱情死于“无性婚姻”</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E9%A2%91%E7%8E%87%E7%9A%84%E6%80%A7%E7%94%9F%E6%B4%BB%E7%AE%97%E6%AD%A3%E5%B8%B8">什么频率的性生活算正常</a></li>
+<li><a href="#%E4%B8%BA%E4%BA%BA%E7%88%B6%E6%AF%8D%E5%90%8E%E7%9A%84%E6%80%A7%E7%94%9F%E6%B4%BB">为人父母后的性生活</a></li>
+<li><a href="#%E8%B0%88%E8%AE%BA%E6%80%A7%E7%94%9F%E6%B4%BB%E6%89%8D%E8%83%BD%E6%94%B9%E5%96%84%E6%80%A7%E7%94%9F%E6%B4%BB">谈论性生活才能改善性生活</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%8F%91%E8%B5%B7%E6%80%A7%E9%82%80%E8%AF%B7">如何发起性邀请</a></li>
+<li><a href="#%E7%BB%B4%E6%8C%81%E6%BB%A1%E6%84%8F%E6%80%A7%E7%94%9F%E6%B4%BB%E7%9A%84%E4%B8%A4%E5%A4%A7%E6%96%B9%E6%B3%95%E6%BF%80%E5%90%BB%E5%92%8C%E8%B5%9E%E7%BE%8E">维持满意性生活的两大方法：激吻和赞美</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E7%88%B1%E6%83%85%E7%9A%84%E4%BB%A3%E4%BB%B7">第5章 爱情的代价</a>
+<ul>
+<li><a href="#%E7%88%B1%E6%83%85%E4%B8%8E%E9%9D%A2%E5%8C%85%E5%B9%B6%E9%9D%9E%E4%B8%8D%E5%8F%AF%E5%85%BC%E5%BE%97">爱情与面包并非不可兼得</a></li>
+<li><a href="#%E5%A9%9A%E5%A7%BB%E6%9D%80%E6%89%8B%E5%B7%A5%E4%BD%9C%E4%B8%8E%E5%AE%B6%E5%8A%A1%E5%88%86%E5%B7%A5">婚姻杀手：工作与家务分工</a></li>
+<li><a href="#%E5%BD%93%E5%B7%A5%E4%BD%9C%E6%8C%A3%E9%92%B1%E5%BD%B1%E5%93%8D%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E">当工作挣钱影响亲密关系该怎么办</a></li>
+<li><a href="#%E5%BD%93%E5%B7%A5%E4%BD%9C%E6%88%90%E4%B8%BA%E7%88%B1%E6%83%85%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%89%E8%80%85">当工作成为爱情中的第三者</a></li>
+<li><a href="#%E7%90%86%E8%A7%A3%E5%BD%BC%E6%AD%A4%E4%B8%8E%E9%87%91%E9%92%B1%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%8F%E5%8E%86">理解彼此与金钱有关的经历</a></li>
+<li><a href="#%E5%A4%9A%E5%B0%91%E9%92%B1%E6%89%8D%E7%AE%97%E8%B6%B3%E5%A4%9F">多少钱才算足够？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E6%88%90%E9%95%BF%E7%9A%84%E7%A9%BA%E9%97%B4">第6章 成长的空间</a>
+<ul>
+<li><a href="#%E4%BC%B4%E4%BE%A3%E7%AC%AC%E4%B8%80%E5%AD%A9%E5%AD%90%E7%AC%AC%E4%BA%8C">伴侣第一，孩子第二</a></li>
+<li><a href="#%E5%85%BB%E8%82%B2%E5%AD%A9%E5%AD%90%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">养育孩子会遇到的问题</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E8%AE%A9%E7%88%B1%E6%83%85%E5%85%85%E6%BB%A1%E6%96%B0%E9%B2%9C%E6%84%9F">第7章 让爱情充满新鲜感</a>
+<ul>
+<li><a href="#%E7%8E%A9%E4%B9%90%E6%98%AF%E4%BF%83%E8%BF%9B%E4%BA%B2%E5%AF%86%E7%9A%84%E7%81%B5%E8%8D%AF">玩乐是促进亲密的灵药</a></li>
+<li><a href="#%E7%8E%A9%E4%B8%8D%E5%88%B0%E4%B8%80%E8%B5%B7%E6%97%B6%E6%80%8E%E4%B9%88%E5%8A%9E">玩不到一起时怎么办</a></li>
+<li><a href="#%E6%89%BE%E5%88%B0%E6%9C%89%E5%85%B1%E5%90%8C%E4%B9%90%E8%B6%A3%E7%9A%84%E6%B4%BB%E5%8A%A8">找到有共同乐趣的活动</a></li>
+<li><a href="#%E4%B8%80%E5%90%8C%E5%86%92%E9%99%A9%E7%82%B9%E7%87%83%E7%94%9F%E5%91%BD%E7%9A%84%E6%BF%80%E6%83%85">一同冒险，点燃生命的激情</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%AF%B9%E5%8F%A6%E4%B8%80%E5%8D%8A%E4%BF%9D%E6%8C%81%E7%83%AD%E6%81%8B%E6%84%9F">如何对另一半保持热恋感</a></li>
+<li><a href="#%E8%A7%84%E5%88%92%E4%BD%A0%E4%BB%AC%E7%9A%84%E5%86%92%E9%99%A9%E6%B4%BB%E5%8A%A8">规划你们的冒险活动</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E5%A5%BD%E7%9A%84%E7%88%B1%E6%83%85%E6%98%AF%E5%85%B1%E5%90%8C%E6%88%90%E9%95%BF">第8章 好的爱情是共同成长</a>
+<ul>
+<li><a href="#%E5%88%9B%E9%80%A0%E5%85%B1%E5%90%8C%E7%9A%84%E4%BA%BA%E7%94%9F%E6%84%8F%E4%B9%89">创造共同的人生意义</a></li>
+<li><a href="#%E9%80%82%E5%BA%94%E4%BC%B4%E4%BE%A3%E7%9A%84%E6%88%90%E9%95%BF%E5%92%8C%E6%94%B9%E5%8F%98">适应伴侣的成长和改变</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E8%AE%A9%E5%BD%BC%E6%AD%A4%E5%8F%91%E5%85%89">第9章 让彼此发光</a>
+<ul>
+<li><a href="#%E8%BD%AE%E6%B5%81%E5%A6%A5%E5%8D%8F%E5%B8%AE%E5%8A%A9%E5%AF%B9%E6%96%B9%E8%BF%BD%E9%80%90%E6%A2%A6%E6%83%B3">轮流妥协，帮助对方追逐梦想</a></li>
+<li><a href="#%E7%BB%84%E6%88%90%E4%B8%80%E4%B8%AA%E6%A2%A6%E4%B9%8B%E9%98%9F">组成一个梦之队</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%93%E8%AF%AD">结语</a>
+<ul>
+<li><a href="#%E6%84%9F%E6%83%85%E7%94%9F%E6%B4%BB%E4%B8%94%E8%A1%8C%E4%B8%94%E7%8F%8D%E6%83%9C">感情生活，且行且珍惜</a></li>
+</ul>
+</li>
+<li><a href="#%E9%99%84%E5%BD%95">附录</a>
+<ul>
+<li><a href="#%E4%B8%80%E6%9B%B4%E5%A4%9A%E5%BC%80%E6%94%BE%E5%BC%8F%E9%97%AE%E9%A2%98">一、更多开放式问题</a></li>
+<li><a href="#%E4%BA%8C%E9%A2%9D%E5%A4%96%E7%9A%84%E7%BA%A6%E4%BC%9A%E6%BC%94%E7%BB%83">二、额外的约会演练</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>
