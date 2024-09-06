@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x4e0d;&#x5206;&#x5fc3;&#xff1a;&#x521d;&#x5b66;&#x8005;&#x7684;&#x6b63;&#x5ff5;&#x4e66;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x4e0d;&#x5206;&#x5fc3;&#xff1a;&#x521d;&#x5b66;&#x8005;&#x7684;&#x6b63;&#x5ff5;&#x4e66;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,309 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="不分心初学者的正念书">不分心：初学者的正念书</h1>
-<h2 id="美乔卡巴金-著陈德中-温宗堃-译">[美]乔·卡巴金 著|陈德中 温宗堃 译</h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\cover\9567.jpg"></td><td>
+<h1 id="不分心初学者的正念书">不分心：初学者的正念书</h1>
+<center>[美]乔·卡巴金（Jon Kabat-Zinn） 著|陈德中 温宗堃 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="作者中文版序">作者中文版序</h3>
+<h3 id="译者序">译者序</h3>
+<h3 id="导言">导言</h3>
+<h3 id="第一部-进入">第一部 进入</h3>
+<h4 id="初学者之心">初学者之心</h4>
+<h4 id="呼吸">呼吸</h4>
+<h4 id="是谁在呼吸">是谁在呼吸？</h4>
+<h4 id="让修行轻松而有趣">让修行轻松而有趣</h4>
+<h4 id="观照当下">观照当下</h4>
+<h4 id="正念即是觉知">正念即是觉知</h4>
+<h4 id="从行为模式切换到存在模式">从“行为模式”切换到“存在模式”</h4>
+<h4 id="科学根基">科学根基</h4>
+<h4 id="正念是普世的">正念是普世的</h4>
+<h4 id="觉醒">觉醒</h4>
+<h4 id="稳定自心">稳定自心</h4>
+<h4 id="在觉知中安住乃修习之精要">在觉知中安住乃修习之精要</h4>
+<h4 id="戒律之美">戒律之美</h4>
+<h4 id="调整你的默认设置">调整你的默认设置</h4>
+<h4 id="觉知我们平衡思维的唯一最充分的能力">觉知：我们平衡思维的唯一最充分的能力</h4>
+<h4 id="专注力与觉察力可被训练提升">专注力与觉察力可被训练提升</h4>
+<h4 id="思维本身并没有错">思维本身并没有错</h4>
+<h4 id="与思想为友">与思想为友</h4>
+<h4 id="一些可用的内在意象">一些可用的内在意象</h4>
+<h4 id="别把思想太当真">别把思想太当真</h4>
+<h4 id="自我中心化">自我中心化</h4>
+<h4 id="一切都不要执取为我和我的">一切都不要执取为“我”和“我的”</h4>
+<h4 id="觉知是个大容器">觉知是个大容器</h4>
+<h4 id="所观不如能观来得重要">所观不如能观来得重要</h4>
+<h3 id="第二部-持守">第二部 持守</h3>
+<h4 id="正念减压">正念减压</h4>
+<h4 id="超越误解">超越误解</h4>
+<h4 id="温柔的注意力">温柔的注意力</h4>
+<h4 id="第六感">第六感</h4>
+<h4 id="本体感觉与内感作用">本体感觉与内感作用</h4>
+<h4 id="觉知的统一状态">觉知的统一状态</h4>
+<h4 id="知道便是觉知">“知道”便是觉知</h4>
+<h4 id="生活本身即是禅修">生活本身即是禅修</h4>
+<h4 id="你已有所属">你已有所属</h4>
+<h4 id="正念就在我们眼前">正念就在我们眼前</h4>
+<h4 id="正念不仅是一个好主意">正念不仅是一个好主意</h4>
+<h4 id="重建联结">重建联结</h4>
+<h4 id="我是谁质疑我们的自我陈述">我是谁？质疑我们的自我陈述</h4>
+<h4 id="你不仅是自己编织的故事">你不仅是自己编织的故事</h4>
+<h4 id="你从未曾不完整">你从未曾不完整</h4>
+<h4 id="换个角度看">换个角度看</h4>
+<h4 id="不知道是初学者之心的精髓">“不知道”是初学者之心的精髓</h4>
+<h4 id="有备之心">有备之心</h4>
+<h4 id="什么是有待你去发现的事物">什么是有待你去发现的事物</h4>
+<h3 id="第三部-深化">第三部 深化</h3>
+<h4 id="无处可去无事可做">无处可去，无事可做</h4>
+<h4 id="无为而为">无为而为</h4>
+<h4 id="适切地行动">适切地行动</h4>
+<h4 id="若能觉察到正在发生的事你就做对了">若能觉察到正在发生的事，你就做对了</h4>
+<h4 id="不评判是理智与善意的行动">不评判是理智与善意的行动</h4>
+<h4 id="真正的挑战是做你自己">真正的挑战是做你自己</h4>
+<h4 id="将了知带入生活">将了知带入生活</h4>
+<h4 id="未被留意的慈悲心">未被留意的慈悲心</h4>
+<h4 id="正视最不愿看到的">正视最不愿看到的</h4>
+<h4 id="对苦的觉知也是苦吗">对苦的觉知也是苦吗？</h4>
+<h4 id="从苦中解脱是什么意思">从苦中解脱是什么意思</h4>
+<h4 id="觉知自由">觉知自由</h4>
+<h4 id="实修带来解脱">实修带来解脱</h4>
+<h4 id="心智的自我认知之美">心智的自我认知之美</h4>
+<h4 id="观照你的禅修">观照你的禅修</h4>
+<h4 id="修习中的能量保护">修习中的能量保护</h4>
+<h4 id="不伤害的态度">不伤害的态度</h4>
+<h4 id="贪不满的瀑流">贪：不满的瀑流</h4>
+<h4 id="嗔贪的反面">嗔：贪的反面</h4>
+<h4 id="痴自我实现的预言陷阱">痴：自我实现的预言陷阱</h4>
+<h4 id="当下永远是恰当的时间">当下永远是恰当的时间</h4>
+<h4 id="全部课程无非是仅此而已">“全部课程”无非是“仅此而已”</h4>
+<h4 id="把生命还给自己">把生命还给自己</h4>
+<h4 id="把正念带进世界">把正念带进世界</h4>
+<h3 id="第四部-成熟">第四部 成熟</h3>
+<h4 id="正念练习的态度基石">正念练习的态度基石</h4>
+<h4 id="1不评判">1.不评判</h4>
+<h4 id="2耐心">2.耐心</h4>
+<h4 id="3初学者之心">3.初学者之心</h4>
+<h4 id="4信任">4.信任</h4>
+<h4 id="5不努力">5.不努力</h4>
+<h4 id="6接纳">6.接纳</h4>
+<h4 id="7放下">7.放下</h4>
+<h3 id="第五部-练习">第五部 练习</h3>
+<h4 id="从正式练习开始">从正式练习开始</h4>
+<h4 id="关于正式练习的四点建议">关于正式练习的四点建议</h4>
+<h4 id="引导式练习">引导式练习</h4>
+<h3 id="后记">后记</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E4%BD%9C%E8%80%85%E4%B8%AD%E6%96%87%E7%89%88%E5%BA%8F">作者中文版序</a></li>
+<li><a href="#%E8%AF%91%E8%80%85%E5%BA%8F">译者序</a></li>
+<li><a href="#%E5%AF%BC%E8%A8%80">导言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E9%83%A8-%E8%BF%9B%E5%85%A5">第一部 进入</a>
+<ul>
+<li><a href="#%E5%88%9D%E5%AD%A6%E8%80%85%E4%B9%8B%E5%BF%83">初学者之心</a></li>
+<li><a href="#%E5%91%BC%E5%90%B8">呼吸</a></li>
+<li><a href="#%E6%98%AF%E8%B0%81%E5%9C%A8%E5%91%BC%E5%90%B8">是谁在呼吸？</a></li>
+<li><a href="#%E8%AE%A9%E4%BF%AE%E8%A1%8C%E8%BD%BB%E6%9D%BE%E8%80%8C%E6%9C%89%E8%B6%A3">让修行轻松而有趣</a></li>
+<li><a href="#%E8%A7%82%E7%85%A7%E5%BD%93%E4%B8%8B">观照当下</a></li>
+<li><a href="#%E6%AD%A3%E5%BF%B5%E5%8D%B3%E6%98%AF%E8%A7%89%E7%9F%A5">正念即是觉知</a></li>
+<li><a href="#%E4%BB%8E%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2%E5%88%B0%E5%AD%98%E5%9C%A8%E6%A8%A1%E5%BC%8F">从“行为模式”切换到“存在模式”</a></li>
+<li><a href="#%E7%A7%91%E5%AD%A6%E6%A0%B9%E5%9F%BA">科学根基</a></li>
+<li><a href="#%E6%AD%A3%E5%BF%B5%E6%98%AF%E6%99%AE%E4%B8%96%E7%9A%84">正念是普世的</a></li>
+<li><a href="#%E8%A7%89%E9%86%92">觉醒</a></li>
+<li><a href="#%E7%A8%B3%E5%AE%9A%E8%87%AA%E5%BF%83">稳定自心</a></li>
+<li><a href="#%E5%9C%A8%E8%A7%89%E7%9F%A5%E4%B8%AD%E5%AE%89%E4%BD%8F%E4%B9%83%E4%BF%AE%E4%B9%A0%E4%B9%8B%E7%B2%BE%E8%A6%81">在觉知中安住乃修习之精要</a></li>
+<li><a href="#%E6%88%92%E5%BE%8B%E4%B9%8B%E7%BE%8E">戒律之美</a></li>
+<li><a href="#%E8%B0%83%E6%95%B4%E4%BD%A0%E7%9A%84%E9%BB%98%E8%AE%A4%E8%AE%BE%E7%BD%AE">调整你的默认设置</a></li>
+<li><a href="#%E8%A7%89%E7%9F%A5%E6%88%91%E4%BB%AC%E5%B9%B3%E8%A1%A1%E6%80%9D%E7%BB%B4%E7%9A%84%E5%94%AF%E4%B8%80%E6%9C%80%E5%85%85%E5%88%86%E7%9A%84%E8%83%BD%E5%8A%9B">觉知：我们平衡思维的唯一最充分的能力</a></li>
+<li><a href="#%E4%B8%93%E6%B3%A8%E5%8A%9B%E4%B8%8E%E8%A7%89%E5%AF%9F%E5%8A%9B%E5%8F%AF%E8%A2%AB%E8%AE%AD%E7%BB%83%E6%8F%90%E5%8D%87">专注力与觉察力可被训练提升</a></li>
+<li><a href="#%E6%80%9D%E7%BB%B4%E6%9C%AC%E8%BA%AB%E5%B9%B6%E6%B2%A1%E6%9C%89%E9%94%99">思维本身并没有错</a></li>
+<li><a href="#%E4%B8%8E%E6%80%9D%E6%83%B3%E4%B8%BA%E5%8F%8B">与思想为友</a></li>
+<li><a href="#%E4%B8%80%E4%BA%9B%E5%8F%AF%E7%94%A8%E7%9A%84%E5%86%85%E5%9C%A8%E6%84%8F%E8%B1%A1">一些可用的内在意象</a></li>
+<li><a href="#%E5%88%AB%E6%8A%8A%E6%80%9D%E6%83%B3%E5%A4%AA%E5%BD%93%E7%9C%9F">别把思想太当真</a></li>
+<li><a href="#%E8%87%AA%E6%88%91%E4%B8%AD%E5%BF%83%E5%8C%96">自我中心化</a></li>
+<li><a href="#%E4%B8%80%E5%88%87%E9%83%BD%E4%B8%8D%E8%A6%81%E6%89%A7%E5%8F%96%E4%B8%BA%E6%88%91%E5%92%8C%E6%88%91%E7%9A%84">一切都不要执取为“我”和“我的”</a></li>
+<li><a href="#%E8%A7%89%E7%9F%A5%E6%98%AF%E4%B8%AA%E5%A4%A7%E5%AE%B9%E5%99%A8">觉知是个大容器</a></li>
+<li><a href="#%E6%89%80%E8%A7%82%E4%B8%8D%E5%A6%82%E8%83%BD%E8%A7%82%E6%9D%A5%E5%BE%97%E9%87%8D%E8%A6%81">所观不如能观来得重要</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E9%83%A8-%E6%8C%81%E5%AE%88">第二部 持守</a>
+<ul>
+<li><a href="#%E6%AD%A3%E5%BF%B5%E5%87%8F%E5%8E%8B">正念减压</a></li>
+<li><a href="#%E8%B6%85%E8%B6%8A%E8%AF%AF%E8%A7%A3">超越误解</a></li>
+<li><a href="#%E6%B8%A9%E6%9F%94%E7%9A%84%E6%B3%A8%E6%84%8F%E5%8A%9B">温柔的注意力</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E6%84%9F">第六感</a></li>
+<li><a href="#%E6%9C%AC%E4%BD%93%E6%84%9F%E8%A7%89%E4%B8%8E%E5%86%85%E6%84%9F%E4%BD%9C%E7%94%A8">本体感觉与内感作用</a></li>
+<li><a href="#%E8%A7%89%E7%9F%A5%E7%9A%84%E7%BB%9F%E4%B8%80%E7%8A%B6%E6%80%81">觉知的统一状态</a></li>
+<li><a href="#%E7%9F%A5%E9%81%93%E4%BE%BF%E6%98%AF%E8%A7%89%E7%9F%A5">“知道”便是觉知</a></li>
+<li><a href="#%E7%94%9F%E6%B4%BB%E6%9C%AC%E8%BA%AB%E5%8D%B3%E6%98%AF%E7%A6%85%E4%BF%AE">生活本身即是禅修</a></li>
+<li><a href="#%E4%BD%A0%E5%B7%B2%E6%9C%89%E6%89%80%E5%B1%9E">你已有所属</a></li>
+<li><a href="#%E6%AD%A3%E5%BF%B5%E5%B0%B1%E5%9C%A8%E6%88%91%E4%BB%AC%E7%9C%BC%E5%89%8D">正念就在我们眼前</a></li>
+<li><a href="#%E6%AD%A3%E5%BF%B5%E4%B8%8D%E4%BB%85%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A5%BD%E4%B8%BB%E6%84%8F">正念不仅是一个好主意</a></li>
+<li><a href="#%E9%87%8D%E5%BB%BA%E8%81%94%E7%BB%93">重建联结</a></li>
+<li><a href="#%E6%88%91%E6%98%AF%E8%B0%81%E8%B4%A8%E7%96%91%E6%88%91%E4%BB%AC%E7%9A%84%E8%87%AA%E6%88%91%E9%99%88%E8%BF%B0">我是谁？质疑我们的自我陈述</a></li>
+<li><a href="#%E4%BD%A0%E4%B8%8D%E4%BB%85%E6%98%AF%E8%87%AA%E5%B7%B1%E7%BC%96%E7%BB%87%E7%9A%84%E6%95%85%E4%BA%8B">你不仅是自己编织的故事</a></li>
+<li><a href="#%E4%BD%A0%E4%BB%8E%E6%9C%AA%E6%9B%BE%E4%B8%8D%E5%AE%8C%E6%95%B4">你从未曾不完整</a></li>
+<li><a href="#%E6%8D%A2%E4%B8%AA%E8%A7%92%E5%BA%A6%E7%9C%8B">换个角度看</a></li>
+<li><a href="#%E4%B8%8D%E7%9F%A5%E9%81%93%E6%98%AF%E5%88%9D%E5%AD%A6%E8%80%85%E4%B9%8B%E5%BF%83%E7%9A%84%E7%B2%BE%E9%AB%93">“不知道”是初学者之心的精髓</a></li>
+<li><a href="#%E6%9C%89%E5%A4%87%E4%B9%8B%E5%BF%83">有备之心</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%89%E5%BE%85%E4%BD%A0%E5%8E%BB%E5%8F%91%E7%8E%B0%E7%9A%84%E4%BA%8B%E7%89%A9">什么是有待你去发现的事物</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E9%83%A8-%E6%B7%B1%E5%8C%96">第三部 深化</a>
+<ul>
+<li><a href="#%E6%97%A0%E5%A4%84%E5%8F%AF%E5%8E%BB%E6%97%A0%E4%BA%8B%E5%8F%AF%E5%81%9A">无处可去，无事可做</a></li>
+<li><a href="#%E6%97%A0%E4%B8%BA%E8%80%8C%E4%B8%BA">无为而为</a></li>
+<li><a href="#%E9%80%82%E5%88%87%E5%9C%B0%E8%A1%8C%E5%8A%A8">适切地行动</a></li>
+<li><a href="#%E8%8B%A5%E8%83%BD%E8%A7%89%E5%AF%9F%E5%88%B0%E6%AD%A3%E5%9C%A8%E5%8F%91%E7%94%9F%E7%9A%84%E4%BA%8B%E4%BD%A0%E5%B0%B1%E5%81%9A%E5%AF%B9%E4%BA%86">若能觉察到正在发生的事，你就做对了</a></li>
+<li><a href="#%E4%B8%8D%E8%AF%84%E5%88%A4%E6%98%AF%E7%90%86%E6%99%BA%E4%B8%8E%E5%96%84%E6%84%8F%E7%9A%84%E8%A1%8C%E5%8A%A8">不评判是理智与善意的行动</a></li>
+<li><a href="#%E7%9C%9F%E6%AD%A3%E7%9A%84%E6%8C%91%E6%88%98%E6%98%AF%E5%81%9A%E4%BD%A0%E8%87%AA%E5%B7%B1">真正的挑战是做你自己</a></li>
+<li><a href="#%E5%B0%86%E4%BA%86%E7%9F%A5%E5%B8%A6%E5%85%A5%E7%94%9F%E6%B4%BB">将了知带入生活</a></li>
+<li><a href="#%E6%9C%AA%E8%A2%AB%E7%95%99%E6%84%8F%E7%9A%84%E6%85%88%E6%82%B2%E5%BF%83">未被留意的慈悲心</a></li>
+<li><a href="#%E6%AD%A3%E8%A7%86%E6%9C%80%E4%B8%8D%E6%84%BF%E7%9C%8B%E5%88%B0%E7%9A%84">正视最不愿看到的</a></li>
+<li><a href="#%E5%AF%B9%E8%8B%A6%E7%9A%84%E8%A7%89%E7%9F%A5%E4%B9%9F%E6%98%AF%E8%8B%A6%E5%90%97">对苦的觉知也是苦吗？</a></li>
+<li><a href="#%E4%BB%8E%E8%8B%A6%E4%B8%AD%E8%A7%A3%E8%84%B1%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D">从苦中解脱是什么意思</a></li>
+<li><a href="#%E8%A7%89%E7%9F%A5%E8%87%AA%E7%94%B1">觉知自由</a></li>
+<li><a href="#%E5%AE%9E%E4%BF%AE%E5%B8%A6%E6%9D%A5%E8%A7%A3%E8%84%B1">实修带来解脱</a></li>
+<li><a href="#%E5%BF%83%E6%99%BA%E7%9A%84%E8%87%AA%E6%88%91%E8%AE%A4%E7%9F%A5%E4%B9%8B%E7%BE%8E">心智的自我认知之美</a></li>
+<li><a href="#%E8%A7%82%E7%85%A7%E4%BD%A0%E7%9A%84%E7%A6%85%E4%BF%AE">观照你的禅修</a></li>
+<li><a href="#%E4%BF%AE%E4%B9%A0%E4%B8%AD%E7%9A%84%E8%83%BD%E9%87%8F%E4%BF%9D%E6%8A%A4">修习中的能量保护</a></li>
+<li><a href="#%E4%B8%8D%E4%BC%A4%E5%AE%B3%E7%9A%84%E6%80%81%E5%BA%A6">不伤害的态度</a></li>
+<li><a href="#%E8%B4%AA%E4%B8%8D%E6%BB%A1%E7%9A%84%E7%80%91%E6%B5%81">贪：不满的瀑流</a></li>
+<li><a href="#%E5%97%94%E8%B4%AA%E7%9A%84%E5%8F%8D%E9%9D%A2">嗔：贪的反面</a></li>
+<li><a href="#%E7%97%B4%E8%87%AA%E6%88%91%E5%AE%9E%E7%8E%B0%E7%9A%84%E9%A2%84%E8%A8%80%E9%99%B7%E9%98%B1">痴：自我实现的预言陷阱</a></li>
+<li><a href="#%E5%BD%93%E4%B8%8B%E6%B0%B8%E8%BF%9C%E6%98%AF%E6%81%B0%E5%BD%93%E7%9A%84%E6%97%B6%E9%97%B4">当下永远是恰当的时间</a></li>
+<li><a href="#%E5%85%A8%E9%83%A8%E8%AF%BE%E7%A8%8B%E6%97%A0%E9%9D%9E%E6%98%AF%E4%BB%85%E6%AD%A4%E8%80%8C%E5%B7%B2">“全部课程”无非是“仅此而已”</a></li>
+<li><a href="#%E6%8A%8A%E7%94%9F%E5%91%BD%E8%BF%98%E7%BB%99%E8%87%AA%E5%B7%B1">把生命还给自己</a></li>
+<li><a href="#%E6%8A%8A%E6%AD%A3%E5%BF%B5%E5%B8%A6%E8%BF%9B%E4%B8%96%E7%95%8C">把正念带进世界</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E9%83%A8-%E6%88%90%E7%86%9F">第四部 成熟</a>
+<ul>
+<li><a href="#%E6%AD%A3%E5%BF%B5%E7%BB%83%E4%B9%A0%E7%9A%84%E6%80%81%E5%BA%A6%E5%9F%BA%E7%9F%B3">正念练习的态度基石</a></li>
+<li><a href="#1%E4%B8%8D%E8%AF%84%E5%88%A4">1.不评判</a></li>
+<li><a href="#2%E8%80%90%E5%BF%83">2.耐心</a></li>
+<li><a href="#3%E5%88%9D%E5%AD%A6%E8%80%85%E4%B9%8B%E5%BF%83">3.初学者之心</a></li>
+<li><a href="#4%E4%BF%A1%E4%BB%BB">4.信任</a></li>
+<li><a href="#5%E4%B8%8D%E5%8A%AA%E5%8A%9B">5.不努力</a></li>
+<li><a href="#6%E6%8E%A5%E7%BA%B3">6.接纳</a></li>
+<li><a href="#7%E6%94%BE%E4%B8%8B">7.放下</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E9%83%A8-%E7%BB%83%E4%B9%A0">第五部 练习</a>
+<ul>
+<li><a href="#%E4%BB%8E%E6%AD%A3%E5%BC%8F%E7%BB%83%E4%B9%A0%E5%BC%80%E5%A7%8B">从正式练习开始</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E6%AD%A3%E5%BC%8F%E7%BB%83%E4%B9%A0%E7%9A%84%E5%9B%9B%E7%82%B9%E5%BB%BA%E8%AE%AE">关于正式练习的四点建议</a></li>
+<li><a href="#%E5%BC%95%E5%AF%BC%E5%BC%8F%E7%BB%83%E4%B9%A0">引导式练习</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

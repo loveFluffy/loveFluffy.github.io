@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x521b;&#x4e1a;&#x5728;&#x8def;&#x4e0a;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x521b;&#x4e1a;&#x5728;&#x8def;&#x4e0a;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,279 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="创业在路上">创业在路上</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\cover\11222.jpg"></td><td>
+<h1 id="创业在路上">创业在路上</h1>
+<center>罗永浩</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="推荐序-当手机都被淘汰手机创业者还在">推荐序 当手机都被淘汰，手机创业者还在</h3>
+<h3 id="前言-长谈前后">前言 长谈前后</h3>
+<h3 id="1-我与企业的关系">1 我与企业的关系</h3>
+<h4 id="在反对的声音中开始">在反对的声音中开始</h4>
+<h4 id="凡事由自己决定">凡事由自己决定</h4>
+<h4 id="不要试图去补短板">不要试图去补短板</h4>
+<h4 id="有些话不敢说了">有些话不敢说了</h4>
+<h4 id="出乎意料的困难">出乎意料的困难</h4>
+<h4 id="怎样挂铃铛">怎样“挂铃铛”</h4>
+<h4 id="企业领袖不可以表现出过多的迟疑">企业领袖不可以表现出过多的迟疑</h4>
+<h4 id="老板如果觉得舒服企业就危险了">老板如果觉得舒服，企业就危险了</h4>
+<h4 id="定义理想主义">定义理想主义</h4>
+<h4 id="管控公司最重要的三件事">管控公司最重要的三件事</h4>
+<h4 id="不要过分高估自身优点的作用">不要过分高估自身优点的作用</h4>
+<h4 id="认清自身短板">认清自身短板</h4>
+<h4 id="跨界者的盲区">跨界者的盲区</h4>
+<h4 id="创业讲究聚焦">创业讲究“聚焦”</h4>
+<h4 id="你适合创业吗">你适合创业吗？</h4>
+<h4 id="如何选择创业方向">如何选择创业方向？</h4>
+<h3 id="2-我与产品的关系">2 我与产品的关系</h3>
+<h4 id="做产品之前">做产品之前</h4>
+<h4 id="乔布斯与苹果公司对我的启发">乔布斯与苹果公司对我的启发</h4>
+<h4 id="做硬件的过程中遇到的最大的坑">做硬件的过程中，遇到的最大的坑</h4>
+<h4 id="什么是真相">什么是真相？</h4>
+<h4 id="审美有标准吗">审美有标准吗？</h4>
+<h4 id="多数人的跟风消费">多数人的跟风消费</h4>
+<h4 id="回归产品本身">回归产品本身</h4>
+<h4 id="注重差异化竞争">注重差异化竞争</h4>
+<h4 id="手机行业的临界点">手机行业的临界点</h4>
+<h4 id="要做软硬结合的平台产品">要做软硬结合的平台产品</h4>
+<h4 id="只有革命性产品才能打破僵局">只有革命性产品才能打破僵局</h4>
+<h3 id="3-我与用户的关系">3 我与用户的关系</h3>
+<h4 id="我们在骨子里是一类人">我们在骨子里是一类人</h4>
+<h4 id="他们之间的交叉和重合">他们之间的交叉和重合</h4>
+<h4 id="经营自己的用户">经营自己的用户</h4>
+<h3 id="4-我与投资人的关系">4 我与投资人的关系</h3>
+<h4 id="拿到钱比什么都重要">拿到钱比什么都重要</h4>
+<h4 id="投入尽可能多的时间和精力去融资">投入尽可能多的时间和精力去融资</h4>
+<h4 id="创业团队如何赢得投资人的认可">创业团队如何赢得投资人的认可？</h4>
+<h4 id="如何快速融资">如何快速融资？</h4>
+<h4 id="让投资人青睐的商业计划书">让投资人青睐的商业计划书</h4>
+<h4 id="如何与投资机构和投资人相处">如何与投资机构和投资人相处？</h4>
+<h4 id="在什么情况下会选择被收购">在什么情况下会选择被收购？</h4>
+<h3 id="5-我与高管的关系">5 我与高管的关系</h3>
+<h4 id="警告你该出去谈人了">警告！你该出去谈人了！</h4>
+<h4 id="如何判断高管的行业价值">如何判断高管的行业价值</h4>
+<h4 id="工资期权情怀">工资、期权、情怀</h4>
+<h4 id="信任是自己挣来的">信任是自己“挣”来的</h4>
+<h4 id="草台班子也可以挖到人才">草台班子也可以挖到人才</h4>
+<h4 id="如何挖那些难搞定的人才">如何挖那些难搞定的人才？</h4>
+<h3 id="6-我与员工的关系">6 我与员工的关系</h3>
+<h4 id="我害怕和员工一起乘电梯">我害怕和员工一起乘电梯</h4>
+<h4 id="刻意营造的团队文化">刻意营造的团队文化</h4>
+<h4 id="在任何优秀的群体中笨蛋总是多数">在任何优秀的群体中，笨蛋总是多数</h4>
+<h4 id="一路混战走向成功">一路混战走向成功</h4>
+<h4 id="越级汇报和越级布置工作">越级汇报和越级布置工作</h4>
+<h4 id="有意识地关注和接纳人才">有意识地关注和接纳人才</h4>
+<h4 id="底层员工如何迅速得到提升">底层员工如何迅速得到提升？</h4>
+<h4 id="职场发展最重要的条件">职场发展最重要的条件</h4>
+<h3 id="7-我与自己的关系">7 我与自己的关系</h3>
+<h4 id="失败是脱敏的过程">失败是脱敏的过程</h4>
+<h4 id="如何对待心存恶意的人">如何对待心存恶意的人？</h4>
+<h4 id="重新理解世界">重新理解世界</h4>
+<h4 id="天生骄傲">天生骄傲</h4>
+<h4 id="创业者的舍和得">创业者的舍和得</h4>
+<h4 id="学习不断地学习">学习，不断地学习</h4>
+<h4 id="如果有无穷无尽的钱">如果有无穷无尽的钱</h4>
+<h4 id="退休之后">退休之后</h4>
+<h4 id="为自己设计一个背影">为自己设计一个背影</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F-%E5%BD%93%E6%89%8B%E6%9C%BA%E9%83%BD%E8%A2%AB%E6%B7%98%E6%B1%B0%E6%89%8B%E6%9C%BA%E5%88%9B%E4%B8%9A%E8%80%85%E8%BF%98%E5%9C%A8">推荐序 当手机都被淘汰，手机创业者还在</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80-%E9%95%BF%E8%B0%88%E5%89%8D%E5%90%8E">前言 长谈前后</a></li>
+<li><a href="#1-%E6%88%91%E4%B8%8E%E4%BC%81%E4%B8%9A%E7%9A%84%E5%85%B3%E7%B3%BB">1 我与企业的关系</a>
+<ul>
+<li><a href="#%E5%9C%A8%E5%8F%8D%E5%AF%B9%E7%9A%84%E5%A3%B0%E9%9F%B3%E4%B8%AD%E5%BC%80%E5%A7%8B">在反对的声音中开始</a></li>
+<li><a href="#%E5%87%A1%E4%BA%8B%E7%94%B1%E8%87%AA%E5%B7%B1%E5%86%B3%E5%AE%9A">凡事由自己决定</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81%E8%AF%95%E5%9B%BE%E5%8E%BB%E8%A1%A5%E7%9F%AD%E6%9D%BF">不要试图去补短板</a></li>
+<li><a href="#%E6%9C%89%E4%BA%9B%E8%AF%9D%E4%B8%8D%E6%95%A2%E8%AF%B4%E4%BA%86">有些话不敢说了</a></li>
+<li><a href="#%E5%87%BA%E4%B9%8E%E6%84%8F%E6%96%99%E7%9A%84%E5%9B%B0%E9%9A%BE">出乎意料的困难</a></li>
+<li><a href="#%E6%80%8E%E6%A0%B7%E6%8C%82%E9%93%83%E9%93%9B">怎样“挂铃铛”</a></li>
+<li><a href="#%E4%BC%81%E4%B8%9A%E9%A2%86%E8%A2%96%E4%B8%8D%E5%8F%AF%E4%BB%A5%E8%A1%A8%E7%8E%B0%E5%87%BA%E8%BF%87%E5%A4%9A%E7%9A%84%E8%BF%9F%E7%96%91">企业领袖不可以表现出过多的迟疑</a></li>
+<li><a href="#%E8%80%81%E6%9D%BF%E5%A6%82%E6%9E%9C%E8%A7%89%E5%BE%97%E8%88%92%E6%9C%8D%E4%BC%81%E4%B8%9A%E5%B0%B1%E5%8D%B1%E9%99%A9%E4%BA%86">老板如果觉得舒服，企业就危险了</a></li>
+<li><a href="#%E5%AE%9A%E4%B9%89%E7%90%86%E6%83%B3%E4%B8%BB%E4%B9%89">定义理想主义</a></li>
+<li><a href="#%E7%AE%A1%E6%8E%A7%E5%85%AC%E5%8F%B8%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%B8%89%E4%BB%B6%E4%BA%8B">管控公司最重要的三件事</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81%E8%BF%87%E5%88%86%E9%AB%98%E4%BC%B0%E8%87%AA%E8%BA%AB%E4%BC%98%E7%82%B9%E7%9A%84%E4%BD%9C%E7%94%A8">不要过分高估自身优点的作用</a></li>
+<li><a href="#%E8%AE%A4%E6%B8%85%E8%87%AA%E8%BA%AB%E7%9F%AD%E6%9D%BF">认清自身短板</a></li>
+<li><a href="#%E8%B7%A8%E7%95%8C%E8%80%85%E7%9A%84%E7%9B%B2%E5%8C%BA">跨界者的盲区</a></li>
+<li><a href="#%E5%88%9B%E4%B8%9A%E8%AE%B2%E7%A9%B6%E8%81%9A%E7%84%A6">创业讲究“聚焦”</a></li>
+<li><a href="#%E4%BD%A0%E9%80%82%E5%90%88%E5%88%9B%E4%B8%9A%E5%90%97">你适合创业吗？</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E5%88%9B%E4%B8%9A%E6%96%B9%E5%90%91">如何选择创业方向？</a></li>
+</ul>
+</li>
+<li><a href="#2-%E6%88%91%E4%B8%8E%E4%BA%A7%E5%93%81%E7%9A%84%E5%85%B3%E7%B3%BB">2 我与产品的关系</a>
+<ul>
+<li><a href="#%E5%81%9A%E4%BA%A7%E5%93%81%E4%B9%8B%E5%89%8D">做产品之前</a></li>
+<li><a href="#%E4%B9%94%E5%B8%83%E6%96%AF%E4%B8%8E%E8%8B%B9%E6%9E%9C%E5%85%AC%E5%8F%B8%E5%AF%B9%E6%88%91%E7%9A%84%E5%90%AF%E5%8F%91">乔布斯与苹果公司对我的启发</a></li>
+<li><a href="#%E5%81%9A%E7%A1%AC%E4%BB%B6%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E7%9A%84%E5%9D%91">做硬件的过程中，遇到的最大的坑</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%9C%9F%E7%9B%B8">什么是真相？</a></li>
+<li><a href="#%E5%AE%A1%E7%BE%8E%E6%9C%89%E6%A0%87%E5%87%86%E5%90%97">审美有标准吗？</a></li>
+<li><a href="#%E5%A4%9A%E6%95%B0%E4%BA%BA%E7%9A%84%E8%B7%9F%E9%A3%8E%E6%B6%88%E8%B4%B9">多数人的跟风消费</a></li>
+<li><a href="#%E5%9B%9E%E5%BD%92%E4%BA%A7%E5%93%81%E6%9C%AC%E8%BA%AB">回归产品本身</a></li>
+<li><a href="#%E6%B3%A8%E9%87%8D%E5%B7%AE%E5%BC%82%E5%8C%96%E7%AB%9E%E4%BA%89">注重差异化竞争</a></li>
+<li><a href="#%E6%89%8B%E6%9C%BA%E8%A1%8C%E4%B8%9A%E7%9A%84%E4%B8%B4%E7%95%8C%E7%82%B9">手机行业的临界点</a></li>
+<li><a href="#%E8%A6%81%E5%81%9A%E8%BD%AF%E7%A1%AC%E7%BB%93%E5%90%88%E7%9A%84%E5%B9%B3%E5%8F%B0%E4%BA%A7%E5%93%81">要做软硬结合的平台产品</a></li>
+<li><a href="#%E5%8F%AA%E6%9C%89%E9%9D%A9%E5%91%BD%E6%80%A7%E4%BA%A7%E5%93%81%E6%89%8D%E8%83%BD%E6%89%93%E7%A0%B4%E5%83%B5%E5%B1%80">只有革命性产品才能打破僵局</a></li>
+</ul>
+</li>
+<li><a href="#3-%E6%88%91%E4%B8%8E%E7%94%A8%E6%88%B7%E7%9A%84%E5%85%B3%E7%B3%BB">3 我与用户的关系</a>
+<ul>
+<li><a href="#%E6%88%91%E4%BB%AC%E5%9C%A8%E9%AA%A8%E5%AD%90%E9%87%8C%E6%98%AF%E4%B8%80%E7%B1%BB%E4%BA%BA">我们在骨子里是一类人</a></li>
+<li><a href="#%E4%BB%96%E4%BB%AC%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BA%A4%E5%8F%89%E5%92%8C%E9%87%8D%E5%90%88">他们之间的交叉和重合</a></li>
+<li><a href="#%E7%BB%8F%E8%90%A5%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%A8%E6%88%B7">经营自己的用户</a></li>
+</ul>
+</li>
+<li><a href="#4-%E6%88%91%E4%B8%8E%E6%8A%95%E8%B5%84%E4%BA%BA%E7%9A%84%E5%85%B3%E7%B3%BB">4 我与投资人的关系</a>
+<ul>
+<li><a href="#%E6%8B%BF%E5%88%B0%E9%92%B1%E6%AF%94%E4%BB%80%E4%B9%88%E9%83%BD%E9%87%8D%E8%A6%81">拿到钱比什么都重要</a></li>
+<li><a href="#%E6%8A%95%E5%85%A5%E5%B0%BD%E5%8F%AF%E8%83%BD%E5%A4%9A%E7%9A%84%E6%97%B6%E9%97%B4%E5%92%8C%E7%B2%BE%E5%8A%9B%E5%8E%BB%E8%9E%8D%E8%B5%84">投入尽可能多的时间和精力去融资</a></li>
+<li><a href="#%E5%88%9B%E4%B8%9A%E5%9B%A2%E9%98%9F%E5%A6%82%E4%BD%95%E8%B5%A2%E5%BE%97%E6%8A%95%E8%B5%84%E4%BA%BA%E7%9A%84%E8%AE%A4%E5%8F%AF">创业团队如何赢得投资人的认可？</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E8%9E%8D%E8%B5%84">如何快速融资？</a></li>
+<li><a href="#%E8%AE%A9%E6%8A%95%E8%B5%84%E4%BA%BA%E9%9D%92%E7%9D%90%E7%9A%84%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6">让投资人青睐的商业计划书</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E4%B8%8E%E6%8A%95%E8%B5%84%E6%9C%BA%E6%9E%84%E5%92%8C%E6%8A%95%E8%B5%84%E4%BA%BA%E7%9B%B8%E5%A4%84">如何与投资机构和投资人相处？</a></li>
+<li><a href="#%E5%9C%A8%E4%BB%80%E4%B9%88%E6%83%85%E5%86%B5%E4%B8%8B%E4%BC%9A%E9%80%89%E6%8B%A9%E8%A2%AB%E6%94%B6%E8%B4%AD">在什么情况下会选择被收购？</a></li>
+</ul>
+</li>
+<li><a href="#5-%E6%88%91%E4%B8%8E%E9%AB%98%E7%AE%A1%E7%9A%84%E5%85%B3%E7%B3%BB">5 我与高管的关系</a>
+<ul>
+<li><a href="#%E8%AD%A6%E5%91%8A%E4%BD%A0%E8%AF%A5%E5%87%BA%E5%8E%BB%E8%B0%88%E4%BA%BA%E4%BA%86">警告！你该出去谈人了！</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E9%AB%98%E7%AE%A1%E7%9A%84%E8%A1%8C%E4%B8%9A%E4%BB%B7%E5%80%BC">如何判断高管的行业价值</a></li>
+<li><a href="#%E5%B7%A5%E8%B5%84%E6%9C%9F%E6%9D%83%E6%83%85%E6%80%80">工资、期权、情怀</a></li>
+<li><a href="#%E4%BF%A1%E4%BB%BB%E6%98%AF%E8%87%AA%E5%B7%B1%E6%8C%A3%E6%9D%A5%E7%9A%84">信任是自己“挣”来的</a></li>
+<li><a href="#%E8%8D%89%E5%8F%B0%E7%8F%AD%E5%AD%90%E4%B9%9F%E5%8F%AF%E4%BB%A5%E6%8C%96%E5%88%B0%E4%BA%BA%E6%89%8D">草台班子也可以挖到人才</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%8C%96%E9%82%A3%E4%BA%9B%E9%9A%BE%E6%90%9E%E5%AE%9A%E7%9A%84%E4%BA%BA%E6%89%8D">如何挖那些难搞定的人才？</a></li>
+</ul>
+</li>
+<li><a href="#6-%E6%88%91%E4%B8%8E%E5%91%98%E5%B7%A5%E7%9A%84%E5%85%B3%E7%B3%BB">6 我与员工的关系</a>
+<ul>
+<li><a href="#%E6%88%91%E5%AE%B3%E6%80%95%E5%92%8C%E5%91%98%E5%B7%A5%E4%B8%80%E8%B5%B7%E4%B9%98%E7%94%B5%E6%A2%AF">我害怕和员工一起乘电梯</a></li>
+<li><a href="#%E5%88%BB%E6%84%8F%E8%90%A5%E9%80%A0%E7%9A%84%E5%9B%A2%E9%98%9F%E6%96%87%E5%8C%96">刻意营造的团队文化</a></li>
+<li><a href="#%E5%9C%A8%E4%BB%BB%E4%BD%95%E4%BC%98%E7%A7%80%E7%9A%84%E7%BE%A4%E4%BD%93%E4%B8%AD%E7%AC%A8%E8%9B%8B%E6%80%BB%E6%98%AF%E5%A4%9A%E6%95%B0">在任何优秀的群体中，笨蛋总是多数</a></li>
+<li><a href="#%E4%B8%80%E8%B7%AF%E6%B7%B7%E6%88%98%E8%B5%B0%E5%90%91%E6%88%90%E5%8A%9F">一路混战走向成功</a></li>
+<li><a href="#%E8%B6%8A%E7%BA%A7%E6%B1%87%E6%8A%A5%E5%92%8C%E8%B6%8A%E7%BA%A7%E5%B8%83%E7%BD%AE%E5%B7%A5%E4%BD%9C">越级汇报和越级布置工作</a></li>
+<li><a href="#%E6%9C%89%E6%84%8F%E8%AF%86%E5%9C%B0%E5%85%B3%E6%B3%A8%E5%92%8C%E6%8E%A5%E7%BA%B3%E4%BA%BA%E6%89%8D">有意识地关注和接纳人才</a></li>
+<li><a href="#%E5%BA%95%E5%B1%82%E5%91%98%E5%B7%A5%E5%A6%82%E4%BD%95%E8%BF%85%E9%80%9F%E5%BE%97%E5%88%B0%E6%8F%90%E5%8D%87">底层员工如何迅速得到提升？</a></li>
+<li><a href="#%E8%81%8C%E5%9C%BA%E5%8F%91%E5%B1%95%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E6%9D%A1%E4%BB%B6">职场发展最重要的条件</a></li>
+</ul>
+</li>
+<li><a href="#7-%E6%88%91%E4%B8%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%85%B3%E7%B3%BB">7 我与自己的关系</a>
+<ul>
+<li><a href="#%E5%A4%B1%E8%B4%A5%E6%98%AF%E8%84%B1%E6%95%8F%E7%9A%84%E8%BF%87%E7%A8%8B">失败是脱敏的过程</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%AF%B9%E5%BE%85%E5%BF%83%E5%AD%98%E6%81%B6%E6%84%8F%E7%9A%84%E4%BA%BA">如何对待心存恶意的人？</a></li>
+<li><a href="#%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E4%B8%96%E7%95%8C">重新理解世界</a></li>
+<li><a href="#%E5%A4%A9%E7%94%9F%E9%AA%84%E5%82%B2">天生骄傲</a></li>
+<li><a href="#%E5%88%9B%E4%B8%9A%E8%80%85%E7%9A%84%E8%88%8D%E5%92%8C%E5%BE%97">创业者的舍和得</a></li>
+<li><a href="#%E5%AD%A6%E4%B9%A0%E4%B8%8D%E6%96%AD%E5%9C%B0%E5%AD%A6%E4%B9%A0">学习，不断地学习</a></li>
+<li><a href="#%E5%A6%82%E6%9E%9C%E6%9C%89%E6%97%A0%E7%A9%B7%E6%97%A0%E5%B0%BD%E7%9A%84%E9%92%B1">如果有无穷无尽的钱</a></li>
+<li><a href="#%E9%80%80%E4%BC%91%E4%B9%8B%E5%90%8E">退休之后</a></li>
+<li><a href="#%E4%B8%BA%E8%87%AA%E5%B7%B1%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E8%83%8C%E5%BD%B1">为自己设计一个背影</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

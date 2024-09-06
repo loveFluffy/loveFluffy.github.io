@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x75af;&#x5b50;&#xff1a;&#x4e00;&#x4e2a;&#x5b9e;&#x4e60;&#x5fc3;&#x7406;&#x533b;&#x751f;&#x7684;&#x7cbe;&#x795e;&#x63a2;&#x9669;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x75af;&#x5b50;&#xff1a;&#x4e00;&#x4e2a;&#x5b9e;&#x4e60;&#x5fc3;&#x7406;&#x533b;&#x751f;&#x7684;&#x7cbe;&#x795e;&#x63a2;&#x9669;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,216 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="疯子一个实习心理医生的精神探险">疯子：一个实习心理医生的精神探险</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\cover\10991.jpg"></td><td>
+<h1 id="疯子一个实习心理医生的精神探险">疯子：一个实习心理医生的精神探险</h1>
+<center>[美]约翰·舒勒（John R Suler） 著|陈自春 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="1-上山奇遇">1 上山奇遇</h3>
+<h3 id="2-古怪的乔恩">2 古怪的乔恩</h3>
+<h3 id="3-医疗中心">3 医疗中心</h3>
+<h3 id="4-总结会议">4 总结会议</h3>
+<h3 id="5-探访瑞秋">5 探访瑞秋</h3>
+<h3 id="6-视后评估">6 视后评估</h3>
+<h3 id="7-自由时间">7 自由时间</h3>
+<h3 id="8-日记漫想">8 日记漫想</h3>
+<h3 id="9-病人面对面">9 病人面对面</h3>
+<h3 id="10-惊闻噩耗">10 惊闻噩耗</h3>
+<h3 id="11-流浪者">11 流浪者</h3>
+<h3 id="12-流言四散">12 流言四散</h3>
+<h3 id="13-隐私问题">13 隐私问题</h3>
+<h3 id="14-针锋相对">14 针锋相对</h3>
+<h3 id="15-心理学家">15 心理学家</h3>
+<h3 id="16-神秘女人">16 神秘女人</h3>
+<h3 id="17-谈话治疗">17 谈话治疗</h3>
+<h3 id="18-失物招领处">18 失物招领处</h3>
+<h3 id="19-易经与测试">19 《易经》与测试</h3>
+<h3 id="20-重力问题">20 重力问题</h3>
+<h3 id="21-科学崇拜">21 科学崇拜</h3>
+<h3 id="22-希波克拉底">22 希波克拉底</h3>
+<h3 id="23-电影开场">23 电影开场</h3>
+<h3 id="24-大白鲨">24 大白鲨</h3>
+<h3 id="25-视线游戏">25 视线游戏</h3>
+<h3 id="26-少年之吻">26 少年之吻</h3>
+<h3 id="27-一杯红茶">27 一杯红茶</h3>
+<h3 id="28-疯人院">28 疯人院</h3>
+<h3 id="29-心理测试">29 心理测试</h3>
+<h3 id="30-机器人思琪">30 机器人思琪</h3>
+<h3 id="31-塞壬之歌">31 塞壬之歌</h3>
+<h3 id="32-无名氏">32 无名氏</h3>
+<h3 id="33-险些崩溃">33 险些崩溃</h3>
+<h3 id="34-自觉梦境">34 自觉梦境</h3>
+<h3 id="35-晨会报告">35 晨会报告</h3>
+<h3 id="36-丢失的剪刀">36 丢失的剪刀</h3>
+<h3 id="37-金属线圈">37 金属线圈</h3>
+<h3 id="38-我是谁">38 我是谁</h3>
+<h3 id="39-疯子和傻子">39 疯子和傻子</h3>
+<h3 id="40-失忆症">40 失忆症</h3>
+<h3 id="41-分析医生">41 分析医生</h3>
+<h3 id="42-午餐时间">42 午餐时间</h3>
+<h3 id="43-解释专家">43 解释专家</h3>
+<h3 id="44-疼痛的手指">44 疼痛的手指</h3>
+<h3 id="45-理解无用论">45 理解无用论</h3>
+<h3 id="46-附加测试">46 附加测试</h3>
+<h3 id="47-危险时刻">47 危险时刻</h3>
+<h3 id="48-新的开始">48 新的开始</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#1-%E4%B8%8A%E5%B1%B1%E5%A5%87%E9%81%87">1 上山奇遇</a></li>
+<li><a href="#2-%E5%8F%A4%E6%80%AA%E7%9A%84%E4%B9%94%E6%81%A9">2 古怪的乔恩</a></li>
+<li><a href="#3-%E5%8C%BB%E7%96%97%E4%B8%AD%E5%BF%83">3 医疗中心</a></li>
+<li><a href="#4-%E6%80%BB%E7%BB%93%E4%BC%9A%E8%AE%AE">4 总结会议</a></li>
+<li><a href="#5-%E6%8E%A2%E8%AE%BF%E7%91%9E%E7%A7%8B">5 探访瑞秋</a></li>
+<li><a href="#6-%E8%A7%86%E5%90%8E%E8%AF%84%E4%BC%B0">6 视后评估</a></li>
+<li><a href="#7-%E8%87%AA%E7%94%B1%E6%97%B6%E9%97%B4">7 自由时间</a></li>
+<li><a href="#8-%E6%97%A5%E8%AE%B0%E6%BC%AB%E6%83%B3">8 日记漫想</a></li>
+<li><a href="#9-%E7%97%85%E4%BA%BA%E9%9D%A2%E5%AF%B9%E9%9D%A2">9 病人面对面</a></li>
+<li><a href="#10-%E6%83%8A%E9%97%BB%E5%99%A9%E8%80%97">10 惊闻噩耗</a></li>
+<li><a href="#11-%E6%B5%81%E6%B5%AA%E8%80%85">11 流浪者</a></li>
+<li><a href="#12-%E6%B5%81%E8%A8%80%E5%9B%9B%E6%95%A3">12 流言四散</a></li>
+<li><a href="#13-%E9%9A%90%E7%A7%81%E9%97%AE%E9%A2%98">13 隐私问题</a></li>
+<li><a href="#14-%E9%92%88%E9%94%8B%E7%9B%B8%E5%AF%B9">14 针锋相对</a></li>
+<li><a href="#15-%E5%BF%83%E7%90%86%E5%AD%A6%E5%AE%B6">15 心理学家</a></li>
+<li><a href="#16-%E7%A5%9E%E7%A7%98%E5%A5%B3%E4%BA%BA">16 神秘女人</a></li>
+<li><a href="#17-%E8%B0%88%E8%AF%9D%E6%B2%BB%E7%96%97">17 谈话治疗</a></li>
+<li><a href="#18-%E5%A4%B1%E7%89%A9%E6%8B%9B%E9%A2%86%E5%A4%84">18 失物招领处</a></li>
+<li><a href="#19-%E6%98%93%E7%BB%8F%E4%B8%8E%E6%B5%8B%E8%AF%95">19 《易经》与测试</a></li>
+<li><a href="#20-%E9%87%8D%E5%8A%9B%E9%97%AE%E9%A2%98">20 重力问题</a></li>
+<li><a href="#21-%E7%A7%91%E5%AD%A6%E5%B4%87%E6%8B%9C">21 科学崇拜</a></li>
+<li><a href="#22-%E5%B8%8C%E6%B3%A2%E5%85%8B%E6%8B%89%E5%BA%95">22 希波克拉底</a></li>
+<li><a href="#23-%E7%94%B5%E5%BD%B1%E5%BC%80%E5%9C%BA">23 电影开场</a></li>
+<li><a href="#24-%E5%A4%A7%E7%99%BD%E9%B2%A8">24 大白鲨</a></li>
+<li><a href="#25-%E8%A7%86%E7%BA%BF%E6%B8%B8%E6%88%8F">25 视线游戏</a></li>
+<li><a href="#26-%E5%B0%91%E5%B9%B4%E4%B9%8B%E5%90%BB">26 少年之吻</a></li>
+<li><a href="#27-%E4%B8%80%E6%9D%AF%E7%BA%A2%E8%8C%B6">27 一杯红茶</a></li>
+<li><a href="#28-%E7%96%AF%E4%BA%BA%E9%99%A2">28 疯人院</a></li>
+<li><a href="#29-%E5%BF%83%E7%90%86%E6%B5%8B%E8%AF%95">29 心理测试</a></li>
+<li><a href="#30-%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%80%9D%E7%90%AA">30 机器人思琪</a></li>
+<li><a href="#31-%E5%A1%9E%E5%A3%AC%E4%B9%8B%E6%AD%8C">31 塞壬之歌</a></li>
+<li><a href="#32-%E6%97%A0%E5%90%8D%E6%B0%8F">32 无名氏</a></li>
+<li><a href="#33-%E9%99%A9%E4%BA%9B%E5%B4%A9%E6%BA%83">33 险些崩溃</a></li>
+<li><a href="#34-%E8%87%AA%E8%A7%89%E6%A2%A6%E5%A2%83">34 自觉梦境</a></li>
+<li><a href="#35-%E6%99%A8%E4%BC%9A%E6%8A%A5%E5%91%8A">35 晨会报告</a></li>
+<li><a href="#36-%E4%B8%A2%E5%A4%B1%E7%9A%84%E5%89%AA%E5%88%80">36 丢失的剪刀</a></li>
+<li><a href="#37-%E9%87%91%E5%B1%9E%E7%BA%BF%E5%9C%88">37 金属线圈</a></li>
+<li><a href="#38-%E6%88%91%E6%98%AF%E8%B0%81">38 我是谁</a></li>
+<li><a href="#39-%E7%96%AF%E5%AD%90%E5%92%8C%E5%82%BB%E5%AD%90">39 疯子和傻子</a></li>
+<li><a href="#40-%E5%A4%B1%E5%BF%86%E7%97%87">40 失忆症</a></li>
+<li><a href="#41-%E5%88%86%E6%9E%90%E5%8C%BB%E7%94%9F">41 分析医生</a></li>
+<li><a href="#42-%E5%8D%88%E9%A4%90%E6%97%B6%E9%97%B4">42 午餐时间</a></li>
+<li><a href="#43-%E8%A7%A3%E9%87%8A%E4%B8%93%E5%AE%B6">43 解释专家</a></li>
+<li><a href="#44-%E7%96%BC%E7%97%9B%E7%9A%84%E6%89%8B%E6%8C%87">44 疼痛的手指</a></li>
+<li><a href="#45-%E7%90%86%E8%A7%A3%E6%97%A0%E7%94%A8%E8%AE%BA">45 理解无用论</a></li>
+<li><a href="#46-%E9%99%84%E5%8A%A0%E6%B5%8B%E8%AF%95">46 附加测试</a></li>
+<li><a href="#47-%E5%8D%B1%E9%99%A9%E6%97%B6%E5%88%BB">47 危险时刻</a></li>
+<li><a href="#48-%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B">48 新的开始</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

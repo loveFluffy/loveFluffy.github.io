@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5f53;&#x65f6;&#x5fcd;&#x4f4f;&#x5c31;&#x597d;&#x4e86;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5f53;&#x65f6;&#x5fcd;&#x4f4f;&#x5c31;&#x597d;&#x4e86;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,167 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="当时忍住就好了">当时忍住就好了</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\cover\11237.jpg"></td><td>
+<h1 id="当时忍住就好了">当时忍住就好了</h1>
+<center>[美]肯·林德纳（Ken Lindner） 著|钱峰 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="自序-关键时刻忍得住告别容易后悔的人生">自序 关键时刻忍得住，告别容易后悔的人生</h3>
+<h3 id="第一章-我们忍不住的是能量">第一章 我们忍不住的是能量</h3>
+<h4 id="1-负面能量如何伤害了你">1 负面能量如何伤害了你</h4>
+<h4 id="2-如何面对你的负面能量">2 如何面对你的负面能量</h4>
+<h4 id="3-什么是驾驭能量的时间轴">3 什么是驾驭能量的时间轴</h4>
+<h4 id="4-驾驭能量前要做的心理准备">4 驾驭能量前要做的心理准备</h4>
+<h3 id="第二章-驾驭能量七步法">第二章 驾驭能量七步法</h3>
+<h4 id="1-识别你心中神秘而强大的情感触发器">1 识别你心中神秘而强大的“情感触发器”</h4>
+<h4 id="2-人生的选择需要预测">2 人生的选择需要预测</h4>
+<h4 id="3-你的未来需要设想">3 你的未来需要设想</h4>
+<h4 id="4-不再为相同的事情失控">4 不再为相同的事情失控</h4>
+<h4 id="5-为自己制定一份神奇的备忘录">5 为自己制定一份神奇的备忘录</h4>
+<h4 id="6-轻松做出有价值的选择或决定">6 轻松做出有价值的选择或决定</h4>
+<h4 id="7-我们为什么我们需要回顾人生">7 我们为什么我们需要回顾人生</h4>
+<h3 id="第三章-忍就忍得有质有量">第三章 忍就忍得有质有量</h3>
+<h4 id="1-保养你的情感触发器">1 保养你的“情感触发器”</h4>
+<h4 id="2-关键时刻谨防犯错">2 关键时刻谨防犯错</h4>
+<h4 id="3-快速设想和快速规划的力量">3 “快速设想”和“快速规划”的力量</h4>
+<h4 id="4-忍术词汇备忘录">4 “忍术”词汇备忘录</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E8%87%AA%E5%BA%8F-%E5%85%B3%E9%94%AE%E6%97%B6%E5%88%BB%E5%BF%8D%E5%BE%97%E4%BD%8F%E5%91%8A%E5%88%AB%E5%AE%B9%E6%98%93%E5%90%8E%E6%82%94%E7%9A%84%E4%BA%BA%E7%94%9F">自序 关键时刻忍得住，告别容易后悔的人生</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%88%91%E4%BB%AC%E5%BF%8D%E4%B8%8D%E4%BD%8F%E7%9A%84%E6%98%AF%E8%83%BD%E9%87%8F">第一章 我们忍不住的是能量</a>
+<ul>
+<li><a href="#1-%E8%B4%9F%E9%9D%A2%E8%83%BD%E9%87%8F%E5%A6%82%E4%BD%95%E4%BC%A4%E5%AE%B3%E4%BA%86%E4%BD%A0">1 负面能量如何伤害了你</a></li>
+<li><a href="#2-%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9%E4%BD%A0%E7%9A%84%E8%B4%9F%E9%9D%A2%E8%83%BD%E9%87%8F">2 如何面对你的负面能量</a></li>
+<li><a href="#3-%E4%BB%80%E4%B9%88%E6%98%AF%E9%A9%BE%E9%A9%AD%E8%83%BD%E9%87%8F%E7%9A%84%E6%97%B6%E9%97%B4%E8%BD%B4">3 什么是驾驭能量的时间轴</a></li>
+<li><a href="#4-%E9%A9%BE%E9%A9%AD%E8%83%BD%E9%87%8F%E5%89%8D%E8%A6%81%E5%81%9A%E7%9A%84%E5%BF%83%E7%90%86%E5%87%86%E5%A4%87">4 驾驭能量前要做的心理准备</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%A9%BE%E9%A9%AD%E8%83%BD%E9%87%8F%E4%B8%83%E6%AD%A5%E6%B3%95">第二章 驾驭能量七步法</a>
+<ul>
+<li><a href="#1-%E8%AF%86%E5%88%AB%E4%BD%A0%E5%BF%83%E4%B8%AD%E7%A5%9E%E7%A7%98%E8%80%8C%E5%BC%BA%E5%A4%A7%E7%9A%84%E6%83%85%E6%84%9F%E8%A7%A6%E5%8F%91%E5%99%A8">1 识别你心中神秘而强大的“情感触发器”</a></li>
+<li><a href="#2-%E4%BA%BA%E7%94%9F%E7%9A%84%E9%80%89%E6%8B%A9%E9%9C%80%E8%A6%81%E9%A2%84%E6%B5%8B">2 人生的选择需要预测</a></li>
+<li><a href="#3-%E4%BD%A0%E7%9A%84%E6%9C%AA%E6%9D%A5%E9%9C%80%E8%A6%81%E8%AE%BE%E6%83%B3">3 你的未来需要设想</a></li>
+<li><a href="#4-%E4%B8%8D%E5%86%8D%E4%B8%BA%E7%9B%B8%E5%90%8C%E7%9A%84%E4%BA%8B%E6%83%85%E5%A4%B1%E6%8E%A7">4 不再为相同的事情失控</a></li>
+<li><a href="#5-%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%88%B6%E5%AE%9A%E4%B8%80%E4%BB%BD%E7%A5%9E%E5%A5%87%E7%9A%84%E5%A4%87%E5%BF%98%E5%BD%95">5 为自己制定一份神奇的备忘录</a></li>
+<li><a href="#6-%E8%BD%BB%E6%9D%BE%E5%81%9A%E5%87%BA%E6%9C%89%E4%BB%B7%E5%80%BC%E7%9A%84%E9%80%89%E6%8B%A9%E6%88%96%E5%86%B3%E5%AE%9A">6 轻松做出有价值的选择或决定</a></li>
+<li><a href="#7-%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E5%9B%9E%E9%A1%BE%E4%BA%BA%E7%94%9F">7 我们为什么我们需要回顾人生</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%BF%8D%E5%B0%B1%E5%BF%8D%E5%BE%97%E6%9C%89%E8%B4%A8%E6%9C%89%E9%87%8F">第三章 忍就忍得有质有量</a>
+<ul>
+<li><a href="#1-%E4%BF%9D%E5%85%BB%E4%BD%A0%E7%9A%84%E6%83%85%E6%84%9F%E8%A7%A6%E5%8F%91%E5%99%A8">1 保养你的“情感触发器”</a></li>
+<li><a href="#2-%E5%85%B3%E9%94%AE%E6%97%B6%E5%88%BB%E8%B0%A8%E9%98%B2%E7%8A%AF%E9%94%99">2 关键时刻谨防犯错</a></li>
+<li><a href="#3-%E5%BF%AB%E9%80%9F%E8%AE%BE%E6%83%B3%E5%92%8C%E5%BF%AB%E9%80%9F%E8%A7%84%E5%88%92%E7%9A%84%E5%8A%9B%E9%87%8F">3 “快速设想”和“快速规划”的力量</a></li>
+<li><a href="#4-%E5%BF%8D%E6%9C%AF%E8%AF%8D%E6%B1%87%E5%A4%87%E5%BF%98%E5%BD%95">4 “忍术”词汇备忘录</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

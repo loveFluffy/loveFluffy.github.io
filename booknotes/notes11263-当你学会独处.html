@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5f53;&#x4f60;&#x5b66;&#x4f1a;&#x72ec;&#x5904;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5f53;&#x4f60;&#x5b66;&#x4f1a;&#x72ec;&#x5904;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,254 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="当你学会独处">当你学会独处</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\cover\11263.jpg"></td><td>
+<h1 id="当你学会独处">当你学会独处</h1>
+<center>周国平</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="第一章-我更愿意做我自己">第一章 我更愿意做我自己</h3>
+<h4 id="我更愿意做我自己">我更愿意做我自己</h4>
+<h4 id="独处的充实">独处的充实</h4>
+<h4 id="心灵的空间">心灵的空间</h4>
+<h4 id="丰富的安静">丰富的安静</h4>
+<h4 id="比成功更重要的">比成功更重要的</h4>
+<h4 id="交往的质量">交往的质量</h4>
+<h4 id="一个人和三个人称">一个人和三个人称</h4>
+<h4 id="人生的三个觉醒">人生的三个觉醒</h4>
+<h4 id="朋友">朋友</h4>
+<h3 id="第二章-和命运结伴而行">第二章 和命运结伴而行</h3>
+<h4 id="和命运结伴而行">和命运结伴而行</h4>
+<h4 id="从零开始与未完成">从零开始与未完成</h4>
+<h4 id="人生寓言">人生寓言</h4>
+<h4 id="对人性的不同解释">对人性的不同解释</h4>
+<h4 id="灵魂的在场">灵魂的在场</h4>
+<h4 id="灵魂教育">灵魂教育</h4>
+<h4 id="神圣的好奇心">神圣的好奇心</h4>
+<h4 id="爱与孤独">爱与孤独</h4>
+<h4 id="留住那个心智觉醒的时刻">留住那个心智觉醒的时刻</h4>
+<h3 id="第三章-生命本来没有名字">第三章 生命本来没有名字</h3>
+<h4 id="做自己的朋友">做自己的朋友</h4>
+<h4 id="尊重生命">尊重生命</h4>
+<h4 id="内在生命的伟大">内在生命的伟大</h4>
+<h4 id="性格就是命运">性格就是命运</h4>
+<h4 id="幸福和运气">幸福和运气</h4>
+<h4 id="失去的岁月">失去的岁月</h4>
+<h4 id="幸福与苦难都属于灵魂">幸福与苦难都属于灵魂</h4>
+<h3 id="第四章-做一个终身读者">第四章 做一个终身读者</h3>
+<h4 id="读永恒的书">读永恒的书</h4>
+<h4 id="读书的癖好">读书的癖好</h4>
+<h4 id="读书的收获">读书的收获</h4>
+<h4 id="经典和我们">经典和我们</h4>
+<h4 id="文学的安静">文学的安静</h4>
+<h4 id="给成人读的童话">给成人读的童话</h4>
+<h4 id="孔子的洒脱">孔子的洒脱</h4>
+<h4 id="读经典就像回家">读经典就像回家</h4>
+<h3 id="第五章-活得简单才能活得自由">第五章 活得简单才能活得自由</h3>
+<h4 id="从生存向存在的途中">从生存向存在的途中</h4>
+<h4 id="消费享受">消费=享受？</h4>
+<h4 id="名人和明星">名人和明星</h4>
+<h4 id="愉快是基本标准">愉快是基本标准</h4>
+<h4 id="争什么">争什么？</h4>
+<h4 id="第一重要的是做人">第一重要的是做人</h4>
+<h4 id="内在生活">内在生活</h4>
+<h4 id="一无所需最像神">一无所需最像神</h4>
+<h4 id="摆脱日常生活的惰性">摆脱日常生活的惰性</h4>
+<h4 id="快乐工作的能力">快乐工作的能力</h4>
+<h3 id="第六章-记住回家的路">第六章 记住回家的路</h3>
+<h4 id="怀念土地">怀念土地</h4>
+<h4 id="天人合一与生态学">“天人合一”与生态学</h4>
+<h4 id="中国人缺什么">中国人缺什么？</h4>
+<h4 id="父母们的眼神">父母们的眼神</h4>
+<h4 id="把我们自己娱乐死">把我们自己娱乐死？</h4>
+<h4 id="有所敬畏">有所敬畏</h4>
+<h4 id="对理想的思索">对理想的思索</h4>
+<h4 id="人不只属于历史">人不只属于历史</h4>
+<h4 id="城市的个性和颜色">城市的个性和颜色</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%88%91%E6%9B%B4%E6%84%BF%E6%84%8F%E5%81%9A%E6%88%91%E8%87%AA%E5%B7%B1">第一章 我更愿意做我自己</a>
+<ul>
+<li><a href="#%E6%88%91%E6%9B%B4%E6%84%BF%E6%84%8F%E5%81%9A%E6%88%91%E8%87%AA%E5%B7%B1">我更愿意做我自己</a></li>
+<li><a href="#%E7%8B%AC%E5%A4%84%E7%9A%84%E5%85%85%E5%AE%9E">独处的充实</a></li>
+<li><a href="#%E5%BF%83%E7%81%B5%E7%9A%84%E7%A9%BA%E9%97%B4">心灵的空间</a></li>
+<li><a href="#%E4%B8%B0%E5%AF%8C%E7%9A%84%E5%AE%89%E9%9D%99">丰富的安静</a></li>
+<li><a href="#%E6%AF%94%E6%88%90%E5%8A%9F%E6%9B%B4%E9%87%8D%E8%A6%81%E7%9A%84">比成功更重要的</a></li>
+<li><a href="#%E4%BA%A4%E5%BE%80%E7%9A%84%E8%B4%A8%E9%87%8F">交往的质量</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E4%BA%BA%E5%92%8C%E4%B8%89%E4%B8%AA%E4%BA%BA%E7%A7%B0">一个人和三个人称</a></li>
+<li><a href="#%E4%BA%BA%E7%94%9F%E7%9A%84%E4%B8%89%E4%B8%AA%E8%A7%89%E9%86%92">人生的三个觉醒</a></li>
+<li><a href="#%E6%9C%8B%E5%8F%8B">朋友</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%92%8C%E5%91%BD%E8%BF%90%E7%BB%93%E4%BC%B4%E8%80%8C%E8%A1%8C">第二章 和命运结伴而行</a>
+<ul>
+<li><a href="#%E5%92%8C%E5%91%BD%E8%BF%90%E7%BB%93%E4%BC%B4%E8%80%8C%E8%A1%8C">和命运结伴而行</a></li>
+<li><a href="#%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%B8%8E%E6%9C%AA%E5%AE%8C%E6%88%90">从零开始与未完成</a></li>
+<li><a href="#%E4%BA%BA%E7%94%9F%E5%AF%93%E8%A8%80">人生寓言</a></li>
+<li><a href="#%E5%AF%B9%E4%BA%BA%E6%80%A7%E7%9A%84%E4%B8%8D%E5%90%8C%E8%A7%A3%E9%87%8A">对人性的不同解释</a></li>
+<li><a href="#%E7%81%B5%E9%AD%82%E7%9A%84%E5%9C%A8%E5%9C%BA">灵魂的在场</a></li>
+<li><a href="#%E7%81%B5%E9%AD%82%E6%95%99%E8%82%B2">灵魂教育</a></li>
+<li><a href="#%E7%A5%9E%E5%9C%A3%E7%9A%84%E5%A5%BD%E5%A5%87%E5%BF%83">神圣的好奇心</a></li>
+<li><a href="#%E7%88%B1%E4%B8%8E%E5%AD%A4%E7%8B%AC">爱与孤独</a></li>
+<li><a href="#%E7%95%99%E4%BD%8F%E9%82%A3%E4%B8%AA%E5%BF%83%E6%99%BA%E8%A7%89%E9%86%92%E7%9A%84%E6%97%B6%E5%88%BB">留住那个心智觉醒的时刻</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%94%9F%E5%91%BD%E6%9C%AC%E6%9D%A5%E6%B2%A1%E6%9C%89%E5%90%8D%E5%AD%97">第三章 生命本来没有名字</a>
+<ul>
+<li><a href="#%E5%81%9A%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8B%E5%8F%8B">做自己的朋友</a></li>
+<li><a href="#%E5%B0%8A%E9%87%8D%E7%94%9F%E5%91%BD">尊重生命</a></li>
+<li><a href="#%E5%86%85%E5%9C%A8%E7%94%9F%E5%91%BD%E7%9A%84%E4%BC%9F%E5%A4%A7">内在生命的伟大</a></li>
+<li><a href="#%E6%80%A7%E6%A0%BC%E5%B0%B1%E6%98%AF%E5%91%BD%E8%BF%90">性格就是命运</a></li>
+<li><a href="#%E5%B9%B8%E7%A6%8F%E5%92%8C%E8%BF%90%E6%B0%94">幸福和运气</a></li>
+<li><a href="#%E5%A4%B1%E5%8E%BB%E7%9A%84%E5%B2%81%E6%9C%88">失去的岁月</a></li>
+<li><a href="#%E5%B9%B8%E7%A6%8F%E4%B8%8E%E8%8B%A6%E9%9A%BE%E9%83%BD%E5%B1%9E%E4%BA%8E%E7%81%B5%E9%AD%82">幸福与苦难都属于灵魂</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%81%9A%E4%B8%80%E4%B8%AA%E7%BB%88%E8%BA%AB%E8%AF%BB%E8%80%85">第四章 做一个终身读者</a>
+<ul>
+<li><a href="#%E8%AF%BB%E6%B0%B8%E6%81%92%E7%9A%84%E4%B9%A6">读永恒的书</a></li>
+<li><a href="#%E8%AF%BB%E4%B9%A6%E7%9A%84%E7%99%96%E5%A5%BD">读书的癖好</a></li>
+<li><a href="#%E8%AF%BB%E4%B9%A6%E7%9A%84%E6%94%B6%E8%8E%B7">读书的收获</a></li>
+<li><a href="#%E7%BB%8F%E5%85%B8%E5%92%8C%E6%88%91%E4%BB%AC">经典和我们</a></li>
+<li><a href="#%E6%96%87%E5%AD%A6%E7%9A%84%E5%AE%89%E9%9D%99">文学的安静</a></li>
+<li><a href="#%E7%BB%99%E6%88%90%E4%BA%BA%E8%AF%BB%E7%9A%84%E7%AB%A5%E8%AF%9D">给成人读的童话</a></li>
+<li><a href="#%E5%AD%94%E5%AD%90%E7%9A%84%E6%B4%92%E8%84%B1">孔子的洒脱</a></li>
+<li><a href="#%E8%AF%BB%E7%BB%8F%E5%85%B8%E5%B0%B1%E5%83%8F%E5%9B%9E%E5%AE%B6">读经典就像回家</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%B4%BB%E5%BE%97%E7%AE%80%E5%8D%95%E6%89%8D%E8%83%BD%E6%B4%BB%E5%BE%97%E8%87%AA%E7%94%B1">第五章 活得简单才能活得自由</a>
+<ul>
+<li><a href="#%E4%BB%8E%E7%94%9F%E5%AD%98%E5%90%91%E5%AD%98%E5%9C%A8%E7%9A%84%E9%80%94%E4%B8%AD">从生存向存在的途中</a></li>
+<li><a href="#%E6%B6%88%E8%B4%B9%E4%BA%AB%E5%8F%97">消费=享受？</a></li>
+<li><a href="#%E5%90%8D%E4%BA%BA%E5%92%8C%E6%98%8E%E6%98%9F">名人和明星</a></li>
+<li><a href="#%E6%84%89%E5%BF%AB%E6%98%AF%E5%9F%BA%E6%9C%AC%E6%A0%87%E5%87%86">愉快是基本标准</a></li>
+<li><a href="#%E4%BA%89%E4%BB%80%E4%B9%88">争什么？</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E9%87%8D%E8%A6%81%E7%9A%84%E6%98%AF%E5%81%9A%E4%BA%BA">第一重要的是做人</a></li>
+<li><a href="#%E5%86%85%E5%9C%A8%E7%94%9F%E6%B4%BB">内在生活</a></li>
+<li><a href="#%E4%B8%80%E6%97%A0%E6%89%80%E9%9C%80%E6%9C%80%E5%83%8F%E7%A5%9E">一无所需最像神</a></li>
+<li><a href="#%E6%91%86%E8%84%B1%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB%E7%9A%84%E6%83%B0%E6%80%A7">摆脱日常生活的惰性</a></li>
+<li><a href="#%E5%BF%AB%E4%B9%90%E5%B7%A5%E4%BD%9C%E7%9A%84%E8%83%BD%E5%8A%9B">快乐工作的能力</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E8%AE%B0%E4%BD%8F%E5%9B%9E%E5%AE%B6%E7%9A%84%E8%B7%AF">第六章 记住回家的路</a>
+<ul>
+<li><a href="#%E6%80%80%E5%BF%B5%E5%9C%9F%E5%9C%B0">怀念土地</a></li>
+<li><a href="#%E5%A4%A9%E4%BA%BA%E5%90%88%E4%B8%80%E4%B8%8E%E7%94%9F%E6%80%81%E5%AD%A6">“天人合一”与生态学</a></li>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E4%BA%BA%E7%BC%BA%E4%BB%80%E4%B9%88">中国人缺什么？</a></li>
+<li><a href="#%E7%88%B6%E6%AF%8D%E4%BB%AC%E7%9A%84%E7%9C%BC%E7%A5%9E">父母们的眼神</a></li>
+<li><a href="#%E6%8A%8A%E6%88%91%E4%BB%AC%E8%87%AA%E5%B7%B1%E5%A8%B1%E4%B9%90%E6%AD%BB">把我们自己娱乐死？</a></li>
+<li><a href="#%E6%9C%89%E6%89%80%E6%95%AC%E7%95%8F">有所敬畏</a></li>
+<li><a href="#%E5%AF%B9%E7%90%86%E6%83%B3%E7%9A%84%E6%80%9D%E7%B4%A2">对理想的思索</a></li>
+<li><a href="#%E4%BA%BA%E4%B8%8D%E5%8F%AA%E5%B1%9E%E4%BA%8E%E5%8E%86%E5%8F%B2">人不只属于历史</a></li>
+<li><a href="#%E5%9F%8E%E5%B8%82%E7%9A%84%E4%B8%AA%E6%80%A7%E5%92%8C%E9%A2%9C%E8%89%B2">城市的个性和颜色</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>
