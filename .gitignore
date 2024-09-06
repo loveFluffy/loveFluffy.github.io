@@ -17,6 +17,7 @@ newstv/newstv*.md
 # 涉及隐私文件
 business/business.html
 business/bsnss*
+business/*.md
 finance/
 findebook/myID.html
 neuroscience/
