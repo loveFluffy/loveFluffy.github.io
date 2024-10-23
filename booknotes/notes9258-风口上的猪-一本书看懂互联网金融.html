@@ -1,126 +1,222 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x98ce;&#x53e3;&#x4e0a;&#x7684;&#x732a;&#xff1a;&#x4e00;&#x672c;&#x4e66;&#x770b;&#x61c2;&#x4e92;&#x8054;&#x7f51;&#x91d1;&#x878d;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="../stylesheets/notestyles.css" />
-    <title>风口上的猪：一本书看懂互联网金融</title>
-    <link rel="icon" href="../images/x.ico" />
-</head>
-<body>
-    <h1>Notes#9258: 风口上的猪：一本书看懂互联网金融</h1>
-    <h2>肖璟（狐狸君） 著</h2>
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
 
-
-
-    <!-- ======================== 序 章 没有干货，欢迎跳过 ======================== -->
-    <h3>序 章 没有干货，欢迎跳过</h3>
-    <div>
-        <h4>1.最基本的金融需求</h4>
-        <p>投资和融资则是相辅相成的一个整体。投资是资金盈余者想用钱卖钱，融资是资金短缺者想用钱买钱，一个巴掌拍不响，一个交易总是要有买卖双方才能顺利达成。</p>
-
-        <h4>2.满足投融资需求的业务模式</h4>
-        <p>了解了电商的业务模式后，我们还必须意识到金融市场和电子商务市场有两个很大的不同点：</p>
-        <p>一是金融产品不是消耗品，且价格会发生波动，所以金融市场需要可以让市场参与者进行交易的流通市场（也就是金融业界常说的“二级市场”）来满足交易需求，这个角色通常由交易所（exchange）来承担。</p>
-        <p>二是金融的二级市场通常需要有经纪（brokers）的参与来提高市场效率或为交易方的信息进行保密。经纪还可以为投资者提供融资融券等额外服务。</p>
-        <p>顺带一提，除了经纪外，交易所还有一个角色——做市商（dealers）。中国的A股市场暂时还没有做市商机制，但新三板（试点中）和其他OTC市场（柜台交易市场）已经有做市商机制的存在。不过做市商并不是第三方，它需要自己将金融产品买下再卖出，低买高卖赚中间差价，它在交易过程中扮演的是资金盈余者或资金短缺者的角色。</p>
-        <p></p>
-        <p></p>
-        <p></p>
-
-        <h4>3 .满足支付需求的业务模式</h4>
-        <p></p>
-    </div>
-
-
-
-    <!-- ======================== 第一章 自有产品 ======================== -->
-    <h3>第一章 自有产品</h3>
-    <div>
-        <h4>1. 金融机构互联网化</h4>
-        <p></p>
+</style>
+            
         
-        <h4>2.互联网公司金融机构化</h4>
-        <p></p>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
 
-        <h4>3.金融机构与互联网公司合作开发</h4>
-        <p></p>
-    </div>
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
 
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
 
-    <!-- ======================== 第二章 金融服务中介 ======================== -->
-    <h3>第二章 金融服务中介</h3>
-    <div>
-        <h4>1. F2N</h4>
-        <p></p>
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        <h4>2. N2N（众筹与P2P借贷）</h4>
-        <p></p>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\cover\9258.jpg"></td><td>
+<h1 id="风口上的猪一本书看懂互联网金融">风口上的猪：一本书看懂互联网金融</h1>
+<center>肖璟（狐狸君）</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="序章-没有干货欢迎跳过">序章 没有干货，欢迎跳过</h3>
+<h4 id="1最基本的金融需求">1.最基本的金融需求</h4>
+<p>投资和融资则是相辅相成的一个整体。投资是资金盈余者想用钱卖钱，融资是资金短缺者想用钱买钱，一个巴掌拍不响，一个交易总是要有买卖双方才能顺利达成。</p>
+<h4 id="2满足投融资需求的业务模式">2.满足投融资需求的业务模式</h4>
+<p>了解了电商的业务模式后，我们还必须意识到金融市场和电子商务市场有两个很大的不同点：</p>
+<p>一是金融产品不是消耗品，且价格会发生波动，所以金融市场需要可以让市场参与者进行交易的流通市场（也就是金融业界常说的“二级市场”）来满足交易需求，这个角色通常由交易所（exchange）来承担。</p>
+<p>二是金融的二级市场通常需要有经纪（brokers）的参与来提高市场效率或为交易方的信息进行保密。经纪还可以为投资者提供融资融券等额外服务。</p>
+<p>顺带一提，除了经纪外，交易所还有一个角色——做市商（dealers）。中国的A股市场暂时还没有做市商机制，但新三板（试点中）和其他OTC市场（柜台交易市场）已经有做市商机制的存在。不过做市商并不是第三方，它需要自己将金融产品买下再卖出，低买高卖赚中间差价，它在交易过程中扮演的是资金盈余者或资金短缺者的角色。</p>
+<h4 id="3满足支付需求的业务模式">3.满足支付需求的业务模式</h4>
+<h3 id="第一章-自有产品">第一章 自有产品</h3>
+<h4 id="1金融机构互联网化">1.金融机构互联网化</h4>
+<h4 id="2互联网公司金融机构化">2.互联网公司金融机构化</h4>
+<h4 id="3金融机构与互联网公司合作开发">3.金融机构与互联网公司合作开发</h4>
+<h3 id="第二章-金融服务中介">第二章 金融服务中介</h3>
+<h4 id="1f2n">1.F2N</h4>
+<h4 id="2n2n众筹与p2p借贷">2.N2N（众筹与P2P借贷）</h4>
+<h4 id="3导购网站">3.导购网站</h4>
+<h4 id="4交易所与经纪">4.交易所与经纪</h4>
+<h3 id="第三章-信息供应与分析工具">第三章 信息供应与分析工具</h3>
+<h4 id="1一个信息分析案例">1.一个信息分析案例</h4>
+<h4 id="2投资决策的阶段与环节">2.投资决策的阶段与环节</h4>
+<h3 id="第四章-电子支付">第四章 电子支付</h3>
+<h4 id="1电子支付在中国的发展">1.电子支付在中国的发展</h4>
+<h4 id="2中国支付清算系统的构成">2.中国支付清算系统的构成</h4>
+<h4 id="3第三方支付">3.第三方支付</h4>
+<h3 id="第五章-虚拟货币">第五章 虚拟货币</h3>
+<h4 id="1什么是虚拟货币">1.什么是虚拟货币？</h4>
+<h4 id="2常见的虚拟货币">2.常见的虚拟货币</h4>
+<h3 id="结束语">结束语</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BA%8F%E7%AB%A0-%E6%B2%A1%E6%9C%89%E5%B9%B2%E8%B4%A7%E6%AC%A2%E8%BF%8E%E8%B7%B3%E8%BF%87">序章 没有干货，欢迎跳过</a>
+<ul>
+<li><a href="#1%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E9%87%91%E8%9E%8D%E9%9C%80%E6%B1%82">1.最基本的金融需求</a></li>
+<li><a href="#2%E6%BB%A1%E8%B6%B3%E6%8A%95%E8%9E%8D%E8%B5%84%E9%9C%80%E6%B1%82%E7%9A%84%E4%B8%9A%E5%8A%A1%E6%A8%A1%E5%BC%8F">2.满足投融资需求的业务模式</a></li>
+<li><a href="#3%E6%BB%A1%E8%B6%B3%E6%94%AF%E4%BB%98%E9%9C%80%E6%B1%82%E7%9A%84%E4%B8%9A%E5%8A%A1%E6%A8%A1%E5%BC%8F">3.满足支付需求的业务模式</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E8%87%AA%E6%9C%89%E4%BA%A7%E5%93%81">第一章 自有产品</a>
+<ul>
+<li><a href="#1%E9%87%91%E8%9E%8D%E6%9C%BA%E6%9E%84%E4%BA%92%E8%81%94%E7%BD%91%E5%8C%96">1.金融机构互联网化</a></li>
+<li><a href="#2%E4%BA%92%E8%81%94%E7%BD%91%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D%E6%9C%BA%E6%9E%84%E5%8C%96">2.互联网公司金融机构化</a></li>
+<li><a href="#3%E9%87%91%E8%9E%8D%E6%9C%BA%E6%9E%84%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%91%E5%85%AC%E5%8F%B8%E5%90%88%E4%BD%9C%E5%BC%80%E5%8F%91">3.金融机构与互联网公司合作开发</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%87%91%E8%9E%8D%E6%9C%8D%E5%8A%A1%E4%B8%AD%E4%BB%8B">第二章 金融服务中介</a>
+<ul>
+<li><a href="#1f2n">1.F2N</a></li>
+<li><a href="#2n2n%E4%BC%97%E7%AD%B9%E4%B8%8Ep2p%E5%80%9F%E8%B4%B7">2.N2N（众筹与P2P借贷）</a></li>
+<li><a href="#3%E5%AF%BC%E8%B4%AD%E7%BD%91%E7%AB%99">3.导购网站</a></li>
+<li><a href="#4%E4%BA%A4%E6%98%93%E6%89%80%E4%B8%8E%E7%BB%8F%E7%BA%AA">4.交易所与经纪</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E4%BF%A1%E6%81%AF%E4%BE%9B%E5%BA%94%E4%B8%8E%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7">第三章 信息供应与分析工具</a>
+<ul>
+<li><a href="#1%E4%B8%80%E4%B8%AA%E4%BF%A1%E6%81%AF%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B">1.一个信息分析案例</a></li>
+<li><a href="#2%E6%8A%95%E8%B5%84%E5%86%B3%E7%AD%96%E7%9A%84%E9%98%B6%E6%AE%B5%E4%B8%8E%E7%8E%AF%E8%8A%82">2.投资决策的阶段与环节</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98">第四章 电子支付</a>
+<ul>
+<li><a href="#1%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98%E5%9C%A8%E4%B8%AD%E5%9B%BD%E7%9A%84%E5%8F%91%E5%B1%95">1.电子支付在中国的发展</a></li>
+<li><a href="#2%E4%B8%AD%E5%9B%BD%E6%94%AF%E4%BB%98%E6%B8%85%E7%AE%97%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9E%84%E6%88%90">2.中国支付清算系统的构成</a></li>
+<li><a href="#3%E7%AC%AC%E4%B8%89%E6%96%B9%E6%94%AF%E4%BB%98">3.第三方支付</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%99%9A%E6%8B%9F%E8%B4%A7%E5%B8%81">第五章 虚拟货币</a>
+<ul>
+<li><a href="#1%E4%BB%80%E4%B9%88%E6%98%AF%E8%99%9A%E6%8B%9F%E8%B4%A7%E5%B8%81">1.什么是虚拟货币？</a></li>
+<li><a href="#2%E5%B8%B8%E8%A7%81%E7%9A%84%E8%99%9A%E6%8B%9F%E8%B4%A7%E5%B8%81">2.常见的虚拟货币</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%93%E6%9D%9F%E8%AF%AD">结束语</a></li>
+</ul>
+</div>
 
-        <h4>3.导购网站</h4>
-        <p></p>
-        
-        <h4>4.交易所与经纪</h4>
-        <p></p>
-    </div>
-
-
-
-    <!-- ======================== 第三章 信息供应与分析工具 ======================== -->
-    <h3>第三章 信息供应与分析工具</h3>
-    <div>
-        <h4>1.一个信息分析案例</h4>
-        <p></p>
-        
-        <h4>2.投资决策的阶段与环节</h4>
-        <p></p>
-        <p></p>
-    </div>
-
-
-
-    <!-- ======================== 第四章 电子支付 ======================== -->
-    <h3>第四章 电子支付</h3>
-    <div>
-        <h4>1. 电子支付在中国的发展</h4>
-        <p></p>
-        
-        <h4>2. 中国支付清算系统的构成</h4>
-        <p></p>
-
-        <h4>3. 第三方支付</h4>
-        <p></p>
-    </div>
-
-
-
-    <!-- ======================== 第五章 虚拟货币 ======================== -->
-    <h3>第五章 虚拟货币</h3>
-    <div>
-        <h4>1. 什么是虚拟货币？</h4>
-        <p></p>
-        
-        <h4>2. 常见的虚拟货币</h4>
-        <p></p>
-        <p></p>
-    </div>
-
-
-
-    <!-- ======================== 结束语 ======================== -->
-    <h3>结束语</h3>
-    <div>
-        <h4></h4>
-        <p></p>
-        
-        <h4></h4>
-        <p></p>
-
-        <h4></h4>
-        <p></p>
-    </div>
-
-
-</body>
-</html>
+            
+            
+        </body>
+        </html>

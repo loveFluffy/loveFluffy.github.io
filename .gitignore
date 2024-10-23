@@ -7,17 +7,21 @@ tmp/
 audio/
 video/
 books/
+music/audio
+music/video
 
 # 原始笔记 md 文件
 booknotes/notes*.md
 csbooknotes/notes*.md
 coursenotes/course*.md
 newstv/newstv*.md
+music/*.md
 
 # 涉及隐私文件
 business/business.html
 business/bsnss*
 business/*.md
+business/icon
 finance/
 findebook/myID.html
 neuroscience/

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x4eff;&#x5236;&#x836f;&#x7684;&#x771f;&#x76f8;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x4eff;&#x5236;&#x836f;&#x7684;&#x771f;&#x76f8;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,462 +31,163 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="仿制药的真相">仿制药的真相</h1>
-<h2 id="美凯瑟琳埃班katherine-eban-著高天羽-译">[美]凯瑟琳·埃班（Katherine Eban） 著|高天羽 译</h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="file:///d:\loveFluffy\loveFluffy.github.io\booknotes\cover\10126.jpg"></td><td>
+<h1 id="仿制药的真相">仿制药的真相</h1>
+<center>[美]凯瑟琳·埃班（Katherine Eban） 著|高天羽 译</center>
+</td></tr></table>
+<div class="mycomment">
+<p>以非常详细生动的故事形式记录了美国的仿制药在印度的制造生产过程是多么地不靠谱。读来像是在看电影，叙事非常有意思，有悬念有情节。让我也开始思考，平时在CVS买的药，有多少也是此类仿制药？这一点还真的值得探究一下呢。</p>
+</div>
 <h3 id="前言">前言</h3>
 <p>本书源于我无法解答的一个困惑。</p>
-<p>2008年春天，国家公共广播电台《人民药房》（The People’s Pharmacy）节目的主持人乔·格莱登（Joe Graedon）联系了我。我在报道制药业的10年里，曾多次到他的节目做客。但这一次，他是来求我帮忙的。他说不断有患者给他的节目打电话或写信，对仿制药提出强烈的投诉，他们说这些药要么没用，要么会引起极严重的不良反应。这些药物由不同的厂家生产，治疗从抑郁症到心脏病的各种疾病，共同之处在于它们都是仿制药，也就是在品牌药的专利过期之后，合法仿制出来的廉价版本。</p>
-<p>格莱登将这些患者的投诉信转发给了美国食品药品管理局（U.S. Food and Drug Administration，缩写FDA，以下简称为美国药监局）的高层官员。但那些官员坚称仿制药和品牌药的效果完全相同，患者的反应太主观了。在格莱登看来，他们更像是在辩解，没有拿出实事求是的科学态度。在美国，仿制药在平衡预算方面功不可没。如果没有它们，任何一个大规模的政府卫生项目，比如平价医疗法案、联邦医疗保险处方药计划、退伍军人健康管理局以及各种援助非洲和发展中国家的慈善项目，都将变得难以负担。格莱登本人一直在提倡扩大仿制药的适用范围，但是这些投诉不容忽视，而且性质都相似。他感觉这些药物出现了什么重大问题，但他也不知道问题是什么。他希望找一个拥有调研实力的人去查一查那些患者的投诉。</p>
-<p>多年来，我一直在对药物和公共卫生问题进行调查报道。我曾揭露过品牌制药公司的不良行径，比如生产阿片类药物的厂家为了增加销量而隐瞒成瘾的风险。在我的第一本书《危险剂量》（Dangerous Doses）中，我揭露了在隐蔽的灰市上，药物批发商们如何对我们的药物一再转售，以此隐藏药物的源头，为假药制造者敞开了方便之门。说起仿制药，我只知道它们在我们的药物供应中占比超过六成（现在已占到九成），对价格不断上涨的品牌药起到了必不可少的平衡作用。</p>
-<h3 id="关于这次报道">关于这次报道</h3>
-<h3 id="重要人物及地点">重要人物及地点</h3>
+<p>2008年春天，国家公共广播电台《人民药房》（The People’s Pharmacy）节目的主持人乔·格莱登（Joe Graedon）联系了我。我在报道制药业的10年里，曾多次到他的节目做客。但这一次，他是来求我帮忙的。他说不断有患者给他的节目打电话或写信，对仿制药提出强烈的投诉，他们说<em>这些药要么没用，要么会引起极严重的不良反应</em>。这些药物由不同的厂家生产，治疗从抑郁症到心脏病的各种疾病，共同之处在于它们都是仿制药，也就是<em>在品牌药的专利过期之后，合法仿制出来的廉价版本</em>。</p>
+<p>格莱登将这些患者的投诉信转发给了美国食品药品管理局（U.S. Food and Drug Administration，缩写FDA，以下简称为美国药监局）的高层官员。但那些<em>官员坚称仿制药和品牌药的效果完全相同，患者的反应太主观了</em>。在格莱登看来，他们更像是在辩解，没有拿出实事求是的科学态度。<em>在美国，仿制药在平衡预算方面功不可没。如果没有它们，任何一个大规模的政府卫生项目，比如平价医疗法案、联邦医疗保险处方药计划、退伍军人健康管理局以及各种援助非洲和发展中国家的慈善项目，都将变得难以负担</em>。格莱登本人一直在提倡扩大仿制药的适用范围，但是这些投诉不容忽视，而且性质都相似。他感觉这些药物出现了什么重大问题，但他也不知道问题是什么。他希望找一个拥有调研实力的人去查一查那些患者的投诉。</p>
+<p>多年来，我一直在对药物和公共卫生问题进行调查报道。我曾揭露过品牌制药公司的不良行径，比如生产阿片类药物的厂家为了增加销量而隐瞒成瘾的风险。<em>在我的第一本书《危险剂量》（Dangerous Doses）中</em>，我揭露了<em>在隐蔽的灰市上，药物批发商们如何对我们的药物一再转售，以此隐藏药物的源头，为假药制造者敞开了方便之门</em>。说起仿制药，我只知道<em>它们在我们的药物供应中占比超过六成（现在已占到九成），对价格不断上涨的品牌药起到了必不可少的平衡作用</em>。</p>
+<hr>
+<p>我还在撰写那篇文章时，就已经认识到了这些审查的局限性。证明患者受到了危害或许能说明那些药物有问题，但那到底是什么问题呢？还有，即使我能证明那些药真有问题，又是什么原因造成的？这些问题的答案十有八九要到实验室、生产工厂和制药公司的会议室里去找，而其中许多都在海外运营。<em>我们的仿制药，有大约40%在印度生产</em>。<em>无论是品牌药还是仿制药，我们所有的药物中足有80%的有效成分是在印度等国生产的</em>。正如一个药品原料进口商告诉我的那样：“没有了这些海外产品，我们一种药都做不出来。”</p>
+<hr>
+<p>那些优质仿制药带来的好处是谁也无法否认的。当仿制药具有理想的疗效（许多仿制药也确实如此），结果就如同奇迹。曾在无国界医生组织担任基本药物推广运动美国区主任的艾米·麦克莱恩（Emi MacLean）指出：“<em>印度和其他国家生产的仿制药成本只有专利药的一个零头，这拯救了发展中国家数百万人的生命</em>。”这种价格的落差也使几百万美国人买得起药，看得起病，由于美国对品牌药缺乏有效的价格管制，他们除了选择仿制药别无他法。</p>
 <h3 id="序">序</h3>
+<p>彼得·贝克（Peter Baker）是美国药监局的一名药物调查员，他从孟买出发向东行200英里，先是经过一条挤满卡车的高速公路，再经过一条有奶牛漫步的小路，才到达他的任务地点。他的目的地位于一道金属栅栏后面，那里有一片巨大的生物科技园区，经营它的是印度仿制药公司沃克哈特有限公司。在那几十座建筑中间，<em>贝克的工作是检查一个专门的工厂区域——H-14/2地块，以确保它能安全地生产一种无菌注射剂，供美国的癌症患者使用</em>。</p>
+<hr>
+<p>虽然“<strong>沃克哈特</strong>”这个名字很少有美国人知道，但许多人都用过它的药。这家公司为美国市场生产大约110种不同的仿制药物，包括一种治疗高血压的β受体阻滞剂——琥珀酸美托洛尔（metoprolol succinate）。在使用这种药物的仿制版的美国患者中，有大约四分之一用的是沃克哈特的产品。奥兰加巴德的这家药厂生产的是无菌注射剂，因此它必须遵守特别严格的规章。</p>
+<p>沃克哈特还有一项更大的优势：<em>早在几周之前，公司的高管们就知道贝克要来视察工厂了</em>。<em>在美国，美国药监局的调查员可以不打招呼就到工厂视察，需要待多久就待多久</em>。然而海外视察不同，因为申请签证和联系进入厂区都要经过复杂的环节，美国药监局采取了另一种做法：提前宣布。根据常规程序，<em>沃克哈特公司先“邀请”美国药监局前去视察，美国药监局再接受邀请</em>。工厂的干部们是主人，而贝克是宾客——虽说这位宾客的光临很令他们害怕。</p>
+<hr>
+<p>紧跟在后面的贝克寻回了袋子。他从中发现了公司<em>大约75页的胰岛素产品生产记录。它们都被匆忙撕成了两半，但还是可以拼成原样</em>。拼着拼着，贝克的担忧越来越重了。这些记录显示，<em>许多药瓶里面都出现了黑色颗粒，是可能致命的污染物，它们没有通过目视检测</em>。</p>
+<hr>
+<p>接下来的三天，贝克行使了自己的权威，他要求沃克哈特的干部们打开各自的电脑，让他搜查其中的记录。一个接着一个，他发现了公司的骗局。正如他所怀疑的那样，<em>那个垃圾袋里的记录没有录入公司的正式系统。而记录中标记的药物已经卖给了印度和中东的患者</em>。贝克发现这些药物是<em>在一个隐秘的配方区生产的，美国药监局根本不知道有这么个地方</em>，也从来没有视察过。贝克去了那里，发现<em>沃克哈特公司曾经在同样的秘密区域、用同样残破的设备为美国市场生产药物，包括治疗心律不齐的注射药物——腺苷（adenosine）</em>。</p>
 <h2 id="第一部-形势转变">第一部 形势转变</h2>
 <h3 id="第一章-眼光长远的男人">第一章 眼光长远的男人</h3>
+<p><em>在印度，兰伯西是一家传奇企业，它的创立者辛格家族也被誉为企业界的皇室</em>。作为印度历史最悠久也最成功的跨国企业之一，兰伯西使外界对印度企业的实力刮目相看。2001年，它的全球销售额即将达到计划的10亿美元，此时它进入美国市场不过三年，在美国的销售额已经达到1亿美元了。美国药监局也已经批准了其十几项药物申请。兰伯西在世界各地都设立了办事处和工厂，包括美国在内，但总部仍在印度。展望未来，兰伯西将会大力投资创新研究，目标是开发新的分子。巴布海亚将去打造公司的研发能力，几乎是从零开始。</p>
 <h3 id="第二章-药海淘金">第二章 药海淘金</h3>
+<p>这名高管携带的是仿制药领域有史以来最具利润潜力的文件：公司将用这些数据申请<em>史上最畅销药物立普妥</em>在美国的第一版仿制药。这款辉瑞公司引以为豪的<em>胆固醇</em>斗士，被华尔街的分析师称为“他汀类药物中的权威”。其中包含的分子阿托伐他汀钙（atorvastatin calcium）本身就是一项赢得诺贝尔奖的科学发现。再加上辉瑞的营销力量，它成为世界上第一款每年销售百亿美元的药物。</p>
+<hr>
+<p>当天夜里，最后的提交工作准备就绪。它包含了17大卷共7500多页的文件。这个封套涵盖了四种剂量强度的药物信息，兰伯西公司计划在印度北部喜马偕尔邦的帕奥恩塔萨希布工厂中进行生产和包装。公司连夜叫了一个快递员，第二天早晨就把包裹送到了位于马里兰州罗克维尔的美国药监局园区，它被盖上了“2002年8月19日收讫”的章。</p>
+<p>然而潘特和她的同事们并不满足，因为他们不知道自己是不是第一个提交申请的，那才是最重要的事。<em>第一家提交申请的公司，一旦获得批准，就取得了在六个月内独家销售仿制药的权利，在那之后其他公司才可以加入生产行列</em>。有传闻说，另一家仿制药公司梯瓦已经抢先提交了申请。还有传闻说，仿制药公司山德士、迈兰和巴尔也一直在开展临床试验。在一阵令人不安的沉默中，日子一天天、一周周地过去了。</p>
+<hr>
+<p><em>当他审视兰伯西挑战文件中的细则时，他意识到辉瑞有麻烦了。要构成侵权，仿制药就必须和品牌药有相同的剂型。然而立普妥是以药片形式出售的，兰伯西申请的却是胶囊，就好像他们的药剂师从来没见过原版的立普妥似的</em>。另外，它<em>申请的分子形式也和原版不同，不是晶体，而是无定型</em>。据迈尔斯所知，这是非常困难的，因为<em>许多年来，辉瑞的科学家一直想做出无定型的版本，但始终没有成功，因为无定型的药物会变得极不稳定</em>。</p>
+<p>立普妥绝不是轻易就能复制的药物。当年是一支科学家团队研发出配方的，再由业内最好的营销专家把它推向市场，生产团队也深知其中的复杂和困难。从1998年起，在全世界销售的立普妥的有效成分都在爱尔兰的科克郡生产，辉瑞在那里拥有三家巨型工厂。公司原来预计每年需要的有效成分最多50吨。但是药物上市短短五年后，这个数字就翻了两番，达到了每年200吨。</p>
+<p>立普妥性质不稳定，就像灵厄斯基迪那青灰色的地貌，好在工厂开发了一套万无一失的生产系统。“<em>这种药很娇气，但我们知道怎么生产它</em>。”在辉瑞负责生物制药生产的副总裁保罗·达菲（Paul Duffy）博士说道，“在你和一种药物打了20年的交道后，它就成了你的孩子，它的脾气你都了解了。”</p>
+<hr>
+<p>在1984年之前，全世界类似兰伯西的公司根本无法挑战辉瑞这样的巨头。当时，仿制药在美国还没有清晰的批准路径。按照美国药监局的规定，<em>就算一种药物的专利已经过期，仿制药公司也需要重复其大规模、高成本的临床试验，虽然品牌药企早已证明了这种药物的安全性和功效</em>。</p>
+<p>转机出现在20世纪80年代初，哈达德得到了与保守的犹他州共和党参议员欧林·哈奇（Orrin Hatch）会面的机会。他本来以为参议员哈奇会站在大型药企那边。出乎意料的是，哈奇在聆听他的陈述时十分专注，兴趣盎然。在两小时的会面中，哈达德阐明了150多种品牌药的专利已经过期，但是谁也无法与它们竞争，因为仿制药根本无法获得美国药监局的批准。结果就是美国人民被迫在药物上花了太多钱。“当时他像个地方检察官似的向我发问。”哈达德回忆道。</p>
+<p>令他吃惊的是，在这次对话的短短几天之后，哈奇就打来电话说：“我觉得你可能是对的。”这位参议员找到加州的民主党众议员亨利·韦克斯曼（Henry Waxman）。两人联手迫使大型药企的CEO达成协议，他们还起草了一项法案，为美国药监局批准仿制药辟出了一条科学通道。这就是“<strong>简化新药申请</strong>”的由来。从此，<em>仿制药公司不必再从零开始证明自家产品的安全性和功效了，因为品牌药公司早已开展过昂贵的长期临床试验。它们只要开展有限的检测，证明自家的药物和品牌药具有生物等效性，并且能在人体内起到相似的作用，美国药监局就会批准它们</em>。</p>
+<p>但前方还有一个大障碍。在一次审议中，一名仿制药高管把哈达德拉到一个角落问他：“你说，我要是起诉并且赢了官司，我能得到什么呢？”开发一种药物的仿制版需要投入前期成本，也许还要和志在保护专利的品牌药公司发生诉讼，<em>仿制药公司既可能让投入的钱打水漂又有可能输掉官司，那还有什么能吸引他们开展这项业务呢</em>？</p>
+<p><em>办法就是所谓的“先到先得”的奖励政策。这项政策彻底改变了仿制药产业</em>。它允许第一个向美国药监局提交仿制药申请的公司获得巨额利润：在申请获批后的六个月里，这家公司有权以接近品牌药的价格独家销售仿制药，六个月后，其他竞争者才可以进入市场，促使药价大跌。抢到第一名就能发财，抢不到的就只能混口饭吃了。</p>
+<hr>
+<p>随着竞争的加剧，等待的时间也在延长。<em>当一种药物的专利即将过期时，人们常常能看到，仿制药公司的高管们在美国药监局停车场上的车子里过夜，以便第二天上班时第一个冲进美国药监局大门。每隔一段时间，那块停车场上就会支起一大片帐篷，那些高管会一连几周驻扎在那里</em>。关于如何等候、如何抢先，每家公司都有自己的策略。有的出钱雇人在停车场等候。梯瓦公司在附近酒店订了房间，每晚派员工轮流守夜。</p>
+<hr>
+<p>三个月前，公司在美国市场推出一款名为Sotret的药物，那是罗氏公司生产的抗痤疮药Accutane的仿制版。Sotret是第一款面向美国患者的低价仿制药，它甫一推出就占领市场，并成为兰伯西争取10年内全球销售额达到50亿美元的一个重要步骤。</p>
+<p>然而就在这次会议的前几天，兰伯西的高管们暂停了这种高利润药物的发售。他们告诉美国的监管机构，这种40毫克胶囊的溶解速度出现了“下降趋势”，并表示在调查出原因之前，将从市场上召回三个批次的药物。但他们说了谎。<em>对Sotret的随机检测显示，配方已经失效了。根据美国药监局的规章，他们现在只有一个选择：向监管机构交代全部情况，并将Sotret从市场上召回，然后返回实验室重新设计药物，直到它生效</em>。</p>
+<p>面对神情沮丧的同事，马立克接着回顾了他领导下的Sotret开发的艰辛历史。虽然开展了五年多高成本的实验室研究，兰伯西的化学家们依然无法使药物恰当地溶解。作为一种悬浮状态的软凝胶产品，其粒径太难控制。</p>
+<p><em>他们检测出来交给美国药监局审核的几个批次都是在受控环境中生产的，这些批次最后都产生了良好的功效，与原版药物相当。可是当他们扩大产量，准备以商业规模生产时，杂质的含量却陡然上升，药物的溶解也出了问题</em>。马立克做了这样的猜想：软凝胶接触空气中的氧气，产生了一种影响溶解的反应。想出对策需要时间。而与此同时，他们必须停止出售药物。</p>
+<p>“我也不知道还要多久才能让Sotret重新上市。”他告诉一众高管。</p>
+<hr>
+<p>马立克环顾会议桌，据他后来的说法，他看到了这些同事“不理性”的思维方式。这些围坐成一圈的高管只有两个选择：<em>要么停止发售，这意味着放弃公司的盈利目标；要么继续发售，且不再向监管机构透露信息，这意味着危害患者并违反美国药监局的规章</em>。</p>
+<p>对利润的追求最终胜出。他们决定继续发售，并对监管者隐瞒问题，同时也回到实验室寻求解决方案。多年以后回顾时，布拉尔说他已经不记得这次博卡拉顿会议的细节了，但他这样评论了自己在兰伯西的任期：“我在任何时候、任何场合都从未听到任何一位管理人员说过要省略开发步骤和流程，以此缩短上市时间。”他说情况正相反，“我们总是提心吊胆，生怕在美国做错任何事情。我们在公司内部就谨慎到了这种程度。”</p>
+<p>然而就在这次Sotret会议后不久，高管们就把这款痤疮药的品质缺陷写成了文档，标题为《Sotret调查报告》。负责法规事务的副总裁<s>艾卜哈·潘特</s>将这份<em>报告保存在了她位于新泽西总部的办公室里。报告的封面页上用加粗字体写着：不要交给美国药监局</em>。</p>
 <h3 id="第三章-富人的贫民窟">第三章 富人的贫民窟</h3>
 <h3 id="第四章-品质的语言">第四章 品质的语言</h3>
 <h3 id="第五章-警灯亮起">第五章 警灯亮起</h3>
@@ -519,8 +222,44 @@ iPad mini 5：2048*1536
 <h3 id="第二十八章-立场问题">第二十八章 立场问题</h3>
 <h3 id="尾声">尾声</h3>
 <h3 id="致谢">致谢</h3>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E5%BA%8F">序</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%9C%BC%E5%85%89%E9%95%BF%E8%BF%9C%E7%9A%84%E7%94%B7%E4%BA%BA">第一章 眼光长远的男人</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%8D%AF%E6%B5%B7%E6%B7%98%E9%87%91">第二章 药海淘金</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AF%8C%E4%BA%BA%E7%9A%84%E8%B4%AB%E6%B0%91%E7%AA%9F">第三章 富人的贫民窟</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%93%81%E8%B4%A8%E7%9A%84%E8%AF%AD%E8%A8%80">第四章 品质的语言</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%AD%A6%E7%81%AF%E4%BA%AE%E8%B5%B7">第五章 警灯亮起</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E8%87%AA%E7%94%B1%E6%88%98%E5%A3%AB">第六章 自由战士</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%AF%8F%E5%A4%A9%E4%B8%80%E7%BE%8E%E5%85%83">第七章 每天一美元</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E7%94%A8%E8%81%AA%E6%98%8E%E7%9A%84%E6%96%B9%E6%B3%95%E5%81%9A%E4%BA%8B">第八章 用聪明的方法做事</a></li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E8%90%A8%E5%BA%93%E5%B0%94%E7%9A%84%E4%BB%BB%E5%8A%A1">第九章 萨库尔的任务</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%AF%B9%E5%85%A8%E4%B8%96%E7%95%8C%E9%9A%90%E7%9E%92">第十章 对全世界隐瞒</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E4%B8%96%E7%95%8C%E5%9C%B0%E5%9B%BE">第十一章 世界地图</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E5%88%B6%E8%8D%AF%E7%95%8C%E7%9A%84%E6%B3%95%E8%80%81">第十二章 制药界的法老</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E4%BB%8E%E9%98%B4%E5%BD%B1%E4%B8%AD%E7%8E%B0%E8%BA%AB">第十三章 从阴影中现身</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-%E4%B8%8D%E8%A6%81%E4%BA%A4%E7%BB%99%E7%BE%8E%E5%9B%BD%E8%8D%AF%E7%9B%91%E5%B1%80">第十四章 “不要交给美国药监局”</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0-%E9%97%AE%E9%A2%98%E6%9C%89%E5%A4%9A%E4%B8%A5%E9%87%8D">第十五章 “问题有多严重？”</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0-%E9%92%BB%E7%9F%B3%E5%92%8C%E7%BA%A2%E5%AE%9D%E7%9F%B3">第十六章 钻石和红宝石</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0-%E4%BD%A0%E6%80%8E%E4%B9%88%E5%B0%B1%E4%B8%8D%E6%98%8E%E7%99%BD">第十七章 “你怎么就不明白”</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0-%E5%9B%BD%E4%BC%9A%E8%A7%89%E9%86%92%E4%BA%86">第十八章 国会觉醒了</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0-%E5%AF%BB%E6%89%BE%E6%9C%AA%E7%9F%A5%E5%8F%98%E9%87%8F">第十九章 寻找未知变量</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0-%E4%B8%80%E6%AC%A1%E8%80%83%E9%AA%8C%E8%80%90%E5%8A%9B%E7%9A%84%E6%A3%80%E6%B5%8B">第二十章 一次考验耐力的检测</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%80%E7%AB%A0-%E4%B8%80%E5%8F%A3%E9%BB%91%E6%9A%97%E7%9A%84%E6%B7%B1%E4%BA%95">第二十一章 一口黑暗的深井</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E7%AB%A0-%E4%BB%B7%E5%80%BC6%E4%BA%BF%E7%BE%8E%E5%85%83%E7%9A%84%E5%B0%81%E5%A5%97">第二十二章 价值6亿美元的封套</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E7%AB%A0-%E7%94%B5%E7%81%AF%E5%BC%80%E5%85%B3">第二十三章 电灯开关</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%AB%A0-%E6%88%91%E4%BB%AC%E6%98%AF%E5%86%A0%E5%86%9B">第二十四章 我们是冠军</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AB%A0-%E5%B4%A9%E6%BA%83%E7%9A%84%E6%96%87%E4%BB%B6">第二十五章 崩溃的文件</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E7%AB%A0-%E7%BB%88%E6%9E%81%E6%A3%80%E6%B5%8B%E5%AE%9E%E9%AA%8C%E5%AE%A4">第二十六章 终极检测实验室</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E7%AB%A0-%E8%8B%8D%E8%9D%87%E5%A4%AA%E5%A4%9A%E6%95%B0%E4%B8%8D%E8%BF%87%E6%9D%A5">第二十七章 苍蝇太多，数不过来</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AB%A0-%E7%AB%8B%E5%9C%BA%E9%97%AE%E9%A2%98">第二十八章 立场问题</a></li>
+<li><a href="#%E5%B0%BE%E5%A3%B0">尾声</a></li>
+<li><a href="#%E8%87%B4%E8%B0%A2">致谢</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

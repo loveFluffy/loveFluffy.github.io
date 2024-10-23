@@ -61,20 +61,6 @@ blockquote p {
 	line-height: 1.8;
 }
 
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
 
 code {
 	color: #c7254e;
@@ -140,4 +126,37 @@ div.mycomment {
 
 div.mycomment img {
 	max-width: 90%;
+}
+
+
+
+
+/* ======== 笔记里的几种常见划线 ======== */
+/* 橙红 ff4400   亮紫 ee00ff   水族蓝 00f0ff */
+.content em,
+.content strong {
+	background-position: bottom left;
+	background-repeat: repeat-x;
+}
+
+/* 最常见的橙红色细划线，markdown中用一对单*号标记 */
+.content em {
+	font-style: normal;
+	background-image: url("../icon/underlinered.svg");
+	padding: 0px 5px;
+	background-size: auto 4px;
+}
+
+/* 亮紫色粗下划线的部分，一般是公司名字等重点，markdown中用一对双**号标记 */
+.content strong {
+	background-image: url("../icon/underlinepurple.svg");
+	padding: 0px 5px 5px;
+	background-size: auto 15px;
+}
+
+/* 用橙红色马克笔标记的，一般是人名，markdown中用一对双~~号标记 */
+.content s {
+	text-decoration: none;
+	/*橙红 改变了透明度*/
+	background-color: #ff440050;
 }

@@ -3,11 +3,14 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="../stylesheets/xstyles.css" />
+	<link rel="stylesheet" href="../stylesheets/toc.css" />
+	<link rel="stylesheet" href="../stylesheets/tocpatch.css" />
 	<link rel="icon" href="../icon/x.ico" />
 	<title>News + TV</title>
 </head>
 <body>
 	<iframe src="../menu.html" class="menu"></iframe>
+
 	<div class="content">
 		<table class="toolbox">
 			<tr>
@@ -74,7 +77,7 @@
 
 
 
-		<h3>Social Media</h3>
+		<h3 id="SocialMedia">Social Media</h3>
 		<ul class="list">
 			<li style="background-image: url(../icon/mastodon.png);"><a href="https://joinmastodon.org/">Mastodon</a></li>
 			<li><a href=""></a></li>
@@ -85,7 +88,7 @@
 
 
 
-		<h3>IT News</h3>
+		<h3 id="ITNews">IT News</h3>
 		<ul class="list">
 			<li style="background-image: url(../icon/techurls.png);"><a href="https://techurls.com/">TechURLs</a></li>
 			<li style="background-image: url(../icon/ycombinator.svg);"><a href="https://news.ycombinator.com/">Hacker News</a> <a href="https://dizkaz.com/">[中文版]</a></li>
@@ -207,7 +210,6 @@
 			<li><a href=""></a></li>
 			<li><a href=""></a></li>
 			<li><a href=""></a></li>
-			<li><a href=""></a></li>
 			<li><a href="https://www.moonbbs.com/">北美微论坛</a></li>
 		</ul>
 
@@ -222,12 +224,30 @@
 		</ul>
 
 
-		<!-- 不好的
+
+
+		<h3>不好的</h3>
+		<ul class="list">
 			<li><a href="https://gonglue.us/">美国攻略</a></li>
 			<li><a href="https://huaren.us/home/index">北美华人e网</a></li>
 			<li><a href="https://www.nychinaren.com/">纽约华人咨询网</a></li>
-		-->
+		</ul>
+
 	</div>
+
+	<div class="toc">
+		<ul>
+			<li><a href="#TV"><img src="../icon/tv.png"> TV</a></li>
+			<li><a href="#Magazine"><img src="../icon/magazine.png"> 杂志报刊 Magazine</a></li>
+			<li><a href="#SocialMedia"><img src="../icon/"> 社交媒体 Social Media</a></li>
+			<li><a href="#ITNews"><img src="../icon/"> IT News</a></li>
+			<li><a href="#"><img src="../icon/"> </a></li>
+			<li><a href="#"><img src="../icon/"> </a></li>
+			<li><a href="#"><img src="../icon/"> </a></li>
+			<li><a href="#"><img src="../icon/"> </a></li>
+		</ul>
+	</div>
+
 	<iframe src="../copyright.html" class="copyright"></iframe>
 	<div id="backtotop"><a href="#"><img src="../icon/backtotop.png"></a></div>
 	<script src="../js/x.js"></script>
