@@ -1,4 +1,4 @@
-/* ======== 侧边的目录 ======== */
+/* ======== 侧边的目录根据显示器的宽度决定是否显示 ======== */
 
 div.content {
 	padding-left: 0.5%;
@@ -15,12 +15,25 @@ iPad mini 5：2048*宽1536
 */
 /* 窄屏幕：手机竖屏、iPad竖屏 */
 @media (max-width: 1536px) {
-	div.content {
+
+	/* 暂改
+	body {
+		height: 150vh;
+		overflow: hidden;
+		margin: 0 16px;
+	}
+
+	.content {
+		columns: calc(100vw - 32px) 1;
+		column-gap: 16px;
+		transition: 0.4s;
+		*/
+	.content {
 		width: 99.5%;
 	}
 
 	/* 不显示目录 */
-	div.toc {
+	.toc {
 		display: none;
 	}
 }

@@ -187,6 +187,7 @@ th {
 	background-color: #ccff99;
 }
 
+
 /* 水平线分割线 */
 /* 普通实线风格
 margin: 0.8em 0;
@@ -200,6 +201,7 @@ hr {
 	padding-top: 1px;
 	background: linear-gradient(to right, transparent, #d0d0d5, transparent);
 }
+
 
 /* 网站整体变灰色 */
 /* html {
