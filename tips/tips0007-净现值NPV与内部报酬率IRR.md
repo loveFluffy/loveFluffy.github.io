@@ -1,6 +1,14 @@
+<link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td>
+
 # 净现值（NPV）与内部报酬率（IRR）
 
-## 净现值（NPV）
+<center></center>
+</td></tr></table>
+
+### 净现值（NPV）
 
 要理解IRR必须要先理解NPV净现值。
 
@@ -12,7 +20,7 @@
 
 从上面的例子可以看出，项目B的净现值更高更值得投资，原因是虽然A和B的5年总收入如果不考虑货币时间价值加起来是相等的都是18.52万，但是由于项目B的收入来得比较提前，所以算出来项目B的净现值高，更值得投资。从这儿可以看到净现值主要算的是刨去货币贬值影响最后还能赚多少钱。
 
-## 内部报酬率（IRR）
+### 内部报酬率（IRR）
 内部报酬率（Internal Rate of Return, IRR）：说的是累计净现值为0的时候的贴现率。这个内部报酬率的意思就是项目能承受的最大货币贬值的比率。（赢利空间，抗风险能力。）还是以上面那个例子为例，假设现在贴现率变为20%，现在计算项目A和项目B的净现值如下：
 ![](img/tips0007-2.jpg)
 贴现率20%时项目A和项目B的净现值
@@ -34,3 +42,10 @@
 
 
 
+</div>
+<div class="toc">
+
+- [净现值（NPV）](#净现值npv)
+- [内部报酬率（IRR）](#内部报酬率irr)
+
+</div>

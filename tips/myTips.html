@@ -127,448 +127,15 @@
 }
 
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
-}
-
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-	padding: 0 10%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 30px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ffcccc;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 4px solid #ffcc99;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
-		z-index: 1;
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
-</style>
+        
         </head>
         <body class="vscode-body vscode-light">
-            <h1 id="知识点收集投资理财">知识点收集：投资理财</h1>
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td>
+<h1 id="知识点收集投资理财">知识点收集：投资理财</h1>
+</td></tr></table>
 <h2 id="资产负债表">资产负债表</h2>
 <ul>
 <li><a href="tips0011-%E5%9D%8F%E8%B4%A6%E5%87%86%E5%A4%87.html">坏账准备</a></li>
@@ -636,12 +203,15 @@ div.toc ul>li>ul>li>ul>li>ul>li {
 <li><a href="tips0009-%E9%85%8D%E5%A5%97%E8%9E%8D%E8%B5%84.html">配套融资</a></li>
 <li><a href="tips0010-%E5%8F%8D%E5%90%91%E6%94%B6%E8%B4%AD%E4%B8%8A%E5%B8%82.html">反向收购上市</a></li>
 </ul>
-<hr>
+<table class="covertitle"><tr><td>
 <h1 id="知识点收集it技巧">知识点收集：IT技巧</h1>
+</td></tr></table>
 <ul>
 <li><a href="tips0005-Excel%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%E4%BB%A3%E7%A0%81.html">Excel自定义格式代码</a></li>
 <li><a href="tips0014-%E5%90%84%E7%A7%8D%E5%BF%AB%E6%8D%B7%E9%94%AE.html">各种快捷键</a></li>
 </ul>
+<h3 id="windows系统">Windows系统</h3>
+<h4 id="windows系统下操作相关">Windows系统下操作相关</h4>
 <h5 id="window下将多张图片转为一个pdf文件方法">Window下将多张图片转为一个PDF文件方法：</h5>
 <ol>
 <li>在文件夹中全选所有图片；</li>
@@ -665,16 +235,37 @@ div.toc ul>li>ul>li>ul>li>ul>li {
 <p>用 <code>&amp;#10;</code> 或者 <code>&amp;#13;</code></p>
 <p><a title="this is&#10;an example.">例子1</a></p>
 <p><a title="this is&#13;an example.">例子2</a></p>
-<h5 id="youtube">Youtube</h5>
+<h4 id="youtube">Youtube</h4>
 <p>只要删除已有的观看历史记录，并且关闭历史记录，就可以得到一个干净的首页，没有任何推荐视频。</p>
-<h5 id=""></h5>
-<h5 id="-1"></h5>
-<hr>
+<table class="covertitle"><tr><td>
 <h1 id="知识点收集其他">知识点收集：其他</h1>
+</td></tr></table>
 <ul>
 <li><a href="tips0006-%E6%97%A5%E5%B8%B8%E8%8B%B1%E8%AF%AD.html">日常英语</a></li>
 </ul>
-
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%80%9F-%E5%92%8C-%E8%B4%B7">借 和 贷</a></li>
+<li><a href="#%E7%A5%A8%E6%8D%AE%E7%A5%A8%E6%8D%AE%E8%9E%8D%E8%B5%84">票据、票据融资</a></li>
+<li><a href="#%E9%80%92%E5%BB%B6%E6%94%B6%E7%9B%8A">递延收益</a></li>
+<li><a href="#%E5%A4%A7%E9%87%8F%E6%8F%90%E5%8F%96%E4%BB%BB%E6%84%8F%E7%9B%88%E4%BD%99%E5%85%AC%E7%A7%AF%E7%9A%84%E7%9B%AE%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88">大量提取任意盈余公积的目的是什么</a></li>
+<li><a href="#windows%E7%B3%BB%E7%BB%9F">Windows系统</a>
+<ul>
+<li><a href="#windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3">Windows系统下操作相关</a>
+<ul>
+<li><a href="#window%E4%B8%8B%E5%B0%86%E5%A4%9A%E5%BC%A0%E5%9B%BE%E7%89%87%E8%BD%AC%E4%B8%BA%E4%B8%80%E4%B8%AApdf%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95">Window下将多张图片转为一个PDF文件方法：</a></li>
+<li><a href="#%E5%A4%9A%E4%B8%AApdf%E5%90%88%E5%B9%B6%E4%B8%BA%E4%B8%80%E4%B8%AApdf%E6%96%87%E4%BB%B6%E7%94%A8adobe-acrobat%E8%BD%AF%E4%BB%B6">多个PDF合并为一个PDF文件：用Adobe Acrobat软件。</a></li>
+<li><a href="#%E5%BC%BA%E5%88%B6%E9%9A%90%E8%97%8Fwindow-taskbar-%E4%BB%BB%E5%8A%A1%E6%A0%8F">强制隐藏window taskbar 任务栏：</a></li>
+<li><a href="#windows%E5%A4%8D%E5%88%B6%E5%BC%B9%E7%AA%97%E5%86%85%E5%AE%B9-%E5%8E%9F%E6%96%87%E9%93%BE%E6%8E%A5">Windows复制弹窗内容 原文链接：</a></li>
+<li><a href="#%E5%9C%A8%E9%93%BE%E6%8E%A5%E7%9A%84title%E5%B1%9E%E6%80%A7%E9%87%8C%E6%B7%BB%E5%8A%A0%E6%8D%A2%E8%A1%8C">在链接的title属性里添加换行</a></li>
+</ul>
+</li>
+<li><a href="#youtube">Youtube</a></li>
+</ul>
+</li>
+</ul>
+</div>
             
             
         </body>

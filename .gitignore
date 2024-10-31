@@ -16,6 +16,7 @@ csbooknotes/notes*.md
 coursenotes/course*.md
 newstv/newstv*.md
 music/*.md
+tips/*.md
 
 # 涉及隐私文件
 business/business.html

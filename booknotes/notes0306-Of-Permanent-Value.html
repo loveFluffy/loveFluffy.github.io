@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Of Permanent Value&colon; The Story of Warren Buffett</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Of Permanent Value&colon; The Story of Warren Buffett</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,15 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
         
         <style>
 .task-list-item {
@@ -29,453 +32,421 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="of-permanent-value-the-story-of-warren-buffett">Of Permanent Value: The Story of Warren Buffett</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/0306.jpg"></td><td>
+<h1 id="of-permanent-value-the-story-of-warren-buffett">Of Permanent Value: The Story of Warren Buffett</h1>
+<center>[美]安德鲁·基尔帕特里克（Andrew Kilpatrick） 著|何玉柱 等译</center>
+</td></tr></table>
+<div class="mycomment">
+<p>英文原版作者每年都更新这本书。</p>
+<p>2020 Elephant Edition:</p>
+<img src="img/notes0306-2020.jpg">
+<p>2018 Condensed Edition:</p>
+<img src="img/notes0306-2018.jpg">
+<p>2016 50 Years and Beyond Edition:</p>
+<img src="img/notes0306-2016.jpg">
+<p>2014 Endless Edition:</p>
+<img src="img/notes0306-2014.jpg">
+<p>2012 Edition:</p>
+<img src="img/notes0306-2012.jpg">
+<p>2010 A Trilogy Edition:</p>
+<img src="img/notes0306-2010.jpg">
+<p>2008 Cosmic Edition:</p>
+<img src="img/notes0306-2008.jpg">
+<p>2007 International Edition:</p>
+<img src="img/notes0306-2007.jpg">
+<p>2006 Literary Edition:</p>
+<img src="img/notes0306-2006.jpg">
+<p>2005 Edition:</p>
+<img src="img/notes0306-2005.jpg">
+<p>2003 Edition:</p>
+<img src="img/notes0306-2003.jpg">
+<p>2002 Edition:</p>
+<img src="img/notes0306-2002.jpg">
+<p>2000 Edition:</p>
+<img src="img/notes0306-2000.jpg">
+<p>1996 Edition:</p>
+<img src="img/notes0306-1996.jpg">
+<p>1994 Edition:</p>
+<img src="img/notes0306-1994.jpg">
+<p>还有几张未知版本的封面：</p>
+<img src="img/notes0306-1.jpg">
+<img src="img/notes0306-2.jpg">
+<img src="img/notes0306-3.jpg">
+</div>
+<h3 id="copyright-page-lets-have-fun">Copyright Page: Let's Have Fun</h3>
+<h3 id="dedication">dedication</h3>
+<h3 id="2012-odyssey-edition">2012 Odyssey edition</h3>
+<h3 id="in-homage">IN HOMAGE</h3>
+<h3 id="corrected-and-improved-by-the-author">&quot;Corrected and improved by the author&quot;</h3>
+<h3 id="ibm2011-a-space-odyssey">IBM—2011: A Space Odyssey</h3>
+<h3 id="odysseys">Odysseys</h3>
+<h3 id="one-of-the-worlds-richest-people">One of the World's Richest People</h3>
+<h3 id="berkshire-hathaway">Berkshire Hathaway</h3>
+<h3 id="whos-warren-buffett">Who's Warren Buffett?</h3>
+<h3 id="what-buffett-was-reading">What Buffett Was Reading</h3>
+<h3 id="woodrow-wilson-high-school">Woodrow Wilson High School</h3>
+<h3 id="what-buffett-was-thinking">What Buffett Was Thinking</h3>
+<h3 id="fireball-with-a-money-changer">&quot;Fireball&quot; with a Money Changer</h3>
+<h3 id="buffetts-tribute-to-ben-graham">Buffett's Tribute to Ben Graham</h3>
+<h3 id="benjamin-graham-and-security-analysis">Benjamin Graham and Security Analysis</h3>
+<h3 id="garage-sale-from-heaven">Garage Sale from Heaven</h3>
+<h3 id="the-western">The Western</h3>
+<h3 id="water-boy-and-caddie">Water Boy and Caddie</h3>
+<h3 id="buffetts-stock-portfolio-in-1950s">Buffett's Stock Portfolio in 1950s</h3>
+<h3 id="chess-with-jonathan-brandt">Chess with Jonathan Brandt</h3>
+<h3 id="i-make-no-further-provisions">&quot;I Make No Further Provisions&quot;</h3>
+<h3 id="buffett-partnership">Buffett Partnership</h3>
+<h3 id="harry-bottle">Harry Bottle</h3>
+<h3 id="buffetts-early-investors">Buffett's Early Investors</h3>
+<h3 id="cornering-the-market">Cornering the Market</h3>
+<h3 id="please-put-me-in-the-partnership">Please Put Me in the Partnership</h3>
+<h3 id="lunch-with-stamp-and-coin-guys">Lunch with Stamp and Coin Guys</h3>
+<h3 id="charity-lunch-with-buffett">Charity Lunch with Buffett</h3>
+<h3 id="body-mind-and-spirit">Body, Mind, and Spirit</h3>
+<h3 id="buffett-in-chinese-made-suits">Buffett in Chinese-Made Suits</h3>
+<h3 id="buffett-receives-higher-education">Buffett Receives Higher Education</h3>
+<h3 id="agnostic-joins-jewish-country-club">Agnostic Joins Jewish Country Club</h3>
+<h3 id="bridge">Bridge</h3>
+<h3 id="world-headquarters">World Headquarters</h3>
+<h3 id="dancing-with-the-stars">Dancing with the Stars</h3>
+<h3 id="banquet-berkshire-style">Banquet Berkshire-style</h3>
+<h3 id="memorabilia">Memorabilia</h3>
+<h3 id="berkshires-iq-test">Berkshire's &quot;IQ Test&quot;</h3>
+<h3 id="making-warren-proud">Making Warren Proud</h3>
+<h3 id="mrs-susie-buffetts-legacy">Mrs. Susie Buffett's Legacy</h3>
+<h3 id="the-charlie-rose-interview">The Charlie Rose Interview</h3>
+<h3 id="all-my-children">&quot;All My Children&quot;</h3>
+<h3 id="chairmanship-may-pass-to-his-son">Chairmanship May Pass to His Son</h3>
+<h3 id="susie-in-voguebuffett-in-vanity-fair">Susie in Vogue/Buffett in Vanity Fair</h3>
+<h3 id="warren-buffett-jimmy-buffett">Warren Buffett, Jimmy Buffett</h3>
+<h3 id="headwaters">Headwaters</h3>
+<h3 id="berkshires-history">Berkshire's History</h3>
+<h3 id="berkshires-board">Berkshire's Board</h3>
+<h3 id="whos-bill-gates">Who's Bill Gates?</h3>
+<h3 id="adventure-the-big-bang">Adventure: The Big Bang</h3>
+<h3 id="time-capsule">Time Capsule</h3>
+<h3 id="berkshire-sold">Berkshire Sold</h3>
+<h3 id="the-bizarro-six-figure-stock-price">The Bizarro Six-Figure Stock Price</h3>
+<h3 id="american-express">American Express</h3>
+<h3 id="grinnell-college">Grinnell College</h3>
+<h3 id="terror-in-america">Terror in America</h3>
+<h3 id="berkshires-insurance-group">Berkshire's Insurance Group</h3>
+<h3 id="a-look-at-geico">A Look at GEICO</h3>
+<h3 id="geico">GEICO</h3>
+<h3 id="gen-re">Gen Re</h3>
+<h3 id="storm-stories">Storm Stories</h3>
+<h3 id="protection-against-the-big-one">Protection Against the Big One</h3>
+<h3 id="white-mountains-insurance">White Mountains Insurance</h3>
+<h3 id="a-gamut-of-insurance-companies">A Gamut of Insurance Companies</h3>
+<h3 id="symetra">Symetra</h3>
+<h3 id="medical-protective">Medical Protective</h3>
+<h3 id="applied-underwriters">Applied Underwriters</h3>
+<h3 id="insuring-a-1-billion-lottery">Insuring a $1 Billion Lottery</h3>
+<h3 id="backer-of-lloyds-of-london">Backer of Lloyd's of London</h3>
+<h3 id="protection-for-world-markets">Protection for World Markets</h3>
+<h3 id="bond-insurance-business">Bond Insurance Business</h3>
+<h3 id="reinsurance-stakes-outside-states">Reinsurance Stakes Outside States</h3>
+<h3 id="a-new-home-for-ajit-jain">A New Home for Ajit Jain</h3>
+<h3 id="boys-town">Boys Town</h3>
+<h3 id="media-connections">Media Connections</h3>
+<h3 id="the-washington-post">The Washington Post</h3>
+<h3 id="coca-colas-don-keough">Coca-Cola's Don Keough</h3>
+<h3 id="the-coca-cola-company">The Coca-Cola Company</h3>
+<h3 id="writing-coke-puts">Writing Coke Puts</h3>
+<h3 id="new-world-of-coca-cola">New World of Coca-Cola</h3>
+<h3 id="turning-2-million-into-2-trillion">Turning $2 Million into $2 Trillion</h3>
+<h3 id="midnight-at-mcdonalds">Midnight at McDonald's</h3>
+<h3 id="the-walt-disney-company">The Walt Disney Company</h3>
+<h3 id="diversified-retailing">Diversified Retailing</h3>
+<h3 id="blue-chip-stamps">Blue Chip Stamps</h3>
+<h3 id="wesco">Wesco</h3>
+<h3 id="ambassador-bridge">Ambassador Bridge</h3>
+<h3 id="kansas-bankers-surety-co">Kansas Bankers Surety Co.</h3>
+<h3 id="berkshires-sainted-seven">Berkshire's &quot;Sainted Seven&quot;</h3>
+<h3 id="sees-candies">See's Candies</h3>
+<h3 id="the-buffalo-news">The Buffalo News</h3>
+<h3 id="nebraska-furniture-mart">Nebraska Furniture Mart</h3>
+<h3 id="scott-fetzer">Scott Fetzer</h3>
+<h3 id="kirby">Kirby</h3>
+<h3 id="world-book">World Book</h3>
+<h3 id="fechheimer">Fechheimer</h3>
+<h3 id="borsheims">Borsheims</h3>
+<h3 id="h-h-brown-shoe">H. H. Brown Shoe</h3>
+<h3 id="dexter-shoe">Dexter Shoe</h3>
+<h3 id="helzberg-diamonds-shops">Helzberg Diamonds Shops</h3>
+<h3 id="r-c-willey-home-furnishings">R. C. Willey Home Furnishings</h3>
+<h3 id="landing-flightsafety">Landing FlightSafety</h3>
+<h3 id="star-furniture-co">Star Furniture Co.</h3>
+<h3 id="scooping-up-dairy-queen">Scooping up Dairy Queen</h3>
+<h3 id="travel-netjets-buys-marquis-jet">Travel: NetJets Buys Marquis Jet</h3>
+<h3 id="santulli-steps-down-sokol-steps-up">Santulli Steps Down; Sokol Steps Up</h3>
+<h3 id="sokol-steps-down">Sokol Steps Down</h3>
+<h3 id="jordans-furniture-company">Jordan's Furniture Company</h3>
+<h3 id="midamerican-energy">MidAmerican Energy</h3>
+<h3 id="midamerican-energy-buys-pacificorp">MidAmerican Energy Buys PacifiCorp</h3>
+<h3 id="homeservices-of-america">HomeServices of America</h3>
+<h3 id="williams-kern-river-gas-transmission-co">Williams' Kern River Gas Transmission Co.</h3>
+<h3 id="northern-natural-gas-co">Northern Natural Gas Co.</h3>
+<h3 id="an-alaskan-pipeline-dream">An Alaskan Pipeline Dream</h3>
+<h3 id="energizing-energy-company">Energizing Energy Company</h3>
+<h3 id="going-after-constellation-energy">Going After Constellation Energy</h3>
+<h3 id="byd">BYD</h3>
+<h3 id="solar-investments">Solar Investments</h3>
+<h3 id="cort">CORT</h3>
+<h3 id="ben-bridge-jeweler">Ben Bridge Jeweler</h3>
+<h3 id="justin-brands-and-boots">Justin Brands and Boots</h3>
+<h3 id="shaw-industries">Shaw Industries</h3>
+<h3 id="homemakers-furniture">Homemakers Furniture</h3>
+<h3 id="benjamin-moore-paints">Benjamin Moore Paints</h3>
+<h3 id="johns-manville">Johns Manville</h3>
+<h3 id="mitek-on-the-acquisition-path">MiTek on the Acquisition Path</h3>
+<h3 id="xtra">XTRA</h3>
+<h3 id="fruit-of-the-loom">Fruit of the Loom</h3>
+<h3 id="larson-juhl">Larson-Juhl</h3>
+<h3 id="garan">Garan</h3>
+<h3 id="berkshires-financial-businesses">Berkshire's Financial Businesses</h3>
+<h3 id="berkadias-role">Berkadia's Role</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#copyright-page-lets-have-fun">Copyright Page: Let's Have Fun</a></li>
+<li><a href="#dedication">dedication</a></li>
+<li><a href="#2012-odyssey-edition">2012 Odyssey edition</a></li>
+<li><a href="#in-homage">IN HOMAGE</a></li>
+<li><a href="#corrected-and-improved-by-the-author">&quot;Corrected and improved by the author&quot;</a></li>
+<li><a href="#ibm2011-a-space-odyssey">IBM—2011: A Space Odyssey</a></li>
+<li><a href="#odysseys">Odysseys</a></li>
+<li><a href="#one-of-the-worlds-richest-people">One of the World's Richest People</a></li>
+<li><a href="#berkshire-hathaway">Berkshire Hathaway</a></li>
+<li><a href="#whos-warren-buffett">Who's Warren Buffett?</a></li>
+<li><a href="#what-buffett-was-reading">What Buffett Was Reading</a></li>
+<li><a href="#woodrow-wilson-high-school">Woodrow Wilson High School</a></li>
+<li><a href="#what-buffett-was-thinking">What Buffett Was Thinking</a></li>
+<li><a href="#fireball-with-a-money-changer">&quot;Fireball&quot; with a Money Changer</a></li>
+<li><a href="#buffetts-tribute-to-ben-graham">Buffett's Tribute to Ben Graham</a></li>
+<li><a href="#benjamin-graham-and-security-analysis">Benjamin Graham and Security Analysis</a></li>
+<li><a href="#garage-sale-from-heaven">Garage Sale from Heaven</a></li>
+<li><a href="#the-western">The Western</a></li>
+<li><a href="#water-boy-and-caddie">Water Boy and Caddie</a></li>
+<li><a href="#buffetts-stock-portfolio-in-1950s">Buffett's Stock Portfolio in 1950s</a></li>
+<li><a href="#chess-with-jonathan-brandt">Chess with Jonathan Brandt</a></li>
+<li><a href="#i-make-no-further-provisions">&quot;I Make No Further Provisions&quot;</a></li>
+<li><a href="#buffett-partnership">Buffett Partnership</a></li>
+<li><a href="#harry-bottle">Harry Bottle</a></li>
+<li><a href="#buffetts-early-investors">Buffett's Early Investors</a></li>
+<li><a href="#cornering-the-market">Cornering the Market</a></li>
+<li><a href="#please-put-me-in-the-partnership">Please Put Me in the Partnership</a></li>
+<li><a href="#lunch-with-stamp-and-coin-guys">Lunch with Stamp and Coin Guys</a></li>
+<li><a href="#charity-lunch-with-buffett">Charity Lunch with Buffett</a></li>
+<li><a href="#body-mind-and-spirit">Body, Mind, and Spirit</a></li>
+<li><a href="#buffett-in-chinese-made-suits">Buffett in Chinese-Made Suits</a></li>
+<li><a href="#buffett-receives-higher-education">Buffett Receives Higher Education</a></li>
+<li><a href="#agnostic-joins-jewish-country-club">Agnostic Joins Jewish Country Club</a></li>
+<li><a href="#bridge">Bridge</a></li>
+<li><a href="#world-headquarters">World Headquarters</a></li>
+<li><a href="#dancing-with-the-stars">Dancing with the Stars</a></li>
+<li><a href="#banquet-berkshire-style">Banquet Berkshire-style</a></li>
+<li><a href="#memorabilia">Memorabilia</a></li>
+<li><a href="#berkshires-iq-test">Berkshire's &quot;IQ Test&quot;</a></li>
+<li><a href="#making-warren-proud">Making Warren Proud</a></li>
+<li><a href="#mrs-susie-buffetts-legacy">Mrs. Susie Buffett's Legacy</a></li>
+<li><a href="#the-charlie-rose-interview">The Charlie Rose Interview</a></li>
+<li><a href="#all-my-children">&quot;All My Children&quot;</a></li>
+<li><a href="#chairmanship-may-pass-to-his-son">Chairmanship May Pass to His Son</a></li>
+<li><a href="#susie-in-voguebuffett-in-vanity-fair">Susie in Vogue/Buffett in Vanity Fair</a></li>
+<li><a href="#warren-buffett-jimmy-buffett">Warren Buffett, Jimmy Buffett</a></li>
+<li><a href="#headwaters">Headwaters</a></li>
+<li><a href="#berkshires-history">Berkshire's History</a></li>
+<li><a href="#berkshires-board">Berkshire's Board</a></li>
+<li><a href="#whos-bill-gates">Who's Bill Gates?</a></li>
+<li><a href="#adventure-the-big-bang">Adventure: The Big Bang</a></li>
+<li><a href="#time-capsule">Time Capsule</a></li>
+<li><a href="#berkshire-sold">Berkshire Sold</a></li>
+<li><a href="#the-bizarro-six-figure-stock-price">The Bizarro Six-Figure Stock Price</a></li>
+<li><a href="#american-express">American Express</a></li>
+<li><a href="#grinnell-college">Grinnell College</a></li>
+<li><a href="#terror-in-america">Terror in America</a></li>
+<li><a href="#berkshires-insurance-group">Berkshire's Insurance Group</a></li>
+<li><a href="#a-look-at-geico">A Look at GEICO</a></li>
+<li><a href="#geico">GEICO</a></li>
+<li><a href="#gen-re">Gen Re</a></li>
+<li><a href="#storm-stories">Storm Stories</a></li>
+<li><a href="#protection-against-the-big-one">Protection Against the Big One</a></li>
+<li><a href="#white-mountains-insurance">White Mountains Insurance</a></li>
+<li><a href="#a-gamut-of-insurance-companies">A Gamut of Insurance Companies</a></li>
+<li><a href="#symetra">Symetra</a></li>
+<li><a href="#medical-protective">Medical Protective</a></li>
+<li><a href="#applied-underwriters">Applied Underwriters</a></li>
+<li><a href="#insuring-a-1-billion-lottery">Insuring a $1 Billion Lottery</a></li>
+<li><a href="#backer-of-lloyds-of-london">Backer of Lloyd's of London</a></li>
+<li><a href="#protection-for-world-markets">Protection for World Markets</a></li>
+<li><a href="#bond-insurance-business">Bond Insurance Business</a></li>
+<li><a href="#reinsurance-stakes-outside-states">Reinsurance Stakes Outside States</a></li>
+<li><a href="#a-new-home-for-ajit-jain">A New Home for Ajit Jain</a></li>
+<li><a href="#boys-town">Boys Town</a></li>
+<li><a href="#media-connections">Media Connections</a></li>
+<li><a href="#the-washington-post">The Washington Post</a></li>
+<li><a href="#coca-colas-don-keough">Coca-Cola's Don Keough</a></li>
+<li><a href="#the-coca-cola-company">The Coca-Cola Company</a></li>
+<li><a href="#writing-coke-puts">Writing Coke Puts</a></li>
+<li><a href="#new-world-of-coca-cola">New World of Coca-Cola</a></li>
+<li><a href="#turning-2-million-into-2-trillion">Turning $2 Million into $2 Trillion</a></li>
+<li><a href="#midnight-at-mcdonalds">Midnight at McDonald's</a></li>
+<li><a href="#the-walt-disney-company">The Walt Disney Company</a></li>
+<li><a href="#diversified-retailing">Diversified Retailing</a></li>
+<li><a href="#blue-chip-stamps">Blue Chip Stamps</a></li>
+<li><a href="#wesco">Wesco</a></li>
+<li><a href="#ambassador-bridge">Ambassador Bridge</a></li>
+<li><a href="#kansas-bankers-surety-co">Kansas Bankers Surety Co.</a></li>
+<li><a href="#berkshires-sainted-seven">Berkshire's &quot;Sainted Seven&quot;</a></li>
+<li><a href="#sees-candies">See's Candies</a></li>
+<li><a href="#the-buffalo-news">The Buffalo News</a></li>
+<li><a href="#nebraska-furniture-mart">Nebraska Furniture Mart</a></li>
+<li><a href="#scott-fetzer">Scott Fetzer</a></li>
+<li><a href="#kirby">Kirby</a></li>
+<li><a href="#world-book">World Book</a></li>
+<li><a href="#fechheimer">Fechheimer</a></li>
+<li><a href="#borsheims">Borsheims</a></li>
+<li><a href="#h-h-brown-shoe">H. H. Brown Shoe</a></li>
+<li><a href="#dexter-shoe">Dexter Shoe</a></li>
+<li><a href="#helzberg-diamonds-shops">Helzberg Diamonds Shops</a></li>
+<li><a href="#r-c-willey-home-furnishings">R. C. Willey Home Furnishings</a></li>
+<li><a href="#landing-flightsafety">Landing FlightSafety</a></li>
+<li><a href="#star-furniture-co">Star Furniture Co.</a></li>
+<li><a href="#scooping-up-dairy-queen">Scooping up Dairy Queen</a></li>
+<li><a href="#travel-netjets-buys-marquis-jet">Travel: NetJets Buys Marquis Jet</a></li>
+<li><a href="#santulli-steps-down-sokol-steps-up">Santulli Steps Down; Sokol Steps Up</a></li>
+<li><a href="#sokol-steps-down">Sokol Steps Down</a></li>
+<li><a href="#jordans-furniture-company">Jordan's Furniture Company</a></li>
+<li><a href="#midamerican-energy">MidAmerican Energy</a></li>
+<li><a href="#midamerican-energy-buys-pacificorp">MidAmerican Energy Buys PacifiCorp</a></li>
+<li><a href="#homeservices-of-america">HomeServices of America</a></li>
+<li><a href="#williams-kern-river-gas-transmission-co">Williams' Kern River Gas Transmission Co.</a></li>
+<li><a href="#northern-natural-gas-co">Northern Natural Gas Co.</a></li>
+<li><a href="#an-alaskan-pipeline-dream">An Alaskan Pipeline Dream</a></li>
+<li><a href="#energizing-energy-company">Energizing Energy Company</a></li>
+<li><a href="#going-after-constellation-energy">Going After Constellation Energy</a></li>
+<li><a href="#byd">BYD</a></li>
+<li><a href="#solar-investments">Solar Investments</a></li>
+<li><a href="#cort">CORT</a></li>
+<li><a href="#ben-bridge-jeweler">Ben Bridge Jeweler</a></li>
+<li><a href="#justin-brands-and-boots">Justin Brands and Boots</a></li>
+<li><a href="#shaw-industries">Shaw Industries</a></li>
+<li><a href="#homemakers-furniture">Homemakers Furniture</a></li>
+<li><a href="#benjamin-moore-paints">Benjamin Moore Paints</a></li>
+<li><a href="#johns-manville">Johns Manville</a></li>
+<li><a href="#mitek-on-the-acquisition-path">MiTek on the Acquisition Path</a></li>
+<li><a href="#xtra">XTRA</a></li>
+<li><a href="#fruit-of-the-loom">Fruit of the Loom</a></li>
+<li><a href="#larson-juhl">Larson-Juhl</a></li>
+<li><a href="#garan">Garan</a></li>
+<li><a href="#berkshires-financial-businesses">Berkshire's Financial Businesses</a></li>
+<li><a href="#berkadias-role">Berkadia's Role</a></li>
+</ul>
+</div>
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

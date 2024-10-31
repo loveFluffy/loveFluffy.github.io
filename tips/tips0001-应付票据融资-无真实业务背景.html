@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5e94;&#x4ed8;&#x7968;&#x636e;&#x878d;&#x8d44;&#xff1a;&#x65e0;&#x771f;&#x5b9e;&#x4e1a;&#x52a1;&#x80cc;&#x666f;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5e94;&#x4ed8;&#x7968;&#x636e;&#x878d;&#x8d44;&#xff1a;&#x65e0;&#x771f;&#x5b9e;&#x4e1a;&#x52a1;&#x80cc;&#x666f;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,456 +31,119 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
-		z-index: 1;
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="应付票据融资无真实业务背景">应付票据融资：无真实业务背景</h1>
-<h2 id="违规票据融资之ipo应对思路"><a hre="http://etrlawfirm.com/cn/lssb/info_66.aspx?itemid=10128767&parent">违规票据融资之IPO应对思路</a></h2>
-<p>发布时间：2019-02-13 来源于：广东广信君达律师事务所赵剑发、鲁莎莎</p>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td>
+<h1 id="应付票据融资无真实业务背景">应付票据融资：无真实业务背景</h1>
+<center><a href="http://etrlawfirm.com/cn/lssb/info_66.aspx?itemid=10128767&parent">违规票据融资之IPO应对思路</a> 发布时间：2019-02-13 来源于：广东广信君达律师事务所赵剑发、鲁莎莎</center>
+</td></tr></table>
 <p>近日，某公司IPO被否决，上会时，某公司被关注了其票据融资问题：</p>
 <p>“招股说明书披露，发行人存在无真实交易背景的银行借款受托支付情形，同时，发行人存在向子公司开具银行承兑汇票的情形。请发行人代表说明：（1）上述无真实交易背景的贷款背景及原因，发行人上述行为是否存在违法违规情形，是否存在被处罚的风险，是否对此次发行造成重大影响；（2）开具银行承兑汇票是否存在真实交易背景，是否属于变相资金融通，是否违反《票据法》相关规定，是否存在被行政处罚风险；（3）相关内控制度是否完善并有效执行。请保荐代表人说明核查依据、过程并发表明确核查意见。”</p>
 <p>某公司披露的招股说明书中未见其对该问题的详细披露，对某公司的具体情况，我们不得而知，但从过往IPO审核案例来看，不乏存在票据融资情形的成功上市IPO案例，下面让我们一起来解读违规票据融资之IPO反馈应对策略。</p>
 <h3 id="一什么是违规票据融资">一、什么是违规票据融资</h3>
 <h4 id="一违规票据融资的定义及操作模式">（一）违规票据融资的定义及操作模式</h4>
 <p>违规票据融资是指银行承兑汇票的贴现申请人由于资金需要，虚构交易背景将未到期的银行承兑汇票转让于银行并贴现的一种融资行为。违规票据融资的流程如下：</p>
-<p><img src="file:///d:\loveFluffy\loveFluffy.github.io\tips\img\tips0001-1.png" alt=""></p>
+<p><img src="img/tips0001-1.png" alt=""></p>
 <p>实践中，由于向银行贷款审核手续繁琐并审批难度大，部分企业会与其关联公司或关系较好的供应商之间虚构交易进行银行承兑汇票的贴现，以获取流动资金，以解决融资效率问题并降低资金成本。</p>
 <h4 id="二相关法律法规">（二）相关法律法规</h4>
 <p>《中华人民共和国票据法》明确要求票据的签发、取得及转让需具有真实的交易背景。目前，违规票据融资的IPO案例均为无真实交易背景的银行承兑汇票贴现，违反的是《中华人民共和国票据法》第十条规定。若企业故意伪造、变造票据或者存在其他违法使用票据的行为，则将可能被认定为具有刑事责任的票据欺诈行为，《中华人民共和国票据法》及《中华人民共和国刑法》均对票据欺诈行为的刑事责任做了明确规定，具体如下：</p>
@@ -564,8 +229,35 @@ div.toc ul>li>ul>li>ul>li>ul>li {
 <h3 id="4供应链票据融资">4.供应链票据融资</h3>
 <p>供应链票据是指企业通过供应链票据平台签发的电子商业汇票。两项关键要素需要关注，一是签发场所为上海票据交易所供应链票据平台，二是截止目前票据类型仅为电子商业承兑汇票，非纸票，也非银行承兑汇票。</p>
 <p>供应链票据主要是指采取“1+N”模式，即依托产业链上核心企业的信用，通过核心企业发行非金融企业债务融资工具(包括短期融资券、中期票据、超短融、定向工具等)，通过委贷方式向上下游供应链企业(尤其是中小企业)提供资金支持，缓解上下游企业资金紧张，降低其融资成本。同时发行主体在强化对上下游企业控制的同时，利用自身信用获取利差(委贷利率-债券利率)。</p>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%9D%E8%A7%84%E7%A5%A8%E6%8D%AE%E8%9E%8D%E8%B5%84">一、什么是违规票据融资</a>
+<ul>
+<li><a href="#%E4%B8%80%E8%BF%9D%E8%A7%84%E7%A5%A8%E6%8D%AE%E8%9E%8D%E8%B5%84%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E6%93%8D%E4%BD%9C%E6%A8%A1%E5%BC%8F">（一）违规票据融资的定义及操作模式</a></li>
+<li><a href="#%E4%BA%8C%E7%9B%B8%E5%85%B3%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84">（二）相关法律法规</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C%E7%A5%A8%E6%8D%AE%E8%9E%8D%E8%B5%84%E5%8F%8D%E9%A6%88%E5%85%B3%E6%B3%A8%E8%A6%81%E7%82%B9%E5%8F%8A%E5%BA%94%E5%AF%B9%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90">二、票据融资反馈关注要点及应对策略分析</a>
+<ul>
+<li><a href="#%E4%B8%80%E5%8F%8D%E9%A6%88%E9%97%AE%E9%A2%98%E6%83%85%E5%86%B5">（一）反馈问题情况</a></li>
+<li><a href="#%E4%BA%8C%E5%BA%94%E5%AF%B9%E6%80%9D%E8%B7%AF">（二）应对思路</a>
+<ul>
+<li><a href="#%E6%A1%88%E4%BE%8B%E4%B8%80x%E8%82%A1%E4%BB%BD%E4%B8%8A%E4%BC%9A%E6%97%B6%E9%97%B42017%E5%B9%B44%E6%9C%8825%E6%97%A5">【案例一】X股份上会时间2017年4月25日</a></li>
+<li><a href="#%E6%A1%88%E4%BE%8B%E4%BA%8Cs%E4%B8%8A%E4%BC%9A%E6%97%B6%E9%97%B4-2017%E5%B9%B47%E6%9C%885%E6%97%A5">【案例二】S上会时间 2017年7月5日</a></li>
+<li><a href="#%E6%A1%88%E4%BE%8B%E4%B8%89w%E4%B8%8A%E4%BC%9A%E6%97%B6%E9%97%B42015%E5%B9%B43%E6%9C%8813%E6%97%A5">【案例三】W上会时间2015年3月13日</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89%E5%BA%94%E5%AF%B9%E7%AD%96%E7%95%A5%E5%B0%8F%E7%BB%93">三、应对策略小结</a></li>
+<li><a href="#1%E9%93%B6%E8%A1%8C%E6%89%BF%E5%85%91%E6%B1%87%E7%A5%A8%E8%9E%8D%E8%B5%84">1.银行承兑汇票融资</a></li>
+<li><a href="#2%E5%95%86%E4%B8%9A%E6%89%BF%E5%85%91%E6%B1%87%E7%A5%A8%E8%9E%8D%E8%B5%84">2.商业承兑汇票融资</a></li>
+<li><a href="#3%E5%8D%8F%E8%AE%AE%E4%BB%98%E6%81%AF%E7%A5%A8%E6%8D%AE%E8%B4%B4%E7%8E%B0">3.协议付息票据贴现</a></li>
+<li><a href="#4%E4%BE%9B%E5%BA%94%E9%93%BE%E7%A5%A8%E6%8D%AE%E8%9E%8D%E8%B5%84">4.供应链票据融资</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

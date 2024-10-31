@@ -18,12 +18,13 @@
 <div class="toc">
 
 - [](#-1)
+- [](#-3)
 
 </div>
 
 
 
-
+---------------------------------
 
 
 
@@ -31,3 +32,25 @@
 
 <center></center>
 </td></tr></table>
+
+
+
+----------------- my tips ----------------
+<link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td>
+
+# 
+
+<center></center>
+</td></tr></table>
+
+### 
+</div>
+<div class="toc">
+
+- [](#-1)
+- [](#-3)
+
+</div>

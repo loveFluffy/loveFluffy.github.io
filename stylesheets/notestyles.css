@@ -125,7 +125,7 @@ div.mycomment {
 }
 
 div.mycomment img {
-	max-width: 90%;
+	max-height: 300px;
 }
 
 

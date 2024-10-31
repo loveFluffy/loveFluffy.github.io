@@ -1,4 +1,10 @@
+<link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td>
+
 # 知识点收集：投资理财
+</td></tr></table>
 
 ## 资产负债表
 
@@ -83,12 +89,18 @@
 
 
 
----------
+
+<table class="covertitle"><tr><td>
 
 # 知识点收集：IT技巧
+</td></tr></table>
 
 - [Excel自定义格式代码](tips0005-Excel自定义格式代码.html)
 - [各种快捷键](tips0014-各种快捷键.html)
+
+### Windows系统
+
+#### Windows系统下操作相关
 
 ##### Window下将多张图片转为一个PDF文件方法：
 1. 在文件夹中全选所有图片；
@@ -115,17 +127,19 @@
 
 <a title="this is&#13;an example.">例子2</a>
 
-##### Youtube
+#### Youtube
 
 只要删除已有的观看历史记录，并且关闭历史记录，就可以得到一个干净的首页，没有任何推荐视频。
 
-##### 
-##### 
 
 
----------
+
+
+
+<table class="covertitle"><tr><td>
 
 # 知识点收集：其他
+</td></tr></table>
 
 - [日常英语](tips0006-日常英语.html)
 
@@ -134,3 +148,20 @@
 
 
 
+</div>
+<div class="toc">
+
+- [借 和 贷](#借-和-贷)
+- [票据、票据融资](#票据票据融资)
+- [递延收益](#递延收益)
+- [大量提取任意盈余公积的目的是什么](#大量提取任意盈余公积的目的是什么)
+- [Windows系统](#windows系统)
+	- [Windows系统下操作相关](#windows系统下操作相关)
+		- [Window下将多张图片转为一个PDF文件方法：](#window下将多张图片转为一个pdf文件方法)
+		- [多个PDF合并为一个PDF文件：用Adobe Acrobat软件。](#多个pdf合并为一个pdf文件用adobe-acrobat软件)
+		- [强制隐藏window taskbar 任务栏：](#强制隐藏window-taskbar-任务栏)
+		- [Windows复制弹窗内容 原文链接：](#windows复制弹窗内容-原文链接)
+		- [在链接的title属性里添加换行](#在链接的title属性里添加换行)
+	- [Youtube](#youtube)
+
+</div>
