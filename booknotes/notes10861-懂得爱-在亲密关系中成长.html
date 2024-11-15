@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x61c2;&#x5f97;&#x7231;&#xff1a;&#x5728;&#x4eb2;&#x5bc6;&#x5173;&#x7cfb;&#x4e2d;&#x6210;&#x957f;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x61c2;&#x5f97;&#x7231;&#xff1a;&#x5728;&#x4eb2;&#x5bc6;&#x5173;&#x7cfb;&#x4e2d;&#x6210;&#x957f;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,555 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="懂得爱在亲密关系中成长">懂得爱：在亲密关系中成长</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/10861.jpg"></td><td>
+<h1 id="懂得爱在亲密关系中成长">懂得爱：在亲密关系中成长</h1>
+<center>麦基卓（Jock Mckeen） 黄焕祥（Bennet Wong） 著|易之新 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="推荐序-爱信心与冒险">推荐序 爱、信心与冒险</h3>
+<h3 id="序曲-探索亲密关系">序曲 探索亲密关系</h3>
+<h4 id="探索亲密的计划">探索亲密的计划</h4>
+<h4 id="卸除自己的防御心态以及与人保持距离的习性">卸除自己的防御心态以及与人保持距离的习性</h4>
+<h4 id="越熟悉彼此就越了解自己">越熟悉彼此，就越了解自己</h4>
+<h4 id="学习在当下彼此同在">学习在当下彼此同在</h4>
+<h4 id="所有控制都会破坏关系">所有控制都会破坏关系</h4>
+<h4 id="关系花园需要长久的照料">“关系花园”需要长久的照料</h4>
+<h3 id="1共鸣">1、共鸣</h3>
+<h4 id="能量之海">能量之海</h4>
+<h4 id="人和宇宙的分离">人和宇宙的分离</h4>
+<h4 id="为了适应社会而削减自己的能量">为了适应社会而削减自己的能量</h4>
+<h4 id="生命中的两难">生命中的两难</h4>
+<h4 id="心一旦开始解冻就能感受宇宙的能量">心一旦开始解冻，就能感受宇宙的能量</h4>
+<h4 id="逐渐迈向亲密">逐渐迈向亲密</h4>
+<h3 id="2-亲密">2 亲密</h3>
+<h4 id="亲密的定义">亲密的定义</h4>
+<h4 id="失去连接感">失去连接感</h4>
+<h4 id="儿童的发展">儿童的发展</h4>
+<h4 id="孤独与分离">孤独与分离</h4>
+<h4 id="内心恒久对象">内心恒久对象</h4>
+<h4 id="为什么害怕亲密">为什么害怕亲密</h4>
+<h4 id="角色和形象">角色和形象</h4>
+<h4 id="投射的形象">投射的形象</h4>
+<h4 id="照顾和关怀">照顾和关怀</h4>
+<h4 id="同在才有共鸣">同在才有共鸣</h4>
+<h4 id="空虚和不与人同在">空虚和不与人同在</h4>
+<h4 id="负责的沟通">负责的沟通</h4>
+<h4 id="没有责备没有对错">没有责备，没有对错</h4>
+<h4 id="内疚羞愧与宽恕">内疚、羞愧与宽恕</h4>
+<h4 id="熟悉不是亲密">熟悉不是亲密</h4>
+<h4 id="亲密的等级">亲密的等级</h4>
+<h3 id="3-感受与亲近">3 感受与亲近</h3>
+<h4 id="情绪和感受">情绪和感受</h4>
+<h4 id="为感受负责">为感受负责</h4>
+<h4 id="感受的分类">感受的分类</h4>
+<h4 id="体验感受和表达情绪">体验感受和表达情绪</h4>
+<h4 id="内在风景">内在风景</h4>
+<h3 id="4-从物到人">4 从物到人</h3>
+<h4 id="物化的自我">物化的自我</h4>
+<h4 id="认识彼此的原貌">认识彼此的原貌</h4>
+<h4 id="界限与心墙">界限与心墙</h4>
+<h4 id="政治与人性">政治与人性</h4>
+<h4 id="将物化整合到亲密之中">将物化整合到亲密之中</h4>
+<h4 id="人性化的机会">人性化的机会</h4>
+<h4 id="分享愤怒">分享愤怒</h4>
+<h3 id="5-关系的发展阶段">5 关系的发展阶段</h3>
+<h4 id="关系的目的">关系的目的</h4>
+<h4 id="关系的五个发展阶段">关系的五个发展阶段</h4>
+<h4 id="不同的生活面向会有不同的关系阶段">不同的生活面向会有不同的关系阶段</h4>
+<h3 id="6-浪漫期">6 浪漫期</h3>
+<h4 id="兴奋但没有真正的亲近">兴奋，但没有真正的亲近</h4>
+<h4 id="浪漫期的根源婴儿的不安全感">浪漫期的根源：婴儿的不安全感</h4>
+<h4 id="视人为物">视人为物</h4>
+<h4 id="内在的缩影">内在的缩影</h4>
+<h4 id="浪漫期的绝望">浪漫期的绝望</h4>
+<h4 id="希望与失望">希望与失望</h4>
+<h4 id="浪漫期的兴奋感">浪漫期的兴奋感</h4>
+<h3 id="7-权力争夺期">7 权力争夺期</h3>
+<h4 id="浪漫消褪进入权力争夺">浪漫消褪，进入权力争夺</h4>
+<h4 id="权力争夺的动机">权力争夺的动机</h4>
+<h4 id="宣战">宣战</h4>
+<h4 id="期望">期望</h4>
+<h4 id="刺激的权力争夺">刺激的权力争夺</h4>
+<h4 id="性欲和权力争夺">性欲和权力争夺</h4>
+<h4 id="新秩序之前的混乱">新秩序之前的混乱</h4>
+<h4 id="第一种偏离状态冷漠">第一种偏离状态：冷漠</h4>
+<h4 id="第二种偏离状态超越">第二种偏离状态：超越</h4>
+<h4 id="第三种偏离状态分离">第三种偏离状态：分离</h4>
+<h3 id="8-整合期">8 整合期</h3>
+<h4 id="七年之痒">七年之痒</h4>
+<h4 id="开始学习相处">开始学习相处</h4>
+<h4 id="进入整合展现人性">进入整合，展现人性</h4>
+<h4 id="持续的更新">持续的更新</h4>
+<h4 id="爱">爱</h4>
+<h3 id="9-承诺期">9 承诺期</h3>
+<h4 id="在承诺期生小孩">在承诺期生小孩</h4>
+<h3 id="10-共同创造期">10 共同创造期</h3>
+<h4 id="周期的循环">周期的循环</h4>
+<h3 id="11-混乱与关系">11 混乱与关系</h3>
+<h4 id="混沌理论">混沌理论</h4>
+<h4 id="自我的脉络">自我的脉络</h4>
+<h4 id="最佳整合区">最佳整合区</h4>
+<h4 id="浪漫与混乱">浪漫与混乱</h4>
+<h4 id="权力争夺与混乱">权力争夺与混乱</h4>
+<h4 id="整合与混乱">整合与混乱</h4>
+<h3 id="12-认识权力争夺一些有用的观念">12 认识权力争夺：一些有用的观念</h3>
+<h4 id="两个笨蛋">两个笨蛋</h4>
+<h4 id="为什么要以亲密取代快感">为什么要以亲密取代快感</h4>
+<h4 id="逐渐进入亲密">逐渐进入亲密</h4>
+<h4 id="善意与守法主义">善意与守法主义</h4>
+<h4 id="提出所有权">提出所有权</h4>
+<h4 id="棺材钉">棺材钉</h4>
+<h4 id="偏见和僵化的信念会限制亲密">偏见和僵化的信念会限制亲密</h4>
+<h4 id="幽灵">幽灵</h4>
+<h4 id="历史注定重演">历史注定重演</h4>
+<h4 id="孤独与寂寞">孤独与寂寞</h4>
+<h4 id="以内疚来控制">以内疚来控制</h4>
+<h4 id="占有与非占有">占有与非占有</h4>
+<h4 id="关系的魔鬼粘理论">关系的魔鬼粘理论</h4>
+<h4 id="期望是一种约定不是权力">期望是一种约定，不是权力</h4>
+<h4 id="投入">投入</h4>
+<h4 id="信任">信任</h4>
+<h4 id="反应或回应">反应或回应</h4>
+<h4 id="自尊">自尊</h4>
+<h4 id="轻视与自负">轻视与自负</h4>
+<h4 id="耽溺">耽溺</h4>
+<h4 id="希望与信心">希望与信心</h4>
+<h4 id="生闷气和撅嘴">生闷气和撅嘴</h4>
+<h4 id="以自我为中心不是自私">以自我为中心不是自私</h4>
+<h4 id="依赖环境和依赖自我">依赖环境和依赖自我</h4>
+<h4 id="依赖独立相互交融">依赖、独立、相互交融</h4>
+<h4 id="人生大事">人生大事</h4>
+<h4 id="幽默感和亲密感">幽默感和亲密感</h4>
+<h4 id="哀悼悲伤和忧郁">哀悼、悲伤和忧郁</h4>
+<h3 id="13-走过权力争夺期实用指南">13 走过权力争夺期：实用指南</h3>
+<h4 id="绝招">绝招</h4>
+<h4 id="秘密有碍亲密">秘密有碍亲密</h4>
+<h4 id="当下解决">当下解决</h4>
+<h4 id="走出昔日的伤痛">走出昔日的伤痛</h4>
+<h4 id="坚持浪漫会妨碍成长">坚持浪漫会妨碍成长</h4>
+<h4 id="理所当然的态度会限制亲密">理所当然的态度会限制亲密</h4>
+<h4 id="责备与症状">责备与症状</h4>
+<h4 id="底线">底线</h4>
+<h4 id="分享资源">分享资源</h4>
+<h4 id="永不妥协">永不妥协</h4>
+<h4 id="渴望与选择">渴望与选择</h4>
+<h4 id="行动显露渴望">行动显露渴望</h4>
+<h4 id="对别人的性欲">对别人的性欲</h4>
+<h4 id="闲话">闲话</h4>
+<h4 id="分享暴力的思想">分享暴力的思想</h4>
+<h4 id="克服麻木不仁">克服麻木不仁</h4>
+<h4 id="暂停时间">暂停时间</h4>
+<h4 id="五分钟的依赖">五分钟的依赖</h4>
+<h4 id="核对">核对</h4>
+<h4 id="发泄和澄清">发泄和澄清</h4>
+<h4 id="情况报告">情况报告</h4>
+<h4 id="正向运用权力争夺">正向运用权力争夺</h4>
+<h3 id="14-爱着迷与上瘾">14 爱、着迷与上瘾</h3>
+<h4 id="爱也是一种上瘾">爱，也是一种上瘾</h4>
+<h4 id="爱的馅饼理论">爱的馅饼理论</h4>
+<h4 id="着迷与强迫">着迷与强迫</h4>
+<h4 id="爱的空桶理论">爱的空桶理论</h4>
+<h4 id="爱的完整理论">爱的完整理论</h4>
+<h4 id="一个图象">一个图象</h4>
+<h4 id="清除花园的杂草">清除花园的杂草</h4>
+<h3 id="15-家庭花园">15 家庭花园</h3>
+<h4 id="角色">角色</h4>
+<h4 id="规则">规则</h4>
+<h4 id="控制">控制</h4>
+<h4 id="分享感受">分享感受</h4>
+<h4 id="镜像反映和自我价值感">镜像反映和自我价值感</h4>
+<h4 id="基因和弥母">基因和弥母</h4>
+<h4 id="父母需要自己的生活">父母需要自己的生活</h4>
+<h4 id="父母并不完美">父母并不完美</h4>
+<h3 id="16-性欲和关系">16 性欲和关系</h3>
+<h4 id="亲密不是性欲">亲密不是性欲</h4>
+<h4 id="性冲力与陌生感">性冲力与陌生感</h4>
+<h4 id="从各种角度看性欲">从各种角度看性欲</h4>
+<h4 id="关系与色情">关系与色情</h4>
+<h4 id="亲密与物化">亲密与物化</h4>
+<h4 id="顺从与臣服">顺从与臣服</h4>
+<h4 id="性冲力和激情">性冲力和激情</h4>
+<h4 id="表现焦虑">表现焦虑</h4>
+<h4 id="各种高潮">各种高潮</h4>
+<h4 id="性欲和生活是同形体">性欲和生活是同形体</h4>
+<h3 id="17-爱的发展阶段">17 爱的发展阶段</h3>
+<h4 id="爱的意义">爱的意义</h4>
+<h4 id="爱的阶段">爱的阶段</h4>
+<h4 id="爱是支持">爱是支持</h4>
+<h4 id="爱是增加力量">爱是增加力量</h4>
+<h4 id="爱是启发">爱是启发</h4>
+<h4 id="爱是重视人">爱是重视人</h4>
+<h4 id="爱是快乐">爱是快乐</h4>
+<h4 id="爱是认识">爱是认识</h4>
+<h4 id="爱是脆弱和亲密">爱是脆弱和亲密</h4>
+<h4 id="爱是接纳">爱是接纳</h4>
+<h4 id="爱是共同创造">爱是共同创造</h4>
+<h4 id="爱是永恒">爱是永恒</h4>
+<h3 id="18-和谐的花园">18 和谐的花园</h3>
+<h3 id="19-灵性与关系">19 灵性与关系</h3>
+<h4 id="不同的灵性观点">不同的灵性观点</h4>
+<h4 id="关系中的灵性">关系中的灵性</h4>
+<h4 id="全像图">全像图</h4>
+<h4 id="全像的关系">全像的关系</h4>
+<h4 id="关系的神圣性">关系的神圣性</h4>
+<h4 id="解码">解码</h4>
+<h4 id="关系花园中的发现">关系花园中的发现</h4>
+<h3 id="后记-重访花园">后记 重访花园</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F-%E7%88%B1%E4%BF%A1%E5%BF%83%E4%B8%8E%E5%86%92%E9%99%A9">推荐序 爱、信心与冒险</a></li>
+<li><a href="#%E5%BA%8F%E6%9B%B2-%E6%8E%A2%E7%B4%A2%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB">序曲 探索亲密关系</a>
+<ul>
+<li><a href="#%E6%8E%A2%E7%B4%A2%E4%BA%B2%E5%AF%86%E7%9A%84%E8%AE%A1%E5%88%92">探索亲密的计划</a></li>
+<li><a href="#%E5%8D%B8%E9%99%A4%E8%87%AA%E5%B7%B1%E7%9A%84%E9%98%B2%E5%BE%A1%E5%BF%83%E6%80%81%E4%BB%A5%E5%8F%8A%E4%B8%8E%E4%BA%BA%E4%BF%9D%E6%8C%81%E8%B7%9D%E7%A6%BB%E7%9A%84%E4%B9%A0%E6%80%A7">卸除自己的防御心态以及与人保持距离的习性</a></li>
+<li><a href="#%E8%B6%8A%E7%86%9F%E6%82%89%E5%BD%BC%E6%AD%A4%E5%B0%B1%E8%B6%8A%E4%BA%86%E8%A7%A3%E8%87%AA%E5%B7%B1">越熟悉彼此，就越了解自己</a></li>
+<li><a href="#%E5%AD%A6%E4%B9%A0%E5%9C%A8%E5%BD%93%E4%B8%8B%E5%BD%BC%E6%AD%A4%E5%90%8C%E5%9C%A8">学习在当下彼此同在</a></li>
+<li><a href="#%E6%89%80%E6%9C%89%E6%8E%A7%E5%88%B6%E9%83%BD%E4%BC%9A%E7%A0%B4%E5%9D%8F%E5%85%B3%E7%B3%BB">所有控制都会破坏关系</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E8%8A%B1%E5%9B%AD%E9%9C%80%E8%A6%81%E9%95%BF%E4%B9%85%E7%9A%84%E7%85%A7%E6%96%99">“关系花园”需要长久的照料</a></li>
+</ul>
+</li>
+<li><a href="#1%E5%85%B1%E9%B8%A3">1、共鸣</a>
+<ul>
+<li><a href="#%E8%83%BD%E9%87%8F%E4%B9%8B%E6%B5%B7">能量之海</a></li>
+<li><a href="#%E4%BA%BA%E5%92%8C%E5%AE%87%E5%AE%99%E7%9A%84%E5%88%86%E7%A6%BB">人和宇宙的分离</a></li>
+<li><a href="#%E4%B8%BA%E4%BA%86%E9%80%82%E5%BA%94%E7%A4%BE%E4%BC%9A%E8%80%8C%E5%89%8A%E5%87%8F%E8%87%AA%E5%B7%B1%E7%9A%84%E8%83%BD%E9%87%8F">为了适应社会而削减自己的能量</a></li>
+<li><a href="#%E7%94%9F%E5%91%BD%E4%B8%AD%E7%9A%84%E4%B8%A4%E9%9A%BE">生命中的两难</a></li>
+<li><a href="#%E5%BF%83%E4%B8%80%E6%97%A6%E5%BC%80%E5%A7%8B%E8%A7%A3%E5%86%BB%E5%B0%B1%E8%83%BD%E6%84%9F%E5%8F%97%E5%AE%87%E5%AE%99%E7%9A%84%E8%83%BD%E9%87%8F">心一旦开始解冻，就能感受宇宙的能量</a></li>
+<li><a href="#%E9%80%90%E6%B8%90%E8%BF%88%E5%90%91%E4%BA%B2%E5%AF%86">逐渐迈向亲密</a></li>
+</ul>
+</li>
+<li><a href="#2-%E4%BA%B2%E5%AF%86">2 亲密</a>
+<ul>
+<li><a href="#%E4%BA%B2%E5%AF%86%E7%9A%84%E5%AE%9A%E4%B9%89">亲密的定义</a></li>
+<li><a href="#%E5%A4%B1%E5%8E%BB%E8%BF%9E%E6%8E%A5%E6%84%9F">失去连接感</a></li>
+<li><a href="#%E5%84%BF%E7%AB%A5%E7%9A%84%E5%8F%91%E5%B1%95">儿童的发展</a></li>
+<li><a href="#%E5%AD%A4%E7%8B%AC%E4%B8%8E%E5%88%86%E7%A6%BB">孤独与分离</a></li>
+<li><a href="#%E5%86%85%E5%BF%83%E6%81%92%E4%B9%85%E5%AF%B9%E8%B1%A1">内心恒久对象</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AE%B3%E6%80%95%E4%BA%B2%E5%AF%86">为什么害怕亲密</a></li>
+<li><a href="#%E8%A7%92%E8%89%B2%E5%92%8C%E5%BD%A2%E8%B1%A1">角色和形象</a></li>
+<li><a href="#%E6%8A%95%E5%B0%84%E7%9A%84%E5%BD%A2%E8%B1%A1">投射的形象</a></li>
+<li><a href="#%E7%85%A7%E9%A1%BE%E5%92%8C%E5%85%B3%E6%80%80">照顾和关怀</a></li>
+<li><a href="#%E5%90%8C%E5%9C%A8%E6%89%8D%E6%9C%89%E5%85%B1%E9%B8%A3">同在才有共鸣</a></li>
+<li><a href="#%E7%A9%BA%E8%99%9A%E5%92%8C%E4%B8%8D%E4%B8%8E%E4%BA%BA%E5%90%8C%E5%9C%A8">空虚和不与人同在</a></li>
+<li><a href="#%E8%B4%9F%E8%B4%A3%E7%9A%84%E6%B2%9F%E9%80%9A">负责的沟通</a></li>
+<li><a href="#%E6%B2%A1%E6%9C%89%E8%B4%A3%E5%A4%87%E6%B2%A1%E6%9C%89%E5%AF%B9%E9%94%99">没有责备，没有对错</a></li>
+<li><a href="#%E5%86%85%E7%96%9A%E7%BE%9E%E6%84%A7%E4%B8%8E%E5%AE%BD%E6%81%95">内疚、羞愧与宽恕</a></li>
+<li><a href="#%E7%86%9F%E6%82%89%E4%B8%8D%E6%98%AF%E4%BA%B2%E5%AF%86">熟悉不是亲密</a></li>
+<li><a href="#%E4%BA%B2%E5%AF%86%E7%9A%84%E7%AD%89%E7%BA%A7">亲密的等级</a></li>
+</ul>
+</li>
+<li><a href="#3-%E6%84%9F%E5%8F%97%E4%B8%8E%E4%BA%B2%E8%BF%91">3 感受与亲近</a>
+<ul>
+<li><a href="#%E6%83%85%E7%BB%AA%E5%92%8C%E6%84%9F%E5%8F%97">情绪和感受</a></li>
+<li><a href="#%E4%B8%BA%E6%84%9F%E5%8F%97%E8%B4%9F%E8%B4%A3">为感受负责</a></li>
+<li><a href="#%E6%84%9F%E5%8F%97%E7%9A%84%E5%88%86%E7%B1%BB">感受的分类</a></li>
+<li><a href="#%E4%BD%93%E9%AA%8C%E6%84%9F%E5%8F%97%E5%92%8C%E8%A1%A8%E8%BE%BE%E6%83%85%E7%BB%AA">体验感受和表达情绪</a></li>
+<li><a href="#%E5%86%85%E5%9C%A8%E9%A3%8E%E6%99%AF">内在风景</a></li>
+</ul>
+</li>
+<li><a href="#4-%E4%BB%8E%E7%89%A9%E5%88%B0%E4%BA%BA">4 从物到人</a>
+<ul>
+<li><a href="#%E7%89%A9%E5%8C%96%E7%9A%84%E8%87%AA%E6%88%91">物化的自我</a></li>
+<li><a href="#%E8%AE%A4%E8%AF%86%E5%BD%BC%E6%AD%A4%E7%9A%84%E5%8E%9F%E8%B2%8C">认识彼此的原貌</a></li>
+<li><a href="#%E7%95%8C%E9%99%90%E4%B8%8E%E5%BF%83%E5%A2%99">界限与心墙</a></li>
+<li><a href="#%E6%94%BF%E6%B2%BB%E4%B8%8E%E4%BA%BA%E6%80%A7">政治与人性</a></li>
+<li><a href="#%E5%B0%86%E7%89%A9%E5%8C%96%E6%95%B4%E5%90%88%E5%88%B0%E4%BA%B2%E5%AF%86%E4%B9%8B%E4%B8%AD">将物化整合到亲密之中</a></li>
+<li><a href="#%E4%BA%BA%E6%80%A7%E5%8C%96%E7%9A%84%E6%9C%BA%E4%BC%9A">人性化的机会</a></li>
+<li><a href="#%E5%88%86%E4%BA%AB%E6%84%A4%E6%80%92">分享愤怒</a></li>
+</ul>
+</li>
+<li><a href="#5-%E5%85%B3%E7%B3%BB%E7%9A%84%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5">5 关系的发展阶段</a>
+<ul>
+<li><a href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E7%9B%AE%E7%9A%84">关系的目的</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E4%BA%94%E4%B8%AA%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5">关系的五个发展阶段</a></li>
+<li><a href="#%E4%B8%8D%E5%90%8C%E7%9A%84%E7%94%9F%E6%B4%BB%E9%9D%A2%E5%90%91%E4%BC%9A%E6%9C%89%E4%B8%8D%E5%90%8C%E7%9A%84%E5%85%B3%E7%B3%BB%E9%98%B6%E6%AE%B5">不同的生活面向会有不同的关系阶段</a></li>
+</ul>
+</li>
+<li><a href="#6-%E6%B5%AA%E6%BC%AB%E6%9C%9F">6 浪漫期</a>
+<ul>
+<li><a href="#%E5%85%B4%E5%A5%8B%E4%BD%86%E6%B2%A1%E6%9C%89%E7%9C%9F%E6%AD%A3%E7%9A%84%E4%BA%B2%E8%BF%91">兴奋，但没有真正的亲近</a></li>
+<li><a href="#%E6%B5%AA%E6%BC%AB%E6%9C%9F%E7%9A%84%E6%A0%B9%E6%BA%90%E5%A9%B4%E5%84%BF%E7%9A%84%E4%B8%8D%E5%AE%89%E5%85%A8%E6%84%9F">浪漫期的根源：婴儿的不安全感</a></li>
+<li><a href="#%E8%A7%86%E4%BA%BA%E4%B8%BA%E7%89%A9">视人为物</a></li>
+<li><a href="#%E5%86%85%E5%9C%A8%E7%9A%84%E7%BC%A9%E5%BD%B1">内在的缩影</a></li>
+<li><a href="#%E6%B5%AA%E6%BC%AB%E6%9C%9F%E7%9A%84%E7%BB%9D%E6%9C%9B">浪漫期的绝望</a></li>
+<li><a href="#%E5%B8%8C%E6%9C%9B%E4%B8%8E%E5%A4%B1%E6%9C%9B">希望与失望</a></li>
+<li><a href="#%E6%B5%AA%E6%BC%AB%E6%9C%9F%E7%9A%84%E5%85%B4%E5%A5%8B%E6%84%9F">浪漫期的兴奋感</a></li>
+</ul>
+</li>
+<li><a href="#7-%E6%9D%83%E5%8A%9B%E4%BA%89%E5%A4%BA%E6%9C%9F">7 权力争夺期</a>
+<ul>
+<li><a href="#%E6%B5%AA%E6%BC%AB%E6%B6%88%E8%A4%AA%E8%BF%9B%E5%85%A5%E6%9D%83%E5%8A%9B%E4%BA%89%E5%A4%BA">浪漫消褪，进入权力争夺</a></li>
+<li><a href="#%E6%9D%83%E5%8A%9B%E4%BA%89%E5%A4%BA%E7%9A%84%E5%8A%A8%E6%9C%BA">权力争夺的动机</a></li>
+<li><a href="#%E5%AE%A3%E6%88%98">宣战</a></li>
+<li><a href="#%E6%9C%9F%E6%9C%9B">期望</a></li>
+<li><a href="#%E5%88%BA%E6%BF%80%E7%9A%84%E6%9D%83%E5%8A%9B%E4%BA%89%E5%A4%BA">刺激的权力争夺</a></li>
+<li><a href="#%E6%80%A7%E6%AC%B2%E5%92%8C%E6%9D%83%E5%8A%9B%E4%BA%89%E5%A4%BA">性欲和权力争夺</a></li>
+<li><a href="#%E6%96%B0%E7%A7%A9%E5%BA%8F%E4%B9%8B%E5%89%8D%E7%9A%84%E6%B7%B7%E4%B9%B1">新秩序之前的混乱</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E5%81%8F%E7%A6%BB%E7%8A%B6%E6%80%81%E5%86%B7%E6%BC%A0">第一种偏离状态：冷漠</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E5%81%8F%E7%A6%BB%E7%8A%B6%E6%80%81%E8%B6%85%E8%B6%8A">第二种偏离状态：超越</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%A7%8D%E5%81%8F%E7%A6%BB%E7%8A%B6%E6%80%81%E5%88%86%E7%A6%BB">第三种偏离状态：分离</a></li>
+</ul>
+</li>
+<li><a href="#8-%E6%95%B4%E5%90%88%E6%9C%9F">8 整合期</a>
+<ul>
+<li><a href="#%E4%B8%83%E5%B9%B4%E4%B9%8B%E7%97%92">七年之痒</a></li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%A4%84">开始学习相处</a></li>
+<li><a href="#%E8%BF%9B%E5%85%A5%E6%95%B4%E5%90%88%E5%B1%95%E7%8E%B0%E4%BA%BA%E6%80%A7">进入整合，展现人性</a></li>
+<li><a href="#%E6%8C%81%E7%BB%AD%E7%9A%84%E6%9B%B4%E6%96%B0">持续的更新</a></li>
+<li><a href="#%E7%88%B1">爱</a></li>
+</ul>
+</li>
+<li><a href="#9-%E6%89%BF%E8%AF%BA%E6%9C%9F">9 承诺期</a>
+<ul>
+<li><a href="#%E5%9C%A8%E6%89%BF%E8%AF%BA%E6%9C%9F%E7%94%9F%E5%B0%8F%E5%AD%A9">在承诺期生小孩</a></li>
+</ul>
+</li>
+<li><a href="#10-%E5%85%B1%E5%90%8C%E5%88%9B%E9%80%A0%E6%9C%9F">10 共同创造期</a>
+<ul>
+<li><a href="#%E5%91%A8%E6%9C%9F%E7%9A%84%E5%BE%AA%E7%8E%AF">周期的循环</a></li>
+</ul>
+</li>
+<li><a href="#11-%E6%B7%B7%E4%B9%B1%E4%B8%8E%E5%85%B3%E7%B3%BB">11 混乱与关系</a>
+<ul>
+<li><a href="#%E6%B7%B7%E6%B2%8C%E7%90%86%E8%AE%BA">混沌理论</a></li>
+<li><a href="#%E8%87%AA%E6%88%91%E7%9A%84%E8%84%89%E7%BB%9C">自我的脉络</a></li>
+<li><a href="#%E6%9C%80%E4%BD%B3%E6%95%B4%E5%90%88%E5%8C%BA">最佳整合区</a></li>
+<li><a href="#%E6%B5%AA%E6%BC%AB%E4%B8%8E%E6%B7%B7%E4%B9%B1">浪漫与混乱</a></li>
+<li><a href="#%E6%9D%83%E5%8A%9B%E4%BA%89%E5%A4%BA%E4%B8%8E%E6%B7%B7%E4%B9%B1">权力争夺与混乱</a></li>
+<li><a href="#%E6%95%B4%E5%90%88%E4%B8%8E%E6%B7%B7%E4%B9%B1">整合与混乱</a></li>
+</ul>
+</li>
+<li><a href="#12-%E8%AE%A4%E8%AF%86%E6%9D%83%E5%8A%9B%E4%BA%89%E5%A4%BA%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E8%A7%82%E5%BF%B5">12 认识权力争夺：一些有用的观念</a>
+<ul>
+<li><a href="#%E4%B8%A4%E4%B8%AA%E7%AC%A8%E8%9B%8B">两个笨蛋</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BB%A5%E4%BA%B2%E5%AF%86%E5%8F%96%E4%BB%A3%E5%BF%AB%E6%84%9F">为什么要以亲密取代快感</a></li>
+<li><a href="#%E9%80%90%E6%B8%90%E8%BF%9B%E5%85%A5%E4%BA%B2%E5%AF%86">逐渐进入亲密</a></li>
+<li><a href="#%E5%96%84%E6%84%8F%E4%B8%8E%E5%AE%88%E6%B3%95%E4%B8%BB%E4%B9%89">善意与守法主义</a></li>
+<li><a href="#%E6%8F%90%E5%87%BA%E6%89%80%E6%9C%89%E6%9D%83">提出所有权</a></li>
+<li><a href="#%E6%A3%BA%E6%9D%90%E9%92%89">棺材钉</a></li>
+<li><a href="#%E5%81%8F%E8%A7%81%E5%92%8C%E5%83%B5%E5%8C%96%E7%9A%84%E4%BF%A1%E5%BF%B5%E4%BC%9A%E9%99%90%E5%88%B6%E4%BA%B2%E5%AF%86">偏见和僵化的信念会限制亲密</a></li>
+<li><a href="#%E5%B9%BD%E7%81%B5">幽灵</a></li>
+<li><a href="#%E5%8E%86%E5%8F%B2%E6%B3%A8%E5%AE%9A%E9%87%8D%E6%BC%94">历史注定重演</a></li>
+<li><a href="#%E5%AD%A4%E7%8B%AC%E4%B8%8E%E5%AF%82%E5%AF%9E">孤独与寂寞</a></li>
+<li><a href="#%E4%BB%A5%E5%86%85%E7%96%9A%E6%9D%A5%E6%8E%A7%E5%88%B6">以内疚来控制</a></li>
+<li><a href="#%E5%8D%A0%E6%9C%89%E4%B8%8E%E9%9D%9E%E5%8D%A0%E6%9C%89">占有与非占有</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E9%AD%94%E9%AC%BC%E7%B2%98%E7%90%86%E8%AE%BA">关系的魔鬼粘理论</a></li>
+<li><a href="#%E6%9C%9F%E6%9C%9B%E6%98%AF%E4%B8%80%E7%A7%8D%E7%BA%A6%E5%AE%9A%E4%B8%8D%E6%98%AF%E6%9D%83%E5%8A%9B">期望是一种约定，不是权力</a></li>
+<li><a href="#%E6%8A%95%E5%85%A5">投入</a></li>
+<li><a href="#%E4%BF%A1%E4%BB%BB">信任</a></li>
+<li><a href="#%E5%8F%8D%E5%BA%94%E6%88%96%E5%9B%9E%E5%BA%94">反应或回应</a></li>
+<li><a href="#%E8%87%AA%E5%B0%8A">自尊</a></li>
+<li><a href="#%E8%BD%BB%E8%A7%86%E4%B8%8E%E8%87%AA%E8%B4%9F">轻视与自负</a></li>
+<li><a href="#%E8%80%BD%E6%BA%BA">耽溺</a></li>
+<li><a href="#%E5%B8%8C%E6%9C%9B%E4%B8%8E%E4%BF%A1%E5%BF%83">希望与信心</a></li>
+<li><a href="#%E7%94%9F%E9%97%B7%E6%B0%94%E5%92%8C%E6%92%85%E5%98%B4">生闷气和撅嘴</a></li>
+<li><a href="#%E4%BB%A5%E8%87%AA%E6%88%91%E4%B8%BA%E4%B8%AD%E5%BF%83%E4%B8%8D%E6%98%AF%E8%87%AA%E7%A7%81">以自我为中心不是自私</a></li>
+<li><a href="#%E4%BE%9D%E8%B5%96%E7%8E%AF%E5%A2%83%E5%92%8C%E4%BE%9D%E8%B5%96%E8%87%AA%E6%88%91">依赖环境和依赖自我</a></li>
+<li><a href="#%E4%BE%9D%E8%B5%96%E7%8B%AC%E7%AB%8B%E7%9B%B8%E4%BA%92%E4%BA%A4%E8%9E%8D">依赖、独立、相互交融</a></li>
+<li><a href="#%E4%BA%BA%E7%94%9F%E5%A4%A7%E4%BA%8B">人生大事</a></li>
+<li><a href="#%E5%B9%BD%E9%BB%98%E6%84%9F%E5%92%8C%E4%BA%B2%E5%AF%86%E6%84%9F">幽默感和亲密感</a></li>
+<li><a href="#%E5%93%80%E6%82%BC%E6%82%B2%E4%BC%A4%E5%92%8C%E5%BF%A7%E9%83%81">哀悼、悲伤和忧郁</a></li>
+</ul>
+</li>
+<li><a href="#13-%E8%B5%B0%E8%BF%87%E6%9D%83%E5%8A%9B%E4%BA%89%E5%A4%BA%E6%9C%9F%E5%AE%9E%E7%94%A8%E6%8C%87%E5%8D%97">13 走过权力争夺期：实用指南</a>
+<ul>
+<li><a href="#%E7%BB%9D%E6%8B%9B">绝招</a></li>
+<li><a href="#%E7%A7%98%E5%AF%86%E6%9C%89%E7%A2%8D%E4%BA%B2%E5%AF%86">秘密有碍亲密</a></li>
+<li><a href="#%E5%BD%93%E4%B8%8B%E8%A7%A3%E5%86%B3">当下解决</a></li>
+<li><a href="#%E8%B5%B0%E5%87%BA%E6%98%94%E6%97%A5%E7%9A%84%E4%BC%A4%E7%97%9B">走出昔日的伤痛</a></li>
+<li><a href="#%E5%9D%9A%E6%8C%81%E6%B5%AA%E6%BC%AB%E4%BC%9A%E5%A6%A8%E7%A2%8D%E6%88%90%E9%95%BF">坚持浪漫会妨碍成长</a></li>
+<li><a href="#%E7%90%86%E6%89%80%E5%BD%93%E7%84%B6%E7%9A%84%E6%80%81%E5%BA%A6%E4%BC%9A%E9%99%90%E5%88%B6%E4%BA%B2%E5%AF%86">理所当然的态度会限制亲密</a></li>
+<li><a href="#%E8%B4%A3%E5%A4%87%E4%B8%8E%E7%97%87%E7%8A%B6">责备与症状</a></li>
+<li><a href="#%E5%BA%95%E7%BA%BF">底线</a></li>
+<li><a href="#%E5%88%86%E4%BA%AB%E8%B5%84%E6%BA%90">分享资源</a></li>
+<li><a href="#%E6%B0%B8%E4%B8%8D%E5%A6%A5%E5%8D%8F">永不妥协</a></li>
+<li><a href="#%E6%B8%B4%E6%9C%9B%E4%B8%8E%E9%80%89%E6%8B%A9">渴望与选择</a></li>
+<li><a href="#%E8%A1%8C%E5%8A%A8%E6%98%BE%E9%9C%B2%E6%B8%B4%E6%9C%9B">行动显露渴望</a></li>
+<li><a href="#%E5%AF%B9%E5%88%AB%E4%BA%BA%E7%9A%84%E6%80%A7%E6%AC%B2">对别人的性欲</a></li>
+<li><a href="#%E9%97%B2%E8%AF%9D">闲话</a></li>
+<li><a href="#%E5%88%86%E4%BA%AB%E6%9A%B4%E5%8A%9B%E7%9A%84%E6%80%9D%E6%83%B3">分享暴力的思想</a></li>
+<li><a href="#%E5%85%8B%E6%9C%8D%E9%BA%BB%E6%9C%A8%E4%B8%8D%E4%BB%81">克服麻木不仁</a></li>
+<li><a href="#%E6%9A%82%E5%81%9C%E6%97%B6%E9%97%B4">暂停时间</a></li>
+<li><a href="#%E4%BA%94%E5%88%86%E9%92%9F%E7%9A%84%E4%BE%9D%E8%B5%96">五分钟的依赖</a></li>
+<li><a href="#%E6%A0%B8%E5%AF%B9">核对</a></li>
+<li><a href="#%E5%8F%91%E6%B3%84%E5%92%8C%E6%BE%84%E6%B8%85">发泄和澄清</a></li>
+<li><a href="#%E6%83%85%E5%86%B5%E6%8A%A5%E5%91%8A">情况报告</a></li>
+<li><a href="#%E6%AD%A3%E5%90%91%E8%BF%90%E7%94%A8%E6%9D%83%E5%8A%9B%E4%BA%89%E5%A4%BA">正向运用权力争夺</a></li>
+</ul>
+</li>
+<li><a href="#14-%E7%88%B1%E7%9D%80%E8%BF%B7%E4%B8%8E%E4%B8%8A%E7%98%BE">14 爱、着迷与上瘾</a>
+<ul>
+<li><a href="#%E7%88%B1%E4%B9%9F%E6%98%AF%E4%B8%80%E7%A7%8D%E4%B8%8A%E7%98%BE">爱，也是一种上瘾</a></li>
+<li><a href="#%E7%88%B1%E7%9A%84%E9%A6%85%E9%A5%BC%E7%90%86%E8%AE%BA">爱的馅饼理论</a></li>
+<li><a href="#%E7%9D%80%E8%BF%B7%E4%B8%8E%E5%BC%BA%E8%BF%AB">着迷与强迫</a></li>
+<li><a href="#%E7%88%B1%E7%9A%84%E7%A9%BA%E6%A1%B6%E7%90%86%E8%AE%BA">爱的空桶理论</a></li>
+<li><a href="#%E7%88%B1%E7%9A%84%E5%AE%8C%E6%95%B4%E7%90%86%E8%AE%BA">爱的完整理论</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E5%9B%BE%E8%B1%A1">一个图象</a></li>
+<li><a href="#%E6%B8%85%E9%99%A4%E8%8A%B1%E5%9B%AD%E7%9A%84%E6%9D%82%E8%8D%89">清除花园的杂草</a></li>
+</ul>
+</li>
+<li><a href="#15-%E5%AE%B6%E5%BA%AD%E8%8A%B1%E5%9B%AD">15 家庭花园</a>
+<ul>
+<li><a href="#%E8%A7%92%E8%89%B2">角色</a></li>
+<li><a href="#%E8%A7%84%E5%88%99">规则</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6">控制</a></li>
+<li><a href="#%E5%88%86%E4%BA%AB%E6%84%9F%E5%8F%97">分享感受</a></li>
+<li><a href="#%E9%95%9C%E5%83%8F%E5%8F%8D%E6%98%A0%E5%92%8C%E8%87%AA%E6%88%91%E4%BB%B7%E5%80%BC%E6%84%9F">镜像反映和自我价值感</a></li>
+<li><a href="#%E5%9F%BA%E5%9B%A0%E5%92%8C%E5%BC%A5%E6%AF%8D">基因和弥母</a></li>
+<li><a href="#%E7%88%B6%E6%AF%8D%E9%9C%80%E8%A6%81%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%9F%E6%B4%BB">父母需要自己的生活</a></li>
+<li><a href="#%E7%88%B6%E6%AF%8D%E5%B9%B6%E4%B8%8D%E5%AE%8C%E7%BE%8E">父母并不完美</a></li>
+</ul>
+</li>
+<li><a href="#16-%E6%80%A7%E6%AC%B2%E5%92%8C%E5%85%B3%E7%B3%BB">16 性欲和关系</a>
+<ul>
+<li><a href="#%E4%BA%B2%E5%AF%86%E4%B8%8D%E6%98%AF%E6%80%A7%E6%AC%B2">亲密不是性欲</a></li>
+<li><a href="#%E6%80%A7%E5%86%B2%E5%8A%9B%E4%B8%8E%E9%99%8C%E7%94%9F%E6%84%9F">性冲力与陌生感</a></li>
+<li><a href="#%E4%BB%8E%E5%90%84%E7%A7%8D%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%80%A7%E6%AC%B2">从各种角度看性欲</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E4%B8%8E%E8%89%B2%E6%83%85">关系与色情</a></li>
+<li><a href="#%E4%BA%B2%E5%AF%86%E4%B8%8E%E7%89%A9%E5%8C%96">亲密与物化</a></li>
+<li><a href="#%E9%A1%BA%E4%BB%8E%E4%B8%8E%E8%87%A3%E6%9C%8D">顺从与臣服</a></li>
+<li><a href="#%E6%80%A7%E5%86%B2%E5%8A%9B%E5%92%8C%E6%BF%80%E6%83%85">性冲力和激情</a></li>
+<li><a href="#%E8%A1%A8%E7%8E%B0%E7%84%A6%E8%99%91">表现焦虑</a></li>
+<li><a href="#%E5%90%84%E7%A7%8D%E9%AB%98%E6%BD%AE">各种高潮</a></li>
+<li><a href="#%E6%80%A7%E6%AC%B2%E5%92%8C%E7%94%9F%E6%B4%BB%E6%98%AF%E5%90%8C%E5%BD%A2%E4%BD%93">性欲和生活是同形体</a></li>
+</ul>
+</li>
+<li><a href="#17-%E7%88%B1%E7%9A%84%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5">17 爱的发展阶段</a>
+<ul>
+<li><a href="#%E7%88%B1%E7%9A%84%E6%84%8F%E4%B9%89">爱的意义</a></li>
+<li><a href="#%E7%88%B1%E7%9A%84%E9%98%B6%E6%AE%B5">爱的阶段</a></li>
+<li><a href="#%E7%88%B1%E6%98%AF%E6%94%AF%E6%8C%81">爱是支持</a></li>
+<li><a href="#%E7%88%B1%E6%98%AF%E5%A2%9E%E5%8A%A0%E5%8A%9B%E9%87%8F">爱是增加力量</a></li>
+<li><a href="#%E7%88%B1%E6%98%AF%E5%90%AF%E5%8F%91">爱是启发</a></li>
+<li><a href="#%E7%88%B1%E6%98%AF%E9%87%8D%E8%A7%86%E4%BA%BA">爱是重视人</a></li>
+<li><a href="#%E7%88%B1%E6%98%AF%E5%BF%AB%E4%B9%90">爱是快乐</a></li>
+<li><a href="#%E7%88%B1%E6%98%AF%E8%AE%A4%E8%AF%86">爱是认识</a></li>
+<li><a href="#%E7%88%B1%E6%98%AF%E8%84%86%E5%BC%B1%E5%92%8C%E4%BA%B2%E5%AF%86">爱是脆弱和亲密</a></li>
+<li><a href="#%E7%88%B1%E6%98%AF%E6%8E%A5%E7%BA%B3">爱是接纳</a></li>
+<li><a href="#%E7%88%B1%E6%98%AF%E5%85%B1%E5%90%8C%E5%88%9B%E9%80%A0">爱是共同创造</a></li>
+<li><a href="#%E7%88%B1%E6%98%AF%E6%B0%B8%E6%81%92">爱是永恒</a></li>
+</ul>
+</li>
+<li><a href="#18-%E5%92%8C%E8%B0%90%E7%9A%84%E8%8A%B1%E5%9B%AD">18 和谐的花园</a></li>
+<li><a href="#19-%E7%81%B5%E6%80%A7%E4%B8%8E%E5%85%B3%E7%B3%BB">19 灵性与关系</a>
+<ul>
+<li><a href="#%E4%B8%8D%E5%90%8C%E7%9A%84%E7%81%B5%E6%80%A7%E8%A7%82%E7%82%B9">不同的灵性观点</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E7%81%B5%E6%80%A7">关系中的灵性</a></li>
+<li><a href="#%E5%85%A8%E5%83%8F%E5%9B%BE">全像图</a></li>
+<li><a href="#%E5%85%A8%E5%83%8F%E7%9A%84%E5%85%B3%E7%B3%BB">全像的关系</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E7%A5%9E%E5%9C%A3%E6%80%A7">关系的神圣性</a></li>
+<li><a href="#%E8%A7%A3%E7%A0%81">解码</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E8%8A%B1%E5%9B%AD%E4%B8%AD%E7%9A%84%E5%8F%91%E7%8E%B0">关系花园中的发现</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0-%E9%87%8D%E8%AE%BF%E8%8A%B1%E5%9B%AD">后记 重访花园</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>
