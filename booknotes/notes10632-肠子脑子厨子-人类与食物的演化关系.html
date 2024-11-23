@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x80a0;&#x5b50;&#xff0c;&#x8111;&#x5b50;&#xff0c;&#x53a8;&#x5b50;&#xff1a;&#x4eba;&#x7c7b;&#x4e0e;&#x98df;&#x7269;&#x7684;&#x6f14;&#x5316;&#x5173;&#x7cfb;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x80a0;&#x5b50;&#xff0c;&#x8111;&#x5b50;&#xff0c;&#x53a8;&#x5b50;&#xff1a;&#x4eba;&#x7c7b;&#x4e0e;&#x98df;&#x7269;&#x7684;&#x6f14;&#x5316;&#x5173;&#x7cfb;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,258 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="肠子脑子厨子人类与食物的演化关系">肠子，脑子，厨子：人类与食物的演化关系</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/10632.jpg"></td><td>
+<h1 id="肠子脑子厨子人类与食物的演化关系">肠子，脑子，厨子：人类与食物的演化关系</h1>
+<center>[美]约翰·艾伦（John S. Allen） 著|陶凌寅 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="推荐序-食物人脑的另一种语言">推荐序 食物：人脑的另一种语言</h3>
+<h3 id="推荐序-当吃饭不仅仅是为了活着">推荐序 当吃饭不仅仅是为了活着</h3>
+<h3 id="引言">引言</h3>
+<h3 id="第一章-酥脆">第一章 酥脆</h3>
+<h4 id="酥脆之源昆虫">酥脆之源：昆虫</h4>
+<h4 id="酥脆之源植物">酥脆之源：植物</h4>
+<h4 id="酥脆之源熟食">酥脆之源：熟食</h4>
+<h4 id="咀嚼中的脑">咀嚼中的脑</h4>
+<h4 id="嘎嘣脆">嘎嘣脆</h4>
+<h4 id="酥脆这个词儿">“酥脆”这个词儿</h4>
+<h4 id="干脆的小结">干脆的小结</h4>
+<h3 id="第二章-双足大头小脸的超级杂食猿类">第二章 双足、大头、小脸的超级杂食猿类</h3>
+<h4 id="栖于树食于树">栖于树，食于树</h4>
+<h4 id="脑与肉">脑与肉</h4>
+<h4 id="高能耗的大脑">高能耗的大脑</h4>
+<h4 id="以鱼补脑假说">“以鱼补脑”假说</h4>
+<h4 id="从杂食到超级杂食">从杂食到超级杂食</h4>
+<h4 id="农业与超级杂食动物">农业与超级杂食动物</h4>
+<h4 id="摩登原始人">摩登原始人</h4>
+<h3 id="第三章-食物与感官的脑">第三章 食物与感官的脑</h3>
+<h4 id="味觉文化">味觉文化</h4>
+<h4 id="味觉原理">味觉原理</h4>
+<h4 id="赏味的脑">赏味的脑</h4>
+<h4 id="痛并快乐着吃辣椒">痛并快乐着：吃辣椒</h4>
+<h4 id="味觉的遗传变异">味觉的遗传变异</h4>
+<h4 id="食物高潮">食物高潮</h4>
+<h4 id="静心品尝">静心品尝</h4>
+<h3 id="第四章-多吃点少吃点">第四章 多吃点，少吃点</h3>
+<h4 id="当然想要多吃一点">当然想要多吃一点</h4>
+<h4 id="从肠胃到大脑">从肠胃到大脑</h4>
+<h4 id="脑结构与体脂肪">脑结构与体脂肪</h4>
+<h4 id="脑功能与体脂肪">脑功能与体脂肪</h4>
+<h4 id="进食成瘾">进食成瘾</h4>
+<h4 id="厌食成瘾">厌食成瘾</h4>
+<h4 id="节食与脑">节食与脑</h4>
+<h3 id="第五章-关于食物的记忆">第五章 关于食物的记忆</h3>
+<h4 id="记忆的海马">记忆的海马</h4>
+<h4 id="海马进食与开胃小菜">海马、进食与开胃小菜</h4>
+<h4 id="进食记忆与遗忘">进食、记忆与遗忘</h4>
+<h4 id="工作记忆与烹饪">工作记忆与烹饪</h4>
+<h4 id="关于未来的记忆">关于未来的记忆</h4>
+<h4 id="记忆的盛宴">记忆的盛宴</h4>
+<h3 id="第六章-好食物坏食物">第六章 好食物、坏食物</h3>
+<h4 id="火鸡与食火鸡">火鸡与食火鸡</h4>
+<h4 id="这是比萨吗头脑中的类别与分类过程">这是比萨吗？头脑中的类别与分类过程</h4>
+<h4 id="饮食结构为什么要有名字或者形状">饮食结构为什么要有名字或者形状？</h4>
+<h4 id="好与坏">好与坏</h4>
+<h4 id="脑海中的菜单">脑海中的菜单</h4>
+<h3 id="第七章-食物与创造之旅">第七章 食物与创造之旅</h3>
+<h4 id="创造力的演化有何用处">创造力的演化有何用处？</h4>
+<h4 id="创造力与脑">创造力与脑</h4>
+<h4 id="创造性的厨房氛围">创造性的厨房氛围</h4>
+<h4 id="另一个创造性厨房">另一个创造性厨房</h4>
+<h4 id="选择去创造">选择去创造</h4>
+<h3 id="第八章-心智理论与食物理论">第八章 心智理论与食物理论</h3>
+<h4 id="心智理论">心智理论</h4>
+<h4 id="食物理论">食物理论</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F-%E9%A3%9F%E7%89%A9%E4%BA%BA%E8%84%91%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E8%AF%AD%E8%A8%80">推荐序 食物：人脑的另一种语言</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F-%E5%BD%93%E5%90%83%E9%A5%AD%E4%B8%8D%E4%BB%85%E4%BB%85%E6%98%AF%E4%B8%BA%E4%BA%86%E6%B4%BB%E7%9D%80">推荐序 当吃饭不仅仅是为了活着</a></li>
+<li><a href="#%E5%BC%95%E8%A8%80">引言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E9%85%A5%E8%84%86">第一章 酥脆</a>
+<ul>
+<li><a href="#%E9%85%A5%E8%84%86%E4%B9%8B%E6%BA%90%E6%98%86%E8%99%AB">酥脆之源：昆虫</a></li>
+<li><a href="#%E9%85%A5%E8%84%86%E4%B9%8B%E6%BA%90%E6%A4%8D%E7%89%A9">酥脆之源：植物</a></li>
+<li><a href="#%E9%85%A5%E8%84%86%E4%B9%8B%E6%BA%90%E7%86%9F%E9%A3%9F">酥脆之源：熟食</a></li>
+<li><a href="#%E5%92%80%E5%9A%BC%E4%B8%AD%E7%9A%84%E8%84%91">咀嚼中的脑</a></li>
+<li><a href="#%E5%98%8E%E5%98%A3%E8%84%86">嘎嘣脆</a></li>
+<li><a href="#%E9%85%A5%E8%84%86%E8%BF%99%E4%B8%AA%E8%AF%8D%E5%84%BF">“酥脆”这个词儿</a></li>
+<li><a href="#%E5%B9%B2%E8%84%86%E7%9A%84%E5%B0%8F%E7%BB%93">干脆的小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%8C%E8%B6%B3%E5%A4%A7%E5%A4%B4%E5%B0%8F%E8%84%B8%E7%9A%84%E8%B6%85%E7%BA%A7%E6%9D%82%E9%A3%9F%E7%8C%BF%E7%B1%BB">第二章 双足、大头、小脸的超级杂食猿类</a>
+<ul>
+<li><a href="#%E6%A0%96%E4%BA%8E%E6%A0%91%E9%A3%9F%E4%BA%8E%E6%A0%91">栖于树，食于树</a></li>
+<li><a href="#%E8%84%91%E4%B8%8E%E8%82%89">脑与肉</a></li>
+<li><a href="#%E9%AB%98%E8%83%BD%E8%80%97%E7%9A%84%E5%A4%A7%E8%84%91">高能耗的大脑</a></li>
+<li><a href="#%E4%BB%A5%E9%B1%BC%E8%A1%A5%E8%84%91%E5%81%87%E8%AF%B4">“以鱼补脑”假说</a></li>
+<li><a href="#%E4%BB%8E%E6%9D%82%E9%A3%9F%E5%88%B0%E8%B6%85%E7%BA%A7%E6%9D%82%E9%A3%9F">从杂食到超级杂食</a></li>
+<li><a href="#%E5%86%9C%E4%B8%9A%E4%B8%8E%E8%B6%85%E7%BA%A7%E6%9D%82%E9%A3%9F%E5%8A%A8%E7%89%A9">农业与超级杂食动物</a></li>
+<li><a href="#%E6%91%A9%E7%99%BB%E5%8E%9F%E5%A7%8B%E4%BA%BA">摩登原始人</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%A3%9F%E7%89%A9%E4%B8%8E%E6%84%9F%E5%AE%98%E7%9A%84%E8%84%91">第三章 食物与感官的脑</a>
+<ul>
+<li><a href="#%E5%91%B3%E8%A7%89%E6%96%87%E5%8C%96">味觉文化</a></li>
+<li><a href="#%E5%91%B3%E8%A7%89%E5%8E%9F%E7%90%86">味觉原理</a></li>
+<li><a href="#%E8%B5%8F%E5%91%B3%E7%9A%84%E8%84%91">赏味的脑</a></li>
+<li><a href="#%E7%97%9B%E5%B9%B6%E5%BF%AB%E4%B9%90%E7%9D%80%E5%90%83%E8%BE%A3%E6%A4%92">痛并快乐着：吃辣椒</a></li>
+<li><a href="#%E5%91%B3%E8%A7%89%E7%9A%84%E9%81%97%E4%BC%A0%E5%8F%98%E5%BC%82">味觉的遗传变异</a></li>
+<li><a href="#%E9%A3%9F%E7%89%A9%E9%AB%98%E6%BD%AE">食物高潮</a></li>
+<li><a href="#%E9%9D%99%E5%BF%83%E5%93%81%E5%B0%9D">静心品尝</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%A4%9A%E5%90%83%E7%82%B9%E5%B0%91%E5%90%83%E7%82%B9">第四章 多吃点，少吃点</a>
+<ul>
+<li><a href="#%E5%BD%93%E7%84%B6%E6%83%B3%E8%A6%81%E5%A4%9A%E5%90%83%E4%B8%80%E7%82%B9">当然想要多吃一点</a></li>
+<li><a href="#%E4%BB%8E%E8%82%A0%E8%83%83%E5%88%B0%E5%A4%A7%E8%84%91">从肠胃到大脑</a></li>
+<li><a href="#%E8%84%91%E7%BB%93%E6%9E%84%E4%B8%8E%E4%BD%93%E8%84%82%E8%82%AA">脑结构与体脂肪</a></li>
+<li><a href="#%E8%84%91%E5%8A%9F%E8%83%BD%E4%B8%8E%E4%BD%93%E8%84%82%E8%82%AA">脑功能与体脂肪</a></li>
+<li><a href="#%E8%BF%9B%E9%A3%9F%E6%88%90%E7%98%BE">进食成瘾</a></li>
+<li><a href="#%E5%8E%8C%E9%A3%9F%E6%88%90%E7%98%BE">厌食成瘾</a></li>
+<li><a href="#%E8%8A%82%E9%A3%9F%E4%B8%8E%E8%84%91">节食与脑</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%85%B3%E4%BA%8E%E9%A3%9F%E7%89%A9%E7%9A%84%E8%AE%B0%E5%BF%86">第五章 关于食物的记忆</a>
+<ul>
+<li><a href="#%E8%AE%B0%E5%BF%86%E7%9A%84%E6%B5%B7%E9%A9%AC">记忆的海马</a></li>
+<li><a href="#%E6%B5%B7%E9%A9%AC%E8%BF%9B%E9%A3%9F%E4%B8%8E%E5%BC%80%E8%83%83%E5%B0%8F%E8%8F%9C">海马、进食与开胃小菜</a></li>
+<li><a href="#%E8%BF%9B%E9%A3%9F%E8%AE%B0%E5%BF%86%E4%B8%8E%E9%81%97%E5%BF%98">进食、记忆与遗忘</a></li>
+<li><a href="#%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BF%86%E4%B8%8E%E7%83%B9%E9%A5%AA">工作记忆与烹饪</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AA%E6%9D%A5%E7%9A%84%E8%AE%B0%E5%BF%86">关于未来的记忆</a></li>
+<li><a href="#%E8%AE%B0%E5%BF%86%E7%9A%84%E7%9B%9B%E5%AE%B4">记忆的盛宴</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%A5%BD%E9%A3%9F%E7%89%A9%E5%9D%8F%E9%A3%9F%E7%89%A9">第六章 好食物、坏食物</a>
+<ul>
+<li><a href="#%E7%81%AB%E9%B8%A1%E4%B8%8E%E9%A3%9F%E7%81%AB%E9%B8%A1">火鸡与食火鸡</a></li>
+<li><a href="#%E8%BF%99%E6%98%AF%E6%AF%94%E8%90%A8%E5%90%97%E5%A4%B4%E8%84%91%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%88%AB%E4%B8%8E%E5%88%86%E7%B1%BB%E8%BF%87%E7%A8%8B">这是比萨吗？头脑中的类别与分类过程</a></li>
+<li><a href="#%E9%A5%AE%E9%A3%9F%E7%BB%93%E6%9E%84%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E5%90%8D%E5%AD%97%E6%88%96%E8%80%85%E5%BD%A2%E7%8A%B6">饮食结构为什么要有名字或者形状？</a></li>
+<li><a href="#%E5%A5%BD%E4%B8%8E%E5%9D%8F">好与坏</a></li>
+<li><a href="#%E8%84%91%E6%B5%B7%E4%B8%AD%E7%9A%84%E8%8F%9C%E5%8D%95">脑海中的菜单</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E9%A3%9F%E7%89%A9%E4%B8%8E%E5%88%9B%E9%80%A0%E4%B9%8B%E6%97%85">第七章 食物与创造之旅</a>
+<ul>
+<li><a href="#%E5%88%9B%E9%80%A0%E5%8A%9B%E7%9A%84%E6%BC%94%E5%8C%96%E6%9C%89%E4%BD%95%E7%94%A8%E5%A4%84">创造力的演化有何用处？</a></li>
+<li><a href="#%E5%88%9B%E9%80%A0%E5%8A%9B%E4%B8%8E%E8%84%91">创造力与脑</a></li>
+<li><a href="#%E5%88%9B%E9%80%A0%E6%80%A7%E7%9A%84%E5%8E%A8%E6%88%BF%E6%B0%9B%E5%9B%B4">创造性的厨房氛围</a></li>
+<li><a href="#%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%88%9B%E9%80%A0%E6%80%A7%E5%8E%A8%E6%88%BF">另一个创造性厨房</a></li>
+<li><a href="#%E9%80%89%E6%8B%A9%E5%8E%BB%E5%88%9B%E9%80%A0">选择去创造</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E5%BF%83%E6%99%BA%E7%90%86%E8%AE%BA%E4%B8%8E%E9%A3%9F%E7%89%A9%E7%90%86%E8%AE%BA">第八章 心智理论与食物理论</a>
+<ul>
+<li><a href="#%E5%BF%83%E6%99%BA%E7%90%86%E8%AE%BA">心智理论</a></li>
+<li><a href="#%E9%A3%9F%E7%89%A9%E7%90%86%E8%AE%BA">食物理论</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

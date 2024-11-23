@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x8ba9;&#x6570;&#x5b57;&#x8bf4;&#x8bdd;&#xff1a;&#x5ba1;&#x8ba1;&#xff0c;&#x5c31;&#x8fd9;&#x4e48;&#x7b80;&#x5355;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x8ba9;&#x6570;&#x5b57;&#x8bf4;&#x8bdd;&#xff1a;&#x5ba1;&#x8ba1;&#xff0c;&#x5c31;&#x8fd9;&#x4e48;&#x7b80;&#x5355;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,626 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="让数字说话审计就这么简单">让数字说话：审计，就这么简单</h1>
-<h2 id="孙含晖-王苏颖-阎歌-著">孙含晖 王苏颖 阎歌 著</h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/9504.jpg"></td><td>
+<h1 id="让数字说话审计就这么简单">让数字说话：审计，就这么简单</h1>
+<center>孙含晖 王苏颖 阎歌</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="推荐序">推荐序</h3>
+<h3 id="再版序">再版序</h3>
+<h3 id="1前言">1.前言</h3>
+<h3 id="2审计的一些概念">2.审计的一些概念</h3>
+<h4 id="21-关于审计的头版头条">2.1 关于审计的头版头条</h4>
+<h4 id="22-什么是审计">2.2 什么是审计</h4>
+<h5 id="221-审计就是查问题吗">2.2.1 审计就是查问题吗</h5>
+<h5 id="222-审计与人性恶">2.2.2 审计与人性恶</h5>
+<h5 id="223-独立审计是一种信任的背书">2.2.3 独立审计是一种信任的背书</h5>
+<h5 id="224-此审计与彼审计">2.2.4 此“审计”与彼“审计”</h5>
+<h4 id="23-审计工作的成果">2.3 审计工作的成果</h4>
+<h5 id="231-审计意见说了什么">2.3.1 审计意见说了什么</h5>
+<h5 id="232-审计意见有几种">2.3.2 审计意见有几种</h5>
+<h5 id="233-审计报告的个性化变革">2.3.3 审计报告的个性化变革</h5>
+<h5 id="234-审计报告的使用者">2.3.4 审计报告的使用者</h5>
+<h5 id="235-审计是一门科学还是一门艺术">2.3.5 审计是一门科学还是一门艺术</h5>
+<h4 id="24-会计师事务所与注册会计师">2.4 会计师事务所与注册会计师</h4>
+<h5 id="241-会计师事务所与注册会计师个人的关系">2.4.1 会计师事务所与注册会计师个人的关系</h5>
+<h5 id="242-会计师事务所不全是合伙制">2.4.2 会计师事务所不全是合伙制</h5>
+<h5 id="243-审计师是专业人士">2.4.3 审计师是专业人士</h5>
+<h5 id="244-审计费是怎么定的">2.4.4 审计费是怎么定的</h5>
+<h5 id="245-注册会计师审计的流程">2.4.5 注册会计师审计的流程</h5>
+<h4 id="25-业务约定书">2.5 业务约定书</h4>
+<h5 id="251-要先签业务约定书后干活">2.5.1 要先签业务约定书，后干活</h5>
+<h5 id="252-业务约定书其实是一份标准合同">2.5.2 业务约定书其实是一份标准合同</h5>
+<h5 id="253-业务约定书和项目建议书的区别">2.5.3 业务约定书和项目建议书的区别</h5>
+<h5 id="254-会计责任和审计责任的区别">2.5.4 会计责任和审计责任的区别</h5>
+<h4 id="26-声明书">2.6 声明书</h4>
+<h5 id="261-什么是声明书">2.6.1 什么是“声明书”</h5>
+<h5 id="262-驳声明书无用论">2.6.2 驳“声明书无用论”</h5>
+<h5 id="263-驳声明书万能论">2.6.3 驳“声明书万能论”</h5>
+<h5 id="264-不容易审计的内容才放进声明书里">2.6.4 不容易审计的内容才放进声明书里</h5>
+<h5 id="265-审计师要勤勉尽责到什么程度">2.6.5 审计师要勤勉尽责到什么程度</h5>
+<h4 id="27-管理建议书">2.7 管理建议书</h4>
+<h5 id="271-什么是管理建议书">2.7.1 什么是“管理建议书”</h5>
+<h5 id="272-管理建议书的内容是从哪里来的">2.7.2 管理建议书的内容是从哪里来的</h5>
+<h5 id="273-管理建议书如何出彩">2.7.3 管理建议书如何出彩</h5>
+<h3 id="3审计的理论">3.审计的理论</h3>
+<h4 id="31-审计的逻辑">3.1 审计的逻辑</h4>
+<h5 id="311-审计工作的开始了解企业的经营情况">3.1.1 审计工作的开始：了解企业的经营情况</h5>
+<h5 id="312-在外部审计师的眼里内控系统是摄像机">3.1.2 在外部审计师的眼里，内控系统是摄像机</h5>
+<h5 id="313-审计师要检查内控系统是否设计合理和运转正常">3.1.3 审计师要检查内控系统是否设计合理和运转正常</h5>
+<h5 id="314-审计师可以怎么问问题">3.1.4 审计师可以怎么问问题</h5>
+<h5 id="315-审计师怎样检查内控系统是否设计合理和运转正常">3.1.5 审计师怎样检查内控系统是否设计合理和运转正常</h5>
+<h5 id="316-内控测试工作最重要的是逻辑要完备要做到两个凡是">3.1.6 内控测试工作最重要的是逻辑要完备——要做到两个凡是</h5>
+<h5 id="317-审计师仍要检查每个科目的金额">3.1.7 审计师仍要检查每个科目的金额</h5>
+<h5 id="318-做实质性测试时审计逻辑链条要严密">3.1.8 做实质性测试时，审计逻辑链条要严密</h5>
+<h5 id="319-做好审计抽样不容易">3.1.9 做好审计抽样不容易</h5>
+<h4 id="32-审计的思考方法">3.2 审计的思考方法</h4>
+<h5 id="321-公众对审计的期望">3.2.1 公众对审计的期望</h5>
+<h5 id="322-审计思考的关键预期">3.2.2 审计思考的关键——预期</h5>
+<h5 id="323-审计师要独立思考要比客户想得深远">3.2.3 审计师要独立思考，要比客户想得深远</h5>
+<h5 id="324-审计师要考虑任何事情的合理性">3.2.4 审计师要考虑任何事情的合理性</h5>
+<h5 id="325-审计中的实质重于形式">3.2.5 审计中的实质重于形式</h5>
+<h5 id="326-审计师总是在抓大放小吗">3.2.6 审计师总是在“抓大放小”吗</h5>
+<h5 id="327-审计师的七种武器">3.2.7 审计师的“七种武器”</h5>
+<h5 id="328-对会计分录的筛查">3.2.8 对会计分录的筛查</h5>
+<h5 id="329-审计师怎么看附注披露得够不够好">3.2.9 审计师怎么看附注披露得够不够好</h5>
+<h5 id="3210-审计也是一个系统工程">3.2.10 审计也是一个系统工程</h5>
+<h4 id="33-对企业内控的关注">3.3 对企业内控的关注</h4>
+<h5 id="331-什么是coso">3.3.1 什么是COSO</h5>
+<h5 id="332-内控测试的注意事项">3.3.2 内控测试的注意事项</h5>
+<h5 id="333-所有企业都要做内控审计吗">3.3.3 所有企业都要做内控审计吗</h5>
+<h5 id="334-什么是常规交易非常规交易和会计估计">3.3.4 什么是“常规交易”“非常规交易”和“会计估计”</h5>
+<h5 id="335-风险导向审计比制度基础审计多了什么">3.3.5 风险导向审计比制度基础审计多了什么</h5>
+<h5 id="336-经营控制与财务报表控制">3.3.6 经营控制与财务报表控制</h5>
+<h4 id="34-工作底稿">3.4 工作底稿</h4>
+<h5 id="341-写工作底稿也有理论吗">3.4.1 写工作底稿也有理论吗</h5>
+<h5 id="342-写内控测试的工作底稿要注意的问题">3.4.2 写内控测试的工作底稿要注意的问题</h5>
+<h5 id="343-实质性测试的工作底稿分几类">3.4.3 实质性测试的工作底稿分几类</h5>
+<h5 id="344-准备工作底稿的目的是什么">3.4.4 准备工作底稿的目的是什么</h5>
+<h5 id="345-工作底稿索引是一个树状结构">3.4.5 工作底稿索引是一个树状结构</h5>
+<h5 id="346-写工作底稿时要学会自顶而下的思考方式">3.4.6 写工作底稿时要学会自顶而下的思考方式</h5>
+<h5 id="347-审计符号注释和工作底稿相互索引">3.4.7 审计符号、注释和工作底稿相互索引</h5>
+<h5 id="348-在工作底稿里写什么样的注释和怎么写">3.4.8 在工作底稿里写什么样的注释和怎么写</h5>
+<h5 id="349-用表格来说明问题是一种有条理的思考方法的体现">3.4.9 用表格来说明问题是一种有条理的思考方法的体现</h5>
+<h5 id="3410-工作底稿的归档要求">3.4.10 工作底稿的归档要求</h5>
+<h4 id="35-审计项目的风险控制">3.5 审计项目的风险控制</h4>
+<h5 id="351-做审计好像找对象">3.5.1 做审计好像找对象</h5>
+<h5 id="352-审计师做审计时要怀疑一切吗">3.5.2 审计师做审计时要怀疑一切吗</h5>
+<h5 id="353-舞弊审计与传统审计">3.5.3 舞弊审计与传统审计</h5>
+<h5 id="354-审计师发现了舞弊怎么办">3.5.4 审计师发现了舞弊怎么办</h5>
+<h5 id="355-数字分析中的班福定律">3.5.5 数字分析中的班福定律</h5>
+<h5 id="356-审计师做审计时有秘密武器吗">3.5.6 审计师做审计时有秘密武器吗</h5>
+<h5 id="357-审计师发现前期差错怎么办">3.5.7 审计师发现前期差错怎么办</h5>
+<h5 id="358-特殊编制基础的报告怎么出">3.5.8 特殊编制基础的报告怎么出</h5>
+<h5 id="359-审计师如何跟前任进行沟通">3.5.9 审计师如何跟“前任”进行沟通</h5>
+<h5 id="3510-集团审计师与组成部分审计师的合作">3.5.10 集团审计师与组成部分审计师的合作</h5>
+<h4 id="36-利用其他专家的工作">3.6 利用其他专家的工作</h4>
+<h5 id="361-it审计师的作用">3.6.1 IT审计师的作用</h5>
+<h5 id="362-税务师评估师和反舞弊调查专家">3.6.2 税务师、评估师和反舞弊调查专家</h5>
+<h4 id="37-反舞弊审计">3.7 反舞弊审计</h4>
+<h5 id="371-反舞弊的警惕性应该贯穿审计全过程">3.7.1 反舞弊的警惕性应该贯穿审计全过程</h5>
+<h5 id="372-如何发现舞弊的蛛丝马迹">3.7.2 如何发现舞弊的蛛丝马迹</h5>
+<h5 id="373-如何进一步验证舞弊事实">3.7.3 如何进一步验证舞弊事实</h5>
+<h3 id="4按会计科目来谈一谈实质性测试">4.按会计科目来谈一谈实质性测试</h3>
+<h4 id="41-货币资金">4.1 货币资金</h4>
+<h5 id="411-主要关注货币资金的存在性和所有权">4.1.1 主要关注货币资金的存在性和所有权</h5>
+<h5 id="412-审计货币资金科目主要做的审计程序">4.1.2 审计货币资金科目主要做的审计程序</h5>
+<h5 id="413-发确认书时要警惕要严密控制全程">4.1.3 发确认书时要警惕，要严密控制全程</h5>
+<h5 id="414-函证工作要注意的问题">4.1.4 函证工作要注意的问题</h5>
+<h5 id="415-做现金证明的目的">4.1.5 做现金证明的目的</h5>
+<h5 id="416-银行存款抵押">4.1.6 银行存款抵押</h5>
+<h5 id="417-理财产品算银行存款吗">4.1.7 理财产品算银行存款吗</h5>
+<h4 id="42-应收账款和坏账准备">4.2 应收账款和坏账准备</h4>
+<h5 id="421-主要关注应收账款的存在性与估值">4.2.1 主要关注应收账款的存在性与估值</h5>
+<h5 id="422-审计应收账款科目主要做的审计程序">4.2.2 审计应收账款科目主要做的审计程序</h5>
+<h5 id="423-应收账款的明细里能看出不少问题">4.2.3 应收账款的明细里能看出不少问题</h5>
+<h5 id="424-审计应收账款一定要发确认书吗">4.2.4 审计应收账款一定要发确认书吗</h5>
+<h5 id="425-确认书没回来的替代性措施">4.2.5 确认书没回来的替代性措施</h5>
+<h5 id="426-怎样选择函证的样本">4.2.6 怎样选择函证的样本</h5>
+<h5 id="427-企业如何准确地将收到的款项与客户名称及发票相对应">4.2.7 企业如何准确地将收到的款项与客户名称及发票相对应</h5>
+<h5 id="428-检查期后收到的款项">4.2.8 检查期后收到的款项</h5>
+<h5 id="429-应收账款的周转天数可以怎么分析">4.2.9 应收账款的周转天数可以怎么分析</h5>
+<h5 id="4210-应收账款的账龄是什么样子">4.2.10 应收账款的账龄是什么样子</h5>
+<h5 id="4211-应收账款的账龄可以怎么分析">4.2.11 应收账款的账龄可以怎么分析</h5>
+<h5 id="4212-坏账准备">4.2.12 坏账准备</h5>
+<h4 id="43-其他应收款">4.3 其他应收款</h4>
+<h5 id="431-主要关注其他应收款的存在性与估值">4.3.1 主要关注其他应收款的存在性与估值</h5>
+<h5 id="432-应收员工预借款">4.3.2 应收员工预借款</h5>
+<h5 id="433-应收关联方">4.3.3 应收关联方</h5>
+<h5 id="434-其他应收款里还可能有什么">4.3.4 其他应收款里还可能有什么</h5>
+<h4 id="44-与关联方的往来账-审计与关联方的往来时要做什么工作">4.4 与关联方的往来账 审计与关联方的往来时要做什么工作</h4>
+<h4 id="45-预付账款">4.5 预付账款</h4>
+<h5 id="451-对预付账款的预期">4.5.1 对预付账款的预期</h5>
+<h5 id="452-审计预付账款科目时主要的审计程序">4.5.2 审计预付账款科目时主要的审计程序</h5>
+<h5 id="453-审计预付账款科目时要注意的问题">4.5.3 审计预付账款科目时要注意的问题</h5>
+<h5 id="454-了解年初数到年末数的变动情况无法替代对年末余额的解释">4.5.4 了解年初数到年末数的变动情况无法替代对年末余额的解释</h5>
+<h5 id="455-能把应收账款或预付账款和应付账款对冲吗">4.5.5 能把应收账款或预付账款和应付账款对冲吗</h5>
+<h4 id="46-存货">4.6 存货</h4>
+<h5 id="461-主要关注存货的完整性存在性准确性和估值">4.6.1 主要关注存货的完整性、存在性、准确性和估值</h5>
+<h5 id="462-存货科目是了解制造业企业的钥匙">4.6.2 存货科目是了解制造业企业的钥匙</h5>
+<h5 id="463-存货科目的特殊性金额数量单价">4.6.3 存货科目的特殊性：金额=数量×单价</h5>
+<h5 id="464-存货不是一个科目是好几个科目">4.6.4 存货不是一个科目，是好几个科目</h5>
+<h5 id="465-成本核算它是个难题让人目眩神迷">4.6.5 成本核算它是个难题，让人目眩神迷</h5>
+<h5 id="466-盘点是一次拍照片的过程">4.6.6 盘点是一次拍照片的过程</h5>
+<h5 id="467-有没有将存货明细的数字加总与总账数核对呢">4.6.7 有没有将存货明细的数字加总，与总账数核对呢</h5>
+<h5 id="468-进口存货的故事">4.6.8 进口存货的故事</h5>
+<h5 id="469-存货的周转率">4.6.9 存货的周转率</h5>
+<h5 id="4610-审计存货科目时的主要审计程序">4.6.10 审计存货科目时的主要审计程序</h5>
+<h4 id="47-固定资产">4.7 固定资产</h4>
+<h5 id="471-固定资产科目的特点">4.7.1 固定资产科目的特点</h5>
+<h5 id="472-审计固定资产科目主要做的审计程序">4.7.2 审计固定资产科目主要做的审计程序</h5>
+<h5 id="473-要将所看到的数字与对客户业务的理解相联系">4.7.3 要将所看到的数字与对客户业务的理解相联系</h5>
+<h5 id="474-固定资产的折旧">4.7.4 固定资产的折旧</h5>
+<h5 id="475-固定资产减值准备的考虑要全面">4.7.5 固定资产减值准备的考虑要全面</h5>
+<h5 id="476-固定资产的残值率是个历史遗留问题">4.7.6 固定资产的残值率是个历史遗留问题</h5>
+<h5 id="477-固定资产抵押">4.7.7 固定资产抵押</h5>
+<h4 id="48-租赁">4.8 租赁</h4>
+<h5 id="481-租赁是一个容易被忽略的部分">4.8.1 租赁是一个容易被忽略的部分</h5>
+<h5 id="482-企业为什么要卖楼">4.8.2 企业为什么要卖楼</h5>
+<h4 id="49-在建工程">4.9 在建工程</h4>
+<h5 id="491-什么时候要转为固定资产">4.9.1 什么时候要转为固定资产</h5>
+<h5 id="492-在建工程科目包括哪些核算内容">4.9.2 在建工程科目包括哪些核算内容</h5>
+<h4 id="410-无形资产-审计无形资产科目时要注意的几个问题">4.10 无形资产 审计无形资产科目时要注意的几个问题</h4>
+<h4 id="411-应付账款">4.11 应付账款</h4>
+<h5 id="4111-主要关注的是应付账款的完整性">4.11.1 主要关注的是应付账款的完整性</h5>
+<h5 id="4112-审计应付账款科目时主要做的审计程序">4.11.2 审计应付账款科目时主要做的审计程序</h5>
+<h5 id="4113-由存货暂估入库形成的应付账款">4.11.3 由存货暂估入库形成的应付账款</h5>
+<h4 id="412-预收账款">4.12 预收账款</h4>
+<h4 id="413-其他应付款">4.13 其他应付款</h4>
+<h5 id="4131-主要关注的是其他应付款的完整性">4.13.1 主要关注的是其他应付款的完整性</h5>
+<h5 id="4132-关注没有收到发票的其他应付款">4.13.2 关注没有收到发票的其他应付款</h5>
+<h5 id="4133-其他应付款里可能有什么">4.13.3 其他应付款里可能有什么</h5>
+<h5 id="4134-这家公司是否有利润">4.13.4 这家公司是否有利润</h5>
+<h4 id="414-其他负债类科目">4.14 其他负债类科目</h4>
+<h5 id="4141-审计其他负债类科目要注意的一些问题">4.14.1 审计其他负债类科目要注意的一些问题</h5>
+<h5 id="4142-带薪年假引起的会计思考">4.14.2 带薪年假引起的会计思考</h5>
+<h5 id="4143-职工薪酬还应该关注什么">4.14.3 职工薪酬还应该关注什么</h5>
+<h5 id="4144-应付职工薪酬的余额代表什么">4.14.4 应付职工薪酬的余额代表什么</h5>
+<h5 id="4145-预计负债如何计算产品质量保证">4.14.5 预计负债——如何计算产品质量保证</h5>
+<h4 id="415-收入">4.15 收入</h4>
+<h5 id="4151-审计利润表类科目的一般方法">4.15.1 审计利润表类科目的一般方法</h5>
+<h5 id="4152-收入确认">4.15.2 收入确认</h5>
+<h5 id="4153-合约机引起的收入确认问题">4.15.3 合约机引起的收入确认问题</h5>
+<h5 id="4154-对收入进行分析性复核">4.15.4 对收入进行分析性复核</h5>
+<h4 id="416-成本和费用">4.16 成本和费用</h4>
+<h5 id="4161-销售成本的调节表">4.16.1 销售成本的调节表</h5>
+<h5 id="4162-销售收入和销售成本要能够一一对应">4.16.2 销售收入和销售成本要能够一一对应</h5>
+<h5 id="4163-审计成本和费用科目时要注意的一些问题">4.16.3 审计成本和费用科目时要注意的一些问题</h5>
+<h5 id="4164-截止性测试">4.16.4 截止性测试</h5>
+<h5 id="4165-检查未入账的负债">4.16.5 检查未入账的负债</h5>
+<h4 id="417-金融工具">4.17 金融工具</h4>
+<h5 id="4171-无处不在的金融工具">4.17.1 无处不在的金融工具</h5>
+<h5 id="4172-普通购销合同里的外汇衍生工具">4.17.2 普通购销合同里的外汇衍生工具</h5>
+<h5 id="4173-涉外购销合同里的外汇衍生工具">4.17.3 涉外购销合同里的外汇衍生工具</h5>
+<h5 id="4174-让人抓狂的金融工具公允价值">4.17.4 让人抓狂的金融工具公允价值</h5>
+<h5 id="4175-是股是债">4.17.5 是股？是债？</h5>
+<h5 id="4176-创新金融工具">4.17.6 创新金融工具</h5>
+<h5 id="4177-集团报表的特殊处理">4.17.7 集团报表的特殊处理</h5>
+<h5 id="4178-回归金融工具的本质合同权利和合同义务">4.17.8 回归金融工具的本质：合同权利和合同义务</h5>
+<h5 id="4179-应收账款的保理融资">4.17.9 应收账款的保理融资</h5>
+<h4 id="418-合并">4.18 合并</h4>
+<h5 id="4181-控制谁拥有王牌">4.18.1 控制——谁拥有王牌</h5>
+<h5 id="4182-真假投资性主体">4.18.2 真假投资性主体</h5>
+<h4 id="419-其他">4.19 其他</h4>
+<h5 id="4191-一些常用的比率分析">4.19.1 一些常用的比率分析</h5>
+<h5 id="4192-企业上市要回答的两个问题">4.19.2 企业上市要回答的两个问题</h5>
+<h5 id="4193-一个企业的利润率能有这么高吗">4.19.3 一个企业的利润率能有这么高吗</h5>
+<h5 id="4194-外国的月亮有多圆">4.19.4 外国的月亮有多圆</h5>
+<h5 id="4195-如何与财务人员进行沟通">4.19.5 如何与财务人员进行沟通</h5>
+<h5 id="4196-互联网行业审计是否看得见摸得着">4.19.6 互联网行业审计是否“看得见，摸得着”</h5>
+<h5 id="4197-审计前景展望">4.19.7 审计前景展望</h5>
+<h3 id="5结语">5.结语</h3>
+<h3 id="6后记">6.后记</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F">推荐序</a></li>
+<li><a href="#%E5%86%8D%E7%89%88%E5%BA%8F">再版序</a></li>
+<li><a href="#1%E5%89%8D%E8%A8%80">1.前言</a></li>
+<li><a href="#2%E5%AE%A1%E8%AE%A1%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5">2.审计的一些概念</a>
+<ul>
+<li><a href="#21-%E5%85%B3%E4%BA%8E%E5%AE%A1%E8%AE%A1%E7%9A%84%E5%A4%B4%E7%89%88%E5%A4%B4%E6%9D%A1">2.1 关于审计的头版头条</a></li>
+<li><a href="#22-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%A1%E8%AE%A1">2.2 什么是审计</a>
+<ul>
+<li><a href="#221-%E5%AE%A1%E8%AE%A1%E5%B0%B1%E6%98%AF%E6%9F%A5%E9%97%AE%E9%A2%98%E5%90%97">2.2.1 审计就是查问题吗</a></li>
+<li><a href="#222-%E5%AE%A1%E8%AE%A1%E4%B8%8E%E4%BA%BA%E6%80%A7%E6%81%B6">2.2.2 审计与人性恶</a></li>
+<li><a href="#223-%E7%8B%AC%E7%AB%8B%E5%AE%A1%E8%AE%A1%E6%98%AF%E4%B8%80%E7%A7%8D%E4%BF%A1%E4%BB%BB%E7%9A%84%E8%83%8C%E4%B9%A6">2.2.3 独立审计是一种信任的背书</a></li>
+<li><a href="#224-%E6%AD%A4%E5%AE%A1%E8%AE%A1%E4%B8%8E%E5%BD%BC%E5%AE%A1%E8%AE%A1">2.2.4 此“审计”与彼“审计”</a></li>
+</ul>
+</li>
+<li><a href="#23-%E5%AE%A1%E8%AE%A1%E5%B7%A5%E4%BD%9C%E7%9A%84%E6%88%90%E6%9E%9C">2.3 审计工作的成果</a>
+<ul>
+<li><a href="#231-%E5%AE%A1%E8%AE%A1%E6%84%8F%E8%A7%81%E8%AF%B4%E4%BA%86%E4%BB%80%E4%B9%88">2.3.1 审计意见说了什么</a></li>
+<li><a href="#232-%E5%AE%A1%E8%AE%A1%E6%84%8F%E8%A7%81%E6%9C%89%E5%87%A0%E7%A7%8D">2.3.2 审计意见有几种</a></li>
+<li><a href="#233-%E5%AE%A1%E8%AE%A1%E6%8A%A5%E5%91%8A%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E5%8F%98%E9%9D%A9">2.3.3 审计报告的个性化变革</a></li>
+<li><a href="#234-%E5%AE%A1%E8%AE%A1%E6%8A%A5%E5%91%8A%E7%9A%84%E4%BD%BF%E7%94%A8%E8%80%85">2.3.4 审计报告的使用者</a></li>
+<li><a href="#235-%E5%AE%A1%E8%AE%A1%E6%98%AF%E4%B8%80%E9%97%A8%E7%A7%91%E5%AD%A6%E8%BF%98%E6%98%AF%E4%B8%80%E9%97%A8%E8%89%BA%E6%9C%AF">2.3.5 审计是一门科学还是一门艺术</a></li>
+</ul>
+</li>
+<li><a href="#24-%E4%BC%9A%E8%AE%A1%E5%B8%88%E4%BA%8B%E5%8A%A1%E6%89%80%E4%B8%8E%E6%B3%A8%E5%86%8C%E4%BC%9A%E8%AE%A1%E5%B8%88">2.4 会计师事务所与注册会计师</a>
+<ul>
+<li><a href="#241-%E4%BC%9A%E8%AE%A1%E5%B8%88%E4%BA%8B%E5%8A%A1%E6%89%80%E4%B8%8E%E6%B3%A8%E5%86%8C%E4%BC%9A%E8%AE%A1%E5%B8%88%E4%B8%AA%E4%BA%BA%E7%9A%84%E5%85%B3%E7%B3%BB">2.4.1 会计师事务所与注册会计师个人的关系</a></li>
+<li><a href="#242-%E4%BC%9A%E8%AE%A1%E5%B8%88%E4%BA%8B%E5%8A%A1%E6%89%80%E4%B8%8D%E5%85%A8%E6%98%AF%E5%90%88%E4%BC%99%E5%88%B6">2.4.2 会计师事务所不全是合伙制</a></li>
+<li><a href="#243-%E5%AE%A1%E8%AE%A1%E5%B8%88%E6%98%AF%E4%B8%93%E4%B8%9A%E4%BA%BA%E5%A3%AB">2.4.3 审计师是专业人士</a></li>
+<li><a href="#244-%E5%AE%A1%E8%AE%A1%E8%B4%B9%E6%98%AF%E6%80%8E%E4%B9%88%E5%AE%9A%E7%9A%84">2.4.4 审计费是怎么定的</a></li>
+<li><a href="#245-%E6%B3%A8%E5%86%8C%E4%BC%9A%E8%AE%A1%E5%B8%88%E5%AE%A1%E8%AE%A1%E7%9A%84%E6%B5%81%E7%A8%8B">2.4.5 注册会计师审计的流程</a></li>
+</ul>
+</li>
+<li><a href="#25-%E4%B8%9A%E5%8A%A1%E7%BA%A6%E5%AE%9A%E4%B9%A6">2.5 业务约定书</a>
+<ul>
+<li><a href="#251-%E8%A6%81%E5%85%88%E7%AD%BE%E4%B8%9A%E5%8A%A1%E7%BA%A6%E5%AE%9A%E4%B9%A6%E5%90%8E%E5%B9%B2%E6%B4%BB">2.5.1 要先签业务约定书，后干活</a></li>
+<li><a href="#252-%E4%B8%9A%E5%8A%A1%E7%BA%A6%E5%AE%9A%E4%B9%A6%E5%85%B6%E5%AE%9E%E6%98%AF%E4%B8%80%E4%BB%BD%E6%A0%87%E5%87%86%E5%90%88%E5%90%8C">2.5.2 业务约定书其实是一份标准合同</a></li>
+<li><a href="#253-%E4%B8%9A%E5%8A%A1%E7%BA%A6%E5%AE%9A%E4%B9%A6%E5%92%8C%E9%A1%B9%E7%9B%AE%E5%BB%BA%E8%AE%AE%E4%B9%A6%E7%9A%84%E5%8C%BA%E5%88%AB">2.5.3 业务约定书和项目建议书的区别</a></li>
+<li><a href="#254-%E4%BC%9A%E8%AE%A1%E8%B4%A3%E4%BB%BB%E5%92%8C%E5%AE%A1%E8%AE%A1%E8%B4%A3%E4%BB%BB%E7%9A%84%E5%8C%BA%E5%88%AB">2.5.4 会计责任和审计责任的区别</a></li>
+</ul>
+</li>
+<li><a href="#26-%E5%A3%B0%E6%98%8E%E4%B9%A6">2.6 声明书</a>
+<ul>
+<li><a href="#261-%E4%BB%80%E4%B9%88%E6%98%AF%E5%A3%B0%E6%98%8E%E4%B9%A6">2.6.1 什么是“声明书”</a></li>
+<li><a href="#262-%E9%A9%B3%E5%A3%B0%E6%98%8E%E4%B9%A6%E6%97%A0%E7%94%A8%E8%AE%BA">2.6.2 驳“声明书无用论”</a></li>
+<li><a href="#263-%E9%A9%B3%E5%A3%B0%E6%98%8E%E4%B9%A6%E4%B8%87%E8%83%BD%E8%AE%BA">2.6.3 驳“声明书万能论”</a></li>
+<li><a href="#264-%E4%B8%8D%E5%AE%B9%E6%98%93%E5%AE%A1%E8%AE%A1%E7%9A%84%E5%86%85%E5%AE%B9%E6%89%8D%E6%94%BE%E8%BF%9B%E5%A3%B0%E6%98%8E%E4%B9%A6%E9%87%8C">2.6.4 不容易审计的内容才放进声明书里</a></li>
+<li><a href="#265-%E5%AE%A1%E8%AE%A1%E5%B8%88%E8%A6%81%E5%8B%A4%E5%8B%89%E5%B0%BD%E8%B4%A3%E5%88%B0%E4%BB%80%E4%B9%88%E7%A8%8B%E5%BA%A6">2.6.5 审计师要勤勉尽责到什么程度</a></li>
+</ul>
+</li>
+<li><a href="#27-%E7%AE%A1%E7%90%86%E5%BB%BA%E8%AE%AE%E4%B9%A6">2.7 管理建议书</a>
+<ul>
+<li><a href="#271-%E4%BB%80%E4%B9%88%E6%98%AF%E7%AE%A1%E7%90%86%E5%BB%BA%E8%AE%AE%E4%B9%A6">2.7.1 什么是“管理建议书”</a></li>
+<li><a href="#272-%E7%AE%A1%E7%90%86%E5%BB%BA%E8%AE%AE%E4%B9%A6%E7%9A%84%E5%86%85%E5%AE%B9%E6%98%AF%E4%BB%8E%E5%93%AA%E9%87%8C%E6%9D%A5%E7%9A%84">2.7.2 管理建议书的内容是从哪里来的</a></li>
+<li><a href="#273-%E7%AE%A1%E7%90%86%E5%BB%BA%E8%AE%AE%E4%B9%A6%E5%A6%82%E4%BD%95%E5%87%BA%E5%BD%A9">2.7.3 管理建议书如何出彩</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3%E5%AE%A1%E8%AE%A1%E7%9A%84%E7%90%86%E8%AE%BA">3.审计的理论</a>
+<ul>
+<li><a href="#31-%E5%AE%A1%E8%AE%A1%E7%9A%84%E9%80%BB%E8%BE%91">3.1 审计的逻辑</a>
+<ul>
+<li><a href="#311-%E5%AE%A1%E8%AE%A1%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%BC%80%E5%A7%8B%E4%BA%86%E8%A7%A3%E4%BC%81%E4%B8%9A%E7%9A%84%E7%BB%8F%E8%90%A5%E6%83%85%E5%86%B5">3.1.1 审计工作的开始：了解企业的经营情况</a></li>
+<li><a href="#312-%E5%9C%A8%E5%A4%96%E9%83%A8%E5%AE%A1%E8%AE%A1%E5%B8%88%E7%9A%84%E7%9C%BC%E9%87%8C%E5%86%85%E6%8E%A7%E7%B3%BB%E7%BB%9F%E6%98%AF%E6%91%84%E5%83%8F%E6%9C%BA">3.1.2 在外部审计师的眼里，内控系统是摄像机</a></li>
+<li><a href="#313-%E5%AE%A1%E8%AE%A1%E5%B8%88%E8%A6%81%E6%A3%80%E6%9F%A5%E5%86%85%E6%8E%A7%E7%B3%BB%E7%BB%9F%E6%98%AF%E5%90%A6%E8%AE%BE%E8%AE%A1%E5%90%88%E7%90%86%E5%92%8C%E8%BF%90%E8%BD%AC%E6%AD%A3%E5%B8%B8">3.1.3 审计师要检查内控系统是否设计合理和运转正常</a></li>
+<li><a href="#314-%E5%AE%A1%E8%AE%A1%E5%B8%88%E5%8F%AF%E4%BB%A5%E6%80%8E%E4%B9%88%E9%97%AE%E9%97%AE%E9%A2%98">3.1.4 审计师可以怎么问问题</a></li>
+<li><a href="#315-%E5%AE%A1%E8%AE%A1%E5%B8%88%E6%80%8E%E6%A0%B7%E6%A3%80%E6%9F%A5%E5%86%85%E6%8E%A7%E7%B3%BB%E7%BB%9F%E6%98%AF%E5%90%A6%E8%AE%BE%E8%AE%A1%E5%90%88%E7%90%86%E5%92%8C%E8%BF%90%E8%BD%AC%E6%AD%A3%E5%B8%B8">3.1.5 审计师怎样检查内控系统是否设计合理和运转正常</a></li>
+<li><a href="#316-%E5%86%85%E6%8E%A7%E6%B5%8B%E8%AF%95%E5%B7%A5%E4%BD%9C%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E6%98%AF%E9%80%BB%E8%BE%91%E8%A6%81%E5%AE%8C%E5%A4%87%E8%A6%81%E5%81%9A%E5%88%B0%E4%B8%A4%E4%B8%AA%E5%87%A1%E6%98%AF">3.1.6 内控测试工作最重要的是逻辑要完备——要做到两个凡是</a></li>
+<li><a href="#317-%E5%AE%A1%E8%AE%A1%E5%B8%88%E4%BB%8D%E8%A6%81%E6%A3%80%E6%9F%A5%E6%AF%8F%E4%B8%AA%E7%A7%91%E7%9B%AE%E7%9A%84%E9%87%91%E9%A2%9D">3.1.7 审计师仍要检查每个科目的金额</a></li>
+<li><a href="#318-%E5%81%9A%E5%AE%9E%E8%B4%A8%E6%80%A7%E6%B5%8B%E8%AF%95%E6%97%B6%E5%AE%A1%E8%AE%A1%E9%80%BB%E8%BE%91%E9%93%BE%E6%9D%A1%E8%A6%81%E4%B8%A5%E5%AF%86">3.1.8 做实质性测试时，审计逻辑链条要严密</a></li>
+<li><a href="#319-%E5%81%9A%E5%A5%BD%E5%AE%A1%E8%AE%A1%E6%8A%BD%E6%A0%B7%E4%B8%8D%E5%AE%B9%E6%98%93">3.1.9 做好审计抽样不容易</a></li>
+</ul>
+</li>
+<li><a href="#32-%E5%AE%A1%E8%AE%A1%E7%9A%84%E6%80%9D%E8%80%83%E6%96%B9%E6%B3%95">3.2 审计的思考方法</a>
+<ul>
+<li><a href="#321-%E5%85%AC%E4%BC%97%E5%AF%B9%E5%AE%A1%E8%AE%A1%E7%9A%84%E6%9C%9F%E6%9C%9B">3.2.1 公众对审计的期望</a></li>
+<li><a href="#322-%E5%AE%A1%E8%AE%A1%E6%80%9D%E8%80%83%E7%9A%84%E5%85%B3%E9%94%AE%E9%A2%84%E6%9C%9F">3.2.2 审计思考的关键——预期</a></li>
+<li><a href="#323-%E5%AE%A1%E8%AE%A1%E5%B8%88%E8%A6%81%E7%8B%AC%E7%AB%8B%E6%80%9D%E8%80%83%E8%A6%81%E6%AF%94%E5%AE%A2%E6%88%B7%E6%83%B3%E5%BE%97%E6%B7%B1%E8%BF%9C">3.2.3 审计师要独立思考，要比客户想得深远</a></li>
+<li><a href="#324-%E5%AE%A1%E8%AE%A1%E5%B8%88%E8%A6%81%E8%80%83%E8%99%91%E4%BB%BB%E4%BD%95%E4%BA%8B%E6%83%85%E7%9A%84%E5%90%88%E7%90%86%E6%80%A7">3.2.4 审计师要考虑任何事情的合理性</a></li>
+<li><a href="#325-%E5%AE%A1%E8%AE%A1%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B4%A8%E9%87%8D%E4%BA%8E%E5%BD%A2%E5%BC%8F">3.2.5 审计中的实质重于形式</a></li>
+<li><a href="#326-%E5%AE%A1%E8%AE%A1%E5%B8%88%E6%80%BB%E6%98%AF%E5%9C%A8%E6%8A%93%E5%A4%A7%E6%94%BE%E5%B0%8F%E5%90%97">3.2.6 审计师总是在“抓大放小”吗</a></li>
+<li><a href="#327-%E5%AE%A1%E8%AE%A1%E5%B8%88%E7%9A%84%E4%B8%83%E7%A7%8D%E6%AD%A6%E5%99%A8">3.2.7 审计师的“七种武器”</a></li>
+<li><a href="#328-%E5%AF%B9%E4%BC%9A%E8%AE%A1%E5%88%86%E5%BD%95%E7%9A%84%E7%AD%9B%E6%9F%A5">3.2.8 对会计分录的筛查</a></li>
+<li><a href="#329-%E5%AE%A1%E8%AE%A1%E5%B8%88%E6%80%8E%E4%B9%88%E7%9C%8B%E9%99%84%E6%B3%A8%E6%8A%AB%E9%9C%B2%E5%BE%97%E5%A4%9F%E4%B8%8D%E5%A4%9F%E5%A5%BD">3.2.9 审计师怎么看附注披露得够不够好</a></li>
+<li><a href="#3210-%E5%AE%A1%E8%AE%A1%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AA%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B">3.2.10 审计也是一个系统工程</a></li>
+</ul>
+</li>
+<li><a href="#33-%E5%AF%B9%E4%BC%81%E4%B8%9A%E5%86%85%E6%8E%A7%E7%9A%84%E5%85%B3%E6%B3%A8">3.3 对企业内控的关注</a>
+<ul>
+<li><a href="#331-%E4%BB%80%E4%B9%88%E6%98%AFcoso">3.3.1 什么是COSO</a></li>
+<li><a href="#332-%E5%86%85%E6%8E%A7%E6%B5%8B%E8%AF%95%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">3.3.2 内控测试的注意事项</a></li>
+<li><a href="#333-%E6%89%80%E6%9C%89%E4%BC%81%E4%B8%9A%E9%83%BD%E8%A6%81%E5%81%9A%E5%86%85%E6%8E%A7%E5%AE%A1%E8%AE%A1%E5%90%97">3.3.3 所有企业都要做内控审计吗</a></li>
+<li><a href="#334-%E4%BB%80%E4%B9%88%E6%98%AF%E5%B8%B8%E8%A7%84%E4%BA%A4%E6%98%93%E9%9D%9E%E5%B8%B8%E8%A7%84%E4%BA%A4%E6%98%93%E5%92%8C%E4%BC%9A%E8%AE%A1%E4%BC%B0%E8%AE%A1">3.3.4 什么是“常规交易”“非常规交易”和“会计估计”</a></li>
+<li><a href="#335-%E9%A3%8E%E9%99%A9%E5%AF%BC%E5%90%91%E5%AE%A1%E8%AE%A1%E6%AF%94%E5%88%B6%E5%BA%A6%E5%9F%BA%E7%A1%80%E5%AE%A1%E8%AE%A1%E5%A4%9A%E4%BA%86%E4%BB%80%E4%B9%88">3.3.5 风险导向审计比制度基础审计多了什么</a></li>
+<li><a href="#336-%E7%BB%8F%E8%90%A5%E6%8E%A7%E5%88%B6%E4%B8%8E%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E6%8E%A7%E5%88%B6">3.3.6 经营控制与财务报表控制</a></li>
+</ul>
+</li>
+<li><a href="#34-%E5%B7%A5%E4%BD%9C%E5%BA%95%E7%A8%BF">3.4 工作底稿</a>
+<ul>
+<li><a href="#341-%E5%86%99%E5%B7%A5%E4%BD%9C%E5%BA%95%E7%A8%BF%E4%B9%9F%E6%9C%89%E7%90%86%E8%AE%BA%E5%90%97">3.4.1 写工作底稿也有理论吗</a></li>
+<li><a href="#342-%E5%86%99%E5%86%85%E6%8E%A7%E6%B5%8B%E8%AF%95%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%BA%95%E7%A8%BF%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98">3.4.2 写内控测试的工作底稿要注意的问题</a></li>
+<li><a href="#343-%E5%AE%9E%E8%B4%A8%E6%80%A7%E6%B5%8B%E8%AF%95%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%BA%95%E7%A8%BF%E5%88%86%E5%87%A0%E7%B1%BB">3.4.3 实质性测试的工作底稿分几类</a></li>
+<li><a href="#344-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%E5%BA%95%E7%A8%BF%E7%9A%84%E7%9B%AE%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88">3.4.4 准备工作底稿的目的是什么</a></li>
+<li><a href="#345-%E5%B7%A5%E4%BD%9C%E5%BA%95%E7%A8%BF%E7%B4%A2%E5%BC%95%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A0%91%E7%8A%B6%E7%BB%93%E6%9E%84">3.4.5 工作底稿索引是一个树状结构</a></li>
+<li><a href="#346-%E5%86%99%E5%B7%A5%E4%BD%9C%E5%BA%95%E7%A8%BF%E6%97%B6%E8%A6%81%E5%AD%A6%E4%BC%9A%E8%87%AA%E9%A1%B6%E8%80%8C%E4%B8%8B%E7%9A%84%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F">3.4.6 写工作底稿时要学会自顶而下的思考方式</a></li>
+<li><a href="#347-%E5%AE%A1%E8%AE%A1%E7%AC%A6%E5%8F%B7%E6%B3%A8%E9%87%8A%E5%92%8C%E5%B7%A5%E4%BD%9C%E5%BA%95%E7%A8%BF%E7%9B%B8%E4%BA%92%E7%B4%A2%E5%BC%95">3.4.7 审计符号、注释和工作底稿相互索引</a></li>
+<li><a href="#348-%E5%9C%A8%E5%B7%A5%E4%BD%9C%E5%BA%95%E7%A8%BF%E9%87%8C%E5%86%99%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%B3%A8%E9%87%8A%E5%92%8C%E6%80%8E%E4%B9%88%E5%86%99">3.4.8 在工作底稿里写什么样的注释和怎么写</a></li>
+<li><a href="#349-%E7%94%A8%E8%A1%A8%E6%A0%BC%E6%9D%A5%E8%AF%B4%E6%98%8E%E9%97%AE%E9%A2%98%E6%98%AF%E4%B8%80%E7%A7%8D%E6%9C%89%E6%9D%A1%E7%90%86%E7%9A%84%E6%80%9D%E8%80%83%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%93%E7%8E%B0">3.4.9 用表格来说明问题是一种有条理的思考方法的体现</a></li>
+<li><a href="#3410-%E5%B7%A5%E4%BD%9C%E5%BA%95%E7%A8%BF%E7%9A%84%E5%BD%92%E6%A1%A3%E8%A6%81%E6%B1%82">3.4.10 工作底稿的归档要求</a></li>
+</ul>
+</li>
+<li><a href="#35-%E5%AE%A1%E8%AE%A1%E9%A1%B9%E7%9B%AE%E7%9A%84%E9%A3%8E%E9%99%A9%E6%8E%A7%E5%88%B6">3.5 审计项目的风险控制</a>
+<ul>
+<li><a href="#351-%E5%81%9A%E5%AE%A1%E8%AE%A1%E5%A5%BD%E5%83%8F%E6%89%BE%E5%AF%B9%E8%B1%A1">3.5.1 做审计好像找对象</a></li>
+<li><a href="#352-%E5%AE%A1%E8%AE%A1%E5%B8%88%E5%81%9A%E5%AE%A1%E8%AE%A1%E6%97%B6%E8%A6%81%E6%80%80%E7%96%91%E4%B8%80%E5%88%87%E5%90%97">3.5.2 审计师做审计时要怀疑一切吗</a></li>
+<li><a href="#353-%E8%88%9E%E5%BC%8A%E5%AE%A1%E8%AE%A1%E4%B8%8E%E4%BC%A0%E7%BB%9F%E5%AE%A1%E8%AE%A1">3.5.3 舞弊审计与传统审计</a></li>
+<li><a href="#354-%E5%AE%A1%E8%AE%A1%E5%B8%88%E5%8F%91%E7%8E%B0%E4%BA%86%E8%88%9E%E5%BC%8A%E6%80%8E%E4%B9%88%E5%8A%9E">3.5.4 审计师发现了舞弊怎么办</a></li>
+<li><a href="#355-%E6%95%B0%E5%AD%97%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E7%8F%AD%E7%A6%8F%E5%AE%9A%E5%BE%8B">3.5.5 数字分析中的班福定律</a></li>
+<li><a href="#356-%E5%AE%A1%E8%AE%A1%E5%B8%88%E5%81%9A%E5%AE%A1%E8%AE%A1%E6%97%B6%E6%9C%89%E7%A7%98%E5%AF%86%E6%AD%A6%E5%99%A8%E5%90%97">3.5.6 审计师做审计时有秘密武器吗</a></li>
+<li><a href="#357-%E5%AE%A1%E8%AE%A1%E5%B8%88%E5%8F%91%E7%8E%B0%E5%89%8D%E6%9C%9F%E5%B7%AE%E9%94%99%E6%80%8E%E4%B9%88%E5%8A%9E">3.5.7 审计师发现前期差错怎么办</a></li>
+<li><a href="#358-%E7%89%B9%E6%AE%8A%E7%BC%96%E5%88%B6%E5%9F%BA%E7%A1%80%E7%9A%84%E6%8A%A5%E5%91%8A%E6%80%8E%E4%B9%88%E5%87%BA">3.5.8 特殊编制基础的报告怎么出</a></li>
+<li><a href="#359-%E5%AE%A1%E8%AE%A1%E5%B8%88%E5%A6%82%E4%BD%95%E8%B7%9F%E5%89%8D%E4%BB%BB%E8%BF%9B%E8%A1%8C%E6%B2%9F%E9%80%9A">3.5.9 审计师如何跟“前任”进行沟通</a></li>
+<li><a href="#3510-%E9%9B%86%E5%9B%A2%E5%AE%A1%E8%AE%A1%E5%B8%88%E4%B8%8E%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%E5%AE%A1%E8%AE%A1%E5%B8%88%E7%9A%84%E5%90%88%E4%BD%9C">3.5.10 集团审计师与组成部分审计师的合作</a></li>
+</ul>
+</li>
+<li><a href="#36-%E5%88%A9%E7%94%A8%E5%85%B6%E4%BB%96%E4%B8%93%E5%AE%B6%E7%9A%84%E5%B7%A5%E4%BD%9C">3.6 利用其他专家的工作</a>
+<ul>
+<li><a href="#361-it%E5%AE%A1%E8%AE%A1%E5%B8%88%E7%9A%84%E4%BD%9C%E7%94%A8">3.6.1 IT审计师的作用</a></li>
+<li><a href="#362-%E7%A8%8E%E5%8A%A1%E5%B8%88%E8%AF%84%E4%BC%B0%E5%B8%88%E5%92%8C%E5%8F%8D%E8%88%9E%E5%BC%8A%E8%B0%83%E6%9F%A5%E4%B8%93%E5%AE%B6">3.6.2 税务师、评估师和反舞弊调查专家</a></li>
+</ul>
+</li>
+<li><a href="#37-%E5%8F%8D%E8%88%9E%E5%BC%8A%E5%AE%A1%E8%AE%A1">3.7 反舞弊审计</a>
+<ul>
+<li><a href="#371-%E5%8F%8D%E8%88%9E%E5%BC%8A%E7%9A%84%E8%AD%A6%E6%83%95%E6%80%A7%E5%BA%94%E8%AF%A5%E8%B4%AF%E7%A9%BF%E5%AE%A1%E8%AE%A1%E5%85%A8%E8%BF%87%E7%A8%8B">3.7.1 反舞弊的警惕性应该贯穿审计全过程</a></li>
+<li><a href="#372-%E5%A6%82%E4%BD%95%E5%8F%91%E7%8E%B0%E8%88%9E%E5%BC%8A%E7%9A%84%E8%9B%9B%E4%B8%9D%E9%A9%AC%E8%BF%B9">3.7.2 如何发现舞弊的蛛丝马迹</a></li>
+<li><a href="#373-%E5%A6%82%E4%BD%95%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%AA%8C%E8%AF%81%E8%88%9E%E5%BC%8A%E4%BA%8B%E5%AE%9E">3.7.3 如何进一步验证舞弊事实</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#4%E6%8C%89%E4%BC%9A%E8%AE%A1%E7%A7%91%E7%9B%AE%E6%9D%A5%E8%B0%88%E4%B8%80%E8%B0%88%E5%AE%9E%E8%B4%A8%E6%80%A7%E6%B5%8B%E8%AF%95">4.按会计科目来谈一谈实质性测试</a>
+<ul>
+<li><a href="#41-%E8%B4%A7%E5%B8%81%E8%B5%84%E9%87%91">4.1 货币资金</a>
+<ul>
+<li><a href="#411-%E4%B8%BB%E8%A6%81%E5%85%B3%E6%B3%A8%E8%B4%A7%E5%B8%81%E8%B5%84%E9%87%91%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7%E5%92%8C%E6%89%80%E6%9C%89%E6%9D%83">4.1.1 主要关注货币资金的存在性和所有权</a></li>
+<li><a href="#412-%E5%AE%A1%E8%AE%A1%E8%B4%A7%E5%B8%81%E8%B5%84%E9%87%91%E7%A7%91%E7%9B%AE%E4%B8%BB%E8%A6%81%E5%81%9A%E7%9A%84%E5%AE%A1%E8%AE%A1%E7%A8%8B%E5%BA%8F">4.1.2 审计货币资金科目主要做的审计程序</a></li>
+<li><a href="#413-%E5%8F%91%E7%A1%AE%E8%AE%A4%E4%B9%A6%E6%97%B6%E8%A6%81%E8%AD%A6%E6%83%95%E8%A6%81%E4%B8%A5%E5%AF%86%E6%8E%A7%E5%88%B6%E5%85%A8%E7%A8%8B">4.1.3 发确认书时要警惕，要严密控制全程</a></li>
+<li><a href="#414-%E5%87%BD%E8%AF%81%E5%B7%A5%E4%BD%9C%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98">4.1.4 函证工作要注意的问题</a></li>
+<li><a href="#415-%E5%81%9A%E7%8E%B0%E9%87%91%E8%AF%81%E6%98%8E%E7%9A%84%E7%9B%AE%E7%9A%84">4.1.5 做现金证明的目的</a></li>
+<li><a href="#416-%E9%93%B6%E8%A1%8C%E5%AD%98%E6%AC%BE%E6%8A%B5%E6%8A%BC">4.1.6 银行存款抵押</a></li>
+<li><a href="#417-%E7%90%86%E8%B4%A2%E4%BA%A7%E5%93%81%E7%AE%97%E9%93%B6%E8%A1%8C%E5%AD%98%E6%AC%BE%E5%90%97">4.1.7 理财产品算银行存款吗</a></li>
+</ul>
+</li>
+<li><a href="#42-%E5%BA%94%E6%94%B6%E8%B4%A6%E6%AC%BE%E5%92%8C%E5%9D%8F%E8%B4%A6%E5%87%86%E5%A4%87">4.2 应收账款和坏账准备</a>
+<ul>
+<li><a href="#421-%E4%B8%BB%E8%A6%81%E5%85%B3%E6%B3%A8%E5%BA%94%E6%94%B6%E8%B4%A6%E6%AC%BE%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7%E4%B8%8E%E4%BC%B0%E5%80%BC">4.2.1 主要关注应收账款的存在性与估值</a></li>
+<li><a href="#422-%E5%AE%A1%E8%AE%A1%E5%BA%94%E6%94%B6%E8%B4%A6%E6%AC%BE%E7%A7%91%E7%9B%AE%E4%B8%BB%E8%A6%81%E5%81%9A%E7%9A%84%E5%AE%A1%E8%AE%A1%E7%A8%8B%E5%BA%8F">4.2.2 审计应收账款科目主要做的审计程序</a></li>
+<li><a href="#423-%E5%BA%94%E6%94%B6%E8%B4%A6%E6%AC%BE%E7%9A%84%E6%98%8E%E7%BB%86%E9%87%8C%E8%83%BD%E7%9C%8B%E5%87%BA%E4%B8%8D%E5%B0%91%E9%97%AE%E9%A2%98">4.2.3 应收账款的明细里能看出不少问题</a></li>
+<li><a href="#424-%E5%AE%A1%E8%AE%A1%E5%BA%94%E6%94%B6%E8%B4%A6%E6%AC%BE%E4%B8%80%E5%AE%9A%E8%A6%81%E5%8F%91%E7%A1%AE%E8%AE%A4%E4%B9%A6%E5%90%97">4.2.4 审计应收账款一定要发确认书吗</a></li>
+<li><a href="#425-%E7%A1%AE%E8%AE%A4%E4%B9%A6%E6%B2%A1%E5%9B%9E%E6%9D%A5%E7%9A%84%E6%9B%BF%E4%BB%A3%E6%80%A7%E6%8E%AA%E6%96%BD">4.2.5 确认书没回来的替代性措施</a></li>
+<li><a href="#426-%E6%80%8E%E6%A0%B7%E9%80%89%E6%8B%A9%E5%87%BD%E8%AF%81%E7%9A%84%E6%A0%B7%E6%9C%AC">4.2.6 怎样选择函证的样本</a></li>
+<li><a href="#427-%E4%BC%81%E4%B8%9A%E5%A6%82%E4%BD%95%E5%87%86%E7%A1%AE%E5%9C%B0%E5%B0%86%E6%94%B6%E5%88%B0%E7%9A%84%E6%AC%BE%E9%A1%B9%E4%B8%8E%E5%AE%A2%E6%88%B7%E5%90%8D%E7%A7%B0%E5%8F%8A%E5%8F%91%E7%A5%A8%E7%9B%B8%E5%AF%B9%E5%BA%94">4.2.7 企业如何准确地将收到的款项与客户名称及发票相对应</a></li>
+<li><a href="#428-%E6%A3%80%E6%9F%A5%E6%9C%9F%E5%90%8E%E6%94%B6%E5%88%B0%E7%9A%84%E6%AC%BE%E9%A1%B9">4.2.8 检查期后收到的款项</a></li>
+<li><a href="#429-%E5%BA%94%E6%94%B6%E8%B4%A6%E6%AC%BE%E7%9A%84%E5%91%A8%E8%BD%AC%E5%A4%A9%E6%95%B0%E5%8F%AF%E4%BB%A5%E6%80%8E%E4%B9%88%E5%88%86%E6%9E%90">4.2.9 应收账款的周转天数可以怎么分析</a></li>
+<li><a href="#4210-%E5%BA%94%E6%94%B6%E8%B4%A6%E6%AC%BE%E7%9A%84%E8%B4%A6%E9%BE%84%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90">4.2.10 应收账款的账龄是什么样子</a></li>
+<li><a href="#4211-%E5%BA%94%E6%94%B6%E8%B4%A6%E6%AC%BE%E7%9A%84%E8%B4%A6%E9%BE%84%E5%8F%AF%E4%BB%A5%E6%80%8E%E4%B9%88%E5%88%86%E6%9E%90">4.2.11 应收账款的账龄可以怎么分析</a></li>
+<li><a href="#4212-%E5%9D%8F%E8%B4%A6%E5%87%86%E5%A4%87">4.2.12 坏账准备</a></li>
+</ul>
+</li>
+<li><a href="#43-%E5%85%B6%E4%BB%96%E5%BA%94%E6%94%B6%E6%AC%BE">4.3 其他应收款</a>
+<ul>
+<li><a href="#431-%E4%B8%BB%E8%A6%81%E5%85%B3%E6%B3%A8%E5%85%B6%E4%BB%96%E5%BA%94%E6%94%B6%E6%AC%BE%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7%E4%B8%8E%E4%BC%B0%E5%80%BC">4.3.1 主要关注其他应收款的存在性与估值</a></li>
+<li><a href="#432-%E5%BA%94%E6%94%B6%E5%91%98%E5%B7%A5%E9%A2%84%E5%80%9F%E6%AC%BE">4.3.2 应收员工预借款</a></li>
+<li><a href="#433-%E5%BA%94%E6%94%B6%E5%85%B3%E8%81%94%E6%96%B9">4.3.3 应收关联方</a></li>
+<li><a href="#434-%E5%85%B6%E4%BB%96%E5%BA%94%E6%94%B6%E6%AC%BE%E9%87%8C%E8%BF%98%E5%8F%AF%E8%83%BD%E6%9C%89%E4%BB%80%E4%B9%88">4.3.4 其他应收款里还可能有什么</a></li>
+</ul>
+</li>
+<li><a href="#44-%E4%B8%8E%E5%85%B3%E8%81%94%E6%96%B9%E7%9A%84%E5%BE%80%E6%9D%A5%E8%B4%A6-%E5%AE%A1%E8%AE%A1%E4%B8%8E%E5%85%B3%E8%81%94%E6%96%B9%E7%9A%84%E5%BE%80%E6%9D%A5%E6%97%B6%E8%A6%81%E5%81%9A%E4%BB%80%E4%B9%88%E5%B7%A5%E4%BD%9C">4.4 与关联方的往来账 审计与关联方的往来时要做什么工作</a></li>
+<li><a href="#45-%E9%A2%84%E4%BB%98%E8%B4%A6%E6%AC%BE">4.5 预付账款</a>
+<ul>
+<li><a href="#451-%E5%AF%B9%E9%A2%84%E4%BB%98%E8%B4%A6%E6%AC%BE%E7%9A%84%E9%A2%84%E6%9C%9F">4.5.1 对预付账款的预期</a></li>
+<li><a href="#452-%E5%AE%A1%E8%AE%A1%E9%A2%84%E4%BB%98%E8%B4%A6%E6%AC%BE%E7%A7%91%E7%9B%AE%E6%97%B6%E4%B8%BB%E8%A6%81%E7%9A%84%E5%AE%A1%E8%AE%A1%E7%A8%8B%E5%BA%8F">4.5.2 审计预付账款科目时主要的审计程序</a></li>
+<li><a href="#453-%E5%AE%A1%E8%AE%A1%E9%A2%84%E4%BB%98%E8%B4%A6%E6%AC%BE%E7%A7%91%E7%9B%AE%E6%97%B6%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98">4.5.3 审计预付账款科目时要注意的问题</a></li>
+<li><a href="#454-%E4%BA%86%E8%A7%A3%E5%B9%B4%E5%88%9D%E6%95%B0%E5%88%B0%E5%B9%B4%E6%9C%AB%E6%95%B0%E7%9A%84%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%E6%97%A0%E6%B3%95%E6%9B%BF%E4%BB%A3%E5%AF%B9%E5%B9%B4%E6%9C%AB%E4%BD%99%E9%A2%9D%E7%9A%84%E8%A7%A3%E9%87%8A">4.5.4 了解年初数到年末数的变动情况无法替代对年末余额的解释</a></li>
+<li><a href="#455-%E8%83%BD%E6%8A%8A%E5%BA%94%E6%94%B6%E8%B4%A6%E6%AC%BE%E6%88%96%E9%A2%84%E4%BB%98%E8%B4%A6%E6%AC%BE%E5%92%8C%E5%BA%94%E4%BB%98%E8%B4%A6%E6%AC%BE%E5%AF%B9%E5%86%B2%E5%90%97">4.5.5 能把应收账款或预付账款和应付账款对冲吗</a></li>
+</ul>
+</li>
+<li><a href="#46-%E5%AD%98%E8%B4%A7">4.6 存货</a>
+<ul>
+<li><a href="#461-%E4%B8%BB%E8%A6%81%E5%85%B3%E6%B3%A8%E5%AD%98%E8%B4%A7%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7%E5%AD%98%E5%9C%A8%E6%80%A7%E5%87%86%E7%A1%AE%E6%80%A7%E5%92%8C%E4%BC%B0%E5%80%BC">4.6.1 主要关注存货的完整性、存在性、准确性和估值</a></li>
+<li><a href="#462-%E5%AD%98%E8%B4%A7%E7%A7%91%E7%9B%AE%E6%98%AF%E4%BA%86%E8%A7%A3%E5%88%B6%E9%80%A0%E4%B8%9A%E4%BC%81%E4%B8%9A%E7%9A%84%E9%92%A5%E5%8C%99">4.6.2 存货科目是了解制造业企业的钥匙</a></li>
+<li><a href="#463-%E5%AD%98%E8%B4%A7%E7%A7%91%E7%9B%AE%E7%9A%84%E7%89%B9%E6%AE%8A%E6%80%A7%E9%87%91%E9%A2%9D%E6%95%B0%E9%87%8F%E5%8D%95%E4%BB%B7">4.6.3 存货科目的特殊性：金额=数量×单价</a></li>
+<li><a href="#464-%E5%AD%98%E8%B4%A7%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E7%A7%91%E7%9B%AE%E6%98%AF%E5%A5%BD%E5%87%A0%E4%B8%AA%E7%A7%91%E7%9B%AE">4.6.4 存货不是一个科目，是好几个科目</a></li>
+<li><a href="#465-%E6%88%90%E6%9C%AC%E6%A0%B8%E7%AE%97%E5%AE%83%E6%98%AF%E4%B8%AA%E9%9A%BE%E9%A2%98%E8%AE%A9%E4%BA%BA%E7%9B%AE%E7%9C%A9%E7%A5%9E%E8%BF%B7">4.6.5 成本核算它是个难题，让人目眩神迷</a></li>
+<li><a href="#466-%E7%9B%98%E7%82%B9%E6%98%AF%E4%B8%80%E6%AC%A1%E6%8B%8D%E7%85%A7%E7%89%87%E7%9A%84%E8%BF%87%E7%A8%8B">4.6.6 盘点是一次拍照片的过程</a></li>
+<li><a href="#467-%E6%9C%89%E6%B2%A1%E6%9C%89%E5%B0%86%E5%AD%98%E8%B4%A7%E6%98%8E%E7%BB%86%E7%9A%84%E6%95%B0%E5%AD%97%E5%8A%A0%E6%80%BB%E4%B8%8E%E6%80%BB%E8%B4%A6%E6%95%B0%E6%A0%B8%E5%AF%B9%E5%91%A2">4.6.7 有没有将存货明细的数字加总，与总账数核对呢</a></li>
+<li><a href="#468-%E8%BF%9B%E5%8F%A3%E5%AD%98%E8%B4%A7%E7%9A%84%E6%95%85%E4%BA%8B">4.6.8 进口存货的故事</a></li>
+<li><a href="#469-%E5%AD%98%E8%B4%A7%E7%9A%84%E5%91%A8%E8%BD%AC%E7%8E%87">4.6.9 存货的周转率</a></li>
+<li><a href="#4610-%E5%AE%A1%E8%AE%A1%E5%AD%98%E8%B4%A7%E7%A7%91%E7%9B%AE%E6%97%B6%E7%9A%84%E4%B8%BB%E8%A6%81%E5%AE%A1%E8%AE%A1%E7%A8%8B%E5%BA%8F">4.6.10 审计存货科目时的主要审计程序</a></li>
+</ul>
+</li>
+<li><a href="#47-%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7">4.7 固定资产</a>
+<ul>
+<li><a href="#471-%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E7%A7%91%E7%9B%AE%E7%9A%84%E7%89%B9%E7%82%B9">4.7.1 固定资产科目的特点</a></li>
+<li><a href="#472-%E5%AE%A1%E8%AE%A1%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E7%A7%91%E7%9B%AE%E4%B8%BB%E8%A6%81%E5%81%9A%E7%9A%84%E5%AE%A1%E8%AE%A1%E7%A8%8B%E5%BA%8F">4.7.2 审计固定资产科目主要做的审计程序</a></li>
+<li><a href="#473-%E8%A6%81%E5%B0%86%E6%89%80%E7%9C%8B%E5%88%B0%E7%9A%84%E6%95%B0%E5%AD%97%E4%B8%8E%E5%AF%B9%E5%AE%A2%E6%88%B7%E4%B8%9A%E5%8A%A1%E7%9A%84%E7%90%86%E8%A7%A3%E7%9B%B8%E8%81%94%E7%B3%BB">4.7.3 要将所看到的数字与对客户业务的理解相联系</a></li>
+<li><a href="#474-%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E7%9A%84%E6%8A%98%E6%97%A7">4.7.4 固定资产的折旧</a></li>
+<li><a href="#475-%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E5%87%8F%E5%80%BC%E5%87%86%E5%A4%87%E7%9A%84%E8%80%83%E8%99%91%E8%A6%81%E5%85%A8%E9%9D%A2">4.7.5 固定资产减值准备的考虑要全面</a></li>
+<li><a href="#476-%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E7%9A%84%E6%AE%8B%E5%80%BC%E7%8E%87%E6%98%AF%E4%B8%AA%E5%8E%86%E5%8F%B2%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98">4.7.6 固定资产的残值率是个历史遗留问题</a></li>
+<li><a href="#477-%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7%E6%8A%B5%E6%8A%BC">4.7.7 固定资产抵押</a></li>
+</ul>
+</li>
+<li><a href="#48-%E7%A7%9F%E8%B5%81">4.8 租赁</a>
+<ul>
+<li><a href="#481-%E7%A7%9F%E8%B5%81%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AE%B9%E6%98%93%E8%A2%AB%E5%BF%BD%E7%95%A5%E7%9A%84%E9%83%A8%E5%88%86">4.8.1 租赁是一个容易被忽略的部分</a></li>
+<li><a href="#482-%E4%BC%81%E4%B8%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%8D%96%E6%A5%BC">4.8.2 企业为什么要卖楼</a></li>
+</ul>
+</li>
+<li><a href="#49-%E5%9C%A8%E5%BB%BA%E5%B7%A5%E7%A8%8B">4.9 在建工程</a>
+<ul>
+<li><a href="#491-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E8%A6%81%E8%BD%AC%E4%B8%BA%E5%9B%BA%E5%AE%9A%E8%B5%84%E4%BA%A7">4.9.1 什么时候要转为固定资产</a></li>
+<li><a href="#492-%E5%9C%A8%E5%BB%BA%E5%B7%A5%E7%A8%8B%E7%A7%91%E7%9B%AE%E5%8C%85%E6%8B%AC%E5%93%AA%E4%BA%9B%E6%A0%B8%E7%AE%97%E5%86%85%E5%AE%B9">4.9.2 在建工程科目包括哪些核算内容</a></li>
+</ul>
+</li>
+<li><a href="#410-%E6%97%A0%E5%BD%A2%E8%B5%84%E4%BA%A7-%E5%AE%A1%E8%AE%A1%E6%97%A0%E5%BD%A2%E8%B5%84%E4%BA%A7%E7%A7%91%E7%9B%AE%E6%97%B6%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98">4.10 无形资产 审计无形资产科目时要注意的几个问题</a></li>
+<li><a href="#411-%E5%BA%94%E4%BB%98%E8%B4%A6%E6%AC%BE">4.11 应付账款</a>
+<ul>
+<li><a href="#4111-%E4%B8%BB%E8%A6%81%E5%85%B3%E6%B3%A8%E7%9A%84%E6%98%AF%E5%BA%94%E4%BB%98%E8%B4%A6%E6%AC%BE%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7">4.11.1 主要关注的是应付账款的完整性</a></li>
+<li><a href="#4112-%E5%AE%A1%E8%AE%A1%E5%BA%94%E4%BB%98%E8%B4%A6%E6%AC%BE%E7%A7%91%E7%9B%AE%E6%97%B6%E4%B8%BB%E8%A6%81%E5%81%9A%E7%9A%84%E5%AE%A1%E8%AE%A1%E7%A8%8B%E5%BA%8F">4.11.2 审计应付账款科目时主要做的审计程序</a></li>
+<li><a href="#4113-%E7%94%B1%E5%AD%98%E8%B4%A7%E6%9A%82%E4%BC%B0%E5%85%A5%E5%BA%93%E5%BD%A2%E6%88%90%E7%9A%84%E5%BA%94%E4%BB%98%E8%B4%A6%E6%AC%BE">4.11.3 由存货暂估入库形成的应付账款</a></li>
+</ul>
+</li>
+<li><a href="#412-%E9%A2%84%E6%94%B6%E8%B4%A6%E6%AC%BE">4.12 预收账款</a></li>
+<li><a href="#413-%E5%85%B6%E4%BB%96%E5%BA%94%E4%BB%98%E6%AC%BE">4.13 其他应付款</a>
+<ul>
+<li><a href="#4131-%E4%B8%BB%E8%A6%81%E5%85%B3%E6%B3%A8%E7%9A%84%E6%98%AF%E5%85%B6%E4%BB%96%E5%BA%94%E4%BB%98%E6%AC%BE%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7">4.13.1 主要关注的是其他应付款的完整性</a></li>
+<li><a href="#4132-%E5%85%B3%E6%B3%A8%E6%B2%A1%E6%9C%89%E6%94%B6%E5%88%B0%E5%8F%91%E7%A5%A8%E7%9A%84%E5%85%B6%E4%BB%96%E5%BA%94%E4%BB%98%E6%AC%BE">4.13.2 关注没有收到发票的其他应付款</a></li>
+<li><a href="#4133-%E5%85%B6%E4%BB%96%E5%BA%94%E4%BB%98%E6%AC%BE%E9%87%8C%E5%8F%AF%E8%83%BD%E6%9C%89%E4%BB%80%E4%B9%88">4.13.3 其他应付款里可能有什么</a></li>
+<li><a href="#4134-%E8%BF%99%E5%AE%B6%E5%85%AC%E5%8F%B8%E6%98%AF%E5%90%A6%E6%9C%89%E5%88%A9%E6%B6%A6">4.13.4 这家公司是否有利润</a></li>
+</ul>
+</li>
+<li><a href="#414-%E5%85%B6%E4%BB%96%E8%B4%9F%E5%80%BA%E7%B1%BB%E7%A7%91%E7%9B%AE">4.14 其他负债类科目</a>
+<ul>
+<li><a href="#4141-%E5%AE%A1%E8%AE%A1%E5%85%B6%E4%BB%96%E8%B4%9F%E5%80%BA%E7%B1%BB%E7%A7%91%E7%9B%AE%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98">4.14.1 审计其他负债类科目要注意的一些问题</a></li>
+<li><a href="#4142-%E5%B8%A6%E8%96%AA%E5%B9%B4%E5%81%87%E5%BC%95%E8%B5%B7%E7%9A%84%E4%BC%9A%E8%AE%A1%E6%80%9D%E8%80%83">4.14.2 带薪年假引起的会计思考</a></li>
+<li><a href="#4143-%E8%81%8C%E5%B7%A5%E8%96%AA%E9%85%AC%E8%BF%98%E5%BA%94%E8%AF%A5%E5%85%B3%E6%B3%A8%E4%BB%80%E4%B9%88">4.14.3 职工薪酬还应该关注什么</a></li>
+<li><a href="#4144-%E5%BA%94%E4%BB%98%E8%81%8C%E5%B7%A5%E8%96%AA%E9%85%AC%E7%9A%84%E4%BD%99%E9%A2%9D%E4%BB%A3%E8%A1%A8%E4%BB%80%E4%B9%88">4.14.4 应付职工薪酬的余额代表什么</a></li>
+<li><a href="#4145-%E9%A2%84%E8%AE%A1%E8%B4%9F%E5%80%BA%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E4%BA%A7%E5%93%81%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81">4.14.5 预计负债——如何计算产品质量保证</a></li>
+</ul>
+</li>
+<li><a href="#415-%E6%94%B6%E5%85%A5">4.15 收入</a>
+<ul>
+<li><a href="#4151-%E5%AE%A1%E8%AE%A1%E5%88%A9%E6%B6%A6%E8%A1%A8%E7%B1%BB%E7%A7%91%E7%9B%AE%E7%9A%84%E4%B8%80%E8%88%AC%E6%96%B9%E6%B3%95">4.15.1 审计利润表类科目的一般方法</a></li>
+<li><a href="#4152-%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4">4.15.2 收入确认</a></li>
+<li><a href="#4153-%E5%90%88%E7%BA%A6%E6%9C%BA%E5%BC%95%E8%B5%B7%E7%9A%84%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E9%97%AE%E9%A2%98">4.15.3 合约机引起的收入确认问题</a></li>
+<li><a href="#4154-%E5%AF%B9%E6%94%B6%E5%85%A5%E8%BF%9B%E8%A1%8C%E5%88%86%E6%9E%90%E6%80%A7%E5%A4%8D%E6%A0%B8">4.15.4 对收入进行分析性复核</a></li>
+</ul>
+</li>
+<li><a href="#416-%E6%88%90%E6%9C%AC%E5%92%8C%E8%B4%B9%E7%94%A8">4.16 成本和费用</a>
+<ul>
+<li><a href="#4161-%E9%94%80%E5%94%AE%E6%88%90%E6%9C%AC%E7%9A%84%E8%B0%83%E8%8A%82%E8%A1%A8">4.16.1 销售成本的调节表</a></li>
+<li><a href="#4162-%E9%94%80%E5%94%AE%E6%94%B6%E5%85%A5%E5%92%8C%E9%94%80%E5%94%AE%E6%88%90%E6%9C%AC%E8%A6%81%E8%83%BD%E5%A4%9F%E4%B8%80%E4%B8%80%E5%AF%B9%E5%BA%94">4.16.2 销售收入和销售成本要能够一一对应</a></li>
+<li><a href="#4163-%E5%AE%A1%E8%AE%A1%E6%88%90%E6%9C%AC%E5%92%8C%E8%B4%B9%E7%94%A8%E7%A7%91%E7%9B%AE%E6%97%B6%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98">4.16.3 审计成本和费用科目时要注意的一些问题</a></li>
+<li><a href="#4164-%E6%88%AA%E6%AD%A2%E6%80%A7%E6%B5%8B%E8%AF%95">4.16.4 截止性测试</a></li>
+<li><a href="#4165-%E6%A3%80%E6%9F%A5%E6%9C%AA%E5%85%A5%E8%B4%A6%E7%9A%84%E8%B4%9F%E5%80%BA">4.16.5 检查未入账的负债</a></li>
+</ul>
+</li>
+<li><a href="#417-%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7">4.17 金融工具</a>
+<ul>
+<li><a href="#4171-%E6%97%A0%E5%A4%84%E4%B8%8D%E5%9C%A8%E7%9A%84%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7">4.17.1 无处不在的金融工具</a></li>
+<li><a href="#4172-%E6%99%AE%E9%80%9A%E8%B4%AD%E9%94%80%E5%90%88%E5%90%8C%E9%87%8C%E7%9A%84%E5%A4%96%E6%B1%87%E8%A1%8D%E7%94%9F%E5%B7%A5%E5%85%B7">4.17.2 普通购销合同里的外汇衍生工具</a></li>
+<li><a href="#4173-%E6%B6%89%E5%A4%96%E8%B4%AD%E9%94%80%E5%90%88%E5%90%8C%E9%87%8C%E7%9A%84%E5%A4%96%E6%B1%87%E8%A1%8D%E7%94%9F%E5%B7%A5%E5%85%B7">4.17.3 涉外购销合同里的外汇衍生工具</a></li>
+<li><a href="#4174-%E8%AE%A9%E4%BA%BA%E6%8A%93%E7%8B%82%E7%9A%84%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7%E5%85%AC%E5%85%81%E4%BB%B7%E5%80%BC">4.17.4 让人抓狂的金融工具公允价值</a></li>
+<li><a href="#4175-%E6%98%AF%E8%82%A1%E6%98%AF%E5%80%BA">4.17.5 是股？是债？</a></li>
+<li><a href="#4176-%E5%88%9B%E6%96%B0%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7">4.17.6 创新金融工具</a></li>
+<li><a href="#4177-%E9%9B%86%E5%9B%A2%E6%8A%A5%E8%A1%A8%E7%9A%84%E7%89%B9%E6%AE%8A%E5%A4%84%E7%90%86">4.17.7 集团报表的特殊处理</a></li>
+<li><a href="#4178-%E5%9B%9E%E5%BD%92%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%90%88%E5%90%8C%E6%9D%83%E5%88%A9%E5%92%8C%E5%90%88%E5%90%8C%E4%B9%89%E5%8A%A1">4.17.8 回归金融工具的本质：合同权利和合同义务</a></li>
+<li><a href="#4179-%E5%BA%94%E6%94%B6%E8%B4%A6%E6%AC%BE%E7%9A%84%E4%BF%9D%E7%90%86%E8%9E%8D%E8%B5%84">4.17.9 应收账款的保理融资</a></li>
+</ul>
+</li>
+<li><a href="#418-%E5%90%88%E5%B9%B6">4.18 合并</a>
+<ul>
+<li><a href="#4181-%E6%8E%A7%E5%88%B6%E8%B0%81%E6%8B%A5%E6%9C%89%E7%8E%8B%E7%89%8C">4.18.1 控制——谁拥有王牌</a></li>
+<li><a href="#4182-%E7%9C%9F%E5%81%87%E6%8A%95%E8%B5%84%E6%80%A7%E4%B8%BB%E4%BD%93">4.18.2 真假投资性主体</a></li>
+</ul>
+</li>
+<li><a href="#419-%E5%85%B6%E4%BB%96">4.19 其他</a>
+<ul>
+<li><a href="#4191-%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E6%AF%94%E7%8E%87%E5%88%86%E6%9E%90">4.19.1 一些常用的比率分析</a></li>
+<li><a href="#4192-%E4%BC%81%E4%B8%9A%E4%B8%8A%E5%B8%82%E8%A6%81%E5%9B%9E%E7%AD%94%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%97%AE%E9%A2%98">4.19.2 企业上市要回答的两个问题</a></li>
+<li><a href="#4193-%E4%B8%80%E4%B8%AA%E4%BC%81%E4%B8%9A%E7%9A%84%E5%88%A9%E6%B6%A6%E7%8E%87%E8%83%BD%E6%9C%89%E8%BF%99%E4%B9%88%E9%AB%98%E5%90%97">4.19.3 一个企业的利润率能有这么高吗</a></li>
+<li><a href="#4194-%E5%A4%96%E5%9B%BD%E7%9A%84%E6%9C%88%E4%BA%AE%E6%9C%89%E5%A4%9A%E5%9C%86">4.19.4 外国的月亮有多圆</a></li>
+<li><a href="#4195-%E5%A6%82%E4%BD%95%E4%B8%8E%E8%B4%A2%E5%8A%A1%E4%BA%BA%E5%91%98%E8%BF%9B%E8%A1%8C%E6%B2%9F%E9%80%9A">4.19.5 如何与财务人员进行沟通</a></li>
+<li><a href="#4196-%E4%BA%92%E8%81%94%E7%BD%91%E8%A1%8C%E4%B8%9A%E5%AE%A1%E8%AE%A1%E6%98%AF%E5%90%A6%E7%9C%8B%E5%BE%97%E8%A7%81%E6%91%B8%E5%BE%97%E7%9D%80">4.19.6 互联网行业审计是否“看得见，摸得着”</a></li>
+<li><a href="#4197-%E5%AE%A1%E8%AE%A1%E5%89%8D%E6%99%AF%E5%B1%95%E6%9C%9B">4.19.7 审计前景展望</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#5%E7%BB%93%E8%AF%AD">5.结语</a></li>
+<li><a href="#6%E5%90%8E%E8%AE%B0">6.后记</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>
