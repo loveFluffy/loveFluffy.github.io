@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x6c88;&#x5357;&#x9e4f;&#x4f20;&#xff1a;&#x505a;&#x6700;&#x64c5;&#x957f;&#x7684;&#x4e8b;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x6c88;&#x5357;&#x9e4f;&#x4f20;&#xff1a;&#x505a;&#x6700;&#x64c5;&#x957f;&#x7684;&#x4e8b;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,394 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="沈南鹏传做最擅长的事">沈南鹏传：做最擅长的事</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/11269.jpg"></td><td>
+<h1 id="沈南鹏传做最擅长的事">沈南鹏传：做最擅长的事</h1>
+<center>张笑恒</center>
+</td></tr></table>
+<div class="mycomment">
+<p>从行文风格上也能看出来作者的文笔水平一般，缺乏写作功底。有的地方颇有一种“成功者做的所有事儿都是对的”论调，有些许的吹捧意味，作者缺乏自我思考的深度。奈何写沈南鹏的书实在是太少，能有这么一本已经实属不易了。毕竟沈南鹏还年轻，现在写其传记难免还是缺乏时间沉淀的厚度。</p>
+<p>有些故事的历史背景介绍还是挺有意思的，值得了解。重点关注书里提到的事实即可，对于作者的论述，不必认同。</p>
+</div>
+<h3 id="前言">前言</h3>
+<h2 id="上篇-天才的成长之路">上篇 “天才”的成长之路</h2>
+<h3 id="第一章-品学兼优的少年时代">第一章 品学兼优的少年时代</h3>
+<h4 id="1-幸福快乐的童年时光">1. 幸福快乐的童年时光</h4>
+<h4 id="2-数学小神童">2. 数学“小神童”</h4>
+<h4 id="3-免试入读上海交通大学">3. 免试入读上海交通大学</h4>
+<h3 id="第二章-留学美利坚从哥伦比亚到耶鲁">第二章 留学美利坚，从哥伦比亚到耶鲁</h3>
+<h4 id="1-数学世界里的困惑">1. 数学世界里的困惑</h4>
+<h4 id="2-告别数学重新定位自己">2. 告别数学，重新定位自己</h4>
+<h4 id="3-转战耶鲁继续求学之路">3. 转战耶鲁，继续求学之路</h4>
+<h3 id="第三章-投行修炼职场腾飞">第三章 投行修炼，职场腾飞</h3>
+<h4 id="1-mba的高才生遭遇就业严冬">1. MBA的高才生遭遇就业严冬</h4>
+<h4 id="2-屡败屡战敲开花旗银行的门">2. 屡败屡战，敲开花旗银行的门</h4>
+<h4 id="3-初入职场崭露头角">3. 初入职场，崭露头角</h4>
+<h4 id="4-腾飞德意志银行小董事">4. 腾飞，德意志银行小董事</h4>
+<h2 id="中篇-缔造创业神话的商界领袖">中篇 缔造创业神话的商界领袖</h2>
+<h3 id="第四章-携程网横空出世">第四章 携程网横空出世</h3>
+<h4 id="1-一顿午餐侃出个携程网">1. 一顿午餐侃出个携程网</h4>
+<h4 id="2-非典型cfo">2. 非典型CFO</h4>
+<h4 id="3-鼠标水泥的经营模式">3. “鼠标＋水泥”的经营模式</h4>
+<h4 id="4-引入六西格玛管理法">4. 引入六西格玛管理法</h4>
+<h4 id="5-携程网引领服务20时代">5. 携程网引领服务2.0时代</h4>
+<h3 id="第五章-大起大落的携程网风雨路">第五章 大起大落的携程网风雨路</h3>
+<h4 id="1-化解携程网融资危机">1. 化解携程网融资危机</h4>
+<h4 id="2-遭遇互联网寒冬">2. 遭遇互联网寒冬</h4>
+<h4 id="3-扭亏为盈带领携程网高速发展期">3. 扭亏为盈，带领携程网高速发展期</h4>
+<h4 id="4-迅速扩张抢占市场先机">4. 迅速扩张，抢占市场先机</h4>
+<h4 id="5-首次登陆纳斯达克">5. 首次登陆纳斯达克</h4>
+<h4 id="6-沈南鹏谈携程网上市">6. 沈南鹏谈携程网上市</h4>
+<h3 id="第六章-上市后成长没有终点">第六章 上市后，成长没有终点</h3>
+<h4 id="1-携程网上市后的改变">1. 携程网上市后的改变</h4>
+<h4 id="2-聘用最优秀的人才">2. 聘用最优秀的人才</h4>
+<h4 id="3-携程网再出发">3. 携程网“再出发”</h4>
+<h4 id="4-遭遇围剿携程网强力反击">4. 遭遇“围剿”，携程网强力反击</h4>
+<h3 id="第七章-家由心生如家酒店应运而生">第七章 家由心生，如家酒店应运而生</h3>
+<h4 id="1-一个帖子引发的灵感">1. 一个帖子引发的灵感</h4>
+<h4 id="2-谋定而后动">2. 谋定而后动</h4>
+<h4 id="3-服务让旅途中人感受家一般的温馨">3. 服务，让旅途中人感受家一般的温馨</h4>
+<h4 id="4-如家品牌的建立">4. 如家品牌的建立</h4>
+<h4 id="5-以直营为主将加盟进行到底">5. 以直营为主，将加盟进行到底</h4>
+<h4 id="6-越低迷越扩张">6. 越低迷越扩张</h4>
+<h3 id="第八章-再登纳斯达克">第八章 再登纳斯达克</h3>
+<h4 id="1-出奇制胜如家换帅">1. 出奇制胜，如家换帅</h4>
+<h4 id="2-如家核心价值观精准的市场定位和it支持">2. 如家核心价值观：精准的市场定位和IT支持</h4>
+<h4 id="3-有个好领导不如建个好规则">3. 有个好领导，不如建个好规则</h4>
+<h4 id="4-再次上演一夜4个亿万富翁戏码">4. 再次上演“一夜4个亿万富翁”戏码</h4>
+<h4 id="5-战略并购成就如家王朝">5. 战略并购，成就如家王朝</h4>
+<h4 id="6-高峰过后稳步求发展">6. 高峰过后，稳步求发展</h4>
+<h4 id="7-中概股加速回归如家或在a股重生">7. 中概股加速回归，如家或在A股重生</h4>
+<h3 id="第九章-从携程网到如家的成功战略">第九章 从携程网到如家的成功战略</h3>
+<h4 id="1-创业有风险准备要万全">1. 创业有风险，准备要万全</h4>
+<h4 id="2-创业从最简单的做起">2. 创业，从最简单的做起</h4>
+<h4 id="3-明智从来不当ceo">3. 明智，从来不当CEO</h4>
+<h4 id="4-像制造业一样生产服务">4. 像制造业一样生产服务</h4>
+<h4 id="5-看重资本更要会用资本">5. 看重资本更要会用资本</h4>
+<h3 id="第十章-沈南鹏和他的创业团队">第十章 沈南鹏和他的创业团队</h3>
+<h4 id="1-季琦三次敲响纳斯达克钟声的创业狂人">1. 季琦——三次敲响纳斯达克钟声的创业狂人</h4>
+<h4 id="2-梁建章创业淡出回归">2. 梁建章——创业、淡出、回归</h4>
+<h4 id="3-范敏从旅行社经理到携程ceo">3. 范敏——从旅行社经理到携程CEO</h4>
+<h4 id="4-孙坚从百安居到如家ceo">4. 孙坚——从百安居到如家CEO</h4>
+<h4 id="5-团队是企业成长的核心竞争力">5. 团队是企业成长的核心竞争力</h4>
+<h4 id="6-人才是企业长期发展最重要的因素">6. 人才是企业长期发展最重要的因素</h4>
+<h2 id="下篇-演绎风投界传奇的资本玩家">下篇 演绎风投界传奇的资本玩家</h2>
+<h3 id="第十一章-红杉十年带领一匹匹中国黑马腾飞">第十一章 红杉十年，带领一匹匹中国黑马腾飞</h3>
+<h4 id="1-福布斯全球最佳创投人">1. 福布斯全球最佳创投人</h4>
+<h4 id="2-黄金搭档张帆">2. 黄金搭档张帆</h4>
+<h4 id="3-互联网领域挥斥方遒">3. 互联网领域挥斥方遒</h4>
+<h4 id="4-布局电商生态圈">4. 布局电商生态圈</h4>
+<h4 id="5-农产品才是硬需求">5. 农产品才是硬需求</h4>
+<h4 id="6-布局动漫市场让虹猫蓝兔红遍中国">6. 布局动漫市场，让“虹猫蓝兔”红遍中国</h4>
+<h4 id="7-下注众合保险加速行业整合">7. 下注众合保险，加速行业整合</h4>
+<h3 id="第十二章-凭借犀利的眼光投资教父弹不虚发">第十二章 凭借犀利的眼光，“投资教父”弹不虚发</h3>
+<h4 id="1-沈南鹏的投资风格快稳准">1. 沈南鹏的投资风格——快、稳、准</h4>
+<h4 id="2-慧眼独识江南春">2. 慧眼独识江南春</h4>
+<h4 id="3-风险投资三原则">3. 风险投资三原则</h4>
+<h4 id="4-领域无边界投资不要回避红海">4. 领域无边界，投资不要回避“红海”</h4>
+<h4 id="5-赌赛道不如赌选手">5. 赌赛道不如赌选手</h4>
+<h4 id="6-竞争是快鱼吃慢鱼">6. 竞争是快鱼吃慢鱼</h4>
+<h4 id="7-投资家必须会拒绝">7. 投资家必须会拒绝</h4>
+<h4 id="8-用创业者的经验做投资">8. 用创业者的经验做投资</h4>
+<h3 id="第十三章-创业者背后的创业者">第十三章 创业者背后的创业者</h3>
+<h4 id="1-不急不躁掌好公司成长节奏的舵">1. 不急不躁，掌好公司成长节奏的舵</h4>
+<h4 id="2-不能只为自己赚钱而创业">2. 不能只为自己赚钱而创业</h4>
+<h4 id="3-风险投资是一个中长期的游戏">3. 风险投资是一个中长期的游戏</h4>
+<h4 id="4-忽略客户需求企业会走弯路">4. 忽略客户需求，企业会走弯路</h4>
+<h4 id="5-与企业共进退">5. 与企业共进退</h4>
+<h4 id="6-投行路上要有反思">6. 投行路上要有反思</h4>
+<h3 id="第十四章-沈南鹏的投资哲学">第十四章 沈南鹏的投资哲学</h3>
+<h4 id="1-小心谨慎是王道">1. 小心谨慎是王道</h4>
+<h4 id="2-细节决定成败">2. 细节决定成败</h4>
+<h4 id="3-不重视人才终将无人可用">3. 不重视人才终将无人可用</h4>
+<h4 id="4-抉择必须当机立断">4. 抉择必须当机立断</h4>
+<h4 id="5-红杉中国的世界里没有创业冬天">5. 红杉中国的世界里没有创业“冬天”</h4>
+<h4 id="6-保持饥饿感和热情">6. 保持“饥饿感”和热情</h4>
+<h3 id="第十五章-红杉中国的未来投资版图">第十五章 红杉中国的未来投资版图</h3>
+<h4 id="1-投资人要事先规划好版图">1. 投资人要事先规划好版图</h4>
+<h4 id="2-发掘优秀创业者布局资本全产业链">2. 发掘优秀创业者，布局资本全产业链</h4>
+<h4 id="3-整合资源要放眼全球">3. 整合资源要放眼全球</h4>
+<h4 id="4-下一个bat盯紧万亿市场">4. 下一个BAT，盯紧万亿市场</h4>
+<h3 id="第十六章-沈南鹏对年轻的创业者说">第十六章 沈南鹏对年轻的创业者说</h3>
+<h4 id="1-有梦想的人再不创业就晚了">1. 有梦想的人再不创业就晚了</h4>
+<h4 id="2-创业者要具有反木桶思维">2. 创业者要具有“反木桶思维”</h4>
+<h4 id="3-人脉也是重中之重">3. 人脉也是重中之重</h4>
+<h4 id="4-做自己最擅长的项目">4. 做自己最擅长的项目</h4>
+<h4 id="5-要成功就要够努力够坚持">5. 要成功就要够努力，够坚持</h4>
+<h4 id="6-创业是风险与幸运并存的游戏">6. 创业是风险与幸运并存的游戏</h4>
+<h4 id="7-创业就是要努力创新">7. 创业就是要努力创新</h4>
+<h3 id="第十七章-沈南鹏的朋友圈">第十七章 沈南鹏的朋友圈</h3>
+<h4 id="1-周鸿祎眼中的沈南鹏">1. 周鸿祎眼中的沈南鹏</h4>
+<h4 id="2-季琦始终是好朋友">2. 季琦：始终是好朋友</h4>
+<h4 id="3-余华我的朋友沈南鹏">3. 余华：我的朋友沈南鹏</h4>
+<h4 id="4-媒体眼中的沈南鹏">4. 媒体眼中的沈南鹏</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%93%81%E5%AD%A6%E5%85%BC%E4%BC%98%E7%9A%84%E5%B0%91%E5%B9%B4%E6%97%B6%E4%BB%A3">第一章 品学兼优的少年时代</a>
+<ul>
+<li><a href="#1-%E5%B9%B8%E7%A6%8F%E5%BF%AB%E4%B9%90%E7%9A%84%E7%AB%A5%E5%B9%B4%E6%97%B6%E5%85%89">1. 幸福快乐的童年时光</a></li>
+<li><a href="#2-%E6%95%B0%E5%AD%A6%E5%B0%8F%E7%A5%9E%E7%AB%A5">2. 数学“小神童”</a></li>
+<li><a href="#3-%E5%85%8D%E8%AF%95%E5%85%A5%E8%AF%BB%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6">3. 免试入读上海交通大学</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%95%99%E5%AD%A6%E7%BE%8E%E5%88%A9%E5%9D%9A%E4%BB%8E%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A%E5%88%B0%E8%80%B6%E9%B2%81">第二章 留学美利坚，从哥伦比亚到耶鲁</a>
+<ul>
+<li><a href="#1-%E6%95%B0%E5%AD%A6%E4%B8%96%E7%95%8C%E9%87%8C%E7%9A%84%E5%9B%B0%E6%83%91">1. 数学世界里的困惑</a></li>
+<li><a href="#2-%E5%91%8A%E5%88%AB%E6%95%B0%E5%AD%A6%E9%87%8D%E6%96%B0%E5%AE%9A%E4%BD%8D%E8%87%AA%E5%B7%B1">2. 告别数学，重新定位自己</a></li>
+<li><a href="#3-%E8%BD%AC%E6%88%98%E8%80%B6%E9%B2%81%E7%BB%A7%E7%BB%AD%E6%B1%82%E5%AD%A6%E4%B9%8B%E8%B7%AF">3. 转战耶鲁，继续求学之路</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%8A%95%E8%A1%8C%E4%BF%AE%E7%82%BC%E8%81%8C%E5%9C%BA%E8%85%BE%E9%A3%9E">第三章 投行修炼，职场腾飞</a>
+<ul>
+<li><a href="#1-mba%E7%9A%84%E9%AB%98%E6%89%8D%E7%94%9F%E9%81%AD%E9%81%87%E5%B0%B1%E4%B8%9A%E4%B8%A5%E5%86%AC">1. MBA的高才生遭遇就业严冬</a></li>
+<li><a href="#2-%E5%B1%A1%E8%B4%A5%E5%B1%A1%E6%88%98%E6%95%B2%E5%BC%80%E8%8A%B1%E6%97%97%E9%93%B6%E8%A1%8C%E7%9A%84%E9%97%A8">2. 屡败屡战，敲开花旗银行的门</a></li>
+<li><a href="#3-%E5%88%9D%E5%85%A5%E8%81%8C%E5%9C%BA%E5%B4%AD%E9%9C%B2%E5%A4%B4%E8%A7%92">3. 初入职场，崭露头角</a></li>
+<li><a href="#4-%E8%85%BE%E9%A3%9E%E5%BE%B7%E6%84%8F%E5%BF%97%E9%93%B6%E8%A1%8C%E5%B0%8F%E8%91%A3%E4%BA%8B">4. 腾飞，德意志银行小董事</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%90%BA%E7%A8%8B%E7%BD%91%E6%A8%AA%E7%A9%BA%E5%87%BA%E4%B8%96">第四章 携程网横空出世</a>
+<ul>
+<li><a href="#1-%E4%B8%80%E9%A1%BF%E5%8D%88%E9%A4%90%E4%BE%83%E5%87%BA%E4%B8%AA%E6%90%BA%E7%A8%8B%E7%BD%91">1. 一顿午餐侃出个携程网</a></li>
+<li><a href="#2-%E9%9D%9E%E5%85%B8%E5%9E%8Bcfo">2. 非典型CFO</a></li>
+<li><a href="#3-%E9%BC%A0%E6%A0%87%E6%B0%B4%E6%B3%A5%E7%9A%84%E7%BB%8F%E8%90%A5%E6%A8%A1%E5%BC%8F">3. “鼠标＋水泥”的经营模式</a></li>
+<li><a href="#4-%E5%BC%95%E5%85%A5%E5%85%AD%E8%A5%BF%E6%A0%BC%E7%8E%9B%E7%AE%A1%E7%90%86%E6%B3%95">4. 引入六西格玛管理法</a></li>
+<li><a href="#5-%E6%90%BA%E7%A8%8B%E7%BD%91%E5%BC%95%E9%A2%86%E6%9C%8D%E5%8A%A120%E6%97%B6%E4%BB%A3">5. 携程网引领服务2.0时代</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%A4%A7%E8%B5%B7%E5%A4%A7%E8%90%BD%E7%9A%84%E6%90%BA%E7%A8%8B%E7%BD%91%E9%A3%8E%E9%9B%A8%E8%B7%AF">第五章 大起大落的携程网风雨路</a>
+<ul>
+<li><a href="#1-%E5%8C%96%E8%A7%A3%E6%90%BA%E7%A8%8B%E7%BD%91%E8%9E%8D%E8%B5%84%E5%8D%B1%E6%9C%BA">1. 化解携程网融资危机</a></li>
+<li><a href="#2-%E9%81%AD%E9%81%87%E4%BA%92%E8%81%94%E7%BD%91%E5%AF%92%E5%86%AC">2. 遭遇互联网寒冬</a></li>
+<li><a href="#3-%E6%89%AD%E4%BA%8F%E4%B8%BA%E7%9B%88%E5%B8%A6%E9%A2%86%E6%90%BA%E7%A8%8B%E7%BD%91%E9%AB%98%E9%80%9F%E5%8F%91%E5%B1%95%E6%9C%9F">3. 扭亏为盈，带领携程网高速发展期</a></li>
+<li><a href="#4-%E8%BF%85%E9%80%9F%E6%89%A9%E5%BC%A0%E6%8A%A2%E5%8D%A0%E5%B8%82%E5%9C%BA%E5%85%88%E6%9C%BA">4. 迅速扩张，抢占市场先机</a></li>
+<li><a href="#5-%E9%A6%96%E6%AC%A1%E7%99%BB%E9%99%86%E7%BA%B3%E6%96%AF%E8%BE%BE%E5%85%8B">5. 首次登陆纳斯达克</a></li>
+<li><a href="#6-%E6%B2%88%E5%8D%97%E9%B9%8F%E8%B0%88%E6%90%BA%E7%A8%8B%E7%BD%91%E4%B8%8A%E5%B8%82">6. 沈南鹏谈携程网上市</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E4%B8%8A%E5%B8%82%E5%90%8E%E6%88%90%E9%95%BF%E6%B2%A1%E6%9C%89%E7%BB%88%E7%82%B9">第六章 上市后，成长没有终点</a>
+<ul>
+<li><a href="#1-%E6%90%BA%E7%A8%8B%E7%BD%91%E4%B8%8A%E5%B8%82%E5%90%8E%E7%9A%84%E6%94%B9%E5%8F%98">1. 携程网上市后的改变</a></li>
+<li><a href="#2-%E8%81%98%E7%94%A8%E6%9C%80%E4%BC%98%E7%A7%80%E7%9A%84%E4%BA%BA%E6%89%8D">2. 聘用最优秀的人才</a></li>
+<li><a href="#3-%E6%90%BA%E7%A8%8B%E7%BD%91%E5%86%8D%E5%87%BA%E5%8F%91">3. 携程网“再出发”</a></li>
+<li><a href="#4-%E9%81%AD%E9%81%87%E5%9B%B4%E5%89%BF%E6%90%BA%E7%A8%8B%E7%BD%91%E5%BC%BA%E5%8A%9B%E5%8F%8D%E5%87%BB">4. 遭遇“围剿”，携程网强力反击</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%AE%B6%E7%94%B1%E5%BF%83%E7%94%9F%E5%A6%82%E5%AE%B6%E9%85%92%E5%BA%97%E5%BA%94%E8%BF%90%E8%80%8C%E7%94%9F">第七章 家由心生，如家酒店应运而生</a>
+<ul>
+<li><a href="#1-%E4%B8%80%E4%B8%AA%E5%B8%96%E5%AD%90%E5%BC%95%E5%8F%91%E7%9A%84%E7%81%B5%E6%84%9F">1. 一个帖子引发的灵感</a></li>
+<li><a href="#2-%E8%B0%8B%E5%AE%9A%E8%80%8C%E5%90%8E%E5%8A%A8">2. 谋定而后动</a></li>
+<li><a href="#3-%E6%9C%8D%E5%8A%A1%E8%AE%A9%E6%97%85%E9%80%94%E4%B8%AD%E4%BA%BA%E6%84%9F%E5%8F%97%E5%AE%B6%E4%B8%80%E8%88%AC%E7%9A%84%E6%B8%A9%E9%A6%A8">3. 服务，让旅途中人感受家一般的温馨</a></li>
+<li><a href="#4-%E5%A6%82%E5%AE%B6%E5%93%81%E7%89%8C%E7%9A%84%E5%BB%BA%E7%AB%8B">4. 如家品牌的建立</a></li>
+<li><a href="#5-%E4%BB%A5%E7%9B%B4%E8%90%A5%E4%B8%BA%E4%B8%BB%E5%B0%86%E5%8A%A0%E7%9B%9F%E8%BF%9B%E8%A1%8C%E5%88%B0%E5%BA%95">5. 以直营为主，将加盟进行到底</a></li>
+<li><a href="#6-%E8%B6%8A%E4%BD%8E%E8%BF%B7%E8%B6%8A%E6%89%A9%E5%BC%A0">6. 越低迷越扩张</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E5%86%8D%E7%99%BB%E7%BA%B3%E6%96%AF%E8%BE%BE%E5%85%8B">第八章 再登纳斯达克</a>
+<ul>
+<li><a href="#1-%E5%87%BA%E5%A5%87%E5%88%B6%E8%83%9C%E5%A6%82%E5%AE%B6%E6%8D%A2%E5%B8%85">1. 出奇制胜，如家换帅</a></li>
+<li><a href="#2-%E5%A6%82%E5%AE%B6%E6%A0%B8%E5%BF%83%E4%BB%B7%E5%80%BC%E8%A7%82%E7%B2%BE%E5%87%86%E7%9A%84%E5%B8%82%E5%9C%BA%E5%AE%9A%E4%BD%8D%E5%92%8Cit%E6%94%AF%E6%8C%81">2. 如家核心价值观：精准的市场定位和IT支持</a></li>
+<li><a href="#3-%E6%9C%89%E4%B8%AA%E5%A5%BD%E9%A2%86%E5%AF%BC%E4%B8%8D%E5%A6%82%E5%BB%BA%E4%B8%AA%E5%A5%BD%E8%A7%84%E5%88%99">3. 有个好领导，不如建个好规则</a></li>
+<li><a href="#4-%E5%86%8D%E6%AC%A1%E4%B8%8A%E6%BC%94%E4%B8%80%E5%A4%9C4%E4%B8%AA%E4%BA%BF%E4%B8%87%E5%AF%8C%E7%BF%81%E6%88%8F%E7%A0%81">4. 再次上演“一夜4个亿万富翁”戏码</a></li>
+<li><a href="#5-%E6%88%98%E7%95%A5%E5%B9%B6%E8%B4%AD%E6%88%90%E5%B0%B1%E5%A6%82%E5%AE%B6%E7%8E%8B%E6%9C%9D">5. 战略并购，成就如家王朝</a></li>
+<li><a href="#6-%E9%AB%98%E5%B3%B0%E8%BF%87%E5%90%8E%E7%A8%B3%E6%AD%A5%E6%B1%82%E5%8F%91%E5%B1%95">6. 高峰过后，稳步求发展</a></li>
+<li><a href="#7-%E4%B8%AD%E6%A6%82%E8%82%A1%E5%8A%A0%E9%80%9F%E5%9B%9E%E5%BD%92%E5%A6%82%E5%AE%B6%E6%88%96%E5%9C%A8a%E8%82%A1%E9%87%8D%E7%94%9F">7. 中概股加速回归，如家或在A股重生</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E4%BB%8E%E6%90%BA%E7%A8%8B%E7%BD%91%E5%88%B0%E5%A6%82%E5%AE%B6%E7%9A%84%E6%88%90%E5%8A%9F%E6%88%98%E7%95%A5">第九章 从携程网到如家的成功战略</a>
+<ul>
+<li><a href="#1-%E5%88%9B%E4%B8%9A%E6%9C%89%E9%A3%8E%E9%99%A9%E5%87%86%E5%A4%87%E8%A6%81%E4%B8%87%E5%85%A8">1. 创业有风险，准备要万全</a></li>
+<li><a href="#2-%E5%88%9B%E4%B8%9A%E4%BB%8E%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E5%81%9A%E8%B5%B7">2. 创业，从最简单的做起</a></li>
+<li><a href="#3-%E6%98%8E%E6%99%BA%E4%BB%8E%E6%9D%A5%E4%B8%8D%E5%BD%93ceo">3. 明智，从来不当CEO</a></li>
+<li><a href="#4-%E5%83%8F%E5%88%B6%E9%80%A0%E4%B8%9A%E4%B8%80%E6%A0%B7%E7%94%9F%E4%BA%A7%E6%9C%8D%E5%8A%A1">4. 像制造业一样生产服务</a></li>
+<li><a href="#5-%E7%9C%8B%E9%87%8D%E8%B5%84%E6%9C%AC%E6%9B%B4%E8%A6%81%E4%BC%9A%E7%94%A8%E8%B5%84%E6%9C%AC">5. 看重资本更要会用资本</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E6%B2%88%E5%8D%97%E9%B9%8F%E5%92%8C%E4%BB%96%E7%9A%84%E5%88%9B%E4%B8%9A%E5%9B%A2%E9%98%9F">第十章 沈南鹏和他的创业团队</a>
+<ul>
+<li><a href="#1-%E5%AD%A3%E7%90%A6%E4%B8%89%E6%AC%A1%E6%95%B2%E5%93%8D%E7%BA%B3%E6%96%AF%E8%BE%BE%E5%85%8B%E9%92%9F%E5%A3%B0%E7%9A%84%E5%88%9B%E4%B8%9A%E7%8B%82%E4%BA%BA">1. 季琦——三次敲响纳斯达克钟声的创业狂人</a></li>
+<li><a href="#2-%E6%A2%81%E5%BB%BA%E7%AB%A0%E5%88%9B%E4%B8%9A%E6%B7%A1%E5%87%BA%E5%9B%9E%E5%BD%92">2. 梁建章——创业、淡出、回归</a></li>
+<li><a href="#3-%E8%8C%83%E6%95%8F%E4%BB%8E%E6%97%85%E8%A1%8C%E7%A4%BE%E7%BB%8F%E7%90%86%E5%88%B0%E6%90%BA%E7%A8%8Bceo">3. 范敏——从旅行社经理到携程CEO</a></li>
+<li><a href="#4-%E5%AD%99%E5%9D%9A%E4%BB%8E%E7%99%BE%E5%AE%89%E5%B1%85%E5%88%B0%E5%A6%82%E5%AE%B6ceo">4. 孙坚——从百安居到如家CEO</a></li>
+<li><a href="#5-%E5%9B%A2%E9%98%9F%E6%98%AF%E4%BC%81%E4%B8%9A%E6%88%90%E9%95%BF%E7%9A%84%E6%A0%B8%E5%BF%83%E7%AB%9E%E4%BA%89%E5%8A%9B">5. 团队是企业成长的核心竞争力</a></li>
+<li><a href="#6-%E4%BA%BA%E6%89%8D%E6%98%AF%E4%BC%81%E4%B8%9A%E9%95%BF%E6%9C%9F%E5%8F%91%E5%B1%95%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E5%9B%A0%E7%B4%A0">6. 人才是企业长期发展最重要的因素</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E7%BA%A2%E6%9D%89%E5%8D%81%E5%B9%B4%E5%B8%A6%E9%A2%86%E4%B8%80%E5%8C%B9%E5%8C%B9%E4%B8%AD%E5%9B%BD%E9%BB%91%E9%A9%AC%E8%85%BE%E9%A3%9E">第十一章 红杉十年，带领一匹匹中国黑马腾飞</a>
+<ul>
+<li><a href="#1-%E7%A6%8F%E5%B8%83%E6%96%AF%E5%85%A8%E7%90%83%E6%9C%80%E4%BD%B3%E5%88%9B%E6%8A%95%E4%BA%BA">1. 福布斯全球最佳创投人</a></li>
+<li><a href="#2-%E9%BB%84%E9%87%91%E6%90%AD%E6%A1%A3%E5%BC%A0%E5%B8%86">2. 黄金搭档张帆</a></li>
+<li><a href="#3-%E4%BA%92%E8%81%94%E7%BD%91%E9%A2%86%E5%9F%9F%E6%8C%A5%E6%96%A5%E6%96%B9%E9%81%92">3. 互联网领域挥斥方遒</a></li>
+<li><a href="#4-%E5%B8%83%E5%B1%80%E7%94%B5%E5%95%86%E7%94%9F%E6%80%81%E5%9C%88">4. 布局电商生态圈</a></li>
+<li><a href="#5-%E5%86%9C%E4%BA%A7%E5%93%81%E6%89%8D%E6%98%AF%E7%A1%AC%E9%9C%80%E6%B1%82">5. 农产品才是硬需求</a></li>
+<li><a href="#6-%E5%B8%83%E5%B1%80%E5%8A%A8%E6%BC%AB%E5%B8%82%E5%9C%BA%E8%AE%A9%E8%99%B9%E7%8C%AB%E8%93%9D%E5%85%94%E7%BA%A2%E9%81%8D%E4%B8%AD%E5%9B%BD">6. 布局动漫市场，让“虹猫蓝兔”红遍中国</a></li>
+<li><a href="#7-%E4%B8%8B%E6%B3%A8%E4%BC%97%E5%90%88%E4%BF%9D%E9%99%A9%E5%8A%A0%E9%80%9F%E8%A1%8C%E4%B8%9A%E6%95%B4%E5%90%88">7. 下注众合保险，加速行业整合</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E5%87%AD%E5%80%9F%E7%8A%80%E5%88%A9%E7%9A%84%E7%9C%BC%E5%85%89%E6%8A%95%E8%B5%84%E6%95%99%E7%88%B6%E5%BC%B9%E4%B8%8D%E8%99%9A%E5%8F%91">第十二章 凭借犀利的眼光，“投资教父”弹不虚发</a>
+<ul>
+<li><a href="#1-%E6%B2%88%E5%8D%97%E9%B9%8F%E7%9A%84%E6%8A%95%E8%B5%84%E9%A3%8E%E6%A0%BC%E5%BF%AB%E7%A8%B3%E5%87%86">1. 沈南鹏的投资风格——快、稳、准</a></li>
+<li><a href="#2-%E6%85%A7%E7%9C%BC%E7%8B%AC%E8%AF%86%E6%B1%9F%E5%8D%97%E6%98%A5">2. 慧眼独识江南春</a></li>
+<li><a href="#3-%E9%A3%8E%E9%99%A9%E6%8A%95%E8%B5%84%E4%B8%89%E5%8E%9F%E5%88%99">3. 风险投资三原则</a></li>
+<li><a href="#4-%E9%A2%86%E5%9F%9F%E6%97%A0%E8%BE%B9%E7%95%8C%E6%8A%95%E8%B5%84%E4%B8%8D%E8%A6%81%E5%9B%9E%E9%81%BF%E7%BA%A2%E6%B5%B7">4. 领域无边界，投资不要回避“红海”</a></li>
+<li><a href="#5-%E8%B5%8C%E8%B5%9B%E9%81%93%E4%B8%8D%E5%A6%82%E8%B5%8C%E9%80%89%E6%89%8B">5. 赌赛道不如赌选手</a></li>
+<li><a href="#6-%E7%AB%9E%E4%BA%89%E6%98%AF%E5%BF%AB%E9%B1%BC%E5%90%83%E6%85%A2%E9%B1%BC">6. 竞争是快鱼吃慢鱼</a></li>
+<li><a href="#7-%E6%8A%95%E8%B5%84%E5%AE%B6%E5%BF%85%E9%A1%BB%E4%BC%9A%E6%8B%92%E7%BB%9D">7. 投资家必须会拒绝</a></li>
+<li><a href="#8-%E7%94%A8%E5%88%9B%E4%B8%9A%E8%80%85%E7%9A%84%E7%BB%8F%E9%AA%8C%E5%81%9A%E6%8A%95%E8%B5%84">8. 用创业者的经验做投资</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E5%88%9B%E4%B8%9A%E8%80%85%E8%83%8C%E5%90%8E%E7%9A%84%E5%88%9B%E4%B8%9A%E8%80%85">第十三章 创业者背后的创业者</a>
+<ul>
+<li><a href="#1-%E4%B8%8D%E6%80%A5%E4%B8%8D%E8%BA%81%E6%8E%8C%E5%A5%BD%E5%85%AC%E5%8F%B8%E6%88%90%E9%95%BF%E8%8A%82%E5%A5%8F%E7%9A%84%E8%88%B5">1. 不急不躁，掌好公司成长节奏的舵</a></li>
+<li><a href="#2-%E4%B8%8D%E8%83%BD%E5%8F%AA%E4%B8%BA%E8%87%AA%E5%B7%B1%E8%B5%9A%E9%92%B1%E8%80%8C%E5%88%9B%E4%B8%9A">2. 不能只为自己赚钱而创业</a></li>
+<li><a href="#3-%E9%A3%8E%E9%99%A9%E6%8A%95%E8%B5%84%E6%98%AF%E4%B8%80%E4%B8%AA%E4%B8%AD%E9%95%BF%E6%9C%9F%E7%9A%84%E6%B8%B8%E6%88%8F">3. 风险投资是一个中长期的游戏</a></li>
+<li><a href="#4-%E5%BF%BD%E7%95%A5%E5%AE%A2%E6%88%B7%E9%9C%80%E6%B1%82%E4%BC%81%E4%B8%9A%E4%BC%9A%E8%B5%B0%E5%BC%AF%E8%B7%AF">4. 忽略客户需求，企业会走弯路</a></li>
+<li><a href="#5-%E4%B8%8E%E4%BC%81%E4%B8%9A%E5%85%B1%E8%BF%9B%E9%80%80">5. 与企业共进退</a></li>
+<li><a href="#6-%E6%8A%95%E8%A1%8C%E8%B7%AF%E4%B8%8A%E8%A6%81%E6%9C%89%E5%8F%8D%E6%80%9D">6. 投行路上要有反思</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-%E6%B2%88%E5%8D%97%E9%B9%8F%E7%9A%84%E6%8A%95%E8%B5%84%E5%93%B2%E5%AD%A6">第十四章 沈南鹏的投资哲学</a>
+<ul>
+<li><a href="#1-%E5%B0%8F%E5%BF%83%E8%B0%A8%E6%85%8E%E6%98%AF%E7%8E%8B%E9%81%93">1. 小心谨慎是王道</a></li>
+<li><a href="#2-%E7%BB%86%E8%8A%82%E5%86%B3%E5%AE%9A%E6%88%90%E8%B4%A5">2. 细节决定成败</a></li>
+<li><a href="#3-%E4%B8%8D%E9%87%8D%E8%A7%86%E4%BA%BA%E6%89%8D%E7%BB%88%E5%B0%86%E6%97%A0%E4%BA%BA%E5%8F%AF%E7%94%A8">3. 不重视人才终将无人可用</a></li>
+<li><a href="#4-%E6%8A%89%E6%8B%A9%E5%BF%85%E9%A1%BB%E5%BD%93%E6%9C%BA%E7%AB%8B%E6%96%AD">4. 抉择必须当机立断</a></li>
+<li><a href="#5-%E7%BA%A2%E6%9D%89%E4%B8%AD%E5%9B%BD%E7%9A%84%E4%B8%96%E7%95%8C%E9%87%8C%E6%B2%A1%E6%9C%89%E5%88%9B%E4%B8%9A%E5%86%AC%E5%A4%A9">5. 红杉中国的世界里没有创业“冬天”</a></li>
+<li><a href="#6-%E4%BF%9D%E6%8C%81%E9%A5%A5%E9%A5%BF%E6%84%9F%E5%92%8C%E7%83%AD%E6%83%85">6. 保持“饥饿感”和热情</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0-%E7%BA%A2%E6%9D%89%E4%B8%AD%E5%9B%BD%E7%9A%84%E6%9C%AA%E6%9D%A5%E6%8A%95%E8%B5%84%E7%89%88%E5%9B%BE">第十五章 红杉中国的未来投资版图</a>
+<ul>
+<li><a href="#1-%E6%8A%95%E8%B5%84%E4%BA%BA%E8%A6%81%E4%BA%8B%E5%85%88%E8%A7%84%E5%88%92%E5%A5%BD%E7%89%88%E5%9B%BE">1. 投资人要事先规划好版图</a></li>
+<li><a href="#2-%E5%8F%91%E6%8E%98%E4%BC%98%E7%A7%80%E5%88%9B%E4%B8%9A%E8%80%85%E5%B8%83%E5%B1%80%E8%B5%84%E6%9C%AC%E5%85%A8%E4%BA%A7%E4%B8%9A%E9%93%BE">2. 发掘优秀创业者，布局资本全产业链</a></li>
+<li><a href="#3-%E6%95%B4%E5%90%88%E8%B5%84%E6%BA%90%E8%A6%81%E6%94%BE%E7%9C%BC%E5%85%A8%E7%90%83">3. 整合资源要放眼全球</a></li>
+<li><a href="#4-%E4%B8%8B%E4%B8%80%E4%B8%AAbat%E7%9B%AF%E7%B4%A7%E4%B8%87%E4%BA%BF%E5%B8%82%E5%9C%BA">4. 下一个BAT，盯紧万亿市场</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0-%E6%B2%88%E5%8D%97%E9%B9%8F%E5%AF%B9%E5%B9%B4%E8%BD%BB%E7%9A%84%E5%88%9B%E4%B8%9A%E8%80%85%E8%AF%B4">第十六章 沈南鹏对年轻的创业者说</a>
+<ul>
+<li><a href="#1-%E6%9C%89%E6%A2%A6%E6%83%B3%E7%9A%84%E4%BA%BA%E5%86%8D%E4%B8%8D%E5%88%9B%E4%B8%9A%E5%B0%B1%E6%99%9A%E4%BA%86">1. 有梦想的人再不创业就晚了</a></li>
+<li><a href="#2-%E5%88%9B%E4%B8%9A%E8%80%85%E8%A6%81%E5%85%B7%E6%9C%89%E5%8F%8D%E6%9C%A8%E6%A1%B6%E6%80%9D%E7%BB%B4">2. 创业者要具有“反木桶思维”</a></li>
+<li><a href="#3-%E4%BA%BA%E8%84%89%E4%B9%9F%E6%98%AF%E9%87%8D%E4%B8%AD%E4%B9%8B%E9%87%8D">3. 人脉也是重中之重</a></li>
+<li><a href="#4-%E5%81%9A%E8%87%AA%E5%B7%B1%E6%9C%80%E6%93%85%E9%95%BF%E7%9A%84%E9%A1%B9%E7%9B%AE">4. 做自己最擅长的项目</a></li>
+<li><a href="#5-%E8%A6%81%E6%88%90%E5%8A%9F%E5%B0%B1%E8%A6%81%E5%A4%9F%E5%8A%AA%E5%8A%9B%E5%A4%9F%E5%9D%9A%E6%8C%81">5. 要成功就要够努力，够坚持</a></li>
+<li><a href="#6-%E5%88%9B%E4%B8%9A%E6%98%AF%E9%A3%8E%E9%99%A9%E4%B8%8E%E5%B9%B8%E8%BF%90%E5%B9%B6%E5%AD%98%E7%9A%84%E6%B8%B8%E6%88%8F">6. 创业是风险与幸运并存的游戏</a></li>
+<li><a href="#7-%E5%88%9B%E4%B8%9A%E5%B0%B1%E6%98%AF%E8%A6%81%E5%8A%AA%E5%8A%9B%E5%88%9B%E6%96%B0">7. 创业就是要努力创新</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0-%E6%B2%88%E5%8D%97%E9%B9%8F%E7%9A%84%E6%9C%8B%E5%8F%8B%E5%9C%88">第十七章 沈南鹏的朋友圈</a>
+<ul>
+<li><a href="#1-%E5%91%A8%E9%B8%BF%E7%A5%8E%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%B2%88%E5%8D%97%E9%B9%8F">1. 周鸿祎眼中的沈南鹏</a></li>
+<li><a href="#2-%E5%AD%A3%E7%90%A6%E5%A7%8B%E7%BB%88%E6%98%AF%E5%A5%BD%E6%9C%8B%E5%8F%8B">2. 季琦：始终是好朋友</a></li>
+<li><a href="#3-%E4%BD%99%E5%8D%8E%E6%88%91%E7%9A%84%E6%9C%8B%E5%8F%8B%E6%B2%88%E5%8D%97%E9%B9%8F">3. 余华：我的朋友沈南鹏</a></li>
+<li><a href="#4-%E5%AA%92%E4%BD%93%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%B2%88%E5%8D%97%E9%B9%8F">4. 媒体眼中的沈南鹏</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

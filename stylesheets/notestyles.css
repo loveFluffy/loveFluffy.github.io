@@ -45,6 +45,8 @@ p {
 	line-height: 1.8;
 	/*段落使用衬线字体，更好看*/
 	font-family: Georgia, Arial, "Microsoft YaHei", "微软雅黑", serif;
+	/*段落首行缩进2字符*/
+	text-indent: 2em;
 }
 
 /* 块/段落引用 */

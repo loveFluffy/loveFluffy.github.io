@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x957f;&#x671f;&#x7684;&#x529b;&#x91cf;&#xff1a;&#x5982;&#x4f55;&#x6784;&#x5efa;&#x53ef;&#x6301;&#x7eed;&#x7684;&#x4ef7;&#x503c;&#x6295;&#x8d44;&#x76c8;&#x5229;&#x4f53;&#x7cfb;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x957f;&#x671f;&#x7684;&#x529b;&#x91cf;&#xff1a;&#x5982;&#x4f55;&#x6784;&#x5efa;&#x53ef;&#x6301;&#x7eed;&#x7684;&#x4ef7;&#x503c;&#x6295;&#x8d44;&#x76c8;&#x5229;&#x4f53;&#x7cfb;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,268 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="长期的力量如何构建可持续的价值投资盈利体系">长期的力量：如何构建可持续的价值投资盈利体系</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/11118.jpg"></td><td>
+<h1 id="长期的力量如何构建可持续的价值投资盈利体系">长期的力量：如何构建可持续的价值投资盈利体系</h1>
+<center>梁宇峰</center>
+</td></tr></table>
+<div class="mycomment">
+<p>可以看出作者对于价值投资的理解是有深度的，讲起来也能逻辑自洽。从作者对于历史事件信手拈来的程度，可见也是个在股市多年的老手了。</p>
+<p>如果之前没有了解过价值投资，这本书可以作为一本及格的入门书。不过也仅是及格而已，不算出彩。对于已经入门的人，这本书新内容不多。</p>
+<p>有些章节我是跳着看完的。书里偶尔能看到几处是体现作者自己新思想的地方，绝大部分都是对于已有价值投资思想的总结、强调、介绍。</p>
+<p>这本书本身内容就不多，新内容就更少了，可摘抄进笔记的不多。</p>
+</div>
+<h3 id="前言-投资最重要的事构建你的盈利体系">前言 投资最重要的事：构建你的盈利体系</h3>
+<p><em>中国有1亿多投资者，即便是在市场低谷的时候，也有三四千万投资者在交易</em>。但1亿多投资者中，真正赚到钱的有多少呢？恐怕很少。大家都抱着发财的梦想进入股市，但大多数都以亏损告终，原因何在？</p>
+<p>有人会抱怨中国股市不好，没有给投资者创造价值。很多人羡慕美国股市，说它是长期牛市，有可口可乐（CoCa Cola）这样的长线牛股，投资者能赚到钱，真的是这样吗？</p>
+<p>我们可以来看看，中国股市和美国股市的比较。</p>
+<p>我做过统计，我国的<em>沪深300指数是2005年推出的，到现在差不多14年了</em>。沪深300指数<em>对标的是美国标普500指数</em>（S&amp;P 500 Index），<em>都是蓝筹股指数</em>。2005年到2018年年底，沪深300指数的涨幅是220%，标普500指数的涨幅是120%。数据告诉我们，中国股市表现更好，这也许颠覆了我们的认知。</p>
+<p>如果这个统计还不够有说服力，我们再看一个事实。很多人说中国的好公司都到境外上市了，A股市场没有好公司，真的如此吗？尽管我国A股市场错失了BAT（百度、阿里巴巴、腾讯）这样的新经济龙头公司，但依然有很多超级大牛股。比如<em>伊利股份</em>，上市以来股价涨了238倍，<em>泸州老窖</em>涨了191倍，<em>格力电器</em>涨了140倍，<em>恒瑞医药</em>涨了100倍。</p>
+<p>我统计了1992年到现在涨幅最大的10只股票，见表0-1。</p>
+<center>表0-1 A股市场累计涨幅前10的股票</center>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">证券代码</th>
+<th style="text-align:center">历史简称</th>
+<th style="text-align:center">当前市值（亿元）</th>
+<th style="text-align:center">1992-2018年涨幅（倍）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">600887</td>
+<td style="text-align:center">伊利股份</td>
+<td style="text-align:center">1696</td>
+<td style="text-align:center">238</td>
+</tr>
+<tr>
+<td style="text-align:center">000568</td>
+<td style="text-align:center">泸州老窖</td>
+<td style="text-align:center">891</td>
+<td style="text-align:center">191</td>
+</tr>
+<tr>
+<td style="text-align:center">000538</td>
+<td style="text-align:center">云南白药</td>
+<td style="text-align:center">1114</td>
+<td style="text-align:center">173</td>
+</tr>
+<tr>
+<td style="text-align:center">000002</td>
+<td style="text-align:center">万科A</td>
+<td style="text-align:center">2716</td>
+<td style="text-align:center">168</td>
+</tr>
+<tr>
+<td style="text-align:center">600519</td>
+<td style="text-align:center">贵州茅台</td>
+<td style="text-align:center">9189</td>
+<td style="text-align:center">147</td>
+</tr>
+<tr>
+<td style="text-align:center">000651</td>
+<td style="text-align:center">格力电器</td>
+<td style="text-align:center">2836</td>
+<td style="text-align:center">139</td>
+</tr>
+<tr>
+<td style="text-align:center">600276</td>
+<td style="text-align:center">恒瑞医药</td>
+<td style="text-align:center">2790</td>
+<td style="text-align:center">99</td>
+</tr>
+<tr>
+<td style="text-align:center">600690</td>
+<td style="text-align:center">青岛海尔</td>
+<td style="text-align:center">1174</td>
+<td style="text-align:center">53</td>
+</tr>
+<tr>
+<td style="text-align:center">600309</td>
+<td style="text-align:center">万华化学</td>
+<td style="text-align:center">1242</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:center">600660</td>
+<td style="text-align:center">福耀玻璃</td>
+<td style="text-align:center">645</td>
+<td style="text-align:center">46</td>
+</tr>
+</tbody>
+</table>
+<p>这些穿越时空的长线牛股，有3个共同特点。</p>
+<p>第一，它们都是<strong>各行各业的龙头公司</strong>。随着我国经济进入新常态，龙头公司的竞争性和稳定性越来越强。行业龙头能获得比小市值公司更确定的业绩稳定性和业绩增长性。</p>
+<p>第二，<strong>消费股居多</strong>。这是为什么呢？因为很多行业，尤其是科技行业发展太快，容易被颠覆，周期性公司容易出现业绩巨幅波动。比如柯达，从曾经的胶片巨头到最后破产变卖；再如诺基亚，从功能手机的老大到跌落神坛。它们的没落是因为行业本身被彻底颠覆。但<em>消费股不一样，一旦形成了品牌和护城河，它的竞争优势是可以持续很长时间的</em>。</p>
+<p>第三，这些公司<strong>都有很强的竞争力和很深的护城河</strong>。比如贵州茅台，就是典型的护城河很深的公司，它的品牌价值很高。再比如，格力电器的护城河是规模效应带来的成本优势，竞争对手可以生产空调，但它能达到格力那么大的规模吗？它能像格力一样拥有对上下游的议价权吗？这很难。</p>
+<hr>
+<p>我再讲一个很有意思的现象，很多基金公司的基金经理都会告诉投资者，他们的产品收益率很好，长期都是盈利的且都能战胜指数。这是不是事实？是，<em>基金确实能战胜指数，也确实能赚到钱。但基金投资者赚钱了吗？大部分基金投资者没有赚到钱。因为基金投资者和股票投资者一样，往往在估值最高的时候买入，在市场低迷的时候割肉离场</em>。</p>
+<p>这个现象不只中国有，美国也比比皆是。耶鲁基金会（Yale Endowment）的大卫·史文森（David Swenson）举过一个例子，他观察到1997—2002年表现最好的10只互联网基金，5年的平均年化收益率是1.5%，考虑到这些基金都经历了互联网泡沫，1.5%的年化收益率勉强能接受。但这10只基金在这5年里从投资者那里一共吸收了133亿美元本金，到2002年年底，这133亿美元只剩了38亿美元，亏损95亿美元，也就是亏损71%！<em>为什么基金的平均年化收益率是1.5%，而其间投资者却亏损71%？答案在于，大部分基金投资者都是在市场最疯狂的时候申购基金，而基金的收益率是每个阶段收益率的和</em>。比如2000年收益率为100%，2001年收益率为-50%，那么这两年的收益率为零。但2000年年初基金规模只有1亿美元，收益率为100%，就变成2亿美元。但到了2001年年初，因为基金业绩好，投资者蜂拥而入，新申购了8亿美元，基金规模变成了10亿美元，10亿美元亏50%就是5亿美元。所以，基金业绩是零——没有亏损，但投资者却亏了4亿美元，对应9亿美元本金来说，亏了44%。</p>
+<h2 id="第一部分-构建你的盈利体系">第一部分 构建你的盈利体系</h2>
+<h3 id="第一章-盈利体系为什么重要">第一章 盈利体系为什么重要</h3>
+<p>投资是一个概率游戏，很多时候，投资者赚钱的原因是运气不错，但很多人会把好运气错误地当成自己的能力。比如，在股票市场，很多人喜欢炒作壳概念股。特别是<em>2016年，随着360从美股私有化返回国内的发酵，一批壳概念股被趁机热炒，数十只像江南嘉捷这样的壳概念股受到了市场资金的热捧。但能够押中江南嘉捷的投资者，其实基本上是靠运气</em>。更多是押错宝的投资者，他们在热炒中被套在高位，亏损累累。但押对宝的投资者不会觉得自己运气好，而是觉得自己决策能力强。可这种赚钱的投资，实际上靠运气，难以复制。</p>
+<hr>
+<p>DFH是价值投资的典范，我们再来看索罗斯——全世界最具传奇色彩的金融大师之一，他的量子基金被评为最能赚钱的公司之一，过去40年的平均年化收益率达到20%。索罗斯能取得如此好的投资业绩，也是因为他有一套自己的盈利体系，而“反身性”理论是索罗斯盈利体系的核心。他认为“反身性”存在的一个最根本的因素来自人类的认知偏差，这种偏差确实存在并且是一种常态。这是索罗斯投资哲学的核心，索罗斯用它来指导投资并从市场的错误中获利，创造了量子基金的神话。例如<em>1992年索罗斯对英镑的狙击，便充分利用了当时英格兰银行（Bank of England）对形势的错误估计而获利</em>。</p>
+<hr>
+<p>但是反过来，如果你的投资体系很糟糕，每次正确的概率很低，又在长时间内不断重复，那结果就会亏损得很严重。我们来看一个案例。<em>申万活跃股指数是在1999年推出的，推出的时候是1000点，现在这个指数已经不再发布了，因为它已经跌了99%，只剩下10个点</em>。申万活跃股指数走势如图1-1所示。这个指数选取每周换手率最高的前100家公司并每周调整，保证留在指数里的都是周级别持续放量最大的标的。这是一个典型的追涨策略，在放量时买入，缩量时卖出。也就是说，在18年里，这个指数持续买入最活跃的股票，但最后亏得只剩下零头，为什么？因为这个策略是一个赢面很低的策略，长期坚持这样赢面很低的策略，最终的结果可想而知。但我们很多个人投资者，却喜欢追逐热点，跟着热点炒作，几年下来，肯定是要亏损的。</p>
+<p>市场上流传着一个故事，说<em>腾讯</em>有一位老员工，每月收入除开销外全部买了公司的股票，不管涨跌，坚持了7年，资产已过亿；<em>中国远洋</em>也有一位老员工，每月收入除开销外也全部买了公司的股票，不管涨跌，坚持了6年，最终把宝马汽车换成了自行车。</p>
+<hr>
+<p>除逻辑自洽外，重要的是要符合市场规律和趋势。有些投资策略，在股市的特定阶段可能很有效，比如壳概念策略、小市值策略，但市场环境发生巨大变化之后，这些策略就变得无效，甚至非常“坑人”。我以前经常说，从2012年开始，每年1月1日，选择A股市场中总市值最小的10只股票，按照每个10%的仓位买入，一年后的1月1日，再次选择A股市场中总市值最小的10只股票，按照每个10%的仓位买入，如此坚持到2016年12月31日，5年时间这个策略的回报高达20多倍，“秒杀”任何基金经理。但这个策略在2017年和2018年，累计能让你亏损80%。为什么？市场环境发生了根本性变化，<em>因为IPO（首次公开募股）正常化了，壳资源不再值钱，而且差公司退市的可能性大大加大，这些小市值公司就风光不再了</em>。所以我们一定要看清楚市场趋势，及时摒弃那些已经无效的盈利体系。追涨杀跌已经被证明是大概率赔钱的方法，我们就不能再沉溺其中。炒作绩差股、题材股已经成为过去式，我们也不能再坚持。</p>
+<p>第三，它要可持续、可复制。一个正确的盈利体系，一定是在相当长一段时间内可持续、可复制的。<em>有些策略或者方法，虽然也能赚钱，但不能持续。比如有些专门做无风险套利的策略，风险很小时收益率很不错，但最大的问题是市场出现无风险套利的机会并不多，如果你完全依靠这种策略，很多时候你会陷入没有机会的窘境</em>。</p>
+<h4 id="a股市场从2016年年底以来发生的根本性变化">A股市场从2016年年底以来发生的根本性变化</h4>
+<p>A股市场从2016年开始发生了根本性的变化，这种翻天覆地的变化，总结起来是股票市场正在进行国际化、市场化和法制化的进程。大家看到这“三个化”，是不是觉得像空话？但是我要告诉大家，这“三个化”现在已经变成实实在在的政策在落实，而且正在深刻改变着A股市场的生态。</p>
+<p>我们分别来看一看，第一个是<strong>国际化</strong>。2014年10月<em>沪港通</em>被推出，2016年11月<em>深港通</em>被推出，沪港通和深港通的推出意味着什么？内地投资者只要有50万元的资金，就可以买在香港证交所上市的来自世界各地的股票；反过来，全世界的投资者都可以通过沪股通和深股通直接购买A股市场的股票。所以，A股市场不再是一个封闭的市场。香港股票的价格比A股的便宜很多，这对A股市场是不是形成了估值压力？国际机构投资者不断进入A股市场，是不是会影响A股市场的投资理念和风格？</p>
+<p>第二个是<strong>市场化</strong>。现在IPO整体越来越市场化，越来越顺畅。2017年，IPO数量达到300～400家，2019年上半年即便是熊市，每周也有2～3家公司IPO。这个影响会非常大，<em>因为IPO正常化、顺畅，也就意味着小股票越来越不稀缺</em>。原来上市所需时间长，被逼着借壳和资产重组的优质资产，现在都要经过IPO，那么借壳和资产重组会越来越难。</p>
+<p>第三个是<strong>法制化</strong>。现在监管越来越严，特别是对各种各样的资产重组、借壳的监管更加严格。资产重组、借壳上市是A股市场投资者最喜欢炒的两个主题，但今后会越来越难实现。</p>
+<p><em>市场还有一个可能的变化，就是今后退市力度将加大。这个可能性非常大，已经是市场共识</em>。</p>
+<p>在这“三个化”的背景下，A股市场的投资逻辑发生了翻天覆地的变化。以前A股市场的逻辑是不看基本面，不看估值，倾向于炒小盘股、重组股和题材股。在这“三个化”的背景下，投资者能很容易地买到便宜的港股、股票越来越不稀缺、重组借壳越来越难，乱炒作的基础不存在。</p>
+<p>原有的炒作逻辑失败了，那么接下来A股市场的投资逻辑是什么呢？那就是基本面越来越重要。所以，很多原来不看基本面的盈利体系完全失效了。对很多投资者来说，老经验、老方法会让自己遭受巨大的亏损，所以需要重建自己的盈利体系。</p>
+<h3 id="第二章-我们需要构建什么样的盈利体系">第二章 我们需要构建什么样的盈利体系</h3>
+<p>一篇研究报告得出了一个结论：2007年到2016年的10年，股票型基金、偏股型基金、平衡混合型基金的累计收益率分别高达203%、172%、144%，同期沪深300仅上涨62%。我们自己也做过统计，得出的结论是类似的：国内基金能显著跑赢指数。</p>
+<p>与此同时，我们还发现，在机构投资者当中，越是注重长期投资的（把股票当作投资公司的载体），收益越好。我们自己做过一个策略，跟踪合格境外机构投资者的长线持仓。这个策略表现非常好，从2010年以来取得了近500%的收益率，而同期沪深300仅有26%的收益率。</p>
+<hr>
+<p><em>为什么在中国市场，基金能大幅跑赢指数，而在美国这样的成熟市场，基金很难跑赢指数</em>？其实道理很简单，<em>因为美国基本上没有个人投资者，是机构投资者主导的市场，大家都是机构，自然就很难跑赢指数</em>。所以，<em>美国近几十年盛行指数化投资</em>——反正基金很难跑赢指数，我不必花高昂的管理费请基金经理来管理资金，直接买指数就可以。</p>
+<p>除了上面两种对股票的认知，我对股票还有另外一种理解：股票是一个财富转移的工具。</p>
+<p>什么是财富转移的工具呢？就是在市场中实现财富的再分配。在股票市场，财富的基本流向是这样的：<em>个人投资者流向机构投资者，二级市场流向上市公司大股东</em>。</p>
+<p>中国的很多投资者嘴上说要分享上市公司成长的红利，心里想的是今天买进，明天涨停就卖出，也就是想从别人口袋里掏钱，但最终的结果呢？多数人做了财富转移的牺牲品，把自己辛辛苦苦赚来的钱转移给了上市公司大股东，转移给了券商和机构投资者。</p>
+<hr>
+<p><em>巴菲特认为本金的永久性损失才是真正的风险</em>。什么是本金的永久性损失？是你所买入股票的公司基本面恶化，股价永远回不到你买入的价格，这才是真正的风险。所以，真正的风险并非股价的波动，而是来自公司的“内在价值风险”。所以，<em>选择安全边际高的股票，才是避免风险的最好投资方法</em>。</p>
+<hr>
+<p>初选股票的方法很多，最常见的就是从财务指标中进行初选。我举一个如何利用财务指标选股的例子。我自己非常看重净资产收益率（ROE），这是一个非常重要的指标，巴菲特也特别看重它。<em>A股市场3000多家上市公司，平均净资产收益率在7%至8%之间。我们设定一个简单指标，选出净资产收益率连续3年大于20%的股票，就能剔除掉90%的股票，只剩下大约300只</em>，这就能大大降低我们选择的难度。我自己还看重的几个财务指标包括现金流和估值。</p>
+<hr>
+<h3 id="第三章-股票投资常见的盈利体系">第三章 股票投资常见的盈利体系</h3>
+<h3 id="第四章-与时俱进发展自己的盈利体系">第四章 与时俱进发展自己的盈利体系</h3>
+<h2 id="第二部分-基本面投资的盈利体系">第二部分 基本面投资的盈利体系</h2>
+<h3 id="第五章-选出潜力好股票的7种武器">第五章 选出潜力好股票的“7种武器”</h3>
+<h3 id="第六章-四大工具验证好股票">第六章 “四大工具”验证好股票</h3>
+<h3 id="第七章-买入之前做好充分决策">第七章 买入之前做好充分决策</h3>
+<h3 id="第八章-跟踪股票基本面的变化">第八章 跟踪股票基本面的变化</h3>
+<h2 id="第三部分-做个聪明的投资者">第三部分 做个聪明的投资者</h2>
+<h3 id="第九章-投资者常犯的错误">第九章 投资者常犯的错误</h3>
+<h3 id="第十章-聪明投资者的投资准则">第十章 聪明投资者的投资准则</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80-%E6%8A%95%E8%B5%84%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B%E6%9E%84%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%9B%88%E5%88%A9%E4%BD%93%E7%B3%BB">前言 投资最重要的事：构建你的盈利体系</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%9B%88%E5%88%A9%E4%BD%93%E7%B3%BB%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8D%E8%A6%81">第一章 盈利体系为什么重要</a>
+<ul>
+<li><a href="#a%E8%82%A1%E5%B8%82%E5%9C%BA%E4%BB%8E2016%E5%B9%B4%E5%B9%B4%E5%BA%95%E4%BB%A5%E6%9D%A5%E5%8F%91%E7%94%9F%E7%9A%84%E6%A0%B9%E6%9C%AC%E6%80%A7%E5%8F%98%E5%8C%96">A股市场从2016年年底以来发生的根本性变化</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E6%9E%84%E5%BB%BA%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E7%9B%88%E5%88%A9%E4%BD%93%E7%B3%BB">第二章 我们需要构建什么样的盈利体系</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E5%B8%B8%E8%A7%81%E7%9A%84%E7%9B%88%E5%88%A9%E4%BD%93%E7%B3%BB">第三章 股票投资常见的盈利体系</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%B8%8E%E6%97%B6%E4%BF%B1%E8%BF%9B%E5%8F%91%E5%B1%95%E8%87%AA%E5%B7%B1%E7%9A%84%E7%9B%88%E5%88%A9%E4%BD%93%E7%B3%BB">第四章 与时俱进发展自己的盈利体系</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E9%80%89%E5%87%BA%E6%BD%9C%E5%8A%9B%E5%A5%BD%E8%82%A1%E7%A5%A8%E7%9A%847%E7%A7%8D%E6%AD%A6%E5%99%A8">第五章 选出潜力好股票的“7种武器”</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%9B%9B%E5%A4%A7%E5%B7%A5%E5%85%B7%E9%AA%8C%E8%AF%81%E5%A5%BD%E8%82%A1%E7%A5%A8">第六章 “四大工具”验证好股票</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E4%B9%B0%E5%85%A5%E4%B9%8B%E5%89%8D%E5%81%9A%E5%A5%BD%E5%85%85%E5%88%86%E5%86%B3%E7%AD%96">第七章 买入之前做好充分决策</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E8%B7%9F%E8%B8%AA%E8%82%A1%E7%A5%A8%E5%9F%BA%E6%9C%AC%E9%9D%A2%E7%9A%84%E5%8F%98%E5%8C%96">第八章 跟踪股票基本面的变化</a></li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E6%8A%95%E8%B5%84%E8%80%85%E5%B8%B8%E7%8A%AF%E7%9A%84%E9%94%99%E8%AF%AF">第九章 投资者常犯的错误</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E8%81%AA%E6%98%8E%E6%8A%95%E8%B5%84%E8%80%85%E7%9A%84%E6%8A%95%E8%B5%84%E5%87%86%E5%88%99">第十章 聪明投资者的投资准则</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

@@ -103,12 +103,28 @@ table.gridtable {
 }
 
 table.gridtable th {
-    padding: 8px;
+    padding: 0.5em 0;
+}
+
+table.gridtable th,
+table.gridtable td {
+    /* 默认为box-sizing: content-box;
+    设置为border-box后，元素的padding和border都将在元素内部进行绘制，因此不用担心会影响元素自身的尺寸了*/
+    box-sizing: border-box;
 }
 
 table.gridtable td {
-    padding: 4px 0px 4px 4px;
+    /*设置左padding为em单位是为了让第3、4列在使用小字号的时候减少padding距离节省空间*/
+    padding: 4px 0 4px 0.25em;
     background-color: white;
+}
+
+/*鼠标指向的行，底边框变红变粗*/
+table.gridtable tr:hover td {
+    border-bottom-color: red;
+    /*增加底线宽度（1px -> 2px）的同时减少padding（4px -> 3px），以免影响表格内容的显示*/
+    border-bottom-width: 2px;
+    padding-bottom: 3px;
 }
 
 table.gridtable th:nth-child(1),
@@ -119,10 +135,7 @@ table.gridtable td:nth-child(2) {
 }
 
 table.gridtable th:nth-child(3),
-table.gridtable td:nth-child(3) {
-    width: 20%;
-}
-
+table.gridtable td:nth-child(3),
 table.gridtable th:nth-child(4),
 table.gridtable td:nth-child(4) {
     width: 20%;

@@ -15,6 +15,7 @@ If you find anything useful, feel free to fork it and make it your own.
 3. about 页面添加CV 和 名字
 4. 可以全站或部分页面内搜索
 5. 增加音乐播放功能
+6. 世界时钟功能
 
 ### Open Bug
 
