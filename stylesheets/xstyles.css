@@ -119,8 +119,8 @@ table.gridtable td {
     background-color: white;
 }
 
-/*鼠标指向的行，底边框变红变粗*/
-table.gridtable tr:hover td {
+/*鼠标单击的行，底边框变红变粗*/
+table.gridtable tr:active td {
     border-bottom-color: red;
     /*增加底线宽度（1px -> 2px）的同时减少padding（4px -> 3px），以免影响表格内容的显示*/
     border-bottom-width: 2px;
@@ -276,7 +276,7 @@ h4 img {
 #backtotop {
     position: fixed;
     /* Place the button at the bottom right of the page */
-    bottom: 12%;
+    bottom: 40%;
     right: 2%;
     /* Make sure it does not overlap */
     z-index: 99;

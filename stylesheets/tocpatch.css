@@ -13,8 +13,9 @@
 	}
 
 	div.toc {
-		width: 14%;
-		height: 90vh;
+		width: 15%;
+		/* 90px 是最顶上导航栏的高度 */
+		height: calc(100vh - 90px);
 
 		top: 80px;
 	}

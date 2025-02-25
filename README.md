@@ -16,6 +16,11 @@ If you find anything useful, feel free to fork it and make it your own.
 4. 可以全站或部分页面内搜索
 5. 增加音乐播放功能
 6. 世界时钟功能
+7. 利用css columns实现简单的横向翻页功能
+8. 添加黑暗/明亮模式切换按钮
+9. 侧边目录、顶部标题栏，分别具有显示当前章节、页面进度功能
+10. 面包屑导航
+11. 在账号数字后面添加复制按钮，避免每次需要选中、复制的麻烦
 
 ### Open Bug
 

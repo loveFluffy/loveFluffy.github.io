@@ -15,17 +15,16 @@ div.toc {
 	box-sizing: border-box;
 }
 
-/* 
-手机：2400*宽1080
+/* 手机：2400*宽1080
 iPad mini 5：2048*宽1536
-电脑：宽1920*1200 
-*/
+电脑：宽1920*1200 */
+
 /* 窄屏幕：手机竖屏、iPad竖屏 */
 @media (max-width: 1536px) {
 
 	/* 暂改
 	body {
-		height: 150vh;
+		height: 100vh;
 		overflow: hidden;
 		margin: 0 16px;
 	}
@@ -34,7 +33,11 @@ iPad mini 5：2048*宽1536
 		columns: calc(100vw - 32px) 1;
 		column-gap: 16px;
 		transition: 0.4s;
-		*/
+	}
+
+ */
+
+
 	.content {
 		width: 100%;
 	}
