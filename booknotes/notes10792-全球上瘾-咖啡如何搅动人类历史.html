@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5168;&#x7403;&#x4e0a;&#x763e;&#xff1a;&#x5496;&#x5561;&#x5982;&#x4f55;&#x6405;&#x52a8;&#x4eba;&#x7c7b;&#x5386;&#x53f2;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5168;&#x7403;&#x4e0a;&#x763e;&#xff1a;&#x5496;&#x5561;&#x5982;&#x4f55;&#x6405;&#x52a8;&#x4eba;&#x7c7b;&#x5386;&#x53f2;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,404 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="全球上瘾咖啡如何搅动人类历史">全球上瘾：咖啡如何搅动人类历史</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/10792.jpg"></td><td>
+<h1 id="全球上瘾咖啡如何搅动人类历史">全球上瘾：咖啡如何搅动人类历史</h1>
+<center>[德]海因里希·爱德华·雅各布（Heinrich Eduard Jacob） 著|陈琴 俞珊珊 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="推荐序一-咖啡燃烧的岁月">推荐序一 咖啡燃烧的岁月</h3>
+<h3 id="推荐序二-咖啡文化旅程的地图">推荐序二 咖啡文化旅程的地图</h3>
+<h3 id="新版序">新版序</h3>
+<h3 id="自序">自序</h3>
+<h2 id="第一卷-神奇的力量">第一卷 神奇的力量</h2>
+<h3 id="第一章-也门的夜">第一章 也门的夜</h3>
+<h4 id="失眠的羊群">失眠的羊群</h4>
+<h4 id="神奇的饮料">神奇的饮料</h4>
+<h3 id="第二章-与葡萄酒神的较量">第二章 与葡萄酒神的较量</h3>
+<h4 id="陌生的力量">陌生的力量</h4>
+<h4 id="酒神的劲敌">酒神的劲敌</h4>
+<h3 id="第三章-神奇的咖啡因">第三章 神奇的咖啡因</h3>
+<h4 id="灵丹妙药">灵丹妙药</h4>
+<h4 id="恰到好处的比例">恰到好处的比例</h4>
+<h3 id="第四章-迫害和胜利">第四章 迫害和胜利</h3>
+<h4 id="咖啡之争">咖啡之争</h4>
+<h4 id="最出色的斗士">最出色的斗士</h4>
+<h3 id="第五章-英雄哥辛斯基">第五章 英雄哥辛斯基</h3>
+<h4 id="战争中的咖啡">战争中的咖啡</h4>
+<h4 id="在欧洲的萌芽与风靡">在欧洲的萌芽与风靡</h4>
+<h2 id="第二卷-民族的健康">第二卷 民族的健康</h2>
+<h3 id="第六章-威尼斯人的商品">第六章 威尼斯人的商品</h3>
+<h4 id="战士与商人">战士与商人</h4>
+<h4 id="德国没有咖啡">德国没有咖啡</h4>
+<h3 id="第七章-啤酒的统治">第七章 啤酒的统治</h3>
+<h4 id="无酒不欢">无酒不欢</h4>
+<h4 id="外貌革命">外貌革命</h4>
+<h4 id="不可能的正面交锋">不可能的正面交锋</h4>
+<h3 id="第八章-马赛医生的致命一问">第八章 马赛医生的致命一问</h3>
+<h4 id="马赛第一家咖啡馆">马赛第一家咖啡馆</h4>
+<h4 id="医生的争论">医生的争论</h4>
+<h3 id="第九章-苏莱曼阿加和巴黎人">第九章 苏莱曼·阿加和巴黎人</h3>
+<h4 id="土耳其使者">土耳其使者</h4>
+<h4 id="对咖啡的敌意">对咖啡的敌意</h4>
+<h4 id="咖啡馆的起源">咖啡馆的起源</h4>
+<h3 id="第十章-咖啡老哥">第十章 “咖啡老哥”</h3>
+<h4 id="在英国起步">在英国起步</h4>
+<h4 id="遭遇拦路虎">遭遇拦路虎</h4>
+<h4 id="咖啡馆里的文学家">咖啡馆里的文学家</h4>
+<h4 id="来自东方的继承者">来自东方的继承者</h4>
+<h2 id="第三卷-农民商人和国王">第三卷 农民、商人和国王</h2>
+<h3 id="第十一章-岛上王国荷兰">第十一章 岛上王国——荷兰</h3>
+<h4 id="争夺人间天堂">争夺人间天堂</h4>
+<h4 id="荷兰新霸主">荷兰新霸主</h4>
+<h4 id="发现财富源泉">发现财富源泉</h4>
+<h3 id="第十二章-咖啡与专制主义">第十二章 咖啡与专制主义</h3>
+<h4 id="国家利益">国家利益</h4>
+<h4 id="咖啡垄断权">咖啡垄断权</h4>
+<h3 id="第十三章-文学百年">第十三章 文学百年</h3>
+<h4 id="赞美咖啡">赞美咖啡</h4>
+<h4 id="咖啡馆的社交圈">咖啡馆的社交圈</h4>
+<h4 id="咖啡的英雄史诗">咖啡的英雄史诗</h4>
+<h4 id="革命年的咖啡">革命年的咖啡</h4>
+<h3 id="第十四章-奢侈品与统治者">第十四章 奢侈品与统治者</h3>
+<h4 id="失去自由的咖啡">失去自由的咖啡</h4>
+<h4 id="摧毁垄断势力">摧毁垄断势力</h4>
+<h4 id="高税金奢侈品">高税金奢侈品</h4>
+<h3 id="第十五章-拿破仑与菊苣代用咖啡">第十五章 拿破仑与菊苣代用咖啡</h3>
+<h4 id="对抗英国">对抗英国</h4>
+<h4 id="自力更生">自力更生</h4>
+<h4 id="代用咖啡之祖">代用咖啡之祖</h4>
+<h2 id="第四卷-咖啡和19世纪">第四卷 咖啡和19世纪</h2>
+<h3 id="第十六章-茶的冲击">第十六章 茶的冲击</h3>
+<h4 id="殖民地产品中的佼佼者">殖民地产品中的佼佼者</h4>
+<h4 id="欧洲的宠儿">欧洲的宠儿</h4>
+<h4 id="茶的反对者">茶的反对者</h4>
+<h3 id="第十七章-柏林女人的快乐">第十七章 柏林女人的快乐</h3>
+<h4 id="惊人的消费">惊人的消费</h4>
+<h4 id="女人的饮料">女人的饮料</h4>
+<h4 id="旅行伴侣">旅行伴侣</h4>
+<h3 id="第十八章-奥匈帝国的咖啡馆主">第十八章 奥匈帝国的咖啡馆主</h3>
+<h4 id="咖啡馆与日常生活">咖啡馆与日常生活</h4>
+<h4 id="对文学的滋养">对文学的滋养</h4>
+<h3 id="第十九章-投机和西班牙危机">第十九章 投机和西班牙危机</h3>
+<h4 id="能量必需品">能量必需品</h4>
+<h4 id="买空投机">买空投机</h4>
+<h3 id="第二十章-收成市场价格铁三角">第二十章 收成—市场—价格“铁三角”</h3>
+<h4 id="波动的价格">波动的价格</h4>
+<h4 id="交易所里的暗斗">交易所里的暗斗</h4>
+<h2 id="第五卷-巴西的霸权">第五卷 巴西的霸权</h2>
+<h3 id="第二十一章-土地帝制和劳动力问题">第二十一章 土地、帝制和劳动力问题</h3>
+<h4 id="主导咖啡市场">主导咖啡市场</h4>
+<h4 id="上帝的恩赐">上帝的恩赐</h4>
+<h4 id="度过劳动力危机">度过劳动力危机</h4>
+<h4 id="外汇动荡">外汇动荡</h4>
+<h3 id="第二十二章-锡兰岛咖啡种植园的没落">第二十二章 锡兰岛咖啡种植园的没落</h3>
+<h4 id="咖啡竞赛">咖啡竞赛</h4>
+<h4 id="锡兰岛的咖啡">锡兰岛的咖啡</h4>
+<h3 id="第二十三章-巴西的经济战">第二十三章 巴西的经济战</h3>
+<h4 id="维持高价的方法">维持高价的方法</h4>
+<h4 id="弊病与危机">弊病与危机</h4>
+<h4 id="政府介入市场">政府介入市场</h4>
+<h4 id="防御机构的失败">防御机构的失败</h4>
+<h3 id="第二十四章-从理智到荒谬咖啡燃烧起来">第二十四章 从理智到荒谬——咖啡燃烧起来！</h3>
+<h4 id="桑托斯的火焰">桑托斯的火焰</h4>
+<h4 id="解决咖啡问题">解决咖啡问题</h4>
+<h3 id="第二十五章-终曲">第二十五章 终曲</h3>
+<h3 id="续写及展望">续写及展望</h3>
+<h3 id="附录-一1950年至今的咖啡世界">附录 一、1950年至今的咖啡世界</h3>
+<h4 id="雅各布的盲点">雅各布的盲点</h4>
+<h4 id="咖啡的成功秘诀">咖啡的成功秘诀</h4>
+<h4 id="咖啡世界的变迁">咖啡世界的变迁</h4>
+<h4 id="生产形式的变化">生产形式的变化</h4>
+<h4 id="咖啡链中的实力和收入分配">咖啡链中的实力和收入分配</h4>
+<h4 id="精品咖啡革命新的消费模式">精品咖啡革命：新的消费模式</h4>
+<h4 id="绿色标志新的品质观念">绿色标志：新的品质观念</h4>
+<h4 id="咖啡的未来">咖啡的未来</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%B8%80-%E5%92%96%E5%95%A1%E7%87%83%E7%83%A7%E7%9A%84%E5%B2%81%E6%9C%88">推荐序一 咖啡燃烧的岁月</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%BA%8C-%E5%92%96%E5%95%A1%E6%96%87%E5%8C%96%E6%97%85%E7%A8%8B%E7%9A%84%E5%9C%B0%E5%9B%BE">推荐序二 咖啡文化旅程的地图</a></li>
+<li><a href="#%E6%96%B0%E7%89%88%E5%BA%8F">新版序</a></li>
+<li><a href="#%E8%87%AA%E5%BA%8F">自序</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E4%B9%9F%E9%97%A8%E7%9A%84%E5%A4%9C">第一章 也门的夜</a>
+<ul>
+<li><a href="#%E5%A4%B1%E7%9C%A0%E7%9A%84%E7%BE%8A%E7%BE%A4">失眠的羊群</a></li>
+<li><a href="#%E7%A5%9E%E5%A5%87%E7%9A%84%E9%A5%AE%E6%96%99">神奇的饮料</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%B8%8E%E8%91%A1%E8%90%84%E9%85%92%E7%A5%9E%E7%9A%84%E8%BE%83%E9%87%8F">第二章 与葡萄酒神的较量</a>
+<ul>
+<li><a href="#%E9%99%8C%E7%94%9F%E7%9A%84%E5%8A%9B%E9%87%8F">陌生的力量</a></li>
+<li><a href="#%E9%85%92%E7%A5%9E%E7%9A%84%E5%8A%B2%E6%95%8C">酒神的劲敌</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%A5%9E%E5%A5%87%E7%9A%84%E5%92%96%E5%95%A1%E5%9B%A0">第三章 神奇的咖啡因</a>
+<ul>
+<li><a href="#%E7%81%B5%E4%B8%B9%E5%A6%99%E8%8D%AF">灵丹妙药</a></li>
+<li><a href="#%E6%81%B0%E5%88%B0%E5%A5%BD%E5%A4%84%E7%9A%84%E6%AF%94%E4%BE%8B">恰到好处的比例</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E8%BF%AB%E5%AE%B3%E5%92%8C%E8%83%9C%E5%88%A9">第四章 迫害和胜利</a>
+<ul>
+<li><a href="#%E5%92%96%E5%95%A1%E4%B9%8B%E4%BA%89">咖啡之争</a></li>
+<li><a href="#%E6%9C%80%E5%87%BA%E8%89%B2%E7%9A%84%E6%96%97%E5%A3%AB">最出色的斗士</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%8B%B1%E9%9B%84%E5%93%A5%E8%BE%9B%E6%96%AF%E5%9F%BA">第五章 英雄哥辛斯基</a>
+<ul>
+<li><a href="#%E6%88%98%E4%BA%89%E4%B8%AD%E7%9A%84%E5%92%96%E5%95%A1">战争中的咖啡</a></li>
+<li><a href="#%E5%9C%A8%E6%AC%A7%E6%B4%B2%E7%9A%84%E8%90%8C%E8%8A%BD%E4%B8%8E%E9%A3%8E%E9%9D%A1">在欧洲的萌芽与风靡</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%A8%81%E5%B0%BC%E6%96%AF%E4%BA%BA%E7%9A%84%E5%95%86%E5%93%81">第六章 威尼斯人的商品</a>
+<ul>
+<li><a href="#%E6%88%98%E5%A3%AB%E4%B8%8E%E5%95%86%E4%BA%BA">战士与商人</a></li>
+<li><a href="#%E5%BE%B7%E5%9B%BD%E6%B2%A1%E6%9C%89%E5%92%96%E5%95%A1">德国没有咖啡</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%95%A4%E9%85%92%E7%9A%84%E7%BB%9F%E6%B2%BB">第七章 啤酒的统治</a>
+<ul>
+<li><a href="#%E6%97%A0%E9%85%92%E4%B8%8D%E6%AC%A2">无酒不欢</a></li>
+<li><a href="#%E5%A4%96%E8%B2%8C%E9%9D%A9%E5%91%BD">外貌革命</a></li>
+<li><a href="#%E4%B8%8D%E5%8F%AF%E8%83%BD%E7%9A%84%E6%AD%A3%E9%9D%A2%E4%BA%A4%E9%94%8B">不可能的正面交锋</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E9%A9%AC%E8%B5%9B%E5%8C%BB%E7%94%9F%E7%9A%84%E8%87%B4%E5%91%BD%E4%B8%80%E9%97%AE">第八章 马赛医生的致命一问</a>
+<ul>
+<li><a href="#%E9%A9%AC%E8%B5%9B%E7%AC%AC%E4%B8%80%E5%AE%B6%E5%92%96%E5%95%A1%E9%A6%86">马赛第一家咖啡馆</a></li>
+<li><a href="#%E5%8C%BB%E7%94%9F%E7%9A%84%E4%BA%89%E8%AE%BA">医生的争论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E8%8B%8F%E8%8E%B1%E6%9B%BC%E9%98%BF%E5%8A%A0%E5%92%8C%E5%B7%B4%E9%BB%8E%E4%BA%BA">第九章 苏莱曼·阿加和巴黎人</a>
+<ul>
+<li><a href="#%E5%9C%9F%E8%80%B3%E5%85%B6%E4%BD%BF%E8%80%85">土耳其使者</a></li>
+<li><a href="#%E5%AF%B9%E5%92%96%E5%95%A1%E7%9A%84%E6%95%8C%E6%84%8F">对咖啡的敌意</a></li>
+<li><a href="#%E5%92%96%E5%95%A1%E9%A6%86%E7%9A%84%E8%B5%B7%E6%BA%90">咖啡馆的起源</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%92%96%E5%95%A1%E8%80%81%E5%93%A5">第十章 “咖啡老哥”</a>
+<ul>
+<li><a href="#%E5%9C%A8%E8%8B%B1%E5%9B%BD%E8%B5%B7%E6%AD%A5">在英国起步</a></li>
+<li><a href="#%E9%81%AD%E9%81%87%E6%8B%A6%E8%B7%AF%E8%99%8E">遭遇拦路虎</a></li>
+<li><a href="#%E5%92%96%E5%95%A1%E9%A6%86%E9%87%8C%E7%9A%84%E6%96%87%E5%AD%A6%E5%AE%B6">咖啡馆里的文学家</a></li>
+<li><a href="#%E6%9D%A5%E8%87%AA%E4%B8%9C%E6%96%B9%E7%9A%84%E7%BB%A7%E6%89%BF%E8%80%85">来自东方的继承者</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E5%B2%9B%E4%B8%8A%E7%8E%8B%E5%9B%BD%E8%8D%B7%E5%85%B0">第十一章 岛上王国——荷兰</a>
+<ul>
+<li><a href="#%E4%BA%89%E5%A4%BA%E4%BA%BA%E9%97%B4%E5%A4%A9%E5%A0%82">争夺人间天堂</a></li>
+<li><a href="#%E8%8D%B7%E5%85%B0%E6%96%B0%E9%9C%B8%E4%B8%BB">荷兰新霸主</a></li>
+<li><a href="#%E5%8F%91%E7%8E%B0%E8%B4%A2%E5%AF%8C%E6%BA%90%E6%B3%89">发现财富源泉</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E5%92%96%E5%95%A1%E4%B8%8E%E4%B8%93%E5%88%B6%E4%B8%BB%E4%B9%89">第十二章 咖啡与专制主义</a>
+<ul>
+<li><a href="#%E5%9B%BD%E5%AE%B6%E5%88%A9%E7%9B%8A">国家利益</a></li>
+<li><a href="#%E5%92%96%E5%95%A1%E5%9E%84%E6%96%AD%E6%9D%83">咖啡垄断权</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E6%96%87%E5%AD%A6%E7%99%BE%E5%B9%B4">第十三章 文学百年</a>
+<ul>
+<li><a href="#%E8%B5%9E%E7%BE%8E%E5%92%96%E5%95%A1">赞美咖啡</a></li>
+<li><a href="#%E5%92%96%E5%95%A1%E9%A6%86%E7%9A%84%E7%A4%BE%E4%BA%A4%E5%9C%88">咖啡馆的社交圈</a></li>
+<li><a href="#%E5%92%96%E5%95%A1%E7%9A%84%E8%8B%B1%E9%9B%84%E5%8F%B2%E8%AF%97">咖啡的英雄史诗</a></li>
+<li><a href="#%E9%9D%A9%E5%91%BD%E5%B9%B4%E7%9A%84%E5%92%96%E5%95%A1">革命年的咖啡</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-%E5%A5%A2%E4%BE%88%E5%93%81%E4%B8%8E%E7%BB%9F%E6%B2%BB%E8%80%85">第十四章 奢侈品与统治者</a>
+<ul>
+<li><a href="#%E5%A4%B1%E5%8E%BB%E8%87%AA%E7%94%B1%E7%9A%84%E5%92%96%E5%95%A1">失去自由的咖啡</a></li>
+<li><a href="#%E6%91%A7%E6%AF%81%E5%9E%84%E6%96%AD%E5%8A%BF%E5%8A%9B">摧毁垄断势力</a></li>
+<li><a href="#%E9%AB%98%E7%A8%8E%E9%87%91%E5%A5%A2%E4%BE%88%E5%93%81">高税金奢侈品</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0-%E6%8B%BF%E7%A0%B4%E4%BB%91%E4%B8%8E%E8%8F%8A%E8%8B%A3%E4%BB%A3%E7%94%A8%E5%92%96%E5%95%A1">第十五章 拿破仑与菊苣代用咖啡</a>
+<ul>
+<li><a href="#%E5%AF%B9%E6%8A%97%E8%8B%B1%E5%9B%BD">对抗英国</a></li>
+<li><a href="#%E8%87%AA%E5%8A%9B%E6%9B%B4%E7%94%9F">自力更生</a></li>
+<li><a href="#%E4%BB%A3%E7%94%A8%E5%92%96%E5%95%A1%E4%B9%8B%E7%A5%96">代用咖啡之祖</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0-%E8%8C%B6%E7%9A%84%E5%86%B2%E5%87%BB">第十六章 茶的冲击</a>
+<ul>
+<li><a href="#%E6%AE%96%E6%B0%91%E5%9C%B0%E4%BA%A7%E5%93%81%E4%B8%AD%E7%9A%84%E4%BD%BC%E4%BD%BC%E8%80%85">殖民地产品中的佼佼者</a></li>
+<li><a href="#%E6%AC%A7%E6%B4%B2%E7%9A%84%E5%AE%A0%E5%84%BF">欧洲的宠儿</a></li>
+<li><a href="#%E8%8C%B6%E7%9A%84%E5%8F%8D%E5%AF%B9%E8%80%85">茶的反对者</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0-%E6%9F%8F%E6%9E%97%E5%A5%B3%E4%BA%BA%E7%9A%84%E5%BF%AB%E4%B9%90">第十七章 柏林女人的快乐</a>
+<ul>
+<li><a href="#%E6%83%8A%E4%BA%BA%E7%9A%84%E6%B6%88%E8%B4%B9">惊人的消费</a></li>
+<li><a href="#%E5%A5%B3%E4%BA%BA%E7%9A%84%E9%A5%AE%E6%96%99">女人的饮料</a></li>
+<li><a href="#%E6%97%85%E8%A1%8C%E4%BC%B4%E4%BE%A3">旅行伴侣</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0-%E5%A5%A5%E5%8C%88%E5%B8%9D%E5%9B%BD%E7%9A%84%E5%92%96%E5%95%A1%E9%A6%86%E4%B8%BB">第十八章 奥匈帝国的咖啡馆主</a>
+<ul>
+<li><a href="#%E5%92%96%E5%95%A1%E9%A6%86%E4%B8%8E%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB">咖啡馆与日常生活</a></li>
+<li><a href="#%E5%AF%B9%E6%96%87%E5%AD%A6%E7%9A%84%E6%BB%8B%E5%85%BB">对文学的滋养</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0-%E6%8A%95%E6%9C%BA%E5%92%8C%E8%A5%BF%E7%8F%AD%E7%89%99%E5%8D%B1%E6%9C%BA">第十九章 投机和西班牙危机</a>
+<ul>
+<li><a href="#%E8%83%BD%E9%87%8F%E5%BF%85%E9%9C%80%E5%93%81">能量必需品</a></li>
+<li><a href="#%E4%B9%B0%E7%A9%BA%E6%8A%95%E6%9C%BA">买空投机</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0-%E6%94%B6%E6%88%90%E5%B8%82%E5%9C%BA%E4%BB%B7%E6%A0%BC%E9%93%81%E4%B8%89%E8%A7%92">第二十章 收成—市场—价格“铁三角”</a>
+<ul>
+<li><a href="#%E6%B3%A2%E5%8A%A8%E7%9A%84%E4%BB%B7%E6%A0%BC">波动的价格</a></li>
+<li><a href="#%E4%BA%A4%E6%98%93%E6%89%80%E9%87%8C%E7%9A%84%E6%9A%97%E6%96%97">交易所里的暗斗</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%80%E7%AB%A0-%E5%9C%9F%E5%9C%B0%E5%B8%9D%E5%88%B6%E5%92%8C%E5%8A%B3%E5%8A%A8%E5%8A%9B%E9%97%AE%E9%A2%98">第二十一章 土地、帝制和劳动力问题</a>
+<ul>
+<li><a href="#%E4%B8%BB%E5%AF%BC%E5%92%96%E5%95%A1%E5%B8%82%E5%9C%BA">主导咖啡市场</a></li>
+<li><a href="#%E4%B8%8A%E5%B8%9D%E7%9A%84%E6%81%A9%E8%B5%90">上帝的恩赐</a></li>
+<li><a href="#%E5%BA%A6%E8%BF%87%E5%8A%B3%E5%8A%A8%E5%8A%9B%E5%8D%B1%E6%9C%BA">度过劳动力危机</a></li>
+<li><a href="#%E5%A4%96%E6%B1%87%E5%8A%A8%E8%8D%A1">外汇动荡</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E7%AB%A0-%E9%94%A1%E5%85%B0%E5%B2%9B%E5%92%96%E5%95%A1%E7%A7%8D%E6%A4%8D%E5%9B%AD%E7%9A%84%E6%B2%A1%E8%90%BD">第二十二章 锡兰岛咖啡种植园的没落</a>
+<ul>
+<li><a href="#%E5%92%96%E5%95%A1%E7%AB%9E%E8%B5%9B">咖啡竞赛</a></li>
+<li><a href="#%E9%94%A1%E5%85%B0%E5%B2%9B%E7%9A%84%E5%92%96%E5%95%A1">锡兰岛的咖啡</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E7%AB%A0-%E5%B7%B4%E8%A5%BF%E7%9A%84%E7%BB%8F%E6%B5%8E%E6%88%98">第二十三章 巴西的经济战</a>
+<ul>
+<li><a href="#%E7%BB%B4%E6%8C%81%E9%AB%98%E4%BB%B7%E7%9A%84%E6%96%B9%E6%B3%95">维持高价的方法</a></li>
+<li><a href="#%E5%BC%8A%E7%97%85%E4%B8%8E%E5%8D%B1%E6%9C%BA">弊病与危机</a></li>
+<li><a href="#%E6%94%BF%E5%BA%9C%E4%BB%8B%E5%85%A5%E5%B8%82%E5%9C%BA">政府介入市场</a></li>
+<li><a href="#%E9%98%B2%E5%BE%A1%E6%9C%BA%E6%9E%84%E7%9A%84%E5%A4%B1%E8%B4%A5">防御机构的失败</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%AB%A0-%E4%BB%8E%E7%90%86%E6%99%BA%E5%88%B0%E8%8D%92%E8%B0%AC%E5%92%96%E5%95%A1%E7%87%83%E7%83%A7%E8%B5%B7%E6%9D%A5">第二十四章 从理智到荒谬——咖啡燃烧起来！</a>
+<ul>
+<li><a href="#%E6%A1%91%E6%89%98%E6%96%AF%E7%9A%84%E7%81%AB%E7%84%B0">桑托斯的火焰</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E5%92%96%E5%95%A1%E9%97%AE%E9%A2%98">解决咖啡问题</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AB%A0-%E7%BB%88%E6%9B%B2">第二十五章 终曲</a></li>
+<li><a href="#%E7%BB%AD%E5%86%99%E5%8F%8A%E5%B1%95%E6%9C%9B">续写及展望</a></li>
+<li><a href="#%E9%99%84%E5%BD%95-%E4%B8%801950%E5%B9%B4%E8%87%B3%E4%BB%8A%E7%9A%84%E5%92%96%E5%95%A1%E4%B8%96%E7%95%8C">附录 一、1950年至今的咖啡世界</a>
+<ul>
+<li><a href="#%E9%9B%85%E5%90%84%E5%B8%83%E7%9A%84%E7%9B%B2%E7%82%B9">雅各布的盲点</a></li>
+<li><a href="#%E5%92%96%E5%95%A1%E7%9A%84%E6%88%90%E5%8A%9F%E7%A7%98%E8%AF%80">咖啡的成功秘诀</a></li>
+<li><a href="#%E5%92%96%E5%95%A1%E4%B8%96%E7%95%8C%E7%9A%84%E5%8F%98%E8%BF%81">咖啡世界的变迁</a></li>
+<li><a href="#%E7%94%9F%E4%BA%A7%E5%BD%A2%E5%BC%8F%E7%9A%84%E5%8F%98%E5%8C%96">生产形式的变化</a></li>
+<li><a href="#%E5%92%96%E5%95%A1%E9%93%BE%E4%B8%AD%E7%9A%84%E5%AE%9E%E5%8A%9B%E5%92%8C%E6%94%B6%E5%85%A5%E5%88%86%E9%85%8D">咖啡链中的实力和收入分配</a></li>
+<li><a href="#%E7%B2%BE%E5%93%81%E5%92%96%E5%95%A1%E9%9D%A9%E5%91%BD%E6%96%B0%E7%9A%84%E6%B6%88%E8%B4%B9%E6%A8%A1%E5%BC%8F">精品咖啡革命：新的消费模式</a></li>
+<li><a href="#%E7%BB%BF%E8%89%B2%E6%A0%87%E5%BF%97%E6%96%B0%E7%9A%84%E5%93%81%E8%B4%A8%E8%A7%82%E5%BF%B5">绿色标志：新的品质观念</a></li>
+<li><a href="#%E5%92%96%E5%95%A1%E7%9A%84%E6%9C%AA%E6%9D%A5">咖啡的未来</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

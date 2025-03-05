@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5bcc;&#x4eba;&#x601d;&#x7ef4;&#xff1a;&#x9ad8;&#x660e;&#x7684;&#x51b3;&#x7b56;&#x548c;&#x6295;&#x8d44;&#x8fdc;&#x6bd4;&#x4f4e;&#x6548;&#x7684;&#x52e4;&#x594b;&#x66f4;&#x91cd;&#x8981;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5bcc;&#x4eba;&#x601d;&#x7ef4;&#xff1a;&#x9ad8;&#x660e;&#x7684;&#x51b3;&#x7b56;&#x548c;&#x6295;&#x8d44;&#x8fdc;&#x6bd4;&#x4f4e;&#x6548;&#x7684;&#x52e4;&#x594b;&#x66f4;&#x91cd;&#x8981;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,185 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="富人思维高明的决策和投资远比低效的勤奋更重要">富人思维：高明的决策和投资远比低效的勤奋更重要</h1>
-<h2 id="美贾森卡拉卡尼斯jason-calacanis-著黄强-译">[美]贾森·卡拉卡尼斯（Jason Calacanis） 著|黄强 译</h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/9494.jpg"></td><td>
+<h1 id="富人思维高明的决策和投资远比低效的勤奋更重要">富人思维：高明的决策和投资远比低效的勤奋更重要</h1>
+<center>[美]贾森·卡拉卡尼斯（Jason Calacanis） 著|黄强 译</center>
+</td></tr></table>
+<div class="mycomment">
+<p>讲天使投资的。</p>
+</div>
+<h3 id="第1章-我为什么要写这本书">第1章 我为什么要写这本书</h3>
+<h3 id="第2章-来自布鲁克林的穷小子">第2章 来自布鲁克林的穷小子</h3>
+<h3 id="第3章-什么是天使投资">第3章 什么是天使投资？</h3>
+<h3 id="第4章-天使投资适合你吗">第4章 天使投资适合你吗？</h3>
+<h3 id="第5章-作为一个天使投资人你是否需要去硅谷">第5章 作为一个天使投资人，你是否需要去硅谷？</h3>
+<h3 id="第6章-硅谷为何如此特殊">第6章 硅谷为何如此特殊？</h3>
+<h3 id="第7章-创业公司融资流程">第7章 创业公司融资流程</h3>
+<h3 id="第8章-没钱如何进行天使投资">第8章 没钱如何进行天使投资</h3>
+<h3 id="第9章-作为顾问的得与失">第9章 作为顾问的得与失</h3>
+<h3 id="第10章-从校园直接到天使投资">第10章 从校园直接到天使投资</h3>
+<h3 id="第11章-如何开始天使投资联合投资">第11章 如何开始天使投资：联合投资</h3>
+<h3 id="第12章-第一个月前十个联合投资">第12章 第一个月：前十个联合投资</h3>
+<h3 id="第13章-第二个月投资人和创业者的30天约会">第13章 第二个月：投资人和创业者的30天约会</h3>
+<h3 id="第14章-我经历过的最好和最差的路演">第14章 我经历过的最好和最差的路演</h3>
+<h3 id="第15章-路演之前该如何准备">第15章 路演之前该如何准备</h3>
+<h3 id="第16章-在路演中该如何做">第16章 在路演中该如何做</h3>
+<h3 id="第17章-如何挑选好的创始人">第17章 如何挑选好的创始人</h3>
+<h3 id="第18章-为创业者准备的四个问题">第18章 为创业者准备的四个问题</h3>
+<h3 id="第19章-深入交流">第19章 深入交流</h3>
+<h3 id="第20章-如何区分创业者和骗子">第20章 如何区分创业者和骗子？</h3>
+<h3 id="第21章-项目评估">第21章 项目评估</h3>
+<h3 id="第22章-为什么要写项目备忘录">第22章 为什么要写项目备忘录</h3>
+<h3 id="第23章-如何拒绝一个项目">第23章 如何拒绝一个项目</h3>
+<h3 id="第24章-尽职调查">第24章 尽职调查</h3>
+<h3 id="第25章-你的第一笔投资">第25章 你的第一笔投资</h3>
+<h3 id="第26章-创业者该如何对待天使投资人">第26章 创业者该如何对待天使投资人</h3>
+<h3 id="第27章-月度汇报非常重要">第27章 月度汇报非常重要</h3>
+<h3 id="第28章-天使投资人难熬的第二年">第28章 天使投资人难熬的第二年</h3>
+<h3 id="第29章-勇往直前">第29章 勇往直前</h3>
+<h3 id="第30章-退出机制伟大的公司是用来买的不是用来卖的">第30章 退出机制：伟大的公司是用来买的，不是用来卖的</h3>
+<h3 id="第31章-找准你的节奏">第31章 找准你的节奏</h3>
+<h3 id="第32章-何时结束天使投资">第32章 何时结束天使投资</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E8%BF%99%E6%9C%AC%E4%B9%A6">第1章 我为什么要写这本书</a></li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E6%9D%A5%E8%87%AA%E5%B8%83%E9%B2%81%E5%85%8B%E6%9E%97%E7%9A%84%E7%A9%B7%E5%B0%8F%E5%AD%90">第2章 来自布鲁克林的穷小子</a></li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A9%E4%BD%BF%E6%8A%95%E8%B5%84">第3章 什么是天使投资？</a></li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E5%A4%A9%E4%BD%BF%E6%8A%95%E8%B5%84%E9%80%82%E5%90%88%E4%BD%A0%E5%90%97">第4章 天使投资适合你吗？</a></li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%A4%A9%E4%BD%BF%E6%8A%95%E8%B5%84%E4%BA%BA%E4%BD%A0%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%8E%BB%E7%A1%85%E8%B0%B7">第5章 作为一个天使投资人，你是否需要去硅谷？</a></li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E7%A1%85%E8%B0%B7%E4%B8%BA%E4%BD%95%E5%A6%82%E6%AD%A4%E7%89%B9%E6%AE%8A">第6章 硅谷为何如此特殊？</a></li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E8%9E%8D%E8%B5%84%E6%B5%81%E7%A8%8B">第7章 创业公司融资流程</a></li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E6%B2%A1%E9%92%B1%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%A4%A9%E4%BD%BF%E6%8A%95%E8%B5%84">第8章 没钱如何进行天使投资</a></li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E4%BD%9C%E4%B8%BA%E9%A1%BE%E9%97%AE%E7%9A%84%E5%BE%97%E4%B8%8E%E5%A4%B1">第9章 作为顾问的得与失</a></li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E4%BB%8E%E6%A0%A1%E5%9B%AD%E7%9B%B4%E6%8E%A5%E5%88%B0%E5%A4%A9%E4%BD%BF%E6%8A%95%E8%B5%84">第10章 从校园直接到天使投资</a></li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B%E5%A4%A9%E4%BD%BF%E6%8A%95%E8%B5%84%E8%81%94%E5%90%88%E6%8A%95%E8%B5%84">第11章 如何开始天使投资：联合投资</a></li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0-%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%88%E5%89%8D%E5%8D%81%E4%B8%AA%E8%81%94%E5%90%88%E6%8A%95%E8%B5%84">第12章 第一个月：前十个联合投资</a></li>
+<li><a href="#%E7%AC%AC13%E7%AB%A0-%E7%AC%AC%E4%BA%8C%E4%B8%AA%E6%9C%88%E6%8A%95%E8%B5%84%E4%BA%BA%E5%92%8C%E5%88%9B%E4%B8%9A%E8%80%85%E7%9A%8430%E5%A4%A9%E7%BA%A6%E4%BC%9A">第13章 第二个月：投资人和创业者的30天约会</a></li>
+<li><a href="#%E7%AC%AC14%E7%AB%A0-%E6%88%91%E7%BB%8F%E5%8E%86%E8%BF%87%E7%9A%84%E6%9C%80%E5%A5%BD%E5%92%8C%E6%9C%80%E5%B7%AE%E7%9A%84%E8%B7%AF%E6%BC%94">第14章 我经历过的最好和最差的路演</a></li>
+<li><a href="#%E7%AC%AC15%E7%AB%A0-%E8%B7%AF%E6%BC%94%E4%B9%8B%E5%89%8D%E8%AF%A5%E5%A6%82%E4%BD%95%E5%87%86%E5%A4%87">第15章 路演之前该如何准备</a></li>
+<li><a href="#%E7%AC%AC16%E7%AB%A0-%E5%9C%A8%E8%B7%AF%E6%BC%94%E4%B8%AD%E8%AF%A5%E5%A6%82%E4%BD%95%E5%81%9A">第16章 在路演中该如何做</a></li>
+<li><a href="#%E7%AC%AC17%E7%AB%A0-%E5%A6%82%E4%BD%95%E6%8C%91%E9%80%89%E5%A5%BD%E7%9A%84%E5%88%9B%E5%A7%8B%E4%BA%BA">第17章 如何挑选好的创始人</a></li>
+<li><a href="#%E7%AC%AC18%E7%AB%A0-%E4%B8%BA%E5%88%9B%E4%B8%9A%E8%80%85%E5%87%86%E5%A4%87%E7%9A%84%E5%9B%9B%E4%B8%AA%E9%97%AE%E9%A2%98">第18章 为创业者准备的四个问题</a></li>
+<li><a href="#%E7%AC%AC19%E7%AB%A0-%E6%B7%B1%E5%85%A5%E4%BA%A4%E6%B5%81">第19章 深入交流</a></li>
+<li><a href="#%E7%AC%AC20%E7%AB%A0-%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86%E5%88%9B%E4%B8%9A%E8%80%85%E5%92%8C%E9%AA%97%E5%AD%90">第20章 如何区分创业者和骗子？</a></li>
+<li><a href="#%E7%AC%AC21%E7%AB%A0-%E9%A1%B9%E7%9B%AE%E8%AF%84%E4%BC%B0">第21章 项目评估</a></li>
+<li><a href="#%E7%AC%AC22%E7%AB%A0-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E9%A1%B9%E7%9B%AE%E5%A4%87%E5%BF%98%E5%BD%95">第22章 为什么要写项目备忘录</a></li>
+<li><a href="#%E7%AC%AC23%E7%AB%A0-%E5%A6%82%E4%BD%95%E6%8B%92%E7%BB%9D%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE">第23章 如何拒绝一个项目</a></li>
+<li><a href="#%E7%AC%AC24%E7%AB%A0-%E5%B0%BD%E8%81%8C%E8%B0%83%E6%9F%A5">第24章 尽职调查</a></li>
+<li><a href="#%E7%AC%AC25%E7%AB%A0-%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AC%94%E6%8A%95%E8%B5%84">第25章 你的第一笔投资</a></li>
+<li><a href="#%E7%AC%AC26%E7%AB%A0-%E5%88%9B%E4%B8%9A%E8%80%85%E8%AF%A5%E5%A6%82%E4%BD%95%E5%AF%B9%E5%BE%85%E5%A4%A9%E4%BD%BF%E6%8A%95%E8%B5%84%E4%BA%BA">第26章 创业者该如何对待天使投资人</a></li>
+<li><a href="#%E7%AC%AC27%E7%AB%A0-%E6%9C%88%E5%BA%A6%E6%B1%87%E6%8A%A5%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81">第27章 月度汇报非常重要</a></li>
+<li><a href="#%E7%AC%AC28%E7%AB%A0-%E5%A4%A9%E4%BD%BF%E6%8A%95%E8%B5%84%E4%BA%BA%E9%9A%BE%E7%86%AC%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%B9%B4">第28章 天使投资人难熬的第二年</a></li>
+<li><a href="#%E7%AC%AC29%E7%AB%A0-%E5%8B%87%E5%BE%80%E7%9B%B4%E5%89%8D">第29章 勇往直前</a></li>
+<li><a href="#%E7%AC%AC30%E7%AB%A0-%E9%80%80%E5%87%BA%E6%9C%BA%E5%88%B6%E4%BC%9F%E5%A4%A7%E7%9A%84%E5%85%AC%E5%8F%B8%E6%98%AF%E7%94%A8%E6%9D%A5%E4%B9%B0%E7%9A%84%E4%B8%8D%E6%98%AF%E7%94%A8%E6%9D%A5%E5%8D%96%E7%9A%84">第30章 退出机制：伟大的公司是用来买的，不是用来卖的</a></li>
+<li><a href="#%E7%AC%AC31%E7%AB%A0-%E6%89%BE%E5%87%86%E4%BD%A0%E7%9A%84%E8%8A%82%E5%A5%8F">第31章 找准你的节奏</a></li>
+<li><a href="#%E7%AC%AC32%E7%AB%A0-%E4%BD%95%E6%97%B6%E7%BB%93%E6%9D%9F%E5%A4%A9%E4%BD%BF%E6%8A%95%E8%B5%84">第32章 何时结束天使投资</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x975e;&#x7406;&#x6027;&#x51b3;&#x7b56;&#xff1a;&#x5728;&#x4fe1;&#x606f;&#x7126;&#x8651;&#x7684;&#x65f6;&#x4ee3;&#x5982;&#x4f55;&#x638c;&#x63e1;&#x771f;&#x76f8;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x975e;&#x7406;&#x6027;&#x51b3;&#x7b56;&#xff1a;&#x5728;&#x4fe1;&#x606f;&#x7126;&#x8651;&#x7684;&#x65f6;&#x4ee3;&#x5982;&#x4f55;&#x638c;&#x63e1;&#x771f;&#x76f8;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,198 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="非理性决策在信息焦虑的时代如何掌握真相">非理性决策：在信息焦虑的时代如何掌握真相</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/10963.jpg"></td><td>
+<h1 id="非理性决策在信息焦虑的时代如何掌握真相">非理性决策：在信息焦虑的时代如何掌握真相</h1>
+<center>[爱尔兰]大卫·罗伯特·格兰姆斯（David Robert Grimes） 著|朱晔 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="引子">引子</h3>
+<h3 id="导言从荒唐到暴行">导言：从荒唐到暴行</h3>
+<h3 id="第一部分-不讲道理">第一部分 不讲道理</h3>
+<h4 id="1-不正当的主张">1 不正当的主张</h4>
+<h4 id="2-归于荒谬">2 归于荒谬</h4>
+<h4 id="3-不合逻辑">3 不合逻辑</h4>
+<h3 id="第二部分-纯粹又简单的真相">第二部分 纯粹又简单的真相？</h3>
+<h4 id="4-细节中的魔鬼">4 细节中的魔鬼</h4>
+<h4 id="5-无风也起浪">5 无风也起浪</h4>
+<h4 id="6-野兽的本性">6 野兽的本性</h4>
+<h4 id="7-诱饵-调包手法">7 诱饵-调包手法</h4>
+<h3 id="第三部分-头脑的陷阱">第三部分 头脑的陷阱</h3>
+<h4 id="8-薛定谔式的本拉登">8 薛定谔式的本·拉登</h4>
+<h4 id="9-残留的记忆">9 残留的记忆</h4>
+<h4 id="10-头脑中的匕首">10 头脑中的匕首</h4>
+<h4 id="11-强烈的期待">11 强烈的期待</h4>
+<h3 id="第四部分-谎言大谎言和统计数据">第四部分 谎言、大谎言和统计数据</h3>
+<h4 id="12-无巧不成书">12 无巧不成书</h4>
+<h4 id="13-筛选信号">13 筛选信号</h4>
+<h4 id="14-大小很重要">14 大小很重要</h4>
+<h3 id="第五部分-世界新闻">第五部分 世界新闻</h3>
+<h4 id="15-不平衡的平衡">15 不平衡的平衡</h4>
+<h4 id="16-回音室里的故事">16 “回音室”里的故事</h4>
+<h4 id="17-愤怒制造机">17 愤怒制造机</h4>
+<h4 id="18-那些糟糕的网红">18 那些糟糕的网红</h4>
+<h3 id="第六部分-黑暗里的微光">第六部分 黑暗里的微光</h3>
+<h4 id="19-科学的边界">19 科学的边界</h4>
+<h4 id="20-草包族的兴起">20 “草包族”的兴起</h4>
+<h4 id="21-合理的怀疑精神">21 合理的怀疑精神</h4>
+<h3 id="尾声">尾声</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BC%95%E5%AD%90">引子</a></li>
+<li><a href="#%E5%AF%BC%E8%A8%80%E4%BB%8E%E8%8D%92%E5%94%90%E5%88%B0%E6%9A%B4%E8%A1%8C">导言：从荒唐到暴行</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E4%B8%8D%E8%AE%B2%E9%81%93%E7%90%86">第一部分 不讲道理</a>
+<ul>
+<li><a href="#1-%E4%B8%8D%E6%AD%A3%E5%BD%93%E7%9A%84%E4%B8%BB%E5%BC%A0">1 不正当的主张</a></li>
+<li><a href="#2-%E5%BD%92%E4%BA%8E%E8%8D%92%E8%B0%AC">2 归于荒谬</a></li>
+<li><a href="#3-%E4%B8%8D%E5%90%88%E9%80%BB%E8%BE%91">3 不合逻辑</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E7%BA%AF%E7%B2%B9%E5%8F%88%E7%AE%80%E5%8D%95%E7%9A%84%E7%9C%9F%E7%9B%B8">第二部分 纯粹又简单的真相？</a>
+<ul>
+<li><a href="#4-%E7%BB%86%E8%8A%82%E4%B8%AD%E7%9A%84%E9%AD%94%E9%AC%BC">4 细节中的魔鬼</a></li>
+<li><a href="#5-%E6%97%A0%E9%A3%8E%E4%B9%9F%E8%B5%B7%E6%B5%AA">5 无风也起浪</a></li>
+<li><a href="#6-%E9%87%8E%E5%85%BD%E7%9A%84%E6%9C%AC%E6%80%A7">6 野兽的本性</a></li>
+<li><a href="#7-%E8%AF%B1%E9%A5%B5-%E8%B0%83%E5%8C%85%E6%89%8B%E6%B3%95">7 诱饵-调包手法</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E5%A4%B4%E8%84%91%E7%9A%84%E9%99%B7%E9%98%B1">第三部分 头脑的陷阱</a>
+<ul>
+<li><a href="#8-%E8%96%9B%E5%AE%9A%E8%B0%94%E5%BC%8F%E7%9A%84%E6%9C%AC%E6%8B%89%E7%99%BB">8 薛定谔式的本·拉登</a></li>
+<li><a href="#9-%E6%AE%8B%E7%95%99%E7%9A%84%E8%AE%B0%E5%BF%86">9 残留的记忆</a></li>
+<li><a href="#10-%E5%A4%B4%E8%84%91%E4%B8%AD%E7%9A%84%E5%8C%95%E9%A6%96">10 头脑中的匕首</a></li>
+<li><a href="#11-%E5%BC%BA%E7%83%88%E7%9A%84%E6%9C%9F%E5%BE%85">11 强烈的期待</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E8%B0%8E%E8%A8%80%E5%A4%A7%E8%B0%8E%E8%A8%80%E5%92%8C%E7%BB%9F%E8%AE%A1%E6%95%B0%E6%8D%AE">第四部分 谎言、大谎言和统计数据</a>
+<ul>
+<li><a href="#12-%E6%97%A0%E5%B7%A7%E4%B8%8D%E6%88%90%E4%B9%A6">12 无巧不成书</a></li>
+<li><a href="#13-%E7%AD%9B%E9%80%89%E4%BF%A1%E5%8F%B7">13 筛选信号</a></li>
+<li><a href="#14-%E5%A4%A7%E5%B0%8F%E5%BE%88%E9%87%8D%E8%A6%81">14 大小很重要</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E4%B8%96%E7%95%8C%E6%96%B0%E9%97%BB">第五部分 世界新闻</a>
+<ul>
+<li><a href="#15-%E4%B8%8D%E5%B9%B3%E8%A1%A1%E7%9A%84%E5%B9%B3%E8%A1%A1">15 不平衡的平衡</a></li>
+<li><a href="#16-%E5%9B%9E%E9%9F%B3%E5%AE%A4%E9%87%8C%E7%9A%84%E6%95%85%E4%BA%8B">16 “回音室”里的故事</a></li>
+<li><a href="#17-%E6%84%A4%E6%80%92%E5%88%B6%E9%80%A0%E6%9C%BA">17 愤怒制造机</a></li>
+<li><a href="#18-%E9%82%A3%E4%BA%9B%E7%B3%9F%E7%B3%95%E7%9A%84%E7%BD%91%E7%BA%A2">18 那些糟糕的网红</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E9%BB%91%E6%9A%97%E9%87%8C%E7%9A%84%E5%BE%AE%E5%85%89">第六部分 黑暗里的微光</a>
+<ul>
+<li><a href="#19-%E7%A7%91%E5%AD%A6%E7%9A%84%E8%BE%B9%E7%95%8C">19 科学的边界</a></li>
+<li><a href="#20-%E8%8D%89%E5%8C%85%E6%97%8F%E7%9A%84%E5%85%B4%E8%B5%B7">20 “草包族”的兴起</a></li>
+<li><a href="#21-%E5%90%88%E7%90%86%E7%9A%84%E6%80%80%E7%96%91%E7%B2%BE%E7%A5%9E">21 合理的怀疑精神</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B0%BE%E5%A3%B0">尾声</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5999;&#x8da3;&#x6a2a;&#x751f;&#x7684;&#x56fd;&#x503a;&#x671f;&#x8d27;&#xff1a;&#x8ddf;&#x5c0f;&#x8239;&#x5b66;&#x56fd;&#x503a;&#x671f;&#x8d27;&#x4ea4;&#x6613;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5999;&#x8da3;&#x6a2a;&#x751f;&#x7684;&#x56fd;&#x503a;&#x671f;&#x8d27;&#xff1a;&#x8ddf;&#x5c0f;&#x8239;&#x5b66;&#x56fd;&#x503a;&#x671f;&#x8d27;&#x4ea4;&#x6613;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,323 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="妙趣横生的国债期货跟小船学国债期货交易">妙趣横生的国债期货：跟小船学国债期货交易</h1>
-<h2 id="王舟-著">王舟 著</h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/9621.jpg"></td><td>
+<h1 id="妙趣横生的国债期货跟小船学国债期货交易">妙趣横生的国债期货：跟小船学国债期货交易</h1>
+<center>王舟</center>
+</td></tr></table>
+<div class="mycomment">
+<p>故事形式，注重科普实操，以理论上的不严谨换取内容的通俗易懂，适合作为科普入门书。</p>
+</div>
+<h3 id="推荐序">推荐序</h3>
+<h3 id="前言">前言</h3>
+<h2 id="第一部分-椰子冻学债券">第一部分 椰子冻学债券</h2>
+<h3 id="第1章-债券基础知识">第1章 债券基础知识</h3>
+<h4 id="11-债券的概念小船的借条">1.1 债券的概念：小船的借条</h4>
+<h4 id="12-债券的不同类型">1.2 债券的不同类型</h4>
+<h4 id="13-债券价格的变化">1.3 债券价格的变化</h4>
+<h4 id="14-债券的到期收益率">1.4 债券的到期收益率</h4>
+<h4 id="15-到期收益率的走势与收益率曲线">1.5 到期收益率的走势与收益率曲线</h4>
+<h3 id="第2章-债券计算与市场分析">第2章 债券计算与市场分析</h3>
+<h4 id="21-货币的时间价值">2.1 货币的时间价值</h4>
+<h4 id="22-简单债券价格计算">2.2 简单债券价格计算</h4>
+<h4 id="23-净价全价与应计利息">2.3 净价、全价与应计利息</h4>
+<h4 id="24-债券价格与收益率特征">2.4 债券价格与收益率特征</h4>
+<h4 id="25-债券投资的利率风险">2.5 债券投资的利率风险</h4>
+<h4 id="26-久期基点价值与凸性">2.6 久期、基点价值与凸性</h4>
+<h4 id="27-债券市场分析">2.7 债券市场分析</h4>
+<h2 id="第二部分-国债期货原理与应用">第二部分 国债期货原理与应用</h2>
+<h3 id="第3章-掀起你的盖头来初识国债期货">第3章 “掀起你的盖头来”：初识国债期货</h3>
+<h4 id="31-远期与期货球鞋买卖协议">3.1 远期与期货：球鞋买卖协议</h4>
+<h4 id="32-国债">3.2 国债</h4>
+<h4 id="33-国债期货合约">3.3 国债期货合约</h4>
+<h4 id="34-国债期货的运用">3.4 国债期货的运用</h4>
+<h3 id="第4章-国债与期货的亲密关系国债期货基差">第4章 国债与期货的亲密关系：国债期货基差</h3>
+<h4 id="41-基差">4.1 基差</h4>
+<h4 id="42-基差收敛">4.2 基差收敛</h4>
+<h4 id="43-基差交易的基本概念">4.3 基差交易的基本概念</h4>
+<h4 id="44-基差走势分析">4.4 基差走势分析</h4>
+<h4 id="45-实际运行中需要注意的问题">4.5 实际运行中需要注意的问题</h4>
+<h4 id="46-关于t1703合约的补充说明">4.6 关于T1703合约的补充说明</h4>
+<h3 id="第5章-期货定价不神秘基差与国债期货的定价原理">第5章 期货定价不神秘：基差与国债期货的定价原理</h3>
+<h4 id="51-国债期货的定价思路">5.1 国债期货的定价思路</h4>
+<h4 id="52-隐含回购利率">5.2 隐含回购利率</h4>
+<h4 id="53-ctd国债">5.3 CTD国债</h4>
+<h4 id="54-净基差">5.4 净基差</h4>
+<h4 id="55-无风险套利">5.5 无风险套利</h4>
+<h3 id="第6章-能不能做个纯洁的国债期货国债期货中的期权">第6章 能不能做个“纯洁”的国债期货：国债期货中的期权</h3>
+<h4 id="61-交割期权概述">6.1 交割期权概述</h4>
+<h4 id="62-细说转换因子">6.2 细说转换因子</h4>
+<h4 id="63-久期与ctd国债">6.3 久期与CTD国债</h4>
+<h4 id="64-收益率曲线形状变化">6.4 收益率曲线形状变化</h4>
+<h4 id="65-bnoc与期权">6.5 BNOC与期权</h4>
+<h4 id="附录6a-转换因子计算公式">附录6A 转换因子计算公式</h4>
+<h4 id="附录6b-转换因子的一些特征">附录6B 转换因子的一些特征</h4>
+<h4 id="附录6c-交割期权价值补充说明">附录6C 交割期权价值补充说明</h4>
+<h3 id="第7章-光说不练假把式国债期货计算实战">第7章 光说不练假把式：国债期货计算实战</h3>
+<h4 id="71-基差计算">7.1 基差计算</h4>
+<h4 id="72-持有收益计算">7.2 持有收益计算</h4>
+<h4 id="73-净基差计算">7.3 净基差计算</h4>
+<h4 id="74-发票价格计算">7.4 发票价格计算</h4>
+<h4 id="75-隐含回购利率计算">7.5 隐含回购利率计算</h4>
+<h4 id="76-数字精度">7.6 数字精度</h4>
+<h3 id="第8章-此期权非彼期权基差的期权特征">第8章 此期权非彼期权：基差的期权特征</h3>
+<h4 id="81-基差交易">8.1 基差交易</h4>
+<h4 id="82-简易看涨期权">8.2 简易看涨期权</h4>
+<h4 id="83-简易看跌期权">8.3 简易看跌期权</h4>
+<h4 id="84-基差的期权特征">8.4 基差的期权特征</h4>
+<h4 id="85-简易跨式期权">8.5 简易跨式期权</h4>
+<h4 id="86-基差期权特征的运用">8.6 基差期权特征的运用</h4>
+<h4 id="87-一个实际的例子">8.7 一个实际的例子</h4>
+<h3 id="第9章-价格之间有内涵跨期价差基础">第9章 价格之间有内涵：跨期价差基础</h3>
+<h4 id="91-跨期价差的定义">9.1 跨期价差的定义</h4>
+<h4 id="92-理论跨期价差的推导">9.2 理论跨期价差的推导</h4>
+<h4 id="93-跨期价差的另一种视角">9.3 跨期价差的另一种视角</h4>
+<h3 id="第10章-追求多一点的概率跨期价差交易策略">第10章 追求多一点的概率：跨期价差交易策略</h3>
+<h4 id="101-理论定价偏差">10.1 理论定价偏差</h4>
+<h4 id="102-临近交割月规律">10.2 临近交割月规律</h4>
+<h4 id="103-换月移仓规律">10.3 换月移仓规律</h4>
+<h4 id="104-利用主力合约的波动性">10.4 利用主力合约的波动性</h4>
+<h4 id="105-跨期价差分析">10.5 跨期价差分析</h4>
+<h3 id="第11章-曲线交易的选择跨品种交易及其策略">第11章 曲线交易的选择：跨品种交易及其策略</h3>
+<h4 id="111-跨品种交易的原理">11.1 跨品种交易的原理</h4>
+<h4 id="112-跨品种交易的思路与策略">11.2 跨品种交易的思路与策略</h4>
+<h4 id="113-跨品种交易实例">11.3 跨品种交易实例</h4>
+<h3 id="第12章-国债期货的天然使命套期保值的运用">第12章 国债期货的天然使命：套期保值的运用</h3>
+<h4 id="121-套期保值的基本概念与原理">12.1 套期保值的基本概念与原理</h4>
+<h4 id="122-完美套期保值案例">12.2 完美套期保值案例</h4>
+<h4 id="123-套期保值比率">12.3 套期保值比率</h4>
+<h4 id="124-实战计算">12.4 实战计算</h4>
+<h4 id="125-套期保值比率的调整收益率β调整法">12.5 套期保值比率的调整：收益率β调整法</h4>
+<h4 id="126-收益率β的调整计算">12.6 收益率β的调整计算</h4>
+<h4 id="127-调整套期保值比率的情况">12.7 调整套期保值比率的情况</h4>
+<h4 id="128-补充说明资金成本与期权">12.8 补充说明：资金成本与期权</h4>
+<h3 id="后记">后记</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F">推荐序</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E5%80%BA%E5%88%B8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86">第1章 债券基础知识</a>
+<ul>
+<li><a href="#11-%E5%80%BA%E5%88%B8%E7%9A%84%E6%A6%82%E5%BF%B5%E5%B0%8F%E8%88%B9%E7%9A%84%E5%80%9F%E6%9D%A1">1.1 债券的概念：小船的借条</a></li>
+<li><a href="#12-%E5%80%BA%E5%88%B8%E7%9A%84%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B">1.2 债券的不同类型</a></li>
+<li><a href="#13-%E5%80%BA%E5%88%B8%E4%BB%B7%E6%A0%BC%E7%9A%84%E5%8F%98%E5%8C%96">1.3 债券价格的变化</a></li>
+<li><a href="#14-%E5%80%BA%E5%88%B8%E7%9A%84%E5%88%B0%E6%9C%9F%E6%94%B6%E7%9B%8A%E7%8E%87">1.4 债券的到期收益率</a></li>
+<li><a href="#15-%E5%88%B0%E6%9C%9F%E6%94%B6%E7%9B%8A%E7%8E%87%E7%9A%84%E8%B5%B0%E5%8A%BF%E4%B8%8E%E6%94%B6%E7%9B%8A%E7%8E%87%E6%9B%B2%E7%BA%BF">1.5 到期收益率的走势与收益率曲线</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E5%80%BA%E5%88%B8%E8%AE%A1%E7%AE%97%E4%B8%8E%E5%B8%82%E5%9C%BA%E5%88%86%E6%9E%90">第2章 债券计算与市场分析</a>
+<ul>
+<li><a href="#21-%E8%B4%A7%E5%B8%81%E7%9A%84%E6%97%B6%E9%97%B4%E4%BB%B7%E5%80%BC">2.1 货币的时间价值</a></li>
+<li><a href="#22-%E7%AE%80%E5%8D%95%E5%80%BA%E5%88%B8%E4%BB%B7%E6%A0%BC%E8%AE%A1%E7%AE%97">2.2 简单债券价格计算</a></li>
+<li><a href="#23-%E5%87%80%E4%BB%B7%E5%85%A8%E4%BB%B7%E4%B8%8E%E5%BA%94%E8%AE%A1%E5%88%A9%E6%81%AF">2.3 净价、全价与应计利息</a></li>
+<li><a href="#24-%E5%80%BA%E5%88%B8%E4%BB%B7%E6%A0%BC%E4%B8%8E%E6%94%B6%E7%9B%8A%E7%8E%87%E7%89%B9%E5%BE%81">2.4 债券价格与收益率特征</a></li>
+<li><a href="#25-%E5%80%BA%E5%88%B8%E6%8A%95%E8%B5%84%E7%9A%84%E5%88%A9%E7%8E%87%E9%A3%8E%E9%99%A9">2.5 债券投资的利率风险</a></li>
+<li><a href="#26-%E4%B9%85%E6%9C%9F%E5%9F%BA%E7%82%B9%E4%BB%B7%E5%80%BC%E4%B8%8E%E5%87%B8%E6%80%A7">2.6 久期、基点价值与凸性</a></li>
+<li><a href="#27-%E5%80%BA%E5%88%B8%E5%B8%82%E5%9C%BA%E5%88%86%E6%9E%90">2.7 债券市场分析</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E6%8E%80%E8%B5%B7%E4%BD%A0%E7%9A%84%E7%9B%96%E5%A4%B4%E6%9D%A5%E5%88%9D%E8%AF%86%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7">第3章 “掀起你的盖头来”：初识国债期货</a>
+<ul>
+<li><a href="#31-%E8%BF%9C%E6%9C%9F%E4%B8%8E%E6%9C%9F%E8%B4%A7%E7%90%83%E9%9E%8B%E4%B9%B0%E5%8D%96%E5%8D%8F%E8%AE%AE">3.1 远期与期货：球鞋买卖协议</a></li>
+<li><a href="#32-%E5%9B%BD%E5%80%BA">3.2 国债</a></li>
+<li><a href="#33-%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7%E5%90%88%E7%BA%A6">3.3 国债期货合约</a></li>
+<li><a href="#34-%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7%E7%9A%84%E8%BF%90%E7%94%A8">3.4 国债期货的运用</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E5%9B%BD%E5%80%BA%E4%B8%8E%E6%9C%9F%E8%B4%A7%E7%9A%84%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7%E5%9F%BA%E5%B7%AE">第4章 国债与期货的亲密关系：国债期货基差</a>
+<ul>
+<li><a href="#41-%E5%9F%BA%E5%B7%AE">4.1 基差</a></li>
+<li><a href="#42-%E5%9F%BA%E5%B7%AE%E6%94%B6%E6%95%9B">4.2 基差收敛</a></li>
+<li><a href="#43-%E5%9F%BA%E5%B7%AE%E4%BA%A4%E6%98%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">4.3 基差交易的基本概念</a></li>
+<li><a href="#44-%E5%9F%BA%E5%B7%AE%E8%B5%B0%E5%8A%BF%E5%88%86%E6%9E%90">4.4 基差走势分析</a></li>
+<li><a href="#45-%E5%AE%9E%E9%99%85%E8%BF%90%E8%A1%8C%E4%B8%AD%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98">4.5 实际运行中需要注意的问题</a></li>
+<li><a href="#46-%E5%85%B3%E4%BA%8Et1703%E5%90%88%E7%BA%A6%E7%9A%84%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">4.6 关于T1703合约的补充说明</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E6%9C%9F%E8%B4%A7%E5%AE%9A%E4%BB%B7%E4%B8%8D%E7%A5%9E%E7%A7%98%E5%9F%BA%E5%B7%AE%E4%B8%8E%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7%E7%9A%84%E5%AE%9A%E4%BB%B7%E5%8E%9F%E7%90%86">第5章 期货定价不神秘：基差与国债期货的定价原理</a>
+<ul>
+<li><a href="#51-%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7%E7%9A%84%E5%AE%9A%E4%BB%B7%E6%80%9D%E8%B7%AF">5.1 国债期货的定价思路</a></li>
+<li><a href="#52-%E9%9A%90%E5%90%AB%E5%9B%9E%E8%B4%AD%E5%88%A9%E7%8E%87">5.2 隐含回购利率</a></li>
+<li><a href="#53-ctd%E5%9B%BD%E5%80%BA">5.3 CTD国债</a></li>
+<li><a href="#54-%E5%87%80%E5%9F%BA%E5%B7%AE">5.4 净基差</a></li>
+<li><a href="#55-%E6%97%A0%E9%A3%8E%E9%99%A9%E5%A5%97%E5%88%A9">5.5 无风险套利</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E8%83%BD%E4%B8%8D%E8%83%BD%E5%81%9A%E4%B8%AA%E7%BA%AF%E6%B4%81%E7%9A%84%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7%E4%B8%AD%E7%9A%84%E6%9C%9F%E6%9D%83">第6章 能不能做个“纯洁”的国债期货：国债期货中的期权</a>
+<ul>
+<li><a href="#61-%E4%BA%A4%E5%89%B2%E6%9C%9F%E6%9D%83%E6%A6%82%E8%BF%B0">6.1 交割期权概述</a></li>
+<li><a href="#62-%E7%BB%86%E8%AF%B4%E8%BD%AC%E6%8D%A2%E5%9B%A0%E5%AD%90">6.2 细说转换因子</a></li>
+<li><a href="#63-%E4%B9%85%E6%9C%9F%E4%B8%8Ectd%E5%9B%BD%E5%80%BA">6.3 久期与CTD国债</a></li>
+<li><a href="#64-%E6%94%B6%E7%9B%8A%E7%8E%87%E6%9B%B2%E7%BA%BF%E5%BD%A2%E7%8A%B6%E5%8F%98%E5%8C%96">6.4 收益率曲线形状变化</a></li>
+<li><a href="#65-bnoc%E4%B8%8E%E6%9C%9F%E6%9D%83">6.5 BNOC与期权</a></li>
+<li><a href="#%E9%99%84%E5%BD%956a-%E8%BD%AC%E6%8D%A2%E5%9B%A0%E5%AD%90%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F">附录6A 转换因子计算公式</a></li>
+<li><a href="#%E9%99%84%E5%BD%956b-%E8%BD%AC%E6%8D%A2%E5%9B%A0%E5%AD%90%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E5%BE%81">附录6B 转换因子的一些特征</a></li>
+<li><a href="#%E9%99%84%E5%BD%956c-%E4%BA%A4%E5%89%B2%E6%9C%9F%E6%9D%83%E4%BB%B7%E5%80%BC%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">附录6C 交割期权价值补充说明</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E5%85%89%E8%AF%B4%E4%B8%8D%E7%BB%83%E5%81%87%E6%8A%8A%E5%BC%8F%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7%E8%AE%A1%E7%AE%97%E5%AE%9E%E6%88%98">第7章 光说不练假把式：国债期货计算实战</a>
+<ul>
+<li><a href="#71-%E5%9F%BA%E5%B7%AE%E8%AE%A1%E7%AE%97">7.1 基差计算</a></li>
+<li><a href="#72-%E6%8C%81%E6%9C%89%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97">7.2 持有收益计算</a></li>
+<li><a href="#73-%E5%87%80%E5%9F%BA%E5%B7%AE%E8%AE%A1%E7%AE%97">7.3 净基差计算</a></li>
+<li><a href="#74-%E5%8F%91%E7%A5%A8%E4%BB%B7%E6%A0%BC%E8%AE%A1%E7%AE%97">7.4 发票价格计算</a></li>
+<li><a href="#75-%E9%9A%90%E5%90%AB%E5%9B%9E%E8%B4%AD%E5%88%A9%E7%8E%87%E8%AE%A1%E7%AE%97">7.5 隐含回购利率计算</a></li>
+<li><a href="#76-%E6%95%B0%E5%AD%97%E7%B2%BE%E5%BA%A6">7.6 数字精度</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E6%AD%A4%E6%9C%9F%E6%9D%83%E9%9D%9E%E5%BD%BC%E6%9C%9F%E6%9D%83%E5%9F%BA%E5%B7%AE%E7%9A%84%E6%9C%9F%E6%9D%83%E7%89%B9%E5%BE%81">第8章 此期权非彼期权：基差的期权特征</a>
+<ul>
+<li><a href="#81-%E5%9F%BA%E5%B7%AE%E4%BA%A4%E6%98%93">8.1 基差交易</a></li>
+<li><a href="#82-%E7%AE%80%E6%98%93%E7%9C%8B%E6%B6%A8%E6%9C%9F%E6%9D%83">8.2 简易看涨期权</a></li>
+<li><a href="#83-%E7%AE%80%E6%98%93%E7%9C%8B%E8%B7%8C%E6%9C%9F%E6%9D%83">8.3 简易看跌期权</a></li>
+<li><a href="#84-%E5%9F%BA%E5%B7%AE%E7%9A%84%E6%9C%9F%E6%9D%83%E7%89%B9%E5%BE%81">8.4 基差的期权特征</a></li>
+<li><a href="#85-%E7%AE%80%E6%98%93%E8%B7%A8%E5%BC%8F%E6%9C%9F%E6%9D%83">8.5 简易跨式期权</a></li>
+<li><a href="#86-%E5%9F%BA%E5%B7%AE%E6%9C%9F%E6%9D%83%E7%89%B9%E5%BE%81%E7%9A%84%E8%BF%90%E7%94%A8">8.6 基差期权特征的运用</a></li>
+<li><a href="#87-%E4%B8%80%E4%B8%AA%E5%AE%9E%E9%99%85%E7%9A%84%E4%BE%8B%E5%AD%90">8.7 一个实际的例子</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E4%BB%B7%E6%A0%BC%E4%B9%8B%E9%97%B4%E6%9C%89%E5%86%85%E6%B6%B5%E8%B7%A8%E6%9C%9F%E4%BB%B7%E5%B7%AE%E5%9F%BA%E7%A1%80">第9章 价格之间有内涵：跨期价差基础</a>
+<ul>
+<li><a href="#91-%E8%B7%A8%E6%9C%9F%E4%BB%B7%E5%B7%AE%E7%9A%84%E5%AE%9A%E4%B9%89">9.1 跨期价差的定义</a></li>
+<li><a href="#92-%E7%90%86%E8%AE%BA%E8%B7%A8%E6%9C%9F%E4%BB%B7%E5%B7%AE%E7%9A%84%E6%8E%A8%E5%AF%BC">9.2 理论跨期价差的推导</a></li>
+<li><a href="#93-%E8%B7%A8%E6%9C%9F%E4%BB%B7%E5%B7%AE%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E8%A7%86%E8%A7%92">9.3 跨期价差的另一种视角</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E8%BF%BD%E6%B1%82%E5%A4%9A%E4%B8%80%E7%82%B9%E7%9A%84%E6%A6%82%E7%8E%87%E8%B7%A8%E6%9C%9F%E4%BB%B7%E5%B7%AE%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5">第10章 追求多一点的概率：跨期价差交易策略</a>
+<ul>
+<li><a href="#101-%E7%90%86%E8%AE%BA%E5%AE%9A%E4%BB%B7%E5%81%8F%E5%B7%AE">10.1 理论定价偏差</a></li>
+<li><a href="#102-%E4%B8%B4%E8%BF%91%E4%BA%A4%E5%89%B2%E6%9C%88%E8%A7%84%E5%BE%8B">10.2 临近交割月规律</a></li>
+<li><a href="#103-%E6%8D%A2%E6%9C%88%E7%A7%BB%E4%BB%93%E8%A7%84%E5%BE%8B">10.3 换月移仓规律</a></li>
+<li><a href="#104-%E5%88%A9%E7%94%A8%E4%B8%BB%E5%8A%9B%E5%90%88%E7%BA%A6%E7%9A%84%E6%B3%A2%E5%8A%A8%E6%80%A7">10.4 利用主力合约的波动性</a></li>
+<li><a href="#105-%E8%B7%A8%E6%9C%9F%E4%BB%B7%E5%B7%AE%E5%88%86%E6%9E%90">10.5 跨期价差分析</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E6%9B%B2%E7%BA%BF%E4%BA%A4%E6%98%93%E7%9A%84%E9%80%89%E6%8B%A9%E8%B7%A8%E5%93%81%E7%A7%8D%E4%BA%A4%E6%98%93%E5%8F%8A%E5%85%B6%E7%AD%96%E7%95%A5">第11章 曲线交易的选择：跨品种交易及其策略</a>
+<ul>
+<li><a href="#111-%E8%B7%A8%E5%93%81%E7%A7%8D%E4%BA%A4%E6%98%93%E7%9A%84%E5%8E%9F%E7%90%86">11.1 跨品种交易的原理</a></li>
+<li><a href="#112-%E8%B7%A8%E5%93%81%E7%A7%8D%E4%BA%A4%E6%98%93%E7%9A%84%E6%80%9D%E8%B7%AF%E4%B8%8E%E7%AD%96%E7%95%A5">11.2 跨品种交易的思路与策略</a></li>
+<li><a href="#113-%E8%B7%A8%E5%93%81%E7%A7%8D%E4%BA%A4%E6%98%93%E5%AE%9E%E4%BE%8B">11.3 跨品种交易实例</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0-%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7%E7%9A%84%E5%A4%A9%E7%84%B6%E4%BD%BF%E5%91%BD%E5%A5%97%E6%9C%9F%E4%BF%9D%E5%80%BC%E7%9A%84%E8%BF%90%E7%94%A8">第12章 国债期货的天然使命：套期保值的运用</a>
+<ul>
+<li><a href="#121-%E5%A5%97%E6%9C%9F%E4%BF%9D%E5%80%BC%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%8E%9F%E7%90%86">12.1 套期保值的基本概念与原理</a></li>
+<li><a href="#122-%E5%AE%8C%E7%BE%8E%E5%A5%97%E6%9C%9F%E4%BF%9D%E5%80%BC%E6%A1%88%E4%BE%8B">12.2 完美套期保值案例</a></li>
+<li><a href="#123-%E5%A5%97%E6%9C%9F%E4%BF%9D%E5%80%BC%E6%AF%94%E7%8E%87">12.3 套期保值比率</a></li>
+<li><a href="#124-%E5%AE%9E%E6%88%98%E8%AE%A1%E7%AE%97">12.4 实战计算</a></li>
+<li><a href="#125-%E5%A5%97%E6%9C%9F%E4%BF%9D%E5%80%BC%E6%AF%94%E7%8E%87%E7%9A%84%E8%B0%83%E6%95%B4%E6%94%B6%E7%9B%8A%E7%8E%87%CE%B2%E8%B0%83%E6%95%B4%E6%B3%95">12.5 套期保值比率的调整：收益率β调整法</a></li>
+<li><a href="#126-%E6%94%B6%E7%9B%8A%E7%8E%87%CE%B2%E7%9A%84%E8%B0%83%E6%95%B4%E8%AE%A1%E7%AE%97">12.6 收益率β的调整计算</a></li>
+<li><a href="#127-%E8%B0%83%E6%95%B4%E5%A5%97%E6%9C%9F%E4%BF%9D%E5%80%BC%E6%AF%94%E7%8E%87%E7%9A%84%E6%83%85%E5%86%B5">12.7 调整套期保值比率的情况</a></li>
+<li><a href="#128-%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E%E8%B5%84%E9%87%91%E6%88%90%E6%9C%AC%E4%B8%8E%E6%9C%9F%E6%9D%83">12.8 补充说明：资金成本与期权</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>
