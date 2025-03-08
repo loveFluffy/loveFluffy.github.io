@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x9500;&#x552e;&#x5c31;&#x662f;&#x8981;&#x73a9;&#x8f6c;&#x60c5;&#x5546;&#xff1a;99&percnt;&#x7684;&#x4eba;&#x90fd;&#x4e0d;&#x77e5;&#x9053;&#x7684;&#x9500;&#x552e;&#x8f6f;&#x6280;&#x5de7;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x9500;&#x552e;&#x5c31;&#x662f;&#x8981;&#x73a9;&#x8f6c;&#x60c5;&#x5546;&#xff1a;99&percnt;&#x7684;&#x4eba;&#x90fd;&#x4e0d;&#x77e5;&#x9053;&#x7684;&#x9500;&#x552e;&#x8f6f;&#x6280;&#x5de7;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,284 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="销售就是要玩转情商99的人都不知道的销售软技巧">销售就是要玩转情商：99%的人都不知道的销售软技巧</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/11199.jpg"></td><td>
+<h1 id="销售就是要玩转情商99的人都不知道的销售软技巧">销售就是要玩转情商：99%的人都不知道的销售软技巧</h1>
+<center>科林·斯坦利（Colleen Stanley） 著|佘卓桓 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="全球销售精英热烈讨论强烈推荐">全球销售精英热烈讨论，强烈推荐</h3>
+<h3 id="推荐序-可以媲美世界上最伟大的推销员之销售必读书">推荐序 可以媲美《世界上最伟大的推销员》之销售必读书</h3>
+<h3 id="自序-我以我的销售经验与你分享">自序 我以我的销售经验与你分享</h3>
+<h3 id="第一章价值百万美金的情商销售策略">第一章：价值百万美金的情商销售策略</h3>
+<h4 id="1你了解销售中的情商运用吗">1.你了解销售中的情商运用吗</h4>
+<h4 id="2情商与销售结果">2.情商与销售结果</h4>
+<h4 id="3关于情感回报的商业案例">3.关于“情感回报”的商业案例</h4>
+<h4 id="4提升情商的有效步骤">4.提升情商的有效步骤</h4>
+<h3 id="第二章销售与神经科学搞定客户的秘密">第二章：销售与神经科学：搞定客户的秘密</h3>
+<h4 id="1如果客户是个偏执狂杏仁核本能动作的支配者">1.如果客户是个“偏执狂”杏仁核——本能动作的支配者</h4>
+<h4 id="2以退为进的销售艺术">2.“以退为进”的销售艺术</h4>
+<h4 id="3穿上客户要买的鞋子走上一里路">3.穿上客户要买的鞋子走上一里路</h4>
+<h4 id="4销售艺术之精华">4.销售艺术之精华</h4>
+<h4 id="5提升自身影响力的有效步骤">5.提升自身影响力的有效步骤</h4>
+<h3 id="第三章你真的知道你的销售渠道为何不畅吗">第三章：你真的知道你的销售渠道为何不畅吗</h3>
+<h4 id="1你是那个立即伸手去拿棉花糖的销售员吗">1.你是那个立即伸手去拿棉花糖的销售员吗</h4>
+<h4 id="2忙碌高效">2.忙碌=？高效</h4>
+<h4 id="3开发客户在有鱼的地方钓鱼">3.开发客户：在有鱼的地方钓鱼</h4>
+<h4 id="4现实与期望拿把尺子量一量">4.现实与期望，拿把尺子量一量</h4>
+<h4 id="5你是否感到压力巨大">5.你是否感到压力巨大</h4>
+<h4 id="6如何运用神经科学去开发客户">6.如何运用神经科学去开发客户</h4>
+<h4 id="7提高你开发客户的能力">7.提高你开发客户的能力</h4>
+<h3 id="第四章好感度在同等条件下如何让客户要你的东西">第四章：好感度：在同等条件下，如何让客户要你的东西</h3>
+<h4 id="1你会向自己购买产品吗">1.你会向自己购买产品吗</h4>
+<h4 id="2一切都是关乎他们展望销售结果与客户">2.一切都是关乎他们：展望销售结果与客户</h4>
+<h4 id="3认知关联与建立客户对你的好感">3.认知，关联与建立客户对你的好感</h4>
+<h4 id="4你是敷衍工作还是快乐工作呢">4.你是敷衍工作还是快乐工作呢</h4>
+<h4 id="5好感度你能给人带来欢乐吗">5.好感度：你能给人带来欢乐吗</h4>
+<h4 id="6提升他人对你好感的有效步骤">6.提升他人对你好感的有效步骤</h4>
+<h3 id="第五章如何得到你期望的东西">第五章：如何得到你期望的东西</h3>
+<h4 id="1合作伙伴还是买卖关系">1.合作伙伴还是买卖关系</h4>
+<h4 id="2面对一个客户你心里怎么想">2.面对一个客户，你心里怎么想</h4>
+<h4 id="3建立并管控期望让客户成为你的狂热粉丝">3.建立并管控期望，让客户成为你的狂热粉丝</h4>
+<h4 id="4提升管控自身期望的有效步骤">4.提升管控自身期望的有效步骤</h4>
+<h3 id="第六章询问技巧你的客户有什么故事">第六章：询问技巧：你的客户有什么故事</h3>
+<h4 id="1让客户感到自己受重视聆听">1.让客户感到自己受重视：聆听</h4>
+<h4 id="2运用3w法则">2.运用“3W”法则</h4>
+<h4 id="3询问引导客户审视自身的状况">3.询问：引导客户审视自身的状况</h4>
+<h4 id="4询问让客户找到病症所在">4.询问：让客户找到“病症”所在</h4>
+<h4 id="5询问诱导客户的潜在需求">5.询问：诱导客户的潜在需求</h4>
+<h4 id="6询问让你的客户心甘情愿地掏钱包">6.询问：让你的客户心甘情愿地掏钱包</h4>
+<h4 id="7提升你询问技巧的有效步骤">7.提升你询问技巧的有效步骤</h4>
+<h3 id="第七章怎样顺利搞定对方能拍板的人">第七章：怎样顺利搞定对方能拍板的人</h3>
+<h4 id="1人们是怎样做决策的">1.人们是怎样做决策的</h4>
+<h4 id="2你在与无足轻重的人会面吗">2.你在与无足轻重的人会面吗</h4>
+<h4 id="3你是否提出了正确的问题">3.你是否提出了正确的问题</h4>
+<h4 id="4全面提升你与决策者会面的能力">4.全面提升你与决策者会面的能力</h4>
+<h3 id="第八章拿下订单你的付出终于得到了回报">第八章：拿下订单：你的付出终于得到了回报</h3>
+<h4 id="1聊聊你的金钱观">1.聊聊你的金钱观</h4>
+<h4 id="2将谈判高手战于马下">2.将谈判高手“战于马下”</h4>
+<h4 id="3放弃即将到口的美食敢吗">3.放弃即将到口的美食，敢吗</h4>
+<h4 id="4审视你的销售渠道">4.审视你的销售渠道</h4>
+<h4 id="5给自己打一针强心剂">5.给自己打一针“强心剂”</h4>
+<h4 id="6提升你议价能力的有效步骤">6.提升你议价能力的有效步骤</h4>
+<h3 id="第九章情商销售文化的几个关键特征">第九章：情商销售文化的几个关键特征</h3>
+<h4 id="1你在不断学习还是不断落后呢">1.你在不断学习还是不断落后呢</h4>
+<h4 id="2团队中不能有我">2.团队中不能有“我”</h4>
+<h4 id="3付出是为了得到更多">3.付出是为了得到更多</h4>
+<h4 id="4建立情商销售文化的有效步骤">4.建立情商销售文化的有效步骤</h4>
+<h3 id="第十章勇于成为团队领袖销售领袖能力与情商的关系">第十章：勇于成为团队领袖：销售领袖能力与情商的关系</h3>
+<h4 id="1你该展现出怎样的形象">1.你该展现出怎样的形象</h4>
+<h4 id="2你言行一致吗">2.你言行一致吗</h4>
+<h4 id="3多点商量少点武断">3.多点商量，少点武断</h4>
+<h4 id="4你该采取怎样的管理模式">4.你该采取怎样的管理模式</h4>
+<h4 id="5最容易被忽视但有效的激励手段">5.最容易被忽视但有效的激励手段</h4>
+<h4 id="6成为销售领袖最管用的捷径">6.成为销售领袖最管用的捷径</h4>
+<h4 id="7提升你销售领导能力的有效步骤">7.提升你销售领导能力的有效步骤</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%85%A8%E7%90%83%E9%94%80%E5%94%AE%E7%B2%BE%E8%8B%B1%E7%83%AD%E7%83%88%E8%AE%A8%E8%AE%BA%E5%BC%BA%E7%83%88%E6%8E%A8%E8%8D%90">全球销售精英热烈讨论，强烈推荐</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F-%E5%8F%AF%E4%BB%A5%E5%AA%B2%E7%BE%8E%E4%B8%96%E7%95%8C%E4%B8%8A%E6%9C%80%E4%BC%9F%E5%A4%A7%E7%9A%84%E6%8E%A8%E9%94%80%E5%91%98%E4%B9%8B%E9%94%80%E5%94%AE%E5%BF%85%E8%AF%BB%E4%B9%A6">推荐序 可以媲美《世界上最伟大的推销员》之销售必读书</a></li>
+<li><a href="#%E8%87%AA%E5%BA%8F-%E6%88%91%E4%BB%A5%E6%88%91%E7%9A%84%E9%94%80%E5%94%AE%E7%BB%8F%E9%AA%8C%E4%B8%8E%E4%BD%A0%E5%88%86%E4%BA%AB">自序 我以我的销售经验与你分享</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%BB%B7%E5%80%BC%E7%99%BE%E4%B8%87%E7%BE%8E%E9%87%91%E7%9A%84%E6%83%85%E5%95%86%E9%94%80%E5%94%AE%E7%AD%96%E7%95%A5">第一章：价值百万美金的情商销售策略</a>
+<ul>
+<li><a href="#1%E4%BD%A0%E4%BA%86%E8%A7%A3%E9%94%80%E5%94%AE%E4%B8%AD%E7%9A%84%E6%83%85%E5%95%86%E8%BF%90%E7%94%A8%E5%90%97">1.你了解销售中的情商运用吗</a></li>
+<li><a href="#2%E6%83%85%E5%95%86%E4%B8%8E%E9%94%80%E5%94%AE%E7%BB%93%E6%9E%9C">2.情商与销售结果</a></li>
+<li><a href="#3%E5%85%B3%E4%BA%8E%E6%83%85%E6%84%9F%E5%9B%9E%E6%8A%A5%E7%9A%84%E5%95%86%E4%B8%9A%E6%A1%88%E4%BE%8B">3.关于“情感回报”的商业案例</a></li>
+<li><a href="#4%E6%8F%90%E5%8D%87%E6%83%85%E5%95%86%E7%9A%84%E6%9C%89%E6%95%88%E6%AD%A5%E9%AA%A4">4.提升情商的有效步骤</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%E9%94%80%E5%94%AE%E4%B8%8E%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6%E6%90%9E%E5%AE%9A%E5%AE%A2%E6%88%B7%E7%9A%84%E7%A7%98%E5%AF%86">第二章：销售与神经科学：搞定客户的秘密</a>
+<ul>
+<li><a href="#1%E5%A6%82%E6%9E%9C%E5%AE%A2%E6%88%B7%E6%98%AF%E4%B8%AA%E5%81%8F%E6%89%A7%E7%8B%82%E6%9D%8F%E4%BB%81%E6%A0%B8%E6%9C%AC%E8%83%BD%E5%8A%A8%E4%BD%9C%E7%9A%84%E6%94%AF%E9%85%8D%E8%80%85">1.如果客户是个“偏执狂”杏仁核——本能动作的支配者</a></li>
+<li><a href="#2%E4%BB%A5%E9%80%80%E4%B8%BA%E8%BF%9B%E7%9A%84%E9%94%80%E5%94%AE%E8%89%BA%E6%9C%AF">2.“以退为进”的销售艺术</a></li>
+<li><a href="#3%E7%A9%BF%E4%B8%8A%E5%AE%A2%E6%88%B7%E8%A6%81%E4%B9%B0%E7%9A%84%E9%9E%8B%E5%AD%90%E8%B5%B0%E4%B8%8A%E4%B8%80%E9%87%8C%E8%B7%AF">3.穿上客户要买的鞋子走上一里路</a></li>
+<li><a href="#4%E9%94%80%E5%94%AE%E8%89%BA%E6%9C%AF%E4%B9%8B%E7%B2%BE%E5%8D%8E">4.销售艺术之精华</a></li>
+<li><a href="#5%E6%8F%90%E5%8D%87%E8%87%AA%E8%BA%AB%E5%BD%B1%E5%93%8D%E5%8A%9B%E7%9A%84%E6%9C%89%E6%95%88%E6%AD%A5%E9%AA%A4">5.提升自身影响力的有效步骤</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%BD%A0%E7%9C%9F%E7%9A%84%E7%9F%A5%E9%81%93%E4%BD%A0%E7%9A%84%E9%94%80%E5%94%AE%E6%B8%A0%E9%81%93%E4%B8%BA%E4%BD%95%E4%B8%8D%E7%95%85%E5%90%97">第三章：你真的知道你的销售渠道为何不畅吗</a>
+<ul>
+<li><a href="#1%E4%BD%A0%E6%98%AF%E9%82%A3%E4%B8%AA%E7%AB%8B%E5%8D%B3%E4%BC%B8%E6%89%8B%E5%8E%BB%E6%8B%BF%E6%A3%89%E8%8A%B1%E7%B3%96%E7%9A%84%E9%94%80%E5%94%AE%E5%91%98%E5%90%97">1.你是那个立即伸手去拿棉花糖的销售员吗</a></li>
+<li><a href="#2%E5%BF%99%E7%A2%8C%E9%AB%98%E6%95%88">2.忙碌=？高效</a></li>
+<li><a href="#3%E5%BC%80%E5%8F%91%E5%AE%A2%E6%88%B7%E5%9C%A8%E6%9C%89%E9%B1%BC%E7%9A%84%E5%9C%B0%E6%96%B9%E9%92%93%E9%B1%BC">3.开发客户：在有鱼的地方钓鱼</a></li>
+<li><a href="#4%E7%8E%B0%E5%AE%9E%E4%B8%8E%E6%9C%9F%E6%9C%9B%E6%8B%BF%E6%8A%8A%E5%B0%BA%E5%AD%90%E9%87%8F%E4%B8%80%E9%87%8F">4.现实与期望，拿把尺子量一量</a></li>
+<li><a href="#5%E4%BD%A0%E6%98%AF%E5%90%A6%E6%84%9F%E5%88%B0%E5%8E%8B%E5%8A%9B%E5%B7%A8%E5%A4%A7">5.你是否感到压力巨大</a></li>
+<li><a href="#6%E5%A6%82%E4%BD%95%E8%BF%90%E7%94%A8%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6%E5%8E%BB%E5%BC%80%E5%8F%91%E5%AE%A2%E6%88%B7">6.如何运用神经科学去开发客户</a></li>
+<li><a href="#7%E6%8F%90%E9%AB%98%E4%BD%A0%E5%BC%80%E5%8F%91%E5%AE%A2%E6%88%B7%E7%9A%84%E8%83%BD%E5%8A%9B">7.提高你开发客户的能力</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%A5%BD%E6%84%9F%E5%BA%A6%E5%9C%A8%E5%90%8C%E7%AD%89%E6%9D%A1%E4%BB%B6%E4%B8%8B%E5%A6%82%E4%BD%95%E8%AE%A9%E5%AE%A2%E6%88%B7%E8%A6%81%E4%BD%A0%E7%9A%84%E4%B8%9C%E8%A5%BF">第四章：好感度：在同等条件下，如何让客户要你的东西</a>
+<ul>
+<li><a href="#1%E4%BD%A0%E4%BC%9A%E5%90%91%E8%87%AA%E5%B7%B1%E8%B4%AD%E4%B9%B0%E4%BA%A7%E5%93%81%E5%90%97">1.你会向自己购买产品吗</a></li>
+<li><a href="#2%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E5%85%B3%E4%B9%8E%E4%BB%96%E4%BB%AC%E5%B1%95%E6%9C%9B%E9%94%80%E5%94%AE%E7%BB%93%E6%9E%9C%E4%B8%8E%E5%AE%A2%E6%88%B7">2.一切都是关乎他们：展望销售结果与客户</a></li>
+<li><a href="#3%E8%AE%A4%E7%9F%A5%E5%85%B3%E8%81%94%E4%B8%8E%E5%BB%BA%E7%AB%8B%E5%AE%A2%E6%88%B7%E5%AF%B9%E4%BD%A0%E7%9A%84%E5%A5%BD%E6%84%9F">3.认知，关联与建立客户对你的好感</a></li>
+<li><a href="#4%E4%BD%A0%E6%98%AF%E6%95%B7%E8%A1%8D%E5%B7%A5%E4%BD%9C%E8%BF%98%E6%98%AF%E5%BF%AB%E4%B9%90%E5%B7%A5%E4%BD%9C%E5%91%A2">4.你是敷衍工作还是快乐工作呢</a></li>
+<li><a href="#5%E5%A5%BD%E6%84%9F%E5%BA%A6%E4%BD%A0%E8%83%BD%E7%BB%99%E4%BA%BA%E5%B8%A6%E6%9D%A5%E6%AC%A2%E4%B9%90%E5%90%97">5.好感度：你能给人带来欢乐吗</a></li>
+<li><a href="#6%E6%8F%90%E5%8D%87%E4%BB%96%E4%BA%BA%E5%AF%B9%E4%BD%A0%E5%A5%BD%E6%84%9F%E7%9A%84%E6%9C%89%E6%95%88%E6%AD%A5%E9%AA%A4">6.提升他人对你好感的有效步骤</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0%E5%A6%82%E4%BD%95%E5%BE%97%E5%88%B0%E4%BD%A0%E6%9C%9F%E6%9C%9B%E7%9A%84%E4%B8%9C%E8%A5%BF">第五章：如何得到你期望的东西</a>
+<ul>
+<li><a href="#1%E5%90%88%E4%BD%9C%E4%BC%99%E4%BC%B4%E8%BF%98%E6%98%AF%E4%B9%B0%E5%8D%96%E5%85%B3%E7%B3%BB">1.合作伙伴还是买卖关系</a></li>
+<li><a href="#2%E9%9D%A2%E5%AF%B9%E4%B8%80%E4%B8%AA%E5%AE%A2%E6%88%B7%E4%BD%A0%E5%BF%83%E9%87%8C%E6%80%8E%E4%B9%88%E6%83%B3">2.面对一个客户，你心里怎么想</a></li>
+<li><a href="#3%E5%BB%BA%E7%AB%8B%E5%B9%B6%E7%AE%A1%E6%8E%A7%E6%9C%9F%E6%9C%9B%E8%AE%A9%E5%AE%A2%E6%88%B7%E6%88%90%E4%B8%BA%E4%BD%A0%E7%9A%84%E7%8B%82%E7%83%AD%E7%B2%89%E4%B8%9D">3.建立并管控期望，让客户成为你的狂热粉丝</a></li>
+<li><a href="#4%E6%8F%90%E5%8D%87%E7%AE%A1%E6%8E%A7%E8%87%AA%E8%BA%AB%E6%9C%9F%E6%9C%9B%E7%9A%84%E6%9C%89%E6%95%88%E6%AD%A5%E9%AA%A4">4.提升管控自身期望的有效步骤</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0%E8%AF%A2%E9%97%AE%E6%8A%80%E5%B7%A7%E4%BD%A0%E7%9A%84%E5%AE%A2%E6%88%B7%E6%9C%89%E4%BB%80%E4%B9%88%E6%95%85%E4%BA%8B">第六章：询问技巧：你的客户有什么故事</a>
+<ul>
+<li><a href="#1%E8%AE%A9%E5%AE%A2%E6%88%B7%E6%84%9F%E5%88%B0%E8%87%AA%E5%B7%B1%E5%8F%97%E9%87%8D%E8%A7%86%E8%81%86%E5%90%AC">1.让客户感到自己受重视：聆听</a></li>
+<li><a href="#2%E8%BF%90%E7%94%A83w%E6%B3%95%E5%88%99">2.运用“3W”法则</a></li>
+<li><a href="#3%E8%AF%A2%E9%97%AE%E5%BC%95%E5%AF%BC%E5%AE%A2%E6%88%B7%E5%AE%A1%E8%A7%86%E8%87%AA%E8%BA%AB%E7%9A%84%E7%8A%B6%E5%86%B5">3.询问：引导客户审视自身的状况</a></li>
+<li><a href="#4%E8%AF%A2%E9%97%AE%E8%AE%A9%E5%AE%A2%E6%88%B7%E6%89%BE%E5%88%B0%E7%97%85%E7%97%87%E6%89%80%E5%9C%A8">4.询问：让客户找到“病症”所在</a></li>
+<li><a href="#5%E8%AF%A2%E9%97%AE%E8%AF%B1%E5%AF%BC%E5%AE%A2%E6%88%B7%E7%9A%84%E6%BD%9C%E5%9C%A8%E9%9C%80%E6%B1%82">5.询问：诱导客户的潜在需求</a></li>
+<li><a href="#6%E8%AF%A2%E9%97%AE%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%AE%A2%E6%88%B7%E5%BF%83%E7%94%98%E6%83%85%E6%84%BF%E5%9C%B0%E6%8E%8F%E9%92%B1%E5%8C%85">6.询问：让你的客户心甘情愿地掏钱包</a></li>
+<li><a href="#7%E6%8F%90%E5%8D%87%E4%BD%A0%E8%AF%A2%E9%97%AE%E6%8A%80%E5%B7%A7%E7%9A%84%E6%9C%89%E6%95%88%E6%AD%A5%E9%AA%A4">7.提升你询问技巧的有效步骤</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0%E6%80%8E%E6%A0%B7%E9%A1%BA%E5%88%A9%E6%90%9E%E5%AE%9A%E5%AF%B9%E6%96%B9%E8%83%BD%E6%8B%8D%E6%9D%BF%E7%9A%84%E4%BA%BA">第七章：怎样顺利搞定对方能拍板的人</a>
+<ul>
+<li><a href="#1%E4%BA%BA%E4%BB%AC%E6%98%AF%E6%80%8E%E6%A0%B7%E5%81%9A%E5%86%B3%E7%AD%96%E7%9A%84">1.人们是怎样做决策的</a></li>
+<li><a href="#2%E4%BD%A0%E5%9C%A8%E4%B8%8E%E6%97%A0%E8%B6%B3%E8%BD%BB%E9%87%8D%E7%9A%84%E4%BA%BA%E4%BC%9A%E9%9D%A2%E5%90%97">2.你在与无足轻重的人会面吗</a></li>
+<li><a href="#3%E4%BD%A0%E6%98%AF%E5%90%A6%E6%8F%90%E5%87%BA%E4%BA%86%E6%AD%A3%E7%A1%AE%E7%9A%84%E9%97%AE%E9%A2%98">3.你是否提出了正确的问题</a></li>
+<li><a href="#4%E5%85%A8%E9%9D%A2%E6%8F%90%E5%8D%87%E4%BD%A0%E4%B8%8E%E5%86%B3%E7%AD%96%E8%80%85%E4%BC%9A%E9%9D%A2%E7%9A%84%E8%83%BD%E5%8A%9B">4.全面提升你与决策者会面的能力</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0%E6%8B%BF%E4%B8%8B%E8%AE%A2%E5%8D%95%E4%BD%A0%E7%9A%84%E4%BB%98%E5%87%BA%E7%BB%88%E4%BA%8E%E5%BE%97%E5%88%B0%E4%BA%86%E5%9B%9E%E6%8A%A5">第八章：拿下订单：你的付出终于得到了回报</a>
+<ul>
+<li><a href="#1%E8%81%8A%E8%81%8A%E4%BD%A0%E7%9A%84%E9%87%91%E9%92%B1%E8%A7%82">1.聊聊你的金钱观</a></li>
+<li><a href="#2%E5%B0%86%E8%B0%88%E5%88%A4%E9%AB%98%E6%89%8B%E6%88%98%E4%BA%8E%E9%A9%AC%E4%B8%8B">2.将谈判高手“战于马下”</a></li>
+<li><a href="#3%E6%94%BE%E5%BC%83%E5%8D%B3%E5%B0%86%E5%88%B0%E5%8F%A3%E7%9A%84%E7%BE%8E%E9%A3%9F%E6%95%A2%E5%90%97">3.放弃即将到口的美食，敢吗</a></li>
+<li><a href="#4%E5%AE%A1%E8%A7%86%E4%BD%A0%E7%9A%84%E9%94%80%E5%94%AE%E6%B8%A0%E9%81%93">4.审视你的销售渠道</a></li>
+<li><a href="#5%E7%BB%99%E8%87%AA%E5%B7%B1%E6%89%93%E4%B8%80%E9%92%88%E5%BC%BA%E5%BF%83%E5%89%82">5.给自己打一针“强心剂”</a></li>
+<li><a href="#6%E6%8F%90%E5%8D%87%E4%BD%A0%E8%AE%AE%E4%BB%B7%E8%83%BD%E5%8A%9B%E7%9A%84%E6%9C%89%E6%95%88%E6%AD%A5%E9%AA%A4">6.提升你议价能力的有效步骤</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0%E6%83%85%E5%95%86%E9%94%80%E5%94%AE%E6%96%87%E5%8C%96%E7%9A%84%E5%87%A0%E4%B8%AA%E5%85%B3%E9%94%AE%E7%89%B9%E5%BE%81">第九章：情商销售文化的几个关键特征</a>
+<ul>
+<li><a href="#1%E4%BD%A0%E5%9C%A8%E4%B8%8D%E6%96%AD%E5%AD%A6%E4%B9%A0%E8%BF%98%E6%98%AF%E4%B8%8D%E6%96%AD%E8%90%BD%E5%90%8E%E5%91%A2">1.你在不断学习还是不断落后呢</a></li>
+<li><a href="#2%E5%9B%A2%E9%98%9F%E4%B8%AD%E4%B8%8D%E8%83%BD%E6%9C%89%E6%88%91">2.团队中不能有“我”</a></li>
+<li><a href="#3%E4%BB%98%E5%87%BA%E6%98%AF%E4%B8%BA%E4%BA%86%E5%BE%97%E5%88%B0%E6%9B%B4%E5%A4%9A">3.付出是为了得到更多</a></li>
+<li><a href="#4%E5%BB%BA%E7%AB%8B%E6%83%85%E5%95%86%E9%94%80%E5%94%AE%E6%96%87%E5%8C%96%E7%9A%84%E6%9C%89%E6%95%88%E6%AD%A5%E9%AA%A4">4.建立情商销售文化的有效步骤</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0%E5%8B%87%E4%BA%8E%E6%88%90%E4%B8%BA%E5%9B%A2%E9%98%9F%E9%A2%86%E8%A2%96%E9%94%80%E5%94%AE%E9%A2%86%E8%A2%96%E8%83%BD%E5%8A%9B%E4%B8%8E%E6%83%85%E5%95%86%E7%9A%84%E5%85%B3%E7%B3%BB">第十章：勇于成为团队领袖：销售领袖能力与情商的关系</a>
+<ul>
+<li><a href="#1%E4%BD%A0%E8%AF%A5%E5%B1%95%E7%8E%B0%E5%87%BA%E6%80%8E%E6%A0%B7%E7%9A%84%E5%BD%A2%E8%B1%A1">1.你该展现出怎样的形象</a></li>
+<li><a href="#2%E4%BD%A0%E8%A8%80%E8%A1%8C%E4%B8%80%E8%87%B4%E5%90%97">2.你言行一致吗</a></li>
+<li><a href="#3%E5%A4%9A%E7%82%B9%E5%95%86%E9%87%8F%E5%B0%91%E7%82%B9%E6%AD%A6%E6%96%AD">3.多点商量，少点武断</a></li>
+<li><a href="#4%E4%BD%A0%E8%AF%A5%E9%87%87%E5%8F%96%E6%80%8E%E6%A0%B7%E7%9A%84%E7%AE%A1%E7%90%86%E6%A8%A1%E5%BC%8F">4.你该采取怎样的管理模式</a></li>
+<li><a href="#5%E6%9C%80%E5%AE%B9%E6%98%93%E8%A2%AB%E5%BF%BD%E8%A7%86%E4%BD%86%E6%9C%89%E6%95%88%E7%9A%84%E6%BF%80%E5%8A%B1%E6%89%8B%E6%AE%B5">5.最容易被忽视但有效的激励手段</a></li>
+<li><a href="#6%E6%88%90%E4%B8%BA%E9%94%80%E5%94%AE%E9%A2%86%E8%A2%96%E6%9C%80%E7%AE%A1%E7%94%A8%E7%9A%84%E6%8D%B7%E5%BE%84">6.成为销售领袖最管用的捷径</a></li>
+<li><a href="#7%E6%8F%90%E5%8D%87%E4%BD%A0%E9%94%80%E5%94%AE%E9%A2%86%E5%AF%BC%E8%83%BD%E5%8A%9B%E7%9A%84%E6%9C%89%E6%95%88%E6%AD%A5%E9%AA%A4">7.提升你销售领导能力的有效步骤</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

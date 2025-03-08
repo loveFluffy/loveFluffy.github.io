@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x4f60;&#x7684;&#x56e2;&#x961f;&#x9700;&#x8981;&#x4e00;&#x4e2a;&#x4f1a;&#x8bb2;&#x6545;&#x4e8b;&#x7684;&#x4eba;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x4f60;&#x7684;&#x56e2;&#x961f;&#x9700;&#x8981;&#x4e00;&#x4e2a;&#x4f1a;&#x8bb2;&#x6545;&#x4e8b;&#x7684;&#x4eba;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,332 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="你的团队需要一个会讲故事的人">你的团队需要一个会讲故事的人</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/11360.jpg"></td><td>
+<h1 id="你的团队需要一个会讲故事的人">你的团队需要一个会讲故事的人</h1>
+<center>[美]安妮特·西蒙斯（Annette Simmons） 著|刘雪慰 徐孝民 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="再版说明">再版说明</h3>
+<h3 id="致谢">致谢</h3>
+<h3 id="序说服沟通打动他人的基本技巧">序：说服、沟通、打动他人的基本技巧</h3>
+<h2 id="第一部分-用故事思维重新思考">第一部分 用故事思维重新思考</h2>
+<h3 id="第一章-故事思维">第一章 故事思维</h3>
+<h4 id="怎样看见故事">◤怎样“看见”故事</h4>
+<h4 id="找到重点所在和其原因">◤找到重点所在和其原因</h4>
+<h4 id="故事思维与理性思维共用">◤故事思维与理性思维共用</h4>
+<h3 id="第二章-故事就是经历">第二章 故事就是经历</h3>
+<h4 id="我们每天都在讲述的故事">◤我们每天都在讲述的故事</h4>
+<h4 id="如何选择那些有益的故事">◤如何选择那些有益的故事</h4>
+<h3 id="第三章-如何讲好故事">第三章 如何讲好故事</h3>
+<h4 id="用故事消除文化差异">◤用故事消除文化差异</h4>
+<h4 id="开始练习讲故事">◤开始练习讲故事</h4>
+<h4 id="从哪里找到属于你的故事">◤从哪里找到属于你的故事</h4>
+<h4 id="接受反馈的技巧">◤接受反馈的技巧</h4>
+<h4 id="找合适的人试听你的故事">◤找合适的人“试听”你的故事</h4>
+<h3 id="第四章-进入故事模式">第四章 进入故事模式</h3>
+<h4 id="70满意的故事">◤70%满意的故事</h4>
+<h4 id="只会一道菜可成不了大厨">◤只会一道菜可成不了大厨</h4>
+<h4 id="亲身经历是最好的影响力故事">◤亲身经历是最好的影响力故事</h4>
+<h4 id="也可以用看起来不相关的故事来打动人">◤也可以用看起来不相关的故事来打动人</h4>
+<h4 id="不仅要数据还要情感">◤不仅要数据，还要情感</h4>
+<h2 id="第二部分-成为会讲故事的那个人">第二部分 成为会讲故事的那个人</h2>
+<h3 id="第五章-感官细节让故事更逼真">第五章 感官细节让故事更逼真</h3>
+<h4 id="屡试不爽的感官联系">◤屡试不爽的感官联系</h4>
+<h4 id="体验是关乎感官的">◤体验是关乎感官的</h4>
+<h4 id="亲力亲为的调查">◤亲力亲为的调查</h4>
+<h4 id="练习制造感官冲击">◤练习：制造感官冲击</h4>
+<h3 id="第六章-简洁的益处">第六章 简洁的益处</h3>
+<h4 id="你的故事是什么">◤你的故事是什么</h4>
+<h4 id="这是最好的简洁">◤这是最好的简洁</h4>
+<h4 id="让故事变得更简洁">◤让故事变得更简洁</h4>
+<h4 id="不妨主观一点">◤不妨主观一点</h4>
+<h4 id="表明立场能减少焦虑">◤表明立场能减少焦虑</h4>
+<h3 id="第七章-在团队中讲故事">第七章 在团队中讲故事</h3>
+<h4 id="这是创意还是怪异">◤这是创意还是怪异</h4>
+<h4 id="利用团队的决策能力找到自己的意义">◤利用团队的决策能力，找到自己的意义</h4>
+<h4 id="讲故事是个自我诊断的过程">◤讲故事是个自我诊断的过程</h4>
+<h4 id="由内而外的团结">◤由内而外的团结</h4>
+<h3 id="第八章-从不同视角读你的故事">第八章 从不同视角读你的故事</h3>
+<h4 id="偏见不好吗">◤偏见不好吗</h4>
+<h4 id="练习从不同视角审视故事">◤练习：从不同视角审视故事</h4>
+<h2 id="第三部分-六种故事寻找自己的专属故事">第三部分 六种故事：寻找自己的专属故事</h2>
+<h3 id="第九章-我是谁">第九章 我是谁</h3>
+<h4 id="你凭什么来打动陌生人">◤你凭什么来打动陌生人</h4>
+<h4 id="练习你是谁">◤练习：你是谁</h4>
+<h3 id="第十章-我为何在此">第十章 我为何在此</h3>
+<h4 id="告诉他人你能得到什么">◤告诉他人“你能得到什么”</h4>
+<h4 id="练习你为何在此">◤练习：你为何在此</h4>
+<h3 id="第十一章-教导故事">第十一章 教导故事</h3>
+<h4 id="故事比责骂更有效">◤故事比责骂更有效</h4>
+<h4 id="练习说出自己的心病">◤练习：说出自己的心病</h4>
+<h3 id="第十二章-愿景故事">第十二章 愿景故事</h3>
+<h4 id="用愿景实现目标">◤用愿景实现目标</h4>
+<h4 id="练习构建愿景">◤练习：构建愿景</h4>
+<h3 id="第十三章-行动体现价值">第十三章 行动体现价值</h3>
+<h4 id="比喻就是迷你的价值观">◤比喻就是迷你的价值观</h4>
+<h4 id="正直的故事">◤正直的故事</h4>
+<h4 id="考虑文化下的价值观">◤考虑文化下的价值观</h4>
+<h4 id="练习确认你的价值观">◤练习：确认你的价值观</h4>
+<h3 id="第十四章-我理解你">第十四章 我理解你</h3>
+<h4 id="认可的力量">◤认可的力量</h4>
+<h4 id="心有灵犀一点通">◤心有灵犀一点通</h4>
+<h4 id="设计故事的影响力">◤设计故事的影响力</h4>
+<h2 id="第四部分-故事事之外学习讲在故">第四部分 故事事之外学习讲在故</h2>
+<h3 id="第十五章-学会倾听">第十五章 学会倾听</h3>
+<h4 id="绘制脑海中的图景">◤绘制脑海中的图景</h4>
+<h4 id="倾听故事">◤倾听故事</h4>
+<h4 id="这些行为与倾听背道而驰">◤这些行为与倾听背道而驰</h4>
+<h4 id="真正的倾听">◤真正的倾听</h4>
+<h4 id="有害的倾听">◤有害的倾听</h4>
+<h4 id="当你觉得我没什么故事可讲时">◤当你觉得“我没什么故事可讲”时</h4>
+<h3 id="第十六章-灵感的借鉴">第十六章 灵感的借鉴</h3>
+<h4 id="设计思维的诀窍用户故事">◤设计思维的诀窍：用户故事</h4>
+<h4 id="解决方案和检验故事">◤解决方案和检验故事</h4>
+<h4 id="新加坡的诀窍">◤新加坡的诀窍</h4>
+<h4 id="非营利组织的诀窍">◤非营利组织的诀窍</h4>
+<h4 id="法律界的诀窍">◤法律界的诀窍</h4>
+<h4 id="叙事医学的诀窍">◤叙事医学的诀窍</h4>
+<h4 id="互联网时代故事和内容推广的诀窍">◤互联网时代故事和内容推广的诀窍</h4>
+<h4 id="播客的故事诀窍">◤播客的故事诀窍</h4>
+<h4 id="练习留心他人的想法">◤练习：留心他人的想法</h4>
+<h3 id="附录人们应该如何学习讲故事">附录：人们应该如何学习讲故事</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%86%8D%E7%89%88%E8%AF%B4%E6%98%8E">再版说明</a></li>
+<li><a href="#%E8%87%B4%E8%B0%A2">致谢</a></li>
+<li><a href="#%E5%BA%8F%E8%AF%B4%E6%9C%8D%E6%B2%9F%E9%80%9A%E6%89%93%E5%8A%A8%E4%BB%96%E4%BA%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%8A%80%E5%B7%A7">序：说服、沟通、打动他人的基本技巧</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%95%85%E4%BA%8B%E6%80%9D%E7%BB%B4">第一章 故事思维</a>
+<ul>
+<li><a href="#%E6%80%8E%E6%A0%B7%E7%9C%8B%E8%A7%81%E6%95%85%E4%BA%8B">◤怎样“看见”故事</a></li>
+<li><a href="#%E6%89%BE%E5%88%B0%E9%87%8D%E7%82%B9%E6%89%80%E5%9C%A8%E5%92%8C%E5%85%B6%E5%8E%9F%E5%9B%A0">◤找到重点所在和其原因</a></li>
+<li><a href="#%E6%95%85%E4%BA%8B%E6%80%9D%E7%BB%B4%E4%B8%8E%E7%90%86%E6%80%A7%E6%80%9D%E7%BB%B4%E5%85%B1%E7%94%A8">◤故事思维与理性思维共用</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%95%85%E4%BA%8B%E5%B0%B1%E6%98%AF%E7%BB%8F%E5%8E%86">第二章 故事就是经历</a>
+<ul>
+<li><a href="#%E6%88%91%E4%BB%AC%E6%AF%8F%E5%A4%A9%E9%83%BD%E5%9C%A8%E8%AE%B2%E8%BF%B0%E7%9A%84%E6%95%85%E4%BA%8B">◤我们每天都在讲述的故事</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E9%82%A3%E4%BA%9B%E6%9C%89%E7%9B%8A%E7%9A%84%E6%95%85%E4%BA%8B">◤如何选择那些有益的故事</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%A6%82%E4%BD%95%E8%AE%B2%E5%A5%BD%E6%95%85%E4%BA%8B">第三章 如何讲好故事</a>
+<ul>
+<li><a href="#%E7%94%A8%E6%95%85%E4%BA%8B%E6%B6%88%E9%99%A4%E6%96%87%E5%8C%96%E5%B7%AE%E5%BC%82">◤用故事消除文化差异</a></li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E7%BB%83%E4%B9%A0%E8%AE%B2%E6%95%85%E4%BA%8B">◤开始练习讲故事</a></li>
+<li><a href="#%E4%BB%8E%E5%93%AA%E9%87%8C%E6%89%BE%E5%88%B0%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E6%95%85%E4%BA%8B">◤从哪里找到属于你的故事</a></li>
+<li><a href="#%E6%8E%A5%E5%8F%97%E5%8F%8D%E9%A6%88%E7%9A%84%E6%8A%80%E5%B7%A7">◤接受反馈的技巧</a></li>
+<li><a href="#%E6%89%BE%E5%90%88%E9%80%82%E7%9A%84%E4%BA%BA%E8%AF%95%E5%90%AC%E4%BD%A0%E7%9A%84%E6%95%85%E4%BA%8B">◤找合适的人“试听”你的故事</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E8%BF%9B%E5%85%A5%E6%95%85%E4%BA%8B%E6%A8%A1%E5%BC%8F">第四章 进入故事模式</a>
+<ul>
+<li><a href="#70%E6%BB%A1%E6%84%8F%E7%9A%84%E6%95%85%E4%BA%8B">◤70%满意的故事</a></li>
+<li><a href="#%E5%8F%AA%E4%BC%9A%E4%B8%80%E9%81%93%E8%8F%9C%E5%8F%AF%E6%88%90%E4%B8%8D%E4%BA%86%E5%A4%A7%E5%8E%A8">◤只会一道菜可成不了大厨</a></li>
+<li><a href="#%E4%BA%B2%E8%BA%AB%E7%BB%8F%E5%8E%86%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8A%9B%E6%95%85%E4%BA%8B">◤亲身经历是最好的影响力故事</a></li>
+<li><a href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%94%A8%E7%9C%8B%E8%B5%B7%E6%9D%A5%E4%B8%8D%E7%9B%B8%E5%85%B3%E7%9A%84%E6%95%85%E4%BA%8B%E6%9D%A5%E6%89%93%E5%8A%A8%E4%BA%BA">◤也可以用看起来不相关的故事来打动人</a></li>
+<li><a href="#%E4%B8%8D%E4%BB%85%E8%A6%81%E6%95%B0%E6%8D%AE%E8%BF%98%E8%A6%81%E6%83%85%E6%84%9F">◤不仅要数据，还要情感</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%84%9F%E5%AE%98%E7%BB%86%E8%8A%82%E8%AE%A9%E6%95%85%E4%BA%8B%E6%9B%B4%E9%80%BC%E7%9C%9F">第五章 感官细节让故事更逼真</a>
+<ul>
+<li><a href="#%E5%B1%A1%E8%AF%95%E4%B8%8D%E7%88%BD%E7%9A%84%E6%84%9F%E5%AE%98%E8%81%94%E7%B3%BB">◤屡试不爽的感官联系</a></li>
+<li><a href="#%E4%BD%93%E9%AA%8C%E6%98%AF%E5%85%B3%E4%B9%8E%E6%84%9F%E5%AE%98%E7%9A%84">◤体验是关乎感官的</a></li>
+<li><a href="#%E4%BA%B2%E5%8A%9B%E4%BA%B2%E4%B8%BA%E7%9A%84%E8%B0%83%E6%9F%A5">◤亲力亲为的调查</a></li>
+<li><a href="#%E7%BB%83%E4%B9%A0%E5%88%B6%E9%80%A0%E6%84%9F%E5%AE%98%E5%86%B2%E5%87%BB">◤练习：制造感官冲击</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%AE%80%E6%B4%81%E7%9A%84%E7%9B%8A%E5%A4%84">第六章 简洁的益处</a>
+<ul>
+<li><a href="#%E4%BD%A0%E7%9A%84%E6%95%85%E4%BA%8B%E6%98%AF%E4%BB%80%E4%B9%88">◤你的故事是什么</a></li>
+<li><a href="#%E8%BF%99%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E7%AE%80%E6%B4%81">◤这是最好的简洁</a></li>
+<li><a href="#%E8%AE%A9%E6%95%85%E4%BA%8B%E5%8F%98%E5%BE%97%E6%9B%B4%E7%AE%80%E6%B4%81">◤让故事变得更简洁</a></li>
+<li><a href="#%E4%B8%8D%E5%A6%A8%E4%B8%BB%E8%A7%82%E4%B8%80%E7%82%B9">◤不妨主观一点</a></li>
+<li><a href="#%E8%A1%A8%E6%98%8E%E7%AB%8B%E5%9C%BA%E8%83%BD%E5%87%8F%E5%B0%91%E7%84%A6%E8%99%91">◤表明立场能减少焦虑</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%9C%A8%E5%9B%A2%E9%98%9F%E4%B8%AD%E8%AE%B2%E6%95%85%E4%BA%8B">第七章 在团队中讲故事</a>
+<ul>
+<li><a href="#%E8%BF%99%E6%98%AF%E5%88%9B%E6%84%8F%E8%BF%98%E6%98%AF%E6%80%AA%E5%BC%82">◤这是创意还是怪异</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8%E5%9B%A2%E9%98%9F%E7%9A%84%E5%86%B3%E7%AD%96%E8%83%BD%E5%8A%9B%E6%89%BE%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89">◤利用团队的决策能力，找到自己的意义</a></li>
+<li><a href="#%E8%AE%B2%E6%95%85%E4%BA%8B%E6%98%AF%E4%B8%AA%E8%87%AA%E6%88%91%E8%AF%8A%E6%96%AD%E7%9A%84%E8%BF%87%E7%A8%8B">◤讲故事是个自我诊断的过程</a></li>
+<li><a href="#%E7%94%B1%E5%86%85%E8%80%8C%E5%A4%96%E7%9A%84%E5%9B%A2%E7%BB%93">◤由内而外的团结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E4%BB%8E%E4%B8%8D%E5%90%8C%E8%A7%86%E8%A7%92%E8%AF%BB%E4%BD%A0%E7%9A%84%E6%95%85%E4%BA%8B">第八章 从不同视角读你的故事</a>
+<ul>
+<li><a href="#%E5%81%8F%E8%A7%81%E4%B8%8D%E5%A5%BD%E5%90%97">◤偏见不好吗</a></li>
+<li><a href="#%E7%BB%83%E4%B9%A0%E4%BB%8E%E4%B8%8D%E5%90%8C%E8%A7%86%E8%A7%92%E5%AE%A1%E8%A7%86%E6%95%85%E4%BA%8B">◤练习：从不同视角审视故事</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E6%88%91%E6%98%AF%E8%B0%81">第九章 我是谁</a>
+<ul>
+<li><a href="#%E4%BD%A0%E5%87%AD%E4%BB%80%E4%B9%88%E6%9D%A5%E6%89%93%E5%8A%A8%E9%99%8C%E7%94%9F%E4%BA%BA">◤你凭什么来打动陌生人</a></li>
+<li><a href="#%E7%BB%83%E4%B9%A0%E4%BD%A0%E6%98%AF%E8%B0%81">◤练习：你是谁</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E6%88%91%E4%B8%BA%E4%BD%95%E5%9C%A8%E6%AD%A4">第十章 我为何在此</a>
+<ul>
+<li><a href="#%E5%91%8A%E8%AF%89%E4%BB%96%E4%BA%BA%E4%BD%A0%E8%83%BD%E5%BE%97%E5%88%B0%E4%BB%80%E4%B9%88">◤告诉他人“你能得到什么”</a></li>
+<li><a href="#%E7%BB%83%E4%B9%A0%E4%BD%A0%E4%B8%BA%E4%BD%95%E5%9C%A8%E6%AD%A4">◤练习：你为何在此</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E6%95%99%E5%AF%BC%E6%95%85%E4%BA%8B">第十一章 教导故事</a>
+<ul>
+<li><a href="#%E6%95%85%E4%BA%8B%E6%AF%94%E8%B4%A3%E9%AA%82%E6%9B%B4%E6%9C%89%E6%95%88">◤故事比责骂更有效</a></li>
+<li><a href="#%E7%BB%83%E4%B9%A0%E8%AF%B4%E5%87%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%BF%83%E7%97%85">◤练习：说出自己的心病</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E6%84%BF%E6%99%AF%E6%95%85%E4%BA%8B">第十二章 愿景故事</a>
+<ul>
+<li><a href="#%E7%94%A8%E6%84%BF%E6%99%AF%E5%AE%9E%E7%8E%B0%E7%9B%AE%E6%A0%87">◤用愿景实现目标</a></li>
+<li><a href="#%E7%BB%83%E4%B9%A0%E6%9E%84%E5%BB%BA%E6%84%BF%E6%99%AF">◤练习：构建愿景</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E8%A1%8C%E5%8A%A8%E4%BD%93%E7%8E%B0%E4%BB%B7%E5%80%BC">第十三章 行动体现价值</a>
+<ul>
+<li><a href="#%E6%AF%94%E5%96%BB%E5%B0%B1%E6%98%AF%E8%BF%B7%E4%BD%A0%E7%9A%84%E4%BB%B7%E5%80%BC%E8%A7%82">◤比喻就是迷你的价值观</a></li>
+<li><a href="#%E6%AD%A3%E7%9B%B4%E7%9A%84%E6%95%85%E4%BA%8B">◤正直的故事</a></li>
+<li><a href="#%E8%80%83%E8%99%91%E6%96%87%E5%8C%96%E4%B8%8B%E7%9A%84%E4%BB%B7%E5%80%BC%E8%A7%82">◤考虑文化下的价值观</a></li>
+<li><a href="#%E7%BB%83%E4%B9%A0%E7%A1%AE%E8%AE%A4%E4%BD%A0%E7%9A%84%E4%BB%B7%E5%80%BC%E8%A7%82">◤练习：确认你的价值观</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-%E6%88%91%E7%90%86%E8%A7%A3%E4%BD%A0">第十四章 我理解你</a>
+<ul>
+<li><a href="#%E8%AE%A4%E5%8F%AF%E7%9A%84%E5%8A%9B%E9%87%8F">◤认可的力量</a></li>
+<li><a href="#%E5%BF%83%E6%9C%89%E7%81%B5%E7%8A%80%E4%B8%80%E7%82%B9%E9%80%9A">◤心有灵犀一点通</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%95%85%E4%BA%8B%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8A%9B">◤设计故事的影响力</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0-%E5%AD%A6%E4%BC%9A%E5%80%BE%E5%90%AC">第十五章 学会倾听</a>
+<ul>
+<li><a href="#%E7%BB%98%E5%88%B6%E8%84%91%E6%B5%B7%E4%B8%AD%E7%9A%84%E5%9B%BE%E6%99%AF">◤绘制脑海中的图景</a></li>
+<li><a href="#%E5%80%BE%E5%90%AC%E6%95%85%E4%BA%8B">◤倾听故事</a></li>
+<li><a href="#%E8%BF%99%E4%BA%9B%E8%A1%8C%E4%B8%BA%E4%B8%8E%E5%80%BE%E5%90%AC%E8%83%8C%E9%81%93%E8%80%8C%E9%A9%B0">◤这些行为与倾听背道而驰</a></li>
+<li><a href="#%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%80%BE%E5%90%AC">◤真正的倾听</a></li>
+<li><a href="#%E6%9C%89%E5%AE%B3%E7%9A%84%E5%80%BE%E5%90%AC">◤有害的倾听</a></li>
+<li><a href="#%E5%BD%93%E4%BD%A0%E8%A7%89%E5%BE%97%E6%88%91%E6%B2%A1%E4%BB%80%E4%B9%88%E6%95%85%E4%BA%8B%E5%8F%AF%E8%AE%B2%E6%97%B6">◤当你觉得“我没什么故事可讲”时</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0-%E7%81%B5%E6%84%9F%E7%9A%84%E5%80%9F%E9%89%B4">第十六章 灵感的借鉴</a>
+<ul>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%84%E8%AF%80%E7%AA%8D%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B">◤设计思维的诀窍：用户故事</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%92%8C%E6%A3%80%E9%AA%8C%E6%95%85%E4%BA%8B">◤解决方案和检验故事</a></li>
+<li><a href="#%E6%96%B0%E5%8A%A0%E5%9D%A1%E7%9A%84%E8%AF%80%E7%AA%8D">◤新加坡的诀窍</a></li>
+<li><a href="#%E9%9D%9E%E8%90%A5%E5%88%A9%E7%BB%84%E7%BB%87%E7%9A%84%E8%AF%80%E7%AA%8D">◤非营利组织的诀窍</a></li>
+<li><a href="#%E6%B3%95%E5%BE%8B%E7%95%8C%E7%9A%84%E8%AF%80%E7%AA%8D">◤法律界的诀窍</a></li>
+<li><a href="#%E5%8F%99%E4%BA%8B%E5%8C%BB%E5%AD%A6%E7%9A%84%E8%AF%80%E7%AA%8D">◤叙事医学的诀窍</a></li>
+<li><a href="#%E4%BA%92%E8%81%94%E7%BD%91%E6%97%B6%E4%BB%A3%E6%95%85%E4%BA%8B%E5%92%8C%E5%86%85%E5%AE%B9%E6%8E%A8%E5%B9%BF%E7%9A%84%E8%AF%80%E7%AA%8D">◤互联网时代故事和内容推广的诀窍</a></li>
+<li><a href="#%E6%92%AD%E5%AE%A2%E7%9A%84%E6%95%85%E4%BA%8B%E8%AF%80%E7%AA%8D">◤播客的故事诀窍</a></li>
+<li><a href="#%E7%BB%83%E4%B9%A0%E7%95%99%E5%BF%83%E4%BB%96%E4%BA%BA%E7%9A%84%E6%83%B3%E6%B3%95">◤练习：留心他人的想法</a></li>
+</ul>
+</li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%BA%BA%E4%BB%AC%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E8%AE%B2%E6%95%85%E4%BA%8B">附录：人们应该如何学习讲故事</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x81ea;&#x79c1;&#x7684;&#x7236;&#x6bcd;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x81ea;&#x79c1;&#x7684;&#x7236;&#x6bcd;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,294 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="自私的父母">自私的父母</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/10490.jpg"></td><td>
+<h1 id="自私的父母">自私的父母</h1>
+<center>[美]尼娜·布朗（Nina W. Brown） 著|霍淑婷 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="推荐序-你必须听话父母的自恋幻觉">推荐序 你必须听话——父母的自恋幻觉</h3>
+<h3 id="前言">前言</h3>
+<h3 id="chapter1-破坏性自恋型父母">Chapter1 破坏性自恋型父母</h3>
+<h4 id="自恋的定义">自恋的定义</h4>
+<h4 id="自恋型父母的特征">自恋型父母的特征</h4>
+<h4 id="亲职化关系中的子女">亲职化关系中的子女</h4>
+<h4 id="你的父母是否有破坏性自恋模式">你的父母是否有破坏性自恋模式？</h4>
+<h4 id="顺从和反抗子女对自恋型父母的两种典型反应">顺从和反抗：子女对自恋型父母的两种典型反应</h4>
+<h3 id="chapter2-面对伤害该如何自我肯定">Chapter2 面对伤害，该如何自我肯定？</h3>
+<h4 id="测试你是否受到了伤害">测试你是否受到了伤害？</h4>
+<h4 id="促使你受伤害的信念有哪些">促使你受伤害的信念有哪些？</h4>
+<h4 id="如何开始帮助自己">如何开始帮助自己？</h4>
+<h3 id="chpater3-受伤成年子女的典型态度和行为">Chpater3 受伤成年子女的典型态度和行为</h3>
+<h4 id="容易针对自己">容易针对自己</h4>
+<h4 id="接受指责">接受指责</h4>
+<h4 id="令自己和他人失望">令自己和他人失望</h4>
+<h4 id="期望得到夸奖表扬">期望得到夸奖、表扬</h4>
+<h4 id="感到烦躁易怒">感到烦躁、易怒</h4>
+<h4 id="被别人的情绪感染">被别人的情绪感染</h4>
+<h4 id="感觉有缺陷不完美">感觉有缺陷、不完美</h4>
+<h4 id="需要别人和自己一样">需要别人和自己一样</h4>
+<h4 id="经营有意义有满足感的人际关系">经营有意义、有满足感的人际关系</h4>
+<h4 id="感觉无力招架深陷其中">感觉无力招架，深陷其中</h4>
+<h4 id="理解你的责任">理解你的责任</h4>
+<h3 id="chapter4-与自恋型父母互动的常见困境以及应对方法">Chapter4 与自恋型父母互动的常见困境以及应对方法</h3>
+<h4 id="负面情绪的背后是什么">负面情绪的背后是什么？</h4>
+<h4 id="与自恋型父母互动的常见困境">与自恋型父母互动的常见困境</h4>
+<h4 id="具体策略">具体策略</h4>
+<h3 id="chapter5-父母造成的隐性毒副作用及克服方法">Chapter5 父母造成的隐性毒副作用及克服方法</h3>
+<h4 id="自我防御机制">自我防御机制</h4>
+<h4 id="跟自己作对">跟自己作对</h4>
+<h4 id="与他人作对">与他人作对</h4>
+<h4 id="替代的办法">替代的办法</h4>
+<h4 id="自我解毒">自我解毒</h4>
+<h3 id="chapter6-停止自恋型父母负面影响的策略">Chapter6 停止自恋型父母负面影响的策略</h3>
+<h4 id="放弃幻想">放弃幻想</h4>
+<h4 id="自我陈述和肯定">自我陈述和肯定</h4>
+<h4 id="追求利他">追求利他</h4>
+<h4 id="帮助别人">帮助别人</h4>
+<h4 id="敞开心扉迎接美和奇迹">敞开心扉迎接美和奇迹</h4>
+<h4 id="改变节奏">改变节奏</h4>
+<h4 id="正念">正念</h4>
+<h4 id="减少你自恋的程度">减少你自恋的程度</h4>
+<h3 id="chapter7-自身调整策略">Chapter7 自身调整策略</h3>
+<h4 id="成年子女的常见自恋特征">成年子女的常见自恋特征</h4>
+<h4 id="确立目标来减轻自恋">确立目标来减轻自恋</h4>
+<h4 id="超越自恋寻找生命的意义和目的">超越自恋：寻找生命的意义和目的</h4>
+<h4 id="减少孤独疏离感">减少孤独、疏离感</h4>
+<h4 id="与绝望无助无望作斗争">与绝望、无助、无望作斗争</h4>
+<h4 id="接受自我和积极的改变">接受自我和积极的改变</h4>
+<h4 id="发展更现实的期待">发展更现实的期待</h4>
+<h4 id="认识到个人责任的局限性">认识到个人责任的局限性</h4>
+<h4 id="变得专注脚踏实地">变得专注、脚踏实地</h4>
+<h3 id="chapter8-增强自我的策略">Chapter8 增强“自我”的策略</h3>
+<h4 id="建立意识">建立意识</h4>
+<h4 id="减少自恋">减少自恋</h4>
+<h4 id="增强自我反思">增强自我反思</h4>
+<h4 id="培养你的强项">培养你的强项</h4>
+<h4 id="发展坚固强韧的心理边界">发展坚固、强韧的心理边界</h4>
+<h4 id="做你自己想做的人">做你自己想做的人</h4>
+<h3 id="chapter9-让理想自我变成现实自我的策略">Chapter9 让理想自我变成现实自我的策略</h3>
+<h4 id="与他人共情并做出回应">与他人共情，并做出回应</h4>
+<h4 id="创造性的思考行动和观点">创造性的思考、行动和观点</h4>
+<h4 id="与宇宙产生连接的灵感发展归属感">与宇宙产生连接的灵感，发展归属感</h4>
+<h4 id="培养人际关系">培养人际关系</h4>
+<h3 id="chapter10-掌握自我的终级策略">Chapter10 掌握自我的终级策略</h3>
+<h4 id="早期经验如何塑造你">早期经验如何塑造你？</h4>
+<h4 id="活在别人的目光中">活在别人的目光中</h4>
+<h4 id="保持虚假外壳的需要">保持虚假外壳的需要</h4>
+<h4 id="认为自己需要照顾他人的观念">认为自己需要照顾他人的观念</h4>
+<h4 id="你觉得被人接纳的程度">你觉得被人接纳的程度</h4>
+<h4 id="你的价值和重要性">你的价值和重要性</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F-%E4%BD%A0%E5%BF%85%E9%A1%BB%E5%90%AC%E8%AF%9D%E7%88%B6%E6%AF%8D%E7%9A%84%E8%87%AA%E6%81%8B%E5%B9%BB%E8%A7%89">推荐序 你必须听话——父母的自恋幻觉</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#chapter1-%E7%A0%B4%E5%9D%8F%E6%80%A7%E8%87%AA%E6%81%8B%E5%9E%8B%E7%88%B6%E6%AF%8D">Chapter1 破坏性自恋型父母</a>
+<ul>
+<li><a href="#%E8%87%AA%E6%81%8B%E7%9A%84%E5%AE%9A%E4%B9%89">自恋的定义</a></li>
+<li><a href="#%E8%87%AA%E6%81%8B%E5%9E%8B%E7%88%B6%E6%AF%8D%E7%9A%84%E7%89%B9%E5%BE%81">自恋型父母的特征</a></li>
+<li><a href="#%E4%BA%B2%E8%81%8C%E5%8C%96%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E5%AD%90%E5%A5%B3">亲职化关系中的子女</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E7%88%B6%E6%AF%8D%E6%98%AF%E5%90%A6%E6%9C%89%E7%A0%B4%E5%9D%8F%E6%80%A7%E8%87%AA%E6%81%8B%E6%A8%A1%E5%BC%8F">你的父母是否有破坏性自恋模式？</a></li>
+<li><a href="#%E9%A1%BA%E4%BB%8E%E5%92%8C%E5%8F%8D%E6%8A%97%E5%AD%90%E5%A5%B3%E5%AF%B9%E8%87%AA%E6%81%8B%E5%9E%8B%E7%88%B6%E6%AF%8D%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%85%B8%E5%9E%8B%E5%8F%8D%E5%BA%94">顺从和反抗：子女对自恋型父母的两种典型反应</a></li>
+</ul>
+</li>
+<li><a href="#chapter2-%E9%9D%A2%E5%AF%B9%E4%BC%A4%E5%AE%B3%E8%AF%A5%E5%A6%82%E4%BD%95%E8%87%AA%E6%88%91%E8%82%AF%E5%AE%9A">Chapter2 面对伤害，该如何自我肯定？</a>
+<ul>
+<li><a href="#%E6%B5%8B%E8%AF%95%E4%BD%A0%E6%98%AF%E5%90%A6%E5%8F%97%E5%88%B0%E4%BA%86%E4%BC%A4%E5%AE%B3">测试你是否受到了伤害？</a></li>
+<li><a href="#%E4%BF%83%E4%BD%BF%E4%BD%A0%E5%8F%97%E4%BC%A4%E5%AE%B3%E7%9A%84%E4%BF%A1%E5%BF%B5%E6%9C%89%E5%93%AA%E4%BA%9B">促使你受伤害的信念有哪些？</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B%E5%B8%AE%E5%8A%A9%E8%87%AA%E5%B7%B1">如何开始帮助自己？</a></li>
+</ul>
+</li>
+<li><a href="#chpater3-%E5%8F%97%E4%BC%A4%E6%88%90%E5%B9%B4%E5%AD%90%E5%A5%B3%E7%9A%84%E5%85%B8%E5%9E%8B%E6%80%81%E5%BA%A6%E5%92%8C%E8%A1%8C%E4%B8%BA">Chpater3 受伤成年子女的典型态度和行为</a>
+<ul>
+<li><a href="#%E5%AE%B9%E6%98%93%E9%92%88%E5%AF%B9%E8%87%AA%E5%B7%B1">容易针对自己</a></li>
+<li><a href="#%E6%8E%A5%E5%8F%97%E6%8C%87%E8%B4%A3">接受指责</a></li>
+<li><a href="#%E4%BB%A4%E8%87%AA%E5%B7%B1%E5%92%8C%E4%BB%96%E4%BA%BA%E5%A4%B1%E6%9C%9B">令自己和他人失望</a></li>
+<li><a href="#%E6%9C%9F%E6%9C%9B%E5%BE%97%E5%88%B0%E5%A4%B8%E5%A5%96%E8%A1%A8%E6%89%AC">期望得到夸奖、表扬</a></li>
+<li><a href="#%E6%84%9F%E5%88%B0%E7%83%A6%E8%BA%81%E6%98%93%E6%80%92">感到烦躁、易怒</a></li>
+<li><a href="#%E8%A2%AB%E5%88%AB%E4%BA%BA%E7%9A%84%E6%83%85%E7%BB%AA%E6%84%9F%E6%9F%93">被别人的情绪感染</a></li>
+<li><a href="#%E6%84%9F%E8%A7%89%E6%9C%89%E7%BC%BA%E9%99%B7%E4%B8%8D%E5%AE%8C%E7%BE%8E">感觉有缺陷、不完美</a></li>
+<li><a href="#%E9%9C%80%E8%A6%81%E5%88%AB%E4%BA%BA%E5%92%8C%E8%87%AA%E5%B7%B1%E4%B8%80%E6%A0%B7">需要别人和自己一样</a></li>
+<li><a href="#%E7%BB%8F%E8%90%A5%E6%9C%89%E6%84%8F%E4%B9%89%E6%9C%89%E6%BB%A1%E8%B6%B3%E6%84%9F%E7%9A%84%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB">经营有意义、有满足感的人际关系</a></li>
+<li><a href="#%E6%84%9F%E8%A7%89%E6%97%A0%E5%8A%9B%E6%8B%9B%E6%9E%B6%E6%B7%B1%E9%99%B7%E5%85%B6%E4%B8%AD">感觉无力招架，深陷其中</a></li>
+<li><a href="#%E7%90%86%E8%A7%A3%E4%BD%A0%E7%9A%84%E8%B4%A3%E4%BB%BB">理解你的责任</a></li>
+</ul>
+</li>
+<li><a href="#chapter4-%E4%B8%8E%E8%87%AA%E6%81%8B%E5%9E%8B%E7%88%B6%E6%AF%8D%E4%BA%92%E5%8A%A8%E7%9A%84%E5%B8%B8%E8%A7%81%E5%9B%B0%E5%A2%83%E4%BB%A5%E5%8F%8A%E5%BA%94%E5%AF%B9%E6%96%B9%E6%B3%95">Chapter4 与自恋型父母互动的常见困境以及应对方法</a>
+<ul>
+<li><a href="#%E8%B4%9F%E9%9D%A2%E6%83%85%E7%BB%AA%E7%9A%84%E8%83%8C%E5%90%8E%E6%98%AF%E4%BB%80%E4%B9%88">负面情绪的背后是什么？</a></li>
+<li><a href="#%E4%B8%8E%E8%87%AA%E6%81%8B%E5%9E%8B%E7%88%B6%E6%AF%8D%E4%BA%92%E5%8A%A8%E7%9A%84%E5%B8%B8%E8%A7%81%E5%9B%B0%E5%A2%83">与自恋型父母互动的常见困境</a></li>
+<li><a href="#%E5%85%B7%E4%BD%93%E7%AD%96%E7%95%A5">具体策略</a></li>
+</ul>
+</li>
+<li><a href="#chapter5-%E7%88%B6%E6%AF%8D%E9%80%A0%E6%88%90%E7%9A%84%E9%9A%90%E6%80%A7%E6%AF%92%E5%89%AF%E4%BD%9C%E7%94%A8%E5%8F%8A%E5%85%8B%E6%9C%8D%E6%96%B9%E6%B3%95">Chapter5 父母造成的隐性毒副作用及克服方法</a>
+<ul>
+<li><a href="#%E8%87%AA%E6%88%91%E9%98%B2%E5%BE%A1%E6%9C%BA%E5%88%B6">自我防御机制</a></li>
+<li><a href="#%E8%B7%9F%E8%87%AA%E5%B7%B1%E4%BD%9C%E5%AF%B9">跟自己作对</a></li>
+<li><a href="#%E4%B8%8E%E4%BB%96%E4%BA%BA%E4%BD%9C%E5%AF%B9">与他人作对</a></li>
+<li><a href="#%E6%9B%BF%E4%BB%A3%E7%9A%84%E5%8A%9E%E6%B3%95">替代的办法</a></li>
+<li><a href="#%E8%87%AA%E6%88%91%E8%A7%A3%E6%AF%92">自我解毒</a></li>
+</ul>
+</li>
+<li><a href="#chapter6-%E5%81%9C%E6%AD%A2%E8%87%AA%E6%81%8B%E5%9E%8B%E7%88%B6%E6%AF%8D%E8%B4%9F%E9%9D%A2%E5%BD%B1%E5%93%8D%E7%9A%84%E7%AD%96%E7%95%A5">Chapter6 停止自恋型父母负面影响的策略</a>
+<ul>
+<li><a href="#%E6%94%BE%E5%BC%83%E5%B9%BB%E6%83%B3">放弃幻想</a></li>
+<li><a href="#%E8%87%AA%E6%88%91%E9%99%88%E8%BF%B0%E5%92%8C%E8%82%AF%E5%AE%9A">自我陈述和肯定</a></li>
+<li><a href="#%E8%BF%BD%E6%B1%82%E5%88%A9%E4%BB%96">追求利他</a></li>
+<li><a href="#%E5%B8%AE%E5%8A%A9%E5%88%AB%E4%BA%BA">帮助别人</a></li>
+<li><a href="#%E6%95%9E%E5%BC%80%E5%BF%83%E6%89%89%E8%BF%8E%E6%8E%A5%E7%BE%8E%E5%92%8C%E5%A5%87%E8%BF%B9">敞开心扉迎接美和奇迹</a></li>
+<li><a href="#%E6%94%B9%E5%8F%98%E8%8A%82%E5%A5%8F">改变节奏</a></li>
+<li><a href="#%E6%AD%A3%E5%BF%B5">正念</a></li>
+<li><a href="#%E5%87%8F%E5%B0%91%E4%BD%A0%E8%87%AA%E6%81%8B%E7%9A%84%E7%A8%8B%E5%BA%A6">减少你自恋的程度</a></li>
+</ul>
+</li>
+<li><a href="#chapter7-%E8%87%AA%E8%BA%AB%E8%B0%83%E6%95%B4%E7%AD%96%E7%95%A5">Chapter7 自身调整策略</a>
+<ul>
+<li><a href="#%E6%88%90%E5%B9%B4%E5%AD%90%E5%A5%B3%E7%9A%84%E5%B8%B8%E8%A7%81%E8%87%AA%E6%81%8B%E7%89%B9%E5%BE%81">成年子女的常见自恋特征</a></li>
+<li><a href="#%E7%A1%AE%E7%AB%8B%E7%9B%AE%E6%A0%87%E6%9D%A5%E5%87%8F%E8%BD%BB%E8%87%AA%E6%81%8B">确立目标来减轻自恋</a></li>
+<li><a href="#%E8%B6%85%E8%B6%8A%E8%87%AA%E6%81%8B%E5%AF%BB%E6%89%BE%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89%E5%92%8C%E7%9B%AE%E7%9A%84">超越自恋：寻找生命的意义和目的</a></li>
+<li><a href="#%E5%87%8F%E5%B0%91%E5%AD%A4%E7%8B%AC%E7%96%8F%E7%A6%BB%E6%84%9F">减少孤独、疏离感</a></li>
+<li><a href="#%E4%B8%8E%E7%BB%9D%E6%9C%9B%E6%97%A0%E5%8A%A9%E6%97%A0%E6%9C%9B%E4%BD%9C%E6%96%97%E4%BA%89">与绝望、无助、无望作斗争</a></li>
+<li><a href="#%E6%8E%A5%E5%8F%97%E8%87%AA%E6%88%91%E5%92%8C%E7%A7%AF%E6%9E%81%E7%9A%84%E6%94%B9%E5%8F%98">接受自我和积极的改变</a></li>
+<li><a href="#%E5%8F%91%E5%B1%95%E6%9B%B4%E7%8E%B0%E5%AE%9E%E7%9A%84%E6%9C%9F%E5%BE%85">发展更现实的期待</a></li>
+<li><a href="#%E8%AE%A4%E8%AF%86%E5%88%B0%E4%B8%AA%E4%BA%BA%E8%B4%A3%E4%BB%BB%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7">认识到个人责任的局限性</a></li>
+<li><a href="#%E5%8F%98%E5%BE%97%E4%B8%93%E6%B3%A8%E8%84%9A%E8%B8%8F%E5%AE%9E%E5%9C%B0">变得专注、脚踏实地</a></li>
+</ul>
+</li>
+<li><a href="#chapter8-%E5%A2%9E%E5%BC%BA%E8%87%AA%E6%88%91%E7%9A%84%E7%AD%96%E7%95%A5">Chapter8 增强“自我”的策略</a>
+<ul>
+<li><a href="#%E5%BB%BA%E7%AB%8B%E6%84%8F%E8%AF%86">建立意识</a></li>
+<li><a href="#%E5%87%8F%E5%B0%91%E8%87%AA%E6%81%8B">减少自恋</a></li>
+<li><a href="#%E5%A2%9E%E5%BC%BA%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D">增强自我反思</a></li>
+<li><a href="#%E5%9F%B9%E5%85%BB%E4%BD%A0%E7%9A%84%E5%BC%BA%E9%A1%B9">培养你的强项</a></li>
+<li><a href="#%E5%8F%91%E5%B1%95%E5%9D%9A%E5%9B%BA%E5%BC%BA%E9%9F%A7%E7%9A%84%E5%BF%83%E7%90%86%E8%BE%B9%E7%95%8C">发展坚固、强韧的心理边界</a></li>
+<li><a href="#%E5%81%9A%E4%BD%A0%E8%87%AA%E5%B7%B1%E6%83%B3%E5%81%9A%E7%9A%84%E4%BA%BA">做你自己想做的人</a></li>
+</ul>
+</li>
+<li><a href="#chapter9-%E8%AE%A9%E7%90%86%E6%83%B3%E8%87%AA%E6%88%91%E5%8F%98%E6%88%90%E7%8E%B0%E5%AE%9E%E8%87%AA%E6%88%91%E7%9A%84%E7%AD%96%E7%95%A5">Chapter9 让理想自我变成现实自我的策略</a>
+<ul>
+<li><a href="#%E4%B8%8E%E4%BB%96%E4%BA%BA%E5%85%B1%E6%83%85%E5%B9%B6%E5%81%9A%E5%87%BA%E5%9B%9E%E5%BA%94">与他人共情，并做出回应</a></li>
+<li><a href="#%E5%88%9B%E9%80%A0%E6%80%A7%E7%9A%84%E6%80%9D%E8%80%83%E8%A1%8C%E5%8A%A8%E5%92%8C%E8%A7%82%E7%82%B9">创造性的思考、行动和观点</a></li>
+<li><a href="#%E4%B8%8E%E5%AE%87%E5%AE%99%E4%BA%A7%E7%94%9F%E8%BF%9E%E6%8E%A5%E7%9A%84%E7%81%B5%E6%84%9F%E5%8F%91%E5%B1%95%E5%BD%92%E5%B1%9E%E6%84%9F">与宇宙产生连接的灵感，发展归属感</a></li>
+<li><a href="#%E5%9F%B9%E5%85%BB%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB">培养人际关系</a></li>
+</ul>
+</li>
+<li><a href="#chapter10-%E6%8E%8C%E6%8F%A1%E8%87%AA%E6%88%91%E7%9A%84%E7%BB%88%E7%BA%A7%E7%AD%96%E7%95%A5">Chapter10 掌握自我的终级策略</a>
+<ul>
+<li><a href="#%E6%97%A9%E6%9C%9F%E7%BB%8F%E9%AA%8C%E5%A6%82%E4%BD%95%E5%A1%91%E9%80%A0%E4%BD%A0">早期经验如何塑造你？</a></li>
+<li><a href="#%E6%B4%BB%E5%9C%A8%E5%88%AB%E4%BA%BA%E7%9A%84%E7%9B%AE%E5%85%89%E4%B8%AD">活在别人的目光中</a></li>
+<li><a href="#%E4%BF%9D%E6%8C%81%E8%99%9A%E5%81%87%E5%A4%96%E5%A3%B3%E7%9A%84%E9%9C%80%E8%A6%81">保持虚假外壳的需要</a></li>
+<li><a href="#%E8%AE%A4%E4%B8%BA%E8%87%AA%E5%B7%B1%E9%9C%80%E8%A6%81%E7%85%A7%E9%A1%BE%E4%BB%96%E4%BA%BA%E7%9A%84%E8%A7%82%E5%BF%B5">认为自己需要照顾他人的观念</a></li>
+<li><a href="#%E4%BD%A0%E8%A7%89%E5%BE%97%E8%A2%AB%E4%BA%BA%E6%8E%A5%E7%BA%B3%E7%9A%84%E7%A8%8B%E5%BA%A6">你觉得被人接纳的程度</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E4%BB%B7%E5%80%BC%E5%92%8C%E9%87%8D%E8%A6%81%E6%80%A7">你的价值和重要性</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

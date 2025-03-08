@@ -18,7 +18,7 @@ If you find anything useful, feel free to fork it and make it your own.
 6. 世界时钟功能
 7. 利用css columns实现简单的横向翻页功能
 8. 添加黑暗/明亮模式切换按钮
-9. 侧边目录、顶部标题栏，分别具有显示当前章节、页面进度功能
+9. 实现目录节点跟随滚动高亮：侧边目录、顶部标题栏，分别具有显示当前章节、页面进度功能
 10. 面包屑导航
 11. 在账号数字后面添加复制按钮，避免每次需要选中、复制的麻烦
 
@@ -30,3 +30,4 @@ If you find anything useful, feel free to fork it and make it your own.
 
 1. 当笔记的目录h3及其下的h4、h5等的总高度超过一屏的时候，多余部分滚动的时候不会出来。
 通过将h4 h5的z-index设置比h3小，使其随滚动隐藏在吸顶后的h3后面。
+2. html锚点跳转设置跳转的位置不在默认的视窗顶部：在css的html设置中使用“scroll-padding-top”，若想定位到视窗中间，可设置值为50vh。

@@ -127,541 +127,179 @@
 }
 
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
-}
-
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-	padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 30px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ffcccc;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 4px solid #ffcc99;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-/*笔记中的普通表格*/
-table {
-	/*居中*/
-	margin: 0 auto;
-	max-width: 80%;
-	font-size: smaller;
-
-	border-width: 1px;
-	border-style: solid;
-	border-color: #666666;
-	border-collapse: collapse;
-}
-
-th,
-td {
-	background-color: transparent;
-	border: solid rgb(80, 80, 80) 1px;
-	padding: 5px;
-}
-
-th {
-	background-color: rgb(221, 221, 221);
-	text-align: center;
-	font-weight: bold;
-}
-
-/*笔记中的普通图片*/
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 笔记里插入我的评价 ======== */
-div.mycomment {
-	font-size: smaller;
-
-	padding: 20px 20px 5px 30px;
-	margin: 40px 5%;
-	background-color: #e5eecc;
-
-	border: solid 2px #8ca86d;
-	border-radius: 30px;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track 
-	scrollbar-color: skyblue #ededed;*/
-	scrollbar-color: rgb(178, 216, 232) #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	.content {
-		width: 73%;
-		padding-left: 0.5%;
-	}
-
-	div.toc {
-		/*max-width: 29%;*/
-		width: 26%;
-		height: 100vh;
-		padding-right: 0;
-
-		float: left;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		/* list-style-position: inside; */
-		line-height: 1.8;
-	}
-
-	div.toc a {
-		/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
-		display: block;
-		/*隐藏链接下划线*/
-		text-decoration: none;
-		color: white;
-
-		/*禁止换行*/
-		white-space: nowrap;
-		/*超出部分直接隐藏不显示*/
-		overflow: hidden;
-		/* 超出部分虽不显示但末尾添加省略号
-		text-overflow: ellipsis;*/
-	}
-
-	div.toc a:hover {
-		color: black;
-	}
-
-	div.toc ul>li>a:hover {
-		background-color: #ff7e79;
-	}
-
-	div.toc ul>li>ul>li>a:hover {
-		background-color: #ffcccc;
-	}
-
-	div.toc ul>li>ul>li>ul>li>a:hover {
-		background-color: #ffcc99;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	/*因为在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 所以 ul>li 是第3级标题，往下以此类推*/
-	div.toc ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-
-		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
-		z-index: 1;
-		/*skyblue*/
-		background-color: #1c1b22;
-		font-weight: bold;
-		font-size: 0.8em;
-		color: white;
-	}
-
-	div.toc ul>li>ul>li {
-		padding-left: 20px;
-
-		/*rgb(178, 216, 232)*/
-		background-color: #42414d;
-		font-weight: normal;
-		font-size: 0.8em;
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		padding-left: 20px;
-
-		/*background-color: rgb(210, 231, 239);*/
-		font-weight: normal;
-		font-size: 0.75em;
-	}
-
-	/* 在VS Code的 Setting.json 文件中设置了 "markdown.extension.toc.levels": "3..5", 在生成目录的时候故意忽略第6级目录
-	div.toc ul>li>ul>li>ul>li>ul>li {
-	background-color: rgb(228, 235, 238);
-	font-weight: normal;
-	padding-left: 20px;
-	font-size: 0.6em;
-	}
-	*/
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
-</style>
+        
         </head>
         <body class="vscode-body vscode-light">
-            <div class="content">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/9520.jpg"></td><td>
 <h1 id="暗理性如何掌控情绪">暗理性：如何掌控情绪</h1>
-<h2 id="卫蓝-著">卫蓝 著</h2>
+<center>卫蓝</center>
+</td></tr></table>
 <div class="mycomment">
 <p>算是一本情绪科普类书籍，介绍了几种常见的消极情绪：敏感、焦虑、愤怒、抑郁。文章目录标题有点夸大其实，提出的问题很大，然而实际上给出的方法却有限。写作文笔水平也很一般。对我来说，作为一本水平一般的科普书，还是值得一看的，但也仅值得一看而已，偶尔可以再翻翻笔记，还是可以有所收获的。</p>
 </div>
-<h3 id=""></h3>
+<h3 id="序-失控的进步为什么我们会有各种情绪问题">序 失控的进步：为什么我们会有各种情绪问题？</h3>
+<h3 id="第一章-源头认识我们为什么需要情绪">第一章 源头认识：我们为什么需要情绪？</h3>
+<h4 id="情绪起源情绪到底是什么">情绪起源：情绪到底是什么？</h4>
+<h4 id="生理限制情绪产生时我们的身体发生了什么">生理限制：情绪产生时，我们的身体发生了什么？</h4>
+<h4 id="情绪三要素什么影响着我们的情绪">情绪三要素：什么影响着我们的情绪？</h4>
+<h4 id="致命四人组为什么情绪会变成情绪问题">致命“四人组”：为什么情绪会变成“情绪问题”？</h4>
+<h3 id="第二章-敏感拿什么拯救你的玻璃心">第二章 敏感：拿什么拯救你的“玻璃心”？</h3>
+<h4 id="高敏感天赋我们为什么更聪明">高敏感天赋：我们为什么更聪明？</h4>
+<h4 id="资源应对力为什么你对损失那么敏感">资源应对力：为什么你对损失那么敏感？</h4>
+<h4 id="当事人立场道理我们都懂为什么还有很多烦恼">当事人立场：道理我们都懂，为什么还有很多烦恼？</h4>
+<h4 id="低权力感为什么你总是害怕别人的评价">低权力感：为什么你总是害怕别人的评价？</h4>
+<h4 id="敏感者自救让自己变聪明是最好的解决办法">敏感者自救：让自己变聪明是最好的解决办法</h4>
+<h3 id="第三章-焦虑怎么才能和压力做朋友">第三章 焦虑：怎么才能和压力做朋友？</h3>
+<h4 id="无聊感你想要毫无压力的生活吗">无聊感：你想要毫无压力的生活吗？</h4>
+<h4 id="焦虑分子为什么越焦虑越努力">焦虑分子：为什么越焦虑，越努力？</h4>
+<h4 id="同时性错觉为什么焦虑总为你的表现不佳背锅">同时性错觉：为什么焦虑总为你的表现不佳“背锅”？</h4>
+<h4 id="认知行为技术如何调节自己的焦虑">认知行为技术：如何调节自己的焦虑？</h4>
+<h3 id="第四章-愤怒如何不失控地解决问题">第四章 愤怒：如何不失控地解决问题？</h3>
+<h4 id="战斗驱动为什么你会感到愤怒">“战斗”驱动：为什么你会感到愤怒？</h4>
+<h4 id="自我觉察如何避免因高权力感产生过多愤怒">自我觉察：如何避免因高权力感产生过多愤怒？</h4>
+<h4 id="好的愤怒如何让愤怒为解决问题服务">“好的愤怒”：如何让愤怒为解决问题服务？</h4>
+<h4 id="边界感如何建立边界减少不必要的愤怒">边界感：如何建立边界，减少不必要的愤怒？</h4>
+<h3 id="第五章-抑郁一种让伤口愈合的方式">第五章 抑郁：一种让“伤口”愈合的方式</h3>
+<h4 id="功能失效抑郁的本质是一种自我疗愈">功能失效：抑郁的本质是一种自我疗愈</h4>
+<h4 id="信任与价值哪些社会因素会导致抑郁">信任与价值：哪些社会因素会导致抑郁？</h4>
+<h4 id="反刍思维如何控制自己的胡思乱想">反刍思维：如何控制自己的“胡思乱想”？</h4>
+<h4 id="调节抑郁如何让自己不再害怕这种状态">调节抑郁：如何让自己不再害怕这种状态？</h4>
+<h3 id="第六章-社会情绪当情绪遇上社会关系">第六章 社会情绪：当情绪遇上社会关系</h3>
+<h4 id="文化情绪当自然演化变成文化演化时情绪也发生了改变">文化情绪：当自然演化变成文化演化时，情绪也发生了改变</h4>
+<h4 id="内心的冲突我们终究不能成为自己">内心的冲突：我们终究不能成为自己</h4>
+<h4 id="道德之怒规则赋予权利愤怒捍卫权利">道德之怒：规则赋予权利，愤怒捍卫权利</h4>
+<h4 id="聚光灯效应你的害羞来自你的太在乎">聚光灯效应：你的害羞来自你的太在乎</h4>
+<h4 id="灾难性思维如何避免过强的愧疚感">灾难性思维：如何避免过强的愧疚感？</h4>
+<h3 id="第七章-冲突如何更好地理解人际关系">第七章 冲突：如何更好地理解人际关系？</h3>
+<h4 id="非建设性冲突为什么很多人会小事化大">非建设性冲突：为什么很多人会“小事化大”？</h4>
+<h4 id="范畴陷阱争论过程中小事化大的错误方式一">范畴陷阱：争论过程中小事化大的错误方式（一）</h4>
+<h4 id="抽象化攻击争论过程中小事化大的错误方式二">抽象化攻击：争论过程中小事化大的错误方式（二）</h4>
+<h4 id="共情能力为什么说不要随意批判别人">共情能力：为什么说不要随意批判别人？</h4>
+<h4 id="非暴力沟通如何才能更好地用沟通解决问题">非暴力沟通：如何才能更好地用沟通解决问题？</h4>
+<h3 id="第八章-亲密关系成为更好的自己">第八章 亲密关系：成为更好的自己</h3>
+<h4 id="越亲密越受伤为什么我们与父母合不来">越亲密越受伤：为什么我们与父母合不来？</h4>
+<h4 id="适可而止不要以爱之名绑架任何人">适可而止：不要以爱之名绑架任何人</h4>
+<h4 id="适可而止不要以爱之名放纵任何人">适可而止：不要以爱之名放纵任何人</h4>
+<h4 id="成长冲突学会放手是家长的必修课">成长冲突：学会放手是家长的必修课</h4>
+<h4 id="预期效应抱最坏的打算做最大的努力">预期效应：抱最坏的打算，做最大的努力</h4>
+<h3 id="第九章-情绪重建用过程分析重建情绪">第九章 情绪重建：用过程分析重建情绪</h3>
+<h4 id="自我重建如何减少对自我的不满">自我重建：如何减少对自我的不满？</h4>
+<h4 id="社交重建如何化解朋友之间的冲突">社交重建：如何化解朋友之间的冲突？</h4>
+<h4 id="依恋重建如何化解恋爱关系中的情绪问题">依恋重建：如何化解恋爱关系中的情绪问题？</h4>
+<h4 id="取悦型人格为什么对人很好却不被人重视">取悦型人格：为什么对人很好，却不被人重视？</h4>
+<h3 id="第十章-次级控制从改变世界向改变自己转化">第十章 次级控制：从改变世界向改变自己转化</h3>
+<h4 id="有效比较努力读书真的没有意义吗">有效比较：努力读书真的没有意义吗？</h4>
+<h4 id="利益链在消费主义思潮中保持清醒">利益链：在消费主义思潮中保持清醒</h4>
+<h4 id="无谓的比较不要被思维的笼子框住">无谓的比较：不要被思维的笼子框住</h4>
+<h4 id="背景预设媒体是如何影响我们的情绪的">背景预设：媒体是如何影响我们的情绪的？</h4>
+<h3 id="第十一章-多面共体理解生活中的不同">第十一章 多面共体：理解生活中的不同</h3>
+<h4 id="多元身份为什么很多人不爱发朋友圈">多元身份：为什么很多人不爱发朋友圈？</h4>
+<h4 id="成长思维人的差别因何而来">成长思维：人的差别因何而来？</h4>
+<h4 id="沉默型人格为什么你不喜欢社交">沉默型人格：为什么你不喜欢社交？</h4>
+<h4 id="害怕失败别让偶像包袱束缚你的手脚">害怕失败：别让“偶像包袱”束缚你的手脚</h4>
+<h3 id="后记-选择性注意你所看到的世界决定着你的高度">后记 选择性注意：你所看到的世界决定着你的高度</h3>
 </div>
 <div class="toc">
 <ul>
-<li><a href="#"></a></li>
+<li><a href="#%E5%BA%8F-%E5%A4%B1%E6%8E%A7%E7%9A%84%E8%BF%9B%E6%AD%A5%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E4%BC%9A%E6%9C%89%E5%90%84%E7%A7%8D%E6%83%85%E7%BB%AA%E9%97%AE%E9%A2%98">序 失控的进步：为什么我们会有各种情绪问题？</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%BA%90%E5%A4%B4%E8%AE%A4%E8%AF%86%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%83%85%E7%BB%AA">第一章 源头认识：我们为什么需要情绪？</a>
+<ul>
+<li><a href="#%E6%83%85%E7%BB%AA%E8%B5%B7%E6%BA%90%E6%83%85%E7%BB%AA%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88">情绪起源：情绪到底是什么？</a></li>
+<li><a href="#%E7%94%9F%E7%90%86%E9%99%90%E5%88%B6%E6%83%85%E7%BB%AA%E4%BA%A7%E7%94%9F%E6%97%B6%E6%88%91%E4%BB%AC%E7%9A%84%E8%BA%AB%E4%BD%93%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88">生理限制：情绪产生时，我们的身体发生了什么？</a></li>
+<li><a href="#%E6%83%85%E7%BB%AA%E4%B8%89%E8%A6%81%E7%B4%A0%E4%BB%80%E4%B9%88%E5%BD%B1%E5%93%8D%E7%9D%80%E6%88%91%E4%BB%AC%E7%9A%84%E6%83%85%E7%BB%AA">情绪三要素：什么影响着我们的情绪？</a></li>
+<li><a href="#%E8%87%B4%E5%91%BD%E5%9B%9B%E4%BA%BA%E7%BB%84%E4%B8%BA%E4%BB%80%E4%B9%88%E6%83%85%E7%BB%AA%E4%BC%9A%E5%8F%98%E6%88%90%E6%83%85%E7%BB%AA%E9%97%AE%E9%A2%98">致命“四人组”：为什么情绪会变成“情绪问题”？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%95%8F%E6%84%9F%E6%8B%BF%E4%BB%80%E4%B9%88%E6%8B%AF%E6%95%91%E4%BD%A0%E7%9A%84%E7%8E%BB%E7%92%83%E5%BF%83">第二章 敏感：拿什么拯救你的“玻璃心”？</a>
+<ul>
+<li><a href="#%E9%AB%98%E6%95%8F%E6%84%9F%E5%A4%A9%E8%B5%8B%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9B%B4%E8%81%AA%E6%98%8E">高敏感天赋：我们为什么更聪明？</a></li>
+<li><a href="#%E8%B5%84%E6%BA%90%E5%BA%94%E5%AF%B9%E5%8A%9B%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E5%AF%B9%E6%8D%9F%E5%A4%B1%E9%82%A3%E4%B9%88%E6%95%8F%E6%84%9F">资源应对力：为什么你对损失那么敏感？</a></li>
+<li><a href="#%E5%BD%93%E4%BA%8B%E4%BA%BA%E7%AB%8B%E5%9C%BA%E9%81%93%E7%90%86%E6%88%91%E4%BB%AC%E9%83%BD%E6%87%82%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%98%E6%9C%89%E5%BE%88%E5%A4%9A%E7%83%A6%E6%81%BC">当事人立场：道理我们都懂，为什么还有很多烦恼？</a></li>
+<li><a href="#%E4%BD%8E%E6%9D%83%E5%8A%9B%E6%84%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E6%80%BB%E6%98%AF%E5%AE%B3%E6%80%95%E5%88%AB%E4%BA%BA%E7%9A%84%E8%AF%84%E4%BB%B7">低权力感：为什么你总是害怕别人的评价？</a></li>
+<li><a href="#%E6%95%8F%E6%84%9F%E8%80%85%E8%87%AA%E6%95%91%E8%AE%A9%E8%87%AA%E5%B7%B1%E5%8F%98%E8%81%AA%E6%98%8E%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95">敏感者自救：让自己变聪明是最好的解决办法</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%84%A6%E8%99%91%E6%80%8E%E4%B9%88%E6%89%8D%E8%83%BD%E5%92%8C%E5%8E%8B%E5%8A%9B%E5%81%9A%E6%9C%8B%E5%8F%8B">第三章 焦虑：怎么才能和压力做朋友？</a>
+<ul>
+<li><a href="#%E6%97%A0%E8%81%8A%E6%84%9F%E4%BD%A0%E6%83%B3%E8%A6%81%E6%AF%AB%E6%97%A0%E5%8E%8B%E5%8A%9B%E7%9A%84%E7%94%9F%E6%B4%BB%E5%90%97">无聊感：你想要毫无压力的生活吗？</a></li>
+<li><a href="#%E7%84%A6%E8%99%91%E5%88%86%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B6%8A%E7%84%A6%E8%99%91%E8%B6%8A%E5%8A%AA%E5%8A%9B">焦虑分子：为什么越焦虑，越努力？</a></li>
+<li><a href="#%E5%90%8C%E6%97%B6%E6%80%A7%E9%94%99%E8%A7%89%E4%B8%BA%E4%BB%80%E4%B9%88%E7%84%A6%E8%99%91%E6%80%BB%E4%B8%BA%E4%BD%A0%E7%9A%84%E8%A1%A8%E7%8E%B0%E4%B8%8D%E4%BD%B3%E8%83%8C%E9%94%85">同时性错觉：为什么焦虑总为你的表现不佳“背锅”？</a></li>
+<li><a href="#%E8%AE%A4%E7%9F%A5%E8%A1%8C%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%A6%82%E4%BD%95%E8%B0%83%E8%8A%82%E8%87%AA%E5%B7%B1%E7%9A%84%E7%84%A6%E8%99%91">认知行为技术：如何调节自己的焦虑？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%84%A4%E6%80%92%E5%A6%82%E4%BD%95%E4%B8%8D%E5%A4%B1%E6%8E%A7%E5%9C%B0%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">第四章 愤怒：如何不失控地解决问题？</a>
+<ul>
+<li><a href="#%E6%88%98%E6%96%97%E9%A9%B1%E5%8A%A8%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E4%BC%9A%E6%84%9F%E5%88%B0%E6%84%A4%E6%80%92">“战斗”驱动：为什么你会感到愤怒？</a></li>
+<li><a href="#%E8%87%AA%E6%88%91%E8%A7%89%E5%AF%9F%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%9B%A0%E9%AB%98%E6%9D%83%E5%8A%9B%E6%84%9F%E4%BA%A7%E7%94%9F%E8%BF%87%E5%A4%9A%E6%84%A4%E6%80%92">自我觉察：如何避免因高权力感产生过多愤怒？</a></li>
+<li><a href="#%E5%A5%BD%E7%9A%84%E6%84%A4%E6%80%92%E5%A6%82%E4%BD%95%E8%AE%A9%E6%84%A4%E6%80%92%E4%B8%BA%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E6%9C%8D%E5%8A%A1">“好的愤怒”：如何让愤怒为解决问题服务？</a></li>
+<li><a href="#%E8%BE%B9%E7%95%8C%E6%84%9F%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E8%BE%B9%E7%95%8C%E5%87%8F%E5%B0%91%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E6%84%A4%E6%80%92">边界感：如何建立边界，减少不必要的愤怒？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%8A%91%E9%83%81%E4%B8%80%E7%A7%8D%E8%AE%A9%E4%BC%A4%E5%8F%A3%E6%84%88%E5%90%88%E7%9A%84%E6%96%B9%E5%BC%8F">第五章 抑郁：一种让“伤口”愈合的方式</a>
+<ul>
+<li><a href="#%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88%E6%8A%91%E9%83%81%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E4%B8%80%E7%A7%8D%E8%87%AA%E6%88%91%E7%96%97%E6%84%88">功能失效：抑郁的本质是一种自我疗愈</a></li>
+<li><a href="#%E4%BF%A1%E4%BB%BB%E4%B8%8E%E4%BB%B7%E5%80%BC%E5%93%AA%E4%BA%9B%E7%A4%BE%E4%BC%9A%E5%9B%A0%E7%B4%A0%E4%BC%9A%E5%AF%BC%E8%87%B4%E6%8A%91%E9%83%81">信任与价值：哪些社会因素会导致抑郁？</a></li>
+<li><a href="#%E5%8F%8D%E5%88%8D%E6%80%9D%E7%BB%B4%E5%A6%82%E4%BD%95%E6%8E%A7%E5%88%B6%E8%87%AA%E5%B7%B1%E7%9A%84%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3">反刍思维：如何控制自己的“胡思乱想”？</a></li>
+<li><a href="#%E8%B0%83%E8%8A%82%E6%8A%91%E9%83%81%E5%A6%82%E4%BD%95%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B8%8D%E5%86%8D%E5%AE%B3%E6%80%95%E8%BF%99%E7%A7%8D%E7%8A%B6%E6%80%81">调节抑郁：如何让自己不再害怕这种状态？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%A4%BE%E4%BC%9A%E6%83%85%E7%BB%AA%E5%BD%93%E6%83%85%E7%BB%AA%E9%81%87%E4%B8%8A%E7%A4%BE%E4%BC%9A%E5%85%B3%E7%B3%BB">第六章 社会情绪：当情绪遇上社会关系</a>
+<ul>
+<li><a href="#%E6%96%87%E5%8C%96%E6%83%85%E7%BB%AA%E5%BD%93%E8%87%AA%E7%84%B6%E6%BC%94%E5%8C%96%E5%8F%98%E6%88%90%E6%96%87%E5%8C%96%E6%BC%94%E5%8C%96%E6%97%B6%E6%83%85%E7%BB%AA%E4%B9%9F%E5%8F%91%E7%94%9F%E4%BA%86%E6%94%B9%E5%8F%98">文化情绪：当自然演化变成文化演化时，情绪也发生了改变</a></li>
+<li><a href="#%E5%86%85%E5%BF%83%E7%9A%84%E5%86%B2%E7%AA%81%E6%88%91%E4%BB%AC%E7%BB%88%E7%A9%B6%E4%B8%8D%E8%83%BD%E6%88%90%E4%B8%BA%E8%87%AA%E5%B7%B1">内心的冲突：我们终究不能成为自己</a></li>
+<li><a href="#%E9%81%93%E5%BE%B7%E4%B9%8B%E6%80%92%E8%A7%84%E5%88%99%E8%B5%8B%E4%BA%88%E6%9D%83%E5%88%A9%E6%84%A4%E6%80%92%E6%8D%8D%E5%8D%AB%E6%9D%83%E5%88%A9">道德之怒：规则赋予权利，愤怒捍卫权利</a></li>
+<li><a href="#%E8%81%9A%E5%85%89%E7%81%AF%E6%95%88%E5%BA%94%E4%BD%A0%E7%9A%84%E5%AE%B3%E7%BE%9E%E6%9D%A5%E8%87%AA%E4%BD%A0%E7%9A%84%E5%A4%AA%E5%9C%A8%E4%B9%8E">聚光灯效应：你的害羞来自你的太在乎</a></li>
+<li><a href="#%E7%81%BE%E9%9A%BE%E6%80%A7%E6%80%9D%E7%BB%B4%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E8%BF%87%E5%BC%BA%E7%9A%84%E6%84%A7%E7%96%9A%E6%84%9F">灾难性思维：如何避免过强的愧疚感？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%86%B2%E7%AA%81%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E7%90%86%E8%A7%A3%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB">第七章 冲突：如何更好地理解人际关系？</a>
+<ul>
+<li><a href="#%E9%9D%9E%E5%BB%BA%E8%AE%BE%E6%80%A7%E5%86%B2%E7%AA%81%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BE%88%E5%A4%9A%E4%BA%BA%E4%BC%9A%E5%B0%8F%E4%BA%8B%E5%8C%96%E5%A4%A7">非建设性冲突：为什么很多人会“小事化大”？</a></li>
+<li><a href="#%E8%8C%83%E7%95%B4%E9%99%B7%E9%98%B1%E4%BA%89%E8%AE%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%B0%8F%E4%BA%8B%E5%8C%96%E5%A4%A7%E7%9A%84%E9%94%99%E8%AF%AF%E6%96%B9%E5%BC%8F%E4%B8%80">范畴陷阱：争论过程中小事化大的错误方式（一）</a></li>
+<li><a href="#%E6%8A%BD%E8%B1%A1%E5%8C%96%E6%94%BB%E5%87%BB%E4%BA%89%E8%AE%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%B0%8F%E4%BA%8B%E5%8C%96%E5%A4%A7%E7%9A%84%E9%94%99%E8%AF%AF%E6%96%B9%E5%BC%8F%E4%BA%8C">抽象化攻击：争论过程中小事化大的错误方式（二）</a></li>
+<li><a href="#%E5%85%B1%E6%83%85%E8%83%BD%E5%8A%9B%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%E4%B8%8D%E8%A6%81%E9%9A%8F%E6%84%8F%E6%89%B9%E5%88%A4%E5%88%AB%E4%BA%BA">共情能力：为什么说不要随意批判别人？</a></li>
+<li><a href="#%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A%E5%A6%82%E4%BD%95%E6%89%8D%E8%83%BD%E6%9B%B4%E5%A5%BD%E5%9C%B0%E7%94%A8%E6%B2%9F%E9%80%9A%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">非暴力沟通：如何才能更好地用沟通解决问题？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB%E6%88%90%E4%B8%BA%E6%9B%B4%E5%A5%BD%E7%9A%84%E8%87%AA%E5%B7%B1">第八章 亲密关系：成为更好的自己</a>
+<ul>
+<li><a href="#%E8%B6%8A%E4%BA%B2%E5%AF%86%E8%B6%8A%E5%8F%97%E4%BC%A4%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E4%B8%8E%E7%88%B6%E6%AF%8D%E5%90%88%E4%B8%8D%E6%9D%A5">越亲密越受伤：为什么我们与父母合不来？</a></li>
+<li><a href="#%E9%80%82%E5%8F%AF%E8%80%8C%E6%AD%A2%E4%B8%8D%E8%A6%81%E4%BB%A5%E7%88%B1%E4%B9%8B%E5%90%8D%E7%BB%91%E6%9E%B6%E4%BB%BB%E4%BD%95%E4%BA%BA">适可而止：不要以爱之名绑架任何人</a></li>
+<li><a href="#%E9%80%82%E5%8F%AF%E8%80%8C%E6%AD%A2%E4%B8%8D%E8%A6%81%E4%BB%A5%E7%88%B1%E4%B9%8B%E5%90%8D%E6%94%BE%E7%BA%B5%E4%BB%BB%E4%BD%95%E4%BA%BA">适可而止：不要以爱之名放纵任何人</a></li>
+<li><a href="#%E6%88%90%E9%95%BF%E5%86%B2%E7%AA%81%E5%AD%A6%E4%BC%9A%E6%94%BE%E6%89%8B%E6%98%AF%E5%AE%B6%E9%95%BF%E7%9A%84%E5%BF%85%E4%BF%AE%E8%AF%BE">成长冲突：学会放手是家长的必修课</a></li>
+<li><a href="#%E9%A2%84%E6%9C%9F%E6%95%88%E5%BA%94%E6%8A%B1%E6%9C%80%E5%9D%8F%E7%9A%84%E6%89%93%E7%AE%97%E5%81%9A%E6%9C%80%E5%A4%A7%E7%9A%84%E5%8A%AA%E5%8A%9B">预期效应：抱最坏的打算，做最大的努力</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E6%83%85%E7%BB%AA%E9%87%8D%E5%BB%BA%E7%94%A8%E8%BF%87%E7%A8%8B%E5%88%86%E6%9E%90%E9%87%8D%E5%BB%BA%E6%83%85%E7%BB%AA">第九章 情绪重建：用过程分析重建情绪</a>
+<ul>
+<li><a href="#%E8%87%AA%E6%88%91%E9%87%8D%E5%BB%BA%E5%A6%82%E4%BD%95%E5%87%8F%E5%B0%91%E5%AF%B9%E8%87%AA%E6%88%91%E7%9A%84%E4%B8%8D%E6%BB%A1">自我重建：如何减少对自我的不满？</a></li>
+<li><a href="#%E7%A4%BE%E4%BA%A4%E9%87%8D%E5%BB%BA%E5%A6%82%E4%BD%95%E5%8C%96%E8%A7%A3%E6%9C%8B%E5%8F%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%86%B2%E7%AA%81">社交重建：如何化解朋友之间的冲突？</a></li>
+<li><a href="#%E4%BE%9D%E6%81%8B%E9%87%8D%E5%BB%BA%E5%A6%82%E4%BD%95%E5%8C%96%E8%A7%A3%E6%81%8B%E7%88%B1%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E6%83%85%E7%BB%AA%E9%97%AE%E9%A2%98">依恋重建：如何化解恋爱关系中的情绪问题？</a></li>
+<li><a href="#%E5%8F%96%E6%82%A6%E5%9E%8B%E4%BA%BA%E6%A0%BC%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AF%B9%E4%BA%BA%E5%BE%88%E5%A5%BD%E5%8D%B4%E4%B8%8D%E8%A2%AB%E4%BA%BA%E9%87%8D%E8%A7%86">取悦型人格：为什么对人很好，却不被人重视？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E6%AC%A1%E7%BA%A7%E6%8E%A7%E5%88%B6%E4%BB%8E%E6%94%B9%E5%8F%98%E4%B8%96%E7%95%8C%E5%90%91%E6%94%B9%E5%8F%98%E8%87%AA%E5%B7%B1%E8%BD%AC%E5%8C%96">第十章 次级控制：从改变世界向改变自己转化</a>
+<ul>
+<li><a href="#%E6%9C%89%E6%95%88%E6%AF%94%E8%BE%83%E5%8A%AA%E5%8A%9B%E8%AF%BB%E4%B9%A6%E7%9C%9F%E7%9A%84%E6%B2%A1%E6%9C%89%E6%84%8F%E4%B9%89%E5%90%97">有效比较：努力读书真的没有意义吗？</a></li>
+<li><a href="#%E5%88%A9%E7%9B%8A%E9%93%BE%E5%9C%A8%E6%B6%88%E8%B4%B9%E4%B8%BB%E4%B9%89%E6%80%9D%E6%BD%AE%E4%B8%AD%E4%BF%9D%E6%8C%81%E6%B8%85%E9%86%92">利益链：在消费主义思潮中保持清醒</a></li>
+<li><a href="#%E6%97%A0%E8%B0%93%E7%9A%84%E6%AF%94%E8%BE%83%E4%B8%8D%E8%A6%81%E8%A2%AB%E6%80%9D%E7%BB%B4%E7%9A%84%E7%AC%BC%E5%AD%90%E6%A1%86%E4%BD%8F">无谓的比较：不要被思维的笼子框住</a></li>
+<li><a href="#%E8%83%8C%E6%99%AF%E9%A2%84%E8%AE%BE%E5%AA%92%E4%BD%93%E6%98%AF%E5%A6%82%E4%BD%95%E5%BD%B1%E5%93%8D%E6%88%91%E4%BB%AC%E7%9A%84%E6%83%85%E7%BB%AA%E7%9A%84">背景预设：媒体是如何影响我们的情绪的？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E5%A4%9A%E9%9D%A2%E5%85%B1%E4%BD%93%E7%90%86%E8%A7%A3%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C">第十一章 多面共体：理解生活中的不同</a>
+<ul>
+<li><a href="#%E5%A4%9A%E5%85%83%E8%BA%AB%E4%BB%BD%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BE%88%E5%A4%9A%E4%BA%BA%E4%B8%8D%E7%88%B1%E5%8F%91%E6%9C%8B%E5%8F%8B%E5%9C%88">多元身份：为什么很多人不爱发朋友圈？</a></li>
+<li><a href="#%E6%88%90%E9%95%BF%E6%80%9D%E7%BB%B4%E4%BA%BA%E7%9A%84%E5%B7%AE%E5%88%AB%E5%9B%A0%E4%BD%95%E8%80%8C%E6%9D%A5">成长思维：人的差别因何而来？</a></li>
+<li><a href="#%E6%B2%89%E9%BB%98%E5%9E%8B%E4%BA%BA%E6%A0%BC%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E4%B8%8D%E5%96%9C%E6%AC%A2%E7%A4%BE%E4%BA%A4">沉默型人格：为什么你不喜欢社交？</a></li>
+<li><a href="#%E5%AE%B3%E6%80%95%E5%A4%B1%E8%B4%A5%E5%88%AB%E8%AE%A9%E5%81%B6%E5%83%8F%E5%8C%85%E8%A2%B1%E6%9D%9F%E7%BC%9A%E4%BD%A0%E7%9A%84%E6%89%8B%E8%84%9A">害怕失败：别让“偶像包袱”束缚你的手脚</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0-%E9%80%89%E6%8B%A9%E6%80%A7%E6%B3%A8%E6%84%8F%E4%BD%A0%E6%89%80%E7%9C%8B%E5%88%B0%E7%9A%84%E4%B8%96%E7%95%8C%E5%86%B3%E5%AE%9A%E7%9D%80%E4%BD%A0%E7%9A%84%E9%AB%98%E5%BA%A6">后记 选择性注意：你所看到的世界决定着你的高度</a></li>
 </ul>
 </div>
-
             
             
         </body>

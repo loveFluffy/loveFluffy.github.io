@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x9501;&#x8111;&#xff1a;&#x5982;&#x4f55;&#x77ac;&#x95f4;&#x3001;&#x6df1;&#x5ea6;&#x3001;&#x6301;&#x4e45;&#x5730;&#x5f71;&#x54cd;&#x4ed6;&#x4eba;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x9501;&#x8111;&#xff1a;&#x5982;&#x4f55;&#x77ac;&#x95f4;&#x3001;&#x6df1;&#x5ea6;&#x3001;&#x6301;&#x4e45;&#x5730;&#x5f71;&#x54cd;&#x4ed6;&#x4eba;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,363 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="锁脑如何瞬间深度持久地影响他人">锁脑：如何瞬间、深度、持久地影响他人</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/10218.jpg"></td><td>
+<h1 id="锁脑如何瞬间深度持久地影响他人">锁脑：如何瞬间、深度、持久地影响他人</h1>
+<center>程志良</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="前言">前言</h3>
+<h2 id="第一部分-直觉锁瞬间将大脑锁上">第一部分 直觉锁：瞬间将大脑锁上</h2>
+<h3 id="第一章-一旦认出就会锁住">第一章 一旦认出就会锁住</h3>
+<h4 id="1-一旦确定就会认出">1 一旦确定就会认出</h4>
+<h4 id="2-大脑如何认出信息">2 大脑如何认出信息</h4>
+<h4 id="3-直觉锁第一时间的第一感觉">3 直觉锁：第一时间的第一感觉</h4>
+<h3 id="第二章-直觉锁加密原则之一定向启动">第二章 直觉锁加密原则之一：定向启动</h3>
+<h4 id="1-有效的定向启动">1 有效的定向启动</h4>
+<h4 id="2-预先设定就会带锁">2 预先设定就会带锁</h4>
+<h4 id="3-大脑如何产生信任">3 大脑如何产生信任</h4>
+<h4 id="4-定向启动的三个原则">4 定向启动的三个原则</h4>
+<h3 id="第三章-直觉锁加密原则之二情感匹配">第三章 直觉锁加密原则之二：情感匹配</h3>
+<h4 id="1-大脑决策的核心是情感">1 大脑决策的核心是情感</h4>
+<h4 id="2-如何自带好感">2 如何自带好感</h4>
+<h4 id="3-情感要符合人们的期待">3 情感要符合人们的期待</h4>
+<h4 id="4-复杂和混乱都是在破坏情感">4 复杂和混乱都是在破坏情感</h4>
+<h4 id="5-与有情感的事物发生关系">5 与有情感的事物发生关系</h4>
+<h3 id="第四章-直觉锁加密原则之三少而显著">第四章 直觉锁加密原则之三：少而显著</h3>
+<h4 id="1-少就可以带锁">1 少就可以带锁</h4>
+<h4 id="2-少而简单容易让人相信">2 少而简单容易让人相信</h4>
+<h4 id="3-只要不费力气大脑就会喜欢">3 只要不费力气大脑就会喜欢</h4>
+<h4 id="4-从细节中可以快速提炼出情感">4 从细节中可以快速提炼出情感</h4>
+<h4 id="5-价值来自细节">5 价值来自细节</h4>
+<h4 id="6-如何制造正向扩散">6 如何制造正向扩散</h4>
+<h4 id="7-光环就是保护层">7 光环就是保护层</h4>
+<h3 id="第五章-直觉锁加密原则之四易于获得">第五章 直觉锁加密原则之四：易于获得</h3>
+<h4 id="1-轻松认出大脑就会锁上">1 轻松认出大脑就会锁上</h4>
+<h4 id="2-增强画面感">2 增强画面感</h4>
+<h4 id="3-增强替代性">3 增强替代性</h4>
+<h4 id="4-增强熟悉感">4 增强熟悉感</h4>
+<h4 id="5-增强典型性">5 增强典型性</h4>
+<h4 id="6-增强愉悦感">6 增强愉悦感</h4>
+<h3 id="第六章-直觉锁加密原则之五情景开启">第六章 直觉锁加密原则之五：情景开启</h3>
+<h4 id="1-情景决定价值">1 情景决定价值</h4>
+<h4 id="2-情景决定感觉">2 情景决定感觉</h4>
+<h4 id="3-借助情景开启需求">3 借助情景开启需求</h4>
+<h2 id="第二部分-理性锁深度地将大脑锁住">第二部分 理性锁：深度地将大脑锁住</h2>
+<h3 id="第七章-理性是变相的认出">第七章 理性是变相的认出</h3>
+<h4 id="1-你为什么能做出更加适当的行为">1 你为什么能做出更加适当的行为</h4>
+<h4 id="2-构建事物未来可能的样子">2 构建事物未来可能的样子</h4>
+<h4 id="3-赋予了新的意义">3 赋予了新的意义</h4>
+<h3 id="第八章-理性锁加密原则一情感增强">第八章 理性锁加密原则一：情感增强</h3>
+<h4 id="1-情感转变给人理性的错觉">1 情感转变给人理性的错觉</h4>
+<h4 id="2-得与失哪种情感更强烈">2 得与失哪种情感更强烈</h4>
+<h4 id="3-联合强烈的感情因素影响决策">3 联合强烈的感情因素影响决策</h4>
+<h3 id="第九章-理性锁加密原则二意志增强">第九章 理性锁加密原则二：意志增强</h3>
+<h4 id="1-意志增强就是动力增强">1 意志增强就是动力增强</h4>
+<h4 id="2-激起大脑补全的意志">2 激起大脑补全的意志</h4>
+<h4 id="3-增强限制感">3 增强限制感</h4>
+<h4 id="4-从背景中分离出来的方法">4 从背景中分离出来的方法</h4>
+<h3 id="第十章-理性锁加密原则三时间优化">第十章 理性锁加密原则三：时间优化</h3>
+<h4 id="1-借助时间来优化你的目标">1 借助时间来优化你的目标</h4>
+<h4 id="2-37美好未来">2 3＋7＝美好未来</h4>
+<h4 id="3-引发决策焦虑改变偏好">3 引发决策焦虑改变偏好</h4>
+<h4 id="4-解除未来负面的可能">4 解除未来负面的可能</h4>
+<h4 id="5-没有未来的未来">5 没有未来的未来</h4>
+<h3 id="第十一章-理性锁加密原则四价值锁定">第十一章 理性锁加密原则四：价值锁定</h3>
+<h4 id="1-锁定已经产生的价值">1 锁定已经产生的价值</h4>
+<h4 id="2-锁定已经投入的价值">2 锁定已经投入的价值</h4>
+<h4 id="3-情感重心就是价值所在">3 情感重心就是价值所在</h4>
+<h4 id="4-如何让价值唯一化">4 如何让价值唯一化</h4>
+<h3 id="第十二章-理性锁加密原则五行为优先">第十二章 理性锁加密原则五：行为优先</h3>
+<h4 id="1-先有正面的行为后有喜欢">1 先有正面的行为，后有喜欢</h4>
+<h4 id="2-引导行为优化目标">2 引导行为优化目标</h4>
+<h4 id="3-增强参与感">3 增强参与感</h4>
+<h2 id="第三部分-自我锁持久地将大脑锁住">第三部分 自我锁：持久地将大脑锁住</h2>
+<h3 id="第十三章-与我相关就会重要">第十三章 与我相关就会重要</h3>
+<h4 id="1-自我锁更顽固的脑锁">1 自我锁：更顽固的脑锁</h4>
+<h4 id="2-大部分人的信念">2 大部分人的信念</h4>
+<h4 id="3-大部分人的自我意志">3 大部分人的自我意志</h4>
+<h3 id="第十四章-自我锁加密原则一强势关联">第十四章 自我锁加密原则一：强势关联</h3>
+<h4 id="1-如何与用户建立强势关联">1 如何与用户建立强势关联</h4>
+<h4 id="2-和你一样的大多数">2 和你一样的大多数</h4>
+<h4 id="3-向中心收缩个性化锁定">3 向中心收缩：个性化锁定</h4>
+<h4 id="4-人格化你的信息">4 人格化你的信息</h4>
+<h4 id="5-强势关联是情感强势增强">5 强势关联是情感强势增强</h4>
+<h3 id="第十五章-自我锁加密原则二进入的渴望">第十五章 自我锁加密原则二：进入的渴望</h3>
+<h4 id="1-自我是进入某种状态的执念">1 自我是进入某种状态的执念</h4>
+<h4 id="2-增强仪式感">2 增强仪式感</h4>
+<h4 id="3-增强自我连接">3 增强自我连接</h4>
+<h3 id="第十六章-自我锁加密原则三逃离的意志">第十六章 自我锁加密原则三：逃离的意志</h3>
+<h4 id="1-增强自主感">1 增强自主感</h4>
+<h4 id="2-重设有效的参照点">2 重设有效的参照点</h4>
+<h4 id="3-假设一种负面可能">3 假设一种负面可能</h4>
+<h4 id="4-感到自我是一种负面的存在">4 感到自我是一种负面的存在</h4>
+<h3 id="第十七章-自我锁加密原则四逆反心理">第十七章 自我锁加密原则四：逆反心理</h3>
+<h4 id="1-人人都有坚硬的壳">1 人人都有坚硬的壳</h4>
+<h4 id="2-不可能绝对不可能">2 不可能，绝对不可能</h4>
+<h4 id="3-逆着他来才能顺了你意">3 逆着他来才能顺了你意</h4>
+<h4 id="4-成为人们信念的一部分">4 成为人们信念的一部分</h4>
+<h3 id="第十八章-自我锁加密原则五认知傲慢">第十八章 自我锁加密原则五：认知傲慢</h3>
+<h4 id="1-尝到甜头就吃不了苦头">1 尝到甜头，就吃不了苦头</h4>
+<h4 id="2-启动既定的自我">2 启动既定的自我</h4>
+<h4 id="3-抗拒的局面下如何升级他人的认知">3 抗拒的局面下，如何升级他人的认知</h4>
+<h4 id="4-让他人产生心理优势">4 让他人产生心理优势</h4>
+<h4 id="5-根据用户偏见讲故事">5 根据用户偏见讲故事</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E4%B8%80%E6%97%A6%E8%AE%A4%E5%87%BA%E5%B0%B1%E4%BC%9A%E9%94%81%E4%BD%8F">第一章 一旦认出就会锁住</a>
+<ul>
+<li><a href="#1-%E4%B8%80%E6%97%A6%E7%A1%AE%E5%AE%9A%E5%B0%B1%E4%BC%9A%E8%AE%A4%E5%87%BA">1 一旦确定就会认出</a></li>
+<li><a href="#2-%E5%A4%A7%E8%84%91%E5%A6%82%E4%BD%95%E8%AE%A4%E5%87%BA%E4%BF%A1%E6%81%AF">2 大脑如何认出信息</a></li>
+<li><a href="#3-%E7%9B%B4%E8%A7%89%E9%94%81%E7%AC%AC%E4%B8%80%E6%97%B6%E9%97%B4%E7%9A%84%E7%AC%AC%E4%B8%80%E6%84%9F%E8%A7%89">3 直觉锁：第一时间的第一感觉</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%9B%B4%E8%A7%89%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%B9%8B%E4%B8%80%E5%AE%9A%E5%90%91%E5%90%AF%E5%8A%A8">第二章 直觉锁加密原则之一：定向启动</a>
+<ul>
+<li><a href="#1-%E6%9C%89%E6%95%88%E7%9A%84%E5%AE%9A%E5%90%91%E5%90%AF%E5%8A%A8">1 有效的定向启动</a></li>
+<li><a href="#2-%E9%A2%84%E5%85%88%E8%AE%BE%E5%AE%9A%E5%B0%B1%E4%BC%9A%E5%B8%A6%E9%94%81">2 预先设定就会带锁</a></li>
+<li><a href="#3-%E5%A4%A7%E8%84%91%E5%A6%82%E4%BD%95%E4%BA%A7%E7%94%9F%E4%BF%A1%E4%BB%BB">3 大脑如何产生信任</a></li>
+<li><a href="#4-%E5%AE%9A%E5%90%91%E5%90%AF%E5%8A%A8%E7%9A%84%E4%B8%89%E4%B8%AA%E5%8E%9F%E5%88%99">4 定向启动的三个原则</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%9B%B4%E8%A7%89%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%B9%8B%E4%BA%8C%E6%83%85%E6%84%9F%E5%8C%B9%E9%85%8D">第三章 直觉锁加密原则之二：情感匹配</a>
+<ul>
+<li><a href="#1-%E5%A4%A7%E8%84%91%E5%86%B3%E7%AD%96%E7%9A%84%E6%A0%B8%E5%BF%83%E6%98%AF%E6%83%85%E6%84%9F">1 大脑决策的核心是情感</a></li>
+<li><a href="#2-%E5%A6%82%E4%BD%95%E8%87%AA%E5%B8%A6%E5%A5%BD%E6%84%9F">2 如何自带好感</a></li>
+<li><a href="#3-%E6%83%85%E6%84%9F%E8%A6%81%E7%AC%A6%E5%90%88%E4%BA%BA%E4%BB%AC%E7%9A%84%E6%9C%9F%E5%BE%85">3 情感要符合人们的期待</a></li>
+<li><a href="#4-%E5%A4%8D%E6%9D%82%E5%92%8C%E6%B7%B7%E4%B9%B1%E9%83%BD%E6%98%AF%E5%9C%A8%E7%A0%B4%E5%9D%8F%E6%83%85%E6%84%9F">4 复杂和混乱都是在破坏情感</a></li>
+<li><a href="#5-%E4%B8%8E%E6%9C%89%E6%83%85%E6%84%9F%E7%9A%84%E4%BA%8B%E7%89%A9%E5%8F%91%E7%94%9F%E5%85%B3%E7%B3%BB">5 与有情感的事物发生关系</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%9B%B4%E8%A7%89%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%B9%8B%E4%B8%89%E5%B0%91%E8%80%8C%E6%98%BE%E8%91%97">第四章 直觉锁加密原则之三：少而显著</a>
+<ul>
+<li><a href="#1-%E5%B0%91%E5%B0%B1%E5%8F%AF%E4%BB%A5%E5%B8%A6%E9%94%81">1 少就可以带锁</a></li>
+<li><a href="#2-%E5%B0%91%E8%80%8C%E7%AE%80%E5%8D%95%E5%AE%B9%E6%98%93%E8%AE%A9%E4%BA%BA%E7%9B%B8%E4%BF%A1">2 少而简单容易让人相信</a></li>
+<li><a href="#3-%E5%8F%AA%E8%A6%81%E4%B8%8D%E8%B4%B9%E5%8A%9B%E6%B0%94%E5%A4%A7%E8%84%91%E5%B0%B1%E4%BC%9A%E5%96%9C%E6%AC%A2">3 只要不费力气大脑就会喜欢</a></li>
+<li><a href="#4-%E4%BB%8E%E7%BB%86%E8%8A%82%E4%B8%AD%E5%8F%AF%E4%BB%A5%E5%BF%AB%E9%80%9F%E6%8F%90%E7%82%BC%E5%87%BA%E6%83%85%E6%84%9F">4 从细节中可以快速提炼出情感</a></li>
+<li><a href="#5-%E4%BB%B7%E5%80%BC%E6%9D%A5%E8%87%AA%E7%BB%86%E8%8A%82">5 价值来自细节</a></li>
+<li><a href="#6-%E5%A6%82%E4%BD%95%E5%88%B6%E9%80%A0%E6%AD%A3%E5%90%91%E6%89%A9%E6%95%A3">6 如何制造正向扩散</a></li>
+<li><a href="#7-%E5%85%89%E7%8E%AF%E5%B0%B1%E6%98%AF%E4%BF%9D%E6%8A%A4%E5%B1%82">7 光环就是保护层</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E7%9B%B4%E8%A7%89%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%B9%8B%E5%9B%9B%E6%98%93%E4%BA%8E%E8%8E%B7%E5%BE%97">第五章 直觉锁加密原则之四：易于获得</a>
+<ul>
+<li><a href="#1-%E8%BD%BB%E6%9D%BE%E8%AE%A4%E5%87%BA%E5%A4%A7%E8%84%91%E5%B0%B1%E4%BC%9A%E9%94%81%E4%B8%8A">1 轻松认出大脑就会锁上</a></li>
+<li><a href="#2-%E5%A2%9E%E5%BC%BA%E7%94%BB%E9%9D%A2%E6%84%9F">2 增强画面感</a></li>
+<li><a href="#3-%E5%A2%9E%E5%BC%BA%E6%9B%BF%E4%BB%A3%E6%80%A7">3 增强替代性</a></li>
+<li><a href="#4-%E5%A2%9E%E5%BC%BA%E7%86%9F%E6%82%89%E6%84%9F">4 增强熟悉感</a></li>
+<li><a href="#5-%E5%A2%9E%E5%BC%BA%E5%85%B8%E5%9E%8B%E6%80%A7">5 增强典型性</a></li>
+<li><a href="#6-%E5%A2%9E%E5%BC%BA%E6%84%89%E6%82%A6%E6%84%9F">6 增强愉悦感</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%9B%B4%E8%A7%89%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%B9%8B%E4%BA%94%E6%83%85%E6%99%AF%E5%BC%80%E5%90%AF">第六章 直觉锁加密原则之五：情景开启</a>
+<ul>
+<li><a href="#1-%E6%83%85%E6%99%AF%E5%86%B3%E5%AE%9A%E4%BB%B7%E5%80%BC">1 情景决定价值</a></li>
+<li><a href="#2-%E6%83%85%E6%99%AF%E5%86%B3%E5%AE%9A%E6%84%9F%E8%A7%89">2 情景决定感觉</a></li>
+<li><a href="#3-%E5%80%9F%E5%8A%A9%E6%83%85%E6%99%AF%E5%BC%80%E5%90%AF%E9%9C%80%E6%B1%82">3 借助情景开启需求</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E7%90%86%E6%80%A7%E6%98%AF%E5%8F%98%E7%9B%B8%E7%9A%84%E8%AE%A4%E5%87%BA">第七章 理性是变相的认出</a>
+<ul>
+<li><a href="#1-%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E5%81%9A%E5%87%BA%E6%9B%B4%E5%8A%A0%E9%80%82%E5%BD%93%E7%9A%84%E8%A1%8C%E4%B8%BA">1 你为什么能做出更加适当的行为</a></li>
+<li><a href="#2-%E6%9E%84%E5%BB%BA%E4%BA%8B%E7%89%A9%E6%9C%AA%E6%9D%A5%E5%8F%AF%E8%83%BD%E7%9A%84%E6%A0%B7%E5%AD%90">2 构建事物未来可能的样子</a></li>
+<li><a href="#3-%E8%B5%8B%E4%BA%88%E4%BA%86%E6%96%B0%E7%9A%84%E6%84%8F%E4%B9%89">3 赋予了新的意义</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E7%90%86%E6%80%A7%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%B8%80%E6%83%85%E6%84%9F%E5%A2%9E%E5%BC%BA">第八章 理性锁加密原则一：情感增强</a>
+<ul>
+<li><a href="#1-%E6%83%85%E6%84%9F%E8%BD%AC%E5%8F%98%E7%BB%99%E4%BA%BA%E7%90%86%E6%80%A7%E7%9A%84%E9%94%99%E8%A7%89">1 情感转变给人理性的错觉</a></li>
+<li><a href="#2-%E5%BE%97%E4%B8%8E%E5%A4%B1%E5%93%AA%E7%A7%8D%E6%83%85%E6%84%9F%E6%9B%B4%E5%BC%BA%E7%83%88">2 得与失哪种情感更强烈</a></li>
+<li><a href="#3-%E8%81%94%E5%90%88%E5%BC%BA%E7%83%88%E7%9A%84%E6%84%9F%E6%83%85%E5%9B%A0%E7%B4%A0%E5%BD%B1%E5%93%8D%E5%86%B3%E7%AD%96">3 联合强烈的感情因素影响决策</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E7%90%86%E6%80%A7%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%BA%8C%E6%84%8F%E5%BF%97%E5%A2%9E%E5%BC%BA">第九章 理性锁加密原则二：意志增强</a>
+<ul>
+<li><a href="#1-%E6%84%8F%E5%BF%97%E5%A2%9E%E5%BC%BA%E5%B0%B1%E6%98%AF%E5%8A%A8%E5%8A%9B%E5%A2%9E%E5%BC%BA">1 意志增强就是动力增强</a></li>
+<li><a href="#2-%E6%BF%80%E8%B5%B7%E5%A4%A7%E8%84%91%E8%A1%A5%E5%85%A8%E7%9A%84%E6%84%8F%E5%BF%97">2 激起大脑补全的意志</a></li>
+<li><a href="#3-%E5%A2%9E%E5%BC%BA%E9%99%90%E5%88%B6%E6%84%9F">3 增强限制感</a></li>
+<li><a href="#4-%E4%BB%8E%E8%83%8C%E6%99%AF%E4%B8%AD%E5%88%86%E7%A6%BB%E5%87%BA%E6%9D%A5%E7%9A%84%E6%96%B9%E6%B3%95">4 从背景中分离出来的方法</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E7%90%86%E6%80%A7%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%B8%89%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96">第十章 理性锁加密原则三：时间优化</a>
+<ul>
+<li><a href="#1-%E5%80%9F%E5%8A%A9%E6%97%B6%E9%97%B4%E6%9D%A5%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84%E7%9B%AE%E6%A0%87">1 借助时间来优化你的目标</a></li>
+<li><a href="#2-37%E7%BE%8E%E5%A5%BD%E6%9C%AA%E6%9D%A5">2 3＋7＝美好未来</a></li>
+<li><a href="#3-%E5%BC%95%E5%8F%91%E5%86%B3%E7%AD%96%E7%84%A6%E8%99%91%E6%94%B9%E5%8F%98%E5%81%8F%E5%A5%BD">3 引发决策焦虑改变偏好</a></li>
+<li><a href="#4-%E8%A7%A3%E9%99%A4%E6%9C%AA%E6%9D%A5%E8%B4%9F%E9%9D%A2%E7%9A%84%E5%8F%AF%E8%83%BD">4 解除未来负面的可能</a></li>
+<li><a href="#5-%E6%B2%A1%E6%9C%89%E6%9C%AA%E6%9D%A5%E7%9A%84%E6%9C%AA%E6%9D%A5">5 没有未来的未来</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E7%90%86%E6%80%A7%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E5%9B%9B%E4%BB%B7%E5%80%BC%E9%94%81%E5%AE%9A">第十一章 理性锁加密原则四：价值锁定</a>
+<ul>
+<li><a href="#1-%E9%94%81%E5%AE%9A%E5%B7%B2%E7%BB%8F%E4%BA%A7%E7%94%9F%E7%9A%84%E4%BB%B7%E5%80%BC">1 锁定已经产生的价值</a></li>
+<li><a href="#2-%E9%94%81%E5%AE%9A%E5%B7%B2%E7%BB%8F%E6%8A%95%E5%85%A5%E7%9A%84%E4%BB%B7%E5%80%BC">2 锁定已经投入的价值</a></li>
+<li><a href="#3-%E6%83%85%E6%84%9F%E9%87%8D%E5%BF%83%E5%B0%B1%E6%98%AF%E4%BB%B7%E5%80%BC%E6%89%80%E5%9C%A8">3 情感重心就是价值所在</a></li>
+<li><a href="#4-%E5%A6%82%E4%BD%95%E8%AE%A9%E4%BB%B7%E5%80%BC%E5%94%AF%E4%B8%80%E5%8C%96">4 如何让价值唯一化</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E7%90%86%E6%80%A7%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%BA%94%E8%A1%8C%E4%B8%BA%E4%BC%98%E5%85%88">第十二章 理性锁加密原则五：行为优先</a>
+<ul>
+<li><a href="#1-%E5%85%88%E6%9C%89%E6%AD%A3%E9%9D%A2%E7%9A%84%E8%A1%8C%E4%B8%BA%E5%90%8E%E6%9C%89%E5%96%9C%E6%AC%A2">1 先有正面的行为，后有喜欢</a></li>
+<li><a href="#2-%E5%BC%95%E5%AF%BC%E8%A1%8C%E4%B8%BA%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87">2 引导行为优化目标</a></li>
+<li><a href="#3-%E5%A2%9E%E5%BC%BA%E5%8F%82%E4%B8%8E%E6%84%9F">3 增强参与感</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E4%B8%8E%E6%88%91%E7%9B%B8%E5%85%B3%E5%B0%B1%E4%BC%9A%E9%87%8D%E8%A6%81">第十三章 与我相关就会重要</a>
+<ul>
+<li><a href="#1-%E8%87%AA%E6%88%91%E9%94%81%E6%9B%B4%E9%A1%BD%E5%9B%BA%E7%9A%84%E8%84%91%E9%94%81">1 自我锁：更顽固的脑锁</a></li>
+<li><a href="#2-%E5%A4%A7%E9%83%A8%E5%88%86%E4%BA%BA%E7%9A%84%E4%BF%A1%E5%BF%B5">2 大部分人的信念</a></li>
+<li><a href="#3-%E5%A4%A7%E9%83%A8%E5%88%86%E4%BA%BA%E7%9A%84%E8%87%AA%E6%88%91%E6%84%8F%E5%BF%97">3 大部分人的自我意志</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-%E8%87%AA%E6%88%91%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%B8%80%E5%BC%BA%E5%8A%BF%E5%85%B3%E8%81%94">第十四章 自我锁加密原则一：强势关联</a>
+<ul>
+<li><a href="#1-%E5%A6%82%E4%BD%95%E4%B8%8E%E7%94%A8%E6%88%B7%E5%BB%BA%E7%AB%8B%E5%BC%BA%E5%8A%BF%E5%85%B3%E8%81%94">1 如何与用户建立强势关联</a></li>
+<li><a href="#2-%E5%92%8C%E4%BD%A0%E4%B8%80%E6%A0%B7%E7%9A%84%E5%A4%A7%E5%A4%9A%E6%95%B0">2 和你一样的大多数</a></li>
+<li><a href="#3-%E5%90%91%E4%B8%AD%E5%BF%83%E6%94%B6%E7%BC%A9%E4%B8%AA%E6%80%A7%E5%8C%96%E9%94%81%E5%AE%9A">3 向中心收缩：个性化锁定</a></li>
+<li><a href="#4-%E4%BA%BA%E6%A0%BC%E5%8C%96%E4%BD%A0%E7%9A%84%E4%BF%A1%E6%81%AF">4 人格化你的信息</a></li>
+<li><a href="#5-%E5%BC%BA%E5%8A%BF%E5%85%B3%E8%81%94%E6%98%AF%E6%83%85%E6%84%9F%E5%BC%BA%E5%8A%BF%E5%A2%9E%E5%BC%BA">5 强势关联是情感强势增强</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0-%E8%87%AA%E6%88%91%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%BA%8C%E8%BF%9B%E5%85%A5%E7%9A%84%E6%B8%B4%E6%9C%9B">第十五章 自我锁加密原则二：进入的渴望</a>
+<ul>
+<li><a href="#1-%E8%87%AA%E6%88%91%E6%98%AF%E8%BF%9B%E5%85%A5%E6%9F%90%E7%A7%8D%E7%8A%B6%E6%80%81%E7%9A%84%E6%89%A7%E5%BF%B5">1 自我是进入某种状态的执念</a></li>
+<li><a href="#2-%E5%A2%9E%E5%BC%BA%E4%BB%AA%E5%BC%8F%E6%84%9F">2 增强仪式感</a></li>
+<li><a href="#3-%E5%A2%9E%E5%BC%BA%E8%87%AA%E6%88%91%E8%BF%9E%E6%8E%A5">3 增强自我连接</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0-%E8%87%AA%E6%88%91%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%B8%89%E9%80%83%E7%A6%BB%E7%9A%84%E6%84%8F%E5%BF%97">第十六章 自我锁加密原则三：逃离的意志</a>
+<ul>
+<li><a href="#1-%E5%A2%9E%E5%BC%BA%E8%87%AA%E4%B8%BB%E6%84%9F">1 增强自主感</a></li>
+<li><a href="#2-%E9%87%8D%E8%AE%BE%E6%9C%89%E6%95%88%E7%9A%84%E5%8F%82%E7%85%A7%E7%82%B9">2 重设有效的参照点</a></li>
+<li><a href="#3-%E5%81%87%E8%AE%BE%E4%B8%80%E7%A7%8D%E8%B4%9F%E9%9D%A2%E5%8F%AF%E8%83%BD">3 假设一种负面可能</a></li>
+<li><a href="#4-%E6%84%9F%E5%88%B0%E8%87%AA%E6%88%91%E6%98%AF%E4%B8%80%E7%A7%8D%E8%B4%9F%E9%9D%A2%E7%9A%84%E5%AD%98%E5%9C%A8">4 感到自我是一种负面的存在</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0-%E8%87%AA%E6%88%91%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E5%9B%9B%E9%80%86%E5%8F%8D%E5%BF%83%E7%90%86">第十七章 自我锁加密原则四：逆反心理</a>
+<ul>
+<li><a href="#1-%E4%BA%BA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%9D%9A%E7%A1%AC%E7%9A%84%E5%A3%B3">1 人人都有坚硬的壳</a></li>
+<li><a href="#2-%E4%B8%8D%E5%8F%AF%E8%83%BD%E7%BB%9D%E5%AF%B9%E4%B8%8D%E5%8F%AF%E8%83%BD">2 不可能，绝对不可能</a></li>
+<li><a href="#3-%E9%80%86%E7%9D%80%E4%BB%96%E6%9D%A5%E6%89%8D%E8%83%BD%E9%A1%BA%E4%BA%86%E4%BD%A0%E6%84%8F">3 逆着他来才能顺了你意</a></li>
+<li><a href="#4-%E6%88%90%E4%B8%BA%E4%BA%BA%E4%BB%AC%E4%BF%A1%E5%BF%B5%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86">4 成为人们信念的一部分</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0-%E8%87%AA%E6%88%91%E9%94%81%E5%8A%A0%E5%AF%86%E5%8E%9F%E5%88%99%E4%BA%94%E8%AE%A4%E7%9F%A5%E5%82%B2%E6%85%A2">第十八章 自我锁加密原则五：认知傲慢</a>
+<ul>
+<li><a href="#1-%E5%B0%9D%E5%88%B0%E7%94%9C%E5%A4%B4%E5%B0%B1%E5%90%83%E4%B8%8D%E4%BA%86%E8%8B%A6%E5%A4%B4">1 尝到甜头，就吃不了苦头</a></li>
+<li><a href="#2-%E5%90%AF%E5%8A%A8%E6%97%A2%E5%AE%9A%E7%9A%84%E8%87%AA%E6%88%91">2 启动既定的自我</a></li>
+<li><a href="#3-%E6%8A%97%E6%8B%92%E7%9A%84%E5%B1%80%E9%9D%A2%E4%B8%8B%E5%A6%82%E4%BD%95%E5%8D%87%E7%BA%A7%E4%BB%96%E4%BA%BA%E7%9A%84%E8%AE%A4%E7%9F%A5">3 抗拒的局面下，如何升级他人的认知</a></li>
+<li><a href="#4-%E8%AE%A9%E4%BB%96%E4%BA%BA%E4%BA%A7%E7%94%9F%E5%BF%83%E7%90%86%E4%BC%98%E5%8A%BF">4 让他人产生心理优势</a></li>
+<li><a href="#5-%E6%A0%B9%E6%8D%AE%E7%94%A8%E6%88%B7%E5%81%8F%E8%A7%81%E8%AE%B2%E6%95%85%E4%BA%8B">5 根据用户偏见讲故事</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

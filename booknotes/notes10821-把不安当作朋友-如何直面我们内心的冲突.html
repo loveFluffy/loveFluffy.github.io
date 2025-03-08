@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x628a;&#x4e0d;&#x5b89;&#x5f53;&#x4f5c;&#x670b;&#x53cb;&#xff1a;&#x5982;&#x4f55;&#x76f4;&#x9762;&#x6211;&#x4eec;&#x5185;&#x5fc3;&#x7684;&#x51b2;&#x7a81;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x628a;&#x4e0d;&#x5b89;&#x5f53;&#x4f5c;&#x670b;&#x53cb;&#xff1a;&#x5982;&#x4f55;&#x76f4;&#x9762;&#x6211;&#x4eec;&#x5185;&#x5fc3;&#x7684;&#x51b2;&#x7a81;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,378 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="把不安当作朋友如何直面我们内心的冲突">把不安当作朋友：如何直面我们内心的冲突</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/10821.jpg"></td><td>
+<h1 id="把不安当作朋友如何直面我们内心的冲突">把不安当作朋友：如何直面我们内心的冲突</h1>
+<center>[日]冈田尊司 著|金磊 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="前言">前言</h3>
+<h3 id="第一章-活着尽是麻烦事">第一章 活着尽是麻烦事</h3>
+<h4 id="与他人见面很麻烦">与他人见面很麻烦</h4>
+<h4 id="让自己努力很麻烦">让自己努力很麻烦</h4>
+<h4 id="被期待很麻烦">被期待很麻烦</h4>
+<h4 id="把竖着的东西放倒很麻烦">把竖着的东西放倒很麻烦</h4>
+<h4 id="去学校上学很麻烦">去学校上学很麻烦</h4>
+<h4 id="做决定很麻烦">做决定很麻烦</h4>
+<h4 id="走上社会很麻烦">走上社会很麻烦</h4>
+<h4 id="恋爱很麻烦">恋爱很麻烦</h4>
+<h4 id="成家养育孩子很麻烦">成家养育孩子很麻烦</h4>
+<h4 id="依赖别人很麻烦">依赖别人很麻烦</h4>
+<h4 id="活着很麻烦">活着很麻烦</h4>
+<h3 id="第二章-何谓回避型人格障碍">第二章 何谓“回避型人格障碍”</h3>
+<h4 id="感觉麻烦的本质是什么">“感觉麻烦”的本质是什么？</h4>
+<h4 id="显在的三个因素">显在的三个因素</h4>
+<h4 id="回避型人格障碍的诊断基准">“回避型人格障碍”的诊断基准</h4>
+<h4 id="对他人的批评或拒绝很敏感">对他人的批评或拒绝很敏感</h4>
+<h4 id="恐于构建亲密的关系">恐于构建亲密的关系</h4>
+<h4 id="即使是亲密的关系也不愿意袒露自己的内心">即使是亲密的关系，也不愿意袒露自己的内心</h4>
+<h4 id="过分在意周围人的目光和他人的评价">过分在意周围人的目光和他人的评价</h4>
+<h4 id="自己不可能被他人喜欢">自己不可能被他人喜欢</h4>
+<h4 id="较低的自我评价觉得自己是毫无长处的人">较低的自我评价，觉得自己是毫无长处的人</h4>
+<h4 id="对实现目标或新的挑战抱以消极的态度">对实现目标或新的挑战，抱以消极的态度</h4>
+<h4 id="类精神分裂型人格">类精神分裂型人格</h4>
+<h4 id="只担心坏事的发生及其可能性">只担心坏事的发生及其可能性</h4>
+<h4 id="不会主动想要与人打交道">不会主动想要与人打交道</h4>
+<h4 id="从生活中获得的快感很稀薄">从生活中获得的快感很稀薄</h4>
+<h4 id="回避亲密关系或两性关系">回避亲密关系或两性关系</h4>
+<h4 id="面对争执和没有逃避余地的环境会很有压力">面对争执和没有逃避余地的环境会很有压力</h4>
+<h4 id="本质性的病理就是想回避受伤害">本质性的病理就是想回避受伤害</h4>
+<h4 id="村上春树表现出的回避型人格">村上春树表现出的“回避型人格”</h4>
+<h4 id="与社交恐惧症的关系">与社交恐惧症的关系</h4>
+<h4 id="与自闭症谱系障碍的关系">与自闭症谱系障碍的关系</h4>
+<h3 id="第三章-回避型人格与回避型依恋">第三章 “回避型人格”与“回避型依恋”</h3>
+<h4 id="婴儿时期不会感觉麻烦">婴儿时期不会“感觉麻烦”？</h4>
+<h4 id="感觉麻烦的根源">“感觉麻烦”的根源</h4>
+<h4 id="维持羁绊生存的结构">维持“羁绊”、生存的结构</h4>
+<h4 id="回避型的生存策略">“回避型”的生存策略</h4>
+<h4 id="回避型人格与回避型依恋的异同点">“回避型人格”与“回避型依恋”的异同点</h4>
+<h4 id="回避型人格与恐惧回避型依恋">“回避型人格”与“恐惧·回避型依恋”</h4>
+<h4 id="回避纠纷的回避型依恋进退两难的回避型人格">回避纠纷的“回避型依恋”、进退两难的“回避型人格”</h4>
+<h4 id="回避型依恋产生的原因">“回避型依恋”产生的原因</h4>
+<h4 id="没人照顾的孩子">没人照顾的孩子</h4>
+<h4 id="佛教中对依恋的舍弃">佛教中对“依恋的舍弃”</h4>
+<h4 id="后天的培养胜过遗传因子">后天的培养胜过遗传因子</h4>
+<h4 id="感觉与他人接触不愉快的理由">感觉与他人接触不愉快的理由</h4>
+<h4 id="与母亲关系淡薄带来的问题">与母亲关系淡薄带来的问题</h4>
+<h4 id="过早的自立也要注意">过早的自立也要注意</h4>
+<h4 id="支配与强迫会催生出另一种回避型">支配与强迫会催生出另一种“回避型”</h4>
+<h3 id="第四章-不想受伤害的性格是如何形成的">第四章 “不想受伤害”的性格是如何形成的</h3>
+<h4 id="到底想要逃避什么">到底想要逃避什么？</h4>
+<h4 id="形成回避型人格的遗传因素与环境因素">形成“回避型人格”的遗传因素与环境因素</h4>
+<h4 id="什么是催生恐惧回避型依恋的养育方式">什么是催生“恐惧·回避型依恋”的养育方式？</h4>
+<h4 id="否定式的养育与羞耻的经历">否定式的养育与羞耻的经历</h4>
+<h4 id="在学校的经历朋友关系也会带来影响">在学校的经历、朋友关系也会带来影响</h4>
+<h4 id="被欺侮的经历带来的后遗症">被欺侮的经历带来的后遗症</h4>
+<h4 id="苦恼于心情低落没有干劲儿的女性">苦恼于心情低落、没有干劲儿的女性</h4>
+<h4 id="深信反正自己很没用">深信“反正自己很没用”</h4>
+<h4 id="阳光的姐姐与阴暗的妹妹">“阳光”的姐姐与“阴暗”的妹妹</h4>
+<h4 id="为什么无法承受受到伤害">为什么无法承受“受到伤害”？</h4>
+<h4 id="回避型可被视作一种慢性创伤症候群">“回避型”可被视作一种慢性创伤症候群</h4>
+<h4 id="个体独立性被剥夺的经历">个体独立性被剥夺的经历</h4>
+<h4 id="过分期待与被决定的人生">过分期待与被决定的人生</h4>
+<h4 id="被过分保护的顺从孩子">被过分保护的顺从孩子</h4>
+<h4 id="顺从与看淡的背后往往都有着双亲的支配">“顺从”与“看淡”的背后，往往都有着双亲的支配</h4>
+<h4 id="森鸥外的经历">森鸥外的经历</h4>
+<h4 id="拒绝成为成熟的大人">拒绝成为成熟的大人</h4>
+<h3 id="第五章-回避型越来越明显的现代人是适应还是进化">第五章 “回避型”越来越明显的现代人，是适应还是进化</h3>
+<h4 id="环境能够改变遗传因子的作用">环境能够改变遗传因子的作用</h4>
+<h4 id="爱家人与爱自己两者的差异源于脑结构">“爱家人”与“爱自己”，两者的差异源于脑结构</h4>
+<h4 id="什么样的环境变化会导致回避型的增加">什么样的环境变化会导致“回避型”的增加？</h4>
+<h4 id="适应个人主义的回避型">适应个人主义的“回避型”</h4>
+<h4 id="经历的雷同化与失去的独立性">经历的雷同化与失去的独立性</h4>
+<h4 id="回避与心理上的过敏反应">回避与心理上的过敏反应</h4>
+<h4 id="无菌室化与对人过敏">无菌室化与对人过敏</h4>
+<h3 id="第六章-与回避型的人和谐相处的方法">第六章 与“回避型”的人和谐相处的方法</h3>
+<h4 id="部下是回避型的场合">部下是“回避型”的场合</h4>
+<h4 id="上司是回避型的场合">上司是“回避型”的场合</h4>
+<h4 id="恋人是回避型的场合">恋人是“回避型”的场合</h4>
+<h4 id="伴侣是回避型的场合">伴侣是“回避型”的场合</h4>
+<h4 id="子女是回避型的场合">子女是“回避型”的场合</h4>
+<h3 id="第七章-让回避型得以缓解的生活方式">第七章 让“回避型”得以缓解的生活方式</h3>
+<h4 id="适合回避型的职业">适合“回避型”的职业</h4>
+<h4 id="可以互补的伴侣">可以“互补”的伴侣</h4>
+<h4 id="单相思才是最轻松的">单相思才是最轻松的？</h4>
+<h4 id="勃拉姆斯式的单相思">勃拉姆斯式的单相思</h4>
+<h4 id="同为回避型区别却很大">同为“回避型”区别却很大</h4>
+<h4 id="星新一的经历">星新一的经历</h4>
+<h4 id="懒散的学生生活">懒散的学生生活</h4>
+<h4 id="小说处女作">小说处女作</h4>
+<h4 id="公务员的志愿">公务员的志愿</h4>
+<h4 id="地狱般经营公司的日子">地狱般经营公司的日子</h4>
+<h4 id="重拾自信的瞬间判若两人">重拾自信的瞬间判若两人</h4>
+<h4 id="终于找到适合自己的生活方式">终于找到适合自己的生活方式</h4>
+<h4 id="毕翠克丝波特的经历">毕翠克丝·波特的经历</h4>
+<h4 id="彼得兔与她的使命">“彼得兔”与她的使命</h4>
+<h4 id="在自己擅长的领域获得认可的重要性">在自己擅长的领域获得认可的重要性</h4>
+<h3 id="第八章-不再羞耻和害怕让自己自由生活的方法">第八章 不再羞耻和害怕，让自己自由生活的方法</h3>
+<h4 id="回避型人格是可以被克服的">“回避型人格”是可以被克服的</h4>
+<h4 id="从一通电话开始">从一通电话开始</h4>
+<h4 id="是什么改变了她">是什么改变了她？</h4>
+<h4 id="恢复的关键在于安全基地">恢复的关键在于“安全基地”</h4>
+<h4 id="自己做决定的重要性">自己做决定的重要性</h4>
+<h4 id="比起理想和期望来更要学会抓住眼前的机会">比起理想和期望来，更要学会抓住眼前的机会</h4>
+<h4 id="能从十几年的蜗居状态中解脱出来吗">能从十几年的蜗居状态中解脱出来吗？</h4>
+<h4 id="摆脱暮气沉沉的状态">摆脱暮气沉沉的状态</h4>
+<h4 id="为了生存而工作">为了生存而工作</h4>
+<h4 id="在工作中得到锻炼">在工作中得到锻炼</h4>
+<h4 id="西村由纪江的经历">西村由纪江的经历</h4>
+<h4 id="尝试亲自去做">尝试亲自去做</h4>
+<h4 id="尝试做出很小的变化">尝试做出很小的变化</h4>
+<h4 id="展示真实的自己">展示真实的自己</h4>
+<h4 id="对性的回避">对“性”的回避</h4>
+<h4 id="解放自己">解放自己</h4>
+<h4 id="你已不再感到麻烦">你已不再感到麻烦</h4>
+<h3 id="后记">后记</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%B4%BB%E7%9D%80%E5%B0%BD%E6%98%AF%E9%BA%BB%E7%83%A6%E4%BA%8B">第一章 活着尽是麻烦事</a>
+<ul>
+<li><a href="#%E4%B8%8E%E4%BB%96%E4%BA%BA%E8%A7%81%E9%9D%A2%E5%BE%88%E9%BA%BB%E7%83%A6">与他人见面很麻烦</a></li>
+<li><a href="#%E8%AE%A9%E8%87%AA%E5%B7%B1%E5%8A%AA%E5%8A%9B%E5%BE%88%E9%BA%BB%E7%83%A6">让自己努力很麻烦</a></li>
+<li><a href="#%E8%A2%AB%E6%9C%9F%E5%BE%85%E5%BE%88%E9%BA%BB%E7%83%A6">被期待很麻烦</a></li>
+<li><a href="#%E6%8A%8A%E7%AB%96%E7%9D%80%E7%9A%84%E4%B8%9C%E8%A5%BF%E6%94%BE%E5%80%92%E5%BE%88%E9%BA%BB%E7%83%A6">把竖着的东西放倒很麻烦</a></li>
+<li><a href="#%E5%8E%BB%E5%AD%A6%E6%A0%A1%E4%B8%8A%E5%AD%A6%E5%BE%88%E9%BA%BB%E7%83%A6">去学校上学很麻烦</a></li>
+<li><a href="#%E5%81%9A%E5%86%B3%E5%AE%9A%E5%BE%88%E9%BA%BB%E7%83%A6">做决定很麻烦</a></li>
+<li><a href="#%E8%B5%B0%E4%B8%8A%E7%A4%BE%E4%BC%9A%E5%BE%88%E9%BA%BB%E7%83%A6">走上社会很麻烦</a></li>
+<li><a href="#%E6%81%8B%E7%88%B1%E5%BE%88%E9%BA%BB%E7%83%A6">恋爱很麻烦</a></li>
+<li><a href="#%E6%88%90%E5%AE%B6%E5%85%BB%E8%82%B2%E5%AD%A9%E5%AD%90%E5%BE%88%E9%BA%BB%E7%83%A6">成家养育孩子很麻烦</a></li>
+<li><a href="#%E4%BE%9D%E8%B5%96%E5%88%AB%E4%BA%BA%E5%BE%88%E9%BA%BB%E7%83%A6">依赖别人很麻烦</a></li>
+<li><a href="#%E6%B4%BB%E7%9D%80%E5%BE%88%E9%BA%BB%E7%83%A6">活着很麻烦</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%BD%95%E8%B0%93%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BA%BA%E6%A0%BC%E9%9A%9C%E7%A2%8D">第二章 何谓“回避型人格障碍”</a>
+<ul>
+<li><a href="#%E6%84%9F%E8%A7%89%E9%BA%BB%E7%83%A6%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E4%BB%80%E4%B9%88">“感觉麻烦”的本质是什么？</a></li>
+<li><a href="#%E6%98%BE%E5%9C%A8%E7%9A%84%E4%B8%89%E4%B8%AA%E5%9B%A0%E7%B4%A0">显在的三个因素</a></li>
+<li><a href="#%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BA%BA%E6%A0%BC%E9%9A%9C%E7%A2%8D%E7%9A%84%E8%AF%8A%E6%96%AD%E5%9F%BA%E5%87%86">“回避型人格障碍”的诊断基准</a></li>
+<li><a href="#%E5%AF%B9%E4%BB%96%E4%BA%BA%E7%9A%84%E6%89%B9%E8%AF%84%E6%88%96%E6%8B%92%E7%BB%9D%E5%BE%88%E6%95%8F%E6%84%9F">对他人的批评或拒绝很敏感</a></li>
+<li><a href="#%E6%81%90%E4%BA%8E%E6%9E%84%E5%BB%BA%E4%BA%B2%E5%AF%86%E7%9A%84%E5%85%B3%E7%B3%BB">恐于构建亲密的关系</a></li>
+<li><a href="#%E5%8D%B3%E4%BD%BF%E6%98%AF%E4%BA%B2%E5%AF%86%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B9%9F%E4%B8%8D%E6%84%BF%E6%84%8F%E8%A2%92%E9%9C%B2%E8%87%AA%E5%B7%B1%E7%9A%84%E5%86%85%E5%BF%83">即使是亲密的关系，也不愿意袒露自己的内心</a></li>
+<li><a href="#%E8%BF%87%E5%88%86%E5%9C%A8%E6%84%8F%E5%91%A8%E5%9B%B4%E4%BA%BA%E7%9A%84%E7%9B%AE%E5%85%89%E5%92%8C%E4%BB%96%E4%BA%BA%E7%9A%84%E8%AF%84%E4%BB%B7">过分在意周围人的目光和他人的评价</a></li>
+<li><a href="#%E8%87%AA%E5%B7%B1%E4%B8%8D%E5%8F%AF%E8%83%BD%E8%A2%AB%E4%BB%96%E4%BA%BA%E5%96%9C%E6%AC%A2">自己不可能被他人喜欢</a></li>
+<li><a href="#%E8%BE%83%E4%BD%8E%E7%9A%84%E8%87%AA%E6%88%91%E8%AF%84%E4%BB%B7%E8%A7%89%E5%BE%97%E8%87%AA%E5%B7%B1%E6%98%AF%E6%AF%AB%E6%97%A0%E9%95%BF%E5%A4%84%E7%9A%84%E4%BA%BA">较低的自我评价，觉得自己是毫无长处的人</a></li>
+<li><a href="#%E5%AF%B9%E5%AE%9E%E7%8E%B0%E7%9B%AE%E6%A0%87%E6%88%96%E6%96%B0%E7%9A%84%E6%8C%91%E6%88%98%E6%8A%B1%E4%BB%A5%E6%B6%88%E6%9E%81%E7%9A%84%E6%80%81%E5%BA%A6">对实现目标或新的挑战，抱以消极的态度</a></li>
+<li><a href="#%E7%B1%BB%E7%B2%BE%E7%A5%9E%E5%88%86%E8%A3%82%E5%9E%8B%E4%BA%BA%E6%A0%BC">类精神分裂型人格</a></li>
+<li><a href="#%E5%8F%AA%E6%8B%85%E5%BF%83%E5%9D%8F%E4%BA%8B%E7%9A%84%E5%8F%91%E7%94%9F%E5%8F%8A%E5%85%B6%E5%8F%AF%E8%83%BD%E6%80%A7">只担心坏事的发生及其可能性</a></li>
+<li><a href="#%E4%B8%8D%E4%BC%9A%E4%B8%BB%E5%8A%A8%E6%83%B3%E8%A6%81%E4%B8%8E%E4%BA%BA%E6%89%93%E4%BA%A4%E9%81%93">不会主动想要与人打交道</a></li>
+<li><a href="#%E4%BB%8E%E7%94%9F%E6%B4%BB%E4%B8%AD%E8%8E%B7%E5%BE%97%E7%9A%84%E5%BF%AB%E6%84%9F%E5%BE%88%E7%A8%80%E8%96%84">从生活中获得的快感很稀薄</a></li>
+<li><a href="#%E5%9B%9E%E9%81%BF%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB%E6%88%96%E4%B8%A4%E6%80%A7%E5%85%B3%E7%B3%BB">回避亲密关系或两性关系</a></li>
+<li><a href="#%E9%9D%A2%E5%AF%B9%E4%BA%89%E6%89%A7%E5%92%8C%E6%B2%A1%E6%9C%89%E9%80%83%E9%81%BF%E4%BD%99%E5%9C%B0%E7%9A%84%E7%8E%AF%E5%A2%83%E4%BC%9A%E5%BE%88%E6%9C%89%E5%8E%8B%E5%8A%9B">面对争执和没有逃避余地的环境会很有压力</a></li>
+<li><a href="#%E6%9C%AC%E8%B4%A8%E6%80%A7%E7%9A%84%E7%97%85%E7%90%86%E5%B0%B1%E6%98%AF%E6%83%B3%E5%9B%9E%E9%81%BF%E5%8F%97%E4%BC%A4%E5%AE%B3">本质性的病理就是想回避受伤害</a></li>
+<li><a href="#%E6%9D%91%E4%B8%8A%E6%98%A5%E6%A0%91%E8%A1%A8%E7%8E%B0%E5%87%BA%E7%9A%84%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BA%BA%E6%A0%BC">村上春树表现出的“回避型人格”</a></li>
+<li><a href="#%E4%B8%8E%E7%A4%BE%E4%BA%A4%E6%81%90%E6%83%A7%E7%97%87%E7%9A%84%E5%85%B3%E7%B3%BB">与社交恐惧症的关系</a></li>
+<li><a href="#%E4%B8%8E%E8%87%AA%E9%97%AD%E7%97%87%E8%B0%B1%E7%B3%BB%E9%9A%9C%E7%A2%8D%E7%9A%84%E5%85%B3%E7%B3%BB">与自闭症谱系障碍的关系</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BA%BA%E6%A0%BC%E4%B8%8E%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BE%9D%E6%81%8B">第三章 “回避型人格”与“回避型依恋”</a>
+<ul>
+<li><a href="#%E5%A9%B4%E5%84%BF%E6%97%B6%E6%9C%9F%E4%B8%8D%E4%BC%9A%E6%84%9F%E8%A7%89%E9%BA%BB%E7%83%A6">婴儿时期不会“感觉麻烦”？</a></li>
+<li><a href="#%E6%84%9F%E8%A7%89%E9%BA%BB%E7%83%A6%E7%9A%84%E6%A0%B9%E6%BA%90">“感觉麻烦”的根源</a></li>
+<li><a href="#%E7%BB%B4%E6%8C%81%E7%BE%81%E7%BB%8A%E7%94%9F%E5%AD%98%E7%9A%84%E7%BB%93%E6%9E%84">维持“羁绊”、生存的结构</a></li>
+<li><a href="#%E5%9B%9E%E9%81%BF%E5%9E%8B%E7%9A%84%E7%94%9F%E5%AD%98%E7%AD%96%E7%95%A5">“回避型”的生存策略</a></li>
+<li><a href="#%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BA%BA%E6%A0%BC%E4%B8%8E%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BE%9D%E6%81%8B%E7%9A%84%E5%BC%82%E5%90%8C%E7%82%B9">“回避型人格”与“回避型依恋”的异同点</a></li>
+<li><a href="#%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BA%BA%E6%A0%BC%E4%B8%8E%E6%81%90%E6%83%A7%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BE%9D%E6%81%8B">“回避型人格”与“恐惧·回避型依恋”</a></li>
+<li><a href="#%E5%9B%9E%E9%81%BF%E7%BA%A0%E7%BA%B7%E7%9A%84%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BE%9D%E6%81%8B%E8%BF%9B%E9%80%80%E4%B8%A4%E9%9A%BE%E7%9A%84%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BA%BA%E6%A0%BC">回避纠纷的“回避型依恋”、进退两难的“回避型人格”</a></li>
+<li><a href="#%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BE%9D%E6%81%8B%E4%BA%A7%E7%94%9F%E7%9A%84%E5%8E%9F%E5%9B%A0">“回避型依恋”产生的原因</a></li>
+<li><a href="#%E6%B2%A1%E4%BA%BA%E7%85%A7%E9%A1%BE%E7%9A%84%E5%AD%A9%E5%AD%90">没人照顾的孩子</a></li>
+<li><a href="#%E4%BD%9B%E6%95%99%E4%B8%AD%E5%AF%B9%E4%BE%9D%E6%81%8B%E7%9A%84%E8%88%8D%E5%BC%83">佛教中对“依恋的舍弃”</a></li>
+<li><a href="#%E5%90%8E%E5%A4%A9%E7%9A%84%E5%9F%B9%E5%85%BB%E8%83%9C%E8%BF%87%E9%81%97%E4%BC%A0%E5%9B%A0%E5%AD%90">后天的培养胜过遗传因子</a></li>
+<li><a href="#%E6%84%9F%E8%A7%89%E4%B8%8E%E4%BB%96%E4%BA%BA%E6%8E%A5%E8%A7%A6%E4%B8%8D%E6%84%89%E5%BF%AB%E7%9A%84%E7%90%86%E7%94%B1">感觉与他人接触不愉快的理由</a></li>
+<li><a href="#%E4%B8%8E%E6%AF%8D%E4%BA%B2%E5%85%B3%E7%B3%BB%E6%B7%A1%E8%96%84%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98">与母亲关系淡薄带来的问题</a></li>
+<li><a href="#%E8%BF%87%E6%97%A9%E7%9A%84%E8%87%AA%E7%AB%8B%E4%B9%9F%E8%A6%81%E6%B3%A8%E6%84%8F">过早的自立也要注意</a></li>
+<li><a href="#%E6%94%AF%E9%85%8D%E4%B8%8E%E5%BC%BA%E8%BF%AB%E4%BC%9A%E5%82%AC%E7%94%9F%E5%87%BA%E5%8F%A6%E4%B8%80%E7%A7%8D%E5%9B%9E%E9%81%BF%E5%9E%8B">支配与强迫会催生出另一种“回避型”</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%B8%8D%E6%83%B3%E5%8F%97%E4%BC%A4%E5%AE%B3%E7%9A%84%E6%80%A7%E6%A0%BC%E6%98%AF%E5%A6%82%E4%BD%95%E5%BD%A2%E6%88%90%E7%9A%84">第四章 “不想受伤害”的性格是如何形成的</a>
+<ul>
+<li><a href="#%E5%88%B0%E5%BA%95%E6%83%B3%E8%A6%81%E9%80%83%E9%81%BF%E4%BB%80%E4%B9%88">到底想要逃避什么？</a></li>
+<li><a href="#%E5%BD%A2%E6%88%90%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BA%BA%E6%A0%BC%E7%9A%84%E9%81%97%E4%BC%A0%E5%9B%A0%E7%B4%A0%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%9B%A0%E7%B4%A0">形成“回避型人格”的遗传因素与环境因素</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%82%AC%E7%94%9F%E6%81%90%E6%83%A7%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BE%9D%E6%81%8B%E7%9A%84%E5%85%BB%E8%82%B2%E6%96%B9%E5%BC%8F">什么是催生“恐惧·回避型依恋”的养育方式？</a></li>
+<li><a href="#%E5%90%A6%E5%AE%9A%E5%BC%8F%E7%9A%84%E5%85%BB%E8%82%B2%E4%B8%8E%E7%BE%9E%E8%80%BB%E7%9A%84%E7%BB%8F%E5%8E%86">否定式的养育与羞耻的经历</a></li>
+<li><a href="#%E5%9C%A8%E5%AD%A6%E6%A0%A1%E7%9A%84%E7%BB%8F%E5%8E%86%E6%9C%8B%E5%8F%8B%E5%85%B3%E7%B3%BB%E4%B9%9F%E4%BC%9A%E5%B8%A6%E6%9D%A5%E5%BD%B1%E5%93%8D">在学校的经历、朋友关系也会带来影响</a></li>
+<li><a href="#%E8%A2%AB%E6%AC%BA%E4%BE%AE%E7%9A%84%E7%BB%8F%E5%8E%86%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%90%8E%E9%81%97%E7%97%87">被欺侮的经历带来的后遗症</a></li>
+<li><a href="#%E8%8B%A6%E6%81%BC%E4%BA%8E%E5%BF%83%E6%83%85%E4%BD%8E%E8%90%BD%E6%B2%A1%E6%9C%89%E5%B9%B2%E5%8A%B2%E5%84%BF%E7%9A%84%E5%A5%B3%E6%80%A7">苦恼于心情低落、没有干劲儿的女性</a></li>
+<li><a href="#%E6%B7%B1%E4%BF%A1%E5%8F%8D%E6%AD%A3%E8%87%AA%E5%B7%B1%E5%BE%88%E6%B2%A1%E7%94%A8">深信“反正自己很没用”</a></li>
+<li><a href="#%E9%98%B3%E5%85%89%E7%9A%84%E5%A7%90%E5%A7%90%E4%B8%8E%E9%98%B4%E6%9A%97%E7%9A%84%E5%A6%B9%E5%A6%B9">“阳光”的姐姐与“阴暗”的妹妹</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%97%A0%E6%B3%95%E6%89%BF%E5%8F%97%E5%8F%97%E5%88%B0%E4%BC%A4%E5%AE%B3">为什么无法承受“受到伤害”？</a></li>
+<li><a href="#%E5%9B%9E%E9%81%BF%E5%9E%8B%E5%8F%AF%E8%A2%AB%E8%A7%86%E4%BD%9C%E4%B8%80%E7%A7%8D%E6%85%A2%E6%80%A7%E5%88%9B%E4%BC%A4%E7%97%87%E5%80%99%E7%BE%A4">“回避型”可被视作一种慢性创伤症候群</a></li>
+<li><a href="#%E4%B8%AA%E4%BD%93%E7%8B%AC%E7%AB%8B%E6%80%A7%E8%A2%AB%E5%89%A5%E5%A4%BA%E7%9A%84%E7%BB%8F%E5%8E%86">个体独立性被剥夺的经历</a></li>
+<li><a href="#%E8%BF%87%E5%88%86%E6%9C%9F%E5%BE%85%E4%B8%8E%E8%A2%AB%E5%86%B3%E5%AE%9A%E7%9A%84%E4%BA%BA%E7%94%9F">过分期待与被决定的人生</a></li>
+<li><a href="#%E8%A2%AB%E8%BF%87%E5%88%86%E4%BF%9D%E6%8A%A4%E7%9A%84%E9%A1%BA%E4%BB%8E%E5%AD%A9%E5%AD%90">被过分保护的顺从孩子</a></li>
+<li><a href="#%E9%A1%BA%E4%BB%8E%E4%B8%8E%E7%9C%8B%E6%B7%A1%E7%9A%84%E8%83%8C%E5%90%8E%E5%BE%80%E5%BE%80%E9%83%BD%E6%9C%89%E7%9D%80%E5%8F%8C%E4%BA%B2%E7%9A%84%E6%94%AF%E9%85%8D">“顺从”与“看淡”的背后，往往都有着双亲的支配</a></li>
+<li><a href="#%E6%A3%AE%E9%B8%A5%E5%A4%96%E7%9A%84%E7%BB%8F%E5%8E%86">森鸥外的经历</a></li>
+<li><a href="#%E6%8B%92%E7%BB%9D%E6%88%90%E4%B8%BA%E6%88%90%E7%86%9F%E7%9A%84%E5%A4%A7%E4%BA%BA">拒绝成为成熟的大人</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%9B%9E%E9%81%BF%E5%9E%8B%E8%B6%8A%E6%9D%A5%E8%B6%8A%E6%98%8E%E6%98%BE%E7%9A%84%E7%8E%B0%E4%BB%A3%E4%BA%BA%E6%98%AF%E9%80%82%E5%BA%94%E8%BF%98%E6%98%AF%E8%BF%9B%E5%8C%96">第五章 “回避型”越来越明显的现代人，是适应还是进化</a>
+<ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E8%83%BD%E5%A4%9F%E6%94%B9%E5%8F%98%E9%81%97%E4%BC%A0%E5%9B%A0%E5%AD%90%E7%9A%84%E4%BD%9C%E7%94%A8">环境能够改变遗传因子的作用</a></li>
+<li><a href="#%E7%88%B1%E5%AE%B6%E4%BA%BA%E4%B8%8E%E7%88%B1%E8%87%AA%E5%B7%B1%E4%B8%A4%E8%80%85%E7%9A%84%E5%B7%AE%E5%BC%82%E6%BA%90%E4%BA%8E%E8%84%91%E7%BB%93%E6%9E%84">“爱家人”与“爱自己”，两者的差异源于脑结构</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E5%8C%96%E4%BC%9A%E5%AF%BC%E8%87%B4%E5%9B%9E%E9%81%BF%E5%9E%8B%E7%9A%84%E5%A2%9E%E5%8A%A0">什么样的环境变化会导致“回避型”的增加？</a></li>
+<li><a href="#%E9%80%82%E5%BA%94%E4%B8%AA%E4%BA%BA%E4%B8%BB%E4%B9%89%E7%9A%84%E5%9B%9E%E9%81%BF%E5%9E%8B">适应个人主义的“回避型”</a></li>
+<li><a href="#%E7%BB%8F%E5%8E%86%E7%9A%84%E9%9B%B7%E5%90%8C%E5%8C%96%E4%B8%8E%E5%A4%B1%E5%8E%BB%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7">经历的雷同化与失去的独立性</a></li>
+<li><a href="#%E5%9B%9E%E9%81%BF%E4%B8%8E%E5%BF%83%E7%90%86%E4%B8%8A%E7%9A%84%E8%BF%87%E6%95%8F%E5%8F%8D%E5%BA%94">回避与心理上的过敏反应</a></li>
+<li><a href="#%E6%97%A0%E8%8F%8C%E5%AE%A4%E5%8C%96%E4%B8%8E%E5%AF%B9%E4%BA%BA%E8%BF%87%E6%95%8F">无菌室化与对人过敏</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E4%B8%8E%E5%9B%9E%E9%81%BF%E5%9E%8B%E7%9A%84%E4%BA%BA%E5%92%8C%E8%B0%90%E7%9B%B8%E5%A4%84%E7%9A%84%E6%96%B9%E6%B3%95">第六章 与“回避型”的人和谐相处的方法</a>
+<ul>
+<li><a href="#%E9%83%A8%E4%B8%8B%E6%98%AF%E5%9B%9E%E9%81%BF%E5%9E%8B%E7%9A%84%E5%9C%BA%E5%90%88">部下是“回避型”的场合</a></li>
+<li><a href="#%E4%B8%8A%E5%8F%B8%E6%98%AF%E5%9B%9E%E9%81%BF%E5%9E%8B%E7%9A%84%E5%9C%BA%E5%90%88">上司是“回避型”的场合</a></li>
+<li><a href="#%E6%81%8B%E4%BA%BA%E6%98%AF%E5%9B%9E%E9%81%BF%E5%9E%8B%E7%9A%84%E5%9C%BA%E5%90%88">恋人是“回避型”的场合</a></li>
+<li><a href="#%E4%BC%B4%E4%BE%A3%E6%98%AF%E5%9B%9E%E9%81%BF%E5%9E%8B%E7%9A%84%E5%9C%BA%E5%90%88">伴侣是“回避型”的场合</a></li>
+<li><a href="#%E5%AD%90%E5%A5%B3%E6%98%AF%E5%9B%9E%E9%81%BF%E5%9E%8B%E7%9A%84%E5%9C%BA%E5%90%88">子女是“回避型”的场合</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E8%AE%A9%E5%9B%9E%E9%81%BF%E5%9E%8B%E5%BE%97%E4%BB%A5%E7%BC%93%E8%A7%A3%E7%9A%84%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F">第七章 让“回避型”得以缓解的生活方式</a>
+<ul>
+<li><a href="#%E9%80%82%E5%90%88%E5%9B%9E%E9%81%BF%E5%9E%8B%E7%9A%84%E8%81%8C%E4%B8%9A">适合“回避型”的职业</a></li>
+<li><a href="#%E5%8F%AF%E4%BB%A5%E4%BA%92%E8%A1%A5%E7%9A%84%E4%BC%B4%E4%BE%A3">可以“互补”的伴侣</a></li>
+<li><a href="#%E5%8D%95%E7%9B%B8%E6%80%9D%E6%89%8D%E6%98%AF%E6%9C%80%E8%BD%BB%E6%9D%BE%E7%9A%84">单相思才是最轻松的？</a></li>
+<li><a href="#%E5%8B%83%E6%8B%89%E5%A7%86%E6%96%AF%E5%BC%8F%E7%9A%84%E5%8D%95%E7%9B%B8%E6%80%9D">勃拉姆斯式的单相思</a></li>
+<li><a href="#%E5%90%8C%E4%B8%BA%E5%9B%9E%E9%81%BF%E5%9E%8B%E5%8C%BA%E5%88%AB%E5%8D%B4%E5%BE%88%E5%A4%A7">同为“回避型”区别却很大</a></li>
+<li><a href="#%E6%98%9F%E6%96%B0%E4%B8%80%E7%9A%84%E7%BB%8F%E5%8E%86">星新一的经历</a></li>
+<li><a href="#%E6%87%92%E6%95%A3%E7%9A%84%E5%AD%A6%E7%94%9F%E7%94%9F%E6%B4%BB">懒散的学生生活</a></li>
+<li><a href="#%E5%B0%8F%E8%AF%B4%E5%A4%84%E5%A5%B3%E4%BD%9C">小说处女作</a></li>
+<li><a href="#%E5%85%AC%E5%8A%A1%E5%91%98%E7%9A%84%E5%BF%97%E6%84%BF">公务员的志愿</a></li>
+<li><a href="#%E5%9C%B0%E7%8B%B1%E8%88%AC%E7%BB%8F%E8%90%A5%E5%85%AC%E5%8F%B8%E7%9A%84%E6%97%A5%E5%AD%90">地狱般经营公司的日子</a></li>
+<li><a href="#%E9%87%8D%E6%8B%BE%E8%87%AA%E4%BF%A1%E7%9A%84%E7%9E%AC%E9%97%B4%E5%88%A4%E8%8B%A5%E4%B8%A4%E4%BA%BA">重拾自信的瞬间判若两人</a></li>
+<li><a href="#%E7%BB%88%E4%BA%8E%E6%89%BE%E5%88%B0%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F">终于找到适合自己的生活方式</a></li>
+<li><a href="#%E6%AF%95%E7%BF%A0%E5%85%8B%E4%B8%9D%E6%B3%A2%E7%89%B9%E7%9A%84%E7%BB%8F%E5%8E%86">毕翠克丝·波特的经历</a></li>
+<li><a href="#%E5%BD%BC%E5%BE%97%E5%85%94%E4%B8%8E%E5%A5%B9%E7%9A%84%E4%BD%BF%E5%91%BD">“彼得兔”与她的使命</a></li>
+<li><a href="#%E5%9C%A8%E8%87%AA%E5%B7%B1%E6%93%85%E9%95%BF%E7%9A%84%E9%A2%86%E5%9F%9F%E8%8E%B7%E5%BE%97%E8%AE%A4%E5%8F%AF%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">在自己擅长的领域获得认可的重要性</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E4%B8%8D%E5%86%8D%E7%BE%9E%E8%80%BB%E5%92%8C%E5%AE%B3%E6%80%95%E8%AE%A9%E8%87%AA%E5%B7%B1%E8%87%AA%E7%94%B1%E7%94%9F%E6%B4%BB%E7%9A%84%E6%96%B9%E6%B3%95">第八章 不再羞耻和害怕，让自己自由生活的方法</a>
+<ul>
+<li><a href="#%E5%9B%9E%E9%81%BF%E5%9E%8B%E4%BA%BA%E6%A0%BC%E6%98%AF%E5%8F%AF%E4%BB%A5%E8%A2%AB%E5%85%8B%E6%9C%8D%E7%9A%84">“回避型人格”是可以被克服的</a></li>
+<li><a href="#%E4%BB%8E%E4%B8%80%E9%80%9A%E7%94%B5%E8%AF%9D%E5%BC%80%E5%A7%8B">从一通电话开始</a></li>
+<li><a href="#%E6%98%AF%E4%BB%80%E4%B9%88%E6%94%B9%E5%8F%98%E4%BA%86%E5%A5%B9">是什么改变了她？</a></li>
+<li><a href="#%E6%81%A2%E5%A4%8D%E7%9A%84%E5%85%B3%E9%94%AE%E5%9C%A8%E4%BA%8E%E5%AE%89%E5%85%A8%E5%9F%BA%E5%9C%B0">恢复的关键在于“安全基地”</a></li>
+<li><a href="#%E8%87%AA%E5%B7%B1%E5%81%9A%E5%86%B3%E5%AE%9A%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7">自己做决定的重要性</a></li>
+<li><a href="#%E6%AF%94%E8%B5%B7%E7%90%86%E6%83%B3%E5%92%8C%E6%9C%9F%E6%9C%9B%E6%9D%A5%E6%9B%B4%E8%A6%81%E5%AD%A6%E4%BC%9A%E6%8A%93%E4%BD%8F%E7%9C%BC%E5%89%8D%E7%9A%84%E6%9C%BA%E4%BC%9A">比起理想和期望来，更要学会抓住眼前的机会</a></li>
+<li><a href="#%E8%83%BD%E4%BB%8E%E5%8D%81%E5%87%A0%E5%B9%B4%E7%9A%84%E8%9C%97%E5%B1%85%E7%8A%B6%E6%80%81%E4%B8%AD%E8%A7%A3%E8%84%B1%E5%87%BA%E6%9D%A5%E5%90%97">能从十几年的蜗居状态中解脱出来吗？</a></li>
+<li><a href="#%E6%91%86%E8%84%B1%E6%9A%AE%E6%B0%94%E6%B2%89%E6%B2%89%E7%9A%84%E7%8A%B6%E6%80%81">摆脱暮气沉沉的状态</a></li>
+<li><a href="#%E4%B8%BA%E4%BA%86%E7%94%9F%E5%AD%98%E8%80%8C%E5%B7%A5%E4%BD%9C">为了生存而工作</a></li>
+<li><a href="#%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%BE%97%E5%88%B0%E9%94%BB%E7%82%BC">在工作中得到锻炼</a></li>
+<li><a href="#%E8%A5%BF%E6%9D%91%E7%94%B1%E7%BA%AA%E6%B1%9F%E7%9A%84%E7%BB%8F%E5%8E%86">西村由纪江的经历</a></li>
+<li><a href="#%E5%B0%9D%E8%AF%95%E4%BA%B2%E8%87%AA%E5%8E%BB%E5%81%9A">尝试亲自去做</a></li>
+<li><a href="#%E5%B0%9D%E8%AF%95%E5%81%9A%E5%87%BA%E5%BE%88%E5%B0%8F%E7%9A%84%E5%8F%98%E5%8C%96">尝试做出很小的变化</a></li>
+<li><a href="#%E5%B1%95%E7%A4%BA%E7%9C%9F%E5%AE%9E%E7%9A%84%E8%87%AA%E5%B7%B1">展示真实的自己</a></li>
+<li><a href="#%E5%AF%B9%E6%80%A7%E7%9A%84%E5%9B%9E%E9%81%BF">对“性”的回避</a></li>
+<li><a href="#%E8%A7%A3%E6%94%BE%E8%87%AA%E5%B7%B1">解放自己</a></li>
+<li><a href="#%E4%BD%A0%E5%B7%B2%E4%B8%8D%E5%86%8D%E6%84%9F%E5%88%B0%E9%BA%BB%E7%83%A6">你已不再感到麻烦</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

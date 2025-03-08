@@ -32,6 +32,11 @@
 
 
 
+html {
+    /* 让出顶部标题栏的高度 */
+    scroll-padding-top: 80px;
+}
+
 body {
     /* 上、右、下、左： 左右居中 */
     margin: 0px auto 0px;
@@ -276,8 +281,8 @@ h4 img {
 #backtotop {
     position: fixed;
     /* Place the button at the bottom right of the page */
-    bottom: 40%;
-    right: 2%;
+    bottom: 40vh;
+    right: 5vw;
     /* Make sure it does not overlap */
     z-index: 99;
     /* Hidden by default */

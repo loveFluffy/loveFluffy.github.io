@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x6c83;&#x987f;&#x5546;&#x5b66;&#x9662;&#xff1a;&#x6700;&#x53d7;&#x6b22;&#x8fce;&#x7684;&#x8c08;&#x5224;&#x8bfe;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x6c83;&#x987f;&#x5546;&#x5b66;&#x9662;&#xff1a;&#x6700;&#x53d7;&#x6b22;&#x8fce;&#x7684;&#x8c08;&#x5224;&#x8bfe;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,484 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="沃顿商学院最受欢迎的谈判课">沃顿商学院：最受欢迎的谈判课</h1>
-<h2 id="美斯图尔特戴蒙德stuart-diamond-著杨晓红-等译">[美]斯图尔特·戴蒙德（Stuart Diamond） 著|杨晓红 等译</h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/9615.jpg"></td><td>
+<h1 id="沃顿商学院最受欢迎的谈判课">沃顿商学院：最受欢迎的谈判课</h1>
+<center>[美]斯图尔特·戴蒙德（Stuart Diamond） 著|杨晓红 等译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="推荐序1-教育改变命运我们改变教育">推荐序1 教育改变命运，我们改变教育</h3>
+<h3 id="推荐序2-认知升级是最好的投资理财">推荐序2 认知升级是最好的投资理财</h3>
+<h3 id="前言-任何人都能争取更多">前言 任何人都能争取更多</h3>
+<h3 id="第1章-换种思路">第1章 换种思路</h3>
+<h4 id="谈判无处不在">谈判无处不在</h4>
+<h4 id="12条谈判策略">12条谈判策略</h4>
+<h4 id="无形的谈判技巧">无形的谈判技巧</h4>
+<h4 id="不该使用的谈判技巧">不该使用的谈判技巧</h4>
+<h4 id="谈判的新定义优势谈判的4个层次">谈判的新定义：优势谈判的4个层次</h4>
+<h4 id="比双赢更重要的事实现目标">比双赢更重要的事：实现目标</h4>
+<h4 id="你的态度可信度和透明度">你的态度、可信度和透明度</h4>
+<h4 id="循序渐进式争取更多">循序渐进式争取更多</h4>
+<h4 id="一切谈判与情境密切相关">一切谈判与情境密切相关</h4>
+<h4 id="慎用权力">慎用权力</h4>
+<h4 id="对照谈判清单训练人人都可受益">对照谈判清单训练：人人都可受益</h4>
+<h4 id="找出更深层次的动机">找出更深层次的动机</h4>
+<h3 id="第2章-人几乎决定一切">第2章 人几乎决定一切</h3>
+<h4 id="关注对方会让你收获更多">关注对方会让你收获更多</h4>
+<h4 id="寻找关键的第三方">寻找关键的第三方</h4>
+<h4 id="尊重对方">尊重对方</h4>
+<h4 id="摸清对方的实力并予以肯定">摸清对方的实力并予以肯定</h4>
+<h4 id="信任和缺乏信任的谈判">信任和缺乏信任的谈判</h4>
+<h4 id="失去和重获信任">失去和重获信任</h4>
+<h4 id="改变一切">改变一切</h4>
+<h3 id="第3章-观念和沟通">第3章 观念和沟通</h3>
+<h4 id="缩小认知差距">缩小认知差距</h4>
+<h4 id="交流隔阂及其消除之道">交流隔阂及其消除之道</h4>
+<h4 id="第一要务必须与对方沟通">第一要务：必须与对方沟通</h4>
+<h4 id="对方的言论和观点比你的更重要">对方的言论和观点比你的更重要</h4>
+<h4 id="尊重而不要责怪对方">尊重而不要责怪对方</h4>
+<h4 id="总结所听到的内容">总结所听到的内容</h4>
+<h4 id="角色互换">角色互换</h4>
+<h4 id="保持沉着冷静">保持沉着冷静</h4>
+<h4 id="声明及重申你的目标">声明及重申你的目标</h4>
+<h4 id="语气和电子邮件中的谈判">语气和电子邮件中的谈判</h4>
+<h4 id="留意语言和动作透露的信号">留意语言和动作透露的信号</h4>
+<h4 id="弄清楚对方做出承诺的方式">弄清楚对方做出承诺的方式</h4>
+<h4 id="做决策前先征询意见">做决策前先征询意见</h4>
+<h4 id="昨日已逝">昨日已逝</h4>
+<h4 id="争论对错于谈判毫无意义">争论对错于谈判毫无意义</h4>
+<h3 id="第4章-面对强硬的谈判对手">第4章 面对强硬的谈判对手</h3>
+<h4 id="准则的力量">准则的力量</h4>
+<h4 id="采取循序渐进的策略">采取循序渐进的策略</h4>
+<h4 id="准确描述令你事半功倍">准确描述令你事半功倍</h4>
+<h4 id="谈判前制定准则">谈判前制定准则</h4>
+<h4 id="直接指出对方的不当行为">直接指出对方的不当行为</h4>
+<h4 id="收起你的争强好胜心">收起你的争强好胜心</h4>
+<h3 id="第5章-不等价交易">第5章 不等价交易</h3>
+<h4 id="不等价交易的原理">不等价交易的原理</h4>
+<h4 id="关键驱动力无形之物">关键驱动力：无形之物</h4>
+<h4 id="深入了解多维度的需求">深入了解多维度的需求</h4>
+<h4 id="面试获取关键信息">面试：获取关键信息</h4>
+<h4 id="扩大整体利益">扩大整体利益</h4>
+<h4 id="联系关键记忆辅助工具">联系：关键记忆辅助工具</h4>
+<h4 id="多考虑积极正面的因素">多考虑积极正面的因素</h4>
+<h3 id="第6章-情感">第6章 情感</h3>
+<h4 id="情绪与谈判">情绪与谈判</h4>
+<h4 id="威胁是无效的谈判策略">威胁是无效的谈判策略</h4>
+<h4 id="控制情绪">控制情绪</h4>
+<h4 id="个人风格对谈判风格的影响">个人风格对谈判风格的影响</h4>
+<h4 id="道德观">道德观</h4>
+<h4 id="妈妈爱你吗一幕重新上演的故事">妈妈爱你吗？一幕重新上演的故事</h4>
+<h3 id="第7章-整理问题谈判工具清单">第7章 整理问题：谈判工具清单</h3>
+<h4 id="实现利益最大化的模式四象限谈判模型">实现利益最大化的模式：四象限谈判模型</h4>
+<h3 id="第8章-正确处理文化差异">第8章 正确处理文化差异</h3>
+<h4 id="什么是多样性">什么是多样性？</h4>
+<h4 id="成见的根源">成见的根源</h4>
+<h4 id="正确处理文化差异">正确处理文化差异</h4>
+<h4 id="改善关系的步骤">改善关系的步骤</h4>
+<h4 id="沟通观点和文化">沟通、观点和文化</h4>
+<h4 id="准则与文化">准则与文化</h4>
+<h4 id="文化与商业">文化与商业</h4>
+<h4 id="对方真实的文化内涵">对方真实的文化内涵</h4>
+<h3 id="第9章-如何在工作中争取更多">第9章 如何在工作中争取更多</h3>
+<h4 id="根据对方的具体需求获取成功">根据对方的具体需求获取成功</h4>
+<h4 id="面试">面试</h4>
+<h4 id="准则">准则</h4>
+<h4 id="不等价交易">不等价交易</h4>
+<h4 id="与第三方结盟">与第三方结盟</h4>
+<h4 id="采取循序渐进策略">采取循序渐进策略</h4>
+<h4 id="解雇">解雇</h4>
+<h4 id="敏锐察觉情境中的信号">敏锐察觉情境中的信号</h4>
+<h3 id="第10章-如何在交易中争取更多">第10章 如何在交易中争取更多</h3>
+<h4 id="准则和表达方式">准则和表达方式</h4>
+<h4 id="人际关系">人际关系</h4>
+<h4 id="交易和联系">交易和联系</h4>
+<h4 id="观点和风险">观点和风险</h4>
+<h4 id="汽车">汽车</h4>
+<h4 id="信用卡">信用卡</h4>
+<h4 id="房地产">房地产</h4>
+<h4 id="家族企业">家族企业</h4>
+<h3 id="第11章-人际关系中的谈判">第11章 人际关系中的谈判</h3>
+<h4 id="关系中的情感补偿">关系中的情感补偿</h4>
+<h4 id="处理人际关系问题要循序渐进">处理人际关系问题要循序渐进</h4>
+<h4 id="利用共同敌人处理人际关系问题">利用共同敌人处理人际关系问题</h4>
+<h4 id="不等价交易-1">不等价交易</h4>
+<h4 id="了解对方">了解对方</h4>
+<h4 id="准则-1">准则</h4>
+<h4 id="目标和人际关系">目标和人际关系</h4>
+<h4 id="细节和人际关系">细节和人际关系</h4>
+<h4 id="处理人际关系问题的环境">处理人际关系问题的环境</h4>
+<h4 id="第三方和人际关系">第三方和人际关系</h4>
+<h4 id="交易型关系">交易型关系</h4>
+<h4 id="调解关系">调解关系</h4>
+<h4 id="结束关系">结束关系</h4>
+<h4 id="信任和人际关系">信任和人际关系</h4>
+<h3 id="第12章-父母如何与孩子进行谈判">第12章 父母如何与孩子进行谈判</h3>
+<h4 id="与孩子谈判的技巧">与孩子谈判的技巧</h4>
+<h4 id="奖励">奖励</h4>
+<h3 id="第13章-旅行中的谈判">第13章 旅行中的谈判</h3>
+<h4 id="航空公司和准则">航空公司和准则</h4>
+<h4 id="建立人际关系">建立人际关系</h4>
+<h4 id="恰当的表达方式">恰当的表达方式</h4>
+<h4 id="充分做好准备">充分做好准备</h4>
+<h4 id="酒店里的冲突故事">酒店里的“冲突故事”</h4>
+<h4 id="执法部门">执法部门</h4>
+<h4 id="建立基本的人际关系">建立基本的人际关系</h4>
+<h4 id="旅行安排">旅行安排</h4>
+<h4 id="将飞机叫回再次上演的一幕">将飞机叫回——再次上演的一幕</h4>
+<h3 id="第14章-日常生活无处不在谈判">第14章 日常生活，无处不在谈判</h3>
+<h4 id="对方脑海中的观念和想法">对方脑海中的观念和想法</h4>
+<h4 id="公寓生活">公寓生活</h4>
+<h4 id="准则和表达方式-1">准则和表达方式</h4>
+<h4 id="金融机构">金融机构</h4>
+<h4 id="餐厅">餐厅</h4>
+<h4 id="日常生活">日常生活</h4>
+<h4 id="法律">法律</h4>
+<h4 id="不等价交易-2">不等价交易</h4>
+<h4 id="建立联盟">建立联盟</h4>
+<h3 id="第15章-在公共事务上也要争取更多">第15章 在公共事务上，也要争取更多</h3>
+<h4 id="有效沟通达成持久协议">有效沟通：达成持久协议</h4>
+<h4 id="了解对方的观点">了解对方的观点</h4>
+<h4 id="对峙态度得到最少">对峙态度：得到最少</h4>
+<h4 id="谈判高手的特质摒弃前嫌">谈判高手的特质：摒弃前嫌</h4>
+<h4 id="找到对方的需求和交易需求">找到对方的需求和交易需求</h4>
+<h4 id="采取循序渐进的策略-1">采取循序渐进的策略</h4>
+<h4 id="暴力的无力">暴力的无力</h4>
+<h4 id="情感寻找共同联结">情感：寻找共同联结</h4>
+<h4 id="准则保持公正的理念">准则：保持公正的理念</h4>
+<h4 id="回顾问题解决的模式">回顾问题解决的模式</h4>
+<h3 id="第16章-谈判实战">第16章 谈判实战</h3>
+<h4 id="态度">态度</h4>
+<h4 id="充分准备">充分准备</h4>
+<h4 id="谈判地点和谈判时间">谈判地点和谈判时间</h4>
+<h4 id="相互了解">相互了解</h4>
+<h4 id="开始谈判">开始谈判</h4>
+<h4 id="谈判的动态性">谈判的动态性</h4>
+<h4 id="对待彼此的方式">对待彼此的方式</h4>
+<h4 id="透露信息的方式">透露信息的方式</h4>
+<h4 id="极端报价会毁掉交易">极端报价会毁掉交易</h4>
+<h4 id="权力的动态性">权力的动态性</h4>
+<h4 id="自己的需求">自己的需求</h4>
+<h4 id="解决方案的评估标准">解决方案的评估标准</h4>
+<h4 id="你近期中期以及远期的行动方案是什么">你近期、中期以及远期的行动方案是什么？</h4>
+<h4 id="你需要谁的帮助">你需要谁的帮助？</h4>
+<h4 id="怎样才能做出持久的承诺">怎样才能做出持久的承诺？</h4>
+<h4 id="在下一次会谈之前确定谈判对象和谈判内容">在下一次会谈之前确定谈判对象和谈判内容</h4>
+<h4 id="从脑海中的想法到具体目标">从脑海中的想法到具体目标</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F1-%E6%95%99%E8%82%B2%E6%94%B9%E5%8F%98%E5%91%BD%E8%BF%90%E6%88%91%E4%BB%AC%E6%94%B9%E5%8F%98%E6%95%99%E8%82%B2">推荐序1 教育改变命运，我们改变教育</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F2-%E8%AE%A4%E7%9F%A5%E5%8D%87%E7%BA%A7%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E6%8A%95%E8%B5%84%E7%90%86%E8%B4%A2">推荐序2 认知升级是最好的投资理财</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80-%E4%BB%BB%E4%BD%95%E4%BA%BA%E9%83%BD%E8%83%BD%E4%BA%89%E5%8F%96%E6%9B%B4%E5%A4%9A">前言 任何人都能争取更多</a></li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E6%8D%A2%E7%A7%8D%E6%80%9D%E8%B7%AF">第1章 换种思路</a>
+<ul>
+<li><a href="#%E8%B0%88%E5%88%A4%E6%97%A0%E5%A4%84%E4%B8%8D%E5%9C%A8">谈判无处不在</a></li>
+<li><a href="#12%E6%9D%A1%E8%B0%88%E5%88%A4%E7%AD%96%E7%95%A5">12条谈判策略</a></li>
+<li><a href="#%E6%97%A0%E5%BD%A2%E7%9A%84%E8%B0%88%E5%88%A4%E6%8A%80%E5%B7%A7">无形的谈判技巧</a></li>
+<li><a href="#%E4%B8%8D%E8%AF%A5%E4%BD%BF%E7%94%A8%E7%9A%84%E8%B0%88%E5%88%A4%E6%8A%80%E5%B7%A7">不该使用的谈判技巧</a></li>
+<li><a href="#%E8%B0%88%E5%88%A4%E7%9A%84%E6%96%B0%E5%AE%9A%E4%B9%89%E4%BC%98%E5%8A%BF%E8%B0%88%E5%88%A4%E7%9A%844%E4%B8%AA%E5%B1%82%E6%AC%A1">谈判的新定义：优势谈判的4个层次</a></li>
+<li><a href="#%E6%AF%94%E5%8F%8C%E8%B5%A2%E6%9B%B4%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B%E5%AE%9E%E7%8E%B0%E7%9B%AE%E6%A0%87">比双赢更重要的事：实现目标</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E6%80%81%E5%BA%A6%E5%8F%AF%E4%BF%A1%E5%BA%A6%E5%92%8C%E9%80%8F%E6%98%8E%E5%BA%A6">你的态度、可信度和透明度</a></li>
+<li><a href="#%E5%BE%AA%E5%BA%8F%E6%B8%90%E8%BF%9B%E5%BC%8F%E4%BA%89%E5%8F%96%E6%9B%B4%E5%A4%9A">循序渐进式争取更多</a></li>
+<li><a href="#%E4%B8%80%E5%88%87%E8%B0%88%E5%88%A4%E4%B8%8E%E6%83%85%E5%A2%83%E5%AF%86%E5%88%87%E7%9B%B8%E5%85%B3">一切谈判与情境密切相关</a></li>
+<li><a href="#%E6%85%8E%E7%94%A8%E6%9D%83%E5%8A%9B">慎用权力</a></li>
+<li><a href="#%E5%AF%B9%E7%85%A7%E8%B0%88%E5%88%A4%E6%B8%85%E5%8D%95%E8%AE%AD%E7%BB%83%E4%BA%BA%E4%BA%BA%E9%83%BD%E5%8F%AF%E5%8F%97%E7%9B%8A">对照谈判清单训练：人人都可受益</a></li>
+<li><a href="#%E6%89%BE%E5%87%BA%E6%9B%B4%E6%B7%B1%E5%B1%82%E6%AC%A1%E7%9A%84%E5%8A%A8%E6%9C%BA">找出更深层次的动机</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E4%BA%BA%E5%87%A0%E4%B9%8E%E5%86%B3%E5%AE%9A%E4%B8%80%E5%88%87">第2章 人几乎决定一切</a>
+<ul>
+<li><a href="#%E5%85%B3%E6%B3%A8%E5%AF%B9%E6%96%B9%E4%BC%9A%E8%AE%A9%E4%BD%A0%E6%94%B6%E8%8E%B7%E6%9B%B4%E5%A4%9A">关注对方会让你收获更多</a></li>
+<li><a href="#%E5%AF%BB%E6%89%BE%E5%85%B3%E9%94%AE%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9">寻找关键的第三方</a></li>
+<li><a href="#%E5%B0%8A%E9%87%8D%E5%AF%B9%E6%96%B9">尊重对方</a></li>
+<li><a href="#%E6%91%B8%E6%B8%85%E5%AF%B9%E6%96%B9%E7%9A%84%E5%AE%9E%E5%8A%9B%E5%B9%B6%E4%BA%88%E4%BB%A5%E8%82%AF%E5%AE%9A">摸清对方的实力并予以肯定</a></li>
+<li><a href="#%E4%BF%A1%E4%BB%BB%E5%92%8C%E7%BC%BA%E4%B9%8F%E4%BF%A1%E4%BB%BB%E7%9A%84%E8%B0%88%E5%88%A4">信任和缺乏信任的谈判</a></li>
+<li><a href="#%E5%A4%B1%E5%8E%BB%E5%92%8C%E9%87%8D%E8%8E%B7%E4%BF%A1%E4%BB%BB">失去和重获信任</a></li>
+<li><a href="#%E6%94%B9%E5%8F%98%E4%B8%80%E5%88%87">改变一切</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E8%A7%82%E5%BF%B5%E5%92%8C%E6%B2%9F%E9%80%9A">第3章 观念和沟通</a>
+<ul>
+<li><a href="#%E7%BC%A9%E5%B0%8F%E8%AE%A4%E7%9F%A5%E5%B7%AE%E8%B7%9D">缩小认知差距</a></li>
+<li><a href="#%E4%BA%A4%E6%B5%81%E9%9A%94%E9%98%82%E5%8F%8A%E5%85%B6%E6%B6%88%E9%99%A4%E4%B9%8B%E9%81%93">交流隔阂及其消除之道</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%A6%81%E5%8A%A1%E5%BF%85%E9%A1%BB%E4%B8%8E%E5%AF%B9%E6%96%B9%E6%B2%9F%E9%80%9A">第一要务：必须与对方沟通</a></li>
+<li><a href="#%E5%AF%B9%E6%96%B9%E7%9A%84%E8%A8%80%E8%AE%BA%E5%92%8C%E8%A7%82%E7%82%B9%E6%AF%94%E4%BD%A0%E7%9A%84%E6%9B%B4%E9%87%8D%E8%A6%81">对方的言论和观点比你的更重要</a></li>
+<li><a href="#%E5%B0%8A%E9%87%8D%E8%80%8C%E4%B8%8D%E8%A6%81%E8%B4%A3%E6%80%AA%E5%AF%B9%E6%96%B9">尊重而不要责怪对方</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93%E6%89%80%E5%90%AC%E5%88%B0%E7%9A%84%E5%86%85%E5%AE%B9">总结所听到的内容</a></li>
+<li><a href="#%E8%A7%92%E8%89%B2%E4%BA%92%E6%8D%A2">角色互换</a></li>
+<li><a href="#%E4%BF%9D%E6%8C%81%E6%B2%89%E7%9D%80%E5%86%B7%E9%9D%99">保持沉着冷静</a></li>
+<li><a href="#%E5%A3%B0%E6%98%8E%E5%8F%8A%E9%87%8D%E7%94%B3%E4%BD%A0%E7%9A%84%E7%9B%AE%E6%A0%87">声明及重申你的目标</a></li>
+<li><a href="#%E8%AF%AD%E6%B0%94%E5%92%8C%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E4%B8%AD%E7%9A%84%E8%B0%88%E5%88%A4">语气和电子邮件中的谈判</a></li>
+<li><a href="#%E7%95%99%E6%84%8F%E8%AF%AD%E8%A8%80%E5%92%8C%E5%8A%A8%E4%BD%9C%E9%80%8F%E9%9C%B2%E7%9A%84%E4%BF%A1%E5%8F%B7">留意语言和动作透露的信号</a></li>
+<li><a href="#%E5%BC%84%E6%B8%85%E6%A5%9A%E5%AF%B9%E6%96%B9%E5%81%9A%E5%87%BA%E6%89%BF%E8%AF%BA%E7%9A%84%E6%96%B9%E5%BC%8F">弄清楚对方做出承诺的方式</a></li>
+<li><a href="#%E5%81%9A%E5%86%B3%E7%AD%96%E5%89%8D%E5%85%88%E5%BE%81%E8%AF%A2%E6%84%8F%E8%A7%81">做决策前先征询意见</a></li>
+<li><a href="#%E6%98%A8%E6%97%A5%E5%B7%B2%E9%80%9D">昨日已逝</a></li>
+<li><a href="#%E4%BA%89%E8%AE%BA%E5%AF%B9%E9%94%99%E4%BA%8E%E8%B0%88%E5%88%A4%E6%AF%AB%E6%97%A0%E6%84%8F%E4%B9%89">争论对错于谈判毫无意义</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E9%9D%A2%E5%AF%B9%E5%BC%BA%E7%A1%AC%E7%9A%84%E8%B0%88%E5%88%A4%E5%AF%B9%E6%89%8B">第4章 面对强硬的谈判对手</a>
+<ul>
+<li><a href="#%E5%87%86%E5%88%99%E7%9A%84%E5%8A%9B%E9%87%8F">准则的力量</a></li>
+<li><a href="#%E9%87%87%E5%8F%96%E5%BE%AA%E5%BA%8F%E6%B8%90%E8%BF%9B%E7%9A%84%E7%AD%96%E7%95%A5">采取循序渐进的策略</a></li>
+<li><a href="#%E5%87%86%E7%A1%AE%E6%8F%8F%E8%BF%B0%E4%BB%A4%E4%BD%A0%E4%BA%8B%E5%8D%8A%E5%8A%9F%E5%80%8D">准确描述令你事半功倍</a></li>
+<li><a href="#%E8%B0%88%E5%88%A4%E5%89%8D%E5%88%B6%E5%AE%9A%E5%87%86%E5%88%99">谈判前制定准则</a></li>
+<li><a href="#%E7%9B%B4%E6%8E%A5%E6%8C%87%E5%87%BA%E5%AF%B9%E6%96%B9%E7%9A%84%E4%B8%8D%E5%BD%93%E8%A1%8C%E4%B8%BA">直接指出对方的不当行为</a></li>
+<li><a href="#%E6%94%B6%E8%B5%B7%E4%BD%A0%E7%9A%84%E4%BA%89%E5%BC%BA%E5%A5%BD%E8%83%9C%E5%BF%83">收起你的争强好胜心</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E4%B8%8D%E7%AD%89%E4%BB%B7%E4%BA%A4%E6%98%93">第5章 不等价交易</a>
+<ul>
+<li><a href="#%E4%B8%8D%E7%AD%89%E4%BB%B7%E4%BA%A4%E6%98%93%E7%9A%84%E5%8E%9F%E7%90%86">不等价交易的原理</a></li>
+<li><a href="#%E5%85%B3%E9%94%AE%E9%A9%B1%E5%8A%A8%E5%8A%9B%E6%97%A0%E5%BD%A2%E4%B9%8B%E7%89%A9">关键驱动力：无形之物</a></li>
+<li><a href="#%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3%E5%A4%9A%E7%BB%B4%E5%BA%A6%E7%9A%84%E9%9C%80%E6%B1%82">深入了解多维度的需求</a></li>
+<li><a href="#%E9%9D%A2%E8%AF%95%E8%8E%B7%E5%8F%96%E5%85%B3%E9%94%AE%E4%BF%A1%E6%81%AF">面试：获取关键信息</a></li>
+<li><a href="#%E6%89%A9%E5%A4%A7%E6%95%B4%E4%BD%93%E5%88%A9%E7%9B%8A">扩大整体利益</a></li>
+<li><a href="#%E8%81%94%E7%B3%BB%E5%85%B3%E9%94%AE%E8%AE%B0%E5%BF%86%E8%BE%85%E5%8A%A9%E5%B7%A5%E5%85%B7">联系：关键记忆辅助工具</a></li>
+<li><a href="#%E5%A4%9A%E8%80%83%E8%99%91%E7%A7%AF%E6%9E%81%E6%AD%A3%E9%9D%A2%E7%9A%84%E5%9B%A0%E7%B4%A0">多考虑积极正面的因素</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E6%83%85%E6%84%9F">第6章 情感</a>
+<ul>
+<li><a href="#%E6%83%85%E7%BB%AA%E4%B8%8E%E8%B0%88%E5%88%A4">情绪与谈判</a></li>
+<li><a href="#%E5%A8%81%E8%83%81%E6%98%AF%E6%97%A0%E6%95%88%E7%9A%84%E8%B0%88%E5%88%A4%E7%AD%96%E7%95%A5">威胁是无效的谈判策略</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E6%83%85%E7%BB%AA">控制情绪</a></li>
+<li><a href="#%E4%B8%AA%E4%BA%BA%E9%A3%8E%E6%A0%BC%E5%AF%B9%E8%B0%88%E5%88%A4%E9%A3%8E%E6%A0%BC%E7%9A%84%E5%BD%B1%E5%93%8D">个人风格对谈判风格的影响</a></li>
+<li><a href="#%E9%81%93%E5%BE%B7%E8%A7%82">道德观</a></li>
+<li><a href="#%E5%A6%88%E5%A6%88%E7%88%B1%E4%BD%A0%E5%90%97%E4%B8%80%E5%B9%95%E9%87%8D%E6%96%B0%E4%B8%8A%E6%BC%94%E7%9A%84%E6%95%85%E4%BA%8B">妈妈爱你吗？一幕重新上演的故事</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E6%95%B4%E7%90%86%E9%97%AE%E9%A2%98%E8%B0%88%E5%88%A4%E5%B7%A5%E5%85%B7%E6%B8%85%E5%8D%95">第7章 整理问题：谈判工具清单</a>
+<ul>
+<li><a href="#%E5%AE%9E%E7%8E%B0%E5%88%A9%E7%9B%8A%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%9B%9B%E8%B1%A1%E9%99%90%E8%B0%88%E5%88%A4%E6%A8%A1%E5%9E%8B">实现利益最大化的模式：四象限谈判模型</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E6%AD%A3%E7%A1%AE%E5%A4%84%E7%90%86%E6%96%87%E5%8C%96%E5%B7%AE%E5%BC%82">第8章 正确处理文化差异</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%9A%E6%A0%B7%E6%80%A7">什么是多样性？</a></li>
+<li><a href="#%E6%88%90%E8%A7%81%E7%9A%84%E6%A0%B9%E6%BA%90">成见的根源</a></li>
+<li><a href="#%E6%AD%A3%E7%A1%AE%E5%A4%84%E7%90%86%E6%96%87%E5%8C%96%E5%B7%AE%E5%BC%82">正确处理文化差异</a></li>
+<li><a href="#%E6%94%B9%E5%96%84%E5%85%B3%E7%B3%BB%E7%9A%84%E6%AD%A5%E9%AA%A4">改善关系的步骤</a></li>
+<li><a href="#%E6%B2%9F%E9%80%9A%E8%A7%82%E7%82%B9%E5%92%8C%E6%96%87%E5%8C%96">沟通、观点和文化</a></li>
+<li><a href="#%E5%87%86%E5%88%99%E4%B8%8E%E6%96%87%E5%8C%96">准则与文化</a></li>
+<li><a href="#%E6%96%87%E5%8C%96%E4%B8%8E%E5%95%86%E4%B8%9A">文化与商业</a></li>
+<li><a href="#%E5%AF%B9%E6%96%B9%E7%9C%9F%E5%AE%9E%E7%9A%84%E6%96%87%E5%8C%96%E5%86%85%E6%B6%B5">对方真实的文化内涵</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%B8%AD%E4%BA%89%E5%8F%96%E6%9B%B4%E5%A4%9A">第9章 如何在工作中争取更多</a>
+<ul>
+<li><a href="#%E6%A0%B9%E6%8D%AE%E5%AF%B9%E6%96%B9%E7%9A%84%E5%85%B7%E4%BD%93%E9%9C%80%E6%B1%82%E8%8E%B7%E5%8F%96%E6%88%90%E5%8A%9F">根据对方的具体需求获取成功</a></li>
+<li><a href="#%E9%9D%A2%E8%AF%95">面试</a></li>
+<li><a href="#%E5%87%86%E5%88%99">准则</a></li>
+<li><a href="#%E4%B8%8D%E7%AD%89%E4%BB%B7%E4%BA%A4%E6%98%93">不等价交易</a></li>
+<li><a href="#%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E7%BB%93%E7%9B%9F">与第三方结盟</a></li>
+<li><a href="#%E9%87%87%E5%8F%96%E5%BE%AA%E5%BA%8F%E6%B8%90%E8%BF%9B%E7%AD%96%E7%95%A5">采取循序渐进策略</a></li>
+<li><a href="#%E8%A7%A3%E9%9B%87">解雇</a></li>
+<li><a href="#%E6%95%8F%E9%94%90%E5%AF%9F%E8%A7%89%E6%83%85%E5%A2%83%E4%B8%AD%E7%9A%84%E4%BF%A1%E5%8F%B7">敏锐察觉情境中的信号</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%BA%A4%E6%98%93%E4%B8%AD%E4%BA%89%E5%8F%96%E6%9B%B4%E5%A4%9A">第10章 如何在交易中争取更多</a>
+<ul>
+<li><a href="#%E5%87%86%E5%88%99%E5%92%8C%E8%A1%A8%E8%BE%BE%E6%96%B9%E5%BC%8F">准则和表达方式</a></li>
+<li><a href="#%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB">人际关系</a></li>
+<li><a href="#%E4%BA%A4%E6%98%93%E5%92%8C%E8%81%94%E7%B3%BB">交易和联系</a></li>
+<li><a href="#%E8%A7%82%E7%82%B9%E5%92%8C%E9%A3%8E%E9%99%A9">观点和风险</a></li>
+<li><a href="#%E6%B1%BD%E8%BD%A6">汽车</a></li>
+<li><a href="#%E4%BF%A1%E7%94%A8%E5%8D%A1">信用卡</a></li>
+<li><a href="#%E6%88%BF%E5%9C%B0%E4%BA%A7">房地产</a></li>
+<li><a href="#%E5%AE%B6%E6%97%8F%E4%BC%81%E4%B8%9A">家族企业</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E8%B0%88%E5%88%A4">第11章 人际关系中的谈判</a>
+<ul>
+<li><a href="#%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E6%83%85%E6%84%9F%E8%A1%A5%E5%81%BF">关系中的情感补偿</a></li>
+<li><a href="#%E5%A4%84%E7%90%86%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E9%97%AE%E9%A2%98%E8%A6%81%E5%BE%AA%E5%BA%8F%E6%B8%90%E8%BF%9B">处理人际关系问题要循序渐进</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8%E5%85%B1%E5%90%8C%E6%95%8C%E4%BA%BA%E5%A4%84%E7%90%86%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E9%97%AE%E9%A2%98">利用共同敌人处理人际关系问题</a></li>
+<li><a href="#%E4%B8%8D%E7%AD%89%E4%BB%B7%E4%BA%A4%E6%98%93-1">不等价交易</a></li>
+<li><a href="#%E4%BA%86%E8%A7%A3%E5%AF%B9%E6%96%B9">了解对方</a></li>
+<li><a href="#%E5%87%86%E5%88%99-1">准则</a></li>
+<li><a href="#%E7%9B%AE%E6%A0%87%E5%92%8C%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB">目标和人际关系</a></li>
+<li><a href="#%E7%BB%86%E8%8A%82%E5%92%8C%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB">细节和人际关系</a></li>
+<li><a href="#%E5%A4%84%E7%90%86%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E9%97%AE%E9%A2%98%E7%9A%84%E7%8E%AF%E5%A2%83">处理人际关系问题的环境</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%92%8C%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB">第三方和人际关系</a></li>
+<li><a href="#%E4%BA%A4%E6%98%93%E5%9E%8B%E5%85%B3%E7%B3%BB">交易型关系</a></li>
+<li><a href="#%E8%B0%83%E8%A7%A3%E5%85%B3%E7%B3%BB">调解关系</a></li>
+<li><a href="#%E7%BB%93%E6%9D%9F%E5%85%B3%E7%B3%BB">结束关系</a></li>
+<li><a href="#%E4%BF%A1%E4%BB%BB%E5%92%8C%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB">信任和人际关系</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0-%E7%88%B6%E6%AF%8D%E5%A6%82%E4%BD%95%E4%B8%8E%E5%AD%A9%E5%AD%90%E8%BF%9B%E8%A1%8C%E8%B0%88%E5%88%A4">第12章 父母如何与孩子进行谈判</a>
+<ul>
+<li><a href="#%E4%B8%8E%E5%AD%A9%E5%AD%90%E8%B0%88%E5%88%A4%E7%9A%84%E6%8A%80%E5%B7%A7">与孩子谈判的技巧</a></li>
+<li><a href="#%E5%A5%96%E5%8A%B1">奖励</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC13%E7%AB%A0-%E6%97%85%E8%A1%8C%E4%B8%AD%E7%9A%84%E8%B0%88%E5%88%A4">第13章 旅行中的谈判</a>
+<ul>
+<li><a href="#%E8%88%AA%E7%A9%BA%E5%85%AC%E5%8F%B8%E5%92%8C%E5%87%86%E5%88%99">航空公司和准则</a></li>
+<li><a href="#%E5%BB%BA%E7%AB%8B%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB">建立人际关系</a></li>
+<li><a href="#%E6%81%B0%E5%BD%93%E7%9A%84%E8%A1%A8%E8%BE%BE%E6%96%B9%E5%BC%8F">恰当的表达方式</a></li>
+<li><a href="#%E5%85%85%E5%88%86%E5%81%9A%E5%A5%BD%E5%87%86%E5%A4%87">充分做好准备</a></li>
+<li><a href="#%E9%85%92%E5%BA%97%E9%87%8C%E7%9A%84%E5%86%B2%E7%AA%81%E6%95%85%E4%BA%8B">酒店里的“冲突故事”</a></li>
+<li><a href="#%E6%89%A7%E6%B3%95%E9%83%A8%E9%97%A8">执法部门</a></li>
+<li><a href="#%E5%BB%BA%E7%AB%8B%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB">建立基本的人际关系</a></li>
+<li><a href="#%E6%97%85%E8%A1%8C%E5%AE%89%E6%8E%92">旅行安排</a></li>
+<li><a href="#%E5%B0%86%E9%A3%9E%E6%9C%BA%E5%8F%AB%E5%9B%9E%E5%86%8D%E6%AC%A1%E4%B8%8A%E6%BC%94%E7%9A%84%E4%B8%80%E5%B9%95">将飞机叫回——再次上演的一幕</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC14%E7%AB%A0-%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB%E6%97%A0%E5%A4%84%E4%B8%8D%E5%9C%A8%E8%B0%88%E5%88%A4">第14章 日常生活，无处不在谈判</a>
+<ul>
+<li><a href="#%E5%AF%B9%E6%96%B9%E8%84%91%E6%B5%B7%E4%B8%AD%E7%9A%84%E8%A7%82%E5%BF%B5%E5%92%8C%E6%83%B3%E6%B3%95">对方脑海中的观念和想法</a></li>
+<li><a href="#%E5%85%AC%E5%AF%93%E7%94%9F%E6%B4%BB">公寓生活</a></li>
+<li><a href="#%E5%87%86%E5%88%99%E5%92%8C%E8%A1%A8%E8%BE%BE%E6%96%B9%E5%BC%8F-1">准则和表达方式</a></li>
+<li><a href="#%E9%87%91%E8%9E%8D%E6%9C%BA%E6%9E%84">金融机构</a></li>
+<li><a href="#%E9%A4%90%E5%8E%85">餐厅</a></li>
+<li><a href="#%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB">日常生活</a></li>
+<li><a href="#%E6%B3%95%E5%BE%8B">法律</a></li>
+<li><a href="#%E4%B8%8D%E7%AD%89%E4%BB%B7%E4%BA%A4%E6%98%93-2">不等价交易</a></li>
+<li><a href="#%E5%BB%BA%E7%AB%8B%E8%81%94%E7%9B%9F">建立联盟</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC15%E7%AB%A0-%E5%9C%A8%E5%85%AC%E5%85%B1%E4%BA%8B%E5%8A%A1%E4%B8%8A%E4%B9%9F%E8%A6%81%E4%BA%89%E5%8F%96%E6%9B%B4%E5%A4%9A">第15章 在公共事务上，也要争取更多</a>
+<ul>
+<li><a href="#%E6%9C%89%E6%95%88%E6%B2%9F%E9%80%9A%E8%BE%BE%E6%88%90%E6%8C%81%E4%B9%85%E5%8D%8F%E8%AE%AE">有效沟通：达成持久协议</a></li>
+<li><a href="#%E4%BA%86%E8%A7%A3%E5%AF%B9%E6%96%B9%E7%9A%84%E8%A7%82%E7%82%B9">了解对方的观点</a></li>
+<li><a href="#%E5%AF%B9%E5%B3%99%E6%80%81%E5%BA%A6%E5%BE%97%E5%88%B0%E6%9C%80%E5%B0%91">对峙态度：得到最少</a></li>
+<li><a href="#%E8%B0%88%E5%88%A4%E9%AB%98%E6%89%8B%E7%9A%84%E7%89%B9%E8%B4%A8%E6%91%92%E5%BC%83%E5%89%8D%E5%AB%8C">谈判高手的特质：摒弃前嫌</a></li>
+<li><a href="#%E6%89%BE%E5%88%B0%E5%AF%B9%E6%96%B9%E7%9A%84%E9%9C%80%E6%B1%82%E5%92%8C%E4%BA%A4%E6%98%93%E9%9C%80%E6%B1%82">找到对方的需求和交易需求</a></li>
+<li><a href="#%E9%87%87%E5%8F%96%E5%BE%AA%E5%BA%8F%E6%B8%90%E8%BF%9B%E7%9A%84%E7%AD%96%E7%95%A5-1">采取循序渐进的策略</a></li>
+<li><a href="#%E6%9A%B4%E5%8A%9B%E7%9A%84%E6%97%A0%E5%8A%9B">暴力的无力</a></li>
+<li><a href="#%E6%83%85%E6%84%9F%E5%AF%BB%E6%89%BE%E5%85%B1%E5%90%8C%E8%81%94%E7%BB%93">情感：寻找共同联结</a></li>
+<li><a href="#%E5%87%86%E5%88%99%E4%BF%9D%E6%8C%81%E5%85%AC%E6%AD%A3%E7%9A%84%E7%90%86%E5%BF%B5">准则：保持公正的理念</a></li>
+<li><a href="#%E5%9B%9E%E9%A1%BE%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E7%9A%84%E6%A8%A1%E5%BC%8F">回顾问题解决的模式</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC16%E7%AB%A0-%E8%B0%88%E5%88%A4%E5%AE%9E%E6%88%98">第16章 谈判实战</a>
+<ul>
+<li><a href="#%E6%80%81%E5%BA%A6">态度</a></li>
+<li><a href="#%E5%85%85%E5%88%86%E5%87%86%E5%A4%87">充分准备</a></li>
+<li><a href="#%E8%B0%88%E5%88%A4%E5%9C%B0%E7%82%B9%E5%92%8C%E8%B0%88%E5%88%A4%E6%97%B6%E9%97%B4">谈判地点和谈判时间</a></li>
+<li><a href="#%E7%9B%B8%E4%BA%92%E4%BA%86%E8%A7%A3">相互了解</a></li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E8%B0%88%E5%88%A4">开始谈判</a></li>
+<li><a href="#%E8%B0%88%E5%88%A4%E7%9A%84%E5%8A%A8%E6%80%81%E6%80%A7">谈判的动态性</a></li>
+<li><a href="#%E5%AF%B9%E5%BE%85%E5%BD%BC%E6%AD%A4%E7%9A%84%E6%96%B9%E5%BC%8F">对待彼此的方式</a></li>
+<li><a href="#%E9%80%8F%E9%9C%B2%E4%BF%A1%E6%81%AF%E7%9A%84%E6%96%B9%E5%BC%8F">透露信息的方式</a></li>
+<li><a href="#%E6%9E%81%E7%AB%AF%E6%8A%A5%E4%BB%B7%E4%BC%9A%E6%AF%81%E6%8E%89%E4%BA%A4%E6%98%93">极端报价会毁掉交易</a></li>
+<li><a href="#%E6%9D%83%E5%8A%9B%E7%9A%84%E5%8A%A8%E6%80%81%E6%80%A7">权力的动态性</a></li>
+<li><a href="#%E8%87%AA%E5%B7%B1%E7%9A%84%E9%9C%80%E6%B1%82">自己的需求</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%9A%84%E8%AF%84%E4%BC%B0%E6%A0%87%E5%87%86">解决方案的评估标准</a></li>
+<li><a href="#%E4%BD%A0%E8%BF%91%E6%9C%9F%E4%B8%AD%E6%9C%9F%E4%BB%A5%E5%8F%8A%E8%BF%9C%E6%9C%9F%E7%9A%84%E8%A1%8C%E5%8A%A8%E6%96%B9%E6%A1%88%E6%98%AF%E4%BB%80%E4%B9%88">你近期、中期以及远期的行动方案是什么？</a></li>
+<li><a href="#%E4%BD%A0%E9%9C%80%E8%A6%81%E8%B0%81%E7%9A%84%E5%B8%AE%E5%8A%A9">你需要谁的帮助？</a></li>
+<li><a href="#%E6%80%8E%E6%A0%B7%E6%89%8D%E8%83%BD%E5%81%9A%E5%87%BA%E6%8C%81%E4%B9%85%E7%9A%84%E6%89%BF%E8%AF%BA">怎样才能做出持久的承诺？</a></li>
+<li><a href="#%E5%9C%A8%E4%B8%8B%E4%B8%80%E6%AC%A1%E4%BC%9A%E8%B0%88%E4%B9%8B%E5%89%8D%E7%A1%AE%E5%AE%9A%E8%B0%88%E5%88%A4%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%B0%88%E5%88%A4%E5%86%85%E5%AE%B9">在下一次会谈之前确定谈判对象和谈判内容</a></li>
+<li><a href="#%E4%BB%8E%E8%84%91%E6%B5%B7%E4%B8%AD%E7%9A%84%E6%83%B3%E6%B3%95%E5%88%B0%E5%85%B7%E4%BD%93%E7%9B%AE%E6%A0%87">从脑海中的想法到具体目标</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

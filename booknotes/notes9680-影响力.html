@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5f71;&#x54cd;&#x529b;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5f71;&#x54cd;&#x529b;&#xff08;&#x5168;&#x65b0;&#x5347;&#x7ea7;&#x7248;&#xff09;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,257 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="影响力">影响力</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/9680.jpg"></td><td>
+<h1 id="影响力全新升级版">影响力（全新升级版）</h1>
+<center>[美]罗伯特·西奥迪尼（Robert B. Cialdini） 著|闾佳 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="序">序</h3>
+<h3 id="前言">前言</h3>
+<h3 id="第1章-影响力的武器">第1章 影响力的武器</h3>
+<h4 id="按一下就播放">按一下就播放</h4>
+<h4 id="把赌注押在抄捷径上">把赌注押在抄捷径上</h4>
+<h4 id="渔利的奸商">渔利的奸商</h4>
+<h4 id="以柔克刚">以柔克刚</h4>
+<h4 id="本章小结">本章小结</h4>
+<h3 id="第2章-互惠">第2章 互惠</h3>
+<h4 id="互惠原则怎样起作用">互惠原则怎样起作用</h4>
+<h4 id="互惠式让步">互惠式让步</h4>
+<h4 id="如何防范">如何防范</h4>
+<h4 id="本章小结-1">本章小结</h4>
+<h3 id="第3章-喜好">第3章 喜好</h3>
+<h4 id="通过喜好赚钱">通过喜好赚钱</h4>
+<h4 id="我喜欢你的理由">我喜欢你的理由</h4>
+<h4 id="如何防范-1">如何防范</h4>
+<h4 id="本章小结-2">本章小结</h4>
+<h3 id="第4章-社会认同">第4章 社会认同</h3>
+<h4 id="社会认同原则">社会认同原则</h4>
+<h4 id="最佳条件">最佳条件</h4>
+<h4 id="负面事件效应">负面事件效应</h4>
+<h4 id="如何防范-2">如何防范</h4>
+<h4 id="本章小结-3">本章小结</h4>
+<h3 id="第5章-权威">第5章 权威</h3>
+<h4 id="权威高压的力量">权威高压的力量</h4>
+<h4 id="盲目服从的诱惑和危险">盲目服从的诱惑和危险</h4>
+<h4 id="内涵不是内容">内涵不是内容</h4>
+<h4 id="让权威更加可信">让权威更加可信</h4>
+<h4 id="如何防范-3">如何防范</h4>
+<h4 id="本章小结-4">本章小结</h4>
+<h3 id="第6章-稀缺">第6章 稀缺</h3>
+<h4 id="物以稀为贵">物以稀为贵</h4>
+<h4 id="逆反心理">逆反心理</h4>
+<h4 id="最佳条件-1">最佳条件</h4>
+<h4 id="如何防范-4">如何防范</h4>
+<h4 id="本章小结-5">本章小结</h4>
+<h3 id="第7章-承诺与一致">第7章 承诺与一致</h3>
+<h4 id="言出必行">言出必行</h4>
+<h4 id="承诺是关键">承诺是关键</h4>
+<h4 id="发自内心地认同">发自内心地认同</h4>
+<h4 id="如何防范-5">如何防范</h4>
+<h4 id="本章小结-6">本章小结</h4>
+<h3 id="第8章-联盟">第8章 联盟</h3>
+<h4 id="我们的力量">“我们”的力量</h4>
+<h4 id="联盟1身心合一">联盟1：身心合一</h4>
+<h4 id="联盟2行动合一">联盟2：行动合一</h4>
+<h4 id="跨群体大联盟">跨群体大联盟</h4>
+<h4 id="如何防范-6">如何防范</h4>
+<h4 id="本章小结-7">本章小结</h4>
+<h3 id="第9章-即时的影响力">第9章 即时的影响力</h3>
+<h4 id="原始的自动反应">原始的自动反应</h4>
+<h4 id="现代的自动反应">现代的自动反应</h4>
+<h4 id="捷径应受到尊重">捷径应受到尊重</h4>
+<h4 id="本章小结-8">本章小结</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BA%8F">序</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E5%BD%B1%E5%93%8D%E5%8A%9B%E7%9A%84%E6%AD%A6%E5%99%A8">第1章 影响力的武器</a>
+<ul>
+<li><a href="#%E6%8C%89%E4%B8%80%E4%B8%8B%E5%B0%B1%E6%92%AD%E6%94%BE">按一下就播放</a></li>
+<li><a href="#%E6%8A%8A%E8%B5%8C%E6%B3%A8%E6%8A%BC%E5%9C%A8%E6%8A%84%E6%8D%B7%E5%BE%84%E4%B8%8A">把赌注押在抄捷径上</a></li>
+<li><a href="#%E6%B8%94%E5%88%A9%E7%9A%84%E5%A5%B8%E5%95%86">渔利的奸商</a></li>
+<li><a href="#%E4%BB%A5%E6%9F%94%E5%85%8B%E5%88%9A">以柔克刚</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E4%BA%92%E6%83%A0">第2章 互惠</a>
+<ul>
+<li><a href="#%E4%BA%92%E6%83%A0%E5%8E%9F%E5%88%99%E6%80%8E%E6%A0%B7%E8%B5%B7%E4%BD%9C%E7%94%A8">互惠原则怎样起作用</a></li>
+<li><a href="#%E4%BA%92%E6%83%A0%E5%BC%8F%E8%AE%A9%E6%AD%A5">互惠式让步</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83">如何防范</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-1">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E5%96%9C%E5%A5%BD">第3章 喜好</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E5%96%9C%E5%A5%BD%E8%B5%9A%E9%92%B1">通过喜好赚钱</a></li>
+<li><a href="#%E6%88%91%E5%96%9C%E6%AC%A2%E4%BD%A0%E7%9A%84%E7%90%86%E7%94%B1">我喜欢你的理由</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83-1">如何防范</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-2">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E7%A4%BE%E4%BC%9A%E8%AE%A4%E5%90%8C">第4章 社会认同</a>
+<ul>
+<li><a href="#%E7%A4%BE%E4%BC%9A%E8%AE%A4%E5%90%8C%E5%8E%9F%E5%88%99">社会认同原则</a></li>
+<li><a href="#%E6%9C%80%E4%BD%B3%E6%9D%A1%E4%BB%B6">最佳条件</a></li>
+<li><a href="#%E8%B4%9F%E9%9D%A2%E4%BA%8B%E4%BB%B6%E6%95%88%E5%BA%94">负面事件效应</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83-2">如何防范</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-3">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E6%9D%83%E5%A8%81">第5章 权威</a>
+<ul>
+<li><a href="#%E6%9D%83%E5%A8%81%E9%AB%98%E5%8E%8B%E7%9A%84%E5%8A%9B%E9%87%8F">权威高压的力量</a></li>
+<li><a href="#%E7%9B%B2%E7%9B%AE%E6%9C%8D%E4%BB%8E%E7%9A%84%E8%AF%B1%E6%83%91%E5%92%8C%E5%8D%B1%E9%99%A9">盲目服从的诱惑和危险</a></li>
+<li><a href="#%E5%86%85%E6%B6%B5%E4%B8%8D%E6%98%AF%E5%86%85%E5%AE%B9">内涵不是内容</a></li>
+<li><a href="#%E8%AE%A9%E6%9D%83%E5%A8%81%E6%9B%B4%E5%8A%A0%E5%8F%AF%E4%BF%A1">让权威更加可信</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83-3">如何防范</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-4">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E7%A8%80%E7%BC%BA">第6章 稀缺</a>
+<ul>
+<li><a href="#%E7%89%A9%E4%BB%A5%E7%A8%80%E4%B8%BA%E8%B4%B5">物以稀为贵</a></li>
+<li><a href="#%E9%80%86%E5%8F%8D%E5%BF%83%E7%90%86">逆反心理</a></li>
+<li><a href="#%E6%9C%80%E4%BD%B3%E6%9D%A1%E4%BB%B6-1">最佳条件</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83-4">如何防范</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-5">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E6%89%BF%E8%AF%BA%E4%B8%8E%E4%B8%80%E8%87%B4">第7章 承诺与一致</a>
+<ul>
+<li><a href="#%E8%A8%80%E5%87%BA%E5%BF%85%E8%A1%8C">言出必行</a></li>
+<li><a href="#%E6%89%BF%E8%AF%BA%E6%98%AF%E5%85%B3%E9%94%AE">承诺是关键</a></li>
+<li><a href="#%E5%8F%91%E8%87%AA%E5%86%85%E5%BF%83%E5%9C%B0%E8%AE%A4%E5%90%8C">发自内心地认同</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83-5">如何防范</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-6">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E8%81%94%E7%9B%9F">第8章 联盟</a>
+<ul>
+<li><a href="#%E6%88%91%E4%BB%AC%E7%9A%84%E5%8A%9B%E9%87%8F">“我们”的力量</a></li>
+<li><a href="#%E8%81%94%E7%9B%9F1%E8%BA%AB%E5%BF%83%E5%90%88%E4%B8%80">联盟1：身心合一</a></li>
+<li><a href="#%E8%81%94%E7%9B%9F2%E8%A1%8C%E5%8A%A8%E5%90%88%E4%B8%80">联盟2：行动合一</a></li>
+<li><a href="#%E8%B7%A8%E7%BE%A4%E4%BD%93%E5%A4%A7%E8%81%94%E7%9B%9F">跨群体大联盟</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83-6">如何防范</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-7">本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E5%8D%B3%E6%97%B6%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8A%9B">第9章 即时的影响力</a>
+<ul>
+<li><a href="#%E5%8E%9F%E5%A7%8B%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8F%8D%E5%BA%94">原始的自动反应</a></li>
+<li><a href="#%E7%8E%B0%E4%BB%A3%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8F%8D%E5%BA%94">现代的自动反应</a></li>
+<li><a href="#%E6%8D%B7%E5%BE%84%E5%BA%94%E5%8F%97%E5%88%B0%E5%B0%8A%E9%87%8D">捷径应受到尊重</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93-8">本章小结</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

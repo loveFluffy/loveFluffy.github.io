@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5f15;&#x7206;&#x7528;&#x6237;&#x589e;&#x957f;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5f15;&#x7206;&#x7528;&#x6237;&#x589e;&#x957f;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,483 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="引爆用户增长">引爆用户增长</h1>
-<h2 id="黄天文-著">黄天文 著</h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/9465.jpg"></td><td>
+<h1 id="引爆用户增长">引爆用户增长</h1>
+<center>黄天文</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="推荐序一">推荐序一</h3>
+<h3 id="推荐序二">推荐序二</h3>
+<h3 id="推荐序三">推荐序三</h3>
+<h3 id="推荐序四">推荐序四</h3>
+<h3 id="前言">前言</h3>
+<h3 id="第1章-正确理解和认识增长">第1章 正确理解和认识增长</h3>
+<h4 id="11-什么是增长">1.1 什么是增长</h4>
+<h5 id="111-增长的定义">1.1.1 增长的定义</h5>
+<h5 id="112-驱动增长的7大战略要素">1.1.2 驱动增长的7大战略要素</h5>
+<h4 id="12-增长的3大误区">1.2 增长的3大误区</h4>
+<h5 id="121-追求虚荣指标增长">1.2.1 追求虚荣指标增长</h5>
+<h5 id="122-用户增长一味追求数量">1.2.2 用户增长一味追求数量</h5>
+<h5 id="123-用户过早快速增长加速产品走向死亡">1.2.3 用户过早快速增长，加速产品走向死亡</h5>
+<h4 id="13-影响增长的4大关键因素">1.3 影响增长的4大关键因素</h4>
+<h5 id="131-目标市场空间决定增长潜力">1.3.1 目标市场空间决定增长潜力</h5>
+<h5 id="132-看不见的漏斗决定增长瓶颈">1.3.2 看不见的漏斗，决定增长瓶颈</h5>
+<h5 id="133-市场渗透率对增长的影响">1.3.3 市场渗透率对增长的影响</h5>
+<h5 id="134-市场竞争对增长的影响">1.3.4 市场竞争对增长的影响</h5>
+<h4 id="14-用户增长的基本逻辑供需关系相互拉动两端循环增长">1.4 用户增长的基本逻辑：供需关系相互拉动，两端循环增长</h4>
+<h4 id="15-本章小结">1.5 本章小结</h4>
+<h3 id="第2章-制定增长战略">第2章 制定增长战略</h3>
+<h4 id="21-分析行业特征制定运营模式">2.1 分析行业特征，制定运营模式</h4>
+<h5 id="211-如何分析行业特征">2.1.1 如何分析行业特征</h5>
+<h5 id="212-如何制定运营模式">2.1.2 如何制定运营模式</h5>
+<h4 id="22-分析商业模式确定增长的核心指标">2.2 分析商业模式，确定增长的核心指标</h4>
+<h5 id="221-商业模式vs运营模式">2.2.1 商业模式vs运营模式</h5>
+<h5 id="222-6大互联网商业模式的核心增长指标">2.2.2 6大互联网商业模式的核心增长指标</h5>
+<h4 id="23-拆解核心指标制定增长战略">2.3 拆解核心指标，制定增长战略</h4>
+<h5 id="231-如何拆解核心指标">2.3.1 如何拆解核心指标</h5>
+<h5 id="232-制定增长战略">2.3.2 制定增长战略</h5>
+<h4 id="24-案例制定互联网金融理财平台增长战略">2.4 案例：制定互联网金融理财平台增长战略</h4>
+<h4 id="25-本章小结">2.5 本章小结</h4>
+<h3 id="第3章-产品冷启动">第3章 产品冷启动</h3>
+<h4 id="31-名人效应">3.1 名人效应</h4>
+<h4 id="32-打造爆款">3.2 打造爆款</h4>
+<h4 id="33-马甲效应">3.3 马甲效应</h4>
+<h4 id="34-种子用户特权机制">3.4 种子用户特权机制</h4>
+<h4 id="35-邀请机制">3.5 邀请机制</h4>
+<h4 id="36-媒体报道新媒体运营">3.6 媒体报道/新媒体运营</h4>
+<h4 id="37-本章小结">3.7 本章小结</h4>
+<h3 id="第4章-用户的拉新留存与转化">第4章 用户的拉新、留存与转化</h3>
+<h4 id="41-b端用户拉新4步曲">4.1 B端用户拉新4步曲</h4>
+<h5 id="411-第一步明确产品定位">4.1.1 第一步：明确产品定位</h5>
+<h5 id="412-第二步确定目标用户">4.1.2 第二步：确定目标用户</h5>
+<h5 id="413-第三步找到目标用户聚集地">4.1.3 第三步：找到目标用户聚集地</h5>
+<h5 id="414-第四步制定激励方案加速用户转化">4.1.4 第四步：制定激励方案，加速用户转化</h5>
+<h4 id="42-b端用户留存不同生命周期阶段的运营策略">4.2 B端用户留存：不同生命周期阶段的运营策略</h4>
+<h5 id="421-吸引入驻阶段">4.2.1 吸引入驻阶段</h5>
+<h5 id="422-新手过渡期">4.2.2 新手过渡期</h5>
+<h5 id="423-持续活跃期">4.2.3 持续活跃期</h5>
+<h5 id="424-流失期">4.2.4 流失期</h5>
+<h4 id="43-c端用户拉新的10种方法">4.3 C端用户拉新的10种方法</h4>
+<h5 id="431-方法1打造流量型产品">4.3.1 方法1：打造流量型产品</h5>
+<h5 id="432-方法2打造流量品类">4.3.2 方法2：打造流量品类</h5>
+<h5 id="433-方法3营销工具创新">4.3.3 方法3：营销工具创新</h5>
+<h5 id="434-方法4好友邀请">4.3.4 方法4：好友邀请</h5>
+<h5 id="435-方法5地推">4.3.5 方法5：地推</h5>
+<h5 id="436-方法6异业合作">4.3.6 方法6：异业合作</h5>
+<h5 id="437-方法7物质激励">4.3.7 方法7：物质激励</h5>
+<h5 id="438-方法8内容化">4.3.8 方法8：内容化</h5>
+<h5 id="439-方法9活动拉新">4.3.9 方法9：活动拉新</h5>
+<h5 id="4310-方法10机构获客">4.3.10 方法10：机构获客</h5>
+<h4 id="44-c端用户留存不同生命周期阶段的运营策略">4.4 C端用户留存：不同生命周期阶段的运营策略</h4>
+<h5 id="441-新手购买转化期提升新用户购买转化和成长">4.4.1 新手购买转化期：提升新用户购买转化和成长</h5>
+<h5 id="442-成长期提升用户黏性">4.4.2 成长期：提升用户黏性</h5>
+<h5 id="443-成熟期提升用户arpu值提高用户购买频次和客单价跨品类导流">4.4.3 成熟期：提升用户ARPU值，提高用户购买频次和客单价，跨品类导流</h5>
+<h5 id="444-衰退期流失用户预警">4.4.4 衰退期：流失用户预警</h5>
+<h5 id="445-流失期定义问题确认类型诊断召回">4.4.5 流失期：定义问题、确认类型、诊断召回</h5>
+<h4 id="45-用户转化和运营过程中常见的9大难题">4.5 用户转化和运营过程中常见的9大难题</h4>
+<h4 id="46-本章小结">4.6 本章小结</h4>
+<h3 id="第5章-搭建用户成长体系建模型搭通道促成长">第5章 搭建用户成长体系：建模型、搭通道、促成长</h3>
+<h4 id="51-什么是用户成长体系">5.1 什么是用户成长体系</h4>
+<h5 id="511-用户成长体系的定义">5.1.1 用户成长体系的定义</h5>
+<h5 id="512-用户成长体系的3个重要作用">5.1.2 用户成长体系的3个重要作用</h5>
+<h4 id="52-建模型不同用户模型在用户成长体系中的应用">5.2 建模型：不同用户模型在用户成长体系中的应用</h4>
+<h5 id="521-用户漏斗模型">5.2.1 用户漏斗模型</h5>
+<h5 id="522-用户生命周期模型">5.2.2 用户生命周期模型</h5>
+<h5 id="523-rfm模型">5.2.3 RFM模型</h5>
+<h5 id="524-用户价值模型">5.2.4 用户价值模型</h5>
+<h4 id="53-搭通道搭建激励和连接用户的通道">5.3 搭通道：搭建激励和连接用户的通道</h4>
+<h5 id="531-用户成长通道指挥棒">5.3.1 用户成长通道（指挥棒）</h5>
+<h5 id="532-产品通道">5.3.2 产品通道</h5>
+<h5 id="533-短信通道">5.3.3 短信通道</h5>
+<h5 id="534-微信通道">5.3.4 微信通道</h5>
+<h5 id="535-其他通道">5.3.5 其他通道</h5>
+<h4 id="54-促成长寻找关键路径打造动力引擎">5.4 促成长：寻找关键路径，打造动力引擎</h4>
+<h5 id="541-探索用户成长的关键路径">5.4.1 探索用户成长的关键路径</h5>
+<h5 id="542-不同成长节点的运营策略">5.4.2 不同成长节点的运营策略</h5>
+<h5 id="543-打造用户成长动力引擎">5.4.3 打造用户成长动力引擎</h5>
+<h4 id="55-本章小结">5.5 本章小结</h4>
+<h3 id="第6章-用户运营">第6章 用户运营</h3>
+<h4 id="61-b端用户分级运营">6.1 B端用户分级运营</h4>
+<h5 id="611-大客户效应">6.1.1 大客户效应</h5>
+<h5 id="612-大客户的筛选">6.1.2 大客户的筛选</h5>
+<h5 id="613-如何做好大客户的运营">6.1.3 如何做好大客户的运营</h5>
+<h5 id="614-案例团购网站的商家分级运营">6.1.4 案例：团购网站的商家分级运营</h5>
+<h4 id="62-c端用户分级运营">6.2 C端用户分级运营</h4>
+<h5 id="621-划分用户级别的3种方式">6.2.1 划分用户级别的3种方式</h5>
+<h5 id="622-为什么要做c端用户分级">6.2.2 为什么要做C端用户分级</h5>
+<h5 id="623-客户的分级">6.2.3 客户的分级</h5>
+<h5 id="624-客户的管理方法">6.2.4 客户的管理方法</h5>
+<h5 id="625-用户分级的4个误区">6.2.5 用户分级的4个误区</h5>
+<h4 id="63-c端用户分群运营">6.3 C端用户分群运营</h4>
+<h5 id="631-什么是用户分群">6.3.1 什么是用户分群</h5>
+<h5 id="632-用户分群的目标和原则">6.3.2 用户分群的目标和原则</h5>
+<h5 id="633-如何做好用户分群">6.3.3 如何做好用户分群</h5>
+<h5 id="634-案例用户分群在美团的应用">6.3.4 案例：用户分群在美团的应用</h5>
+<h4 id="64-本章小结">6.4 本章小结</h4>
+<h3 id="第7章-疯狂的补贴用户增长的必杀技">第7章 疯狂的补贴：用户增长的必杀技</h3>
+<h4 id="71-什么是用户补贴">7.1 什么是用户补贴</h4>
+<h5 id="711-用户补贴的定义">7.1.1 用户补贴的定义</h5>
+<h5 id="712-用户补贴常用的8种工具及其使用场景">7.1.2 用户补贴常用的8种工具及其使用场景</h5>
+<h4 id="72-用户补贴的4种基本逻辑">7.2 用户补贴的4种基本逻辑</h4>
+<h5 id="721-逻辑一补贴获取大量用户形成网络效应">7.2.1 逻辑一：补贴获取大量用户形成网络效应</h5>
+<h5 id="722-逻辑二利用补贴培养用户习惯促进用户成长提升用户留存率">7.2.2 逻辑二：利用补贴培养用户习惯，促进用户成长，提升用户留存率</h5>
+<h5 id="723-逻辑三补贴促进新产品新技术快速推向市场">7.2.3 逻辑三：补贴促进新产品、新技术快速推向市场</h5>
+<h5 id="724-逻辑四补贴可以快速占领市场加剧竞争和加速淘汰">7.2.4 逻辑四：补贴可以快速占领市场，加剧竞争和加速淘汰</h5>
+<h4 id="73-用户补贴常见的5种类型">7.3 用户补贴常见的5种类型</h4>
+<h5 id="731-终端类补贴">7.3.1 终端类补贴</h5>
+<h5 id="732-流量品类补贴">7.3.2 流量品类补贴</h5>
+<h5 id="733-加速型补贴">7.3.3 加速型补贴</h5>
+<h5 id="734-生态系统补贴">7.3.4 生态系统补贴</h5>
+<h5 id="735-用户生命周期补贴">7.3.5 用户生命周期补贴</h5>
+<h4 id="74-用户补贴的5大雷区">7.4 用户补贴的5大雷区</h4>
+<h5 id="741-过度依赖补贴">7.4.1 过度依赖补贴</h5>
+<h5 id="742-补贴营销工具运用不当">7.4.2 补贴营销工具运用不当</h5>
+<h5 id="743-不做用户分群">7.4.3 不做用户分群</h5>
+<h5 id="744-疯狂的羊毛党">7.4.4 疯狂的“羊毛党”</h5>
+<h5 id="745-沉没成本">7.4.5 沉没成本</h5>
+<h4 id="75-如何有效地补贴">7.5 如何有效地补贴</h4>
+<h5 id="751-什么时候开始补贴">7.5.1 什么时候开始补贴？</h5>
+<h5 id="752-补贴的精细化运营">7.5.2 补贴的精细化运营</h5>
+<h5 id="753-补b端还是c端还是同时补">7.5.3 补B端还是C端，还是同时补？</h5>
+<h5 id="754-根据市场竞争环境随时做调整">7.5.4 根据市场竞争环境随时做调整</h5>
+<h4 id="76-寻找替代品">7.6 寻找替代品</h4>
+<h4 id="77-本章小结">7.7 本章小结</h4>
+<h3 id="附录-增长工具推荐">附录 增长工具推荐</h3>
+<h3 id="后记-心路历程">后记 心路历程</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%B8%80">推荐序一</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%BA%8C">推荐序二</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%B8%89">推荐序三</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E5%9B%9B">推荐序四</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E6%AD%A3%E7%A1%AE%E7%90%86%E8%A7%A3%E5%92%8C%E8%AE%A4%E8%AF%86%E5%A2%9E%E9%95%BF">第1章 正确理解和认识增长</a>
+<ul>
+<li><a href="#11-%E4%BB%80%E4%B9%88%E6%98%AF%E5%A2%9E%E9%95%BF">1.1 什么是增长</a>
+<ul>
+<li><a href="#111-%E5%A2%9E%E9%95%BF%E7%9A%84%E5%AE%9A%E4%B9%89">1.1.1 增长的定义</a></li>
+<li><a href="#112-%E9%A9%B1%E5%8A%A8%E5%A2%9E%E9%95%BF%E7%9A%847%E5%A4%A7%E6%88%98%E7%95%A5%E8%A6%81%E7%B4%A0">1.1.2 驱动增长的7大战略要素</a></li>
+</ul>
+</li>
+<li><a href="#12-%E5%A2%9E%E9%95%BF%E7%9A%843%E5%A4%A7%E8%AF%AF%E5%8C%BA">1.2 增长的3大误区</a>
+<ul>
+<li><a href="#121-%E8%BF%BD%E6%B1%82%E8%99%9A%E8%8D%A3%E6%8C%87%E6%A0%87%E5%A2%9E%E9%95%BF">1.2.1 追求虚荣指标增长</a></li>
+<li><a href="#122-%E7%94%A8%E6%88%B7%E5%A2%9E%E9%95%BF%E4%B8%80%E5%91%B3%E8%BF%BD%E6%B1%82%E6%95%B0%E9%87%8F">1.2.2 用户增长一味追求数量</a></li>
+<li><a href="#123-%E7%94%A8%E6%88%B7%E8%BF%87%E6%97%A9%E5%BF%AB%E9%80%9F%E5%A2%9E%E9%95%BF%E5%8A%A0%E9%80%9F%E4%BA%A7%E5%93%81%E8%B5%B0%E5%90%91%E6%AD%BB%E4%BA%A1">1.2.3 用户过早快速增长，加速产品走向死亡</a></li>
+</ul>
+</li>
+<li><a href="#13-%E5%BD%B1%E5%93%8D%E5%A2%9E%E9%95%BF%E7%9A%844%E5%A4%A7%E5%85%B3%E9%94%AE%E5%9B%A0%E7%B4%A0">1.3 影响增长的4大关键因素</a>
+<ul>
+<li><a href="#131-%E7%9B%AE%E6%A0%87%E5%B8%82%E5%9C%BA%E7%A9%BA%E9%97%B4%E5%86%B3%E5%AE%9A%E5%A2%9E%E9%95%BF%E6%BD%9C%E5%8A%9B">1.3.1 目标市场空间决定增长潜力</a></li>
+<li><a href="#132-%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%BC%8F%E6%96%97%E5%86%B3%E5%AE%9A%E5%A2%9E%E9%95%BF%E7%93%B6%E9%A2%88">1.3.2 看不见的漏斗，决定增长瓶颈</a></li>
+<li><a href="#133-%E5%B8%82%E5%9C%BA%E6%B8%97%E9%80%8F%E7%8E%87%E5%AF%B9%E5%A2%9E%E9%95%BF%E7%9A%84%E5%BD%B1%E5%93%8D">1.3.3 市场渗透率对增长的影响</a></li>
+<li><a href="#134-%E5%B8%82%E5%9C%BA%E7%AB%9E%E4%BA%89%E5%AF%B9%E5%A2%9E%E9%95%BF%E7%9A%84%E5%BD%B1%E5%93%8D">1.3.4 市场竞争对增长的影响</a></li>
+</ul>
+</li>
+<li><a href="#14-%E7%94%A8%E6%88%B7%E5%A2%9E%E9%95%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91%E4%BE%9B%E9%9C%80%E5%85%B3%E7%B3%BB%E7%9B%B8%E4%BA%92%E6%8B%89%E5%8A%A8%E4%B8%A4%E7%AB%AF%E5%BE%AA%E7%8E%AF%E5%A2%9E%E9%95%BF">1.4 用户增长的基本逻辑：供需关系相互拉动，两端循环增长</a></li>
+<li><a href="#15-%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93">1.5 本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E5%88%B6%E5%AE%9A%E5%A2%9E%E9%95%BF%E6%88%98%E7%95%A5">第2章 制定增长战略</a>
+<ul>
+<li><a href="#21-%E5%88%86%E6%9E%90%E8%A1%8C%E4%B8%9A%E7%89%B9%E5%BE%81%E5%88%B6%E5%AE%9A%E8%BF%90%E8%90%A5%E6%A8%A1%E5%BC%8F">2.1 分析行业特征，制定运营模式</a>
+<ul>
+<li><a href="#211-%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90%E8%A1%8C%E4%B8%9A%E7%89%B9%E5%BE%81">2.1.1 如何分析行业特征</a></li>
+<li><a href="#212-%E5%A6%82%E4%BD%95%E5%88%B6%E5%AE%9A%E8%BF%90%E8%90%A5%E6%A8%A1%E5%BC%8F">2.1.2 如何制定运营模式</a></li>
+</ul>
+</li>
+<li><a href="#22-%E5%88%86%E6%9E%90%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E7%A1%AE%E5%AE%9A%E5%A2%9E%E9%95%BF%E7%9A%84%E6%A0%B8%E5%BF%83%E6%8C%87%E6%A0%87">2.2 分析商业模式，确定增长的核心指标</a>
+<ul>
+<li><a href="#221-%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8Fvs%E8%BF%90%E8%90%A5%E6%A8%A1%E5%BC%8F">2.2.1 商业模式vs运营模式</a></li>
+<li><a href="#222-6%E5%A4%A7%E4%BA%92%E8%81%94%E7%BD%91%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%A0%B8%E5%BF%83%E5%A2%9E%E9%95%BF%E6%8C%87%E6%A0%87">2.2.2 6大互联网商业模式的核心增长指标</a></li>
+</ul>
+</li>
+<li><a href="#23-%E6%8B%86%E8%A7%A3%E6%A0%B8%E5%BF%83%E6%8C%87%E6%A0%87%E5%88%B6%E5%AE%9A%E5%A2%9E%E9%95%BF%E6%88%98%E7%95%A5">2.3 拆解核心指标，制定增长战略</a>
+<ul>
+<li><a href="#231-%E5%A6%82%E4%BD%95%E6%8B%86%E8%A7%A3%E6%A0%B8%E5%BF%83%E6%8C%87%E6%A0%87">2.3.1 如何拆解核心指标</a></li>
+<li><a href="#232-%E5%88%B6%E5%AE%9A%E5%A2%9E%E9%95%BF%E6%88%98%E7%95%A5">2.3.2 制定增长战略</a></li>
+</ul>
+</li>
+<li><a href="#24-%E6%A1%88%E4%BE%8B%E5%88%B6%E5%AE%9A%E4%BA%92%E8%81%94%E7%BD%91%E9%87%91%E8%9E%8D%E7%90%86%E8%B4%A2%E5%B9%B3%E5%8F%B0%E5%A2%9E%E9%95%BF%E6%88%98%E7%95%A5">2.4 案例：制定互联网金融理财平台增长战略</a></li>
+<li><a href="#25-%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93">2.5 本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E4%BA%A7%E5%93%81%E5%86%B7%E5%90%AF%E5%8A%A8">第3章 产品冷启动</a>
+<ul>
+<li><a href="#31-%E5%90%8D%E4%BA%BA%E6%95%88%E5%BA%94">3.1 名人效应</a></li>
+<li><a href="#32-%E6%89%93%E9%80%A0%E7%88%86%E6%AC%BE">3.2 打造爆款</a></li>
+<li><a href="#33-%E9%A9%AC%E7%94%B2%E6%95%88%E5%BA%94">3.3 马甲效应</a></li>
+<li><a href="#34-%E7%A7%8D%E5%AD%90%E7%94%A8%E6%88%B7%E7%89%B9%E6%9D%83%E6%9C%BA%E5%88%B6">3.4 种子用户特权机制</a></li>
+<li><a href="#35-%E9%82%80%E8%AF%B7%E6%9C%BA%E5%88%B6">3.5 邀请机制</a></li>
+<li><a href="#36-%E5%AA%92%E4%BD%93%E6%8A%A5%E9%81%93%E6%96%B0%E5%AA%92%E4%BD%93%E8%BF%90%E8%90%A5">3.6 媒体报道/新媒体运营</a></li>
+<li><a href="#37-%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93">3.7 本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E7%94%A8%E6%88%B7%E7%9A%84%E6%8B%89%E6%96%B0%E7%95%99%E5%AD%98%E4%B8%8E%E8%BD%AC%E5%8C%96">第4章 用户的拉新、留存与转化</a>
+<ul>
+<li><a href="#41-b%E7%AB%AF%E7%94%A8%E6%88%B7%E6%8B%89%E6%96%B04%E6%AD%A5%E6%9B%B2">4.1 B端用户拉新4步曲</a>
+<ul>
+<li><a href="#411-%E7%AC%AC%E4%B8%80%E6%AD%A5%E6%98%8E%E7%A1%AE%E4%BA%A7%E5%93%81%E5%AE%9A%E4%BD%8D">4.1.1 第一步：明确产品定位</a></li>
+<li><a href="#412-%E7%AC%AC%E4%BA%8C%E6%AD%A5%E7%A1%AE%E5%AE%9A%E7%9B%AE%E6%A0%87%E7%94%A8%E6%88%B7">4.1.2 第二步：确定目标用户</a></li>
+<li><a href="#413-%E7%AC%AC%E4%B8%89%E6%AD%A5%E6%89%BE%E5%88%B0%E7%9B%AE%E6%A0%87%E7%94%A8%E6%88%B7%E8%81%9A%E9%9B%86%E5%9C%B0">4.1.3 第三步：找到目标用户聚集地</a></li>
+<li><a href="#414-%E7%AC%AC%E5%9B%9B%E6%AD%A5%E5%88%B6%E5%AE%9A%E6%BF%80%E5%8A%B1%E6%96%B9%E6%A1%88%E5%8A%A0%E9%80%9F%E7%94%A8%E6%88%B7%E8%BD%AC%E5%8C%96">4.1.4 第四步：制定激励方案，加速用户转化</a></li>
+</ul>
+</li>
+<li><a href="#42-b%E7%AB%AF%E7%94%A8%E6%88%B7%E7%95%99%E5%AD%98%E4%B8%8D%E5%90%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%98%B6%E6%AE%B5%E7%9A%84%E8%BF%90%E8%90%A5%E7%AD%96%E7%95%A5">4.2 B端用户留存：不同生命周期阶段的运营策略</a>
+<ul>
+<li><a href="#421-%E5%90%B8%E5%BC%95%E5%85%A5%E9%A9%BB%E9%98%B6%E6%AE%B5">4.2.1 吸引入驻阶段</a></li>
+<li><a href="#422-%E6%96%B0%E6%89%8B%E8%BF%87%E6%B8%A1%E6%9C%9F">4.2.2 新手过渡期</a></li>
+<li><a href="#423-%E6%8C%81%E7%BB%AD%E6%B4%BB%E8%B7%83%E6%9C%9F">4.2.3 持续活跃期</a></li>
+<li><a href="#424-%E6%B5%81%E5%A4%B1%E6%9C%9F">4.2.4 流失期</a></li>
+</ul>
+</li>
+<li><a href="#43-c%E7%AB%AF%E7%94%A8%E6%88%B7%E6%8B%89%E6%96%B0%E7%9A%8410%E7%A7%8D%E6%96%B9%E6%B3%95">4.3 C端用户拉新的10种方法</a>
+<ul>
+<li><a href="#431-%E6%96%B9%E6%B3%951%E6%89%93%E9%80%A0%E6%B5%81%E9%87%8F%E5%9E%8B%E4%BA%A7%E5%93%81">4.3.1 方法1：打造流量型产品</a></li>
+<li><a href="#432-%E6%96%B9%E6%B3%952%E6%89%93%E9%80%A0%E6%B5%81%E9%87%8F%E5%93%81%E7%B1%BB">4.3.2 方法2：打造流量品类</a></li>
+<li><a href="#433-%E6%96%B9%E6%B3%953%E8%90%A5%E9%94%80%E5%B7%A5%E5%85%B7%E5%88%9B%E6%96%B0">4.3.3 方法3：营销工具创新</a></li>
+<li><a href="#434-%E6%96%B9%E6%B3%954%E5%A5%BD%E5%8F%8B%E9%82%80%E8%AF%B7">4.3.4 方法4：好友邀请</a></li>
+<li><a href="#435-%E6%96%B9%E6%B3%955%E5%9C%B0%E6%8E%A8">4.3.5 方法5：地推</a></li>
+<li><a href="#436-%E6%96%B9%E6%B3%956%E5%BC%82%E4%B8%9A%E5%90%88%E4%BD%9C">4.3.6 方法6：异业合作</a></li>
+<li><a href="#437-%E6%96%B9%E6%B3%957%E7%89%A9%E8%B4%A8%E6%BF%80%E5%8A%B1">4.3.7 方法7：物质激励</a></li>
+<li><a href="#438-%E6%96%B9%E6%B3%958%E5%86%85%E5%AE%B9%E5%8C%96">4.3.8 方法8：内容化</a></li>
+<li><a href="#439-%E6%96%B9%E6%B3%959%E6%B4%BB%E5%8A%A8%E6%8B%89%E6%96%B0">4.3.9 方法9：活动拉新</a></li>
+<li><a href="#4310-%E6%96%B9%E6%B3%9510%E6%9C%BA%E6%9E%84%E8%8E%B7%E5%AE%A2">4.3.10 方法10：机构获客</a></li>
+</ul>
+</li>
+<li><a href="#44-c%E7%AB%AF%E7%94%A8%E6%88%B7%E7%95%99%E5%AD%98%E4%B8%8D%E5%90%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%98%B6%E6%AE%B5%E7%9A%84%E8%BF%90%E8%90%A5%E7%AD%96%E7%95%A5">4.4 C端用户留存：不同生命周期阶段的运营策略</a>
+<ul>
+<li><a href="#441-%E6%96%B0%E6%89%8B%E8%B4%AD%E4%B9%B0%E8%BD%AC%E5%8C%96%E6%9C%9F%E6%8F%90%E5%8D%87%E6%96%B0%E7%94%A8%E6%88%B7%E8%B4%AD%E4%B9%B0%E8%BD%AC%E5%8C%96%E5%92%8C%E6%88%90%E9%95%BF">4.4.1 新手购买转化期：提升新用户购买转化和成长</a></li>
+<li><a href="#442-%E6%88%90%E9%95%BF%E6%9C%9F%E6%8F%90%E5%8D%87%E7%94%A8%E6%88%B7%E9%BB%8F%E6%80%A7">4.4.2 成长期：提升用户黏性</a></li>
+<li><a href="#443-%E6%88%90%E7%86%9F%E6%9C%9F%E6%8F%90%E5%8D%87%E7%94%A8%E6%88%B7arpu%E5%80%BC%E6%8F%90%E9%AB%98%E7%94%A8%E6%88%B7%E8%B4%AD%E4%B9%B0%E9%A2%91%E6%AC%A1%E5%92%8C%E5%AE%A2%E5%8D%95%E4%BB%B7%E8%B7%A8%E5%93%81%E7%B1%BB%E5%AF%BC%E6%B5%81">4.4.3 成熟期：提升用户ARPU值，提高用户购买频次和客单价，跨品类导流</a></li>
+<li><a href="#444-%E8%A1%B0%E9%80%80%E6%9C%9F%E6%B5%81%E5%A4%B1%E7%94%A8%E6%88%B7%E9%A2%84%E8%AD%A6">4.4.4 衰退期：流失用户预警</a></li>
+<li><a href="#445-%E6%B5%81%E5%A4%B1%E6%9C%9F%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98%E7%A1%AE%E8%AE%A4%E7%B1%BB%E5%9E%8B%E8%AF%8A%E6%96%AD%E5%8F%AC%E5%9B%9E">4.4.5 流失期：定义问题、确认类型、诊断召回</a></li>
+</ul>
+</li>
+<li><a href="#45-%E7%94%A8%E6%88%B7%E8%BD%AC%E5%8C%96%E5%92%8C%E8%BF%90%E8%90%A5%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%849%E5%A4%A7%E9%9A%BE%E9%A2%98">4.5 用户转化和运营过程中常见的9大难题</a></li>
+<li><a href="#46-%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93">4.6 本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E6%90%AD%E5%BB%BA%E7%94%A8%E6%88%B7%E6%88%90%E9%95%BF%E4%BD%93%E7%B3%BB%E5%BB%BA%E6%A8%A1%E5%9E%8B%E6%90%AD%E9%80%9A%E9%81%93%E4%BF%83%E6%88%90%E9%95%BF">第5章 搭建用户成长体系：建模型、搭通道、促成长</a>
+<ul>
+<li><a href="#51-%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E6%88%B7%E6%88%90%E9%95%BF%E4%BD%93%E7%B3%BB">5.1 什么是用户成长体系</a>
+<ul>
+<li><a href="#511-%E7%94%A8%E6%88%B7%E6%88%90%E9%95%BF%E4%BD%93%E7%B3%BB%E7%9A%84%E5%AE%9A%E4%B9%89">5.1.1 用户成长体系的定义</a></li>
+<li><a href="#512-%E7%94%A8%E6%88%B7%E6%88%90%E9%95%BF%E4%BD%93%E7%B3%BB%E7%9A%843%E4%B8%AA%E9%87%8D%E8%A6%81%E4%BD%9C%E7%94%A8">5.1.2 用户成长体系的3个重要作用</a></li>
+</ul>
+</li>
+<li><a href="#52-%E5%BB%BA%E6%A8%A1%E5%9E%8B%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E5%9C%A8%E7%94%A8%E6%88%B7%E6%88%90%E9%95%BF%E4%BD%93%E7%B3%BB%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8">5.2 建模型：不同用户模型在用户成长体系中的应用</a>
+<ul>
+<li><a href="#521-%E7%94%A8%E6%88%B7%E6%BC%8F%E6%96%97%E6%A8%A1%E5%9E%8B">5.2.1 用户漏斗模型</a></li>
+<li><a href="#522-%E7%94%A8%E6%88%B7%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B">5.2.2 用户生命周期模型</a></li>
+<li><a href="#523-rfm%E6%A8%A1%E5%9E%8B">5.2.3 RFM模型</a></li>
+<li><a href="#524-%E7%94%A8%E6%88%B7%E4%BB%B7%E5%80%BC%E6%A8%A1%E5%9E%8B">5.2.4 用户价值模型</a></li>
+</ul>
+</li>
+<li><a href="#53-%E6%90%AD%E9%80%9A%E9%81%93%E6%90%AD%E5%BB%BA%E6%BF%80%E5%8A%B1%E5%92%8C%E8%BF%9E%E6%8E%A5%E7%94%A8%E6%88%B7%E7%9A%84%E9%80%9A%E9%81%93">5.3 搭通道：搭建激励和连接用户的通道</a>
+<ul>
+<li><a href="#531-%E7%94%A8%E6%88%B7%E6%88%90%E9%95%BF%E9%80%9A%E9%81%93%E6%8C%87%E6%8C%A5%E6%A3%92">5.3.1 用户成长通道（指挥棒）</a></li>
+<li><a href="#532-%E4%BA%A7%E5%93%81%E9%80%9A%E9%81%93">5.3.2 产品通道</a></li>
+<li><a href="#533-%E7%9F%AD%E4%BF%A1%E9%80%9A%E9%81%93">5.3.3 短信通道</a></li>
+<li><a href="#534-%E5%BE%AE%E4%BF%A1%E9%80%9A%E9%81%93">5.3.4 微信通道</a></li>
+<li><a href="#535-%E5%85%B6%E4%BB%96%E9%80%9A%E9%81%93">5.3.5 其他通道</a></li>
+</ul>
+</li>
+<li><a href="#54-%E4%BF%83%E6%88%90%E9%95%BF%E5%AF%BB%E6%89%BE%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84%E6%89%93%E9%80%A0%E5%8A%A8%E5%8A%9B%E5%BC%95%E6%93%8E">5.4 促成长：寻找关键路径，打造动力引擎</a>
+<ul>
+<li><a href="#541-%E6%8E%A2%E7%B4%A2%E7%94%A8%E6%88%B7%E6%88%90%E9%95%BF%E7%9A%84%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84">5.4.1 探索用户成长的关键路径</a></li>
+<li><a href="#542-%E4%B8%8D%E5%90%8C%E6%88%90%E9%95%BF%E8%8A%82%E7%82%B9%E7%9A%84%E8%BF%90%E8%90%A5%E7%AD%96%E7%95%A5">5.4.2 不同成长节点的运营策略</a></li>
+<li><a href="#543-%E6%89%93%E9%80%A0%E7%94%A8%E6%88%B7%E6%88%90%E9%95%BF%E5%8A%A8%E5%8A%9B%E5%BC%95%E6%93%8E">5.4.3 打造用户成长动力引擎</a></li>
+</ul>
+</li>
+<li><a href="#55-%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93">5.5 本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E7%94%A8%E6%88%B7%E8%BF%90%E8%90%A5">第6章 用户运营</a>
+<ul>
+<li><a href="#61-b%E7%AB%AF%E7%94%A8%E6%88%B7%E5%88%86%E7%BA%A7%E8%BF%90%E8%90%A5">6.1 B端用户分级运营</a>
+<ul>
+<li><a href="#611-%E5%A4%A7%E5%AE%A2%E6%88%B7%E6%95%88%E5%BA%94">6.1.1 大客户效应</a></li>
+<li><a href="#612-%E5%A4%A7%E5%AE%A2%E6%88%B7%E7%9A%84%E7%AD%9B%E9%80%89">6.1.2 大客户的筛选</a></li>
+<li><a href="#613-%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E5%A4%A7%E5%AE%A2%E6%88%B7%E7%9A%84%E8%BF%90%E8%90%A5">6.1.3 如何做好大客户的运营</a></li>
+<li><a href="#614-%E6%A1%88%E4%BE%8B%E5%9B%A2%E8%B4%AD%E7%BD%91%E7%AB%99%E7%9A%84%E5%95%86%E5%AE%B6%E5%88%86%E7%BA%A7%E8%BF%90%E8%90%A5">6.1.4 案例：团购网站的商家分级运营</a></li>
+</ul>
+</li>
+<li><a href="#62-c%E7%AB%AF%E7%94%A8%E6%88%B7%E5%88%86%E7%BA%A7%E8%BF%90%E8%90%A5">6.2 C端用户分级运营</a>
+<ul>
+<li><a href="#621-%E5%88%92%E5%88%86%E7%94%A8%E6%88%B7%E7%BA%A7%E5%88%AB%E7%9A%843%E7%A7%8D%E6%96%B9%E5%BC%8F">6.2.1 划分用户级别的3种方式</a></li>
+<li><a href="#622-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%81%9Ac%E7%AB%AF%E7%94%A8%E6%88%B7%E5%88%86%E7%BA%A7">6.2.2 为什么要做C端用户分级</a></li>
+<li><a href="#623-%E5%AE%A2%E6%88%B7%E7%9A%84%E5%88%86%E7%BA%A7">6.2.3 客户的分级</a></li>
+<li><a href="#624-%E5%AE%A2%E6%88%B7%E7%9A%84%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95">6.2.4 客户的管理方法</a></li>
+<li><a href="#625-%E7%94%A8%E6%88%B7%E5%88%86%E7%BA%A7%E7%9A%844%E4%B8%AA%E8%AF%AF%E5%8C%BA">6.2.5 用户分级的4个误区</a></li>
+</ul>
+</li>
+<li><a href="#63-c%E7%AB%AF%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4%E8%BF%90%E8%90%A5">6.3 C端用户分群运营</a>
+<ul>
+<li><a href="#631-%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4">6.3.1 什么是用户分群</a></li>
+<li><a href="#632-%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4%E7%9A%84%E7%9B%AE%E6%A0%87%E5%92%8C%E5%8E%9F%E5%88%99">6.3.2 用户分群的目标和原则</a></li>
+<li><a href="#633-%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4">6.3.3 如何做好用户分群</a></li>
+<li><a href="#634-%E6%A1%88%E4%BE%8B%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4%E5%9C%A8%E7%BE%8E%E5%9B%A2%E7%9A%84%E5%BA%94%E7%94%A8">6.3.4 案例：用户分群在美团的应用</a></li>
+</ul>
+</li>
+<li><a href="#64-%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93">6.4 本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E7%96%AF%E7%8B%82%E7%9A%84%E8%A1%A5%E8%B4%B4%E7%94%A8%E6%88%B7%E5%A2%9E%E9%95%BF%E7%9A%84%E5%BF%85%E6%9D%80%E6%8A%80">第7章 疯狂的补贴：用户增长的必杀技</a>
+<ul>
+<li><a href="#71-%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E6%88%B7%E8%A1%A5%E8%B4%B4">7.1 什么是用户补贴</a>
+<ul>
+<li><a href="#711-%E7%94%A8%E6%88%B7%E8%A1%A5%E8%B4%B4%E7%9A%84%E5%AE%9A%E4%B9%89">7.1.1 用户补贴的定义</a></li>
+<li><a href="#712-%E7%94%A8%E6%88%B7%E8%A1%A5%E8%B4%B4%E5%B8%B8%E7%94%A8%E7%9A%848%E7%A7%8D%E5%B7%A5%E5%85%B7%E5%8F%8A%E5%85%B6%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">7.1.2 用户补贴常用的8种工具及其使用场景</a></li>
+</ul>
+</li>
+<li><a href="#72-%E7%94%A8%E6%88%B7%E8%A1%A5%E8%B4%B4%E7%9A%844%E7%A7%8D%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91">7.2 用户补贴的4种基本逻辑</a>
+<ul>
+<li><a href="#721-%E9%80%BB%E8%BE%91%E4%B8%80%E8%A1%A5%E8%B4%B4%E8%8E%B7%E5%8F%96%E5%A4%A7%E9%87%8F%E7%94%A8%E6%88%B7%E5%BD%A2%E6%88%90%E7%BD%91%E7%BB%9C%E6%95%88%E5%BA%94">7.2.1 逻辑一：补贴获取大量用户形成网络效应</a></li>
+<li><a href="#722-%E9%80%BB%E8%BE%91%E4%BA%8C%E5%88%A9%E7%94%A8%E8%A1%A5%E8%B4%B4%E5%9F%B9%E5%85%BB%E7%94%A8%E6%88%B7%E4%B9%A0%E6%83%AF%E4%BF%83%E8%BF%9B%E7%94%A8%E6%88%B7%E6%88%90%E9%95%BF%E6%8F%90%E5%8D%87%E7%94%A8%E6%88%B7%E7%95%99%E5%AD%98%E7%8E%87">7.2.2 逻辑二：利用补贴培养用户习惯，促进用户成长，提升用户留存率</a></li>
+<li><a href="#723-%E9%80%BB%E8%BE%91%E4%B8%89%E8%A1%A5%E8%B4%B4%E4%BF%83%E8%BF%9B%E6%96%B0%E4%BA%A7%E5%93%81%E6%96%B0%E6%8A%80%E6%9C%AF%E5%BF%AB%E9%80%9F%E6%8E%A8%E5%90%91%E5%B8%82%E5%9C%BA">7.2.3 逻辑三：补贴促进新产品、新技术快速推向市场</a></li>
+<li><a href="#724-%E9%80%BB%E8%BE%91%E5%9B%9B%E8%A1%A5%E8%B4%B4%E5%8F%AF%E4%BB%A5%E5%BF%AB%E9%80%9F%E5%8D%A0%E9%A2%86%E5%B8%82%E5%9C%BA%E5%8A%A0%E5%89%A7%E7%AB%9E%E4%BA%89%E5%92%8C%E5%8A%A0%E9%80%9F%E6%B7%98%E6%B1%B0">7.2.4 逻辑四：补贴可以快速占领市场，加剧竞争和加速淘汰</a></li>
+</ul>
+</li>
+<li><a href="#73-%E7%94%A8%E6%88%B7%E8%A1%A5%E8%B4%B4%E5%B8%B8%E8%A7%81%E7%9A%845%E7%A7%8D%E7%B1%BB%E5%9E%8B">7.3 用户补贴常见的5种类型</a>
+<ul>
+<li><a href="#731-%E7%BB%88%E7%AB%AF%E7%B1%BB%E8%A1%A5%E8%B4%B4">7.3.1 终端类补贴</a></li>
+<li><a href="#732-%E6%B5%81%E9%87%8F%E5%93%81%E7%B1%BB%E8%A1%A5%E8%B4%B4">7.3.2 流量品类补贴</a></li>
+<li><a href="#733-%E5%8A%A0%E9%80%9F%E5%9E%8B%E8%A1%A5%E8%B4%B4">7.3.3 加速型补贴</a></li>
+<li><a href="#734-%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E8%A1%A5%E8%B4%B4">7.3.4 生态系统补贴</a></li>
+<li><a href="#735-%E7%94%A8%E6%88%B7%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A1%A5%E8%B4%B4">7.3.5 用户生命周期补贴</a></li>
+</ul>
+</li>
+<li><a href="#74-%E7%94%A8%E6%88%B7%E8%A1%A5%E8%B4%B4%E7%9A%845%E5%A4%A7%E9%9B%B7%E5%8C%BA">7.4 用户补贴的5大雷区</a>
+<ul>
+<li><a href="#741-%E8%BF%87%E5%BA%A6%E4%BE%9D%E8%B5%96%E8%A1%A5%E8%B4%B4">7.4.1 过度依赖补贴</a></li>
+<li><a href="#742-%E8%A1%A5%E8%B4%B4%E8%90%A5%E9%94%80%E5%B7%A5%E5%85%B7%E8%BF%90%E7%94%A8%E4%B8%8D%E5%BD%93">7.4.2 补贴营销工具运用不当</a></li>
+<li><a href="#743-%E4%B8%8D%E5%81%9A%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4">7.4.3 不做用户分群</a></li>
+<li><a href="#744-%E7%96%AF%E7%8B%82%E7%9A%84%E7%BE%8A%E6%AF%9B%E5%85%9A">7.4.4 疯狂的“羊毛党”</a></li>
+<li><a href="#745-%E6%B2%89%E6%B2%A1%E6%88%90%E6%9C%AC">7.4.5 沉没成本</a></li>
+</ul>
+</li>
+<li><a href="#75-%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E5%9C%B0%E8%A1%A5%E8%B4%B4">7.5 如何有效地补贴</a>
+<ul>
+<li><a href="#751-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%BC%80%E5%A7%8B%E8%A1%A5%E8%B4%B4">7.5.1 什么时候开始补贴？</a></li>
+<li><a href="#752-%E8%A1%A5%E8%B4%B4%E7%9A%84%E7%B2%BE%E7%BB%86%E5%8C%96%E8%BF%90%E8%90%A5">7.5.2 补贴的精细化运营</a></li>
+<li><a href="#753-%E8%A1%A5b%E7%AB%AF%E8%BF%98%E6%98%AFc%E7%AB%AF%E8%BF%98%E6%98%AF%E5%90%8C%E6%97%B6%E8%A1%A5">7.5.3 补B端还是C端，还是同时补？</a></li>
+<li><a href="#754-%E6%A0%B9%E6%8D%AE%E5%B8%82%E5%9C%BA%E7%AB%9E%E4%BA%89%E7%8E%AF%E5%A2%83%E9%9A%8F%E6%97%B6%E5%81%9A%E8%B0%83%E6%95%B4">7.5.4 根据市场竞争环境随时做调整</a></li>
+</ul>
+</li>
+<li><a href="#76-%E5%AF%BB%E6%89%BE%E6%9B%BF%E4%BB%A3%E5%93%81">7.6 寻找替代品</a></li>
+<li><a href="#77-%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93">7.7 本章小结</a></li>
+</ul>
+</li>
+<li><a href="#%E9%99%84%E5%BD%95-%E5%A2%9E%E9%95%BF%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90">附录 增长工具推荐</a></li>
+<li><a href="#%E5%90%8E%E8%AE%B0-%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B">后记 心路历程</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

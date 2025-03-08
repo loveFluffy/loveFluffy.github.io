@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5982;&#x4f55;&#x8bb2;&#x597d;&#x4e00;&#x4e2a;&#x6545;&#x4e8b;&#xff1a;&#x5f15;&#x7206;&#x8bf4;&#x670d;&#x529b;&#x7684;&#x6545;&#x4e8b;&#x601d;&#x7ef4;&#x8bad;&#x7ec3;&#x6cd5;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5982;&#x4f55;&#x8bb2;&#x597d;&#x4e00;&#x4e2a;&#x6545;&#x4e8b;&#xff1a;&#x5f15;&#x7206;&#x8bf4;&#x670d;&#x529b;&#x7684;&#x6545;&#x4e8b;&#x601d;&#x7ef4;&#x8bad;&#x7ec3;&#x6cd5;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,153 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="如何讲好一个故事引爆说服力的故事思维训练法">如何讲好一个故事：引爆说服力的故事思维训练法</h1>
-<h2 id="南非默里诺塞尔-著叶红卫-刘金龙-译">[南非]默里·诺塞尔 著|叶红卫 刘金龙 译</h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/9593.jpg"></td><td>
+<h1 id="如何讲好一个故事引爆说服力的故事思维训练法">如何讲好一个故事：引爆说服力的故事思维训练法</h1>
+<center>[南非]默里·诺塞尔 著|叶红卫 刘金龙 译</center>
+</td></tr></table>
+<div class="mycomment">
+<p>网评极差的一本书，我读了开头感觉对我没什么用处，就放弃了。</p>
+</div>
+<h3 id="序言">序言</h3>
+<p>我接受了索尔彻的方法训练，花了大量时间在布拉瓦约运用他的技术。练习过程包括将演员表演的冲突场景拍摄下来，并与员工一起放映这些电影，然后由员工轮流将其表演出来。例如，在一个模块中，主管正在纠正工作场所员工的行为，他第一步总是先肯定员工的工作，说他们做得很好。这一步骤是基于这一研究：<em>先认可后批评，更容易为员工所接受</em>。</p>
+<h3 id="前言">前言</h3>
+<p>要想成功地讲述故事，需要先简单了解一下故事为何有助于沟通，更需要了解如何在倾听和讲述故事之间建立联系。在我们的方法中，有一点需要强调，即<em>倾听的重要性不亚于讲述</em>，本书第二章将对此进行深入探讨。</p>
+<hr>
+<p>大脑的固有功能到底意味着什么？意味着有一个脑细胞网络参与了讲故事。它们在活动时，会更加紧密和高效地连接在一起，讲故事可以加强大脑中的这些联系。而且讲故事是一种可以发展的技能，一种可以加强的能力。过去两年里，我们所做的工作充分证明，<em>你讲的故事越多，就越擅长讲故事</em>。</p>
+<hr>
+<p>建议你<em>从个人故事开始训练。挖掘一个可以解释你如何一步一步走到现在的故事</em>，这样的故事特别有说服力，我们称之为“起源故事”（origin story）。我的起源故事是“艾滋病日项目”（AIDS Day Program）的故事，你在第一章可以了解到这个故事的细节。然后，经历了讲述自己身边故事的过程，你接着就可以以个人的方式讲述一个商业故事了。这意味着你可以利用个人故事的所有情感力量和影响来实现商业目标。</p>
+<hr>
+<p>我们相信，你讲故事的能力会随着时间和实践的积累而提高，但是如果你按照我们“发生了什么”（What happened）的方法来挖掘和创作故事，你的故事讲述能力定能突飞猛进。我们在第五章专门讨论了这一方法。这种看似简单的方法指出：解释、意见、判断、抽象、概念，以及你对所发生事情的想法和感觉都不是故事材料，<em>真正的材料是感官所接受的、已经证明有效的内容</em>。根据这些说明来回答“发生了什么”，故事就会以一种让听众从头到尾都参与其中的方式展开。</p>
+<hr>
+<p>讲故事既包括批判性思维，也包括创造性思维。批判性思维负责分析、比较和选择，而创造性思维则负责形象化、预见和产生想法。由于批判性思维可能阻碍创造性思维，因此挖掘的首要原则是推迟判断。在思考用什么材料来编写故事时，你要<em>让自己变得完全不加批判，让各种各样的想法在脑海浮现出来</em>。只有这样，创作和讲述故事时，才能发挥批判性思维的力量，变得更加理性和克制。</p>
+<hr>
+<p>你挖掘并精心创作完故事，也就意味着准备好了展示。你无须查看笔记或幻灯片就可以进行发言。你知道结尾，因此对故事走向充满信心。无须太多的猜测，你有足够的时间带听众进行一次旅行。关键的一点是：所谓以个人方式讲述商业故事，意思是我们的整个生命都在讲述这个故事，你把个人形象带到了企业的目标和愿景上。<em>从一个具体事例开始讲述故事，总能让你把自己和听众联系起来。那正是你狮子般专注力的来源</em>。</p>
+<h3 id="第一章-为什么要讲故事-为什么要现在讲">第一章 为什么要讲故事？ 为什么要现在讲？</h3>
+<h3 id="第二章-识别倾听障碍">第二章 识别倾听障碍</h3>
+<h3 id="第三章-释放倾听障碍">第三章 释放倾听障碍</h3>
+<h3 id="第四章-讲述祖父母的故事">第四章 讲述祖父母的故事</h3>
+<h3 id="第五章-讲述发生了什么">第五章 讲述发生了什么</h3>
+<h3 id="第六章-安排好故事结尾">第六章 安排好故事结尾</h3>
+<h3 id="第七章-与听众建立联系">第七章 与听众建立联系</h3>
+<h3 id="后记">后记</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BA%8F%E8%A8%80">序言</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AE%B2%E6%95%85%E4%BA%8B-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%8E%B0%E5%9C%A8%E8%AE%B2">第一章 为什么要讲故事？ 为什么要现在讲？</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%AF%86%E5%88%AB%E5%80%BE%E5%90%AC%E9%9A%9C%E7%A2%8D">第二章 识别倾听障碍</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%87%8A%E6%94%BE%E5%80%BE%E5%90%AC%E9%9A%9C%E7%A2%8D">第三章 释放倾听障碍</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E8%AE%B2%E8%BF%B0%E7%A5%96%E7%88%B6%E6%AF%8D%E7%9A%84%E6%95%85%E4%BA%8B">第四章 讲述祖父母的故事</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%AE%B2%E8%BF%B0%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88">第五章 讲述发生了什么</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%AE%89%E6%8E%92%E5%A5%BD%E6%95%85%E4%BA%8B%E7%BB%93%E5%B0%BE">第六章 安排好故事结尾</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E4%B8%8E%E5%90%AC%E4%BC%97%E5%BB%BA%E7%AB%8B%E8%81%94%E7%B3%BB">第七章 与听众建立联系</a></li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

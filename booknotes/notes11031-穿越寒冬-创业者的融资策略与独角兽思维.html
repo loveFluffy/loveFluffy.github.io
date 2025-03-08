@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x7a7f;&#x8d8a;&#x5bd2;&#x51ac;&#xff1a;&#x521b;&#x4e1a;&#x8005;&#x7684;&#x878d;&#x8d44;&#x7b56;&#x7565;&#x4e0e;&#x72ec;&#x89d2;&#x517d;&#x601d;&#x7ef4;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x7a7f;&#x8d8a;&#x5bd2;&#x51ac;&#xff1a;&#x521b;&#x4e1a;&#x8005;&#x7684;&#x878d;&#x8d44;&#x7b56;&#x7565;&#x4e0e;&#x72ec;&#x89d2;&#x517d;&#x601d;&#x7ef4;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,364 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="穿越寒冬创业者的融资策略与独角兽思维">穿越寒冬：创业者的融资策略与独角兽思维</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/11031.jpg"></td><td>
+<h1 id="穿越寒冬创业者的融资策略与独角兽思维">穿越寒冬：创业者的融资策略与独角兽思维</h1>
+<center>[美]史蒂文·霍夫曼（Steven S. Hoffman） 著|周海云 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="推荐序一-穿越寒冬享受明媚春光">推荐序一 穿越寒冬，享受明媚春光</h3>
+<h3 id="推荐序二-水滴石穿终见大海">推荐序二 水滴石穿，终见大海</h3>
+<h3 id="前言-船长日志">前言 船长日志</h3>
+<h3 id="第一章-撒旦的糖果创业">第一章 撒旦的糖果：创业</h3>
+<h4 id="1你应该跨出那一步吗">1.你应该跨出那一步吗？</h4>
+<h4 id="2你根本就不应该去创业">2.你根本就不应该去创业</h4>
+<h4 id="3承受债务风险">3.承受债务风险</h4>
+<h4 id="4你的想法真的很差劲吗">4.你的想法真的很差劲吗？</h4>
+<h4 id="5如何组建一个合适的团队">5.如何组建一个合适的团队？</h4>
+<h4 id="6支付给人才的报酬">6.支付给人才的报酬</h4>
+<h4 id="7你应该模仿你的竞争对手吗">7.你应该模仿你的竞争对手吗？</h4>
+<h4 id="8杰出的想法和创意从何而来">8.杰出的想法和创意从何而来？</h4>
+<h4 id="9界定你想解决的问题">9.界定你想解决的问题</h4>
+<h4 id="10准备一场只需半分钟的路演">10.准备一场只需半分钟的路演</h4>
+<h4 id="11你应该谨慎行事吗">11.你应该谨慎行事吗？</h4>
+<h4 id="12你的创意是否该保密">12.你的创意是否该保密？</h4>
+<h4 id="13什么时候你该放弃">13.什么时候你该放弃？</h4>
+<h4 id="14放弃你的孩子">14.放弃你的“孩子”</h4>
+<h4 id="15速度以及实验">15.速度以及实验</h4>
+<h4 id="16为什么创业公司会失败">16.为什么创业公司会失败？</h4>
+<h4 id="17重新制定规则">17.重新制定规则</h4>
+<h4 id="18与客户进行互动">18.与客户进行互动</h4>
+<h4 id="19是否要创造需求">19.是否要创造需求？</h4>
+<h3 id="第二章-获得风险投资让我看到你的钱">第二章 获得风险投资：让我看到你的钱</h3>
+<h4 id="1风险投资的内幕">1.风险投资的内幕</h4>
+<h4 id="2了解你的估值">2.了解你的估值</h4>
+<h4 id="3尊重并喜欢你的律师">3.尊重并喜欢你的律师</h4>
+<h4 id="4为你的投资人准备的路演文档">4.为你的投资人准备的路演文档</h4>
+<h4 id="5兜售你的故事">5.兜售你的故事</h4>
+<h4 id="6如何鉴别投资人">6.如何鉴别投资人</h4>
+<h4 id="7如何与投资人沟通">7.如何与投资人沟通</h4>
+<h4 id="8利用人的恐惧和贪婪">8.利用人的恐惧和贪婪</h4>
+<h4 id="9管理你的融资渠道">9.管理你的融资渠道</h4>
+<h4 id="10不要让表情出卖了你">10.不要让表情出卖了你</h4>
+<h4 id="11三振出局">11.三振出局</h4>
+<h4 id="12想办法让对方说不">12.想办法让对方说“不”</h4>
+<h4 id="13永远不要对投资人说谎">13.永远不要对投资人说谎</h4>
+<h4 id="14设定最后期限">14.设定最后期限</h4>
+<h4 id="15充分利用社会资本">15.充分利用社会资本</h4>
+<h4 id="16获得热诚的推介">16.获得热诚的推介</h4>
+<h4 id="17给陌生人发邮件或许也能起作用">17.给陌生人发邮件或许也能起作用</h4>
+<h4 id="18如何脱颖而出">18.如何脱颖而出</h4>
+<h4 id="19亲吻青蛙王子">19.亲吻青蛙王子</h4>
+<h3 id="第三章-创新的领头羊中国和硅谷">第三章 创新的领头羊：中国和硅谷</h3>
+<h4 id="1标杆">1.标杆</h4>
+<h4 id="2生态系统的演化">2.生态系统的演化</h4>
+<h4 id="3市场的规模很重要">3.市场的规模很重要</h4>
+<h4 id="4创业者中国和硅谷的比较">4.创业者：中国和硅谷的比较</h4>
+<h4 id="5风险投资中国和硅谷的比较">5.风险投资：中国和硅谷的比较</h4>
+<h4 id="6关系的复杂性">6.关系的复杂性</h4>
+<h4 id="7我在中国的经历">7.我在中国的经历</h4>
+<h4 id="8西方的创业公司应该进入中国市场吗">8.西方的创业公司应该进入中国市场吗？</h4>
+<h4 id="9中美贸易政策">9.中美贸易政策</h4>
+<h3 id="第四章-自力更生游击营销和增长黑客">第四章 自力更生：游击营销和增长黑客</h3>
+<h4 id="1什么时候开始融资">1.什么时候开始融资？</h4>
+<h4 id="2什么才算是好的业务">2.什么才算是好的业务？</h4>
+<h4 id="3用业余时间进行创业">3.用业余时间进行创业</h4>
+<h4 id="4如何与媒体建立和谐的关系">4.如何与媒体建立和谐的关系</h4>
+<h4 id="5游击营销的规则">5.游击营销的规则</h4>
+<h4 id="6打破固有的思维模式">6.打破固有的思维模式</h4>
+<h4 id="7集客营销策略a">7.集客营销策略a</h4>
+<h4 id="8让你的品牌代表一种价值">8.让你的品牌代表一种价值</h4>
+<h4 id="9投资视频制作">9.投资视频制作</h4>
+<h4 id="10为什么你的故事很重要">10.为什么你的故事很重要</h4>
+<h4 id="11叙事的类型和模式">11.叙事的类型和模式</h4>
+<h4 id="12如何推行增长黑客">12.如何推行增长黑客</h4>
+<h4 id="13那些自力更生的创业者有能力展开竞争吗">13.那些自力更生的创业者有能力展开竞争吗？</h4>
+<h3 id="第五章-独角兽猎人找到未来的赢家">第五章 独角兽猎人：找到未来的赢家</h3>
+<h4 id="1投资团队">1.投资团队</h4>
+<h4 id="2评估市场规模">2.评估市场规模</h4>
+<h4 id="3谁才是你真正的客户">3.谁才是你真正的客户？</h4>
+<h4 id="4顺应潮流">4.顺应潮流</h4>
+<h4 id="5优秀与卓越">5.优秀与卓越</h4>
+<h4 id="6你的秘诀是什么">6.你的秘诀是什么？</h4>
+<h4 id="7-简化商业模式">7. 简化商业模式</h4>
+<h4 id="8商业模式的模仿">8.商业模式的模仿</h4>
+<h4 id="9锁定客户">9.锁定客户</h4>
+<h4 id="10硬件还是软件">10.硬件还是软件？</h4>
+<h4 id="11什么时候专利才是重要的">11.什么时候专利才是重要的？</h4>
+<h4 id="12硬性地套用不一定适用的技术">12.硬性地套用（不一定适用的）技术</h4>
+<h4 id="13设计思维">13.设计思维</h4>
+<h4 id="14生产优质的产品">14.生产优质的产品</h4>
+<h4 id="15为什么媒体的关注很重要">15.为什么媒体的关注很重要</h4>
+<h4 id="16不可告人的秘密">16.不可告人的秘密</h4>
+<h4 id="17你具有哪些真正独特的元素">17.你具有哪些真正独特的元素？</h4>
+<h3 id="第六章-扩大规模建立独角兽企业">第六章 扩大规模：建立独角兽企业</h3>
+<h4 id="1招聘的艺术">1.招聘的艺术</h4>
+<h4 id="2识别人才">2.识别人才</h4>
+<h4 id="3招聘策略">3.招聘策略</h4>
+<h4 id="4用正确的方式解雇员工">4.用正确的方式解雇员工</h4>
+<h4 id="5销售的22条军规">5.销售的22条军规</h4>
+<h4 id="6面向公众演讲">6.面向公众演讲</h4>
+<h4 id="7市场营销和客户获取">7.市场营销和客户获取</h4>
+<h4 id="8设计工作空间">8.设计工作空间</h4>
+<h4 id="9小心那些平台公司">9.小心那些平台公司</h4>
+<h4 id="10不公平的优势">10.不公平的优势</h4>
+<h4 id="11计划好你的退出">11.计划好你的退出</h4>
+<h3 id="第七章-取胜的法则提升领导力">第七章 取胜的法则：提升领导力</h3>
+<h4 id="1领导力的基本要素">1.领导力的基本要素</h4>
+<h4 id="2设定基调">2.设定基调</h4>
+<h4 id="3界定你的愿景">3.界定你的愿景</h4>
+<h4 id="4成为一个超级老板">4.成为一个超级老板</h4>
+<h4 id="5管理你的董事会">5.管理你的董事会</h4>
+<h4 id="6太疯狂了没这回事儿">6.太疯狂了？没这回事儿</h4>
+<h3 id="第八章-创业的生活在生活中学习">第八章 创业的生活：在生活中学习</h3>
+<h4 id="1东山再起">1.东山再起</h4>
+<h4 id="2你的年龄太大了吗">2.你的年龄太大了吗？</h4>
+<h4 id="3回馈">3.回馈</h4>
+<h4 id="4求知">4.求知</h4>
+<h4 id="5穿越寒冬">5.穿越寒冬</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%B8%80-%E7%A9%BF%E8%B6%8A%E5%AF%92%E5%86%AC%E4%BA%AB%E5%8F%97%E6%98%8E%E5%AA%9A%E6%98%A5%E5%85%89">推荐序一 穿越寒冬，享受明媚春光</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%BA%8C-%E6%B0%B4%E6%BB%B4%E7%9F%B3%E7%A9%BF%E7%BB%88%E8%A7%81%E5%A4%A7%E6%B5%B7">推荐序二 水滴石穿，终见大海</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80-%E8%88%B9%E9%95%BF%E6%97%A5%E5%BF%97">前言 船长日志</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%92%92%E6%97%A6%E7%9A%84%E7%B3%96%E6%9E%9C%E5%88%9B%E4%B8%9A">第一章 撒旦的糖果：创业</a>
+<ul>
+<li><a href="#1%E4%BD%A0%E5%BA%94%E8%AF%A5%E8%B7%A8%E5%87%BA%E9%82%A3%E4%B8%80%E6%AD%A5%E5%90%97">1.你应该跨出那一步吗？</a></li>
+<li><a href="#2%E4%BD%A0%E6%A0%B9%E6%9C%AC%E5%B0%B1%E4%B8%8D%E5%BA%94%E8%AF%A5%E5%8E%BB%E5%88%9B%E4%B8%9A">2.你根本就不应该去创业</a></li>
+<li><a href="#3%E6%89%BF%E5%8F%97%E5%80%BA%E5%8A%A1%E9%A3%8E%E9%99%A9">3.承受债务风险</a></li>
+<li><a href="#4%E4%BD%A0%E7%9A%84%E6%83%B3%E6%B3%95%E7%9C%9F%E7%9A%84%E5%BE%88%E5%B7%AE%E5%8A%B2%E5%90%97">4.你的想法真的很差劲吗？</a></li>
+<li><a href="#5%E5%A6%82%E4%BD%95%E7%BB%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%90%88%E9%80%82%E7%9A%84%E5%9B%A2%E9%98%9F">5.如何组建一个合适的团队？</a></li>
+<li><a href="#6%E6%94%AF%E4%BB%98%E7%BB%99%E4%BA%BA%E6%89%8D%E7%9A%84%E6%8A%A5%E9%85%AC">6.支付给人才的报酬</a></li>
+<li><a href="#7%E4%BD%A0%E5%BA%94%E8%AF%A5%E6%A8%A1%E4%BB%BF%E4%BD%A0%E7%9A%84%E7%AB%9E%E4%BA%89%E5%AF%B9%E6%89%8B%E5%90%97">7.你应该模仿你的竞争对手吗？</a></li>
+<li><a href="#8%E6%9D%B0%E5%87%BA%E7%9A%84%E6%83%B3%E6%B3%95%E5%92%8C%E5%88%9B%E6%84%8F%E4%BB%8E%E4%BD%95%E8%80%8C%E6%9D%A5">8.杰出的想法和创意从何而来？</a></li>
+<li><a href="#9%E7%95%8C%E5%AE%9A%E4%BD%A0%E6%83%B3%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98">9.界定你想解决的问题</a></li>
+<li><a href="#10%E5%87%86%E5%A4%87%E4%B8%80%E5%9C%BA%E5%8F%AA%E9%9C%80%E5%8D%8A%E5%88%86%E9%92%9F%E7%9A%84%E8%B7%AF%E6%BC%94">10.准备一场只需半分钟的路演</a></li>
+<li><a href="#11%E4%BD%A0%E5%BA%94%E8%AF%A5%E8%B0%A8%E6%85%8E%E8%A1%8C%E4%BA%8B%E5%90%97">11.你应该谨慎行事吗？</a></li>
+<li><a href="#12%E4%BD%A0%E7%9A%84%E5%88%9B%E6%84%8F%E6%98%AF%E5%90%A6%E8%AF%A5%E4%BF%9D%E5%AF%86">12.你的创意是否该保密？</a></li>
+<li><a href="#13%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BD%A0%E8%AF%A5%E6%94%BE%E5%BC%83">13.什么时候你该放弃？</a></li>
+<li><a href="#14%E6%94%BE%E5%BC%83%E4%BD%A0%E7%9A%84%E5%AD%A9%E5%AD%90">14.放弃你的“孩子”</a></li>
+<li><a href="#15%E9%80%9F%E5%BA%A6%E4%BB%A5%E5%8F%8A%E5%AE%9E%E9%AA%8C">15.速度以及实验</a></li>
+<li><a href="#16%E4%B8%BA%E4%BB%80%E4%B9%88%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E4%BC%9A%E5%A4%B1%E8%B4%A5">16.为什么创业公司会失败？</a></li>
+<li><a href="#17%E9%87%8D%E6%96%B0%E5%88%B6%E5%AE%9A%E8%A7%84%E5%88%99">17.重新制定规则</a></li>
+<li><a href="#18%E4%B8%8E%E5%AE%A2%E6%88%B7%E8%BF%9B%E8%A1%8C%E4%BA%92%E5%8A%A8">18.与客户进行互动</a></li>
+<li><a href="#19%E6%98%AF%E5%90%A6%E8%A6%81%E5%88%9B%E9%80%A0%E9%9C%80%E6%B1%82">19.是否要创造需求？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%8E%B7%E5%BE%97%E9%A3%8E%E9%99%A9%E6%8A%95%E8%B5%84%E8%AE%A9%E6%88%91%E7%9C%8B%E5%88%B0%E4%BD%A0%E7%9A%84%E9%92%B1">第二章 获得风险投资：让我看到你的钱</a>
+<ul>
+<li><a href="#1%E9%A3%8E%E9%99%A9%E6%8A%95%E8%B5%84%E7%9A%84%E5%86%85%E5%B9%95">1.风险投资的内幕</a></li>
+<li><a href="#2%E4%BA%86%E8%A7%A3%E4%BD%A0%E7%9A%84%E4%BC%B0%E5%80%BC">2.了解你的估值</a></li>
+<li><a href="#3%E5%B0%8A%E9%87%8D%E5%B9%B6%E5%96%9C%E6%AC%A2%E4%BD%A0%E7%9A%84%E5%BE%8B%E5%B8%88">3.尊重并喜欢你的律师</a></li>
+<li><a href="#4%E4%B8%BA%E4%BD%A0%E7%9A%84%E6%8A%95%E8%B5%84%E4%BA%BA%E5%87%86%E5%A4%87%E7%9A%84%E8%B7%AF%E6%BC%94%E6%96%87%E6%A1%A3">4.为你的投资人准备的路演文档</a></li>
+<li><a href="#5%E5%85%9C%E5%94%AE%E4%BD%A0%E7%9A%84%E6%95%85%E4%BA%8B">5.兜售你的故事</a></li>
+<li><a href="#6%E5%A6%82%E4%BD%95%E9%89%B4%E5%88%AB%E6%8A%95%E8%B5%84%E4%BA%BA">6.如何鉴别投资人</a></li>
+<li><a href="#7%E5%A6%82%E4%BD%95%E4%B8%8E%E6%8A%95%E8%B5%84%E4%BA%BA%E6%B2%9F%E9%80%9A">7.如何与投资人沟通</a></li>
+<li><a href="#8%E5%88%A9%E7%94%A8%E4%BA%BA%E7%9A%84%E6%81%90%E6%83%A7%E5%92%8C%E8%B4%AA%E5%A9%AA">8.利用人的恐惧和贪婪</a></li>
+<li><a href="#9%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E8%9E%8D%E8%B5%84%E6%B8%A0%E9%81%93">9.管理你的融资渠道</a></li>
+<li><a href="#10%E4%B8%8D%E8%A6%81%E8%AE%A9%E8%A1%A8%E6%83%85%E5%87%BA%E5%8D%96%E4%BA%86%E4%BD%A0">10.不要让表情出卖了你</a></li>
+<li><a href="#11%E4%B8%89%E6%8C%AF%E5%87%BA%E5%B1%80">11.三振出局</a></li>
+<li><a href="#12%E6%83%B3%E5%8A%9E%E6%B3%95%E8%AE%A9%E5%AF%B9%E6%96%B9%E8%AF%B4%E4%B8%8D">12.想办法让对方说“不”</a></li>
+<li><a href="#13%E6%B0%B8%E8%BF%9C%E4%B8%8D%E8%A6%81%E5%AF%B9%E6%8A%95%E8%B5%84%E4%BA%BA%E8%AF%B4%E8%B0%8E">13.永远不要对投资人说谎</a></li>
+<li><a href="#14%E8%AE%BE%E5%AE%9A%E6%9C%80%E5%90%8E%E6%9C%9F%E9%99%90">14.设定最后期限</a></li>
+<li><a href="#15%E5%85%85%E5%88%86%E5%88%A9%E7%94%A8%E7%A4%BE%E4%BC%9A%E8%B5%84%E6%9C%AC">15.充分利用社会资本</a></li>
+<li><a href="#16%E8%8E%B7%E5%BE%97%E7%83%AD%E8%AF%9A%E7%9A%84%E6%8E%A8%E4%BB%8B">16.获得热诚的推介</a></li>
+<li><a href="#17%E7%BB%99%E9%99%8C%E7%94%9F%E4%BA%BA%E5%8F%91%E9%82%AE%E4%BB%B6%E6%88%96%E8%AE%B8%E4%B9%9F%E8%83%BD%E8%B5%B7%E4%BD%9C%E7%94%A8">17.给陌生人发邮件或许也能起作用</a></li>
+<li><a href="#18%E5%A6%82%E4%BD%95%E8%84%B1%E9%A2%96%E8%80%8C%E5%87%BA">18.如何脱颖而出</a></li>
+<li><a href="#19%E4%BA%B2%E5%90%BB%E9%9D%92%E8%9B%99%E7%8E%8B%E5%AD%90">19.亲吻青蛙王子</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%88%9B%E6%96%B0%E7%9A%84%E9%A2%86%E5%A4%B4%E7%BE%8A%E4%B8%AD%E5%9B%BD%E5%92%8C%E7%A1%85%E8%B0%B7">第三章 创新的领头羊：中国和硅谷</a>
+<ul>
+<li><a href="#1%E6%A0%87%E6%9D%86">1.标杆</a></li>
+<li><a href="#2%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%BC%94%E5%8C%96">2.生态系统的演化</a></li>
+<li><a href="#3%E5%B8%82%E5%9C%BA%E7%9A%84%E8%A7%84%E6%A8%A1%E5%BE%88%E9%87%8D%E8%A6%81">3.市场的规模很重要</a></li>
+<li><a href="#4%E5%88%9B%E4%B8%9A%E8%80%85%E4%B8%AD%E5%9B%BD%E5%92%8C%E7%A1%85%E8%B0%B7%E7%9A%84%E6%AF%94%E8%BE%83">4.创业者：中国和硅谷的比较</a></li>
+<li><a href="#5%E9%A3%8E%E9%99%A9%E6%8A%95%E8%B5%84%E4%B8%AD%E5%9B%BD%E5%92%8C%E7%A1%85%E8%B0%B7%E7%9A%84%E6%AF%94%E8%BE%83">5.风险投资：中国和硅谷的比较</a></li>
+<li><a href="#6%E5%85%B3%E7%B3%BB%E7%9A%84%E5%A4%8D%E6%9D%82%E6%80%A7">6.关系的复杂性</a></li>
+<li><a href="#7%E6%88%91%E5%9C%A8%E4%B8%AD%E5%9B%BD%E7%9A%84%E7%BB%8F%E5%8E%86">7.我在中国的经历</a></li>
+<li><a href="#8%E8%A5%BF%E6%96%B9%E7%9A%84%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E5%BA%94%E8%AF%A5%E8%BF%9B%E5%85%A5%E4%B8%AD%E5%9B%BD%E5%B8%82%E5%9C%BA%E5%90%97">8.西方的创业公司应该进入中国市场吗？</a></li>
+<li><a href="#9%E4%B8%AD%E7%BE%8E%E8%B4%B8%E6%98%93%E6%94%BF%E7%AD%96">9.中美贸易政策</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E8%87%AA%E5%8A%9B%E6%9B%B4%E7%94%9F%E6%B8%B8%E5%87%BB%E8%90%A5%E9%94%80%E5%92%8C%E5%A2%9E%E9%95%BF%E9%BB%91%E5%AE%A2">第四章 自力更生：游击营销和增长黑客</a>
+<ul>
+<li><a href="#1%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%BC%80%E5%A7%8B%E8%9E%8D%E8%B5%84">1.什么时候开始融资？</a></li>
+<li><a href="#2%E4%BB%80%E4%B9%88%E6%89%8D%E7%AE%97%E6%98%AF%E5%A5%BD%E7%9A%84%E4%B8%9A%E5%8A%A1">2.什么才算是好的业务？</a></li>
+<li><a href="#3%E7%94%A8%E4%B8%9A%E4%BD%99%E6%97%B6%E9%97%B4%E8%BF%9B%E8%A1%8C%E5%88%9B%E4%B8%9A">3.用业余时间进行创业</a></li>
+<li><a href="#4%E5%A6%82%E4%BD%95%E4%B8%8E%E5%AA%92%E4%BD%93%E5%BB%BA%E7%AB%8B%E5%92%8C%E8%B0%90%E7%9A%84%E5%85%B3%E7%B3%BB">4.如何与媒体建立和谐的关系</a></li>
+<li><a href="#5%E6%B8%B8%E5%87%BB%E8%90%A5%E9%94%80%E7%9A%84%E8%A7%84%E5%88%99">5.游击营销的规则</a></li>
+<li><a href="#6%E6%89%93%E7%A0%B4%E5%9B%BA%E6%9C%89%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%BC%8F">6.打破固有的思维模式</a></li>
+<li><a href="#7%E9%9B%86%E5%AE%A2%E8%90%A5%E9%94%80%E7%AD%96%E7%95%A5a">7.集客营销策略a</a></li>
+<li><a href="#8%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%93%81%E7%89%8C%E4%BB%A3%E8%A1%A8%E4%B8%80%E7%A7%8D%E4%BB%B7%E5%80%BC">8.让你的品牌代表一种价值</a></li>
+<li><a href="#9%E6%8A%95%E8%B5%84%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C">9.投资视频制作</a></li>
+<li><a href="#10%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E7%9A%84%E6%95%85%E4%BA%8B%E5%BE%88%E9%87%8D%E8%A6%81">10.为什么你的故事很重要</a></li>
+<li><a href="#11%E5%8F%99%E4%BA%8B%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%A8%A1%E5%BC%8F">11.叙事的类型和模式</a></li>
+<li><a href="#12%E5%A6%82%E4%BD%95%E6%8E%A8%E8%A1%8C%E5%A2%9E%E9%95%BF%E9%BB%91%E5%AE%A2">12.如何推行增长黑客</a></li>
+<li><a href="#13%E9%82%A3%E4%BA%9B%E8%87%AA%E5%8A%9B%E6%9B%B4%E7%94%9F%E7%9A%84%E5%88%9B%E4%B8%9A%E8%80%85%E6%9C%89%E8%83%BD%E5%8A%9B%E5%B1%95%E5%BC%80%E7%AB%9E%E4%BA%89%E5%90%97">13.那些自力更生的创业者有能力展开竞争吗？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E7%8B%AC%E8%A7%92%E5%85%BD%E7%8C%8E%E4%BA%BA%E6%89%BE%E5%88%B0%E6%9C%AA%E6%9D%A5%E7%9A%84%E8%B5%A2%E5%AE%B6">第五章 独角兽猎人：找到未来的赢家</a>
+<ul>
+<li><a href="#1%E6%8A%95%E8%B5%84%E5%9B%A2%E9%98%9F">1.投资团队</a></li>
+<li><a href="#2%E8%AF%84%E4%BC%B0%E5%B8%82%E5%9C%BA%E8%A7%84%E6%A8%A1">2.评估市场规模</a></li>
+<li><a href="#3%E8%B0%81%E6%89%8D%E6%98%AF%E4%BD%A0%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%AE%A2%E6%88%B7">3.谁才是你真正的客户？</a></li>
+<li><a href="#4%E9%A1%BA%E5%BA%94%E6%BD%AE%E6%B5%81">4.顺应潮流</a></li>
+<li><a href="#5%E4%BC%98%E7%A7%80%E4%B8%8E%E5%8D%93%E8%B6%8A">5.优秀与卓越</a></li>
+<li><a href="#6%E4%BD%A0%E7%9A%84%E7%A7%98%E8%AF%80%E6%98%AF%E4%BB%80%E4%B9%88">6.你的秘诀是什么？</a></li>
+<li><a href="#7-%E7%AE%80%E5%8C%96%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F">7. 简化商业模式</a></li>
+<li><a href="#8%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%A8%A1%E4%BB%BF">8.商业模式的模仿</a></li>
+<li><a href="#9%E9%94%81%E5%AE%9A%E5%AE%A2%E6%88%B7">9.锁定客户</a></li>
+<li><a href="#10%E7%A1%AC%E4%BB%B6%E8%BF%98%E6%98%AF%E8%BD%AF%E4%BB%B6">10.硬件还是软件？</a></li>
+<li><a href="#11%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%B8%93%E5%88%A9%E6%89%8D%E6%98%AF%E9%87%8D%E8%A6%81%E7%9A%84">11.什么时候专利才是重要的？</a></li>
+<li><a href="#12%E7%A1%AC%E6%80%A7%E5%9C%B0%E5%A5%97%E7%94%A8%E4%B8%8D%E4%B8%80%E5%AE%9A%E9%80%82%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF">12.硬性地套用（不一定适用的）技术</a></li>
+<li><a href="#13%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4">13.设计思维</a></li>
+<li><a href="#14%E7%94%9F%E4%BA%A7%E4%BC%98%E8%B4%A8%E7%9A%84%E4%BA%A7%E5%93%81">14.生产优质的产品</a></li>
+<li><a href="#15%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AA%92%E4%BD%93%E7%9A%84%E5%85%B3%E6%B3%A8%E5%BE%88%E9%87%8D%E8%A6%81">15.为什么媒体的关注很重要</a></li>
+<li><a href="#16%E4%B8%8D%E5%8F%AF%E5%91%8A%E4%BA%BA%E7%9A%84%E7%A7%98%E5%AF%86">16.不可告人的秘密</a></li>
+<li><a href="#17%E4%BD%A0%E5%85%B7%E6%9C%89%E5%93%AA%E4%BA%9B%E7%9C%9F%E6%AD%A3%E7%8B%AC%E7%89%B9%E7%9A%84%E5%85%83%E7%B4%A0">17.你具有哪些真正独特的元素？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%89%A9%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%BB%BA%E7%AB%8B%E7%8B%AC%E8%A7%92%E5%85%BD%E4%BC%81%E4%B8%9A">第六章 扩大规模：建立独角兽企业</a>
+<ul>
+<li><a href="#1%E6%8B%9B%E8%81%98%E7%9A%84%E8%89%BA%E6%9C%AF">1.招聘的艺术</a></li>
+<li><a href="#2%E8%AF%86%E5%88%AB%E4%BA%BA%E6%89%8D">2.识别人才</a></li>
+<li><a href="#3%E6%8B%9B%E8%81%98%E7%AD%96%E7%95%A5">3.招聘策略</a></li>
+<li><a href="#4%E7%94%A8%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%96%B9%E5%BC%8F%E8%A7%A3%E9%9B%87%E5%91%98%E5%B7%A5">4.用正确的方式解雇员工</a></li>
+<li><a href="#5%E9%94%80%E5%94%AE%E7%9A%8422%E6%9D%A1%E5%86%9B%E8%A7%84">5.销售的22条军规</a></li>
+<li><a href="#6%E9%9D%A2%E5%90%91%E5%85%AC%E4%BC%97%E6%BC%94%E8%AE%B2">6.面向公众演讲</a></li>
+<li><a href="#7%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E5%92%8C%E5%AE%A2%E6%88%B7%E8%8E%B7%E5%8F%96">7.市场营销和客户获取</a></li>
+<li><a href="#8%E8%AE%BE%E8%AE%A1%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4">8.设计工作空间</a></li>
+<li><a href="#9%E5%B0%8F%E5%BF%83%E9%82%A3%E4%BA%9B%E5%B9%B3%E5%8F%B0%E5%85%AC%E5%8F%B8">9.小心那些平台公司</a></li>
+<li><a href="#10%E4%B8%8D%E5%85%AC%E5%B9%B3%E7%9A%84%E4%BC%98%E5%8A%BF">10.不公平的优势</a></li>
+<li><a href="#11%E8%AE%A1%E5%88%92%E5%A5%BD%E4%BD%A0%E7%9A%84%E9%80%80%E5%87%BA">11.计划好你的退出</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%8F%96%E8%83%9C%E7%9A%84%E6%B3%95%E5%88%99%E6%8F%90%E5%8D%87%E9%A2%86%E5%AF%BC%E5%8A%9B">第七章 取胜的法则：提升领导力</a>
+<ul>
+<li><a href="#1%E9%A2%86%E5%AF%BC%E5%8A%9B%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A6%81%E7%B4%A0">1.领导力的基本要素</a></li>
+<li><a href="#2%E8%AE%BE%E5%AE%9A%E5%9F%BA%E8%B0%83">2.设定基调</a></li>
+<li><a href="#3%E7%95%8C%E5%AE%9A%E4%BD%A0%E7%9A%84%E6%84%BF%E6%99%AF">3.界定你的愿景</a></li>
+<li><a href="#4%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%B6%85%E7%BA%A7%E8%80%81%E6%9D%BF">4.成为一个超级老板</a></li>
+<li><a href="#5%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E8%91%A3%E4%BA%8B%E4%BC%9A">5.管理你的董事会</a></li>
+<li><a href="#6%E5%A4%AA%E7%96%AF%E7%8B%82%E4%BA%86%E6%B2%A1%E8%BF%99%E5%9B%9E%E4%BA%8B%E5%84%BF">6.太疯狂了？没这回事儿</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E5%88%9B%E4%B8%9A%E7%9A%84%E7%94%9F%E6%B4%BB%E5%9C%A8%E7%94%9F%E6%B4%BB%E4%B8%AD%E5%AD%A6%E4%B9%A0">第八章 创业的生活：在生活中学习</a>
+<ul>
+<li><a href="#1%E4%B8%9C%E5%B1%B1%E5%86%8D%E8%B5%B7">1.东山再起</a></li>
+<li><a href="#2%E4%BD%A0%E7%9A%84%E5%B9%B4%E9%BE%84%E5%A4%AA%E5%A4%A7%E4%BA%86%E5%90%97">2.你的年龄太大了吗？</a></li>
+<li><a href="#3%E5%9B%9E%E9%A6%88">3.回馈</a></li>
+<li><a href="#4%E6%B1%82%E7%9F%A5">4.求知</a></li>
+<li><a href="#5%E7%A9%BF%E8%B6%8A%E5%AF%92%E5%86%AC">5.穿越寒冬</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

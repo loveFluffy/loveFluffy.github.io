@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5373;&#x5174;&#x6f14;&#x8bb2;&#xff1a;&#x638c;&#x63a7;&#x4eba;&#x751f;&#x5173;&#x952e;&#x65f6;&#x523b;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5373;&#x5174;&#x6f14;&#x8bb2;&#xff1a;&#x638c;&#x63a7;&#x4eba;&#x751f;&#x5173;&#x952e;&#x65f6;&#x523b;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,187 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="即兴演讲掌控人生关键时刻">即兴演讲：掌控人生关键时刻</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/10107.jpg"></td><td>
+<h1 id="即兴演讲掌控人生关键时刻">即兴演讲：掌控人生关键时刻</h1>
+<center>[加]朱迪思·汉弗莱（Judith Humphrey） 著|坰清 王克平 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="推荐序一-即兴演讲不是张口就说">推荐序一 即兴演讲不是张口就说</h3>
+<h3 id="推荐序二-把握时代的机会">推荐序二 把握时代的机会</h3>
+<h3 id="译者序">译者序</h3>
+<h3 id="中文版序">中文版序</h3>
+<h3 id="开场白-本书的灵魂">开场白 本书的灵魂</h3>
+<h3 id="引言">引言</h3>
+<h2 id="第一部分-即兴新时代">第一部分 即兴新时代</h2>
+<h3 id="第1章-即兴演讲的兴起">第1章 即兴演讲的兴起</h3>
+<h3 id="第2章-即兴交流的力量">第2章 即兴交流的力量</h3>
+<h2 id="第二部分-即兴思维">第二部分 即兴思维</h2>
+<h3 id="第3章-拥有当领导者的意愿">第3章 拥有当领导者的意愿</h3>
+<h3 id="第4章-成为一名听众">第4章 成为一名听众</h3>
+<h3 id="第5章-保持真实">第5章 保持真实</h3>
+<h3 id="第6章-保持专注">第6章 保持专注</h3>
+<h3 id="第7章-保持尊重">第7章 保持尊重</h3>
+<h2 id="第三部分-领导者讲话脚本">第三部分 领导者讲话脚本</h2>
+<h3 id="第8章-做好准备">第8章 做好准备</h3>
+<h3 id="第9章-了解听众">第9章 了解听众</h3>
+<h3 id="第10章-领导者讲话脚本模板">第10章 领导者讲话脚本模板</h3>
+<h3 id="第11章-突出要点">第11章 突出要点</h3>
+<h3 id="第12章-提出令人信服的案例">第12章 提出令人信服的案例</h3>
+<h3 id="第13章-开始与结束">第13章 开始与结束</h3>
+<h2 id="第四部分-各种场合的即兴演讲脚本">第四部分 各种场合的即兴演讲脚本</h2>
+<h3 id="第14章-会议脚本">第14章 会议脚本</h3>
+<h3 id="第15章-求职面试社交活动电梯对话脚本">第15章 求职面试、社交活动、电梯对话脚本</h3>
+<h3 id="第16章-阐述重点">第16章 阐述重点</h3>
+<h3 id="第17章-敬酒词和致敬词脚本">第17章 敬酒词和致敬词脚本</h3>
+<h3 id="第18章-即兴讲话脚本">第18章 即兴讲话脚本</h3>
+<h3 id="第19章-问答脚本">第19章 问答脚本</h3>
+<h2 id="第五部分-即兴舞台">第五部分 即兴舞台</h2>
+<h3 id="第20章-即兴讲话排练">第20章 即兴讲话排练</h3>
+<h3 id="第21章-选择语言">第21章 选择语言</h3>
+<h3 id="第22章-使用即兴技巧">第22章 使用即兴技巧</h3>
+<h3 id="第23章-发现你的声音">第23章 发现你的声音</h3>
+<h3 id="第24章-掌握肢体语言">第24章 掌握肢体语言</h3>
+<h3 id="结语-别害怕准备好">结语 别害怕，准备好</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%B8%80-%E5%8D%B3%E5%85%B4%E6%BC%94%E8%AE%B2%E4%B8%8D%E6%98%AF%E5%BC%A0%E5%8F%A3%E5%B0%B1%E8%AF%B4">推荐序一 即兴演讲不是张口就说</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%BA%8C-%E6%8A%8A%E6%8F%A1%E6%97%B6%E4%BB%A3%E7%9A%84%E6%9C%BA%E4%BC%9A">推荐序二 把握时代的机会</a></li>
+<li><a href="#%E8%AF%91%E8%80%85%E5%BA%8F">译者序</a></li>
+<li><a href="#%E4%B8%AD%E6%96%87%E7%89%88%E5%BA%8F">中文版序</a></li>
+<li><a href="#%E5%BC%80%E5%9C%BA%E7%99%BD-%E6%9C%AC%E4%B9%A6%E7%9A%84%E7%81%B5%E9%AD%82">开场白 本书的灵魂</a></li>
+<li><a href="#%E5%BC%95%E8%A8%80">引言</a></li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E5%8D%B3%E5%85%B4%E6%BC%94%E8%AE%B2%E7%9A%84%E5%85%B4%E8%B5%B7">第1章 即兴演讲的兴起</a></li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E5%8D%B3%E5%85%B4%E4%BA%A4%E6%B5%81%E7%9A%84%E5%8A%9B%E9%87%8F">第2章 即兴交流的力量</a></li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E6%8B%A5%E6%9C%89%E5%BD%93%E9%A2%86%E5%AF%BC%E8%80%85%E7%9A%84%E6%84%8F%E6%84%BF">第3章 拥有当领导者的意愿</a></li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E5%90%AC%E4%BC%97">第4章 成为一名听众</a></li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E4%BF%9D%E6%8C%81%E7%9C%9F%E5%AE%9E">第5章 保持真实</a></li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E4%BF%9D%E6%8C%81%E4%B8%93%E6%B3%A8">第6章 保持专注</a></li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E4%BF%9D%E6%8C%81%E5%B0%8A%E9%87%8D">第7章 保持尊重</a></li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E5%81%9A%E5%A5%BD%E5%87%86%E5%A4%87">第8章 做好准备</a></li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E4%BA%86%E8%A7%A3%E5%90%AC%E4%BC%97">第9章 了解听众</a></li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E9%A2%86%E5%AF%BC%E8%80%85%E8%AE%B2%E8%AF%9D%E8%84%9A%E6%9C%AC%E6%A8%A1%E6%9D%BF">第10章 领导者讲话脚本模板</a></li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E7%AA%81%E5%87%BA%E8%A6%81%E7%82%B9">第11章 突出要点</a></li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0-%E6%8F%90%E5%87%BA%E4%BB%A4%E4%BA%BA%E4%BF%A1%E6%9C%8D%E7%9A%84%E6%A1%88%E4%BE%8B">第12章 提出令人信服的案例</a></li>
+<li><a href="#%E7%AC%AC13%E7%AB%A0-%E5%BC%80%E5%A7%8B%E4%B8%8E%E7%BB%93%E6%9D%9F">第13章 开始与结束</a></li>
+<li><a href="#%E7%AC%AC14%E7%AB%A0-%E4%BC%9A%E8%AE%AE%E8%84%9A%E6%9C%AC">第14章 会议脚本</a></li>
+<li><a href="#%E7%AC%AC15%E7%AB%A0-%E6%B1%82%E8%81%8C%E9%9D%A2%E8%AF%95%E7%A4%BE%E4%BA%A4%E6%B4%BB%E5%8A%A8%E7%94%B5%E6%A2%AF%E5%AF%B9%E8%AF%9D%E8%84%9A%E6%9C%AC">第15章 求职面试、社交活动、电梯对话脚本</a></li>
+<li><a href="#%E7%AC%AC16%E7%AB%A0-%E9%98%90%E8%BF%B0%E9%87%8D%E7%82%B9">第16章 阐述重点</a></li>
+<li><a href="#%E7%AC%AC17%E7%AB%A0-%E6%95%AC%E9%85%92%E8%AF%8D%E5%92%8C%E8%87%B4%E6%95%AC%E8%AF%8D%E8%84%9A%E6%9C%AC">第17章 敬酒词和致敬词脚本</a></li>
+<li><a href="#%E7%AC%AC18%E7%AB%A0-%E5%8D%B3%E5%85%B4%E8%AE%B2%E8%AF%9D%E8%84%9A%E6%9C%AC">第18章 即兴讲话脚本</a></li>
+<li><a href="#%E7%AC%AC19%E7%AB%A0-%E9%97%AE%E7%AD%94%E8%84%9A%E6%9C%AC">第19章 问答脚本</a></li>
+<li><a href="#%E7%AC%AC20%E7%AB%A0-%E5%8D%B3%E5%85%B4%E8%AE%B2%E8%AF%9D%E6%8E%92%E7%BB%83">第20章 即兴讲话排练</a></li>
+<li><a href="#%E7%AC%AC21%E7%AB%A0-%E9%80%89%E6%8B%A9%E8%AF%AD%E8%A8%80">第21章 选择语言</a></li>
+<li><a href="#%E7%AC%AC22%E7%AB%A0-%E4%BD%BF%E7%94%A8%E5%8D%B3%E5%85%B4%E6%8A%80%E5%B7%A7">第22章 使用即兴技巧</a></li>
+<li><a href="#%E7%AC%AC23%E7%AB%A0-%E5%8F%91%E7%8E%B0%E4%BD%A0%E7%9A%84%E5%A3%B0%E9%9F%B3">第23章 发现你的声音</a></li>
+<li><a href="#%E7%AC%AC24%E7%AB%A0-%E6%8E%8C%E6%8F%A1%E8%82%A2%E4%BD%93%E8%AF%AD%E8%A8%80">第24章 掌握肢体语言</a></li>
+<li><a href="#%E7%BB%93%E8%AF%AD-%E5%88%AB%E5%AE%B3%E6%80%95%E5%87%86%E5%A4%87%E5%A5%BD">结语 别害怕，准备好</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

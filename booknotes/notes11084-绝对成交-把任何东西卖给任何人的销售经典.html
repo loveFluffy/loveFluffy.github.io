@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x7edd;&#x5bf9;&#x6210;&#x4ea4;&#xff1a;&#x628a;&#x4efb;&#x4f55;&#x4e1c;&#x897f;&#x5356;&#x7ed9;&#x4efb;&#x4f55;&#x4eba;&#x7684;&#x9500;&#x552e;&#x7ecf;&#x5178;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x7edd;&#x5bf9;&#x6210;&#x4ea4;&#xff1a;&#x628a;&#x4efb;&#x4f55;&#x4e1c;&#x897f;&#x5356;&#x7ed9;&#x4efb;&#x4f55;&#x4eba;&#x7684;&#x9500;&#x552e;&#x7ecf;&#x5178;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,206 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="绝对成交把任何东西卖给任何人的销售经典">绝对成交：把任何东西卖给任何人的销售经典</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/11084.jpg"></td><td>
+<h1 id="绝对成交把任何东西卖给任何人的销售经典">绝对成交：把任何东西卖给任何人的销售经典</h1>
+<center>[英]罗杰·道森（Roger Dawson） 著|徐彬 王柳莉 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="买卖不成是因为话不到">买卖不成是因为话不到</h3>
+<h2 id="第1部分-谈判的重要性">第1部分 谈判的重要性</h2>
+<h3 id="第1章-21世纪的销售">第1章 21世纪的销售</h3>
+<h3 id="第2章-双赢的谈判">第2章 “双赢”的谈判</h3>
+<h3 id="第3章-谈判其实有章可循">第3章 谈判其实有章可循</h3>
+<h2 id="第2部分-开局策略">第2部分 开局策略</h2>
+<h3 id="第4章-敢于开价">第4章 敢于开价</h3>
+<h3 id="第5章-框定范围">第5章 框定范围</h3>
+<h3 id="第6章-绝不接受第一次报价">第6章 绝不接受第一次报价</h3>
+<h3 id="第7章-学会表现惊讶">第7章 学会表现惊讶</h3>
+<h3 id="第8章-扮演不情愿的卖家">第8章 扮演不情愿的卖家</h3>
+<h3 id="第9章-着眼谈判本身">第9章 着眼谈判本身</h3>
+<h3 id="第10章-钳子策略">第10章 钳子策略</h3>
+<h2 id="第3部分-中场销售谈判策略">第3部分 中场销售谈判策略</h2>
+<h3 id="第11章-更高权威法">第11章 更高权威法</h3>
+<h3 id="第12章-避免对抗性谈判">第12章 避免对抗性谈判</h3>
+<h3 id="第13章-持续衰减的服务价值">第13章 持续衰减的服务价值</h3>
+<h3 id="第14章-永远不要主动提议分摊差额">第14章 永远不要主动提议分摊差额</h3>
+<h3 id="第15章-烫手山芋">第15章 烫手山芋</h3>
+<h3 id="第16章-一定要索取回报">第16章 一定要索取回报</h3>
+<h2 id="第4部分-终局销售谈判策略">第4部分 终局销售谈判策略</h2>
+<h3 id="第17章-好人坏人策略">第17章 好人／坏人策略</h3>
+<h3 id="第18章-蚕食策略">第18章 蚕食策略</h3>
+<h3 id="第19章-让步模式">第19章 让步模式</h3>
+<h3 id="第20章-收回报价">第20章 收回报价</h3>
+<h3 id="第21章-留面子策略">第21章 “留面子”策略</h3>
+<h3 id="第22章-起草合同">第22章 起草合同</h3>
+<h2 id="第5部分-价格没有你想象的那么重要">第5部分 价格没有你想象的那么重要</h2>
+<h3 id="第23章-客户其实愿意多花钱">第23章 客户其实愿意多花钱</h3>
+<h3 id="第24章-比价格更重要的东西">第24章 比价格更重要的东西</h3>
+<h3 id="第25章-确定客户愿意付多少钱">第25章 确定客户愿意付多少钱</h3>
+<h2 id="第6部分-优势成交的秘诀">第6部分 优势成交的秘诀</h2>
+<h3 id="第26章-销售的四个阶段">第26章 销售的四个阶段</h3>
+<h3 id="第27章-25种绝对成交策略">第27章 25种绝对成交策略</h3>
+<h3 id="第28章-陷阱成交法">第28章 “陷阱”成交法</h3>
+<h2 id="第7部分-如何掌控谈判">第7部分 如何掌控谈判</h2>
+<h3 id="第29章-谈判动机">第29章 谈判动机</h3>
+<h3 id="第30章-谈判中的那些套路">第30章 谈判中的那些“套路”</h3>
+<h3 id="第31章-如何与非美国人谈判">第31章 如何与非美国人谈判</h3>
+<h3 id="第32章-谈判压力点">第32章 谈判压力点</h3>
+<h3 id="第33章-谈判中的问题">第33章 谈判中的问题</h3>
+<h3 id="第34章-如何应对愤怒的客户">第34章 如何应对愤怒的客户</h3>
+<h2 id="第8部分-理解你的对手">第8部分 理解你的对手</h2>
+<h3 id="第35章-增强个人影响力">第35章 增强个人影响力</h3>
+<h3 id="第36章-读懂客户的性格特点">第36章 读懂客户的性格特点</h3>
+<h3 id="第37章-双赢销售谈判">第37章 双赢销售谈判</h3>
+<h3 id="结语">结语</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E4%B9%B0%E5%8D%96%E4%B8%8D%E6%88%90%E6%98%AF%E5%9B%A0%E4%B8%BA%E8%AF%9D%E4%B8%8D%E5%88%B0">买卖不成是因为话不到</a></li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-21%E4%B8%96%E7%BA%AA%E7%9A%84%E9%94%80%E5%94%AE">第1章 21世纪的销售</a></li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E5%8F%8C%E8%B5%A2%E7%9A%84%E8%B0%88%E5%88%A4">第2章 “双赢”的谈判</a></li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E8%B0%88%E5%88%A4%E5%85%B6%E5%AE%9E%E6%9C%89%E7%AB%A0%E5%8F%AF%E5%BE%AA">第3章 谈判其实有章可循</a></li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E6%95%A2%E4%BA%8E%E5%BC%80%E4%BB%B7">第4章 敢于开价</a></li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E6%A1%86%E5%AE%9A%E8%8C%83%E5%9B%B4">第5章 框定范围</a></li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E7%BB%9D%E4%B8%8D%E6%8E%A5%E5%8F%97%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8A%A5%E4%BB%B7">第6章 绝不接受第一次报价</a></li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E5%AD%A6%E4%BC%9A%E8%A1%A8%E7%8E%B0%E6%83%8A%E8%AE%B6">第7章 学会表现惊讶</a></li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E6%89%AE%E6%BC%94%E4%B8%8D%E6%83%85%E6%84%BF%E7%9A%84%E5%8D%96%E5%AE%B6">第8章 扮演不情愿的卖家</a></li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E7%9D%80%E7%9C%BC%E8%B0%88%E5%88%A4%E6%9C%AC%E8%BA%AB">第9章 着眼谈判本身</a></li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E9%92%B3%E5%AD%90%E7%AD%96%E7%95%A5">第10章 钳子策略</a></li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E6%9B%B4%E9%AB%98%E6%9D%83%E5%A8%81%E6%B3%95">第11章 更高权威法</a></li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0-%E9%81%BF%E5%85%8D%E5%AF%B9%E6%8A%97%E6%80%A7%E8%B0%88%E5%88%A4">第12章 避免对抗性谈判</a></li>
+<li><a href="#%E7%AC%AC13%E7%AB%A0-%E6%8C%81%E7%BB%AD%E8%A1%B0%E5%87%8F%E7%9A%84%E6%9C%8D%E5%8A%A1%E4%BB%B7%E5%80%BC">第13章 持续衰减的服务价值</a></li>
+<li><a href="#%E7%AC%AC14%E7%AB%A0-%E6%B0%B8%E8%BF%9C%E4%B8%8D%E8%A6%81%E4%B8%BB%E5%8A%A8%E6%8F%90%E8%AE%AE%E5%88%86%E6%91%8A%E5%B7%AE%E9%A2%9D">第14章 永远不要主动提议分摊差额</a></li>
+<li><a href="#%E7%AC%AC15%E7%AB%A0-%E7%83%AB%E6%89%8B%E5%B1%B1%E8%8A%8B">第15章 烫手山芋</a></li>
+<li><a href="#%E7%AC%AC16%E7%AB%A0-%E4%B8%80%E5%AE%9A%E8%A6%81%E7%B4%A2%E5%8F%96%E5%9B%9E%E6%8A%A5">第16章 一定要索取回报</a></li>
+<li><a href="#%E7%AC%AC17%E7%AB%A0-%E5%A5%BD%E4%BA%BA%E5%9D%8F%E4%BA%BA%E7%AD%96%E7%95%A5">第17章 好人／坏人策略</a></li>
+<li><a href="#%E7%AC%AC18%E7%AB%A0-%E8%9A%95%E9%A3%9F%E7%AD%96%E7%95%A5">第18章 蚕食策略</a></li>
+<li><a href="#%E7%AC%AC19%E7%AB%A0-%E8%AE%A9%E6%AD%A5%E6%A8%A1%E5%BC%8F">第19章 让步模式</a></li>
+<li><a href="#%E7%AC%AC20%E7%AB%A0-%E6%94%B6%E5%9B%9E%E6%8A%A5%E4%BB%B7">第20章 收回报价</a></li>
+<li><a href="#%E7%AC%AC21%E7%AB%A0-%E7%95%99%E9%9D%A2%E5%AD%90%E7%AD%96%E7%95%A5">第21章 “留面子”策略</a></li>
+<li><a href="#%E7%AC%AC22%E7%AB%A0-%E8%B5%B7%E8%8D%89%E5%90%88%E5%90%8C">第22章 起草合同</a></li>
+<li><a href="#%E7%AC%AC23%E7%AB%A0-%E5%AE%A2%E6%88%B7%E5%85%B6%E5%AE%9E%E6%84%BF%E6%84%8F%E5%A4%9A%E8%8A%B1%E9%92%B1">第23章 客户其实愿意多花钱</a></li>
+<li><a href="#%E7%AC%AC24%E7%AB%A0-%E6%AF%94%E4%BB%B7%E6%A0%BC%E6%9B%B4%E9%87%8D%E8%A6%81%E7%9A%84%E4%B8%9C%E8%A5%BF">第24章 比价格更重要的东西</a></li>
+<li><a href="#%E7%AC%AC25%E7%AB%A0-%E7%A1%AE%E5%AE%9A%E5%AE%A2%E6%88%B7%E6%84%BF%E6%84%8F%E4%BB%98%E5%A4%9A%E5%B0%91%E9%92%B1">第25章 确定客户愿意付多少钱</a></li>
+<li><a href="#%E7%AC%AC26%E7%AB%A0-%E9%94%80%E5%94%AE%E7%9A%84%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5">第26章 销售的四个阶段</a></li>
+<li><a href="#%E7%AC%AC27%E7%AB%A0-25%E7%A7%8D%E7%BB%9D%E5%AF%B9%E6%88%90%E4%BA%A4%E7%AD%96%E7%95%A5">第27章 25种绝对成交策略</a></li>
+<li><a href="#%E7%AC%AC28%E7%AB%A0-%E9%99%B7%E9%98%B1%E6%88%90%E4%BA%A4%E6%B3%95">第28章 “陷阱”成交法</a></li>
+<li><a href="#%E7%AC%AC29%E7%AB%A0-%E8%B0%88%E5%88%A4%E5%8A%A8%E6%9C%BA">第29章 谈判动机</a></li>
+<li><a href="#%E7%AC%AC30%E7%AB%A0-%E8%B0%88%E5%88%A4%E4%B8%AD%E7%9A%84%E9%82%A3%E4%BA%9B%E5%A5%97%E8%B7%AF">第30章 谈判中的那些“套路”</a></li>
+<li><a href="#%E7%AC%AC31%E7%AB%A0-%E5%A6%82%E4%BD%95%E4%B8%8E%E9%9D%9E%E7%BE%8E%E5%9B%BD%E4%BA%BA%E8%B0%88%E5%88%A4">第31章 如何与非美国人谈判</a></li>
+<li><a href="#%E7%AC%AC32%E7%AB%A0-%E8%B0%88%E5%88%A4%E5%8E%8B%E5%8A%9B%E7%82%B9">第32章 谈判压力点</a></li>
+<li><a href="#%E7%AC%AC33%E7%AB%A0-%E8%B0%88%E5%88%A4%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98">第33章 谈判中的问题</a></li>
+<li><a href="#%E7%AC%AC34%E7%AB%A0-%E5%A6%82%E4%BD%95%E5%BA%94%E5%AF%B9%E6%84%A4%E6%80%92%E7%9A%84%E5%AE%A2%E6%88%B7">第34章 如何应对愤怒的客户</a></li>
+<li><a href="#%E7%AC%AC35%E7%AB%A0-%E5%A2%9E%E5%BC%BA%E4%B8%AA%E4%BA%BA%E5%BD%B1%E5%93%8D%E5%8A%9B">第35章 增强个人影响力</a></li>
+<li><a href="#%E7%AC%AC36%E7%AB%A0-%E8%AF%BB%E6%87%82%E5%AE%A2%E6%88%B7%E7%9A%84%E6%80%A7%E6%A0%BC%E7%89%B9%E7%82%B9">第36章 读懂客户的性格特点</a></li>
+<li><a href="#%E7%AC%AC37%E7%AB%A0-%E5%8F%8C%E8%B5%A2%E9%94%80%E5%94%AE%E8%B0%88%E5%88%A4">第37章 双赢销售谈判</a></li>
+<li><a href="#%E7%BB%93%E8%AF%AD">结语</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x6781;&#x7b80;&#x5e02;&#x573a;&#x8425;&#x9500;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x6781;&#x7b80;&#x5e02;&#x573a;&#x8425;&#x9500;&#xff1a;&#x5b8c;&#x6574;&#x4f53;&#x7cfb;&#x548c;&#x843d;&#x5730;&#x6253;&#x6cd5;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,306 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="极简市场营销">极简市场营销</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/11033.jpg"></td><td>
+<h1 id="极简市场营销完整体系和落地打法">极简市场营销：完整体系和落地打法</h1>
+<center>胡超</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="前言">前言</h3>
+<h3 id="第一章-市场营销管理全局-八大经典模块规模化实战必备">第一章 市场营销管理全局： 八大经典模块，规模化实战必备</h3>
+<h4 id="11-市场营销的极简定义与全局">1.1 市场营销的极简定义与全局</h4>
+<h4 id="12-八大经典模块之完整体系的由来与未来">1.2 八大经典模块之“完整体系”的由来与未来</h4>
+<h4 id="13-规模化实战必备八大经典模块">1.3 规模化实战必备：八大经典模块</h4>
+<h4 id="本章要点">本章要点</h4>
+<h4 id="本章思考">本章思考</h4>
+<h3 id="第二章-市场洞察-了解更多打得更准">第二章 市场洞察： 了解更多、打得更准</h3>
+<h4 id="21-市场洞察其实可以不做">2.1 市场洞察其实可以不做？</h4>
+<h4 id="22-洞察什么结果怎么展示五个经典模型">2.2 洞察什么、结果怎么展示：五个经典模型</h4>
+<h4 id="23-市场洞察的数据收集方法和变革">2.3 市场洞察的数据收集方法和变革</h4>
+<h4 id="本章要点-1">本章要点</h4>
+<h4 id="本章思考-1">本章思考</h4>
+<h3 id="第三章-客户细分和目标客户选择-取舍只服务谁给自己一线生机">第三章 客户细分和目标客户选择： 取舍“只服务谁”，给自己一线生机</h3>
+<h4 id="31-为什么不能服务所有客户">3.1 为什么不能服务“所有”客户？</h4>
+<h4 id="32-客户细分和目标客户选择两步合力回答只服务谁">3.2 客户细分和目标客户选择：两步合力回答“只服务谁”</h4>
+<h4 id="33-网格模型客户细分和目标客户选择的实用工具">3.3 网格模型：客户细分和目标客户选择的实用工具</h4>
+<h4 id="本章要点-2">本章要点</h4>
+<h4 id="本章思考-2">本章思考</h4>
+<h3 id="第四章-定位-占领一个差异化的位置">第四章 定位： 占领一个差异化的“位置”</h3>
+<h4 id="41-定位的极简定义在客户心智中占领一个差异化的位置">4.1 定位的极简定义：在客户心智中占领一个差异化的位置</h4>
+<h4 id="42-三种经典的定位方式和一个定位脑图">4.2 三种经典的定位方式和一个定位脑图</h4>
+<h4 id="43-定位的希望变成结果让品牌占领那个位置">4.3 定位的希望变成结果：让品牌占领那个“位置”</h4>
+<h4 id="本章要点-3">本章要点</h4>
+<h4 id="本章思考-3">本章思考</h4>
+<h3 id="第五章-品牌-一个承诺">第五章 品牌： 一个“承诺”</h3>
+<h4 id="51-品牌90的人心知肚明却说不清">5.1 品牌：90%的人“心知肚明”，却说不清</h4>
+<h4 id="52-品牌的极简定义一个承诺">5.2 品牌的极简定义：一个“承诺”</h4>
+<h4 id="53-为何承诺有用且重要">5.3 为何“承诺”有用且重要</h4>
+<h4 id="54-做更高级品牌的暗语不仅仅是产品本身">5.4 做更“高级”品牌的暗语：“不仅仅是……（产品本身）……”</h4>
+<h4 id="55-用品牌价值图来规划承诺功能价值和情感价值">5.5 用“品牌价值图”来规划承诺、功能价值和情感价值</h4>
+<h4 id="56-英国和美国的情感价值之战我也很创新">5.6 英国和美国的情感价值之战：“我也很创新”</h4>
+<h4 id="57-品牌和商标的关系为何苹果在中国栽跟头">5.7 品牌和商标的关系，为何苹果在中国栽跟头</h4>
+<h4 id="58-定位和品牌到底是什么关系">5.8 定位和品牌到底是什么关系</h4>
+<h4 id="本章要点-4">本章要点</h4>
+<h4 id="本章思考-4">本章思考</h4>
+<h3 id="第六章-市场营销组合4p-合力表达并兑现那个承诺">第六章 市场营销组合4P： 合力表达并兑现那个“承诺”</h3>
+<h4 id="61-市场营销组合4p的使命合力表达并兑现那个承诺">6.1 市场营销组合4P的使命：合力表达并兑现那个“承诺”</h4>
+<h4 id="62-组合的魔力和禁忌1111大于4也能等于0">6.2 组合的魔力和禁忌：1+1+1+1大于4，也能等于0</h4>
+<h4 id="63-建长板vipabc和51talk的外教之战">6.3 建长板：VIPABC和51Talk的“外教之战”</h4>
+<h4 id="64-补短板在线教育行业的明星代言人大战">6.4 补短板：在线教育行业的明星代言人大战</h4>
+<h4 id="65-更高声量真有用到底固特异和米其林谁更安全">6.5 “更高声量”真有用？！到底固特异和米其林谁更安全</h4>
+<h4 id="66-市场营销组合模型驱动所有人的战略地图">6.6 市场营销组合模型，驱动“所有人”的战略地图</h4>
+<h4 id="67-4p的那些花哨变种">6.7 4P的那些“花哨变种”</h4>
+<h4 id="本章要点-5">本章要点</h4>
+<h4 id="本章思考-5">本章思考</h4>
+<h3 id="第七章-市场营销组合的第4个p促销组合-传说中的整合营销传播">第七章 市场营销组合的第4个P“促销组合”： 传说中的整合营销传播</h3>
+<h4 id="71-促销组合传说中的整合营销传播">7.1 促销组合：传说中的“整合营销传播”</h4>
+<h4 id="72-整合营销传播的原理和基本功这四类传播工具的整合">7.2 整合营销传播的原理和基本功：这四类传播工具的整合</h4>
+<h4 id="73-宝洁引领的整合营销传播实战迭代poes模型">7.3 宝洁引领的整合营销传播实战迭代：POES模型</h4>
+<h4 id="74-cmo秘方品牌型广告与流量型广告配比是64还是82">7.4 CMO秘方：品牌型广告与流量型广告配比是6∶4还是8∶2？</h4>
+<h4 id="75-整合营销传播创新驱动了人和钱的分配迭代">7.5 整合营销传播创新驱动了“人”和“钱”的分配迭代</h4>
+<h4 id="本章要点-6">本章要点</h4>
+<h4 id="本章思考-6">本章思考</h4>
+<h3 id="第八章-黑客增长-用试验驱动五种增长">第八章 黑客增长： 用“试验”驱动五种增长</h3>
+<h4 id="81-黑客增长的本质用高速度跨职能的试验来驱动五种增长">8.1 黑客增长的本质：用高速度、跨职能的试验来驱动五种增长</h4>
+<h4 id="82-用试验驱动五种增长aarrr">8.2 用试验驱动五种增长：AARRR</h4>
+<h4 id="83-黑客增长的爆款玩法养鱼再钓鱼">8.3 黑客增长的爆款玩法“养鱼再钓鱼”</h4>
+<h4 id="84-试验方向不止于社群运营以及试验的成败关键">8.4 试验方向不止于社群运营以及试验的成败关键</h4>
+<h4 id="85-有黑客增长难道还需要投广告">8.5 有黑客增长，难道还需要投广告？</h4>
+<h4 id="86-黑客增长的团队设置和第一负责人">8.6 黑客增长的团队设置和第一负责人</h4>
+<h4 id="本章要点-7">本章要点</h4>
+<h4 id="本章思考-7">本章思考</h4>
+<h3 id="第九章-市场营销工作的量化指标与结果追踪">第九章 市场营销工作的量化指标与结果追踪</h3>
+<h4 id="91-市场营销工作导航系统顶层量化指标市场营销部内关键指标漏斗">9.1 市场营销工作“导航系统”：顶层量化指标、市场营销部内关键指标漏斗</h4>
+<h4 id="92-杀手级的六套市场营销数据报表">9.2 “杀手级”的六套市场营销数据报表</h4>
+<h4 id="93-90的企业都会算错的转化率和roi">9.3 90%的企业都会算错的转化率和ROI</h4>
+<h4 id="本章要点-8">本章要点</h4>
+<h4 id="本章思考-8">本章思考</h4>
+<h3 id="第十章-市场营销团队架构与考核指标">第十章 市场营销团队架构与考核指标</h3>
+<h4 id="101-团队架构10多个子团队各种工匠聚集">10.1 团队架构：10多个子团队，各种“工匠”聚集</h4>
+<h4 id="102-子团队和人数的变迁">10.2 子团队和人数的变迁</h4>
+<h4 id="103-团队考核指标三大指标与销售团队穿一条裤子">10.3 团队考核指标：三大指标、与销售团队“穿一条裤子”</h4>
+<h4 id="本章要点-9">本章要点</h4>
+<h4 id="本章思考-9">本章思考</h4>
+<h3 id="附录一-市场营销专业词汇清单中英文对照">附录一 市场营销专业词汇清单（中英文对照）</h3>
+<h3 id="附录二-十个重要而常用的市场营销模型">附录二 十个重要而常用的市场营销模型</h3>
+<h3 id="后记">后记</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E7%AE%A1%E7%90%86%E5%85%A8%E5%B1%80-%E5%85%AB%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9D%97%E8%A7%84%E6%A8%A1%E5%8C%96%E5%AE%9E%E6%88%98%E5%BF%85%E5%A4%87">第一章 市场营销管理全局： 八大经典模块，规模化实战必备</a>
+<ul>
+<li><a href="#11-%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E7%9A%84%E6%9E%81%E7%AE%80%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%85%A8%E5%B1%80">1.1 市场营销的极简定义与全局</a></li>
+<li><a href="#12-%E5%85%AB%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9D%97%E4%B9%8B%E5%AE%8C%E6%95%B4%E4%BD%93%E7%B3%BB%E7%9A%84%E7%94%B1%E6%9D%A5%E4%B8%8E%E6%9C%AA%E6%9D%A5">1.2 八大经典模块之“完整体系”的由来与未来</a></li>
+<li><a href="#13-%E8%A7%84%E6%A8%A1%E5%8C%96%E5%AE%9E%E6%88%98%E5%BF%85%E5%A4%87%E5%85%AB%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9D%97">1.3 规模化实战必备：八大经典模块</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E8%A6%81%E7%82%B9">本章要点</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E6%80%9D%E8%80%83">本章思考</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%B8%82%E5%9C%BA%E6%B4%9E%E5%AF%9F-%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A%E6%89%93%E5%BE%97%E6%9B%B4%E5%87%86">第二章 市场洞察： 了解更多、打得更准</a>
+<ul>
+<li><a href="#21-%E5%B8%82%E5%9C%BA%E6%B4%9E%E5%AF%9F%E5%85%B6%E5%AE%9E%E5%8F%AF%E4%BB%A5%E4%B8%8D%E5%81%9A">2.1 市场洞察其实可以不做？</a></li>
+<li><a href="#22-%E6%B4%9E%E5%AF%9F%E4%BB%80%E4%B9%88%E7%BB%93%E6%9E%9C%E6%80%8E%E4%B9%88%E5%B1%95%E7%A4%BA%E4%BA%94%E4%B8%AA%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9E%8B">2.2 洞察什么、结果怎么展示：五个经典模型</a></li>
+<li><a href="#23-%E5%B8%82%E5%9C%BA%E6%B4%9E%E5%AF%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86%E6%96%B9%E6%B3%95%E5%92%8C%E5%8F%98%E9%9D%A9">2.3 市场洞察的数据收集方法和变革</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E8%A6%81%E7%82%B9-1">本章要点</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E6%80%9D%E8%80%83-1">本章思考</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%A2%E6%88%B7%E7%BB%86%E5%88%86%E5%92%8C%E7%9B%AE%E6%A0%87%E5%AE%A2%E6%88%B7%E9%80%89%E6%8B%A9-%E5%8F%96%E8%88%8D%E5%8F%AA%E6%9C%8D%E5%8A%A1%E8%B0%81%E7%BB%99%E8%87%AA%E5%B7%B1%E4%B8%80%E7%BA%BF%E7%94%9F%E6%9C%BA">第三章 客户细分和目标客户选择： 取舍“只服务谁”，给自己一线生机</a>
+<ul>
+<li><a href="#31-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E6%9C%8D%E5%8A%A1%E6%89%80%E6%9C%89%E5%AE%A2%E6%88%B7">3.1 为什么不能服务“所有”客户？</a></li>
+<li><a href="#32-%E5%AE%A2%E6%88%B7%E7%BB%86%E5%88%86%E5%92%8C%E7%9B%AE%E6%A0%87%E5%AE%A2%E6%88%B7%E9%80%89%E6%8B%A9%E4%B8%A4%E6%AD%A5%E5%90%88%E5%8A%9B%E5%9B%9E%E7%AD%94%E5%8F%AA%E6%9C%8D%E5%8A%A1%E8%B0%81">3.2 客户细分和目标客户选择：两步合力回答“只服务谁”</a></li>
+<li><a href="#33-%E7%BD%91%E6%A0%BC%E6%A8%A1%E5%9E%8B%E5%AE%A2%E6%88%B7%E7%BB%86%E5%88%86%E5%92%8C%E7%9B%AE%E6%A0%87%E5%AE%A2%E6%88%B7%E9%80%89%E6%8B%A9%E7%9A%84%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7">3.3 网格模型：客户细分和目标客户选择的实用工具</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E8%A6%81%E7%82%B9-2">本章要点</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E6%80%9D%E8%80%83-2">本章思考</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%AE%9A%E4%BD%8D-%E5%8D%A0%E9%A2%86%E4%B8%80%E4%B8%AA%E5%B7%AE%E5%BC%82%E5%8C%96%E7%9A%84%E4%BD%8D%E7%BD%AE">第四章 定位： 占领一个差异化的“位置”</a>
+<ul>
+<li><a href="#41-%E5%AE%9A%E4%BD%8D%E7%9A%84%E6%9E%81%E7%AE%80%E5%AE%9A%E4%B9%89%E5%9C%A8%E5%AE%A2%E6%88%B7%E5%BF%83%E6%99%BA%E4%B8%AD%E5%8D%A0%E9%A2%86%E4%B8%80%E4%B8%AA%E5%B7%AE%E5%BC%82%E5%8C%96%E7%9A%84%E4%BD%8D%E7%BD%AE">4.1 定位的极简定义：在客户心智中占领一个差异化的位置</a></li>
+<li><a href="#42-%E4%B8%89%E7%A7%8D%E7%BB%8F%E5%85%B8%E7%9A%84%E5%AE%9A%E4%BD%8D%E6%96%B9%E5%BC%8F%E5%92%8C%E4%B8%80%E4%B8%AA%E5%AE%9A%E4%BD%8D%E8%84%91%E5%9B%BE">4.2 三种经典的定位方式和一个定位脑图</a></li>
+<li><a href="#43-%E5%AE%9A%E4%BD%8D%E7%9A%84%E5%B8%8C%E6%9C%9B%E5%8F%98%E6%88%90%E7%BB%93%E6%9E%9C%E8%AE%A9%E5%93%81%E7%89%8C%E5%8D%A0%E9%A2%86%E9%82%A3%E4%B8%AA%E4%BD%8D%E7%BD%AE">4.3 定位的希望变成结果：让品牌占领那个“位置”</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E8%A6%81%E7%82%B9-3">本章要点</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E6%80%9D%E8%80%83-3">本章思考</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%93%81%E7%89%8C-%E4%B8%80%E4%B8%AA%E6%89%BF%E8%AF%BA">第五章 品牌： 一个“承诺”</a>
+<ul>
+<li><a href="#51-%E5%93%81%E7%89%8C90%E7%9A%84%E4%BA%BA%E5%BF%83%E7%9F%A5%E8%82%9A%E6%98%8E%E5%8D%B4%E8%AF%B4%E4%B8%8D%E6%B8%85">5.1 品牌：90%的人“心知肚明”，却说不清</a></li>
+<li><a href="#52-%E5%93%81%E7%89%8C%E7%9A%84%E6%9E%81%E7%AE%80%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E6%89%BF%E8%AF%BA">5.2 品牌的极简定义：一个“承诺”</a></li>
+<li><a href="#53-%E4%B8%BA%E4%BD%95%E6%89%BF%E8%AF%BA%E6%9C%89%E7%94%A8%E4%B8%94%E9%87%8D%E8%A6%81">5.3 为何“承诺”有用且重要</a></li>
+<li><a href="#54-%E5%81%9A%E6%9B%B4%E9%AB%98%E7%BA%A7%E5%93%81%E7%89%8C%E7%9A%84%E6%9A%97%E8%AF%AD%E4%B8%8D%E4%BB%85%E4%BB%85%E6%98%AF%E4%BA%A7%E5%93%81%E6%9C%AC%E8%BA%AB">5.4 做更“高级”品牌的暗语：“不仅仅是……（产品本身）……”</a></li>
+<li><a href="#55-%E7%94%A8%E5%93%81%E7%89%8C%E4%BB%B7%E5%80%BC%E5%9B%BE%E6%9D%A5%E8%A7%84%E5%88%92%E6%89%BF%E8%AF%BA%E5%8A%9F%E8%83%BD%E4%BB%B7%E5%80%BC%E5%92%8C%E6%83%85%E6%84%9F%E4%BB%B7%E5%80%BC">5.5 用“品牌价值图”来规划承诺、功能价值和情感价值</a></li>
+<li><a href="#56-%E8%8B%B1%E5%9B%BD%E5%92%8C%E7%BE%8E%E5%9B%BD%E7%9A%84%E6%83%85%E6%84%9F%E4%BB%B7%E5%80%BC%E4%B9%8B%E6%88%98%E6%88%91%E4%B9%9F%E5%BE%88%E5%88%9B%E6%96%B0">5.6 英国和美国的情感价值之战：“我也很创新”</a></li>
+<li><a href="#57-%E5%93%81%E7%89%8C%E5%92%8C%E5%95%86%E6%A0%87%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B8%BA%E4%BD%95%E8%8B%B9%E6%9E%9C%E5%9C%A8%E4%B8%AD%E5%9B%BD%E6%A0%BD%E8%B7%9F%E5%A4%B4">5.7 品牌和商标的关系，为何苹果在中国栽跟头</a></li>
+<li><a href="#58-%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%93%81%E7%89%8C%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB">5.8 定位和品牌到底是什么关系</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E8%A6%81%E7%82%B9-4">本章要点</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E6%80%9D%E8%80%83-4">本章思考</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E7%BB%84%E5%90%884p-%E5%90%88%E5%8A%9B%E8%A1%A8%E8%BE%BE%E5%B9%B6%E5%85%91%E7%8E%B0%E9%82%A3%E4%B8%AA%E6%89%BF%E8%AF%BA">第六章 市场营销组合4P： 合力表达并兑现那个“承诺”</a>
+<ul>
+<li><a href="#61-%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E7%BB%84%E5%90%884p%E7%9A%84%E4%BD%BF%E5%91%BD%E5%90%88%E5%8A%9B%E8%A1%A8%E8%BE%BE%E5%B9%B6%E5%85%91%E7%8E%B0%E9%82%A3%E4%B8%AA%E6%89%BF%E8%AF%BA">6.1 市场营销组合4P的使命：合力表达并兑现那个“承诺”</a></li>
+<li><a href="#62-%E7%BB%84%E5%90%88%E7%9A%84%E9%AD%94%E5%8A%9B%E5%92%8C%E7%A6%81%E5%BF%8C1111%E5%A4%A7%E4%BA%8E4%E4%B9%9F%E8%83%BD%E7%AD%89%E4%BA%8E0">6.2 组合的魔力和禁忌：1+1+1+1大于4，也能等于0</a></li>
+<li><a href="#63-%E5%BB%BA%E9%95%BF%E6%9D%BFvipabc%E5%92%8C51talk%E7%9A%84%E5%A4%96%E6%95%99%E4%B9%8B%E6%88%98">6.3 建长板：VIPABC和51Talk的“外教之战”</a></li>
+<li><a href="#64-%E8%A1%A5%E7%9F%AD%E6%9D%BF%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E7%9A%84%E6%98%8E%E6%98%9F%E4%BB%A3%E8%A8%80%E4%BA%BA%E5%A4%A7%E6%88%98">6.4 补短板：在线教育行业的明星代言人大战</a></li>
+<li><a href="#65-%E6%9B%B4%E9%AB%98%E5%A3%B0%E9%87%8F%E7%9C%9F%E6%9C%89%E7%94%A8%E5%88%B0%E5%BA%95%E5%9B%BA%E7%89%B9%E5%BC%82%E5%92%8C%E7%B1%B3%E5%85%B6%E6%9E%97%E8%B0%81%E6%9B%B4%E5%AE%89%E5%85%A8">6.5 “更高声量”真有用？！到底固特异和米其林谁更安全</a></li>
+<li><a href="#66-%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E7%BB%84%E5%90%88%E6%A8%A1%E5%9E%8B%E9%A9%B1%E5%8A%A8%E6%89%80%E6%9C%89%E4%BA%BA%E7%9A%84%E6%88%98%E7%95%A5%E5%9C%B0%E5%9B%BE">6.6 市场营销组合模型，驱动“所有人”的战略地图</a></li>
+<li><a href="#67-4p%E7%9A%84%E9%82%A3%E4%BA%9B%E8%8A%B1%E5%93%A8%E5%8F%98%E7%A7%8D">6.7 4P的那些“花哨变种”</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E8%A6%81%E7%82%B9-5">本章要点</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E6%80%9D%E8%80%83-5">本章思考</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E7%BB%84%E5%90%88%E7%9A%84%E7%AC%AC4%E4%B8%AAp%E4%BF%83%E9%94%80%E7%BB%84%E5%90%88-%E4%BC%A0%E8%AF%B4%E4%B8%AD%E7%9A%84%E6%95%B4%E5%90%88%E8%90%A5%E9%94%80%E4%BC%A0%E6%92%AD">第七章 市场营销组合的第4个P“促销组合”： 传说中的整合营销传播</a>
+<ul>
+<li><a href="#71-%E4%BF%83%E9%94%80%E7%BB%84%E5%90%88%E4%BC%A0%E8%AF%B4%E4%B8%AD%E7%9A%84%E6%95%B4%E5%90%88%E8%90%A5%E9%94%80%E4%BC%A0%E6%92%AD">7.1 促销组合：传说中的“整合营销传播”</a></li>
+<li><a href="#72-%E6%95%B4%E5%90%88%E8%90%A5%E9%94%80%E4%BC%A0%E6%92%AD%E7%9A%84%E5%8E%9F%E7%90%86%E5%92%8C%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%BF%99%E5%9B%9B%E7%B1%BB%E4%BC%A0%E6%92%AD%E5%B7%A5%E5%85%B7%E7%9A%84%E6%95%B4%E5%90%88">7.2 整合营销传播的原理和基本功：这四类传播工具的整合</a></li>
+<li><a href="#73-%E5%AE%9D%E6%B4%81%E5%BC%95%E9%A2%86%E7%9A%84%E6%95%B4%E5%90%88%E8%90%A5%E9%94%80%E4%BC%A0%E6%92%AD%E5%AE%9E%E6%88%98%E8%BF%AD%E4%BB%A3poes%E6%A8%A1%E5%9E%8B">7.3 宝洁引领的整合营销传播实战迭代：POES模型</a></li>
+<li><a href="#74-cmo%E7%A7%98%E6%96%B9%E5%93%81%E7%89%8C%E5%9E%8B%E5%B9%BF%E5%91%8A%E4%B8%8E%E6%B5%81%E9%87%8F%E5%9E%8B%E5%B9%BF%E5%91%8A%E9%85%8D%E6%AF%94%E6%98%AF64%E8%BF%98%E6%98%AF82">7.4 CMO秘方：品牌型广告与流量型广告配比是6∶4还是8∶2？</a></li>
+<li><a href="#75-%E6%95%B4%E5%90%88%E8%90%A5%E9%94%80%E4%BC%A0%E6%92%AD%E5%88%9B%E6%96%B0%E9%A9%B1%E5%8A%A8%E4%BA%86%E4%BA%BA%E5%92%8C%E9%92%B1%E7%9A%84%E5%88%86%E9%85%8D%E8%BF%AD%E4%BB%A3">7.5 整合营销传播创新驱动了“人”和“钱”的分配迭代</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E8%A6%81%E7%82%B9-6">本章要点</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E6%80%9D%E8%80%83-6">本章思考</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E9%BB%91%E5%AE%A2%E5%A2%9E%E9%95%BF-%E7%94%A8%E8%AF%95%E9%AA%8C%E9%A9%B1%E5%8A%A8%E4%BA%94%E7%A7%8D%E5%A2%9E%E9%95%BF">第八章 黑客增长： 用“试验”驱动五种增长</a>
+<ul>
+<li><a href="#81-%E9%BB%91%E5%AE%A2%E5%A2%9E%E9%95%BF%E7%9A%84%E6%9C%AC%E8%B4%A8%E7%94%A8%E9%AB%98%E9%80%9F%E5%BA%A6%E8%B7%A8%E8%81%8C%E8%83%BD%E7%9A%84%E8%AF%95%E9%AA%8C%E6%9D%A5%E9%A9%B1%E5%8A%A8%E4%BA%94%E7%A7%8D%E5%A2%9E%E9%95%BF">8.1 黑客增长的本质：用高速度、跨职能的试验来驱动五种增长</a></li>
+<li><a href="#82-%E7%94%A8%E8%AF%95%E9%AA%8C%E9%A9%B1%E5%8A%A8%E4%BA%94%E7%A7%8D%E5%A2%9E%E9%95%BFaarrr">8.2 用试验驱动五种增长：AARRR</a></li>
+<li><a href="#83-%E9%BB%91%E5%AE%A2%E5%A2%9E%E9%95%BF%E7%9A%84%E7%88%86%E6%AC%BE%E7%8E%A9%E6%B3%95%E5%85%BB%E9%B1%BC%E5%86%8D%E9%92%93%E9%B1%BC">8.3 黑客增长的爆款玩法“养鱼再钓鱼”</a></li>
+<li><a href="#84-%E8%AF%95%E9%AA%8C%E6%96%B9%E5%90%91%E4%B8%8D%E6%AD%A2%E4%BA%8E%E7%A4%BE%E7%BE%A4%E8%BF%90%E8%90%A5%E4%BB%A5%E5%8F%8A%E8%AF%95%E9%AA%8C%E7%9A%84%E6%88%90%E8%B4%A5%E5%85%B3%E9%94%AE">8.4 试验方向不止于社群运营以及试验的成败关键</a></li>
+<li><a href="#85-%E6%9C%89%E9%BB%91%E5%AE%A2%E5%A2%9E%E9%95%BF%E9%9A%BE%E9%81%93%E8%BF%98%E9%9C%80%E8%A6%81%E6%8A%95%E5%B9%BF%E5%91%8A">8.5 有黑客增长，难道还需要投广告？</a></li>
+<li><a href="#86-%E9%BB%91%E5%AE%A2%E5%A2%9E%E9%95%BF%E7%9A%84%E5%9B%A2%E9%98%9F%E8%AE%BE%E7%BD%AE%E5%92%8C%E7%AC%AC%E4%B8%80%E8%B4%9F%E8%B4%A3%E4%BA%BA">8.6 黑客增长的团队设置和第一负责人</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E8%A6%81%E7%82%B9-7">本章要点</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E6%80%9D%E8%80%83-7">本章思考</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%87%8F%E5%8C%96%E6%8C%87%E6%A0%87%E4%B8%8E%E7%BB%93%E6%9E%9C%E8%BF%BD%E8%B8%AA">第九章 市场营销工作的量化指标与结果追踪</a>
+<ul>
+<li><a href="#91-%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E5%B7%A5%E4%BD%9C%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F%E9%A1%B6%E5%B1%82%E9%87%8F%E5%8C%96%E6%8C%87%E6%A0%87%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E9%83%A8%E5%86%85%E5%85%B3%E9%94%AE%E6%8C%87%E6%A0%87%E6%BC%8F%E6%96%97">9.1 市场营销工作“导航系统”：顶层量化指标、市场营销部内关键指标漏斗</a></li>
+<li><a href="#92-%E6%9D%80%E6%89%8B%E7%BA%A7%E7%9A%84%E5%85%AD%E5%A5%97%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E6%95%B0%E6%8D%AE%E6%8A%A5%E8%A1%A8">9.2 “杀手级”的六套市场营销数据报表</a></li>
+<li><a href="#93-90%E7%9A%84%E4%BC%81%E4%B8%9A%E9%83%BD%E4%BC%9A%E7%AE%97%E9%94%99%E7%9A%84%E8%BD%AC%E5%8C%96%E7%8E%87%E5%92%8Croi">9.3 90%的企业都会算错的转化率和ROI</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E8%A6%81%E7%82%B9-8">本章要点</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E6%80%9D%E8%80%83-8">本章思考</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E5%9B%A2%E9%98%9F%E6%9E%B6%E6%9E%84%E4%B8%8E%E8%80%83%E6%A0%B8%E6%8C%87%E6%A0%87">第十章 市场营销团队架构与考核指标</a>
+<ul>
+<li><a href="#101-%E5%9B%A2%E9%98%9F%E6%9E%B6%E6%9E%8410%E5%A4%9A%E4%B8%AA%E5%AD%90%E5%9B%A2%E9%98%9F%E5%90%84%E7%A7%8D%E5%B7%A5%E5%8C%A0%E8%81%9A%E9%9B%86">10.1 团队架构：10多个子团队，各种“工匠”聚集</a></li>
+<li><a href="#102-%E5%AD%90%E5%9B%A2%E9%98%9F%E5%92%8C%E4%BA%BA%E6%95%B0%E7%9A%84%E5%8F%98%E8%BF%81">10.2 子团队和人数的变迁</a></li>
+<li><a href="#103-%E5%9B%A2%E9%98%9F%E8%80%83%E6%A0%B8%E6%8C%87%E6%A0%87%E4%B8%89%E5%A4%A7%E6%8C%87%E6%A0%87%E4%B8%8E%E9%94%80%E5%94%AE%E5%9B%A2%E9%98%9F%E7%A9%BF%E4%B8%80%E6%9D%A1%E8%A3%A4%E5%AD%90">10.3 团队考核指标：三大指标、与销售团队“穿一条裤子”</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E8%A6%81%E7%82%B9-9">本章要点</a></li>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E6%80%9D%E8%80%83-9">本章思考</a></li>
+</ul>
+</li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%B8%80-%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E4%B8%93%E4%B8%9A%E8%AF%8D%E6%B1%87%E6%B8%85%E5%8D%95%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E7%85%A7">附录一 市场营销专业词汇清单（中英文对照）</a></li>
+<li><a href="#%E9%99%84%E5%BD%95%E4%BA%8C-%E5%8D%81%E4%B8%AA%E9%87%8D%E8%A6%81%E8%80%8C%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B8%82%E5%9C%BA%E8%90%A5%E9%94%80%E6%A8%A1%E5%9E%8B">附录二 十个重要而常用的市场营销模型</a></li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

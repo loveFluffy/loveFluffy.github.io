@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x7cbe;&#x51c6;&#x8868;&#x8fbe;&#xff1a;&#x8ba9;&#x4f60;&#x7684;&#x65b9;&#x6848;&#x5728;&#x6700;&#x77ed;&#x7684;&#x65f6;&#x95f4;&#x5185;&#x6253;&#x52a8;&#x4eba;&#x5fc3;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x7cbe;&#x51c6;&#x8868;&#x8fbe;&#xff1a;&#x8ba9;&#x4f60;&#x7684;&#x65b9;&#x6848;&#x5728;&#x6700;&#x77ed;&#x7684;&#x65f6;&#x95f4;&#x5185;&#x6253;&#x52a8;&#x4eba;&#x5fc3;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,551 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="精准表达让你的方案在最短的时间内打动人心">精准表达：让你的方案在最短的时间内打动人心</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/10360.jpg"></td><td>
+<h1 id="精准表达让你的方案在最短的时间内打动人心">精准表达：让你的方案在最短的时间内打动人心</h1>
+<center>[日]高田贵久 著|宋晓煜 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="序言-何为书面沟通的技术">序言 何为书面沟通的技术</h3>
+<h4 id="本书的结构">本书的结构</h4>
+<h4 id="书面沟通的技术对谁有益">书面沟通的技术对谁有益</h4>
+<h4 id="方案为何难以通过">方案为何难以通过</h4>
+<h3 id="序章-一个关于开展新业务的故事">序章 一个关于开展新业务的故事</h3>
+<h4 id="story-0-创办新业务的任命">STORY-0 创办新业务的任命</h4>
+<h5 id="前途多艰的课题">前途多艰的课题</h5>
+<h5 id="向-precena-咨询公司求助">向 Precena 咨询公司求助</h5>
+<h5 id="成形的脚本">成形的脚本</h5>
+<h5 id="共同业务的启动">共同业务的启动</h5>
+<h3 id="第1章-提交方案的技术">第1章 提交方案的技术</h3>
+<h4 id="story-1-命运般的邂逅">STORY-1 命运般的邂逅</h4>
+<h5 id="中山先生的烦恼">中山先生的烦恼</h5>
+<h5 id="难以理解的提案内容">难以理解的提案内容</h5>
+<h5 id="从怀疑到期待">从怀疑到期待</h5>
+<h5 id="社长的反对">社长的反对</h5>
+<h4 id="序节-磨炼提交方案的能力">序节 磨炼提交方案的能力</h4>
+<h5 id="每天都在提交方案">每天都在提交方案</h5>
+<h5 id="提交方案就要努力让方案通过">提交方案就要努力让方案通过</h5>
+<h5 id="书面资料">书面资料</h5>
+<h5 id="制作书面资料的过程有利于理清自己的思路">制作书面资料的过程有利于理清自己的思路</h5>
+<h5 id="书面资料可以让演讲者言之有物">书面资料可以让演讲者言之有物</h5>
+<h5 id="如何提高书面沟通能力">如何提高书面沟通能力</h5>
+<h5 id="合理思考所需的必要条件">合理思考所需的必要条件</h5>
+<h5 id="妥当表达所需的必要条件">妥当表达所需的必要条件</h5>
+<h5 id="要点-书面沟通的技术">要点 书面沟通的技术</h5>
+<h3 id="第2章-逻辑思考能力-组织语言的能力">第2章 逻辑思考能力 组织语言的能力</h3>
+<h4 id="story-2-中间报告的走向">STORY-2 中间报告的走向</h4>
+<h5 id="不断高涨的紧张感">不断高涨的紧张感</h5>
+<h5 id="最初的疑问">最初的疑问</h5>
+<h5 id="报告会结束之后">报告会结束之后</h5>
+<h4 id="序节-何为逻辑">序节 何为逻辑</h4>
+<h5 id="逻辑的必要性">逻辑的必要性</h5>
+<h5 id="逻辑具体是指什么">逻辑具体是指什么</h5>
+<h5 id="对方不理解的情况包括两种">对方不理解的情况包括两种</h5>
+<h5 id="为何对方会问真是这样的吗">为何对方会问：“真是这样的吗？”</h5>
+<h5 id="纵向逻辑的理想状态">纵向逻辑的理想状态</h5>
+<h5 id="为何对方会问只是这样吗">为何对方会问：“只是这样吗？”</h5>
+<h5 id="横向逻辑的理想状态">横向逻辑的理想状态</h5>
+<h5 id="逻辑合理与否由对方判断">逻辑合理与否由对方判断</h5>
+<h5 id="要点-何为逻辑">要点 何为逻辑</h5>
+<h4 id="第1节-建立纵向逻辑">第1节 建立纵向逻辑</h4>
+<h5 id="纵向逻辑薄弱的三个原因">纵向逻辑薄弱的三个原因</h5>
+<h5 id="如何消除导致纵向逻辑薄弱的因素">如何消除导致纵向逻辑薄弱的因素</h5>
+<h5 id="要点-建立纵向逻辑">要点 建立纵向逻辑</h5>
+<h4 id="第2节-建立横向逻辑">第2节 建立横向逻辑</h4>
+<h5 id="横向逻辑的组合">横向逻辑的组合</h5>
+<h5 id="为何无法实现-mece-状态">为何无法实现 MECE 状态</h5>
+<h5 id="体会语言中的层次感">体会语言中的层次感</h5>
+<h5 id="把不同角度的概念归拢到同一平面">把不同角度的概念归拢到同一平面</h5>
+<h5 id="如何实现-mece-状态">如何实现 MECE 状态</h5>
+<h5 id="完成横向逻辑">完成横向逻辑</h5>
+<h5 id="最终形成金字塔结构">最终形成金字塔结构</h5>
+<h5 id="要点-建立横向逻辑">要点 建立横向逻辑</h5>
+<h3 id="第3章-验证假说能力-回答疑问的步骤">第3章 验证假说能力 回答疑问的步骤</h3>
+<h4 id="story-3-最终报告的失策">STORY-3 最终报告的失策</h4>
+<h5 id="暴风雨前的宁静">暴风雨前的宁静</h5>
+<h5 id="户崎的提案要点">户崎的提案要点</h5>
+<h5 id="巨大的误会">巨大的误会</h5>
+<h5 id="留下的作业">留下的作业</h5>
+<h4 id="序节-何为验证假说能力">序节 何为验证假说能力</h4>
+<h5 id="逻辑思考的陷阱">逻辑思考的陷阱</h5>
+<h5 id="地毯式轰炸般提问和无凭无据的断言">“地毯式轰炸般提问”和“无凭无据的断言”</h5>
+<h5 id="假说验证的五个步骤">假说验证的五个步骤</h5>
+<h5 id="要点-何为假说验证能力">要点 何为假说验证能力</h5>
+<h4 id="第1节-理解目的">第1节 理解目的</h4>
+<h5 id="讨论的立场和对方的要求">“讨论的立场”和“对方的要求”</h5>
+<h5 id="讨论的立场包括两种">讨论的立场包括两种</h5>
+<h5 id="逼迫和引导">“逼迫”和“引导”</h5>
+<h5 id="要求对方做判断">要求对方做判断</h5>
+<h5 id="总结要更具体">总结要更具体</h5>
+<h5 id="感性思维不可或缺">感性思维不可或缺</h5>
+<h5 id="结果是由对方决定">结果是由对方决定</h5>
+<h5 id="要点-理解目的">要点 理解目的</h5>
+<h4 id="第2节-把握论点">第2节 把握论点</h4>
+<h5 id="何为论点">何为论点</h5>
+<h5 id="论点的具体案例">论点的具体案例</h5>
+<h5 id="偏离论点的四种类型">偏离论点的四种类型</h5>
+<h5 id="如何把握论点">如何把握论点</h5>
+<h5 id="双方论点不一致的原因">双方论点不一致的原因</h5>
+<h5 id="要点-把握论点">要点 把握论点</h5>
+<h4 id="第3节-构建假说">第3节 构建假说</h4>
+<h5 id="何为假说">何为假说</h5>
+<h5 id="关于假说的三种误解">关于假说的三种误解</h5>
+<h5 id="为何需要假说">为何需要假说</h5>
+<h5 id="不要让对方过度思考">不要让对方过度思考</h5>
+<h5 id="假说不可能凭空出现">假说不可能凭空出现</h5>
+<h5 id="构建假说时所需的信息和验证假说时所需的信息">构建假说时所需的信息和验证假说时所需的信息</h5>
+<h5 id="构筑假说的三个步骤">构筑假说的三个步骤</h5>
+<h5 id="扩大假说范围提高假说的准确度">扩大假说范围，提高假说的准确度</h5>
+<h5 id="要点-构建假说">要点 构建假说</h5>
+<h4 id="第4节-实施验证">第4节 实施验证</h4>
+<h5 id="证明假说">证明假说</h5>
+<h5 id="验证的陷阱">验证的陷阱</h5>
+<h5 id="验证没有尽头">验证没有尽头</h5>
+<h5 id="即使验证结果被认为是理所当然也没有关系">即使验证结果被认为是理所当然也没有关系</h5>
+<h5 id="二八法则八成理所当然两成新发现">二八法则（八成理所当然，两成新发现）</h5>
+<h5 id="采用确凿的事实根据">采用确凿的事实根据</h5>
+<h5 id="要点-实施验证">要点 实施验证</h5>
+<h4 id="第5节-提取启发">第5节 提取启发</h4>
+<h5 id="何为启发">何为启发</h5>
+<h5 id="为何无法提交答案">为何无法提交“答案”</h5>
+<h5 id="世界没有那么单纯">世界没有那么单纯</h5>
+<h5 id="不存在完美的事实根据">不存在完美的事实根据</h5>
+<h5 id="提取启发应注意三个要点">提取启发应注意三个要点</h5>
+<h5 id="要点-提取启发">要点 提取启发</h5>
+<h3 id="第4章-会议设计能力-总结的技巧">第4章 会议设计能力 总结的技巧</h3>
+<h4 id="story-4-开始交涉合作事宜">STORY-4 开始交涉合作事宜</h4>
+<h5 id="毫无反应的众人">毫无反应的众人</h5>
+<h5 id="意想不到的反对">意想不到的反对</h5>
+<h5 id="咖啡馆内的反省">咖啡馆内的反省</h5>
+<h4 id="序节-何为会议设计">序节 何为会议设计</h4>
+<h5 id="会议无聊的原因">会议无聊的原因</h5>
+<h5 id="无法设计会议的原因">无法设计会议的原因</h5>
+<h5 id="设计会议时需注意两个要素">设计会议时需注意两个要素</h5>
+<h5 id="要点-何为会议设计">要点 何为会议设计</h5>
+<h4 id="第1节-确定着陆点">第1节 确定着陆点</h4>
+<h5 id="定位与输入输出管理">“定位”与“输入/输出管理”</h5>
+<h5 id="三种视角决定定位">三种视角决定定位</h5>
+<h5 id="避免拖拉式的讨论">避免拖拉式的讨论</h5>
+<h5 id="搞错定位会被要求打回重做">搞错定位会被要求打回重做</h5>
+<h5 id="管理好会议的输入与输出">管理好会议的“输入”与“输出”</h5>
+<h5 id="输入输出管理的诀窍">“输入/输出管理”的诀窍</h5>
+<h5 id="要点-确定着陆点">要点 确定着陆点</h5>
+<h4 id="第2节-决定着陆形式">第2节 决定着陆形式</h4>
+<h5 id="着陆形式因人而异">着陆形式因人而异</h5>
+<h5 id="理解对方风格的三个诀窍">理解对方风格的三个诀窍</h5>
+<h5 id="要点-决定着陆形式">要点 决定着陆形式</h5>
+<h3 id="第5章-制作商务文本的能力-制作书面资料的步骤">第5章 制作商务文本的能力 制作书面资料的步骤</h3>
+<h4 id="story-5-未能通过的方案">STORY-5 未能通过的方案</h4>
+<h4 id="序节-何为制作商务文本的能力">序节 何为制作商务文本的能力</h4>
+<h5 id="制作商务文本的五个步骤">制作商务文本的五个步骤</h5>
+<h5 id="用模板制作商务文本">用模板制作商务文本</h5>
+<h5 id="一目了然不被误解">“一目了然、不被误解”</h5>
+<h5 id="不要违反人类的阅读习惯">不要违反人类的阅读习惯</h5>
+<h5 id="需要删除三种类型的内容">需要删除三种类型的内容</h5>
+<h5 id="要点-何为制作商务文本的能力">要点 何为制作商务文本的能力</h5>
+<h4 id="第1节-文字信息要简单明了">第1节 文字信息要简单明了</h4>
+<h5 id="三行文字讲清内容">三行文字讲清内容</h5>
+<h5 id="说明事实启发">说明、事实、启发</h5>
+<h5 id="文字信息的排列方式">文字信息的排列方式</h5>
+<h5 id="如何书写文字信息">如何书写文字信息</h5>
+<h5 id="书写文字信息时的三个注意事项">书写文字信息时的三个注意事项</h5>
+<h5 id="凝缩文字信息的手法">凝缩文字信息的手法</h5>
+<h5 id="要点-文字信息应简洁易懂">要点 文字信息应简洁易懂</h5>
+<h4 id="第2节-把文字信息制成图表">第2节 把文字信息制成图表</h4>
+<h5 id="瞬间传达意思">瞬间传达意思</h5>
+<h5 id="图表的内容与排版">图表的内容与排版</h5>
+<h5 id="图表内容只有三种">图表内容只有三种</h5>
+<h5 id="图表排版只有四种">图表排版只有四种</h5>
+<h5 id="图表的修饰">图表的修饰</h5>
+<h5 id="组装制作图表">组装制作图表</h5>
+<h5 id="要点-把文字信息制成图表">要点 把文字信息制成图表</h5>
+<h4 id="第3节-配置幻灯片">第3节 配置幻灯片</h4>
+<h5 id="制作幻灯片需注意两个要点">制作幻灯片需注意两个要点</h5>
+<h5 id="提高完成度的三个技巧">提高完成度的三个技巧</h5>
+<h5 id="要点-配置幻灯片">要点 配置幻灯片</h5>
+<h4 id="第4节-完成资料包">第4节 完成资料包</h4>
+<h5 id="制作资料包时的注意事项">制作资料包时的注意事项</h5>
+<h5 id="要点-完成资料包">要点 完成资料包</h5>
+<h4 id="第5节-整合资料群">第5节 整合资料群</h4>
+<h5 id="构建资料群">构建资料群</h5>
+<h5 id="要点-整合资料群">要点 整合资料群</h5>
+<h3 id="第6章-最终章">第6章 最终章</h3>
+<h4 id="story-6-方案的成功">STORY-6 方案的成功</h4>
+<h5 id="最后的决战">最后的决战</h5>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BA%8F%E8%A8%80-%E4%BD%95%E4%B8%BA%E4%B9%A6%E9%9D%A2%E6%B2%9F%E9%80%9A%E7%9A%84%E6%8A%80%E6%9C%AF">序言 何为书面沟通的技术</a>
+<ul>
+<li><a href="#%E6%9C%AC%E4%B9%A6%E7%9A%84%E7%BB%93%E6%9E%84">本书的结构</a></li>
+<li><a href="#%E4%B9%A6%E9%9D%A2%E6%B2%9F%E9%80%9A%E7%9A%84%E6%8A%80%E6%9C%AF%E5%AF%B9%E8%B0%81%E6%9C%89%E7%9B%8A">书面沟通的技术对谁有益</a></li>
+<li><a href="#%E6%96%B9%E6%A1%88%E4%B8%BA%E4%BD%95%E9%9A%BE%E4%BB%A5%E9%80%9A%E8%BF%87">方案为何难以通过</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BA%8F%E7%AB%A0-%E4%B8%80%E4%B8%AA%E5%85%B3%E4%BA%8E%E5%BC%80%E5%B1%95%E6%96%B0%E4%B8%9A%E5%8A%A1%E7%9A%84%E6%95%85%E4%BA%8B">序章 一个关于开展新业务的故事</a>
+<ul>
+<li><a href="#story-0-%E5%88%9B%E5%8A%9E%E6%96%B0%E4%B8%9A%E5%8A%A1%E7%9A%84%E4%BB%BB%E5%91%BD">STORY-0 创办新业务的任命</a>
+<ul>
+<li><a href="#%E5%89%8D%E9%80%94%E5%A4%9A%E8%89%B0%E7%9A%84%E8%AF%BE%E9%A2%98">前途多艰的课题</a></li>
+<li><a href="#%E5%90%91-precena-%E5%92%A8%E8%AF%A2%E5%85%AC%E5%8F%B8%E6%B1%82%E5%8A%A9">向 Precena 咨询公司求助</a></li>
+<li><a href="#%E6%88%90%E5%BD%A2%E7%9A%84%E8%84%9A%E6%9C%AC">成形的脚本</a></li>
+<li><a href="#%E5%85%B1%E5%90%8C%E4%B8%9A%E5%8A%A1%E7%9A%84%E5%90%AF%E5%8A%A8">共同业务的启动</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E6%8F%90%E4%BA%A4%E6%96%B9%E6%A1%88%E7%9A%84%E6%8A%80%E6%9C%AF">第1章 提交方案的技术</a>
+<ul>
+<li><a href="#story-1-%E5%91%BD%E8%BF%90%E8%88%AC%E7%9A%84%E9%82%82%E9%80%85">STORY-1 命运般的邂逅</a>
+<ul>
+<li><a href="#%E4%B8%AD%E5%B1%B1%E5%85%88%E7%94%9F%E7%9A%84%E7%83%A6%E6%81%BC">中山先生的烦恼</a></li>
+<li><a href="#%E9%9A%BE%E4%BB%A5%E7%90%86%E8%A7%A3%E7%9A%84%E6%8F%90%E6%A1%88%E5%86%85%E5%AE%B9">难以理解的提案内容</a></li>
+<li><a href="#%E4%BB%8E%E6%80%80%E7%96%91%E5%88%B0%E6%9C%9F%E5%BE%85">从怀疑到期待</a></li>
+<li><a href="#%E7%A4%BE%E9%95%BF%E7%9A%84%E5%8F%8D%E5%AF%B9">社长的反对</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BA%8F%E8%8A%82-%E7%A3%A8%E7%82%BC%E6%8F%90%E4%BA%A4%E6%96%B9%E6%A1%88%E7%9A%84%E8%83%BD%E5%8A%9B">序节 磨炼提交方案的能力</a>
+<ul>
+<li><a href="#%E6%AF%8F%E5%A4%A9%E9%83%BD%E5%9C%A8%E6%8F%90%E4%BA%A4%E6%96%B9%E6%A1%88">每天都在提交方案</a></li>
+<li><a href="#%E6%8F%90%E4%BA%A4%E6%96%B9%E6%A1%88%E5%B0%B1%E8%A6%81%E5%8A%AA%E5%8A%9B%E8%AE%A9%E6%96%B9%E6%A1%88%E9%80%9A%E8%BF%87">提交方案就要努力让方案通过</a></li>
+<li><a href="#%E4%B9%A6%E9%9D%A2%E8%B5%84%E6%96%99">书面资料</a></li>
+<li><a href="#%E5%88%B6%E4%BD%9C%E4%B9%A6%E9%9D%A2%E8%B5%84%E6%96%99%E7%9A%84%E8%BF%87%E7%A8%8B%E6%9C%89%E5%88%A9%E4%BA%8E%E7%90%86%E6%B8%85%E8%87%AA%E5%B7%B1%E7%9A%84%E6%80%9D%E8%B7%AF">制作书面资料的过程有利于理清自己的思路</a></li>
+<li><a href="#%E4%B9%A6%E9%9D%A2%E8%B5%84%E6%96%99%E5%8F%AF%E4%BB%A5%E8%AE%A9%E6%BC%94%E8%AE%B2%E8%80%85%E8%A8%80%E4%B9%8B%E6%9C%89%E7%89%A9">书面资料可以让演讲者言之有物</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E4%B9%A6%E9%9D%A2%E6%B2%9F%E9%80%9A%E8%83%BD%E5%8A%9B">如何提高书面沟通能力</a></li>
+<li><a href="#%E5%90%88%E7%90%86%E6%80%9D%E8%80%83%E6%89%80%E9%9C%80%E7%9A%84%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6">合理思考所需的必要条件</a></li>
+<li><a href="#%E5%A6%A5%E5%BD%93%E8%A1%A8%E8%BE%BE%E6%89%80%E9%9C%80%E7%9A%84%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6">妥当表达所需的必要条件</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E4%B9%A6%E9%9D%A2%E6%B2%9F%E9%80%9A%E7%9A%84%E6%8A%80%E6%9C%AF">要点 书面沟通的技术</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E9%80%BB%E8%BE%91%E6%80%9D%E8%80%83%E8%83%BD%E5%8A%9B-%E7%BB%84%E7%BB%87%E8%AF%AD%E8%A8%80%E7%9A%84%E8%83%BD%E5%8A%9B">第2章 逻辑思考能力 组织语言的能力</a>
+<ul>
+<li><a href="#story-2-%E4%B8%AD%E9%97%B4%E6%8A%A5%E5%91%8A%E7%9A%84%E8%B5%B0%E5%90%91">STORY-2 中间报告的走向</a>
+<ul>
+<li><a href="#%E4%B8%8D%E6%96%AD%E9%AB%98%E6%B6%A8%E7%9A%84%E7%B4%A7%E5%BC%A0%E6%84%9F">不断高涨的紧张感</a></li>
+<li><a href="#%E6%9C%80%E5%88%9D%E7%9A%84%E7%96%91%E9%97%AE">最初的疑问</a></li>
+<li><a href="#%E6%8A%A5%E5%91%8A%E4%BC%9A%E7%BB%93%E6%9D%9F%E4%B9%8B%E5%90%8E">报告会结束之后</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BA%8F%E8%8A%82-%E4%BD%95%E4%B8%BA%E9%80%BB%E8%BE%91">序节 何为逻辑</a>
+<ul>
+<li><a href="#%E9%80%BB%E8%BE%91%E7%9A%84%E5%BF%85%E8%A6%81%E6%80%A7">逻辑的必要性</a></li>
+<li><a href="#%E9%80%BB%E8%BE%91%E5%85%B7%E4%BD%93%E6%98%AF%E6%8C%87%E4%BB%80%E4%B9%88">逻辑具体是指什么</a></li>
+<li><a href="#%E5%AF%B9%E6%96%B9%E4%B8%8D%E7%90%86%E8%A7%A3%E7%9A%84%E6%83%85%E5%86%B5%E5%8C%85%E6%8B%AC%E4%B8%A4%E7%A7%8D">对方不理解的情况包括两种</a></li>
+<li><a href="#%E4%B8%BA%E4%BD%95%E5%AF%B9%E6%96%B9%E4%BC%9A%E9%97%AE%E7%9C%9F%E6%98%AF%E8%BF%99%E6%A0%B7%E7%9A%84%E5%90%97">为何对方会问：“真是这样的吗？”</a></li>
+<li><a href="#%E7%BA%B5%E5%90%91%E9%80%BB%E8%BE%91%E7%9A%84%E7%90%86%E6%83%B3%E7%8A%B6%E6%80%81">纵向逻辑的理想状态</a></li>
+<li><a href="#%E4%B8%BA%E4%BD%95%E5%AF%B9%E6%96%B9%E4%BC%9A%E9%97%AE%E5%8F%AA%E6%98%AF%E8%BF%99%E6%A0%B7%E5%90%97">为何对方会问：“只是这样吗？”</a></li>
+<li><a href="#%E6%A8%AA%E5%90%91%E9%80%BB%E8%BE%91%E7%9A%84%E7%90%86%E6%83%B3%E7%8A%B6%E6%80%81">横向逻辑的理想状态</a></li>
+<li><a href="#%E9%80%BB%E8%BE%91%E5%90%88%E7%90%86%E4%B8%8E%E5%90%A6%E7%94%B1%E5%AF%B9%E6%96%B9%E5%88%A4%E6%96%AD">逻辑合理与否由对方判断</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E4%BD%95%E4%B8%BA%E9%80%BB%E8%BE%91">要点 何为逻辑</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC1%E8%8A%82-%E5%BB%BA%E7%AB%8B%E7%BA%B5%E5%90%91%E9%80%BB%E8%BE%91">第1节 建立纵向逻辑</a>
+<ul>
+<li><a href="#%E7%BA%B5%E5%90%91%E9%80%BB%E8%BE%91%E8%96%84%E5%BC%B1%E7%9A%84%E4%B8%89%E4%B8%AA%E5%8E%9F%E5%9B%A0">纵向逻辑薄弱的三个原因</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%B6%88%E9%99%A4%E5%AF%BC%E8%87%B4%E7%BA%B5%E5%90%91%E9%80%BB%E8%BE%91%E8%96%84%E5%BC%B1%E7%9A%84%E5%9B%A0%E7%B4%A0">如何消除导致纵向逻辑薄弱的因素</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E5%BB%BA%E7%AB%8B%E7%BA%B5%E5%90%91%E9%80%BB%E8%BE%91">要点 建立纵向逻辑</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E8%8A%82-%E5%BB%BA%E7%AB%8B%E6%A8%AA%E5%90%91%E9%80%BB%E8%BE%91">第2节 建立横向逻辑</a>
+<ul>
+<li><a href="#%E6%A8%AA%E5%90%91%E9%80%BB%E8%BE%91%E7%9A%84%E7%BB%84%E5%90%88">横向逻辑的组合</a></li>
+<li><a href="#%E4%B8%BA%E4%BD%95%E6%97%A0%E6%B3%95%E5%AE%9E%E7%8E%B0-mece-%E7%8A%B6%E6%80%81">为何无法实现 MECE 状态</a></li>
+<li><a href="#%E4%BD%93%E4%BC%9A%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%B1%82%E6%AC%A1%E6%84%9F">体会语言中的层次感</a></li>
+<li><a href="#%E6%8A%8A%E4%B8%8D%E5%90%8C%E8%A7%92%E5%BA%A6%E7%9A%84%E6%A6%82%E5%BF%B5%E5%BD%92%E6%8B%A2%E5%88%B0%E5%90%8C%E4%B8%80%E5%B9%B3%E9%9D%A2">把不同角度的概念归拢到同一平面</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0-mece-%E7%8A%B6%E6%80%81">如何实现 MECE 状态</a></li>
+<li><a href="#%E5%AE%8C%E6%88%90%E6%A8%AA%E5%90%91%E9%80%BB%E8%BE%91">完成横向逻辑</a></li>
+<li><a href="#%E6%9C%80%E7%BB%88%E5%BD%A2%E6%88%90%E9%87%91%E5%AD%97%E5%A1%94%E7%BB%93%E6%9E%84">最终形成金字塔结构</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E5%BB%BA%E7%AB%8B%E6%A8%AA%E5%90%91%E9%80%BB%E8%BE%91">要点 建立横向逻辑</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E9%AA%8C%E8%AF%81%E5%81%87%E8%AF%B4%E8%83%BD%E5%8A%9B-%E5%9B%9E%E7%AD%94%E7%96%91%E9%97%AE%E7%9A%84%E6%AD%A5%E9%AA%A4">第3章 验证假说能力 回答疑问的步骤</a>
+<ul>
+<li><a href="#story-3-%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A%E7%9A%84%E5%A4%B1%E7%AD%96">STORY-3 最终报告的失策</a>
+<ul>
+<li><a href="#%E6%9A%B4%E9%A3%8E%E9%9B%A8%E5%89%8D%E7%9A%84%E5%AE%81%E9%9D%99">暴风雨前的宁静</a></li>
+<li><a href="#%E6%88%B7%E5%B4%8E%E7%9A%84%E6%8F%90%E6%A1%88%E8%A6%81%E7%82%B9">户崎的提案要点</a></li>
+<li><a href="#%E5%B7%A8%E5%A4%A7%E7%9A%84%E8%AF%AF%E4%BC%9A">巨大的误会</a></li>
+<li><a href="#%E7%95%99%E4%B8%8B%E7%9A%84%E4%BD%9C%E4%B8%9A">留下的作业</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BA%8F%E8%8A%82-%E4%BD%95%E4%B8%BA%E9%AA%8C%E8%AF%81%E5%81%87%E8%AF%B4%E8%83%BD%E5%8A%9B">序节 何为验证假说能力</a>
+<ul>
+<li><a href="#%E9%80%BB%E8%BE%91%E6%80%9D%E8%80%83%E7%9A%84%E9%99%B7%E9%98%B1">逻辑思考的陷阱</a></li>
+<li><a href="#%E5%9C%B0%E6%AF%AF%E5%BC%8F%E8%BD%B0%E7%82%B8%E8%88%AC%E6%8F%90%E9%97%AE%E5%92%8C%E6%97%A0%E5%87%AD%E6%97%A0%E6%8D%AE%E7%9A%84%E6%96%AD%E8%A8%80">“地毯式轰炸般提问”和“无凭无据的断言”</a></li>
+<li><a href="#%E5%81%87%E8%AF%B4%E9%AA%8C%E8%AF%81%E7%9A%84%E4%BA%94%E4%B8%AA%E6%AD%A5%E9%AA%A4">假说验证的五个步骤</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E4%BD%95%E4%B8%BA%E5%81%87%E8%AF%B4%E9%AA%8C%E8%AF%81%E8%83%BD%E5%8A%9B">要点 何为假说验证能力</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC1%E8%8A%82-%E7%90%86%E8%A7%A3%E7%9B%AE%E7%9A%84">第1节 理解目的</a>
+<ul>
+<li><a href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E7%AB%8B%E5%9C%BA%E5%92%8C%E5%AF%B9%E6%96%B9%E7%9A%84%E8%A6%81%E6%B1%82">“讨论的立场”和“对方的要求”</a></li>
+<li><a href="#%E8%AE%A8%E8%AE%BA%E7%9A%84%E7%AB%8B%E5%9C%BA%E5%8C%85%E6%8B%AC%E4%B8%A4%E7%A7%8D">讨论的立场包括两种</a></li>
+<li><a href="#%E9%80%BC%E8%BF%AB%E5%92%8C%E5%BC%95%E5%AF%BC">“逼迫”和“引导”</a></li>
+<li><a href="#%E8%A6%81%E6%B1%82%E5%AF%B9%E6%96%B9%E5%81%9A%E5%88%A4%E6%96%AD">要求对方做判断</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93%E8%A6%81%E6%9B%B4%E5%85%B7%E4%BD%93">总结要更具体</a></li>
+<li><a href="#%E6%84%9F%E6%80%A7%E6%80%9D%E7%BB%B4%E4%B8%8D%E5%8F%AF%E6%88%96%E7%BC%BA">感性思维不可或缺</a></li>
+<li><a href="#%E7%BB%93%E6%9E%9C%E6%98%AF%E7%94%B1%E5%AF%B9%E6%96%B9%E5%86%B3%E5%AE%9A">结果是由对方决定</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E7%90%86%E8%A7%A3%E7%9B%AE%E7%9A%84">要点 理解目的</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E8%8A%82-%E6%8A%8A%E6%8F%A1%E8%AE%BA%E7%82%B9">第2节 把握论点</a>
+<ul>
+<li><a href="#%E4%BD%95%E4%B8%BA%E8%AE%BA%E7%82%B9">何为论点</a></li>
+<li><a href="#%E8%AE%BA%E7%82%B9%E7%9A%84%E5%85%B7%E4%BD%93%E6%A1%88%E4%BE%8B">论点的具体案例</a></li>
+<li><a href="#%E5%81%8F%E7%A6%BB%E8%AE%BA%E7%82%B9%E7%9A%84%E5%9B%9B%E7%A7%8D%E7%B1%BB%E5%9E%8B">偏离论点的四种类型</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%8A%8A%E6%8F%A1%E8%AE%BA%E7%82%B9">如何把握论点</a></li>
+<li><a href="#%E5%8F%8C%E6%96%B9%E8%AE%BA%E7%82%B9%E4%B8%8D%E4%B8%80%E8%87%B4%E7%9A%84%E5%8E%9F%E5%9B%A0">双方论点不一致的原因</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E6%8A%8A%E6%8F%A1%E8%AE%BA%E7%82%B9">要点 把握论点</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E8%8A%82-%E6%9E%84%E5%BB%BA%E5%81%87%E8%AF%B4">第3节 构建假说</a>
+<ul>
+<li><a href="#%E4%BD%95%E4%B8%BA%E5%81%87%E8%AF%B4">何为假说</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E5%81%87%E8%AF%B4%E7%9A%84%E4%B8%89%E7%A7%8D%E8%AF%AF%E8%A7%A3">关于假说的三种误解</a></li>
+<li><a href="#%E4%B8%BA%E4%BD%95%E9%9C%80%E8%A6%81%E5%81%87%E8%AF%B4">为何需要假说</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81%E8%AE%A9%E5%AF%B9%E6%96%B9%E8%BF%87%E5%BA%A6%E6%80%9D%E8%80%83">不要让对方过度思考</a></li>
+<li><a href="#%E5%81%87%E8%AF%B4%E4%B8%8D%E5%8F%AF%E8%83%BD%E5%87%AD%E7%A9%BA%E5%87%BA%E7%8E%B0">假说不可能凭空出现</a></li>
+<li><a href="#%E6%9E%84%E5%BB%BA%E5%81%87%E8%AF%B4%E6%97%B6%E6%89%80%E9%9C%80%E7%9A%84%E4%BF%A1%E6%81%AF%E5%92%8C%E9%AA%8C%E8%AF%81%E5%81%87%E8%AF%B4%E6%97%B6%E6%89%80%E9%9C%80%E7%9A%84%E4%BF%A1%E6%81%AF">构建假说时所需的信息和验证假说时所需的信息</a></li>
+<li><a href="#%E6%9E%84%E7%AD%91%E5%81%87%E8%AF%B4%E7%9A%84%E4%B8%89%E4%B8%AA%E6%AD%A5%E9%AA%A4">构筑假说的三个步骤</a></li>
+<li><a href="#%E6%89%A9%E5%A4%A7%E5%81%87%E8%AF%B4%E8%8C%83%E5%9B%B4%E6%8F%90%E9%AB%98%E5%81%87%E8%AF%B4%E7%9A%84%E5%87%86%E7%A1%AE%E5%BA%A6">扩大假说范围，提高假说的准确度</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E6%9E%84%E5%BB%BA%E5%81%87%E8%AF%B4">要点 构建假说</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E8%8A%82-%E5%AE%9E%E6%96%BD%E9%AA%8C%E8%AF%81">第4节 实施验证</a>
+<ul>
+<li><a href="#%E8%AF%81%E6%98%8E%E5%81%87%E8%AF%B4">证明假说</a></li>
+<li><a href="#%E9%AA%8C%E8%AF%81%E7%9A%84%E9%99%B7%E9%98%B1">验证的陷阱</a></li>
+<li><a href="#%E9%AA%8C%E8%AF%81%E6%B2%A1%E6%9C%89%E5%B0%BD%E5%A4%B4">验证没有尽头</a></li>
+<li><a href="#%E5%8D%B3%E4%BD%BF%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C%E8%A2%AB%E8%AE%A4%E4%B8%BA%E6%98%AF%E7%90%86%E6%89%80%E5%BD%93%E7%84%B6%E4%B9%9F%E6%B2%A1%E6%9C%89%E5%85%B3%E7%B3%BB">即使验证结果被认为是理所当然也没有关系</a></li>
+<li><a href="#%E4%BA%8C%E5%85%AB%E6%B3%95%E5%88%99%E5%85%AB%E6%88%90%E7%90%86%E6%89%80%E5%BD%93%E7%84%B6%E4%B8%A4%E6%88%90%E6%96%B0%E5%8F%91%E7%8E%B0">二八法则（八成理所当然，两成新发现）</a></li>
+<li><a href="#%E9%87%87%E7%94%A8%E7%A1%AE%E5%87%BF%E7%9A%84%E4%BA%8B%E5%AE%9E%E6%A0%B9%E6%8D%AE">采用确凿的事实根据</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E5%AE%9E%E6%96%BD%E9%AA%8C%E8%AF%81">要点 实施验证</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E8%8A%82-%E6%8F%90%E5%8F%96%E5%90%AF%E5%8F%91">第5节 提取启发</a>
+<ul>
+<li><a href="#%E4%BD%95%E4%B8%BA%E5%90%AF%E5%8F%91">何为启发</a></li>
+<li><a href="#%E4%B8%BA%E4%BD%95%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4%E7%AD%94%E6%A1%88">为何无法提交“答案”</a></li>
+<li><a href="#%E4%B8%96%E7%95%8C%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B9%88%E5%8D%95%E7%BA%AF">世界没有那么单纯</a></li>
+<li><a href="#%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%AE%8C%E7%BE%8E%E7%9A%84%E4%BA%8B%E5%AE%9E%E6%A0%B9%E6%8D%AE">不存在完美的事实根据</a></li>
+<li><a href="#%E6%8F%90%E5%8F%96%E5%90%AF%E5%8F%91%E5%BA%94%E6%B3%A8%E6%84%8F%E4%B8%89%E4%B8%AA%E8%A6%81%E7%82%B9">提取启发应注意三个要点</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E6%8F%90%E5%8F%96%E5%90%AF%E5%8F%91">要点 提取启发</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E4%BC%9A%E8%AE%AE%E8%AE%BE%E8%AE%A1%E8%83%BD%E5%8A%9B-%E6%80%BB%E7%BB%93%E7%9A%84%E6%8A%80%E5%B7%A7">第4章 会议设计能力 总结的技巧</a>
+<ul>
+<li><a href="#story-4-%E5%BC%80%E5%A7%8B%E4%BA%A4%E6%B6%89%E5%90%88%E4%BD%9C%E4%BA%8B%E5%AE%9C">STORY-4 开始交涉合作事宜</a>
+<ul>
+<li><a href="#%E6%AF%AB%E6%97%A0%E5%8F%8D%E5%BA%94%E7%9A%84%E4%BC%97%E4%BA%BA">毫无反应的众人</a></li>
+<li><a href="#%E6%84%8F%E6%83%B3%E4%B8%8D%E5%88%B0%E7%9A%84%E5%8F%8D%E5%AF%B9">意想不到的反对</a></li>
+<li><a href="#%E5%92%96%E5%95%A1%E9%A6%86%E5%86%85%E7%9A%84%E5%8F%8D%E7%9C%81">咖啡馆内的反省</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BA%8F%E8%8A%82-%E4%BD%95%E4%B8%BA%E4%BC%9A%E8%AE%AE%E8%AE%BE%E8%AE%A1">序节 何为会议设计</a>
+<ul>
+<li><a href="#%E4%BC%9A%E8%AE%AE%E6%97%A0%E8%81%8A%E7%9A%84%E5%8E%9F%E5%9B%A0">会议无聊的原因</a></li>
+<li><a href="#%E6%97%A0%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%BC%9A%E8%AE%AE%E7%9A%84%E5%8E%9F%E5%9B%A0">无法设计会议的原因</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%9C%80%E6%B3%A8%E6%84%8F%E4%B8%A4%E4%B8%AA%E8%A6%81%E7%B4%A0">设计会议时需注意两个要素</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E4%BD%95%E4%B8%BA%E4%BC%9A%E8%AE%AE%E8%AE%BE%E8%AE%A1">要点 何为会议设计</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC1%E8%8A%82-%E7%A1%AE%E5%AE%9A%E7%9D%80%E9%99%86%E7%82%B9">第1节 确定着陆点</a>
+<ul>
+<li><a href="#%E5%AE%9A%E4%BD%8D%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%AE%A1%E7%90%86">“定位”与“输入/输出管理”</a></li>
+<li><a href="#%E4%B8%89%E7%A7%8D%E8%A7%86%E8%A7%92%E5%86%B3%E5%AE%9A%E5%AE%9A%E4%BD%8D">三种视角决定定位</a></li>
+<li><a href="#%E9%81%BF%E5%85%8D%E6%8B%96%E6%8B%89%E5%BC%8F%E7%9A%84%E8%AE%A8%E8%AE%BA">避免拖拉式的讨论</a></li>
+<li><a href="#%E6%90%9E%E9%94%99%E5%AE%9A%E4%BD%8D%E4%BC%9A%E8%A2%AB%E8%A6%81%E6%B1%82%E6%89%93%E5%9B%9E%E9%87%8D%E5%81%9A">搞错定位会被要求打回重做</a></li>
+<li><a href="#%E7%AE%A1%E7%90%86%E5%A5%BD%E4%BC%9A%E8%AE%AE%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA">管理好会议的“输入”与“输出”</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%AE%A1%E7%90%86%E7%9A%84%E8%AF%80%E7%AA%8D">“输入/输出管理”的诀窍</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E7%A1%AE%E5%AE%9A%E7%9D%80%E9%99%86%E7%82%B9">要点 确定着陆点</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E8%8A%82-%E5%86%B3%E5%AE%9A%E7%9D%80%E9%99%86%E5%BD%A2%E5%BC%8F">第2节 决定着陆形式</a>
+<ul>
+<li><a href="#%E7%9D%80%E9%99%86%E5%BD%A2%E5%BC%8F%E5%9B%A0%E4%BA%BA%E8%80%8C%E5%BC%82">着陆形式因人而异</a></li>
+<li><a href="#%E7%90%86%E8%A7%A3%E5%AF%B9%E6%96%B9%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%B8%89%E4%B8%AA%E8%AF%80%E7%AA%8D">理解对方风格的三个诀窍</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E5%86%B3%E5%AE%9A%E7%9D%80%E9%99%86%E5%BD%A2%E5%BC%8F">要点 决定着陆形式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E5%88%B6%E4%BD%9C%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E7%9A%84%E8%83%BD%E5%8A%9B-%E5%88%B6%E4%BD%9C%E4%B9%A6%E9%9D%A2%E8%B5%84%E6%96%99%E7%9A%84%E6%AD%A5%E9%AA%A4">第5章 制作商务文本的能力 制作书面资料的步骤</a>
+<ul>
+<li><a href="#story-5-%E6%9C%AA%E8%83%BD%E9%80%9A%E8%BF%87%E7%9A%84%E6%96%B9%E6%A1%88">STORY-5 未能通过的方案</a></li>
+<li><a href="#%E5%BA%8F%E8%8A%82-%E4%BD%95%E4%B8%BA%E5%88%B6%E4%BD%9C%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E7%9A%84%E8%83%BD%E5%8A%9B">序节 何为制作商务文本的能力</a>
+<ul>
+<li><a href="#%E5%88%B6%E4%BD%9C%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E7%9A%84%E4%BA%94%E4%B8%AA%E6%AD%A5%E9%AA%A4">制作商务文本的五个步骤</a></li>
+<li><a href="#%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%88%B6%E4%BD%9C%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC">用模板制作商务文本</a></li>
+<li><a href="#%E4%B8%80%E7%9B%AE%E4%BA%86%E7%84%B6%E4%B8%8D%E8%A2%AB%E8%AF%AF%E8%A7%A3">“一目了然、不被误解”</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81%E8%BF%9D%E5%8F%8D%E4%BA%BA%E7%B1%BB%E7%9A%84%E9%98%85%E8%AF%BB%E4%B9%A0%E6%83%AF">不要违反人类的阅读习惯</a></li>
+<li><a href="#%E9%9C%80%E8%A6%81%E5%88%A0%E9%99%A4%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%86%85%E5%AE%B9">需要删除三种类型的内容</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E4%BD%95%E4%B8%BA%E5%88%B6%E4%BD%9C%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E7%9A%84%E8%83%BD%E5%8A%9B">要点 何为制作商务文本的能力</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC1%E8%8A%82-%E6%96%87%E5%AD%97%E4%BF%A1%E6%81%AF%E8%A6%81%E7%AE%80%E5%8D%95%E6%98%8E%E4%BA%86">第1节 文字信息要简单明了</a>
+<ul>
+<li><a href="#%E4%B8%89%E8%A1%8C%E6%96%87%E5%AD%97%E8%AE%B2%E6%B8%85%E5%86%85%E5%AE%B9">三行文字讲清内容</a></li>
+<li><a href="#%E8%AF%B4%E6%98%8E%E4%BA%8B%E5%AE%9E%E5%90%AF%E5%8F%91">说明、事实、启发</a></li>
+<li><a href="#%E6%96%87%E5%AD%97%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8E%92%E5%88%97%E6%96%B9%E5%BC%8F">文字信息的排列方式</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E4%B9%A6%E5%86%99%E6%96%87%E5%AD%97%E4%BF%A1%E6%81%AF">如何书写文字信息</a></li>
+<li><a href="#%E4%B9%A6%E5%86%99%E6%96%87%E5%AD%97%E4%BF%A1%E6%81%AF%E6%97%B6%E7%9A%84%E4%B8%89%E4%B8%AA%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">书写文字信息时的三个注意事项</a></li>
+<li><a href="#%E5%87%9D%E7%BC%A9%E6%96%87%E5%AD%97%E4%BF%A1%E6%81%AF%E7%9A%84%E6%89%8B%E6%B3%95">凝缩文字信息的手法</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E6%96%87%E5%AD%97%E4%BF%A1%E6%81%AF%E5%BA%94%E7%AE%80%E6%B4%81%E6%98%93%E6%87%82">要点 文字信息应简洁易懂</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E8%8A%82-%E6%8A%8A%E6%96%87%E5%AD%97%E4%BF%A1%E6%81%AF%E5%88%B6%E6%88%90%E5%9B%BE%E8%A1%A8">第2节 把文字信息制成图表</a>
+<ul>
+<li><a href="#%E7%9E%AC%E9%97%B4%E4%BC%A0%E8%BE%BE%E6%84%8F%E6%80%9D">瞬间传达意思</a></li>
+<li><a href="#%E5%9B%BE%E8%A1%A8%E7%9A%84%E5%86%85%E5%AE%B9%E4%B8%8E%E6%8E%92%E7%89%88">图表的内容与排版</a></li>
+<li><a href="#%E5%9B%BE%E8%A1%A8%E5%86%85%E5%AE%B9%E5%8F%AA%E6%9C%89%E4%B8%89%E7%A7%8D">图表内容只有三种</a></li>
+<li><a href="#%E5%9B%BE%E8%A1%A8%E6%8E%92%E7%89%88%E5%8F%AA%E6%9C%89%E5%9B%9B%E7%A7%8D">图表排版只有四种</a></li>
+<li><a href="#%E5%9B%BE%E8%A1%A8%E7%9A%84%E4%BF%AE%E9%A5%B0">图表的修饰</a></li>
+<li><a href="#%E7%BB%84%E8%A3%85%E5%88%B6%E4%BD%9C%E5%9B%BE%E8%A1%A8">组装制作图表</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E6%8A%8A%E6%96%87%E5%AD%97%E4%BF%A1%E6%81%AF%E5%88%B6%E6%88%90%E5%9B%BE%E8%A1%A8">要点 把文字信息制成图表</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E8%8A%82-%E9%85%8D%E7%BD%AE%E5%B9%BB%E7%81%AF%E7%89%87">第3节 配置幻灯片</a>
+<ul>
+<li><a href="#%E5%88%B6%E4%BD%9C%E5%B9%BB%E7%81%AF%E7%89%87%E9%9C%80%E6%B3%A8%E6%84%8F%E4%B8%A4%E4%B8%AA%E8%A6%81%E7%82%B9">制作幻灯片需注意两个要点</a></li>
+<li><a href="#%E6%8F%90%E9%AB%98%E5%AE%8C%E6%88%90%E5%BA%A6%E7%9A%84%E4%B8%89%E4%B8%AA%E6%8A%80%E5%B7%A7">提高完成度的三个技巧</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E9%85%8D%E7%BD%AE%E5%B9%BB%E7%81%AF%E7%89%87">要点 配置幻灯片</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E8%8A%82-%E5%AE%8C%E6%88%90%E8%B5%84%E6%96%99%E5%8C%85">第4节 完成资料包</a>
+<ul>
+<li><a href="#%E5%88%B6%E4%BD%9C%E8%B5%84%E6%96%99%E5%8C%85%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">制作资料包时的注意事项</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E5%AE%8C%E6%88%90%E8%B5%84%E6%96%99%E5%8C%85">要点 完成资料包</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E8%8A%82-%E6%95%B4%E5%90%88%E8%B5%84%E6%96%99%E7%BE%A4">第5节 整合资料群</a>
+<ul>
+<li><a href="#%E6%9E%84%E5%BB%BA%E8%B5%84%E6%96%99%E7%BE%A4">构建资料群</a></li>
+<li><a href="#%E8%A6%81%E7%82%B9-%E6%95%B4%E5%90%88%E8%B5%84%E6%96%99%E7%BE%A4">要点 整合资料群</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E6%9C%80%E7%BB%88%E7%AB%A0">第6章 最终章</a>
+<ul>
+<li><a href="#story-6-%E6%96%B9%E6%A1%88%E7%9A%84%E6%88%90%E5%8A%9F">STORY-6 方案的成功</a>
+<ul>
+<li><a href="#%E6%9C%80%E5%90%8E%E7%9A%84%E5%86%B3%E6%88%98">最后的决战</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

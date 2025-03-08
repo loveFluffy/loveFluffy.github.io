@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x521b;&#x6295;42&#x7ae0;&#x7ecf;&#xff1a;&#x4e92;&#x8054;&#x7f51;&#x5546;&#x4e1a;&#x903b;&#x8f91;&#x4e0e;&#x6295;&#x8d44;&#x8fdb;&#x9636;&#x6307;&#x5357;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x521b;&#x6295;42&#x7ae0;&#x7ecf;&#xff1a;&#x4e92;&#x8054;&#x7f51;&#x5546;&#x4e1a;&#x903b;&#x8f91;&#x4e0e;&#x6295;&#x8d44;&#x8fdb;&#x9636;&#x6307;&#x5357;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,450 +31,212 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
-		z-index: 1;
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="创投42章经互联网商业逻辑与投资进阶指南">创投42章经：互联网商业逻辑与投资进阶指南</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/11524.jpg"></td><td>
+<h1 id="创投42章经互联网商业逻辑与投资进阶指南">创投42章经：互联网商业逻辑与投资进阶指南</h1>
+<center>曲凯</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="推荐序-信号与噪声">推荐序 信号与噪声</h3>
+<h3 id="序-42章经修炼手册">序 “42章经”修炼手册</h3>
+<h2 id="心法">心法</h2>
+<h3 id="01-两个问题看透投资42章经的投资方法论">01 两个问题，看透投资——“42章经”的投资方法论</h3>
+<h3 id="02-怎样的创业公司才能突破重围">02 怎样的创业公司才能突破重围</h3>
+<h3 id="03-暗流涌动的互联网世界">03 暗流涌动的互联网世界</h3>
+<h3 id="04-为什么总是朱啸虎-vc的马太效应">04 为什么总是朱啸虎？—— VC的马太效应</h3>
+<h3 id="05-一个王兴换三个陈欧一个滴滴换十个小红书">05 一个王兴换三个陈欧，一个滴滴换十个小红书</h3>
+<h3 id="06-外卖兴起个护畅销在线教育火热背后的粮票效应">06 外卖兴起、个护畅销、在线教育火热背后的“粮票效应”</h3>
+<h3 id="07-解构和重组商业世界的演进法则">07 解构和重组——商业世界的演进法则</h3>
+<h3 id="08-人类不确定性法则">08 人类不确定性法则</h3>
+<h3 id="09-未经审视的人生不值得活">09 未经审视的人生不值得活</h3>
+<h3 id="10-坐上火箭的人">10 坐上火箭的人</h3>
+<h2 id="内功">内功</h2>
+<h3 id="11-早知道这些我的公司就不会死系列一cacltvpbp">11 “早知道这些我的公司就不会死”系列（一）：CAC、LTV、PBP</h3>
+<h3 id="12-早知道这些我的公司就不会死系列二cohort-analysis">12 “早知道这些我的公司就不会死”系列（二）：Cohort Analysis</h3>
+<h3 id="13-上万亿的市场为啥投资人还是觉得小">13 “上万亿的市场，为啥投资人还是觉得小？”</h3>
+<h3 id="14-10天7个好友怎样成为脸书增长到10亿用户的独门秘诀">14 “10天7个好友”怎样成为脸书增长到10亿用户的独门秘诀？</h3>
+<h3 id="15-投资人口中的unit-eco是什么学会用数学公式看透商业模式">15 投资人口中的Unit Eco是什么？——学会用数学公式看透商业模式</h3>
+<h3 id="16-跟高盛tmt业务负责人学分析">16 跟高盛TMT业务负责人学分析</h3>
+<h2 id="招式">招式</h2>
+<h3 id="17-社交三部曲一社交媒体的本质">17 社交三部曲（一）：社交媒体的本质</h3>
+<h3 id="18-社交三部曲二解密snapchat">18 社交三部曲（二）：解密Snapchat</h3>
+<h3 id="19-社交三部曲三陌陌的本质">19 社交三部曲（三）：陌陌的本质</h3>
+<h3 id="20-知乎的野心与终局">20 知乎的野心与终局</h3>
+<h3 id="21-新零售的投资逻辑">21 新零售的投资逻辑</h3>
+<h3 id="22-一场关乎留存率的竞争内容创业的商业本源">22 一场关乎留存率的竞争——内容创业的商业本源</h3>
+<h3 id="23-出行三部曲一出行市场大混战">23 出行三部曲（一）：出行市场大混战</h3>
+<h3 id="24-出行三部曲二为什么停车场将消失">24 出行三部曲（二）：为什么停车场将消失？</h3>
+<h3 id="25-出行三部曲三滴滴的唯一出路">25 出行三部曲（三）：滴滴的唯一出路</h3>
+<h3 id="26-按月订购和无人货架的本质">26 按月订购和无人货架的本质</h3>
+<h3 id="27-充电宝的24字投资法则">27 “充电宝”的24字投资法则</h3>
+<h3 id="28-今日头条的发家与困局">28 今日头条的发家与困局</h3>
+<h3 id="29-微信之战百度擒头条">29 微信之战百度，擒头条</h3>
+<h3 id="30-其实王兴和贝佐斯是同一类人">30 其实王兴和贝佐斯是同一类人</h3>
+<h3 id="31-给共享经济判个死刑">31 给共享经济判个死刑</h3>
+<h3 id="32-复盘无人零售的三点心得">32 复盘无人零售的三点心得</h3>
+<h3 id="33-一个价值10亿美元的互联网消费品牌是怎样炼成的">33 一个价值10亿美元的互联网消费品牌是怎样炼成的</h3>
+<h3 id="34-2017年的5个小风口">34 2017年的5个小风口</h3>
+<h3 id="35-我眼中的未来">35 我眼中的未来</h3>
+<h2 id="江湖传奇">江湖传奇</h2>
+<h3 id="36-hi最近还好吗">36 Hi，最近还好吗？</h3>
+<h3 id="37-焦虑迷茫失望自救的vc">37 焦虑，迷茫，失望，自救的VC</h3>
+<h3 id="38-博弈抢夺做市闷声发财的fa">38 博弈，抢夺，做市，闷声发财的FA</h3>
+<h3 id="39-互联网折叠">39 互联网折叠</h3>
+<h3 id="40-七个新基金合伙人的闭门分享">40 七个新基金合伙人的闭门分享</h3>
+<h3 id="41-为什么我不做vc了">41 为什么我不做VC了</h3>
+<h3 id="42-陈悦天关于vc该不该干的争论我的一些经历和想法">42 陈悦天：关于VC该不该干的争论，我的一些经历和想法</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F-%E4%BF%A1%E5%8F%B7%E4%B8%8E%E5%99%AA%E5%A3%B0">推荐序 信号与噪声</a></li>
+<li><a href="#%E5%BA%8F-42%E7%AB%A0%E7%BB%8F%E4%BF%AE%E7%82%BC%E6%89%8B%E5%86%8C">序 “42章经”修炼手册</a></li>
+<li><a href="#01-%E4%B8%A4%E4%B8%AA%E9%97%AE%E9%A2%98%E7%9C%8B%E9%80%8F%E6%8A%95%E8%B5%8442%E7%AB%A0%E7%BB%8F%E7%9A%84%E6%8A%95%E8%B5%84%E6%96%B9%E6%B3%95%E8%AE%BA">01 两个问题，看透投资——“42章经”的投资方法论</a></li>
+<li><a href="#02-%E6%80%8E%E6%A0%B7%E7%9A%84%E5%88%9B%E4%B8%9A%E5%85%AC%E5%8F%B8%E6%89%8D%E8%83%BD%E7%AA%81%E7%A0%B4%E9%87%8D%E5%9B%B4">02 怎样的创业公司才能突破重围</a></li>
+<li><a href="#03-%E6%9A%97%E6%B5%81%E6%B6%8C%E5%8A%A8%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%96%E7%95%8C">03 暗流涌动的互联网世界</a></li>
+<li><a href="#04-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%80%BB%E6%98%AF%E6%9C%B1%E5%95%B8%E8%99%8E-vc%E7%9A%84%E9%A9%AC%E5%A4%AA%E6%95%88%E5%BA%94">04 为什么总是朱啸虎？—— VC的马太效应</a></li>
+<li><a href="#05-%E4%B8%80%E4%B8%AA%E7%8E%8B%E5%85%B4%E6%8D%A2%E4%B8%89%E4%B8%AA%E9%99%88%E6%AC%A7%E4%B8%80%E4%B8%AA%E6%BB%B4%E6%BB%B4%E6%8D%A2%E5%8D%81%E4%B8%AA%E5%B0%8F%E7%BA%A2%E4%B9%A6">05 一个王兴换三个陈欧，一个滴滴换十个小红书</a></li>
+<li><a href="#06-%E5%A4%96%E5%8D%96%E5%85%B4%E8%B5%B7%E4%B8%AA%E6%8A%A4%E7%95%85%E9%94%80%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2%E7%81%AB%E7%83%AD%E8%83%8C%E5%90%8E%E7%9A%84%E7%B2%AE%E7%A5%A8%E6%95%88%E5%BA%94">06 外卖兴起、个护畅销、在线教育火热背后的“粮票效应”</a></li>
+<li><a href="#07-%E8%A7%A3%E6%9E%84%E5%92%8C%E9%87%8D%E7%BB%84%E5%95%86%E4%B8%9A%E4%B8%96%E7%95%8C%E7%9A%84%E6%BC%94%E8%BF%9B%E6%B3%95%E5%88%99">07 解构和重组——商业世界的演进法则</a></li>
+<li><a href="#08-%E4%BA%BA%E7%B1%BB%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%B3%95%E5%88%99">08 人类不确定性法则</a></li>
+<li><a href="#09-%E6%9C%AA%E7%BB%8F%E5%AE%A1%E8%A7%86%E7%9A%84%E4%BA%BA%E7%94%9F%E4%B8%8D%E5%80%BC%E5%BE%97%E6%B4%BB">09 未经审视的人生不值得活</a></li>
+<li><a href="#10-%E5%9D%90%E4%B8%8A%E7%81%AB%E7%AE%AD%E7%9A%84%E4%BA%BA">10 坐上火箭的人</a></li>
+<li><a href="#11-%E6%97%A9%E7%9F%A5%E9%81%93%E8%BF%99%E4%BA%9B%E6%88%91%E7%9A%84%E5%85%AC%E5%8F%B8%E5%B0%B1%E4%B8%8D%E4%BC%9A%E6%AD%BB%E7%B3%BB%E5%88%97%E4%B8%80cacltvpbp">11 “早知道这些我的公司就不会死”系列（一）：CAC、LTV、PBP</a></li>
+<li><a href="#12-%E6%97%A9%E7%9F%A5%E9%81%93%E8%BF%99%E4%BA%9B%E6%88%91%E7%9A%84%E5%85%AC%E5%8F%B8%E5%B0%B1%E4%B8%8D%E4%BC%9A%E6%AD%BB%E7%B3%BB%E5%88%97%E4%BA%8Ccohort-analysis">12 “早知道这些我的公司就不会死”系列（二）：Cohort Analysis</a></li>
+<li><a href="#13-%E4%B8%8A%E4%B8%87%E4%BA%BF%E7%9A%84%E5%B8%82%E5%9C%BA%E4%B8%BA%E5%95%A5%E6%8A%95%E8%B5%84%E4%BA%BA%E8%BF%98%E6%98%AF%E8%A7%89%E5%BE%97%E5%B0%8F">13 “上万亿的市场，为啥投资人还是觉得小？”</a></li>
+<li><a href="#14-10%E5%A4%A97%E4%B8%AA%E5%A5%BD%E5%8F%8B%E6%80%8E%E6%A0%B7%E6%88%90%E4%B8%BA%E8%84%B8%E4%B9%A6%E5%A2%9E%E9%95%BF%E5%88%B010%E4%BA%BF%E7%94%A8%E6%88%B7%E7%9A%84%E7%8B%AC%E9%97%A8%E7%A7%98%E8%AF%80">14 “10天7个好友”怎样成为脸书增长到10亿用户的独门秘诀？</a></li>
+<li><a href="#15-%E6%8A%95%E8%B5%84%E4%BA%BA%E5%8F%A3%E4%B8%AD%E7%9A%84unit-eco%E6%98%AF%E4%BB%80%E4%B9%88%E5%AD%A6%E4%BC%9A%E7%94%A8%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9C%8B%E9%80%8F%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F">15 投资人口中的Unit Eco是什么？——学会用数学公式看透商业模式</a></li>
+<li><a href="#16-%E8%B7%9F%E9%AB%98%E7%9B%9Btmt%E4%B8%9A%E5%8A%A1%E8%B4%9F%E8%B4%A3%E4%BA%BA%E5%AD%A6%E5%88%86%E6%9E%90">16 跟高盛TMT业务负责人学分析</a></li>
+<li><a href="#17-%E7%A4%BE%E4%BA%A4%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B8%80%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E7%9A%84%E6%9C%AC%E8%B4%A8">17 社交三部曲（一）：社交媒体的本质</a></li>
+<li><a href="#18-%E7%A4%BE%E4%BA%A4%E4%B8%89%E9%83%A8%E6%9B%B2%E4%BA%8C%E8%A7%A3%E5%AF%86snapchat">18 社交三部曲（二）：解密Snapchat</a></li>
+<li><a href="#19-%E7%A4%BE%E4%BA%A4%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B8%89%E9%99%8C%E9%99%8C%E7%9A%84%E6%9C%AC%E8%B4%A8">19 社交三部曲（三）：陌陌的本质</a></li>
+<li><a href="#20-%E7%9F%A5%E4%B9%8E%E7%9A%84%E9%87%8E%E5%BF%83%E4%B8%8E%E7%BB%88%E5%B1%80">20 知乎的野心与终局</a></li>
+<li><a href="#21-%E6%96%B0%E9%9B%B6%E5%94%AE%E7%9A%84%E6%8A%95%E8%B5%84%E9%80%BB%E8%BE%91">21 新零售的投资逻辑</a></li>
+<li><a href="#22-%E4%B8%80%E5%9C%BA%E5%85%B3%E4%B9%8E%E7%95%99%E5%AD%98%E7%8E%87%E7%9A%84%E7%AB%9E%E4%BA%89%E5%86%85%E5%AE%B9%E5%88%9B%E4%B8%9A%E7%9A%84%E5%95%86%E4%B8%9A%E6%9C%AC%E6%BA%90">22 一场关乎留存率的竞争——内容创业的商业本源</a></li>
+<li><a href="#23-%E5%87%BA%E8%A1%8C%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B8%80%E5%87%BA%E8%A1%8C%E5%B8%82%E5%9C%BA%E5%A4%A7%E6%B7%B7%E6%88%98">23 出行三部曲（一）：出行市场大混战</a></li>
+<li><a href="#24-%E5%87%BA%E8%A1%8C%E4%B8%89%E9%83%A8%E6%9B%B2%E4%BA%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%86%E6%B6%88%E5%A4%B1">24 出行三部曲（二）：为什么停车场将消失？</a></li>
+<li><a href="#25-%E5%87%BA%E8%A1%8C%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B8%89%E6%BB%B4%E6%BB%B4%E7%9A%84%E5%94%AF%E4%B8%80%E5%87%BA%E8%B7%AF">25 出行三部曲（三）：滴滴的唯一出路</a></li>
+<li><a href="#26-%E6%8C%89%E6%9C%88%E8%AE%A2%E8%B4%AD%E5%92%8C%E6%97%A0%E4%BA%BA%E8%B4%A7%E6%9E%B6%E7%9A%84%E6%9C%AC%E8%B4%A8">26 按月订购和无人货架的本质</a></li>
+<li><a href="#27-%E5%85%85%E7%94%B5%E5%AE%9D%E7%9A%8424%E5%AD%97%E6%8A%95%E8%B5%84%E6%B3%95%E5%88%99">27 “充电宝”的24字投资法则</a></li>
+<li><a href="#28-%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1%E7%9A%84%E5%8F%91%E5%AE%B6%E4%B8%8E%E5%9B%B0%E5%B1%80">28 今日头条的发家与困局</a></li>
+<li><a href="#29-%E5%BE%AE%E4%BF%A1%E4%B9%8B%E6%88%98%E7%99%BE%E5%BA%A6%E6%93%92%E5%A4%B4%E6%9D%A1">29 微信之战百度，擒头条</a></li>
+<li><a href="#30-%E5%85%B6%E5%AE%9E%E7%8E%8B%E5%85%B4%E5%92%8C%E8%B4%9D%E4%BD%90%E6%96%AF%E6%98%AF%E5%90%8C%E4%B8%80%E7%B1%BB%E4%BA%BA">30 其实王兴和贝佐斯是同一类人</a></li>
+<li><a href="#31-%E7%BB%99%E5%85%B1%E4%BA%AB%E7%BB%8F%E6%B5%8E%E5%88%A4%E4%B8%AA%E6%AD%BB%E5%88%91">31 给共享经济判个死刑</a></li>
+<li><a href="#32-%E5%A4%8D%E7%9B%98%E6%97%A0%E4%BA%BA%E9%9B%B6%E5%94%AE%E7%9A%84%E4%B8%89%E7%82%B9%E5%BF%83%E5%BE%97">32 复盘无人零售的三点心得</a></li>
+<li><a href="#33-%E4%B8%80%E4%B8%AA%E4%BB%B7%E5%80%BC10%E4%BA%BF%E7%BE%8E%E5%85%83%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E6%B6%88%E8%B4%B9%E5%93%81%E7%89%8C%E6%98%AF%E6%80%8E%E6%A0%B7%E7%82%BC%E6%88%90%E7%9A%84">33 一个价值10亿美元的互联网消费品牌是怎样炼成的</a></li>
+<li><a href="#34-2017%E5%B9%B4%E7%9A%845%E4%B8%AA%E5%B0%8F%E9%A3%8E%E5%8F%A3">34 2017年的5个小风口</a></li>
+<li><a href="#35-%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%9C%AA%E6%9D%A5">35 我眼中的未来</a></li>
+<li><a href="#36-hi%E6%9C%80%E8%BF%91%E8%BF%98%E5%A5%BD%E5%90%97">36 Hi，最近还好吗？</a></li>
+<li><a href="#37-%E7%84%A6%E8%99%91%E8%BF%B7%E8%8C%AB%E5%A4%B1%E6%9C%9B%E8%87%AA%E6%95%91%E7%9A%84vc">37 焦虑，迷茫，失望，自救的VC</a></li>
+<li><a href="#38-%E5%8D%9A%E5%BC%88%E6%8A%A2%E5%A4%BA%E5%81%9A%E5%B8%82%E9%97%B7%E5%A3%B0%E5%8F%91%E8%B4%A2%E7%9A%84fa">38 博弈，抢夺，做市，闷声发财的FA</a></li>
+<li><a href="#39-%E4%BA%92%E8%81%94%E7%BD%91%E6%8A%98%E5%8F%A0">39 互联网折叠</a></li>
+<li><a href="#40-%E4%B8%83%E4%B8%AA%E6%96%B0%E5%9F%BA%E9%87%91%E5%90%88%E4%BC%99%E4%BA%BA%E7%9A%84%E9%97%AD%E9%97%A8%E5%88%86%E4%BA%AB">40 七个新基金合伙人的闭门分享</a></li>
+<li><a href="#41-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%B8%8D%E5%81%9Avc%E4%BA%86">41 为什么我不做VC了</a></li>
+<li><a href="#42-%E9%99%88%E6%82%A6%E5%A4%A9%E5%85%B3%E4%BA%8Evc%E8%AF%A5%E4%B8%8D%E8%AF%A5%E5%B9%B2%E7%9A%84%E4%BA%89%E8%AE%BA%E6%88%91%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%8E%86%E5%92%8C%E6%83%B3%E6%B3%95">42 陈悦天：关于VC该不该干的争论，我的一些经历和想法</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

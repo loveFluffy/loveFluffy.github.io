@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x4f20;&#x795e;&#x6587;&#x6848;&#xff1a;&#x6587;&#x6848;&#x5199;&#x5bf9;&#xff0c;&#x8425;&#x9500;&#x624d;&#x80fd;&#x505a;&#x5bf9;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x4f20;&#x795e;&#x6587;&#x6848;&#xff1a;&#x6587;&#x6848;&#x5199;&#x5bf9;&#xff0c;&#x8425;&#x9500;&#x624d;&#x80fd;&#x505a;&#x5bf9;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,373 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="传神文案文案写对营销才能做对">传神文案：文案写对，营销才能做对</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/11108.jpg"></td><td>
+<h1 id="传神文案文案写对营销才能做对">传神文案：文案写对，营销才能做对</h1>
+<center>空手</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="序言-好文案一句顶万句">序言 好文案，一句顶万句</h3>
+<h3 id="第一章-文本">第一章 文本</h3>
+<h4 id="本章导读-做文案的三重境界">本章导读 做文案的三重境界</h4>
+<h4 id="第一节-文字文本文化">第一节 文字、文本、文化</h4>
+<h5 id="1要来就来真的">1.要来就来真的</h5>
+<h5 id="2生活是用来分享的">2.生活是用来分享的</h5>
+<h5 id="3看见文字的力量">3.看见文字的力量</h5>
+<h4 id="第二节-认识认知认同">第二节 认识、认知、认同</h4>
+<h5 id="1bmw之悦">1.BMW之悦</h5>
+<h5 id="2活出年轻">2.活出年轻</h5>
+<h4 id="第三节-原子比特模因">第三节 原子、比特、模因</h4>
+<h5 id="1脏是好的">1.脏是好的</h5>
+<h5 id="2intel-inside">2.Intel Inside</h5>
+<h5 id="3有淘宝可劲造">3.有淘宝，可劲造</h5>
+<h3 id="第二章-场景">第二章 场景</h3>
+<h4 id="本章导读-人货场的商业新逻辑">本章导读 人货场的商业新逻辑</h4>
+<h4 id="第一节-场景造需">第一节 场景造需</h4>
+<h5 id="1吃完喝完嚼益达">1.吃完喝完嚼益达</h5>
+<h5 id="2经常用脑多喝六个核桃">2.经常用脑，多喝六个核桃</h5>
+<h5 id="3怕上火喝王老吉">3.怕上火，喝王老吉</h5>
+<h4 id="第二节-场景定位">第二节 场景定位</h4>
+<h5 id="1开宝马坐奔驰">1.开宝马，坐奔驰</h5>
+<h5 id="2盖kindle面更香">2.盖Kindle，面更香</h5>
+<h5 id="3我是江小白生活很简单">3.我是江小白，生活很简单</h5>
+<h5 id="4汽车要加油我要喝红牛">4.汽车要加油，我要喝红牛</h5>
+<h4 id="第三节-场景体验">第三节 场景体验</h4>
+<h5 id="1看过世界的孩子更强大">1.看过世界的孩子更强大</h5>
+<h5 id="2停下来享受美丽">2.停下来，享受美丽</h5>
+<h5 id="3感觉身体被掏空">3.感觉身体被掏空</h5>
+<h4 id="第四节-场景触发">第四节 场景触发</h4>
+<h5 id="1春节回家金六福">1.春节回家金六福</h5>
+<h5 id="2发动心动">2.发动，心动</h5>
+<h5 id="3洗手吃饭">3.洗手吃饭</h5>
+<h5 id="4一年逛两次海澜之家">4.一年逛两次海澜之家</h5>
+<h3 id="第三章-标签">第三章 标签</h3>
+<h4 id="本章导读-大数据时代的信息分发机制">本章导读 大数据时代的信息分发机制</h4>
+<h4 id="第一节-算法">第一节 算法</h4>
+<h5 id="1陆上公务舱">1.陆上公务舱</h5>
+<h5 id="2生命本身就是一场旅行">2.生命本身就是一场旅行</h5>
+<h5 id="3带上visa付诸行动">3.带上VISA，付诸行动</h5>
+<h4 id="第二节-法则">第二节 法则</h4>
+<h5 id="1有问题百度一下">1.有问题，百度一下</h5>
+<h5 id="227层净化">2.27层净化</h5>
+<h5 id="3上天猫就购了">3.上天猫，就购了</h5>
+<h5 id="4有问题上知乎">4.有问题，上知乎</h5>
+<h5 id="5叫你亲不如质量精">5.叫你亲不如质量精</h5>
+<h5 id="6不同凡想">6.不同凡想</h5>
+<h5 id="7再一次改变一切">7.再一次，改变一切</h5>
+<h4 id="第三节-模型">第三节 模型</h4>
+<h5 id="1照亮你的美">1.照亮你的美</h5>
+<h5 id="2要爽由自己">2.要爽由自己</h5>
+<h5 id="3中国白酒第一坊">3.中国白酒第一坊</h5>
+<h5 id="4大自然的搬运工">4.大自然的搬运工</h5>
+<h3 id="第四章-社交">第四章 社交</h3>
+<h4 id="本章导读-品牌营销的三个时代">本章导读 品牌营销的三个时代</h4>
+<h4 id="第一节-人称">第一节 人称</h4>
+<h5 id="1谁值得拥有">1.谁值得拥有</h5>
+<h5 id="2我的地盘听我的">2.我的地盘听我的</h5>
+<h5 id="3因您而变">3.因您而变</h5>
+<h5 id="4正在你身边">4.正在你身边</h5>
+<h5 id="5让我们好在一起">5.让我们好在一起</h5>
+<h5 id="6爱她就请她吃哈根达斯">6.爱她，就请她吃哈根达斯</h5>
+<h4 id="第二节-人群">第二节 人群</h4>
+<h5 id="1其实男人更需要关怀">1.其实男人更需要关怀</h5>
+<h5 id="2她最后去了相亲角">2.她最后去了相亲角</h5>
+<h5 id="3百事新一代">3.百事新一代</h5>
+<h5 id="4懂你说的懂你没说的">4.懂你说的，懂你没说的</h5>
+<h4 id="第三节-人设">第三节 人设</h4>
+<h5 id="1活出骑士风范">1.活出骑士风范</h5>
+<h5 id="2我是凡客">2.我是凡客</h5>
+<h5 id="3穿上它活出趣">3.穿上它，活出趣</h5>
+<h5 id="4做个傻瓜">4.做个傻瓜</h5>
+<h5 id="5支付宝知托付">5.支付宝，知托付</h5>
+<h3 id="第五章-流传">第五章 流传</h3>
+<h4 id="本章导读-制造流传的三大密码">本章导读 制造流传的三大密码</h4>
+<h4 id="第一节-音">第一节 音</h4>
+<h5 id="1味道好极了">1.味道好极了</h5>
+<h5 id="2饿了别叫妈叫饿了么">2.饿了别叫妈，叫饿了么</h5>
+<h5 id="3多喝水没事没事多喝水">3.多喝水没事，没事多喝水</h5>
+<h4 id="第二节-形">第二节 形</h4>
+<h5 id="1我有一个梦想">1.我有一个梦想</h5>
+<h5 id="2热爱我的热爱">2.热爱我的热爱</h5>
+<h5 id="3个人的一小步人类的一大步">3.个人的一小步，人类的一大步</h5>
+<h5 id="4充电5分钟通话2小时">4.充电5分钟，通话2小时</h5>
+<h5 id="5他忘记了很多事情但他从未忘记爱你">5.他忘记了很多事情，但他从未忘记爱你</h5>
+<h5 id="6踩惯了红地毯会梦见石板路">6.踩惯了红地毯，会梦见石板路</h5>
+<h5 id="7将所有一言难尽一饮而尽">7.将所有一言难尽，一饮而尽</h5>
+<h5 id="8世界上最累的工作也是最好的工作">8.世界上最累的工作，也是最好的工作</h5>
+<h4 id="第三节-意">第三节 意</h4>
+<h5 id="1把乐带回家">1.把乐带回家</h5>
+<h5 id="2扭一扭舔一舔泡一泡">2.扭一扭，舔一舔，泡一泡</h5>
+<h5 id="3人头马一开好事自然来">3.人头马一开，好事自然来</h5>
+<h5 id="4因为我们更努力">4.因为我们更努力</h5>
+<h5 id="5活出你的伟大">5.活出你的伟大</h5>
+<h3 id="后记">后记</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BA%8F%E8%A8%80-%E5%A5%BD%E6%96%87%E6%A1%88%E4%B8%80%E5%8F%A5%E9%A1%B6%E4%B8%87%E5%8F%A5">序言 好文案，一句顶万句</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%96%87%E6%9C%AC">第一章 文本</a>
+<ul>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%AF%BC%E8%AF%BB-%E5%81%9A%E6%96%87%E6%A1%88%E7%9A%84%E4%B8%89%E9%87%8D%E5%A2%83%E7%95%8C">本章导读 做文案的三重境界</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%8A%82-%E6%96%87%E5%AD%97%E6%96%87%E6%9C%AC%E6%96%87%E5%8C%96">第一节 文字、文本、文化</a>
+<ul>
+<li><a href="#1%E8%A6%81%E6%9D%A5%E5%B0%B1%E6%9D%A5%E7%9C%9F%E7%9A%84">1.要来就来真的</a></li>
+<li><a href="#2%E7%94%9F%E6%B4%BB%E6%98%AF%E7%94%A8%E6%9D%A5%E5%88%86%E4%BA%AB%E7%9A%84">2.生活是用来分享的</a></li>
+<li><a href="#3%E7%9C%8B%E8%A7%81%E6%96%87%E5%AD%97%E7%9A%84%E5%8A%9B%E9%87%8F">3.看见文字的力量</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-%E8%AE%A4%E8%AF%86%E8%AE%A4%E7%9F%A5%E8%AE%A4%E5%90%8C">第二节 认识、认知、认同</a>
+<ul>
+<li><a href="#1bmw%E4%B9%8B%E6%82%A6">1.BMW之悦</a></li>
+<li><a href="#2%E6%B4%BB%E5%87%BA%E5%B9%B4%E8%BD%BB">2.活出年轻</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E8%8A%82-%E5%8E%9F%E5%AD%90%E6%AF%94%E7%89%B9%E6%A8%A1%E5%9B%A0">第三节 原子、比特、模因</a>
+<ul>
+<li><a href="#1%E8%84%8F%E6%98%AF%E5%A5%BD%E7%9A%84">1.脏是好的</a></li>
+<li><a href="#2intel-inside">2.Intel Inside</a></li>
+<li><a href="#3%E6%9C%89%E6%B7%98%E5%AE%9D%E5%8F%AF%E5%8A%B2%E9%80%A0">3.有淘宝，可劲造</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%9C%BA%E6%99%AF">第二章 场景</a>
+<ul>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%AF%BC%E8%AF%BB-%E4%BA%BA%E8%B4%A7%E5%9C%BA%E7%9A%84%E5%95%86%E4%B8%9A%E6%96%B0%E9%80%BB%E8%BE%91">本章导读 人货场的商业新逻辑</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%8A%82-%E5%9C%BA%E6%99%AF%E9%80%A0%E9%9C%80">第一节 场景造需</a>
+<ul>
+<li><a href="#1%E5%90%83%E5%AE%8C%E5%96%9D%E5%AE%8C%E5%9A%BC%E7%9B%8A%E8%BE%BE">1.吃完喝完嚼益达</a></li>
+<li><a href="#2%E7%BB%8F%E5%B8%B8%E7%94%A8%E8%84%91%E5%A4%9A%E5%96%9D%E5%85%AD%E4%B8%AA%E6%A0%B8%E6%A1%83">2.经常用脑，多喝六个核桃</a></li>
+<li><a href="#3%E6%80%95%E4%B8%8A%E7%81%AB%E5%96%9D%E7%8E%8B%E8%80%81%E5%90%89">3.怕上火，喝王老吉</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-%E5%9C%BA%E6%99%AF%E5%AE%9A%E4%BD%8D">第二节 场景定位</a>
+<ul>
+<li><a href="#1%E5%BC%80%E5%AE%9D%E9%A9%AC%E5%9D%90%E5%A5%94%E9%A9%B0">1.开宝马，坐奔驰</a></li>
+<li><a href="#2%E7%9B%96kindle%E9%9D%A2%E6%9B%B4%E9%A6%99">2.盖Kindle，面更香</a></li>
+<li><a href="#3%E6%88%91%E6%98%AF%E6%B1%9F%E5%B0%8F%E7%99%BD%E7%94%9F%E6%B4%BB%E5%BE%88%E7%AE%80%E5%8D%95">3.我是江小白，生活很简单</a></li>
+<li><a href="#4%E6%B1%BD%E8%BD%A6%E8%A6%81%E5%8A%A0%E6%B2%B9%E6%88%91%E8%A6%81%E5%96%9D%E7%BA%A2%E7%89%9B">4.汽车要加油，我要喝红牛</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E8%8A%82-%E5%9C%BA%E6%99%AF%E4%BD%93%E9%AA%8C">第三节 场景体验</a>
+<ul>
+<li><a href="#1%E7%9C%8B%E8%BF%87%E4%B8%96%E7%95%8C%E7%9A%84%E5%AD%A9%E5%AD%90%E6%9B%B4%E5%BC%BA%E5%A4%A7">1.看过世界的孩子更强大</a></li>
+<li><a href="#2%E5%81%9C%E4%B8%8B%E6%9D%A5%E4%BA%AB%E5%8F%97%E7%BE%8E%E4%B8%BD">2.停下来，享受美丽</a></li>
+<li><a href="#3%E6%84%9F%E8%A7%89%E8%BA%AB%E4%BD%93%E8%A2%AB%E6%8E%8F%E7%A9%BA">3.感觉身体被掏空</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E8%8A%82-%E5%9C%BA%E6%99%AF%E8%A7%A6%E5%8F%91">第四节 场景触发</a>
+<ul>
+<li><a href="#1%E6%98%A5%E8%8A%82%E5%9B%9E%E5%AE%B6%E9%87%91%E5%85%AD%E7%A6%8F">1.春节回家金六福</a></li>
+<li><a href="#2%E5%8F%91%E5%8A%A8%E5%BF%83%E5%8A%A8">2.发动，心动</a></li>
+<li><a href="#3%E6%B4%97%E6%89%8B%E5%90%83%E9%A5%AD">3.洗手吃饭</a></li>
+<li><a href="#4%E4%B8%80%E5%B9%B4%E9%80%9B%E4%B8%A4%E6%AC%A1%E6%B5%B7%E6%BE%9C%E4%B9%8B%E5%AE%B6">4.一年逛两次海澜之家</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%A0%87%E7%AD%BE">第三章 标签</a>
+<ul>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%AF%BC%E8%AF%BB-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%97%B6%E4%BB%A3%E7%9A%84%E4%BF%A1%E6%81%AF%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6">本章导读 大数据时代的信息分发机制</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%8A%82-%E7%AE%97%E6%B3%95">第一节 算法</a>
+<ul>
+<li><a href="#1%E9%99%86%E4%B8%8A%E5%85%AC%E5%8A%A1%E8%88%B1">1.陆上公务舱</a></li>
+<li><a href="#2%E7%94%9F%E5%91%BD%E6%9C%AC%E8%BA%AB%E5%B0%B1%E6%98%AF%E4%B8%80%E5%9C%BA%E6%97%85%E8%A1%8C">2.生命本身就是一场旅行</a></li>
+<li><a href="#3%E5%B8%A6%E4%B8%8Avisa%E4%BB%98%E8%AF%B8%E8%A1%8C%E5%8A%A8">3.带上VISA，付诸行动</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-%E6%B3%95%E5%88%99">第二节 法则</a>
+<ul>
+<li><a href="#1%E6%9C%89%E9%97%AE%E9%A2%98%E7%99%BE%E5%BA%A6%E4%B8%80%E4%B8%8B">1.有问题，百度一下</a></li>
+<li><a href="#227%E5%B1%82%E5%87%80%E5%8C%96">2.27层净化</a></li>
+<li><a href="#3%E4%B8%8A%E5%A4%A9%E7%8C%AB%E5%B0%B1%E8%B4%AD%E4%BA%86">3.上天猫，就购了</a></li>
+<li><a href="#4%E6%9C%89%E9%97%AE%E9%A2%98%E4%B8%8A%E7%9F%A5%E4%B9%8E">4.有问题，上知乎</a></li>
+<li><a href="#5%E5%8F%AB%E4%BD%A0%E4%BA%B2%E4%B8%8D%E5%A6%82%E8%B4%A8%E9%87%8F%E7%B2%BE">5.叫你亲不如质量精</a></li>
+<li><a href="#6%E4%B8%8D%E5%90%8C%E5%87%A1%E6%83%B3">6.不同凡想</a></li>
+<li><a href="#7%E5%86%8D%E4%B8%80%E6%AC%A1%E6%94%B9%E5%8F%98%E4%B8%80%E5%88%87">7.再一次，改变一切</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E8%8A%82-%E6%A8%A1%E5%9E%8B">第三节 模型</a>
+<ul>
+<li><a href="#1%E7%85%A7%E4%BA%AE%E4%BD%A0%E7%9A%84%E7%BE%8E">1.照亮你的美</a></li>
+<li><a href="#2%E8%A6%81%E7%88%BD%E7%94%B1%E8%87%AA%E5%B7%B1">2.要爽由自己</a></li>
+<li><a href="#3%E4%B8%AD%E5%9B%BD%E7%99%BD%E9%85%92%E7%AC%AC%E4%B8%80%E5%9D%8A">3.中国白酒第一坊</a></li>
+<li><a href="#4%E5%A4%A7%E8%87%AA%E7%84%B6%E7%9A%84%E6%90%AC%E8%BF%90%E5%B7%A5">4.大自然的搬运工</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%A4%BE%E4%BA%A4">第四章 社交</a>
+<ul>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%AF%BC%E8%AF%BB-%E5%93%81%E7%89%8C%E8%90%A5%E9%94%80%E7%9A%84%E4%B8%89%E4%B8%AA%E6%97%B6%E4%BB%A3">本章导读 品牌营销的三个时代</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%8A%82-%E4%BA%BA%E7%A7%B0">第一节 人称</a>
+<ul>
+<li><a href="#1%E8%B0%81%E5%80%BC%E5%BE%97%E6%8B%A5%E6%9C%89">1.谁值得拥有</a></li>
+<li><a href="#2%E6%88%91%E7%9A%84%E5%9C%B0%E7%9B%98%E5%90%AC%E6%88%91%E7%9A%84">2.我的地盘听我的</a></li>
+<li><a href="#3%E5%9B%A0%E6%82%A8%E8%80%8C%E5%8F%98">3.因您而变</a></li>
+<li><a href="#4%E6%AD%A3%E5%9C%A8%E4%BD%A0%E8%BA%AB%E8%BE%B9">4.正在你身边</a></li>
+<li><a href="#5%E8%AE%A9%E6%88%91%E4%BB%AC%E5%A5%BD%E5%9C%A8%E4%B8%80%E8%B5%B7">5.让我们好在一起</a></li>
+<li><a href="#6%E7%88%B1%E5%A5%B9%E5%B0%B1%E8%AF%B7%E5%A5%B9%E5%90%83%E5%93%88%E6%A0%B9%E8%BE%BE%E6%96%AF">6.爱她，就请她吃哈根达斯</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-%E4%BA%BA%E7%BE%A4">第二节 人群</a>
+<ul>
+<li><a href="#1%E5%85%B6%E5%AE%9E%E7%94%B7%E4%BA%BA%E6%9B%B4%E9%9C%80%E8%A6%81%E5%85%B3%E6%80%80">1.其实男人更需要关怀</a></li>
+<li><a href="#2%E5%A5%B9%E6%9C%80%E5%90%8E%E5%8E%BB%E4%BA%86%E7%9B%B8%E4%BA%B2%E8%A7%92">2.她最后去了相亲角</a></li>
+<li><a href="#3%E7%99%BE%E4%BA%8B%E6%96%B0%E4%B8%80%E4%BB%A3">3.百事新一代</a></li>
+<li><a href="#4%E6%87%82%E4%BD%A0%E8%AF%B4%E7%9A%84%E6%87%82%E4%BD%A0%E6%B2%A1%E8%AF%B4%E7%9A%84">4.懂你说的，懂你没说的</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E8%8A%82-%E4%BA%BA%E8%AE%BE">第三节 人设</a>
+<ul>
+<li><a href="#1%E6%B4%BB%E5%87%BA%E9%AA%91%E5%A3%AB%E9%A3%8E%E8%8C%83">1.活出骑士风范</a></li>
+<li><a href="#2%E6%88%91%E6%98%AF%E5%87%A1%E5%AE%A2">2.我是凡客</a></li>
+<li><a href="#3%E7%A9%BF%E4%B8%8A%E5%AE%83%E6%B4%BB%E5%87%BA%E8%B6%A3">3.穿上它，活出趣</a></li>
+<li><a href="#4%E5%81%9A%E4%B8%AA%E5%82%BB%E7%93%9C">4.做个傻瓜</a></li>
+<li><a href="#5%E6%94%AF%E4%BB%98%E5%AE%9D%E7%9F%A5%E6%89%98%E4%BB%98">5.支付宝，知托付</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%B5%81%E4%BC%A0">第五章 流传</a>
+<ul>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E5%AF%BC%E8%AF%BB-%E5%88%B6%E9%80%A0%E6%B5%81%E4%BC%A0%E7%9A%84%E4%B8%89%E5%A4%A7%E5%AF%86%E7%A0%81">本章导读 制造流传的三大密码</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%8A%82-%E9%9F%B3">第一节 音</a>
+<ul>
+<li><a href="#1%E5%91%B3%E9%81%93%E5%A5%BD%E6%9E%81%E4%BA%86">1.味道好极了</a></li>
+<li><a href="#2%E9%A5%BF%E4%BA%86%E5%88%AB%E5%8F%AB%E5%A6%88%E5%8F%AB%E9%A5%BF%E4%BA%86%E4%B9%88">2.饿了别叫妈，叫饿了么</a></li>
+<li><a href="#3%E5%A4%9A%E5%96%9D%E6%B0%B4%E6%B2%A1%E4%BA%8B%E6%B2%A1%E4%BA%8B%E5%A4%9A%E5%96%9D%E6%B0%B4">3.多喝水没事，没事多喝水</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-%E5%BD%A2">第二节 形</a>
+<ul>
+<li><a href="#1%E6%88%91%E6%9C%89%E4%B8%80%E4%B8%AA%E6%A2%A6%E6%83%B3">1.我有一个梦想</a></li>
+<li><a href="#2%E7%83%AD%E7%88%B1%E6%88%91%E7%9A%84%E7%83%AD%E7%88%B1">2.热爱我的热爱</a></li>
+<li><a href="#3%E4%B8%AA%E4%BA%BA%E7%9A%84%E4%B8%80%E5%B0%8F%E6%AD%A5%E4%BA%BA%E7%B1%BB%E7%9A%84%E4%B8%80%E5%A4%A7%E6%AD%A5">3.个人的一小步，人类的一大步</a></li>
+<li><a href="#4%E5%85%85%E7%94%B55%E5%88%86%E9%92%9F%E9%80%9A%E8%AF%9D2%E5%B0%8F%E6%97%B6">4.充电5分钟，通话2小时</a></li>
+<li><a href="#5%E4%BB%96%E5%BF%98%E8%AE%B0%E4%BA%86%E5%BE%88%E5%A4%9A%E4%BA%8B%E6%83%85%E4%BD%86%E4%BB%96%E4%BB%8E%E6%9C%AA%E5%BF%98%E8%AE%B0%E7%88%B1%E4%BD%A0">5.他忘记了很多事情，但他从未忘记爱你</a></li>
+<li><a href="#6%E8%B8%A9%E6%83%AF%E4%BA%86%E7%BA%A2%E5%9C%B0%E6%AF%AF%E4%BC%9A%E6%A2%A6%E8%A7%81%E7%9F%B3%E6%9D%BF%E8%B7%AF">6.踩惯了红地毯，会梦见石板路</a></li>
+<li><a href="#7%E5%B0%86%E6%89%80%E6%9C%89%E4%B8%80%E8%A8%80%E9%9A%BE%E5%B0%BD%E4%B8%80%E9%A5%AE%E8%80%8C%E5%B0%BD">7.将所有一言难尽，一饮而尽</a></li>
+<li><a href="#8%E4%B8%96%E7%95%8C%E4%B8%8A%E6%9C%80%E7%B4%AF%E7%9A%84%E5%B7%A5%E4%BD%9C%E4%B9%9F%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E5%B7%A5%E4%BD%9C">8.世界上最累的工作，也是最好的工作</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E8%8A%82-%E6%84%8F">第三节 意</a>
+<ul>
+<li><a href="#1%E6%8A%8A%E4%B9%90%E5%B8%A6%E5%9B%9E%E5%AE%B6">1.把乐带回家</a></li>
+<li><a href="#2%E6%89%AD%E4%B8%80%E6%89%AD%E8%88%94%E4%B8%80%E8%88%94%E6%B3%A1%E4%B8%80%E6%B3%A1">2.扭一扭，舔一舔，泡一泡</a></li>
+<li><a href="#3%E4%BA%BA%E5%A4%B4%E9%A9%AC%E4%B8%80%E5%BC%80%E5%A5%BD%E4%BA%8B%E8%87%AA%E7%84%B6%E6%9D%A5">3.人头马一开，好事自然来</a></li>
+<li><a href="#4%E5%9B%A0%E4%B8%BA%E6%88%91%E4%BB%AC%E6%9B%B4%E5%8A%AA%E5%8A%9B">4.因为我们更努力</a></li>
+<li><a href="#5%E6%B4%BB%E5%87%BA%E4%BD%A0%E7%9A%84%E4%BC%9F%E5%A4%A7">5.活出你的伟大</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>
