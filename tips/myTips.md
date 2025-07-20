@@ -3,6 +3,8 @@
 <div class="content">
 <table class="covertitle"><tr><td>
 
+# Tips
+
 # 知识点收集：投资理财
 </td></tr></table>
 
@@ -96,7 +98,7 @@
 </td></tr></table>
 
 - [Excel自定义格式代码](tips0005-Excel自定义格式代码.html)
-- [各种快捷键](tips0014-各种快捷键.html)
+- [各种快捷键、腹灵F12键盘](tips0014-各种快捷键.html)
 
 ### Windows系统
 
@@ -142,8 +144,6 @@
 </td></tr></table>
 
 - [日常英语](tips0006-日常英语.html)
-
-
 
 
 
