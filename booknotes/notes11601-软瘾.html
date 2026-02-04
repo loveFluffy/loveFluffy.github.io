@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x8f6f;&#x763e;&#xff1a;&#x7ec8;&#x7ed3;&#x90a3;&#x4e9b;&#x7a83;&#x53d6;&#x4f60;&#x65f6;&#x95f4;&#x3001;&#x593a;&#x8d70;&#x4f60;&#x751f;&#x6d3b;&#x7684;&#x5f3a;&#x8feb;&#x6027;&#x4e60;&#x60ef;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x8f6f;&#x763e;&#xff1a;&#x7ec8;&#x7ed3;&#x90a3;&#x4e9b;&#x7a83;&#x53d6;&#x4f60;&#x65f6;&#x95f4;&#x3001;&#x593a;&#x8d70;&#x4f60;&#x751f;&#x6d3b;&#x7684;&#x5f3a;&#x8feb;&#x6027;&#x4e60;&#x60ef;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,450 +31,444 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		/* 试图通过设置z-index让2级目录随滚动插入1级目录底下，但没有生效，不知为何 */
-		z-index: 1;
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
-
-/*
-div.toc ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li,
-div.toc ul>li>ul>li>ul>li>ul>li {
-*/
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="软瘾终结那些窃取你时间夺走你生活的强迫性习惯">软瘾：终结那些窃取你时间、夺走你生活的强迫性习惯</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/11601.jpg"></td><td>
+<h1 id="软瘾终结那些窃取你时间夺走你生活的强迫性习惯">软瘾：终结那些窃取你时间、夺走你生活的强迫性习惯</h1>
+<center>[美]朱迪斯·莱特（Judith Wright） 著|董黛 译</center>
+</td></tr></table>
+<div class="mycomment">
+<p>行文非常啰嗦，有凑字数的嫌疑。</p>
+<p>举的一些“软瘾”的例子非常吸引人，但是没有提出如何做出改变的具体方法论。看了开头后，去看了豆瓣的评论，其他人也有同样的看法，就决定不在这本书上浪费时间了，不看了。作者只是在反复举例一些日常生活中浪费时间的事情，让人强烈共鸣：是的！我也是这样浪费时间的！可是，如果想要内心有远大理想，并且积极实施下去，是需要十足毅力的，这远不是这本书能提供的。我认为这种毅力应该是来自于生活中的摔跟头、痛定思痛，不是不痛不痒地书本良言所能提供的。</p>
+<p>这本书唯一的用处是提醒读者生活中存在软瘾，并且举例进行说明。</p>
+</div>
+<h3 id="导论">导论</h3>
+<p>大多数人一听到这个词，就会立刻几乎凭着直觉自动理解了它的含义以及普遍性。无论是过去还是现在，他们的反馈始终令我感到惊讶。更令我惊喜的是，他们在摆脱软瘾后换回的时间、金钱、爱与成就感是多么可观。在我的研讨会上，<em>人们会估算他们为软瘾付出的实际成本。出人意料的是，他们估算的自己如今为软瘾——从买咖啡到网上购物——付出的最低实际花费仅仅在每年3000美元左右，而大多数研讨会的平均水平都在15000美元到18000美元之间</em>。这仅仅是金钱方面的进步，你可以想象一下他们重获的亲密感和满足感又会如何。</p>
+<hr>
+<p>我遇到过一味追求结果的高管，他们看到了自己低效的工作模式如何阻碍自己获得成就和满足感。还有一些夫妇在两性关系中失去了激情，他们整晚都心不在焉，而非投入地享受生活。做父母的告诉我们，每个家庭成员晚上都待在不同的房间里，盯着不同的屏幕，看电视、打游戏、聊天或只是上网冲浪。单身人士承认，他们要么独来独往，要么在约会软件上发布精心包装过的自我介绍，而不是冒险走出去，展现真实的自己。女性谈论着如何用“本和杰瑞”牌冰激凌来安慰自己，而不是出去见见真正的“本”和“杰瑞”们。孩子们说他们沉迷于电视、电脑、游戏和零食，从不会出去玩或与现实中的同龄人来往。男性承认他们对运动、电子产品和色情产品上瘾，而女性则承认自己会狂买、狂化妆、狂打扫、狂锻炼和狂聊八卦。</p>
+<p>软瘾是一种普遍现象，虽然有些很普通，但也有些比较个人化。</p>
+<ul>
+<li>“我过得一团糟。”</li>
+<li>“我会在网上浪费好几个小时。”</li>
+<li>“我把时间浪费在睡觉上，我在逃避我的生活。”</li>
+<li>“我把生命浪费在看我根本不想看的电视节目上。”</li>
+<li>“我工作得越来越晚，这样我就可以不用回家了。我觉得我在工作上能力很强，但在个人生活上却不行。”</li>
+<li>“我每个周末都去旧货市场，希望淘到东西来丰富我的收藏。”</li>
+</ul>
+<p>这个问题的解决会让精英人士的职业生涯焕然一新，帮家庭成员获得拉近距离的新方法，帮孩子们取得更好的成绩，甚至也能帮伴侣挽救婚姻。当你用你真正想获得的充实取代你的软瘾时，你会惊讶于自己拥有的资源和满足感。为了做到这一点，你必须转变“没错，但是”的思维逻辑。</p>
+<hr>
+<p>通过这本书，你会明白你有一种深沉、神圣的渴望是值得被满足的，而没有任何软瘾能触及你内心的那个地方，无论你尝试多少次。<em>软瘾应对方案的中心是“核心决定”——选择过一种内涵更充实的生活。这件事做起来比听上去重要得多，也困难得多，这就是为什么我写了整本书来阐述核心决定的奇妙之处。你做好核心决定后，你的生活就会被一种有影响力的价值观统一起来。你就会找到方向，能够为自己设想出一种理想的生活。核心决定给了你力量，让你更容易摆脱那些曾经阻碍你实现梦想的习惯。你会重新获得感受的力量，而不再感到麻木</em>。你欢笑，哭泣，充满能量和激情，承认你的恐惧，得到你需要的安慰和鼓励。你向前迈进，不被你经历过的任何事拖累。你所走的每一步都会为你的生活创造更充实的内涵。你不仅摆脱了自己的软瘾，还创造了一种美好的生活方式，它丰富，令人满足，鼓舞人心，健康，有趣，有创造力，美丽，能提高生活质量，而不是让你的生活如一潭死水。</p>
+<hr>
+<p>当我还是个孩子的时候，我就觉得有些东西缺失了，有些事不对劲，但我不知道怎么描述。有些东西不太正常，不仅仅是对我自己来说，我周围的世界也是如此。<em>人们似乎不太开心，也不太活跃。他们只是生活在各自的房子里，但那些地方不能被称为“家”。他们很忙，但并不充实。虽然他们可能在做一些应该很有趣的事，但他们看起来并不享受。他们会交谈，但并没有建立真正的联系。这里的生活是孤独的，充满了流于表面的活动——缺乏活力的活动，到处是敷衍了事的空间和心不在焉的面孔</em>。我感到所有人都陷在雾里，裹在棉花里。有时我会想，是不是这个世界没问题，是我不正常。但在内心深处，我知道人们的生活中缺少了一些东西。我当时不知道什么样的情况才是对的，所以我继续沉迷于我的软瘾——<em>暴饮暴食，看电视，咬指甲，埋头学习</em>。</p>
+<hr>
+<p>我不认识几个过上理想生活的人。大多数人对自己的生活随遇而安，或是虽然会抱怨却没有做什么改变。他们放弃了自己的梦想，为了体面的工资和福利安定下来。我记得我当时想，如果人长大就是为了这些，那我还真不想长大了！<em>我只知道我想要更多，但不知道“更多”具体指什么、如何得到，甚至不知道是否真的存在这种拥有“更多”的生活</em>。</p>
+<hr>
+<p><em>当我没有忙于做些什么来分散注意力时，我就会感到空虚和饥饿</em>。我的心很痛，尽管当时我不知道该如何用语言来表达这种感觉。我经常感到空虚，或者觉得自己像一个几乎不存在的幽灵。我知道有些事不对劲，但不知道是哪里出了问题。<em>我觉得生活不该是这样的，但这是我知道的唯一的准则——努力工作，取得成就，然后看着电视走神，机械地往嘴里塞着东西</em>。</p>
+<hr>
+<p>成长到青年时，我遵循着同样的准则。在大学里，我是个优秀的学生，在我的年纪也算小有成就；28岁时，我已经在两个不同的领域获得了全美范围内的认可。但是，尽管我取得了成就，我仍然感到空虚、不快乐、不满意。在寻找这种沮丧的根源时，我认为我仍然不快乐的真正原因是我很胖，所以我开始节食减肥。后来，我成功了，变得苗条了——但也依然不快乐。</p>
+<p>于是我认为，我不快乐一定是因为我没有谈恋爱，所以我找了我大学时的男友，一个长得像史泰龙却拥有天才智商的人。<em>然后我确信我拥有了一切：成功、我想要的身材以及一个天才男友。但事实并不是这样。我仍然不快乐，空虚，绝望</em>。</p>
+<p>从外表看，我一切都很好，但我内心却很痛苦。我不知道还能做什么。我以为我找到了秘诀，但这些方法都行不通。因此，我开始将行为升级，开始给每一件事加码——<em>更努力工作，参加更多聚会，买更多东西，发掘越来越多的娱乐活动。我购物，看电视，闲逛，约会，直到精疲力竭。我对自己和生活感觉越来越糟，越来越空虚、悲伤、失落和歇斯底里</em>。</p>
+<hr>
+<p>我开始把这两种对我成长有影响的职业经历结合起来。令我惊讶的是，我意识到，尽管我取得了许多成功，但那些照亮了我的日子的学生和他们那些深深激励和感动了我的父母的生活质量比我高。他们生活中的成功与拥有完美的思想、完美的身体、完美的配偶或完美的环境无关。<em>它与完美无关，也与我一直以来的生活法则无关</em>。</p>
+<h4 id="我的核心决定">我的核心决定</h4>
+<p>就在我最难过的时候，这些人的行为让我产生了最深刻的领悟，使我做出了自己的核心决定——一个从此永远改变了我的生活的意义深远的决定。<em>我对自己宣布，我不要再浑浑噩噩地过日子了。这成了我生命中一个明显的转折点。我决定要感受我的生命，清醒、充满活力地生活，尽一切努力保持这种方式，并帮助其他人也这样生活。我要过一种懂得感恩的生活，丰富我的精神世界——我不想做空洞、肤浅、盲目的承诺，而要真正实现从内而外的蜕变，就像我有幸看到的灯塔般的人们那样</em>。</p>
+<p>正是在这个决定的基础上，我积极地追求着更充实的生活，寻找那些让我感觉更清醒、更真实、更有活力的事物。然后我震惊地意识到，我所做的一切试图让自己感觉更好的事情，实际上只会让我失去对生活的感知。暴饮暴食、疯狂购物、疯狂学习、参加聚会、闲聊八卦、阅读杂志和沉迷于电视已经让我变得麻木了。<em>尽管我觉得自己不得不去做这些，但它们实际上让我分了心，剥夺了我获得我渴望的更大满足感的机会。我做这些事越多，就离充实越远。这些事就是所谓的软瘾</em>。</p>
+<hr>
+<p>我意识到，<em>大多数软瘾不过是为逃避情绪而做出的错误尝试</em>。通过摆脱软瘾，我学会了尊重自己的感受。我不再远离情绪，而是朝着它走去。我在生活中获得了更多爱意后，吃的糖果都少了。我开始摄取更多有营养的食物，参加更有意义的活动，实践更令人满意的生活方式。比如，泡热水澡比喝酒更能让人放松，还不会对我的意识产生消极影响，也不会留下任何不良的后遗症。纵情大笑、祈祷、体验片刻喜悦的感受比酗酒或嗑药的快感好多了。阅读伟大的文学作品比木然坐在电视机前的感觉更好。由衷的大笑、叫喊甚至痛快的哭泣都会给我带来心灵的宁静，这是任何无意识的机械行为都无法实现的。学会倾吐更深层次的真实、不保留秘密、坦承自我的行为会让我害怕，但同时也让我感到解脱。</p>
+<h3 id="第1章-你的生活应该更充实">第1章 你的生活应该更充实</h3>
+<p>无论我们是行业精英、世界冠军、差等生还是介于这些极端之间，我们都希望生命能够更充实。具有讽刺意味的是，<em>我们渴望从生活中得到更多，却没有付出我们真正需要为此付出的努力</em>。统计数据显示，我们中几乎每一个人，<em>无论是否成功，都多少有些消极行为和习惯</em>。它们不仅干扰我们追求充实，而且在我们得偿所愿后还会让我们的乐趣大打折扣。我们的生命——时间、精力、意识和生命力——就在对宝贵资源的浪费中过去了。我们沉迷于看电视、购物、上网、暴饮暴食、聊八卦或被我称为“软瘾”的其他无数日常习惯。</p>
+<h4 id="从贫瘠到充实">从贫瘠到充实</h4>
+<h4 id="我的软瘾经历">我的软瘾经历</h4>
+<p>我工作很努力、很成功，但在没有负责什么项目也没有因为什么项目获奖时，<em>我会没完没了地购物或浏览我买不起的东西，和别人八卦我们共同的朋友或名人的生活，沉迷于翻阅商品目录，或者想象自己穿上那些最新的时装是什么样</em>。我工作得越努力、时间越长，取得的成绩就越多。<em>我得到的赞扬越多，我就越觉得有理由去买更多东西，或者更加心不在焉。我努力工作了，所以这是我应得的</em>。尽管我取得了高质量的成果，但我总是匆匆忙忙的，几乎做什么都迟到，家中杂物遍地，水槽里堆着脏盘子，卧室里散落着昨天的衣服。<em>我会反思我做错的每一件事，在心里自我打击，并对得到的一切赞美不以为然</em>。</p>
+<h4 id="什么是软瘾">什么是软瘾</h4>
+<p><em>软瘾不是罪，它们只是一种安抚自己的错误尝试，一种在一天的劳累后试图放松的方法，一种分散注意力或自娱自乐的方法，或者一种应对强烈情绪的方法。问题是，软瘾不会丰富我们的生活，实际上反而会耗尽我们宝贵的资源，而这些资源本可以用来推动我们实现梦想</em>。它们不会关爱我们，不会鼓舞我们，也不会给我们应得的安慰。它们会夺走我们的东西，而不会给我们带来多少回报。我们都需要从压力重重的生活中抽空休息一下，都需要娱乐、休息、消闲，但我们应该得到优质的休息——不仅仅是盯着电脑屏幕，或者在电视机前心不在焉地换台。我们需要令人满足和兴奋的方式来提升自我、恢复精神、自娱自乐，这才能带给我们更充实而非更贫瘠的生活。</p>
+<hr>
+<p>人们经常问我软瘾和硬瘾的区别。吸毒或酗酒等硬瘾本身是危险的，会危及生命。而软瘾涉及的物质或行为本身并不危险，让它们成为问题的是我们对它们的利用或滥用。<em>你不必靠毒品和酒精来生活，但你一定需要购物、吃饭和利用各种媒体</em>。因此，你是<strong>无法通过仅仅摆脱软瘾涉及的物质来摆脱它们的</strong>。相反，你必须改变你与这项活动的关系，学习新的技能。与硬瘾不同，<em>软瘾为社会所接受，甚至是很受欢迎的活动。每个人都做，还经常与彼此分享体验</em>。它们经常被媒体、广告和杂志所美化。软瘾是很狡猾的，经常在我们意识不到的层面上运作，窃取我们的生命力和宝贵的资源。它们如此深入我们的生活，让我们的生活方式变成了由它们组成的网络。看看你能否在下面的场景中看到自己的某些影子。</p>
+<hr>
+<p>你仅有的一点儿空闲时间都被用来满足那些未被满足、急不可待的需求了。你需要去咖啡馆买一大杯摩卡，看肥皂剧，听某个特定的广播电台，阅读报纸的体育版，查看电子邮件，锻炼身体。你脑中偶然闪过一个念头：<em>这些事你做得太多了，但你想不出做什么能带来更大的回报</em>。</p>
+<p>排行前十的软瘾（根据哈里斯调查）</p>
+<ol>
+<li>拖延行为</li>
+<li>沉迷于电视</li>
+<li>工作狂</li>
+<li>情绪起伏大，如暴躁或过于兴奋</li>
+<li>暴饮暴食</li>
+<li>喝太多咖啡</li>
+<li>冲动购物</li>
+<li>沉迷于幻想</li>
+<li>经常抱怨</li>
+<li>沉迷于网络</li>
+</ol>
+<p><em>你会经常看表。你迫不及待想要午休或者下班，即使午饭没什么特别的，下班后也没有什么特别的事要做。你会拖延，为你没能按时完成工作找借口，但你还是会关上门玩电脑游戏。你渴望放假、跳槽或退休，认为那样你就会快乐</em>。</p>
+<p>在家的时候，你要么忙于应付家人的需要，要么沉浸在自己的世界里。也许你会喝一两杯酒来缓解一天的疲乏。晚上你可能会看电视，但看过也不记得自己看了什么。你花好几个小时浏览商品目录，垂涎新衣服或漂亮的小玩意。你对很多人都心存幻想，不管你是否已婚或有认真的交往对象。</p>
+<p>在上面这些场景中，你能否看出自己或你认识的人的影子？是的，这可能是任何人的生活中典型一天的夸张版本，但它与我们的现实并不像我们希望中那样相去甚远。如果你和大多数人一样，你会在之前我描述的场景中找到自己的影子——那些场景中的活动和行为就是所谓的软瘾。它们对我们产生了强大的影响。我们在任何地方都能看到它们的痕迹。<em>它们虽然看似无害，有些甚至令人愉快，但本质上都是毫无意义的惯性行为</em>。你也许在潜意识里已经产生了怀疑：这些习惯是否妨碍了你体验更有意义、更充实的生活？</p>
+<p>那么，为什么大家没有立即改变行为、摆脱习惯，来获得更令人满意的生活呢？不幸的是，这<em>说起来容易，做起来难</em>。</p>
+<h4 id="当代生活的悖论">当代生活的悖论</h4>
+<p>软瘾是我们生活的这个充满矛盾的时代的写照。在当今世界上，我们拥有了获得满足感和人生意义的机会，同时也具备了用创新方式浪费时间的条件。这个时代对我们而言充满了特别的挑战——我们可以购买、消费和使用的商品数不胜数，它们对我们形成了巨大的诱惑。<em>从平板、手机到其他最新潮的电子产品，每一款新商品都会让我们认为自己需要或想要它，即使我们以前根本不知道它的存在，或是根本没渴望过拥有它</em>。</p>
+<hr>
+<p>我们走得更快、更远了，但感觉哪儿也没去成。<em>我们赚得更多，买得更多，也做得更多，但感觉生活更贫瘠了</em>。我们习惯了那些帮我们节约时间的设备，在以越来越快的速度移动时却总在抱怨没有时间。很多事物并不是越大越好，有时更多反而会导致更少的结果——这就是我们这个时代的悖论。当我们陷入这种悖论，满足于用更多的工具做更少的事时，我们就会成为软瘾的牺牲品。</p>
+<hr>
+<p>我们面临的挑战是如何调和“多反而导致少”的这种矛盾。这需要我们学会区分软瘾和有意义的活动，以及逃避现实的娱乐和促进自我发现的交流。我们生活在一个界限模糊的时代，很容易更注重形式而非本质，更注重表象而非现实。软瘾的复杂性及其营销手段制造了一种错觉，让人们觉得它们是有意义的、丰富生命的行为。<em>当我们花费数小时在网上买卖琐碎物品时，我们还会因为和他人建立了联系而对这种行为感到喜悦</em>。同样重要的是，我们大多数人承受的不断上升的压力水平似乎使软瘾成了一种必然结果。我们觉得自己“需要”通过看电视来释放压力。有些发泄渠道本质上是积极的，而另一些则不是，但所有渠道都很容易成为逃避的工具。为了避免陷入逃避的困境，我们必须意识到社会矛盾的本质及其带来的挑战。</p>
+<h4 id="勇于争取更多的生活">勇于争取更多的生活</h4>
+<h4 id="深层次的充实vs表面上的丰富">深层次的充实vs.表面上的丰富</h4>
+<h4 id="获得充实的案例">获得充实的案例</h4>
+<h4 id="摆脱软瘾追求充实">摆脱软瘾，追求充实</h4>
+<h3 id="第2章-做出你的核心决定">第2章 做出你的核心决定</h3>
+<h4 id="意志力再见自由你好">意志力再见，自由你好</h4>
+<h4 id="不明智决定与核心决定">不明智决定与核心决定</h4>
+<h4 id="活得肤浅还是深刻">活得肤浅还是深刻</h4>
+<h4 id="正确的结果和错误的决定">正确的结果和错误的决定</h4>
+<h4 id="核心决定的力量">核心决定的力量</h4>
+<h4 id="常见的选择">常见的选择</h4>
+<h4 id="核心决定是什么样的">核心决定是什么样的</h4>
+<h4 id="你面前的路还很长">你面前的路还很长</h4>
+<h4 id="为什么你不需要对自己太苛刻">为什么你不需要对自己太苛刻</h4>
+<h4 id="确定你的核心决定">确定你的核心决定</h4>
+<h3 id="第3章-确定你的软瘾">第3章 确定你的软瘾</h3>
+<h4 id="事情比你看到的复杂得多">事情比你看到的复杂得多</h4>
+<h4 id="软瘾的定义">软瘾的定义</h4>
+<h4 id="改变对软瘾的看法">改变对软瘾的看法</h4>
+<h4 id="寻找危险信号">寻找危险信号</h4>
+<h4 id="软瘾类别">软瘾类别</h4>
+<h4 id="软瘾测试">软瘾测试</h4>
+<h4 id="意识的提升">意识的提升</h4>
+<h4 id="揭露并承认软瘾的代价">揭露并承认软瘾的代价</h4>
+<h4 id="联网而非列表">联网而非列表</h4>
+<h3 id="第4章-关注你的思维">第4章 关注你的思维</h3>
+<h4 id="为什么要关注思维">为什么要关注思维</h4>
+<h4 id="偏颇想法和否认行为">偏颇想法和否认行为</h4>
+<h4 id="糟糕透顶的偏颇想法">糟糕透顶的偏颇想法</h4>
+<h4 id="偏颇想法的蒙蔽">偏颇想法的蒙蔽</h4>
+<h4 id="否认的多副面孔">否认的多副面孔</h4>
+<h4 id="发现其他偏颇想法">发现其他偏颇想法</h4>
+<h4 id="放轻松的好处">放轻松的好处</h4>
+<h4 id="培养你的幽默感">培养你的幽默感</h4>
+<h4 id="软瘾模板">“软瘾模板”</h4>
+<h3 id="第5章-破解你的软瘾密码">第5章 破解你的软瘾密码</h3>
+<h4 id="引导能量的流向">引导能量的流向</h4>
+<h4 id="有一套古怪习惯的服务生">有一套古怪习惯的服务生</h4>
+<h4 id="软瘾的起源错误观念">软瘾的起源：错误观念</h4>
+<h4 id="历史原因为什么会形成">历史原因：为什么会形成</h4>
+<h4 id="连接过去与现在">连接过去与现在</h4>
+<h4 id="你某些情绪的根源">你某些情绪的根源</h4>
+<h4 id="功能原因为什么在这时出现">功能原因：为什么在这时出现</h4>
+<h4 id="破解你的密码">破解你的密码</h4>
+<h3 id="第6章-满足你的精神需求">第6章 满足你的精神需求</h3>
+<h4 id="掌握精神需求的词汇">掌握精神需求的词汇</h4>
+<h4 id="体会精神需求和浅层欲望的差异">体会精神需求和浅层欲望的差异</h4>
+<h4 id="确定你的精神需求关于充实的词汇">确定你的精神需求：关于充实的词汇</h4>
+<h4 id="不要接受替代品">不要接受替代品</h4>
+<h4 id="时刻满足你的精神需求">时刻满足你的精神需求</h4>
+<h4 id="找到浅层欲望与精神需求的联系">找到浅层欲望与精神需求的联系</h4>
+<h4 id="提升意识的三个步骤">提升意识的三个步骤</h4>
+<h4 id="渴望一种深层次的联系">渴望一种深层次的联系</h4>
+<h3 id="第7章-构建你的愿景">第7章 构建你的愿景</h3>
+<h4 id="愿景与核心决定的关系">愿景与核心决定的关系</h4>
+<h4 id="什么是愿景">什么是愿景</h4>
+<h4 id="设计你的生活构建更充实的愿景">设计你的生活：构建更充实的愿景</h4>
+<h4 id="愿景的构成">愿景的构成</h4>
+<h4 id="愿景的例子">愿景的例子</h4>
+<h3 id="第8章-通过加减法来实现愿景">第8章 通过加减法来实现愿景</h3>
+<h4 id="我的发现">我的发现</h4>
+<h4 id="掌握加减法">掌握加减法</h4>
+<h4 id="加法公式">加法公式</h4>
+<h4 id="为更充实的生活做加法">为更充实的生活做加法</h4>
+<h4 id="养分和自我关爱的加法">养分和自我关爱的加法</h4>
+<h4 id="个人力量和自我表达的加法">个人力量和自我表达的加法</h4>
+<h4 id="亲密感的加法">亲密感的加法</h4>
+<h4 id="人生目标和精神世界的加法">人生目标和精神世界的加法</h4>
+<h4 id="为更充实的生活做减法">为更充实的生活做减法</h4>
+<h4 id="消极想法的减法">消极想法的减法</h4>
+<h4 id="杂乱的减法">杂乱的减法</h4>
+<h4 id="计划如何成型">计划如何成型</h4>
+<h4 id="计划的执行不需追求完美">计划的执行不需追求完美</h4>
+<h3 id="第9章-获得支持并负起责任">第9章 获得支持并负起责任</h3>
+<h4 id="负起责任">负起责任</h4>
+<h4 id="获得支持">获得支持</h4>
+<h4 id="如何获得支持">如何获得支持</h4>
+<h4 id="为新的支持开源">为新的支持开源</h4>
+<h4 id="与他人合作深化支持和责任">与他人合作：深化支持和责任</h4>
+<h4 id="支持的长期影响">支持的长期影响</h4>
+<h4 id="将支持付诸行动">将支持付诸行动</h4>
+<h4 id="给自己支持">给自己支持</h4>
+<h3 id="第10章-弯路与校正">第10章 弯路与校正</h3>
+<h4 id="杰克的旅程">杰克的旅程</h4>
+<h4 id="把障碍变成突破">把障碍变成突破</h4>
+<h4 id="通往充实的道路上的挑战">通往充实的道路上的挑战</h4>
+<h4 id="通往更充实生活的道路上的爆胎">通往更充实生活的道路上的“爆胎”</h4>
+<h4 id="按准则行事">按准则行事</h4>
+<h3 id="第11章-关于爱的四大真理">第11章 关于爱的四大真理</h3>
+<h4 id="第一个真理你是被爱的">第一个真理：你是被爱的</h4>
+<h4 id="第二个真理痛苦留下的财富是爱与平静">第二个真理：痛苦留下的财富是爱与平静</h4>
+<h4 id="第三个真理感受是神圣和值得尊敬的">第三个真理：感受是神圣和值得尊敬的</h4>
+<h4 id="第四个真理每个人都有可以发展和利用的天赋">第四个真理：每个人都有可以发展和利用的天赋</h4>
+<h4 id="遵循爱的四大真理">遵循爱的四大真理</h4>
+<h3 id="结语-对充实的伟大追求">结语 对充实的伟大追求</h3>
+<h4 id="推崇摆脱束缚的勇气">推崇摆脱束缚的勇气</h4>
+<h4 id="光明与黑暗之战">光明与黑暗之战</h4>
+<h4 id="守卫你的成果">守卫你的成果</h4>
+<h4 id="回报是非常值得的">回报是非常值得的</h4>
+<h4 id="创造一个更充实的世界">创造一个更充实的世界</h4>
+<h4 id="有所作为改变世界">有所作为，改变世界</h4>
+<h3 id="软瘾应对方案练习册">软瘾应对方案练习册</h3>
+<h3 id="附录1-软瘾模板">附录1 软瘾模板</h3>
+<h3 id="附录2-加减法模板">附录2 加减法模板</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%AF%BC%E8%AE%BA">导论</a>
+<ul>
+<li><a href="#%E6%88%91%E7%9A%84%E6%A0%B8%E5%BF%83%E5%86%B3%E5%AE%9A">我的核心决定</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E4%BD%A0%E7%9A%84%E7%94%9F%E6%B4%BB%E5%BA%94%E8%AF%A5%E6%9B%B4%E5%85%85%E5%AE%9E">第1章 你的生活应该更充实</a>
+<ul>
+<li><a href="#%E4%BB%8E%E8%B4%AB%E7%98%A0%E5%88%B0%E5%85%85%E5%AE%9E">从贫瘠到充实</a></li>
+<li><a href="#%E6%88%91%E7%9A%84%E8%BD%AF%E7%98%BE%E7%BB%8F%E5%8E%86">我的软瘾经历</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AF%E7%98%BE">什么是软瘾</a></li>
+<li><a href="#%E5%BD%93%E4%BB%A3%E7%94%9F%E6%B4%BB%E7%9A%84%E6%82%96%E8%AE%BA">当代生活的悖论</a></li>
+<li><a href="#%E5%8B%87%E4%BA%8E%E4%BA%89%E5%8F%96%E6%9B%B4%E5%A4%9A%E7%9A%84%E7%94%9F%E6%B4%BB">勇于争取更多的生活</a></li>
+<li><a href="#%E6%B7%B1%E5%B1%82%E6%AC%A1%E7%9A%84%E5%85%85%E5%AE%9Evs%E8%A1%A8%E9%9D%A2%E4%B8%8A%E7%9A%84%E4%B8%B0%E5%AF%8C">深层次的充实vs.表面上的丰富</a></li>
+<li><a href="#%E8%8E%B7%E5%BE%97%E5%85%85%E5%AE%9E%E7%9A%84%E6%A1%88%E4%BE%8B">获得充实的案例</a></li>
+<li><a href="#%E6%91%86%E8%84%B1%E8%BD%AF%E7%98%BE%E8%BF%BD%E6%B1%82%E5%85%85%E5%AE%9E">摆脱软瘾，追求充实</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E5%81%9A%E5%87%BA%E4%BD%A0%E7%9A%84%E6%A0%B8%E5%BF%83%E5%86%B3%E5%AE%9A">第2章 做出你的核心决定</a>
+<ul>
+<li><a href="#%E6%84%8F%E5%BF%97%E5%8A%9B%E5%86%8D%E8%A7%81%E8%87%AA%E7%94%B1%E4%BD%A0%E5%A5%BD">意志力再见，自由你好</a></li>
+<li><a href="#%E4%B8%8D%E6%98%8E%E6%99%BA%E5%86%B3%E5%AE%9A%E4%B8%8E%E6%A0%B8%E5%BF%83%E5%86%B3%E5%AE%9A">不明智决定与核心决定</a></li>
+<li><a href="#%E6%B4%BB%E5%BE%97%E8%82%A4%E6%B5%85%E8%BF%98%E6%98%AF%E6%B7%B1%E5%88%BB">活得肤浅还是深刻</a></li>
+<li><a href="#%E6%AD%A3%E7%A1%AE%E7%9A%84%E7%BB%93%E6%9E%9C%E5%92%8C%E9%94%99%E8%AF%AF%E7%9A%84%E5%86%B3%E5%AE%9A">正确的结果和错误的决定</a></li>
+<li><a href="#%E6%A0%B8%E5%BF%83%E5%86%B3%E5%AE%9A%E7%9A%84%E5%8A%9B%E9%87%8F">核心决定的力量</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E9%80%89%E6%8B%A9">常见的选择</a></li>
+<li><a href="#%E6%A0%B8%E5%BF%83%E5%86%B3%E5%AE%9A%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84">核心决定是什么样的</a></li>
+<li><a href="#%E4%BD%A0%E9%9D%A2%E5%89%8D%E7%9A%84%E8%B7%AF%E8%BF%98%E5%BE%88%E9%95%BF">你面前的路还很长</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E4%B8%8D%E9%9C%80%E8%A6%81%E5%AF%B9%E8%87%AA%E5%B7%B1%E5%A4%AA%E8%8B%9B%E5%88%BB">为什么你不需要对自己太苛刻</a></li>
+<li><a href="#%E7%A1%AE%E5%AE%9A%E4%BD%A0%E7%9A%84%E6%A0%B8%E5%BF%83%E5%86%B3%E5%AE%9A">确定你的核心决定</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E7%A1%AE%E5%AE%9A%E4%BD%A0%E7%9A%84%E8%BD%AF%E7%98%BE">第3章 确定你的软瘾</a>
+<ul>
+<li><a href="#%E4%BA%8B%E6%83%85%E6%AF%94%E4%BD%A0%E7%9C%8B%E5%88%B0%E7%9A%84%E5%A4%8D%E6%9D%82%E5%BE%97%E5%A4%9A">事情比你看到的复杂得多</a></li>
+<li><a href="#%E8%BD%AF%E7%98%BE%E7%9A%84%E5%AE%9A%E4%B9%89">软瘾的定义</a></li>
+<li><a href="#%E6%94%B9%E5%8F%98%E5%AF%B9%E8%BD%AF%E7%98%BE%E7%9A%84%E7%9C%8B%E6%B3%95">改变对软瘾的看法</a></li>
+<li><a href="#%E5%AF%BB%E6%89%BE%E5%8D%B1%E9%99%A9%E4%BF%A1%E5%8F%B7">寻找危险信号</a></li>
+<li><a href="#%E8%BD%AF%E7%98%BE%E7%B1%BB%E5%88%AB">软瘾类别</a></li>
+<li><a href="#%E8%BD%AF%E7%98%BE%E6%B5%8B%E8%AF%95">软瘾测试</a></li>
+<li><a href="#%E6%84%8F%E8%AF%86%E7%9A%84%E6%8F%90%E5%8D%87">意识的提升</a></li>
+<li><a href="#%E6%8F%AD%E9%9C%B2%E5%B9%B6%E6%89%BF%E8%AE%A4%E8%BD%AF%E7%98%BE%E7%9A%84%E4%BB%A3%E4%BB%B7">揭露并承认软瘾的代价</a></li>
+<li><a href="#%E8%81%94%E7%BD%91%E8%80%8C%E9%9D%9E%E5%88%97%E8%A1%A8">联网而非列表</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E5%85%B3%E6%B3%A8%E4%BD%A0%E7%9A%84%E6%80%9D%E7%BB%B4">第4章 关注你的思维</a>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%85%B3%E6%B3%A8%E6%80%9D%E7%BB%B4">为什么要关注思维</a></li>
+<li><a href="#%E5%81%8F%E9%A2%87%E6%83%B3%E6%B3%95%E5%92%8C%E5%90%A6%E8%AE%A4%E8%A1%8C%E4%B8%BA">偏颇想法和否认行为</a></li>
+<li><a href="#%E7%B3%9F%E7%B3%95%E9%80%8F%E9%A1%B6%E7%9A%84%E5%81%8F%E9%A2%87%E6%83%B3%E6%B3%95">糟糕透顶的偏颇想法</a></li>
+<li><a href="#%E5%81%8F%E9%A2%87%E6%83%B3%E6%B3%95%E7%9A%84%E8%92%99%E8%94%BD">偏颇想法的蒙蔽</a></li>
+<li><a href="#%E5%90%A6%E8%AE%A4%E7%9A%84%E5%A4%9A%E5%89%AF%E9%9D%A2%E5%AD%94">否认的多副面孔</a></li>
+<li><a href="#%E5%8F%91%E7%8E%B0%E5%85%B6%E4%BB%96%E5%81%8F%E9%A2%87%E6%83%B3%E6%B3%95">发现其他偏颇想法</a></li>
+<li><a href="#%E6%94%BE%E8%BD%BB%E6%9D%BE%E7%9A%84%E5%A5%BD%E5%A4%84">放轻松的好处</a></li>
+<li><a href="#%E5%9F%B9%E5%85%BB%E4%BD%A0%E7%9A%84%E5%B9%BD%E9%BB%98%E6%84%9F">培养你的幽默感</a></li>
+<li><a href="#%E8%BD%AF%E7%98%BE%E6%A8%A1%E6%9D%BF">“软瘾模板”</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E7%A0%B4%E8%A7%A3%E4%BD%A0%E7%9A%84%E8%BD%AF%E7%98%BE%E5%AF%86%E7%A0%81">第5章 破解你的软瘾密码</a>
+<ul>
+<li><a href="#%E5%BC%95%E5%AF%BC%E8%83%BD%E9%87%8F%E7%9A%84%E6%B5%81%E5%90%91">引导能量的流向</a></li>
+<li><a href="#%E6%9C%89%E4%B8%80%E5%A5%97%E5%8F%A4%E6%80%AA%E4%B9%A0%E6%83%AF%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%94%9F">有一套古怪习惯的服务生</a></li>
+<li><a href="#%E8%BD%AF%E7%98%BE%E7%9A%84%E8%B5%B7%E6%BA%90%E9%94%99%E8%AF%AF%E8%A7%82%E5%BF%B5">软瘾的起源：错误观念</a></li>
+<li><a href="#%E5%8E%86%E5%8F%B2%E5%8E%9F%E5%9B%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%BD%A2%E6%88%90">历史原因：为什么会形成</a></li>
+<li><a href="#%E8%BF%9E%E6%8E%A5%E8%BF%87%E5%8E%BB%E4%B8%8E%E7%8E%B0%E5%9C%A8">连接过去与现在</a></li>
+<li><a href="#%E4%BD%A0%E6%9F%90%E4%BA%9B%E6%83%85%E7%BB%AA%E7%9A%84%E6%A0%B9%E6%BA%90">你某些情绪的根源</a></li>
+<li><a href="#%E5%8A%9F%E8%83%BD%E5%8E%9F%E5%9B%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8%E8%BF%99%E6%97%B6%E5%87%BA%E7%8E%B0">功能原因：为什么在这时出现</a></li>
+<li><a href="#%E7%A0%B4%E8%A7%A3%E4%BD%A0%E7%9A%84%E5%AF%86%E7%A0%81">破解你的密码</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E6%BB%A1%E8%B6%B3%E4%BD%A0%E7%9A%84%E7%B2%BE%E7%A5%9E%E9%9C%80%E6%B1%82">第6章 满足你的精神需求</a>
+<ul>
+<li><a href="#%E6%8E%8C%E6%8F%A1%E7%B2%BE%E7%A5%9E%E9%9C%80%E6%B1%82%E7%9A%84%E8%AF%8D%E6%B1%87">掌握精神需求的词汇</a></li>
+<li><a href="#%E4%BD%93%E4%BC%9A%E7%B2%BE%E7%A5%9E%E9%9C%80%E6%B1%82%E5%92%8C%E6%B5%85%E5%B1%82%E6%AC%B2%E6%9C%9B%E7%9A%84%E5%B7%AE%E5%BC%82">体会精神需求和浅层欲望的差异</a></li>
+<li><a href="#%E7%A1%AE%E5%AE%9A%E4%BD%A0%E7%9A%84%E7%B2%BE%E7%A5%9E%E9%9C%80%E6%B1%82%E5%85%B3%E4%BA%8E%E5%85%85%E5%AE%9E%E7%9A%84%E8%AF%8D%E6%B1%87">确定你的精神需求：关于充实的词汇</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81%E6%8E%A5%E5%8F%97%E6%9B%BF%E4%BB%A3%E5%93%81">不要接受替代品</a></li>
+<li><a href="#%E6%97%B6%E5%88%BB%E6%BB%A1%E8%B6%B3%E4%BD%A0%E7%9A%84%E7%B2%BE%E7%A5%9E%E9%9C%80%E6%B1%82">时刻满足你的精神需求</a></li>
+<li><a href="#%E6%89%BE%E5%88%B0%E6%B5%85%E5%B1%82%E6%AC%B2%E6%9C%9B%E4%B8%8E%E7%B2%BE%E7%A5%9E%E9%9C%80%E6%B1%82%E7%9A%84%E8%81%94%E7%B3%BB">找到浅层欲望与精神需求的联系</a></li>
+<li><a href="#%E6%8F%90%E5%8D%87%E6%84%8F%E8%AF%86%E7%9A%84%E4%B8%89%E4%B8%AA%E6%AD%A5%E9%AA%A4">提升意识的三个步骤</a></li>
+<li><a href="#%E6%B8%B4%E6%9C%9B%E4%B8%80%E7%A7%8D%E6%B7%B1%E5%B1%82%E6%AC%A1%E7%9A%84%E8%81%94%E7%B3%BB">渴望一种深层次的联系</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E6%9E%84%E5%BB%BA%E4%BD%A0%E7%9A%84%E6%84%BF%E6%99%AF">第7章 构建你的愿景</a>
+<ul>
+<li><a href="#%E6%84%BF%E6%99%AF%E4%B8%8E%E6%A0%B8%E5%BF%83%E5%86%B3%E5%AE%9A%E7%9A%84%E5%85%B3%E7%B3%BB">愿景与核心决定的关系</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%84%BF%E6%99%AF">什么是愿景</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E4%BD%A0%E7%9A%84%E7%94%9F%E6%B4%BB%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%85%85%E5%AE%9E%E7%9A%84%E6%84%BF%E6%99%AF">设计你的生活：构建更充实的愿景</a></li>
+<li><a href="#%E6%84%BF%E6%99%AF%E7%9A%84%E6%9E%84%E6%88%90">愿景的构成</a></li>
+<li><a href="#%E6%84%BF%E6%99%AF%E7%9A%84%E4%BE%8B%E5%AD%90">愿景的例子</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E9%80%9A%E8%BF%87%E5%8A%A0%E5%87%8F%E6%B3%95%E6%9D%A5%E5%AE%9E%E7%8E%B0%E6%84%BF%E6%99%AF">第8章 通过加减法来实现愿景</a>
+<ul>
+<li><a href="#%E6%88%91%E7%9A%84%E5%8F%91%E7%8E%B0">我的发现</a></li>
+<li><a href="#%E6%8E%8C%E6%8F%A1%E5%8A%A0%E5%87%8F%E6%B3%95">掌握加减法</a></li>
+<li><a href="#%E5%8A%A0%E6%B3%95%E5%85%AC%E5%BC%8F">加法公式</a></li>
+<li><a href="#%E4%B8%BA%E6%9B%B4%E5%85%85%E5%AE%9E%E7%9A%84%E7%94%9F%E6%B4%BB%E5%81%9A%E5%8A%A0%E6%B3%95">为更充实的生活做加法</a></li>
+<li><a href="#%E5%85%BB%E5%88%86%E5%92%8C%E8%87%AA%E6%88%91%E5%85%B3%E7%88%B1%E7%9A%84%E5%8A%A0%E6%B3%95">养分和自我关爱的加法</a></li>
+<li><a href="#%E4%B8%AA%E4%BA%BA%E5%8A%9B%E9%87%8F%E5%92%8C%E8%87%AA%E6%88%91%E8%A1%A8%E8%BE%BE%E7%9A%84%E5%8A%A0%E6%B3%95">个人力量和自我表达的加法</a></li>
+<li><a href="#%E4%BA%B2%E5%AF%86%E6%84%9F%E7%9A%84%E5%8A%A0%E6%B3%95">亲密感的加法</a></li>
+<li><a href="#%E4%BA%BA%E7%94%9F%E7%9B%AE%E6%A0%87%E5%92%8C%E7%B2%BE%E7%A5%9E%E4%B8%96%E7%95%8C%E7%9A%84%E5%8A%A0%E6%B3%95">人生目标和精神世界的加法</a></li>
+<li><a href="#%E4%B8%BA%E6%9B%B4%E5%85%85%E5%AE%9E%E7%9A%84%E7%94%9F%E6%B4%BB%E5%81%9A%E5%87%8F%E6%B3%95">为更充实的生活做减法</a></li>
+<li><a href="#%E6%B6%88%E6%9E%81%E6%83%B3%E6%B3%95%E7%9A%84%E5%87%8F%E6%B3%95">消极想法的减法</a></li>
+<li><a href="#%E6%9D%82%E4%B9%B1%E7%9A%84%E5%87%8F%E6%B3%95">杂乱的减法</a></li>
+<li><a href="#%E8%AE%A1%E5%88%92%E5%A6%82%E4%BD%95%E6%88%90%E5%9E%8B">计划如何成型</a></li>
+<li><a href="#%E8%AE%A1%E5%88%92%E7%9A%84%E6%89%A7%E8%A1%8C%E4%B8%8D%E9%9C%80%E8%BF%BD%E6%B1%82%E5%AE%8C%E7%BE%8E">计划的执行不需追求完美</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E8%8E%B7%E5%BE%97%E6%94%AF%E6%8C%81%E5%B9%B6%E8%B4%9F%E8%B5%B7%E8%B4%A3%E4%BB%BB">第9章 获得支持并负起责任</a>
+<ul>
+<li><a href="#%E8%B4%9F%E8%B5%B7%E8%B4%A3%E4%BB%BB">负起责任</a></li>
+<li><a href="#%E8%8E%B7%E5%BE%97%E6%94%AF%E6%8C%81">获得支持</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E6%94%AF%E6%8C%81">如何获得支持</a></li>
+<li><a href="#%E4%B8%BA%E6%96%B0%E7%9A%84%E6%94%AF%E6%8C%81%E5%BC%80%E6%BA%90">为新的支持开源</a></li>
+<li><a href="#%E4%B8%8E%E4%BB%96%E4%BA%BA%E5%90%88%E4%BD%9C%E6%B7%B1%E5%8C%96%E6%94%AF%E6%8C%81%E5%92%8C%E8%B4%A3%E4%BB%BB">与他人合作：深化支持和责任</a></li>
+<li><a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E9%95%BF%E6%9C%9F%E5%BD%B1%E5%93%8D">支持的长期影响</a></li>
+<li><a href="#%E5%B0%86%E6%94%AF%E6%8C%81%E4%BB%98%E8%AF%B8%E8%A1%8C%E5%8A%A8">将支持付诸行动</a></li>
+<li><a href="#%E7%BB%99%E8%87%AA%E5%B7%B1%E6%94%AF%E6%8C%81">给自己支持</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E5%BC%AF%E8%B7%AF%E4%B8%8E%E6%A0%A1%E6%AD%A3">第10章 弯路与校正</a>
+<ul>
+<li><a href="#%E6%9D%B0%E5%85%8B%E7%9A%84%E6%97%85%E7%A8%8B">杰克的旅程</a></li>
+<li><a href="#%E6%8A%8A%E9%9A%9C%E7%A2%8D%E5%8F%98%E6%88%90%E7%AA%81%E7%A0%B4">把障碍变成突破</a></li>
+<li><a href="#%E9%80%9A%E5%BE%80%E5%85%85%E5%AE%9E%E7%9A%84%E9%81%93%E8%B7%AF%E4%B8%8A%E7%9A%84%E6%8C%91%E6%88%98">通往充实的道路上的挑战</a></li>
+<li><a href="#%E9%80%9A%E5%BE%80%E6%9B%B4%E5%85%85%E5%AE%9E%E7%94%9F%E6%B4%BB%E7%9A%84%E9%81%93%E8%B7%AF%E4%B8%8A%E7%9A%84%E7%88%86%E8%83%8E">通往更充实生活的道路上的“爆胎”</a></li>
+<li><a href="#%E6%8C%89%E5%87%86%E5%88%99%E8%A1%8C%E4%BA%8B">按准则行事</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E5%85%B3%E4%BA%8E%E7%88%B1%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%9C%9F%E7%90%86">第11章 关于爱的四大真理</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%9C%9F%E7%90%86%E4%BD%A0%E6%98%AF%E8%A2%AB%E7%88%B1%E7%9A%84">第一个真理：你是被爱的</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E4%B8%AA%E7%9C%9F%E7%90%86%E7%97%9B%E8%8B%A6%E7%95%99%E4%B8%8B%E7%9A%84%E8%B4%A2%E5%AF%8C%E6%98%AF%E7%88%B1%E4%B8%8E%E5%B9%B3%E9%9D%99">第二个真理：痛苦留下的财富是爱与平静</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E4%B8%AA%E7%9C%9F%E7%90%86%E6%84%9F%E5%8F%97%E6%98%AF%E7%A5%9E%E5%9C%A3%E5%92%8C%E5%80%BC%E5%BE%97%E5%B0%8A%E6%95%AC%E7%9A%84">第三个真理：感受是神圣和值得尊敬的</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E4%B8%AA%E7%9C%9F%E7%90%86%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%8F%AF%E4%BB%A5%E5%8F%91%E5%B1%95%E5%92%8C%E5%88%A9%E7%94%A8%E7%9A%84%E5%A4%A9%E8%B5%8B">第四个真理：每个人都有可以发展和利用的天赋</a></li>
+<li><a href="#%E9%81%B5%E5%BE%AA%E7%88%B1%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%9C%9F%E7%90%86">遵循爱的四大真理</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%93%E8%AF%AD-%E5%AF%B9%E5%85%85%E5%AE%9E%E7%9A%84%E4%BC%9F%E5%A4%A7%E8%BF%BD%E6%B1%82">结语 对充实的伟大追求</a>
+<ul>
+<li><a href="#%E6%8E%A8%E5%B4%87%E6%91%86%E8%84%B1%E6%9D%9F%E7%BC%9A%E7%9A%84%E5%8B%87%E6%B0%94">推崇摆脱束缚的勇气</a></li>
+<li><a href="#%E5%85%89%E6%98%8E%E4%B8%8E%E9%BB%91%E6%9A%97%E4%B9%8B%E6%88%98">光明与黑暗之战</a></li>
+<li><a href="#%E5%AE%88%E5%8D%AB%E4%BD%A0%E7%9A%84%E6%88%90%E6%9E%9C">守卫你的成果</a></li>
+<li><a href="#%E5%9B%9E%E6%8A%A5%E6%98%AF%E9%9D%9E%E5%B8%B8%E5%80%BC%E5%BE%97%E7%9A%84">回报是非常值得的</a></li>
+<li><a href="#%E5%88%9B%E9%80%A0%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%85%85%E5%AE%9E%E7%9A%84%E4%B8%96%E7%95%8C">创造一个更充实的世界</a></li>
+<li><a href="#%E6%9C%89%E6%89%80%E4%BD%9C%E4%B8%BA%E6%94%B9%E5%8F%98%E4%B8%96%E7%95%8C">有所作为，改变世界</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BD%AF%E7%98%BE%E5%BA%94%E5%AF%B9%E6%96%B9%E6%A1%88%E7%BB%83%E4%B9%A0%E5%86%8C">软瘾应对方案练习册</a></li>
+<li><a href="#%E9%99%84%E5%BD%951-%E8%BD%AF%E7%98%BE%E6%A8%A1%E6%9D%BF">附录1 软瘾模板</a></li>
+<li><a href="#%E9%99%84%E5%BD%952-%E5%8A%A0%E5%87%8F%E6%B3%95%E6%A8%A1%E6%9D%BF">附录2 加减法模板</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

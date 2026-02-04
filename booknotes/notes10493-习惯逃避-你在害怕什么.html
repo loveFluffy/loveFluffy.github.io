@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x4e60;&#x60ef;&#x9003;&#x907f;&#xff1a;&#x4f60;&#x5728;&#x5bb3;&#x6015;&#x4ec0;&#x4e48;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x4e60;&#x60ef;&#x9003;&#x907f;&#xff1a;&#x4f60;&#x5728;&#x5bb3;&#x6015;&#x4ec0;&#x4e48;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,203 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="习惯逃避你在害怕什么">习惯逃避：你在害怕什么</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/10493.jpg"></td><td>
+<h1 id="习惯逃避你在害怕什么">习惯逃避：你在害怕什么</h1>
+<center>李国翠</center>
+</td></tr></table>
+<div class="mycomment">
+<p>书里讲的都是比较严重的案例，对我参考意义不大。读了开头就没有继续读下去了。</p>
+</div>
+<h3 id="自序">自序</h3>
+<h3 id="part-1-别做那只逃避的鸵鸟">PART 1 别做那只逃避的鸵鸟</h3>
+<h4 id="你不解决问题你就会成为问题">/你不解决问题，你就会成为问题/</h4>
+<h4 id="害怕失败的人从一开始就输了">/害怕失败的人，从一开始就输了/</h4>
+<h4 id="你的退让是对方得寸进尺的温床">/你的退让，是对方得寸进尺的温床/</h4>
+<h4 id="当爱情来临时你在害怕什么">/当爱情来临时，你在害怕什么/</h4>
+<h4 id="你一直渴望交流却习惯被动沉默">/你一直渴望交流，却习惯被动沉默/</h4>
+<h4 id="如何摆脱受害者心态">/如何摆脱受害者心态/</h4>
+<h4 id="你可以宅一阵子但不能丧一辈子">/你可以宅一阵子，但不能丧一辈子/</h4>
+<h3 id="part-2-走出自我设限的牢笼">PART 2 走出自我设限的牢笼</h3>
+<h4 id="如何找到行动力">/如何找到行动力/</h4>
+<h4 id="你明明很优秀却依然很自卑">/你明明很优秀，却依然很自卑/</h4>
+<h4 id="为什么你总觉得自己不配被爱">/为什么你总觉得自己不配被爱/</h4>
+<h4 id="信任是一种能力也是一种选择">/信任是一种能力，也是一种选择/</h4>
+<h4 id="看得见的是自卑看不见的是关系">/看得见的是自卑，看不见的是关系/</h4>
+<h4 id="应该一座自我设限的牢笼">/“应该”——一座自我设限的牢笼/</h4>
+<h4 id="生活不是战场而是一段时光">/生活不是战场，而是一段时光/</h4>
+<h3 id="part-3-最好的关系是亲近地保持距离">PART 3 最好的关系，是亲近地保持距离</h3>
+<h4 id="为什么你总是构建别扭的关系">/为什么你总是构建别扭的关系/</h4>
+<h4 id="我们活成了巨人却同时深陷孤岛">/我们活成了巨人，却同时深陷“孤岛”/</h4>
+<h4 id="如何与善妒者和平相处">/如何与善妒者和平相处/</h4>
+<h4 id="如何应对人际关系中的中伤">/如何应对人际关系中的中伤/</h4>
+<h4 id="欺软怕硬背后的心理学">/欺软怕硬背后的心理学/</h4>
+<h4 id="摆脱控制找回真实的感受">/摆脱“控制”，找回真实的感受/</h4>
+<h4 id="人生需要靠自己成全">/人生需要靠自己成全/</h4>
+<h4 id="缺乏个人边界活该被人欺负">/缺乏个人边界，活该被人欺负/</h4>
+<h3 id="part-4-向内看的人才是清醒的">PART 4 向内看的人，才是清醒的</h3>
+<h4 id="向外看的人在做梦向内看的人才是清醒的">/向外看的人在做梦，向内看的人才是清醒的/</h4>
+<h4 id="没有一种人生叫作正确">/没有一种人生叫作正确/</h4>
+<h4 id="控制不了情绪何以控制人生">/控制不了情绪，何以控制人生/</h4>
+<h4 id="爱生气的人是怎么回事">/爱生气的人是怎么回事/</h4>
+<h4 id="我们是如何被抱怨一点点毁掉的">/我们是如何被抱怨一点点毁掉的/</h4>
+<h4 id="具备自爱能力你才能享受爱情">/具备自爱能力，你才能享受爱情/</h4>
+<h4 id="习惯性否定别人不过是缺乏自我">/习惯性否定别人，不过是缺乏自我/</h4>
+<h4 id="不回避悲伤你才能更好地成长">/不回避悲伤，你才能更好地成长/</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E8%87%AA%E5%BA%8F">自序</a></li>
+<li><a href="#part-1-%E5%88%AB%E5%81%9A%E9%82%A3%E5%8F%AA%E9%80%83%E9%81%BF%E7%9A%84%E9%B8%B5%E9%B8%9F">PART 1 别做那只逃避的鸵鸟</a>
+<ul>
+<li><a href="#%E4%BD%A0%E4%B8%8D%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E4%BD%A0%E5%B0%B1%E4%BC%9A%E6%88%90%E4%B8%BA%E9%97%AE%E9%A2%98">/你不解决问题，你就会成为问题/</a></li>
+<li><a href="#%E5%AE%B3%E6%80%95%E5%A4%B1%E8%B4%A5%E7%9A%84%E4%BA%BA%E4%BB%8E%E4%B8%80%E5%BC%80%E5%A7%8B%E5%B0%B1%E8%BE%93%E4%BA%86">/害怕失败的人，从一开始就输了/</a></li>
+<li><a href="#%E4%BD%A0%E7%9A%84%E9%80%80%E8%AE%A9%E6%98%AF%E5%AF%B9%E6%96%B9%E5%BE%97%E5%AF%B8%E8%BF%9B%E5%B0%BA%E7%9A%84%E6%B8%A9%E5%BA%8A">/你的退让，是对方得寸进尺的温床/</a></li>
+<li><a href="#%E5%BD%93%E7%88%B1%E6%83%85%E6%9D%A5%E4%B8%B4%E6%97%B6%E4%BD%A0%E5%9C%A8%E5%AE%B3%E6%80%95%E4%BB%80%E4%B9%88">/当爱情来临时，你在害怕什么/</a></li>
+<li><a href="#%E4%BD%A0%E4%B8%80%E7%9B%B4%E6%B8%B4%E6%9C%9B%E4%BA%A4%E6%B5%81%E5%8D%B4%E4%B9%A0%E6%83%AF%E8%A2%AB%E5%8A%A8%E6%B2%89%E9%BB%98">/你一直渴望交流，却习惯被动沉默/</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%8F%97%E5%AE%B3%E8%80%85%E5%BF%83%E6%80%81">/如何摆脱受害者心态/</a></li>
+<li><a href="#%E4%BD%A0%E5%8F%AF%E4%BB%A5%E5%AE%85%E4%B8%80%E9%98%B5%E5%AD%90%E4%BD%86%E4%B8%8D%E8%83%BD%E4%B8%A7%E4%B8%80%E8%BE%88%E5%AD%90">/你可以宅一阵子，但不能丧一辈子/</a></li>
+</ul>
+</li>
+<li><a href="#part-2-%E8%B5%B0%E5%87%BA%E8%87%AA%E6%88%91%E8%AE%BE%E9%99%90%E7%9A%84%E7%89%A2%E7%AC%BC">PART 2 走出自我设限的牢笼</a>
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E8%A1%8C%E5%8A%A8%E5%8A%9B">/如何找到行动力/</a></li>
+<li><a href="#%E4%BD%A0%E6%98%8E%E6%98%8E%E5%BE%88%E4%BC%98%E7%A7%80%E5%8D%B4%E4%BE%9D%E7%84%B6%E5%BE%88%E8%87%AA%E5%8D%91">/你明明很优秀，却依然很自卑/</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E6%80%BB%E8%A7%89%E5%BE%97%E8%87%AA%E5%B7%B1%E4%B8%8D%E9%85%8D%E8%A2%AB%E7%88%B1">/为什么你总觉得自己不配被爱/</a></li>
+<li><a href="#%E4%BF%A1%E4%BB%BB%E6%98%AF%E4%B8%80%E7%A7%8D%E8%83%BD%E5%8A%9B%E4%B9%9F%E6%98%AF%E4%B8%80%E7%A7%8D%E9%80%89%E6%8B%A9">/信任是一种能力，也是一种选择/</a></li>
+<li><a href="#%E7%9C%8B%E5%BE%97%E8%A7%81%E7%9A%84%E6%98%AF%E8%87%AA%E5%8D%91%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%98%AF%E5%85%B3%E7%B3%BB">/看得见的是自卑，看不见的是关系/</a></li>
+<li><a href="#%E5%BA%94%E8%AF%A5%E4%B8%80%E5%BA%A7%E8%87%AA%E6%88%91%E8%AE%BE%E9%99%90%E7%9A%84%E7%89%A2%E7%AC%BC">/“应该”——一座自我设限的牢笼/</a></li>
+<li><a href="#%E7%94%9F%E6%B4%BB%E4%B8%8D%E6%98%AF%E6%88%98%E5%9C%BA%E8%80%8C%E6%98%AF%E4%B8%80%E6%AE%B5%E6%97%B6%E5%85%89">/生活不是战场，而是一段时光/</a></li>
+</ul>
+</li>
+<li><a href="#part-3-%E6%9C%80%E5%A5%BD%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E4%BA%B2%E8%BF%91%E5%9C%B0%E4%BF%9D%E6%8C%81%E8%B7%9D%E7%A6%BB">PART 3 最好的关系，是亲近地保持距离</a>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E6%80%BB%E6%98%AF%E6%9E%84%E5%BB%BA%E5%88%AB%E6%89%AD%E7%9A%84%E5%85%B3%E7%B3%BB">/为什么你总是构建别扭的关系/</a></li>
+<li><a href="#%E6%88%91%E4%BB%AC%E6%B4%BB%E6%88%90%E4%BA%86%E5%B7%A8%E4%BA%BA%E5%8D%B4%E5%90%8C%E6%97%B6%E6%B7%B1%E9%99%B7%E5%AD%A4%E5%B2%9B">/我们活成了巨人，却同时深陷“孤岛”/</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E4%B8%8E%E5%96%84%E5%A6%92%E8%80%85%E5%92%8C%E5%B9%B3%E7%9B%B8%E5%A4%84">/如何与善妒者和平相处/</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%BA%94%E5%AF%B9%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BC%A4">/如何应对人际关系中的中伤/</a></li>
+<li><a href="#%E6%AC%BA%E8%BD%AF%E6%80%95%E7%A1%AC%E8%83%8C%E5%90%8E%E7%9A%84%E5%BF%83%E7%90%86%E5%AD%A6">/欺软怕硬背后的心理学/</a></li>
+<li><a href="#%E6%91%86%E8%84%B1%E6%8E%A7%E5%88%B6%E6%89%BE%E5%9B%9E%E7%9C%9F%E5%AE%9E%E7%9A%84%E6%84%9F%E5%8F%97">/摆脱“控制”，找回真实的感受/</a></li>
+<li><a href="#%E4%BA%BA%E7%94%9F%E9%9C%80%E8%A6%81%E9%9D%A0%E8%87%AA%E5%B7%B1%E6%88%90%E5%85%A8">/人生需要靠自己成全/</a></li>
+<li><a href="#%E7%BC%BA%E4%B9%8F%E4%B8%AA%E4%BA%BA%E8%BE%B9%E7%95%8C%E6%B4%BB%E8%AF%A5%E8%A2%AB%E4%BA%BA%E6%AC%BA%E8%B4%9F">/缺乏个人边界，活该被人欺负/</a></li>
+</ul>
+</li>
+<li><a href="#part-4-%E5%90%91%E5%86%85%E7%9C%8B%E7%9A%84%E4%BA%BA%E6%89%8D%E6%98%AF%E6%B8%85%E9%86%92%E7%9A%84">PART 4 向内看的人，才是清醒的</a>
+<ul>
+<li><a href="#%E5%90%91%E5%A4%96%E7%9C%8B%E7%9A%84%E4%BA%BA%E5%9C%A8%E5%81%9A%E6%A2%A6%E5%90%91%E5%86%85%E7%9C%8B%E7%9A%84%E4%BA%BA%E6%89%8D%E6%98%AF%E6%B8%85%E9%86%92%E7%9A%84">/向外看的人在做梦，向内看的人才是清醒的/</a></li>
+<li><a href="#%E6%B2%A1%E6%9C%89%E4%B8%80%E7%A7%8D%E4%BA%BA%E7%94%9F%E5%8F%AB%E4%BD%9C%E6%AD%A3%E7%A1%AE">/没有一种人生叫作正确/</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E4%B8%8D%E4%BA%86%E6%83%85%E7%BB%AA%E4%BD%95%E4%BB%A5%E6%8E%A7%E5%88%B6%E4%BA%BA%E7%94%9F">/控制不了情绪，何以控制人生/</a></li>
+<li><a href="#%E7%88%B1%E7%94%9F%E6%B0%94%E7%9A%84%E4%BA%BA%E6%98%AF%E6%80%8E%E4%B9%88%E5%9B%9E%E4%BA%8B">/爱生气的人是怎么回事/</a></li>
+<li><a href="#%E6%88%91%E4%BB%AC%E6%98%AF%E5%A6%82%E4%BD%95%E8%A2%AB%E6%8A%B1%E6%80%A8%E4%B8%80%E7%82%B9%E7%82%B9%E6%AF%81%E6%8E%89%E7%9A%84">/我们是如何被抱怨一点点毁掉的/</a></li>
+<li><a href="#%E5%85%B7%E5%A4%87%E8%87%AA%E7%88%B1%E8%83%BD%E5%8A%9B%E4%BD%A0%E6%89%8D%E8%83%BD%E4%BA%AB%E5%8F%97%E7%88%B1%E6%83%85">/具备自爱能力，你才能享受爱情/</a></li>
+<li><a href="#%E4%B9%A0%E6%83%AF%E6%80%A7%E5%90%A6%E5%AE%9A%E5%88%AB%E4%BA%BA%E4%B8%8D%E8%BF%87%E6%98%AF%E7%BC%BA%E4%B9%8F%E8%87%AA%E6%88%91">/习惯性否定别人，不过是缺乏自我/</a></li>
+<li><a href="#%E4%B8%8D%E5%9B%9E%E9%81%BF%E6%82%B2%E4%BC%A4%E4%BD%A0%E6%89%8D%E8%83%BD%E6%9B%B4%E5%A5%BD%E5%9C%B0%E6%88%90%E9%95%BF">/不回避悲伤，你才能更好地成长/</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

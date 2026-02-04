@@ -3,9 +3,8 @@
 <div class="content">
 <table class="covertitle"><tr><td>
 
-# Tips
-
 # 知识点收集：投资理财
+
 </td></tr></table>
 
 ## 资产负债表
@@ -30,9 +29,6 @@
 - [应付票据融资：无真实业务背景](tips0001-应付票据融资-无真实业务背景.html)
 
 
-### 递延收益
-
-- [递延收益为什么是负债？](tips0015-递延收益为什么是负债.html)
 
 ### 大量提取任意盈余公积的目的是什么
 
@@ -43,7 +39,6 @@
 
 ## 利润表
 
-- [所得税费用为负数的情况](tips0012-所得税费用为负数的情况.html)
 
 
 
@@ -104,6 +99,35 @@
 
 #### Windows系统下操作相关
 
+##### 文件浏览器-导航-onedrive，隐藏
+
+1. 打开注册表编辑器：按 Win + R，输入 regedit，按回车。
+2. 定位到 OneDrive CLSID：输入或粘贴路径：HKEY_CLASSES_ROOT\CLSID{018D5C66-0C66-4086-8A3E-19C8376D3272} (注意，这可能是不同版本略有不同，或在 ...\Explorer\Desktop\NameSpace 找包含 OneDrive 条目)。
+3. 修改值：在右侧找到 System.IsPinnedToNameSpaceTree，双击将其值从 1 改为 0。
+4. 重启文件资源管理器：打开任务管理器 (Ctrl+Shift+Esc)，找到“Windows 资源管理器”，右键选择“重新启动”
+
+##### 在 Windows 10作系统和所有应用程序中禁用 OneDrive。
+
+以下是有关如何在 Windows 10作系统和所有应用程序中禁用 OneDrive 的步骤。
+
+1. 按键盘上的 Win + R 以打开“运行”对话框。
+2. 键入 gpedit.msc ，然后按 Enter 或 OK 以打开本地组策略编辑器。
+3. 转到 本地计算机策略->计算机配置 ->管理模板 ->Windows 组件 ->OneDrive。
+4. 在右窗格中，双击名为 “阻止将 OneDrive 用于文件存储”的策略。
+5. 选择 Enabled单选按钮。
+6. 完成后，单击确定。
+
+OneDrive 图标在资源管理器中隐藏，OneDrive 应用程序被禁用并阻止运行。阻止从任何桌面应用程序或现代应用程序访问或处理 OneDrive 上的文件。例如：
+
+1. 无法从 OneDrive 应用程序和文件选取器访问 OneDrive。
+2. Windows 应用商店应用程序无法使用 WinRT API 访问 OneDrive。
+3. OneDrive 未显示在文件资源管理器的导航窗格中。
+4. OneDrive 文件不会与云保持同步。
+5. 无法自动从相机胶卷文件夹上传照片和视频。
+
+注销然后再次登录或重新启动计算机。
+
+
 ##### Window下将多张图片转为一个PDF文件方法：
 1. 在文件夹中全选所有图片；
 2. 在第一张图片上单击鼠标右键，选“打印”。注意这里要在第一张图片上单击右键，否则打印时图片的排列顺序可能有问题；
@@ -153,10 +177,11 @@
 
 - [借 和 贷](#借-和-贷)
 - [票据、票据融资](#票据票据融资)
-- [递延收益](#递延收益)
 - [大量提取任意盈余公积的目的是什么](#大量提取任意盈余公积的目的是什么)
 - [Windows系统](#windows系统)
 	- [Windows系统下操作相关](#windows系统下操作相关)
+		- [文件浏览器-导航-onedrive，隐藏](#文件浏览器-导航-onedrive隐藏)
+		- [在 Windows 10作系统和所有应用程序中禁用 OneDrive。](#在-windows-10作系统和所有应用程序中禁用-onedrive)
 		- [Window下将多张图片转为一个PDF文件方法：](#window下将多张图片转为一个pdf文件方法)
 		- [多个PDF合并为一个PDF文件：用Adobe Acrobat软件。](#多个pdf合并为一个pdf文件用adobe-acrobat软件)
 		- [强制隐藏window taskbar 任务栏：](#强制隐藏window-taskbar-任务栏)

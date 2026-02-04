@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x6570;&#x5b57;&#x6291;&#x90c1;&#x65f6;&#x4ee3;&#xff1a;&#x65b0;&#x5a92;&#x4f53;&#x5982;&#x4f55;&#x6539;&#x53d8;&#x6211;&#x4eec;&#x5bf9;&#x5e78;&#x798f;&#x7684;&#x611f;&#x77e5;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x6570;&#x5b57;&#x6291;&#x90c1;&#x65f6;&#x4ee3;&#xff1a;&#x65b0;&#x5a92;&#x4f53;&#x5982;&#x4f55;&#x6539;&#x53d8;&#x6211;&#x4eec;&#x5bf9;&#x5e78;&#x798f;&#x7684;&#x611f;&#x77e5;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,321 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="数字抑郁时代新媒体如何改变我们对幸福的感知">数字抑郁时代：新媒体如何改变我们对幸福的感知</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/10964.jpg"></td><td>
+<h1 id="数字抑郁时代新媒体如何改变我们对幸福的感知">数字抑郁时代：新媒体如何改变我们对幸福的感知</h1>
+<center></center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="引言-互联网时代的幸福">引言 互联网时代的幸福</h3>
+<h4 id="幸福保护专员在哪里">幸福保护专员在哪里</h4>
+<h4 id="技术决定幸福吗">技术决定幸福吗</h4>
+<h4 id="不要靠近脸谱网会变得不幸">不要靠近脸谱网，会变得不幸</h4>
+<h4 id="无限的可能令人不堪重负">无限的可能令人不堪重负</h4>
+<h4 id="技术设计从工具到健康福祉">技术设计：从工具到健康福祉</h4>
+<h4 id="快醒醒为幸福而战">快醒醒，为幸福而战</h4>
+<h4 id="互联网时代的幸福">互联网时代的幸福</h4>
+<h3 id="第一章-技术取代直接的幸福拍下来的才是美景传上网的才算幸福">第一章 技术取代直接的幸福拍下来的才是美景，传上网的才算幸福</h3>
+<h4 id="感知受损">感知受损</h4>
+<h4 id="重要价值受损">重要价值受损</h4>
+<h4 id="社交互动受损">社交互动受损</h4>
+<h4 id="记录而非体验">记录，而非体验</h4>
+<h4 id="对碎片时间零容忍">对碎片时间零容忍</h4>
+<h4 id="消费vs创造">消费vs.创造</h4>
+<h4 id="人间烟火气最抚凡人心">人间烟火气，最抚凡人心</h4>
+<h3 id="第二章-技术决定意义从自我提升到自我迷失">第二章 技术决定意义从自我提升到自我迷失</h3>
+<h4 id="量化让你离目标越来越远">量化，让你离目标越来越远</h4>
+<h4 id="从自我提升到自我迷失">从自我提升到自我迷失</h4>
+<h4 id="1在寻求自我反思的过程中人们很容易迷失在金玉良言的丛林中">1.在寻求自我反思的过程中，人们很容易迷失在金玉良言的丛林中</h4>
+<h4 id="2接踵而至的过多帮助会让自我提升之路拥挤不堪">2.接踵而至的过多帮助，会让自我提升之路拥挤不堪</h4>
+<h4 id="3寻找解决方案时的错误顺序">3.寻找解决方案时的错误顺序</h4>
+<h4 id="4因为执迷于追求平衡和完美而失去平衡">4.因为执迷于追求平衡和完美而失去平衡</h4>
+<h4 id="5真正的努力再无容身之地">5.真正的努力再无容身之地</h4>
+<h4 id="6人们再也没有机会自我感觉良好了">6.人们再也没有机会自我感觉良好了</h4>
+<h4 id="别管喜不喜欢反正多多益善">别管喜不喜欢，反正多多益善</h4>
+<h4 id="循规蹈矩的自我表现">循规蹈矩的自我表现</h4>
+<h4 id="技术传达的理想到底由谁来决定">技术传达的理想，到底由谁来决定</h4>
+<h3 id="第三章-我的幸福适合发朋友圈吗幸福的人生都是相似的">第三章 我的幸福适合发朋友圈吗幸福的人生都是相似的</h3>
+<h4 id="千篇一律的生活有什么意思">千篇一律的生活有什么意思</h4>
+<h4 id="社交媒体上的幸福模板">社交媒体上的幸福模板</h4>
+<h4 id="幸福就是让别人觉得你幸福">幸福就是让别人觉得你幸福</h4>
+<h4 id="朋友圈里的幸福陷阱">朋友圈里的幸福陷阱</h4>
+<h4 id="幸福陷阱其一最大化的多样性">幸福陷阱其一：最大化的多样性</h4>
+<h4 id="幸福陷阱其二惊鸿一瞥">幸福陷阱其二：惊鸿一瞥</h4>
+<h4 id="幸福陷阱其三为了活动报告而生活">幸福陷阱其三：为了“活动报告”而生活</h4>
+<h4 id="幸福陷阱其四规定好的幸福束缚">幸福陷阱其四：规定好的幸福束缚</h4>
+<h4 id="重拾享受幸福的能力">重拾享受幸福的能力</h4>
+<h3 id="第四章-别关机时刻保持联系247秒回信息">第四章 别关机，时刻保持联系24/7，秒回信息</h3>
+<h4 id="假期拿来吧你">假期？拿来吧你！</h4>
+<h4 id="时刻保持联系是一项基本权利">时刻保持联系，是一项基本权利</h4>
+<h4 id="由小渐大的通信压力">由小渐大的通信压力</h4>
+<h4 id="手机时代的夫妻关系">手机时代的夫妻关系</h4>
+<h4 id="是虚拟的亲密还是真正的亲密">是虚拟的亲密，还是真正的亲密</h4>
+<h4 id="关机是不可能关机的">关机是不可能关机的</h4>
+<h4 id="从小事做起解放自己">从小事做起，解放自己</h4>
+<h3 id="第五章-技术这张通行证当技术将我们从尊重和体谅他人的责任中解放出来">第五章 技术这张通行证当技术将我们从尊重和体谅他人的责任中解放出来</h3>
+<h4 id="技术带来特权">技术带来特权</h4>
+<h4 id="新讨论文化你我和网上">新讨论文化：你、我和网上</h4>
+<h4 id="网络论坛说得对">网络论坛说得对</h4>
+<h4 id="约定可以随时更改">约定，可以随时更改</h4>
+<h4 id="互联网时代的克尼格行为准则手册">互联网时代的克尼格行为准则手册</h4>
+<h4 id="在矛盾的心态下失去礼貌">在矛盾的心态下，失去礼貌</h4>
+<h3 id="第六章-由线上到线下当互联网规则入侵现实">第六章 由线上到线下当互联网规则入侵现实</h3>
+<h4 id="时刻开启评论模式">时刻开启评论模式</h4>
+<h4 id="哈哈你上钩了">哈哈，你上钩了！</h4>
+<h4 id="一切皆可评价">一切皆可评价</h4>
+<h4 id="为什么网上喷子那么多">为什么网上喷子那么多</h4>
+<h4 id="互联网不会遗忘">互联网不会遗忘</h4>
+<h4 id="虚拟世界入侵现实的心理学机制">虚拟世界入侵现实的心理学机制</h4>
+<h4 id="匿名">匿名</h4>
+<h4 id="追求刺激">追求刺激</h4>
+<h4 id="大众的动力">大众的动力</h4>
+<h4 id="线下世界的未来">线下世界的未来</h4>
+<h3 id="第七章-新物种的诞生科技人的思考感受和行为">第七章 新物种的诞生“科技人”的思考、感受和行为</h3>
+<h4 id="回复强迫症科技人的沟通交流">回复强迫症——“科技人”的沟通交流</h4>
+<h4 id="别问问就上网查科技人的思考和感知">别问，问就上网查——“科技人”的思考和感知</h4>
+<h4 id="现代健康指南">现代健康指南</h4>
+<h4 id="现代现象综合征">现代现象/综合征</h4>
+<h4 id="现代治疗手段">现代治疗手段</h4>
+<h4 id="专注力的瓦解科技人的行为和习俗">专注力的瓦解——“科技人”的行为和习俗</h4>
+<h4 id="科技人与产品的关系">“科技人”与产品的关系</h4>
+<h4 id="科技人对时间工作空闲的态度">“科技人”对时间、工作、空闲的态度</h4>
+<h4 id="科技人的自我感知和自我表现">“科技人”的自我感知和自我表现</h4>
+<h3 id="第八章-未来将怎样发展">第八章 未来将怎样发展……</h3>
+<h4 id="技术的发展趋势">技术的发展趋势</h4>
+<h4 id="隐藏式互动">隐藏式互动</h4>
+<h4 id="虚拟世界中的财产和自我定义">虚拟世界中的财产和自我定义</h4>
+<h4 id="彻底的虚拟现实终于找到梦中情人了">彻底的虚拟现实：终于找到梦中情人了</h4>
+<h4 id="新的世界秩序">新的世界秩序</h4>
+<h4 id="技术训练的新时代">技术训练的新时代</h4>
+<h4 id="通往幸福之路">通往幸福之路</h4>
+<h4 id="批判地看待技术可能的益处">批判地看待技术可能的益处</h4>
+<h4 id="观察早期采用者">观察“早期采用者”</h4>
+<h4 id="分析和覆盖日常的例行公事">分析和覆盖日常的例行公事</h4>
+<h4 id="从经历出发">从经历出发</h4>
+<h4 id="最后的思考">最后的思考</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E5%BC%95%E8%A8%80-%E4%BA%92%E8%81%94%E7%BD%91%E6%97%B6%E4%BB%A3%E7%9A%84%E5%B9%B8%E7%A6%8F">引言 互联网时代的幸福</a>
+<ul>
+<li><a href="#%E5%B9%B8%E7%A6%8F%E4%BF%9D%E6%8A%A4%E4%B8%93%E5%91%98%E5%9C%A8%E5%93%AA%E9%87%8C">幸福保护专员在哪里</a></li>
+<li><a href="#%E6%8A%80%E6%9C%AF%E5%86%B3%E5%AE%9A%E5%B9%B8%E7%A6%8F%E5%90%97">技术决定幸福吗</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81%E9%9D%A0%E8%BF%91%E8%84%B8%E8%B0%B1%E7%BD%91%E4%BC%9A%E5%8F%98%E5%BE%97%E4%B8%8D%E5%B9%B8">不要靠近脸谱网，会变得不幸</a></li>
+<li><a href="#%E6%97%A0%E9%99%90%E7%9A%84%E5%8F%AF%E8%83%BD%E4%BB%A4%E4%BA%BA%E4%B8%8D%E5%A0%AA%E9%87%8D%E8%B4%9F">无限的可能令人不堪重负</a></li>
+<li><a href="#%E6%8A%80%E6%9C%AF%E8%AE%BE%E8%AE%A1%E4%BB%8E%E5%B7%A5%E5%85%B7%E5%88%B0%E5%81%A5%E5%BA%B7%E7%A6%8F%E7%A5%89">技术设计：从工具到健康福祉</a></li>
+<li><a href="#%E5%BF%AB%E9%86%92%E9%86%92%E4%B8%BA%E5%B9%B8%E7%A6%8F%E8%80%8C%E6%88%98">快醒醒，为幸福而战</a></li>
+<li><a href="#%E4%BA%92%E8%81%94%E7%BD%91%E6%97%B6%E4%BB%A3%E7%9A%84%E5%B9%B8%E7%A6%8F">互联网时代的幸福</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8A%80%E6%9C%AF%E5%8F%96%E4%BB%A3%E7%9B%B4%E6%8E%A5%E7%9A%84%E5%B9%B8%E7%A6%8F%E6%8B%8D%E4%B8%8B%E6%9D%A5%E7%9A%84%E6%89%8D%E6%98%AF%E7%BE%8E%E6%99%AF%E4%BC%A0%E4%B8%8A%E7%BD%91%E7%9A%84%E6%89%8D%E7%AE%97%E5%B9%B8%E7%A6%8F">第一章 技术取代直接的幸福拍下来的才是美景，传上网的才算幸福</a>
+<ul>
+<li><a href="#%E6%84%9F%E7%9F%A5%E5%8F%97%E6%8D%9F">感知受损</a></li>
+<li><a href="#%E9%87%8D%E8%A6%81%E4%BB%B7%E5%80%BC%E5%8F%97%E6%8D%9F">重要价值受损</a></li>
+<li><a href="#%E7%A4%BE%E4%BA%A4%E4%BA%92%E5%8A%A8%E5%8F%97%E6%8D%9F">社交互动受损</a></li>
+<li><a href="#%E8%AE%B0%E5%BD%95%E8%80%8C%E9%9D%9E%E4%BD%93%E9%AA%8C">记录，而非体验</a></li>
+<li><a href="#%E5%AF%B9%E7%A2%8E%E7%89%87%E6%97%B6%E9%97%B4%E9%9B%B6%E5%AE%B9%E5%BF%8D">对碎片时间零容忍</a></li>
+<li><a href="#%E6%B6%88%E8%B4%B9vs%E5%88%9B%E9%80%A0">消费vs.创造</a></li>
+<li><a href="#%E4%BA%BA%E9%97%B4%E7%83%9F%E7%81%AB%E6%B0%94%E6%9C%80%E6%8A%9A%E5%87%A1%E4%BA%BA%E5%BF%83">人间烟火气，最抚凡人心</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8A%80%E6%9C%AF%E5%86%B3%E5%AE%9A%E6%84%8F%E4%B9%89%E4%BB%8E%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87%E5%88%B0%E8%87%AA%E6%88%91%E8%BF%B7%E5%A4%B1">第二章 技术决定意义从自我提升到自我迷失</a>
+<ul>
+<li><a href="#%E9%87%8F%E5%8C%96%E8%AE%A9%E4%BD%A0%E7%A6%BB%E7%9B%AE%E6%A0%87%E8%B6%8A%E6%9D%A5%E8%B6%8A%E8%BF%9C">量化，让你离目标越来越远</a></li>
+<li><a href="#%E4%BB%8E%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87%E5%88%B0%E8%87%AA%E6%88%91%E8%BF%B7%E5%A4%B1">从自我提升到自我迷失</a></li>
+<li><a href="#1%E5%9C%A8%E5%AF%BB%E6%B1%82%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E4%BA%BA%E4%BB%AC%E5%BE%88%E5%AE%B9%E6%98%93%E8%BF%B7%E5%A4%B1%E5%9C%A8%E9%87%91%E7%8E%89%E8%89%AF%E8%A8%80%E7%9A%84%E4%B8%9B%E6%9E%97%E4%B8%AD">1.在寻求自我反思的过程中，人们很容易迷失在金玉良言的丛林中</a></li>
+<li><a href="#2%E6%8E%A5%E8%B8%B5%E8%80%8C%E8%87%B3%E7%9A%84%E8%BF%87%E5%A4%9A%E5%B8%AE%E5%8A%A9%E4%BC%9A%E8%AE%A9%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87%E4%B9%8B%E8%B7%AF%E6%8B%A5%E6%8C%A4%E4%B8%8D%E5%A0%AA">2.接踵而至的过多帮助，会让自我提升之路拥挤不堪</a></li>
+<li><a href="#3%E5%AF%BB%E6%89%BE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%97%B6%E7%9A%84%E9%94%99%E8%AF%AF%E9%A1%BA%E5%BA%8F">3.寻找解决方案时的错误顺序</a></li>
+<li><a href="#4%E5%9B%A0%E4%B8%BA%E6%89%A7%E8%BF%B7%E4%BA%8E%E8%BF%BD%E6%B1%82%E5%B9%B3%E8%A1%A1%E5%92%8C%E5%AE%8C%E7%BE%8E%E8%80%8C%E5%A4%B1%E5%8E%BB%E5%B9%B3%E8%A1%A1">4.因为执迷于追求平衡和完美而失去平衡</a></li>
+<li><a href="#5%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%8A%AA%E5%8A%9B%E5%86%8D%E6%97%A0%E5%AE%B9%E8%BA%AB%E4%B9%8B%E5%9C%B0">5.真正的努力再无容身之地</a></li>
+<li><a href="#6%E4%BA%BA%E4%BB%AC%E5%86%8D%E4%B9%9F%E6%B2%A1%E6%9C%89%E6%9C%BA%E4%BC%9A%E8%87%AA%E6%88%91%E6%84%9F%E8%A7%89%E8%89%AF%E5%A5%BD%E4%BA%86">6.人们再也没有机会自我感觉良好了</a></li>
+<li><a href="#%E5%88%AB%E7%AE%A1%E5%96%9C%E4%B8%8D%E5%96%9C%E6%AC%A2%E5%8F%8D%E6%AD%A3%E5%A4%9A%E5%A4%9A%E7%9B%8A%E5%96%84">别管喜不喜欢，反正多多益善</a></li>
+<li><a href="#%E5%BE%AA%E8%A7%84%E8%B9%88%E7%9F%A9%E7%9A%84%E8%87%AA%E6%88%91%E8%A1%A8%E7%8E%B0">循规蹈矩的自我表现</a></li>
+<li><a href="#%E6%8A%80%E6%9C%AF%E4%BC%A0%E8%BE%BE%E7%9A%84%E7%90%86%E6%83%B3%E5%88%B0%E5%BA%95%E7%94%B1%E8%B0%81%E6%9D%A5%E5%86%B3%E5%AE%9A">技术传达的理想，到底由谁来决定</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%88%91%E7%9A%84%E5%B9%B8%E7%A6%8F%E9%80%82%E5%90%88%E5%8F%91%E6%9C%8B%E5%8F%8B%E5%9C%88%E5%90%97%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%BA%BA%E7%94%9F%E9%83%BD%E6%98%AF%E7%9B%B8%E4%BC%BC%E7%9A%84">第三章 我的幸福适合发朋友圈吗幸福的人生都是相似的</a>
+<ul>
+<li><a href="#%E5%8D%83%E7%AF%87%E4%B8%80%E5%BE%8B%E7%9A%84%E7%94%9F%E6%B4%BB%E6%9C%89%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D">千篇一律的生活有什么意思</a></li>
+<li><a href="#%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E4%B8%8A%E7%9A%84%E5%B9%B8%E7%A6%8F%E6%A8%A1%E6%9D%BF">社交媒体上的幸福模板</a></li>
+<li><a href="#%E5%B9%B8%E7%A6%8F%E5%B0%B1%E6%98%AF%E8%AE%A9%E5%88%AB%E4%BA%BA%E8%A7%89%E5%BE%97%E4%BD%A0%E5%B9%B8%E7%A6%8F">幸福就是让别人觉得你幸福</a></li>
+<li><a href="#%E6%9C%8B%E5%8F%8B%E5%9C%88%E9%87%8C%E7%9A%84%E5%B9%B8%E7%A6%8F%E9%99%B7%E9%98%B1">朋友圈里的幸福陷阱</a></li>
+<li><a href="#%E5%B9%B8%E7%A6%8F%E9%99%B7%E9%98%B1%E5%85%B6%E4%B8%80%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E5%A4%9A%E6%A0%B7%E6%80%A7">幸福陷阱其一：最大化的多样性</a></li>
+<li><a href="#%E5%B9%B8%E7%A6%8F%E9%99%B7%E9%98%B1%E5%85%B6%E4%BA%8C%E6%83%8A%E9%B8%BF%E4%B8%80%E7%9E%A5">幸福陷阱其二：惊鸿一瞥</a></li>
+<li><a href="#%E5%B9%B8%E7%A6%8F%E9%99%B7%E9%98%B1%E5%85%B6%E4%B8%89%E4%B8%BA%E4%BA%86%E6%B4%BB%E5%8A%A8%E6%8A%A5%E5%91%8A%E8%80%8C%E7%94%9F%E6%B4%BB">幸福陷阱其三：为了“活动报告”而生活</a></li>
+<li><a href="#%E5%B9%B8%E7%A6%8F%E9%99%B7%E9%98%B1%E5%85%B6%E5%9B%9B%E8%A7%84%E5%AE%9A%E5%A5%BD%E7%9A%84%E5%B9%B8%E7%A6%8F%E6%9D%9F%E7%BC%9A">幸福陷阱其四：规定好的幸福束缚</a></li>
+<li><a href="#%E9%87%8D%E6%8B%BE%E4%BA%AB%E5%8F%97%E5%B9%B8%E7%A6%8F%E7%9A%84%E8%83%BD%E5%8A%9B">重拾享受幸福的能力</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%88%AB%E5%85%B3%E6%9C%BA%E6%97%B6%E5%88%BB%E4%BF%9D%E6%8C%81%E8%81%94%E7%B3%BB247%E7%A7%92%E5%9B%9E%E4%BF%A1%E6%81%AF">第四章 别关机，时刻保持联系24/7，秒回信息</a>
+<ul>
+<li><a href="#%E5%81%87%E6%9C%9F%E6%8B%BF%E6%9D%A5%E5%90%A7%E4%BD%A0">假期？拿来吧你！</a></li>
+<li><a href="#%E6%97%B6%E5%88%BB%E4%BF%9D%E6%8C%81%E8%81%94%E7%B3%BB%E6%98%AF%E4%B8%80%E9%A1%B9%E5%9F%BA%E6%9C%AC%E6%9D%83%E5%88%A9">时刻保持联系，是一项基本权利</a></li>
+<li><a href="#%E7%94%B1%E5%B0%8F%E6%B8%90%E5%A4%A7%E7%9A%84%E9%80%9A%E4%BF%A1%E5%8E%8B%E5%8A%9B">由小渐大的通信压力</a></li>
+<li><a href="#%E6%89%8B%E6%9C%BA%E6%97%B6%E4%BB%A3%E7%9A%84%E5%A4%AB%E5%A6%BB%E5%85%B3%E7%B3%BB">手机时代的夫妻关系</a></li>
+<li><a href="#%E6%98%AF%E8%99%9A%E6%8B%9F%E7%9A%84%E4%BA%B2%E5%AF%86%E8%BF%98%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E4%BA%B2%E5%AF%86">是虚拟的亲密，还是真正的亲密</a></li>
+<li><a href="#%E5%85%B3%E6%9C%BA%E6%98%AF%E4%B8%8D%E5%8F%AF%E8%83%BD%E5%85%B3%E6%9C%BA%E7%9A%84">关机是不可能关机的</a></li>
+<li><a href="#%E4%BB%8E%E5%B0%8F%E4%BA%8B%E5%81%9A%E8%B5%B7%E8%A7%A3%E6%94%BE%E8%87%AA%E5%B7%B1">从小事做起，解放自己</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%8A%80%E6%9C%AF%E8%BF%99%E5%BC%A0%E9%80%9A%E8%A1%8C%E8%AF%81%E5%BD%93%E6%8A%80%E6%9C%AF%E5%B0%86%E6%88%91%E4%BB%AC%E4%BB%8E%E5%B0%8A%E9%87%8D%E5%92%8C%E4%BD%93%E8%B0%85%E4%BB%96%E4%BA%BA%E7%9A%84%E8%B4%A3%E4%BB%BB%E4%B8%AD%E8%A7%A3%E6%94%BE%E5%87%BA%E6%9D%A5">第五章 技术这张通行证当技术将我们从尊重和体谅他人的责任中解放出来</a>
+<ul>
+<li><a href="#%E6%8A%80%E6%9C%AF%E5%B8%A6%E6%9D%A5%E7%89%B9%E6%9D%83">技术带来特权</a></li>
+<li><a href="#%E6%96%B0%E8%AE%A8%E8%AE%BA%E6%96%87%E5%8C%96%E4%BD%A0%E6%88%91%E5%92%8C%E7%BD%91%E4%B8%8A">新讨论文化：你、我和网上</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E8%AE%BA%E5%9D%9B%E8%AF%B4%E5%BE%97%E5%AF%B9">网络论坛说得对</a></li>
+<li><a href="#%E7%BA%A6%E5%AE%9A%E5%8F%AF%E4%BB%A5%E9%9A%8F%E6%97%B6%E6%9B%B4%E6%94%B9">约定，可以随时更改</a></li>
+<li><a href="#%E4%BA%92%E8%81%94%E7%BD%91%E6%97%B6%E4%BB%A3%E7%9A%84%E5%85%8B%E5%B0%BC%E6%A0%BC%E8%A1%8C%E4%B8%BA%E5%87%86%E5%88%99%E6%89%8B%E5%86%8C">互联网时代的克尼格行为准则手册</a></li>
+<li><a href="#%E5%9C%A8%E7%9F%9B%E7%9B%BE%E7%9A%84%E5%BF%83%E6%80%81%E4%B8%8B%E5%A4%B1%E5%8E%BB%E7%A4%BC%E8%B2%8C">在矛盾的心态下，失去礼貌</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%94%B1%E7%BA%BF%E4%B8%8A%E5%88%B0%E7%BA%BF%E4%B8%8B%E5%BD%93%E4%BA%92%E8%81%94%E7%BD%91%E8%A7%84%E5%88%99%E5%85%A5%E4%BE%B5%E7%8E%B0%E5%AE%9E">第六章 由线上到线下当互联网规则入侵现实</a>
+<ul>
+<li><a href="#%E6%97%B6%E5%88%BB%E5%BC%80%E5%90%AF%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%BC%8F">时刻开启评论模式</a></li>
+<li><a href="#%E5%93%88%E5%93%88%E4%BD%A0%E4%B8%8A%E9%92%A9%E4%BA%86">哈哈，你上钩了！</a></li>
+<li><a href="#%E4%B8%80%E5%88%87%E7%9A%86%E5%8F%AF%E8%AF%84%E4%BB%B7">一切皆可评价</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%BD%91%E4%B8%8A%E5%96%B7%E5%AD%90%E9%82%A3%E4%B9%88%E5%A4%9A">为什么网上喷子那么多</a></li>
+<li><a href="#%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%8D%E4%BC%9A%E9%81%97%E5%BF%98">互联网不会遗忘</a></li>
+<li><a href="#%E8%99%9A%E6%8B%9F%E4%B8%96%E7%95%8C%E5%85%A5%E4%BE%B5%E7%8E%B0%E5%AE%9E%E7%9A%84%E5%BF%83%E7%90%86%E5%AD%A6%E6%9C%BA%E5%88%B6">虚拟世界入侵现实的心理学机制</a></li>
+<li><a href="#%E5%8C%BF%E5%90%8D">匿名</a></li>
+<li><a href="#%E8%BF%BD%E6%B1%82%E5%88%BA%E6%BF%80">追求刺激</a></li>
+<li><a href="#%E5%A4%A7%E4%BC%97%E7%9A%84%E5%8A%A8%E5%8A%9B">大众的动力</a></li>
+<li><a href="#%E7%BA%BF%E4%B8%8B%E4%B8%96%E7%95%8C%E7%9A%84%E6%9C%AA%E6%9D%A5">线下世界的未来</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%96%B0%E7%89%A9%E7%A7%8D%E7%9A%84%E8%AF%9E%E7%94%9F%E7%A7%91%E6%8A%80%E4%BA%BA%E7%9A%84%E6%80%9D%E8%80%83%E6%84%9F%E5%8F%97%E5%92%8C%E8%A1%8C%E4%B8%BA">第七章 新物种的诞生“科技人”的思考、感受和行为</a>
+<ul>
+<li><a href="#%E5%9B%9E%E5%A4%8D%E5%BC%BA%E8%BF%AB%E7%97%87%E7%A7%91%E6%8A%80%E4%BA%BA%E7%9A%84%E6%B2%9F%E9%80%9A%E4%BA%A4%E6%B5%81">回复强迫症——“科技人”的沟通交流</a></li>
+<li><a href="#%E5%88%AB%E9%97%AE%E9%97%AE%E5%B0%B1%E4%B8%8A%E7%BD%91%E6%9F%A5%E7%A7%91%E6%8A%80%E4%BA%BA%E7%9A%84%E6%80%9D%E8%80%83%E5%92%8C%E6%84%9F%E7%9F%A5">别问，问就上网查——“科技人”的思考和感知</a></li>
+<li><a href="#%E7%8E%B0%E4%BB%A3%E5%81%A5%E5%BA%B7%E6%8C%87%E5%8D%97">现代健康指南</a></li>
+<li><a href="#%E7%8E%B0%E4%BB%A3%E7%8E%B0%E8%B1%A1%E7%BB%BC%E5%90%88%E5%BE%81">现代现象/综合征</a></li>
+<li><a href="#%E7%8E%B0%E4%BB%A3%E6%B2%BB%E7%96%97%E6%89%8B%E6%AE%B5">现代治疗手段</a></li>
+<li><a href="#%E4%B8%93%E6%B3%A8%E5%8A%9B%E7%9A%84%E7%93%A6%E8%A7%A3%E7%A7%91%E6%8A%80%E4%BA%BA%E7%9A%84%E8%A1%8C%E4%B8%BA%E5%92%8C%E4%B9%A0%E4%BF%97">专注力的瓦解——“科技人”的行为和习俗</a></li>
+<li><a href="#%E7%A7%91%E6%8A%80%E4%BA%BA%E4%B8%8E%E4%BA%A7%E5%93%81%E7%9A%84%E5%85%B3%E7%B3%BB">“科技人”与产品的关系</a></li>
+<li><a href="#%E7%A7%91%E6%8A%80%E4%BA%BA%E5%AF%B9%E6%97%B6%E9%97%B4%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B2%E7%9A%84%E6%80%81%E5%BA%A6">“科技人”对时间、工作、空闲的态度</a></li>
+<li><a href="#%E7%A7%91%E6%8A%80%E4%BA%BA%E7%9A%84%E8%87%AA%E6%88%91%E6%84%9F%E7%9F%A5%E5%92%8C%E8%87%AA%E6%88%91%E8%A1%A8%E7%8E%B0">“科技人”的自我感知和自我表现</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E6%9C%AA%E6%9D%A5%E5%B0%86%E6%80%8E%E6%A0%B7%E5%8F%91%E5%B1%95">第八章 未来将怎样发展……</a>
+<ul>
+<li><a href="#%E6%8A%80%E6%9C%AF%E7%9A%84%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF">技术的发展趋势</a></li>
+<li><a href="#%E9%9A%90%E8%97%8F%E5%BC%8F%E4%BA%92%E5%8A%A8">隐藏式互动</a></li>
+<li><a href="#%E8%99%9A%E6%8B%9F%E4%B8%96%E7%95%8C%E4%B8%AD%E7%9A%84%E8%B4%A2%E4%BA%A7%E5%92%8C%E8%87%AA%E6%88%91%E5%AE%9A%E4%B9%89">虚拟世界中的财产和自我定义</a></li>
+<li><a href="#%E5%BD%BB%E5%BA%95%E7%9A%84%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E%E7%BB%88%E4%BA%8E%E6%89%BE%E5%88%B0%E6%A2%A6%E4%B8%AD%E6%83%85%E4%BA%BA%E4%BA%86">彻底的虚拟现实：终于找到梦中情人了</a></li>
+<li><a href="#%E6%96%B0%E7%9A%84%E4%B8%96%E7%95%8C%E7%A7%A9%E5%BA%8F">新的世界秩序</a></li>
+<li><a href="#%E6%8A%80%E6%9C%AF%E8%AE%AD%E7%BB%83%E7%9A%84%E6%96%B0%E6%97%B6%E4%BB%A3">技术训练的新时代</a></li>
+<li><a href="#%E9%80%9A%E5%BE%80%E5%B9%B8%E7%A6%8F%E4%B9%8B%E8%B7%AF">通往幸福之路</a></li>
+<li><a href="#%E6%89%B9%E5%88%A4%E5%9C%B0%E7%9C%8B%E5%BE%85%E6%8A%80%E6%9C%AF%E5%8F%AF%E8%83%BD%E7%9A%84%E7%9B%8A%E5%A4%84">批判地看待技术可能的益处</a></li>
+<li><a href="#%E8%A7%82%E5%AF%9F%E6%97%A9%E6%9C%9F%E9%87%87%E7%94%A8%E8%80%85">观察“早期采用者”</a></li>
+<li><a href="#%E5%88%86%E6%9E%90%E5%92%8C%E8%A6%86%E7%9B%96%E6%97%A5%E5%B8%B8%E7%9A%84%E4%BE%8B%E8%A1%8C%E5%85%AC%E4%BA%8B">分析和覆盖日常的例行公事</a></li>
+<li><a href="#%E4%BB%8E%E7%BB%8F%E5%8E%86%E5%87%BA%E5%8F%91">从经历出发</a></li>
+<li><a href="#%E6%9C%80%E5%90%8E%E7%9A%84%E6%80%9D%E8%80%83">最后的思考</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

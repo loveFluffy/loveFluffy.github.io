@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>Tips</title>
+            <title>&#x77e5;&#x8bc6;&#x70b9;&#x6536;&#x96c6;&#xff1a;&#x6295;&#x8d44;&#x7406;&#x8d22;</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -134,7 +134,6 @@
 <link rel="icon" href="../favicon.ico" />
 <div class="content">
 <table class="covertitle"><tr><td>
-<h1 id="tips">Tips</h1>
 <h1 id="知识点收集投资理财">知识点收集：投资理财</h1>
 </td></tr></table>
 <h2 id="资产负债表">资产负债表</h2>
@@ -158,15 +157,8 @@
 <ul>
 <li><a href="tips0001-%E5%BA%94%E4%BB%98%E7%A5%A8%E6%8D%AE%E8%9E%8D%E8%B5%84-%E6%97%A0%E7%9C%9F%E5%AE%9E%E4%B8%9A%E5%8A%A1%E8%83%8C%E6%99%AF.html">应付票据融资：无真实业务背景</a></li>
 </ul>
-<h3 id="递延收益">递延收益</h3>
-<ul>
-<li><a href="tips0015-%E9%80%92%E5%BB%B6%E6%94%B6%E7%9B%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E8%B4%9F%E5%80%BA.html">递延收益为什么是负债？</a></li>
-</ul>
 <h3 id="大量提取任意盈余公积的目的是什么">大量提取任意盈余公积的目的是什么</h3>
 <h2 id="利润表">利润表</h2>
-<ul>
-<li><a href="tips0012-%E6%89%80%E5%BE%97%E7%A8%8E%E8%B4%B9%E7%94%A8%E4%B8%BA%E8%B4%9F%E6%95%B0%E7%9A%84%E6%83%85%E5%86%B5.html">所得税费用为负数的情况</a></li>
-</ul>
 <h2 id="现金流量表">现金流量表</h2>
 <h2 id="模型公式">模型、公式</h2>
 <ul>
@@ -213,6 +205,13 @@
 </ul>
 <h3 id="windows系统">Windows系统</h3>
 <h4 id="windows系统下操作相关">Windows系统下操作相关</h4>
+<h5 id="文件浏览器-导航-onedrive隐藏">文件浏览器-导航-onedrive，隐藏</h5>
+<ol>
+<li>打开注册表编辑器：按 Win + R，输入 regedit，按回车。</li>
+<li>定位到 OneDrive CLSID：输入或粘贴路径：HKEY_CLASSES_ROOT\CLSID{018D5C66-0C66-4086-8A3E-19C8376D3272} (注意，这可能是不同版本略有不同，或在 ...\Explorer\Desktop\NameSpace 找包含 OneDrive 条目)。</li>
+<li>修改值：在右侧找到 System.IsPinnedToNameSpaceTree，双击将其值从 1 改为 0。</li>
+<li>重启文件资源管理器：打开任务管理器 (Ctrl+Shift+Esc)，找到“Windows 资源管理器”，右键选择“重新启动”</li>
+</ol>
 <h5 id="window下将多张图片转为一个pdf文件方法">Window下将多张图片转为一个PDF文件方法：</h5>
 <ol>
 <li>在文件夹中全选所有图片；</li>
@@ -249,12 +248,12 @@
 <ul>
 <li><a href="#%E5%80%9F-%E5%92%8C-%E8%B4%B7">借 和 贷</a></li>
 <li><a href="#%E7%A5%A8%E6%8D%AE%E7%A5%A8%E6%8D%AE%E8%9E%8D%E8%B5%84">票据、票据融资</a></li>
-<li><a href="#%E9%80%92%E5%BB%B6%E6%94%B6%E7%9B%8A">递延收益</a></li>
 <li><a href="#%E5%A4%A7%E9%87%8F%E6%8F%90%E5%8F%96%E4%BB%BB%E6%84%8F%E7%9B%88%E4%BD%99%E5%85%AC%E7%A7%AF%E7%9A%84%E7%9B%AE%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88">大量提取任意盈余公积的目的是什么</a></li>
 <li><a href="#windows%E7%B3%BB%E7%BB%9F">Windows系统</a>
 <ul>
 <li><a href="#windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3">Windows系统下操作相关</a>
 <ul>
+<li><a href="#%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8-%E5%AF%BC%E8%88%AA-onedrive%E9%9A%90%E8%97%8F">文件浏览器-导航-onedrive，隐藏</a></li>
 <li><a href="#window%E4%B8%8B%E5%B0%86%E5%A4%9A%E5%BC%A0%E5%9B%BE%E7%89%87%E8%BD%AC%E4%B8%BA%E4%B8%80%E4%B8%AApdf%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95">Window下将多张图片转为一个PDF文件方法：</a></li>
 <li><a href="#%E5%A4%9A%E4%B8%AApdf%E5%90%88%E5%B9%B6%E4%B8%BA%E4%B8%80%E4%B8%AApdf%E6%96%87%E4%BB%B6%E7%94%A8adobe-acrobat%E8%BD%AF%E4%BB%B6">多个PDF合并为一个PDF文件：用Adobe Acrobat软件。</a></li>
 <li><a href="#%E5%BC%BA%E5%88%B6%E9%9A%90%E8%97%8Fwindow-taskbar-%E4%BB%BB%E5%8A%A1%E6%A0%8F">强制隐藏window taskbar 任务栏：</a></li>

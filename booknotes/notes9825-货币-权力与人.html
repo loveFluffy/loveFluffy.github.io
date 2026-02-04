@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x8d27;&#x5e01;&#x3001;&#x6743;&#x529b;&#x4e0e;&#x4eba;&#xff1a;&#x5168;&#x7403;&#x8d27;&#x5e01;&#x4e0e;&#x91d1;&#x878d;&#x4f53;&#x7cfb;&#x7684;&#x6c11;&#x672c;&#x4e3b;&#x4e49;&#x653f;&#x6cbb;&#x7ecf;&#x6d4e;&#x5b66;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x8d27;&#x5e01;&#x3001;&#x6743;&#x529b;&#x4e0e;&#x4eba;&#xff1a;&#x5168;&#x7403;&#x8d27;&#x5e01;&#x4e0e;&#x91d1;&#x878d;&#x4f53;&#x7cfb;&#x7684;&#x6c11;&#x672c;&#x4e3b;&#x4e49;&#x653f;&#x6cbb;&#x7ecf;&#x6d4e;&#x5b66;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,438 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="货币权力与人全球货币与金融体系的民本主义政治经济学">货币、权力与人：全球货币与金融体系的民本主义政治经济学</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/9825.jpg"></td><td>
+<h1 id="货币权力与人全球货币与金融体系的民本主义政治经济学">货币、权力与人：全球货币与金融体系的民本主义政治经济学</h1>
+<center>翟东升</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
+<h3 id="第一章-议题与方法民本主义政治经济学的方法与基本命题">第一章 议题与方法——民本主义政治经济学的方法与基本命题</h3>
+<h4 id="第一节-民本主义政治经济学初探">第一节 民本主义政治经济学初探</h4>
+<h5 id="一-民本主义的中国传统思想渊源">一 民本主义的中国传统思想渊源</h5>
+<h5 id="二-欧洲人本主义政治经济思想的镜鉴">二 欧洲人本主义政治经济思想的镜鉴</h5>
+<h5 id="三-马克思人本主义理论和中国共产党民本主义实践">三 马克思人本主义理论和中国共产党民本主义实践</h5>
+<h5 id="四-本书的民本主义政治经济学">四 本书的民本主义政治经济学</h5>
+<h4 id="第二节-人与物的关系">第二节 人与物的关系</h4>
+<h5 id="一-财富的源头是人的劳动和消费">一 财富的源头是人的劳动和消费</h5>
+<h5 id="二-中心掠夺外围的是其人而非其物">二 中心掠夺外围的是其人而非其物</h5>
+<h5 id="三-马尔萨斯人口论的谬误与流毒">三 马尔萨斯人口论的谬误与流毒</h5>
+<h5 id="四-资源诅咒">四 “资源诅咒”</h5>
+<h4 id="第三节-政府市场与人民">第三节 政府、市场与人民</h4>
+<h5 id="一-关于公私关系的流行错觉">一 关于公私关系的流行错觉</h5>
+<h5 id="二-民本主义视角下的政府与市场关系">二 民本主义视角下的政府与市场关系</h5>
+<h5 id="三-强国家的缔造">三 强国家的缔造</h5>
+<h4 id="第四节-中心与外围">第四节 中心与外围</h4>
+<h5 id="一-中心与外围之间的差异和变迁">一 中心与外围之间的差异和变迁</h5>
+<h5 id="二-融资结构的中心外围差异">二 融资结构的中心外围差异</h5>
+<h5 id="三-分化与演进中的中心外围关系">三 分化与演进中的中心外围关系</h5>
+<h4 id="第五节-可贸易部门和非贸易部门">第五节 可贸易部门和非贸易部门</h4>
+<h5 id="一-一价定理与可贸易品">一 一价定理与可贸易品</h5>
+<h5 id="二-gdp-ppp之误与巴库斯史密斯谜题">二 GDP-PPP之误与“巴库斯—史密斯谜题”</h5>
+<h5 id="三-如何发展可贸易部门">三 如何发展可贸易部门</h5>
+<h3 id="第二章-货币国际化与全球货币体系的重构">第二章 货币国际化与全球货币体系的重构</h3>
+<h4 id="第一节-全球货币体系的演进轨迹从金银复本位到美元霸权">第一节 全球货币体系的演进轨迹：从金银复本位到美元霸权</h4>
+<h5 id="一-从复本位到金本位">一 从复本位到金本位</h5>
+<h5 id="二-从金币本位到金汇兑本位">二 从金币本位到金汇兑本位</h5>
+<h5 id="三-英美间货币权势的博弈与转移">三 英美间货币权势的博弈与转移</h5>
+<h5 id="四-摆脱黄金枷锁的美元霸权">四 摆脱黄金枷锁的美元霸权</h5>
+<h5 id="五-关于货币本质的争论">五 关于货币本质的争论</h5>
+<h4 id="第二节-政治经济学视角下的美元霸权幂律">第二节 政治经济学视角下的美元霸权：幂律</h4>
+<h5 id="一-货币国际化指数及其幂律">一 货币国际化指数及其幂律</h5>
+<h5 id="二-美元霸权的好处">二 美元霸权的好处</h5>
+<h5 id="三-美元嚣张特权的条件和代价">三 美元“嚣张特权”的条件和代价</h5>
+<h4 id="第三节-德国马克与日元货币国际化的经验教训">第三节 德国马克与日元：货币国际化的经验教训</h4>
+<h5 id="一-内政与金融体制论">一 内政与金融体制论</h5>
+<h5 id="二-实体经济质量决定论">二 实体经济质量决定论</h5>
+<h5 id="三-国际政治决定论">三 国际政治决定论</h5>
+<h5 id="四-货币国际化的次序和时间窗口">四 货币国际化的次序和时间窗口</h5>
+<h5 id="五-对人民币国际化的启示">五 对人民币国际化的启示</h5>
+<h4 id="第四节-人民币国际化的政治经济学">第四节 人民币国际化的政治经济学</h4>
+<h5 id="一-人民币国际化的进展">一 人民币国际化的进展</h5>
+<h5 id="二-围绕人民币国际化的争论">二 围绕人民币国际化的争论</h5>
+<h5 id="三-人民币国际化的未来发展前景">三 人民币国际化的未来发展前景</h5>
+<h5 id="四-人民币进一步国际化对中国经济的重塑">四 人民币进一步国际化对中国经济的重塑</h5>
+<h3 id="第三章-美元体系的风险结构与定价">第三章 美元体系的风险结构与定价</h3>
+<h4 id="第一节-后布雷顿森林体系的结构性特点与缺陷">第一节 后布雷顿森林体系的结构性特点与缺陷</h4>
+<h5 id="一-美元之梦取代黄金之梦">一 美元之梦取代黄金之梦</h5>
+<h5 id="二-主权货币作为全球储备">二 主权货币作为全球储备</h5>
+<h5 id="三-无锚货币与浮动汇率体系的基因缺陷">三 无锚货币与浮动汇率体系的基因缺陷</h5>
+<h5 id="四-未来的补救方案">四 未来的补救方案</h5>
+<h4 id="第二节-政治视角下的央行与货币政策">第二节 政治视角下的央行与货币政策</h4>
+<h5 id="一-央行及其独立性的演变">一 央行及其独立性的演变</h5>
+<h5 id="二-新自由主义与央行独立性">二 新自由主义与央行独立性</h5>
+<h5 id="三-美联储的货币政治">三 美联储的货币政治</h5>
+<h5 id="四-后危机时代的非常规货币政策">四 后危机时代的非常规货币政策</h5>
+<h4 id="第三节-远端利率与人口春秋比">第三节 远端利率与人口春秋比</h4>
+<h5 id="一-究竟是什么决定远端利率背后的资金需求投资还是消费">一 究竟是什么决定远端利率背后的资金需求：投资还是消费？</h5>
+<h5 id="二-人口结构视角下的远端利率">二 人口结构视角下的远端利率</h5>
+<h5 id="三-负利率时代的出现">三 负利率时代的出现</h5>
+<h3 id="第四章-金融权势与新自由主义全球化的兴衰">第四章 金融权势与新自由主义全球化的兴衰</h3>
+<h4 id="第一节-金融利益在美国政治经济体系中的崛起">第一节 金融利益在美国政治经济体系中的崛起</h4>
+<h5 id="一-金融业的游说与权力俘获">一 金融业的游说与权力俘获</h5>
+<h5 id="二-金融去监管化">二 金融去监管化</h5>
+<h5 id="三-金融压倒实业">三 金融压倒实业</h5>
+<h5 id="四-大到不能倒too-big-to-fail">四 “大到不能倒”（too big to fail）</h5>
+<h4 id="第二节-全球化的兴衰从新自由主义到民粹主义">第二节 全球化的兴衰：从新自由主义到民粹主义</h4>
+<h5 id="一-美式全球化的兴起与突变">一 美式全球化的兴起与突变</h5>
+<h5 id="二-新自由主义的流行与证伪">二 新自由主义的流行与证伪</h5>
+<h5 id="三-贫富分化与民粹崛起">三 贫富分化与民粹崛起</h5>
+<h4 id="第三节-全球化兴衰与中国的战略定位">第三节 全球化兴衰与中国的战略定位</h4>
+<h5 id="一-国际格局变迁与全球化兴衰">一 国际格局变迁与全球化兴衰</h5>
+<h5 id="二-中国是美式全球化的重要参与方">二 中国是美式全球化的重要参与方</h5>
+<h5 id="三-美式全球化退潮期的中国应对">三 美式全球化退潮期的中国应对</h5>
+<h4 id="第四节-国际金融中心的政治经济学">第四节 国际金融中心的政治经济学</h4>
+<h5 id="一-国际金融中心的变迁">一 国际金融中心的变迁</h5>
+<h5 id="二-金融中心与政治">二 金融中心与政治</h5>
+<h5 id="三-如何打造亚洲和中国的金融中心">三 如何打造亚洲和中国的金融中心？</h5>
+<h3 id="第五章-汇率的政治经济学">第五章 汇率的政治经济学</h3>
+<h4 id="第一节-汇率制度的选择与利弊">第一节 汇率制度的选择与利弊</h4>
+<h5 id="一-汇率制度的分类及其优缺点">一 汇率制度的分类及其优缺点</h5>
+<h5 id="二-经济金融学视角下的汇率制度选择">二 经济金融学视角下的汇率制度选择</h5>
+<h5 id="三-国际政治经济学的视角下的汇率制度选择理论">三 国际政治经济学的视角下的汇率制度选择理论</h5>
+<h4 id="第二节-对汇率的民本主义政治经济学理解">第二节 对汇率的民本主义政治经济学理解</h4>
+<h5 id="一-汇率研究的路径问题">一 汇率研究的路径问题</h5>
+<h5 id="二-关于汇率的常见谬误">二 关于汇率的常见谬误</h5>
+<h5 id="三-汇率波动与经济基本面的实证关系">三 汇率波动与经济基本面的实证关系</h5>
+<h5 id="四-汇率波动与非经济因素关系的实证检验">四 汇率波动与非经济因素关系的实证检验</h5>
+<h4 id="第三节-美元人民币与一带一路货币汇率">第三节 美元、人民币与“一带一路”货币汇率</h4>
+<h5 id="一-美元指数">一 美元指数</h5>
+<h5 id="二-人民币汇率的未来趋势">二 人民币汇率的未来趋势</h5>
+<h5 id="三-模型建构与一带一路国家汇率稳定性预测">三 模型建构与“一带一路”国家汇率稳定性预测</h5>
+<h4 id="第四节-人民币汇率波动的政治经济博弈">第四节 人民币汇率波动的政治经济博弈</h4>
+<h5 id="一-2005年之前贬值低估与固定汇率政策的再分配效应">一 2005年之前：贬值、低估与固定汇率政策的再分配效应</h5>
+<h5 id="二-20052012年中美之间围绕汇率升值问题的双层博弈">二 2005—2012年中美之间围绕汇率升值问题的双层博弈</h5>
+<h5 id="三-中美汇率争论的两个问题">三 中美汇率争论的两个问题</h5>
+<h5 id="四-新时代的人民币汇率">四 新时代的人民币汇率</h5>
+<h3 id="第六章-债务的政治经济学">第六章 债务的政治经济学</h3>
+<h4 id="第一节-债务的政治经济学">第一节 债务的政治经济学</h4>
+<h5 id="一-关于债务杠杆的基本事实">一 关于债务杠杆的基本事实</h5>
+<h5 id="二-从莱因哈特到雷伊达里奥美国知识界的债务情结">二 从莱因哈特到雷伊·达里奥：美国知识界的债务情结</h5>
+<h5 id="三-美国联邦债务的政治解读">三 美国联邦债务的政治解读</h5>
+<h4 id="第二节-中国债务的政治经济学">第二节 中国债务的政治经济学</h4>
+<h5 id="一-中国债务问题的态势">一 中国债务问题的态势</h5>
+<h5 id="二-围绕杠杆率的探索与教训">二 围绕杠杆率的探索与教训</h5>
+<h5 id="三-如何解决民营资本融资难的问题">三 如何解决民营资本融资难的问题</h5>
+<h5 id="四-中国债务的改进空间">四 中国债务的改进空间</h5>
+<h4 id="第三节-债务评级的霸权">第三节 债务评级的霸权</h4>
+<h5 id="一-评级霸权何以形成">一 评级霸权何以形成？</h5>
+<h5 id="二-现有信用评级体系的治理缺陷">二 现有信用评级体系的治理缺陷</h5>
+<h5 id="三-全球与中国评级市场的治理与改进">三 全球与中国评级市场的治理与改进</h5>
+<h3 id="第七章-结论">第七章 结论</h3>
+<h4 id="一-对流行谬见的批判">一 对流行谬见的批判</h4>
+<h4 id="二-若干观点与猜想">二 若干观点与猜想</h4>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E8%AE%AE%E9%A2%98%E4%B8%8E%E6%96%B9%E6%B3%95%E6%B0%91%E6%9C%AC%E4%B8%BB%E4%B9%89%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%91%BD%E9%A2%98">第一章 议题与方法——民本主义政治经济学的方法与基本命题</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%8A%82-%E6%B0%91%E6%9C%AC%E4%B8%BB%E4%B9%89%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%88%9D%E6%8E%A2">第一节 民本主义政治经济学初探</a>
+<ul>
+<li><a href="#%E4%B8%80-%E6%B0%91%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%BC%A0%E7%BB%9F%E6%80%9D%E6%83%B3%E6%B8%8A%E6%BA%90">一 民本主义的中国传统思想渊源</a></li>
+<li><a href="#%E4%BA%8C-%E6%AC%A7%E6%B4%B2%E4%BA%BA%E6%9C%AC%E4%B8%BB%E4%B9%89%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E6%80%9D%E6%83%B3%E7%9A%84%E9%95%9C%E9%89%B4">二 欧洲人本主义政治经济思想的镜鉴</a></li>
+<li><a href="#%E4%B8%89-%E9%A9%AC%E5%85%8B%E6%80%9D%E4%BA%BA%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E5%92%8C%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A%E6%B0%91%E6%9C%AC%E4%B8%BB%E4%B9%89%E5%AE%9E%E8%B7%B5">三 马克思人本主义理论和中国共产党民本主义实践</a></li>
+<li><a href="#%E5%9B%9B-%E6%9C%AC%E4%B9%A6%E7%9A%84%E6%B0%91%E6%9C%AC%E4%B8%BB%E4%B9%89%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6">四 本书的民本主义政治经济学</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-%E4%BA%BA%E4%B8%8E%E7%89%A9%E7%9A%84%E5%85%B3%E7%B3%BB">第二节 人与物的关系</a>
+<ul>
+<li><a href="#%E4%B8%80-%E8%B4%A2%E5%AF%8C%E7%9A%84%E6%BA%90%E5%A4%B4%E6%98%AF%E4%BA%BA%E7%9A%84%E5%8A%B3%E5%8A%A8%E5%92%8C%E6%B6%88%E8%B4%B9">一 财富的源头是人的劳动和消费</a></li>
+<li><a href="#%E4%BA%8C-%E4%B8%AD%E5%BF%83%E6%8E%A0%E5%A4%BA%E5%A4%96%E5%9B%B4%E7%9A%84%E6%98%AF%E5%85%B6%E4%BA%BA%E8%80%8C%E9%9D%9E%E5%85%B6%E7%89%A9">二 中心掠夺外围的是其人而非其物</a></li>
+<li><a href="#%E4%B8%89-%E9%A9%AC%E5%B0%94%E8%90%A8%E6%96%AF%E4%BA%BA%E5%8F%A3%E8%AE%BA%E7%9A%84%E8%B0%AC%E8%AF%AF%E4%B8%8E%E6%B5%81%E6%AF%92">三 马尔萨斯人口论的谬误与流毒</a></li>
+<li><a href="#%E5%9B%9B-%E8%B5%84%E6%BA%90%E8%AF%85%E5%92%92">四 “资源诅咒”</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E8%8A%82-%E6%94%BF%E5%BA%9C%E5%B8%82%E5%9C%BA%E4%B8%8E%E4%BA%BA%E6%B0%91">第三节 政府、市场与人民</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%85%B3%E4%BA%8E%E5%85%AC%E7%A7%81%E5%85%B3%E7%B3%BB%E7%9A%84%E6%B5%81%E8%A1%8C%E9%94%99%E8%A7%89">一 关于公私关系的流行错觉</a></li>
+<li><a href="#%E4%BA%8C-%E6%B0%91%E6%9C%AC%E4%B8%BB%E4%B9%89%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E6%94%BF%E5%BA%9C%E4%B8%8E%E5%B8%82%E5%9C%BA%E5%85%B3%E7%B3%BB">二 民本主义视角下的政府与市场关系</a></li>
+<li><a href="#%E4%B8%89-%E5%BC%BA%E5%9B%BD%E5%AE%B6%E7%9A%84%E7%BC%94%E9%80%A0">三 强国家的缔造</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E8%8A%82-%E4%B8%AD%E5%BF%83%E4%B8%8E%E5%A4%96%E5%9B%B4">第四节 中心与外围</a>
+<ul>
+<li><a href="#%E4%B8%80-%E4%B8%AD%E5%BF%83%E4%B8%8E%E5%A4%96%E5%9B%B4%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%BC%82%E5%92%8C%E5%8F%98%E8%BF%81">一 中心与外围之间的差异和变迁</a></li>
+<li><a href="#%E4%BA%8C-%E8%9E%8D%E8%B5%84%E7%BB%93%E6%9E%84%E7%9A%84%E4%B8%AD%E5%BF%83%E5%A4%96%E5%9B%B4%E5%B7%AE%E5%BC%82">二 融资结构的中心外围差异</a></li>
+<li><a href="#%E4%B8%89-%E5%88%86%E5%8C%96%E4%B8%8E%E6%BC%94%E8%BF%9B%E4%B8%AD%E7%9A%84%E4%B8%AD%E5%BF%83%E5%A4%96%E5%9B%B4%E5%85%B3%E7%B3%BB">三 分化与演进中的中心外围关系</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E8%8A%82-%E5%8F%AF%E8%B4%B8%E6%98%93%E9%83%A8%E9%97%A8%E5%92%8C%E9%9D%9E%E8%B4%B8%E6%98%93%E9%83%A8%E9%97%A8">第五节 可贸易部门和非贸易部门</a>
+<ul>
+<li><a href="#%E4%B8%80-%E4%B8%80%E4%BB%B7%E5%AE%9A%E7%90%86%E4%B8%8E%E5%8F%AF%E8%B4%B8%E6%98%93%E5%93%81">一 一价定理与可贸易品</a></li>
+<li><a href="#%E4%BA%8C-gdp-ppp%E4%B9%8B%E8%AF%AF%E4%B8%8E%E5%B7%B4%E5%BA%93%E6%96%AF%E5%8F%B2%E5%AF%86%E6%96%AF%E8%B0%9C%E9%A2%98">二 GDP-PPP之误与“巴库斯—史密斯谜题”</a></li>
+<li><a href="#%E4%B8%89-%E5%A6%82%E4%BD%95%E5%8F%91%E5%B1%95%E5%8F%AF%E8%B4%B8%E6%98%93%E9%83%A8%E9%97%A8">三 如何发展可贸易部门</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%B4%A7%E5%B8%81%E5%9B%BD%E9%99%85%E5%8C%96%E4%B8%8E%E5%85%A8%E7%90%83%E8%B4%A7%E5%B8%81%E4%BD%93%E7%B3%BB%E7%9A%84%E9%87%8D%E6%9E%84">第二章 货币国际化与全球货币体系的重构</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%8A%82-%E5%85%A8%E7%90%83%E8%B4%A7%E5%B8%81%E4%BD%93%E7%B3%BB%E7%9A%84%E6%BC%94%E8%BF%9B%E8%BD%A8%E8%BF%B9%E4%BB%8E%E9%87%91%E9%93%B6%E5%A4%8D%E6%9C%AC%E4%BD%8D%E5%88%B0%E7%BE%8E%E5%85%83%E9%9C%B8%E6%9D%83">第一节 全球货币体系的演进轨迹：从金银复本位到美元霸权</a>
+<ul>
+<li><a href="#%E4%B8%80-%E4%BB%8E%E5%A4%8D%E6%9C%AC%E4%BD%8D%E5%88%B0%E9%87%91%E6%9C%AC%E4%BD%8D">一 从复本位到金本位</a></li>
+<li><a href="#%E4%BA%8C-%E4%BB%8E%E9%87%91%E5%B8%81%E6%9C%AC%E4%BD%8D%E5%88%B0%E9%87%91%E6%B1%87%E5%85%91%E6%9C%AC%E4%BD%8D">二 从金币本位到金汇兑本位</a></li>
+<li><a href="#%E4%B8%89-%E8%8B%B1%E7%BE%8E%E9%97%B4%E8%B4%A7%E5%B8%81%E6%9D%83%E5%8A%BF%E7%9A%84%E5%8D%9A%E5%BC%88%E4%B8%8E%E8%BD%AC%E7%A7%BB">三 英美间货币权势的博弈与转移</a></li>
+<li><a href="#%E5%9B%9B-%E6%91%86%E8%84%B1%E9%BB%84%E9%87%91%E6%9E%B7%E9%94%81%E7%9A%84%E7%BE%8E%E5%85%83%E9%9C%B8%E6%9D%83">四 摆脱黄金枷锁的美元霸权</a></li>
+<li><a href="#%E4%BA%94-%E5%85%B3%E4%BA%8E%E8%B4%A7%E5%B8%81%E6%9C%AC%E8%B4%A8%E7%9A%84%E4%BA%89%E8%AE%BA">五 关于货币本质的争论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E7%BE%8E%E5%85%83%E9%9C%B8%E6%9D%83%E5%B9%82%E5%BE%8B">第二节 政治经济学视角下的美元霸权：幂律</a>
+<ul>
+<li><a href="#%E4%B8%80-%E8%B4%A7%E5%B8%81%E5%9B%BD%E9%99%85%E5%8C%96%E6%8C%87%E6%95%B0%E5%8F%8A%E5%85%B6%E5%B9%82%E5%BE%8B">一 货币国际化指数及其幂律</a></li>
+<li><a href="#%E4%BA%8C-%E7%BE%8E%E5%85%83%E9%9C%B8%E6%9D%83%E7%9A%84%E5%A5%BD%E5%A4%84">二 美元霸权的好处</a></li>
+<li><a href="#%E4%B8%89-%E7%BE%8E%E5%85%83%E5%9A%A3%E5%BC%A0%E7%89%B9%E6%9D%83%E7%9A%84%E6%9D%A1%E4%BB%B6%E5%92%8C%E4%BB%A3%E4%BB%B7">三 美元“嚣张特权”的条件和代价</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E8%8A%82-%E5%BE%B7%E5%9B%BD%E9%A9%AC%E5%85%8B%E4%B8%8E%E6%97%A5%E5%85%83%E8%B4%A7%E5%B8%81%E5%9B%BD%E9%99%85%E5%8C%96%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%95%99%E8%AE%AD">第三节 德国马克与日元：货币国际化的经验教训</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%86%85%E6%94%BF%E4%B8%8E%E9%87%91%E8%9E%8D%E4%BD%93%E5%88%B6%E8%AE%BA">一 内政与金融体制论</a></li>
+<li><a href="#%E4%BA%8C-%E5%AE%9E%E4%BD%93%E7%BB%8F%E6%B5%8E%E8%B4%A8%E9%87%8F%E5%86%B3%E5%AE%9A%E8%AE%BA">二 实体经济质量决定论</a></li>
+<li><a href="#%E4%B8%89-%E5%9B%BD%E9%99%85%E6%94%BF%E6%B2%BB%E5%86%B3%E5%AE%9A%E8%AE%BA">三 国际政治决定论</a></li>
+<li><a href="#%E5%9B%9B-%E8%B4%A7%E5%B8%81%E5%9B%BD%E9%99%85%E5%8C%96%E7%9A%84%E6%AC%A1%E5%BA%8F%E5%92%8C%E6%97%B6%E9%97%B4%E7%AA%97%E5%8F%A3">四 货币国际化的次序和时间窗口</a></li>
+<li><a href="#%E4%BA%94-%E5%AF%B9%E4%BA%BA%E6%B0%91%E5%B8%81%E5%9B%BD%E9%99%85%E5%8C%96%E7%9A%84%E5%90%AF%E7%A4%BA">五 对人民币国际化的启示</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E8%8A%82-%E4%BA%BA%E6%B0%91%E5%B8%81%E5%9B%BD%E9%99%85%E5%8C%96%E7%9A%84%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6">第四节 人民币国际化的政治经济学</a>
+<ul>
+<li><a href="#%E4%B8%80-%E4%BA%BA%E6%B0%91%E5%B8%81%E5%9B%BD%E9%99%85%E5%8C%96%E7%9A%84%E8%BF%9B%E5%B1%95">一 人民币国际化的进展</a></li>
+<li><a href="#%E4%BA%8C-%E5%9B%B4%E7%BB%95%E4%BA%BA%E6%B0%91%E5%B8%81%E5%9B%BD%E9%99%85%E5%8C%96%E7%9A%84%E4%BA%89%E8%AE%BA">二 围绕人民币国际化的争论</a></li>
+<li><a href="#%E4%B8%89-%E4%BA%BA%E6%B0%91%E5%B8%81%E5%9B%BD%E9%99%85%E5%8C%96%E7%9A%84%E6%9C%AA%E6%9D%A5%E5%8F%91%E5%B1%95%E5%89%8D%E6%99%AF">三 人民币国际化的未来发展前景</a></li>
+<li><a href="#%E5%9B%9B-%E4%BA%BA%E6%B0%91%E5%B8%81%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%9B%BD%E9%99%85%E5%8C%96%E5%AF%B9%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E7%9A%84%E9%87%8D%E5%A1%91">四 人民币进一步国际化对中国经济的重塑</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%BE%8E%E5%85%83%E4%BD%93%E7%B3%BB%E7%9A%84%E9%A3%8E%E9%99%A9%E7%BB%93%E6%9E%84%E4%B8%8E%E5%AE%9A%E4%BB%B7">第三章 美元体系的风险结构与定价</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%8A%82-%E5%90%8E%E5%B8%83%E9%9B%B7%E9%A1%BF%E6%A3%AE%E6%9E%97%E4%BD%93%E7%B3%BB%E7%9A%84%E7%BB%93%E6%9E%84%E6%80%A7%E7%89%B9%E7%82%B9%E4%B8%8E%E7%BC%BA%E9%99%B7">第一节 后布雷顿森林体系的结构性特点与缺陷</a>
+<ul>
+<li><a href="#%E4%B8%80-%E7%BE%8E%E5%85%83%E4%B9%8B%E6%A2%A6%E5%8F%96%E4%BB%A3%E9%BB%84%E9%87%91%E4%B9%8B%E6%A2%A6">一 美元之梦取代黄金之梦</a></li>
+<li><a href="#%E4%BA%8C-%E4%B8%BB%E6%9D%83%E8%B4%A7%E5%B8%81%E4%BD%9C%E4%B8%BA%E5%85%A8%E7%90%83%E5%82%A8%E5%A4%87">二 主权货币作为全球储备</a></li>
+<li><a href="#%E4%B8%89-%E6%97%A0%E9%94%9A%E8%B4%A7%E5%B8%81%E4%B8%8E%E6%B5%AE%E5%8A%A8%E6%B1%87%E7%8E%87%E4%BD%93%E7%B3%BB%E7%9A%84%E5%9F%BA%E5%9B%A0%E7%BC%BA%E9%99%B7">三 无锚货币与浮动汇率体系的基因缺陷</a></li>
+<li><a href="#%E5%9B%9B-%E6%9C%AA%E6%9D%A5%E7%9A%84%E8%A1%A5%E6%95%91%E6%96%B9%E6%A1%88">四 未来的补救方案</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-%E6%94%BF%E6%B2%BB%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E5%A4%AE%E8%A1%8C%E4%B8%8E%E8%B4%A7%E5%B8%81%E6%94%BF%E7%AD%96">第二节 政治视角下的央行与货币政策</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%A4%AE%E8%A1%8C%E5%8F%8A%E5%85%B6%E7%8B%AC%E7%AB%8B%E6%80%A7%E7%9A%84%E6%BC%94%E5%8F%98">一 央行及其独立性的演变</a></li>
+<li><a href="#%E4%BA%8C-%E6%96%B0%E8%87%AA%E7%94%B1%E4%B8%BB%E4%B9%89%E4%B8%8E%E5%A4%AE%E8%A1%8C%E7%8B%AC%E7%AB%8B%E6%80%A7">二 新自由主义与央行独立性</a></li>
+<li><a href="#%E4%B8%89-%E7%BE%8E%E8%81%94%E5%82%A8%E7%9A%84%E8%B4%A7%E5%B8%81%E6%94%BF%E6%B2%BB">三 美联储的货币政治</a></li>
+<li><a href="#%E5%9B%9B-%E5%90%8E%E5%8D%B1%E6%9C%BA%E6%97%B6%E4%BB%A3%E7%9A%84%E9%9D%9E%E5%B8%B8%E8%A7%84%E8%B4%A7%E5%B8%81%E6%94%BF%E7%AD%96">四 后危机时代的非常规货币政策</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E8%8A%82-%E8%BF%9C%E7%AB%AF%E5%88%A9%E7%8E%87%E4%B8%8E%E4%BA%BA%E5%8F%A3%E6%98%A5%E7%A7%8B%E6%AF%94">第三节 远端利率与人口春秋比</a>
+<ul>
+<li><a href="#%E4%B8%80-%E7%A9%B6%E7%AB%9F%E6%98%AF%E4%BB%80%E4%B9%88%E5%86%B3%E5%AE%9A%E8%BF%9C%E7%AB%AF%E5%88%A9%E7%8E%87%E8%83%8C%E5%90%8E%E7%9A%84%E8%B5%84%E9%87%91%E9%9C%80%E6%B1%82%E6%8A%95%E8%B5%84%E8%BF%98%E6%98%AF%E6%B6%88%E8%B4%B9">一 究竟是什么决定远端利率背后的资金需求：投资还是消费？</a></li>
+<li><a href="#%E4%BA%8C-%E4%BA%BA%E5%8F%A3%E7%BB%93%E6%9E%84%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E8%BF%9C%E7%AB%AF%E5%88%A9%E7%8E%87">二 人口结构视角下的远端利率</a></li>
+<li><a href="#%E4%B8%89-%E8%B4%9F%E5%88%A9%E7%8E%87%E6%97%B6%E4%BB%A3%E7%9A%84%E5%87%BA%E7%8E%B0">三 负利率时代的出现</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E9%87%91%E8%9E%8D%E6%9D%83%E5%8A%BF%E4%B8%8E%E6%96%B0%E8%87%AA%E7%94%B1%E4%B8%BB%E4%B9%89%E5%85%A8%E7%90%83%E5%8C%96%E7%9A%84%E5%85%B4%E8%A1%B0">第四章 金融权势与新自由主义全球化的兴衰</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%8A%82-%E9%87%91%E8%9E%8D%E5%88%A9%E7%9B%8A%E5%9C%A8%E7%BE%8E%E5%9B%BD%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E4%BD%93%E7%B3%BB%E4%B8%AD%E7%9A%84%E5%B4%9B%E8%B5%B7">第一节 金融利益在美国政治经济体系中的崛起</a>
+<ul>
+<li><a href="#%E4%B8%80-%E9%87%91%E8%9E%8D%E4%B8%9A%E7%9A%84%E6%B8%B8%E8%AF%B4%E4%B8%8E%E6%9D%83%E5%8A%9B%E4%BF%98%E8%8E%B7">一 金融业的游说与权力俘获</a></li>
+<li><a href="#%E4%BA%8C-%E9%87%91%E8%9E%8D%E5%8E%BB%E7%9B%91%E7%AE%A1%E5%8C%96">二 金融去监管化</a></li>
+<li><a href="#%E4%B8%89-%E9%87%91%E8%9E%8D%E5%8E%8B%E5%80%92%E5%AE%9E%E4%B8%9A">三 金融压倒实业</a></li>
+<li><a href="#%E5%9B%9B-%E5%A4%A7%E5%88%B0%E4%B8%8D%E8%83%BD%E5%80%92too-big-to-fail">四 “大到不能倒”（too big to fail）</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-%E5%85%A8%E7%90%83%E5%8C%96%E7%9A%84%E5%85%B4%E8%A1%B0%E4%BB%8E%E6%96%B0%E8%87%AA%E7%94%B1%E4%B8%BB%E4%B9%89%E5%88%B0%E6%B0%91%E7%B2%B9%E4%B8%BB%E4%B9%89">第二节 全球化的兴衰：从新自由主义到民粹主义</a>
+<ul>
+<li><a href="#%E4%B8%80-%E7%BE%8E%E5%BC%8F%E5%85%A8%E7%90%83%E5%8C%96%E7%9A%84%E5%85%B4%E8%B5%B7%E4%B8%8E%E7%AA%81%E5%8F%98">一 美式全球化的兴起与突变</a></li>
+<li><a href="#%E4%BA%8C-%E6%96%B0%E8%87%AA%E7%94%B1%E4%B8%BB%E4%B9%89%E7%9A%84%E6%B5%81%E8%A1%8C%E4%B8%8E%E8%AF%81%E4%BC%AA">二 新自由主义的流行与证伪</a></li>
+<li><a href="#%E4%B8%89-%E8%B4%AB%E5%AF%8C%E5%88%86%E5%8C%96%E4%B8%8E%E6%B0%91%E7%B2%B9%E5%B4%9B%E8%B5%B7">三 贫富分化与民粹崛起</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E8%8A%82-%E5%85%A8%E7%90%83%E5%8C%96%E5%85%B4%E8%A1%B0%E4%B8%8E%E4%B8%AD%E5%9B%BD%E7%9A%84%E6%88%98%E7%95%A5%E5%AE%9A%E4%BD%8D">第三节 全球化兴衰与中国的战略定位</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%9B%BD%E9%99%85%E6%A0%BC%E5%B1%80%E5%8F%98%E8%BF%81%E4%B8%8E%E5%85%A8%E7%90%83%E5%8C%96%E5%85%B4%E8%A1%B0">一 国际格局变迁与全球化兴衰</a></li>
+<li><a href="#%E4%BA%8C-%E4%B8%AD%E5%9B%BD%E6%98%AF%E7%BE%8E%E5%BC%8F%E5%85%A8%E7%90%83%E5%8C%96%E7%9A%84%E9%87%8D%E8%A6%81%E5%8F%82%E4%B8%8E%E6%96%B9">二 中国是美式全球化的重要参与方</a></li>
+<li><a href="#%E4%B8%89-%E7%BE%8E%E5%BC%8F%E5%85%A8%E7%90%83%E5%8C%96%E9%80%80%E6%BD%AE%E6%9C%9F%E7%9A%84%E4%B8%AD%E5%9B%BD%E5%BA%94%E5%AF%B9">三 美式全球化退潮期的中国应对</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E8%8A%82-%E5%9B%BD%E9%99%85%E9%87%91%E8%9E%8D%E4%B8%AD%E5%BF%83%E7%9A%84%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6">第四节 国际金融中心的政治经济学</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%9B%BD%E9%99%85%E9%87%91%E8%9E%8D%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8F%98%E8%BF%81">一 国际金融中心的变迁</a></li>
+<li><a href="#%E4%BA%8C-%E9%87%91%E8%9E%8D%E4%B8%AD%E5%BF%83%E4%B8%8E%E6%94%BF%E6%B2%BB">二 金融中心与政治</a></li>
+<li><a href="#%E4%B8%89-%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E4%BA%9A%E6%B4%B2%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%87%91%E8%9E%8D%E4%B8%AD%E5%BF%83">三 如何打造亚洲和中国的金融中心？</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%B1%87%E7%8E%87%E7%9A%84%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6">第五章 汇率的政治经济学</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%8A%82-%E6%B1%87%E7%8E%87%E5%88%B6%E5%BA%A6%E7%9A%84%E9%80%89%E6%8B%A9%E4%B8%8E%E5%88%A9%E5%BC%8A">第一节 汇率制度的选择与利弊</a>
+<ul>
+<li><a href="#%E4%B8%80-%E6%B1%87%E7%8E%87%E5%88%B6%E5%BA%A6%E7%9A%84%E5%88%86%E7%B1%BB%E5%8F%8A%E5%85%B6%E4%BC%98%E7%BC%BA%E7%82%B9">一 汇率制度的分类及其优缺点</a></li>
+<li><a href="#%E4%BA%8C-%E7%BB%8F%E6%B5%8E%E9%87%91%E8%9E%8D%E5%AD%A6%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E6%B1%87%E7%8E%87%E5%88%B6%E5%BA%A6%E9%80%89%E6%8B%A9">二 经济金融学视角下的汇率制度选择</a></li>
+<li><a href="#%E4%B8%89-%E5%9B%BD%E9%99%85%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%9A%84%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E6%B1%87%E7%8E%87%E5%88%B6%E5%BA%A6%E9%80%89%E6%8B%A9%E7%90%86%E8%AE%BA">三 国际政治经济学的视角下的汇率制度选择理论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-%E5%AF%B9%E6%B1%87%E7%8E%87%E7%9A%84%E6%B0%91%E6%9C%AC%E4%B8%BB%E4%B9%89%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%90%86%E8%A7%A3">第二节 对汇率的民本主义政治经济学理解</a>
+<ul>
+<li><a href="#%E4%B8%80-%E6%B1%87%E7%8E%87%E7%A0%94%E7%A9%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98">一 汇率研究的路径问题</a></li>
+<li><a href="#%E4%BA%8C-%E5%85%B3%E4%BA%8E%E6%B1%87%E7%8E%87%E7%9A%84%E5%B8%B8%E8%A7%81%E8%B0%AC%E8%AF%AF">二 关于汇率的常见谬误</a></li>
+<li><a href="#%E4%B8%89-%E6%B1%87%E7%8E%87%E6%B3%A2%E5%8A%A8%E4%B8%8E%E7%BB%8F%E6%B5%8E%E5%9F%BA%E6%9C%AC%E9%9D%A2%E7%9A%84%E5%AE%9E%E8%AF%81%E5%85%B3%E7%B3%BB">三 汇率波动与经济基本面的实证关系</a></li>
+<li><a href="#%E5%9B%9B-%E6%B1%87%E7%8E%87%E6%B3%A2%E5%8A%A8%E4%B8%8E%E9%9D%9E%E7%BB%8F%E6%B5%8E%E5%9B%A0%E7%B4%A0%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%9E%E8%AF%81%E6%A3%80%E9%AA%8C">四 汇率波动与非经济因素关系的实证检验</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E8%8A%82-%E7%BE%8E%E5%85%83%E4%BA%BA%E6%B0%91%E5%B8%81%E4%B8%8E%E4%B8%80%E5%B8%A6%E4%B8%80%E8%B7%AF%E8%B4%A7%E5%B8%81%E6%B1%87%E7%8E%87">第三节 美元、人民币与“一带一路”货币汇率</a>
+<ul>
+<li><a href="#%E4%B8%80-%E7%BE%8E%E5%85%83%E6%8C%87%E6%95%B0">一 美元指数</a></li>
+<li><a href="#%E4%BA%8C-%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87%E7%9A%84%E6%9C%AA%E6%9D%A5%E8%B6%8B%E5%8A%BF">二 人民币汇率的未来趋势</a></li>
+<li><a href="#%E4%B8%89-%E6%A8%A1%E5%9E%8B%E5%BB%BA%E6%9E%84%E4%B8%8E%E4%B8%80%E5%B8%A6%E4%B8%80%E8%B7%AF%E5%9B%BD%E5%AE%B6%E6%B1%87%E7%8E%87%E7%A8%B3%E5%AE%9A%E6%80%A7%E9%A2%84%E6%B5%8B">三 模型建构与“一带一路”国家汇率稳定性预测</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E8%8A%82-%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87%E6%B3%A2%E5%8A%A8%E7%9A%84%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%8D%9A%E5%BC%88">第四节 人民币汇率波动的政治经济博弈</a>
+<ul>
+<li><a href="#%E4%B8%80-2005%E5%B9%B4%E4%B9%8B%E5%89%8D%E8%B4%AC%E5%80%BC%E4%BD%8E%E4%BC%B0%E4%B8%8E%E5%9B%BA%E5%AE%9A%E6%B1%87%E7%8E%87%E6%94%BF%E7%AD%96%E7%9A%84%E5%86%8D%E5%88%86%E9%85%8D%E6%95%88%E5%BA%94">一 2005年之前：贬值、低估与固定汇率政策的再分配效应</a></li>
+<li><a href="#%E4%BA%8C-20052012%E5%B9%B4%E4%B8%AD%E7%BE%8E%E4%B9%8B%E9%97%B4%E5%9B%B4%E7%BB%95%E6%B1%87%E7%8E%87%E5%8D%87%E5%80%BC%E9%97%AE%E9%A2%98%E7%9A%84%E5%8F%8C%E5%B1%82%E5%8D%9A%E5%BC%88">二 2005—2012年中美之间围绕汇率升值问题的双层博弈</a></li>
+<li><a href="#%E4%B8%89-%E4%B8%AD%E7%BE%8E%E6%B1%87%E7%8E%87%E4%BA%89%E8%AE%BA%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%97%AE%E9%A2%98">三 中美汇率争论的两个问题</a></li>
+<li><a href="#%E5%9B%9B-%E6%96%B0%E6%97%B6%E4%BB%A3%E7%9A%84%E4%BA%BA%E6%B0%91%E5%B8%81%E6%B1%87%E7%8E%87">四 新时代的人民币汇率</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%80%BA%E5%8A%A1%E7%9A%84%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6">第六章 债务的政治经济学</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%8A%82-%E5%80%BA%E5%8A%A1%E7%9A%84%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6">第一节 债务的政治经济学</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%85%B3%E4%BA%8E%E5%80%BA%E5%8A%A1%E6%9D%A0%E6%9D%86%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%8B%E5%AE%9E">一 关于债务杠杆的基本事实</a></li>
+<li><a href="#%E4%BA%8C-%E4%BB%8E%E8%8E%B1%E5%9B%A0%E5%93%88%E7%89%B9%E5%88%B0%E9%9B%B7%E4%BC%8A%E8%BE%BE%E9%87%8C%E5%A5%A5%E7%BE%8E%E5%9B%BD%E7%9F%A5%E8%AF%86%E7%95%8C%E7%9A%84%E5%80%BA%E5%8A%A1%E6%83%85%E7%BB%93">二 从莱因哈特到雷伊·达里奥：美国知识界的债务情结</a></li>
+<li><a href="#%E4%B8%89-%E7%BE%8E%E5%9B%BD%E8%81%94%E9%82%A6%E5%80%BA%E5%8A%A1%E7%9A%84%E6%94%BF%E6%B2%BB%E8%A7%A3%E8%AF%BB">三 美国联邦债务的政治解读</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-%E4%B8%AD%E5%9B%BD%E5%80%BA%E5%8A%A1%E7%9A%84%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6">第二节 中国债务的政治经济学</a>
+<ul>
+<li><a href="#%E4%B8%80-%E4%B8%AD%E5%9B%BD%E5%80%BA%E5%8A%A1%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%81%E5%8A%BF">一 中国债务问题的态势</a></li>
+<li><a href="#%E4%BA%8C-%E5%9B%B4%E7%BB%95%E6%9D%A0%E6%9D%86%E7%8E%87%E7%9A%84%E6%8E%A2%E7%B4%A2%E4%B8%8E%E6%95%99%E8%AE%AD">二 围绕杠杆率的探索与教训</a></li>
+<li><a href="#%E4%B8%89-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%B0%91%E8%90%A5%E8%B5%84%E6%9C%AC%E8%9E%8D%E8%B5%84%E9%9A%BE%E7%9A%84%E9%97%AE%E9%A2%98">三 如何解决民营资本融资难的问题</a></li>
+<li><a href="#%E5%9B%9B-%E4%B8%AD%E5%9B%BD%E5%80%BA%E5%8A%A1%E7%9A%84%E6%94%B9%E8%BF%9B%E7%A9%BA%E9%97%B4">四 中国债务的改进空间</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E8%8A%82-%E5%80%BA%E5%8A%A1%E8%AF%84%E7%BA%A7%E7%9A%84%E9%9C%B8%E6%9D%83">第三节 债务评级的霸权</a>
+<ul>
+<li><a href="#%E4%B8%80-%E8%AF%84%E7%BA%A7%E9%9C%B8%E6%9D%83%E4%BD%95%E4%BB%A5%E5%BD%A2%E6%88%90">一 评级霸权何以形成？</a></li>
+<li><a href="#%E4%BA%8C-%E7%8E%B0%E6%9C%89%E4%BF%A1%E7%94%A8%E8%AF%84%E7%BA%A7%E4%BD%93%E7%B3%BB%E7%9A%84%E6%B2%BB%E7%90%86%E7%BC%BA%E9%99%B7">二 现有信用评级体系的治理缺陷</a></li>
+<li><a href="#%E4%B8%89-%E5%85%A8%E7%90%83%E4%B8%8E%E4%B8%AD%E5%9B%BD%E8%AF%84%E7%BA%A7%E5%B8%82%E5%9C%BA%E7%9A%84%E6%B2%BB%E7%90%86%E4%B8%8E%E6%94%B9%E8%BF%9B">三 全球与中国评级市场的治理与改进</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E7%BB%93%E8%AE%BA">第七章 结论</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%AF%B9%E6%B5%81%E8%A1%8C%E8%B0%AC%E8%A7%81%E7%9A%84%E6%89%B9%E5%88%A4">一 对流行谬见的批判</a></li>
+<li><a href="#%E4%BA%8C-%E8%8B%A5%E5%B9%B2%E8%A7%82%E7%82%B9%E4%B8%8E%E7%8C%9C%E6%83%B3">二 若干观点与猜想</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>

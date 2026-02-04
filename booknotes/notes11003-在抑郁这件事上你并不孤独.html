@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5728;&#x6291;&#x90c1;&#x8fd9;&#x4ef6;&#x4e8b;&#x4e0a;&#xff0c;&#x4f60;&#x5e76;&#x4e0d;&#x5b64;&#x72ec;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5728;&#x6291;&#x90c1;&#x8fd9;&#x4ef6;&#x4e8b;&#x4e0a;&#xff0c;&#x4f60;&#x5e76;&#x4e0d;&#x5b64;&#x72ec;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,453 +31,276 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="在抑郁这件事上你并不孤独">在抑郁这件事上，你并不孤独</h1>
-<h2 id=""></h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
         
-        
-    </body>
-    </html>
+        </head>
+        <body class="vscode-body vscode-light">
+            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/11003.jpg"></td><td>
+<h1 id="在抑郁这件事上你并不孤独">在抑郁这件事上，你并不孤独</h1>
+<center>所长任有病</center>
+</td></tr></table>
+<div class="mycomment">
+<p>很多人的故事集。感觉他们的故事更为沉重，抑郁程度也更严重，对我来说参考意义不大。看的过程中更多的是看故事、猎奇的心态。</p>
+</div>
+<h3 id="自序">自序</h3>
+<h3 id="第一部分-抑郁总在发生故事各有不同">第一部分 抑郁总在发生，故事各有不同</h3>
+<h4 id="放弃从17层跳楼后他在精神病院等开门">放弃从17层跳楼后，他在精神病院等开门</h4>
+<p>作为艺术生的我，认准了北京电影学院美术系。由于目标学校难度较高，我不得不在高三上学期就从老家赴京学美术，怪事在这时开始发生：我发现，<em>秋天和冬天，自己情绪非常低落，一个人惨兮兮地住在地下室，蓬头垢面、邋邋遢遢。可第2年开春回到老家准备文化课时，我又积极起来，学习思路开阔，对生活也充满希望</em>。成绩出来，文化课考得很好，但艺考失利，我落榜了。复读一年，情况一模一样。我只好放弃北电，选择了东北的一所美术学院。</p>
+<p>当时我没在意自己的异常，觉得肯定是环境原因：在老家时朋友多，老师看重我，女友对我也好。夏天一来，人情绪也会变好；而秋冬在北京时，因为太缺乏社会支持，才会郁郁寡欢。</p>
+<p>现在看，那其实是非常典型的<em>双相情感障碍症状</em>，加上外部环境因素，才让我的情绪周期性地大起大落。</p>
+<hr>
+<p>经精神科医生诊断，我的状况需要住院，将被转介到沈阳精神卫生中心。大学辅导员和党委书记闻讯赶来，带我过去办了住院手续。让我意外的是，书记和其他男老师接力陪我住在医院，贴身照顾。这给了我莫大的支持。然而，在精神病院，我受到了一个非常不人道的待遇——他们用了一种陈旧的疗法，<em>电休克疗法</em>（ECT）。</p>
+<p>ECT，其实就是<em>杨永信电击治疗的正规版本。把患者绑在床上，往静脉里注射麻醉药使其失去意识，然后给大脑通电。等患者醒来，治疗已经完成了</em>。</p>
+<p><em>这种疗法让我的情绪变得异常暴躁，更想自杀了</em>。那时我的父母已经来了，我想到一个办法。我跟我爸说：“我想喝罐装可乐。”</p>
+<p>我的真正目的是用易拉环割腕自杀。当然，精神病院防护措施很好，没有成功。后来我深入了解过ECT，也跟行业内的朋友聊过，他们说这东西早就过时了，副作用太大，而且个体差异大，跟前额叶切除手术一样备受争议。我住院是6年前，那会儿ECT大概还不像今天一样，被严格限制使用。在住院的两周内，我接受了四五次电击治疗，因无法忍受而喊停了。</p>
+<hr>
+<p>遗憾的是，2015年支教结束，脱离了孩子们、女朋友和支教同事们的关爱，回到萧条的东北，我再一次陷入抑郁。</p>
+<p><em>这次是稳定的、持续性的、恶劣的抑郁，伴随焦虑、恐惧。我不知道怎么和同学、舍友、老师相处。后来我了解到，我所在院校的抑郁症和双相情感障碍发病率很高，每100个人就有四五个在服药的。我用了一种新办法缓解抑郁：拼命学习</em>。</p>
+<p>我开始疯狂学英语，过四六级、考研究生……说实话，我对英语也不是很感兴趣，但我发现，<em>学习的时候能进入心流状态不抑郁</em>！</p>
+<hr>
+<p>我试过玩游戏，玩的时候不抑郁，玩完却更抑郁，我猜可能是因为中国社会不鼓励人玩游戏。虽然在玩游戏时能获得即时性的快乐，但玩游戏本身并不能得到自我的心理奖赏。</p>
+<h4 id="被男老师推下深渊我不愿世上再多一个房思琪">被男老师推下深渊，我不愿世上再多一个房思琪</h4>
+<h4 id="我就是爸妈口中的垃圾">我就是爸妈口中的“垃圾”</h4>
+<p>尽管还在上大学，秦赛还是试着创业，试图以此让自己忙起来，忘记内心的忧愁。<em>他用多年兼职的积蓄开了一家美瞳店，但不到一年就倒闭了。那一天，他一个人把剩下的东西搬回了出租房，特别凄凉。到了晚上，他合计了一下欠款数额，算上利息，一共10万</em>。</p>
+<p>接下来的日子，秦赛十分窘迫，工作没找到，手头上的钱也分文不剩，还欠了外债。情急之下，<em>他去了一家保险公司，而为了尽快找到客户签单，他差点被骗去做传销</em>。</p>
+<h4 id="遭家暴抑郁后我把丈夫送上了法庭">遭家暴抑郁后，我把丈夫送上了法庭</h4>
+<h4 id="我不是一名优秀的老师我抑郁了">我不是一名优秀的老师，我抑郁了</h4>
+<p>我想了一下，觉得这个建议很好，还可以让医生瞧瞧我的失眠问题。于是，我去了市里的一家医院，<em>在医生面前情绪激动地说了两个多小时，直到他们快下班。最终，我被确诊为双相情感障碍，也就是躁郁症。医生想给我开病休证明，但我休息了，孩子们怎么办？我拒绝了医生的好意，让他给我开了一些药，就匆匆离开了医院</em>。</p>
+<hr>
+<p>偶尔，我也向我爸妈说起我患躁郁症这件事，他们说我就是爱瞎想。<em>我表妹是学医的，我给她打电话，想问问她那些药物吃多了会不会对大脑或者肝功能有影响。没想到，她在电话里连续数落了我一个多小时</em>，“早就让你别去那种穷山沟里了，你偏不听”。</p>
+<p>慢慢地，我连强迫自己教好这些孩子的干劲都没有了，每天浑浑噩噩地度日。<em>睁开眼睛就开始自责，闭上眼睛还是自责</em>。</p>
+<hr>
+<p>每天我依旧6点多起床，给自己做早饭，简单梳洗后走到村头开始跑。到了下午，孩子们放学后，我继续回到乡间的小路上追着夕阳跑步。<em>5千米是一个奇妙的节点，之前感觉浑身散架了一样，腿都迈不动了，可5千米之后，我呼吸着夹杂着黄土的干燥空气，身体竟轻盈了起来，这让我感觉整个人都放空了</em>。</p>
+<p>时间久了，也有学生跟着我，我在前面跑，他们一群人在后面追，有说有笑。晚上回家，我拿热水洗把脸、泡个脚，入睡也不那么困难了。</p>
+<hr>
+<p>有一天，宋权的爷爷搭别人的车来县里购置生活物品，还专门拎着一篮子鸡蛋来学校找我，说这是家里的芦花鸡刚下的。临走时，他又说：“小刘老师，<em>咱这地方穷，孩子也不好管，你可以爱他们，引导他们，你甚至可能影响个别学生的人生，但不可能影响所有人</em>。”</p>
+<h4 id="我不想成为妈妈那样的人">我不想成为妈妈那样的人</h4>
+<p>她希望我方方面面都是佼佼者，这样她在她的班级里、学生家长面前，脸上才有光。如果我哪件事没做到最好，哪次考试没进入前几名，她就先吼我，然后开始哭，接着又在家里唉声叹气好几天，说我辜负了她的希望，说“你这样让妈妈在学生面前还有什么威信？”之类的话。</p>
+<hr>
+<p>最终，写着“重度抑郁症且有严重自杀自残倾向”的诊断书交到了我妈手上。我妈盯着我，还是不敢相信，问我：“你爸这样对我们，我都没想去死，你还要去死，你是不是整天瞎琢磨想太多了？”</p>
+<h4 id="不做笼中金丝雀挣开枷锁飞往自由">不做笼中金丝雀，挣开枷锁飞往自由</h4>
+<p>等到上初中，我自学课程已经有些吃力，于是舅舅每天下午都会打电话给我辅导学习。也恰好是这段时间，他在国外的生意状况不好，脾气开始变得暴躁，和小时候耐心待我的样子简直判若两人。每天在电话里，我都要受他的辱骂，有时甚至会波及父母。骂完他还要我总结每天的学习心得，总结得不好，就继续骂我。</p>
+<hr>
+<p>16岁的时候，我按照家里的规划出国留学。当时因为从来没去学校上过学，加上对即将去的国家有着极大的好感，所以我非常兴奋，对留学之旅抱有很大的期待。</p>
+<p>可我没想到的是，自从住到舅舅家里，我就失去了人身自由。</p>
+<p>从前每个下午折磨我的电话辱骂，直接活生生地出现在我眼前。舅舅身材高大，声音洪亮，每次发怒的时候都俯视着我，非常有威慑力。我常在他的言语攻击下瑟瑟发抖。</p>
+<hr>
+<p>我在他的长期洗脑之下，产生了一种我不配为人的感觉。</p>
+<p>在舅舅的眼里，我是一个铁石心肠、自私自利、愚蠢而不自知的人。我在这个家里是多余的，他是出于亲情而不得不接纳我。这样的我不配谈恋爱，不配获得幸福。</p>
+<p>很快我对男友再也提不起兴趣，就和他分手了，重新回到一个人的孤独里。</p>
+<h5 id="被精神控制的日子">被精神控制的日子</h5>
+<p>这样的生活持续到高三上半年。那时候我准备考大学，虽然成绩能考上国外的大学，但学费非常高，我有些犹豫。这时候，舅舅忽然开始对我说一些奇怪的言论。</p>
+<p>他说，在自然界里，想要获得什么东西都要付出相应的代价，而雌性动物给雄性动物付出的，往往就是身体。意思就是如果我要继续留学，就要献出自己的身体。此外，他准备给我1000元作为初夜的庆祝。</p>
+<hr>
+<p>高中三年，因为机票太贵，我都没有回过国，就算是过年也是在舅舅家过。临近毕业的时候，妈妈来国外探亲旅游。当她看到我天天被人身攻击的惨状，才终于知道自己的女儿过着什么样的生活。她当场和舅舅撕破脸，并支持我回国，帮助我成功逃离舅舅的掌控。我非常感谢她没有成为压死我的最后一根稻草。</p>
+<h4 id="人前嬉皮笑脸人后独自抵挡抑郁">人前嬉皮笑脸，人后独自抵挡抑郁</h4>
+<p>原来的我，不论身体如何，都一定会坚持上班，但那段时间，我屡屡旷工，把自己关在家里以泪洗面。我平时几乎没有为自己的病痛流过眼泪，甚至几年前母亲因为癌症去世，我也只掉了几滴眼泪。这次背叛严重影响了我的情绪，让我蓄了30年的泪水倾泻而出。</p>
+<p>每当我感到悲伤的时候，我都会选择自残。我喜欢看血流出来的样子，它可以让我暂时忘掉内心的疼痛。如今，我手臂和腿上都没剩多少好皮肉，全是触目惊心的伤疤。</p>
+<hr>
+<p>可小于还是在7月的时候突然跟我说，希望和我回到朋友的关系，而且他会搬回原来的住处，不会再来我家了。</p>
+<p>如此突然的告别让我猝不及防，我没办法接受。哪怕提前一些告诉我，让我有个心理准备也好，但他没有，他说不回来就真的没有再回来了。</p>
+<p>8月，我在严重失眠一段时间后接受了小于已经离开的事实。我安慰自己，回到朋友关系的话还可以继续正常聊天，可他的表现不像是要继续和我做朋友，而是要疏远我，要跟我划清界限。在把话挑明以后，我了解到<em>他傍上了一个比他大4岁的职场女性，于是我们之间就只剩下债务关系，再也没有朋友的情分存在</em>。</p>
+<h4 id="既然不爱我为何当初生下我">既然不爱我，为何当初生下我？</h4>
+<p>崽崽很听话，从来不会咬人，尤其是家人。在它眼里，父亲同样也是家人。只有在父亲打我的时候，它才会冲着父亲吼叫，护着我。可是没想到，父亲竟然喂崽崽吃巧克力，而我特别强调过，不能给崽崽喂巧克力。我哭着央求他开车送崽崽去医院，他不答应，坐在沙发上看电视。我只好打电话给表哥，一起送崽崽去医院洗胃。</p>
+<p>在医院，我哭了一晚上，眼睛都哭疼了。表哥和表嫂也在医院里陪了我一晚上，而父母一个电话也没有。我心灰意冷，觉得在这个家里没有半点温暖。</p>
+<hr>
+<p>他对我那么好，但越是这样我心里越愧疚。我在深得他照顾的同时，觉得自己不值得被这样温柔对待。</p>
+<p>我们在一起快一年，我见过他的父母，但是我父母没见过他，只是听我说过他。</p>
+<p>后来，我父母莫名其妙地开始跟我说他的坏话，说他工作太忙了，根本没办法好好照顾我，还挑剔他的收入和家庭出身，等等。我无法忍受他被这样轻视，崩溃地蹲在地上哭了很久。</p>
+<p>我知道自己的处境，如果男友继续和我在一起，将来免不了要和我的父母接触，而我的父母是如此狭隘与丑恶，我不想让干净的他也接触这些。</p>
+<p>于是，我向他提出分手，开始躲着不见他，甚至拿自杀威胁他。他始终没有答应和我分手，但他害怕我伤害自己，只好不再主动和我联络。我们还保留着对方的联系方式。他暂时还没有找女朋友，所以我暂时也没什么心理负担。他值得更好的女孩子，至少不是我这样的。</p>
+<p>有时候朋友约我出去玩，他在场，我也只是像普通朋友那样偶尔和他说几句话，对从前那段过往绝口不提。</p>
+<h3 id="第二部分-虽然抑郁了但还是好想爱这个世界">第二部分 虽然抑郁了，但还是好想爱这个世界</h3>
+<h4 id="抑郁是条黑狗我要牵着它走">抑郁是条黑狗，我要牵着它走</h4>
+<h4 id="两次坐轮椅数次自杀70岁时我还想继续活下去">两次坐轮椅，数次自杀，70岁时我还想继续活下去</h4>
+<h4 id="治好我的产后抑郁最好的药物是爱啊">治好我的产后抑郁，最好的药物是爱啊</h4>
+<h4 id="有钱有闲的富二代你抑郁什么">有钱有闲的富二代，你抑郁什么？</h4>
+<h4 id="月入百万后我终于把爸爸买回来了">月入百万后，我终于把爸爸“买”回来了</h4>
+<h4 id="离婚后我的人生才开始有尊严">离婚后，我的人生才开始有尊严</h4>
+<h4 id="敏感自卑不会是永久的依旧感谢温暖过我的爱情">敏感自卑不会是永久的，依旧感谢温暖过我的爱情</h4>
+<h3 id="第三部分-如果累了我陪你啊">第三部分 如果累了，我陪你啊</h3>
+<h4 id="我抑郁了怎么办">我抑郁了，怎么办？</h4>
+<h4 id="如果累了我陪你">如果累了，我陪你</h4>
+<h4 id="我想陪他走出抑郁该怎么做">我想陪他走出抑郁，该怎么做？</h4>
+<h4 id="在抑郁这件事上你并不孤独-1">在抑郁这件事上，你并不孤独</h4>
+<h4 id="抑郁树洞那些曾在黑暗中照亮过你的人">抑郁树洞：那些曾在黑暗中照亮过你的人</h4>
+<h4 id="我们曾无数次与死神擦身">我们曾无数次与死神擦身</h4>
+<h4 id="得了抑郁症后我选择了退学">得了抑郁症后，我选择了退学</h4>
+<h4 id="真正爱你的人不会打你会紧紧抱住你">真正爱你的人不会打你，会紧紧抱住你</h4>
+<h4 id="不是只有成年人会抑郁孩子也会">不是只有成年人会抑郁，孩子也会</h4>
+<h3 id="第四部分-所长抑郁日记">第四部分 所长抑郁日记</h3>
+<h4 id="引言">引言</h4>
+<h4 id="所长抑郁日记一原来甲壳虫嚼起来像花椰菜">所长抑郁日记一：原来甲壳虫嚼起来像花椰菜</h4>
+<h4 id="所长抑郁日记二医生让我右转去精神科">所长抑郁日记二：医生让我右转去精神科</h4>
+<h4 id="所长抑郁日记三回家为童年奔丧">所长抑郁日记三：回家为童年奔丧</h4>
+<h4 id="所长抑郁日记四想把猫送走然后自杀">所长抑郁日记四：想把猫送走，然后自杀</h4>
+<h4 id="所长抑郁日记五打开邮箱写遗书">所长抑郁日记五：打开邮箱写遗书</h4>
+<h4 id="所长抑郁日记六每想你一次我就吞下一粒安眠药">所长抑郁日记六：每想你一次，我就吞下一粒安眠药</h4>
+<h4 id="所长抑郁日记七把胸给我看我就相信你得了乳腺癌">所长抑郁日记七：把胸给我看，我就相信你得了乳腺癌</h4>
+<h4 id="所长抑郁日记八想你想休假想为你休产假">所长抑郁日记八：想你，想休假，想为你休产假</h4>
+<h4 id="所长抑郁日记九练习拒绝死亡的邀约">所长抑郁日记九：练习拒绝死亡的邀约</h4>
+<h3 id="想对抑郁人群说的话">想对抑郁人群说的话</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E8%87%AA%E5%BA%8F">自序</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E6%8A%91%E9%83%81%E6%80%BB%E5%9C%A8%E5%8F%91%E7%94%9F%E6%95%85%E4%BA%8B%E5%90%84%E6%9C%89%E4%B8%8D%E5%90%8C">第一部分 抑郁总在发生，故事各有不同</a>
+<ul>
+<li><a href="#%E6%94%BE%E5%BC%83%E4%BB%8E17%E5%B1%82%E8%B7%B3%E6%A5%BC%E5%90%8E%E4%BB%96%E5%9C%A8%E7%B2%BE%E7%A5%9E%E7%97%85%E9%99%A2%E7%AD%89%E5%BC%80%E9%97%A8">放弃从17层跳楼后，他在精神病院等开门</a></li>
+<li><a href="#%E8%A2%AB%E7%94%B7%E8%80%81%E5%B8%88%E6%8E%A8%E4%B8%8B%E6%B7%B1%E6%B8%8A%E6%88%91%E4%B8%8D%E6%84%BF%E4%B8%96%E4%B8%8A%E5%86%8D%E5%A4%9A%E4%B8%80%E4%B8%AA%E6%88%BF%E6%80%9D%E7%90%AA">被男老师推下深渊，我不愿世上再多一个房思琪</a></li>
+<li><a href="#%E6%88%91%E5%B0%B1%E6%98%AF%E7%88%B8%E5%A6%88%E5%8F%A3%E4%B8%AD%E7%9A%84%E5%9E%83%E5%9C%BE">我就是爸妈口中的“垃圾”</a></li>
+<li><a href="#%E9%81%AD%E5%AE%B6%E6%9A%B4%E6%8A%91%E9%83%81%E5%90%8E%E6%88%91%E6%8A%8A%E4%B8%88%E5%A4%AB%E9%80%81%E4%B8%8A%E4%BA%86%E6%B3%95%E5%BA%AD">遭家暴抑郁后，我把丈夫送上了法庭</a></li>
+<li><a href="#%E6%88%91%E4%B8%8D%E6%98%AF%E4%B8%80%E5%90%8D%E4%BC%98%E7%A7%80%E7%9A%84%E8%80%81%E5%B8%88%E6%88%91%E6%8A%91%E9%83%81%E4%BA%86">我不是一名优秀的老师，我抑郁了</a></li>
+<li><a href="#%E6%88%91%E4%B8%8D%E6%83%B3%E6%88%90%E4%B8%BA%E5%A6%88%E5%A6%88%E9%82%A3%E6%A0%B7%E7%9A%84%E4%BA%BA">我不想成为妈妈那样的人</a></li>
+<li><a href="#%E4%B8%8D%E5%81%9A%E7%AC%BC%E4%B8%AD%E9%87%91%E4%B8%9D%E9%9B%80%E6%8C%A3%E5%BC%80%E6%9E%B7%E9%94%81%E9%A3%9E%E5%BE%80%E8%87%AA%E7%94%B1">不做笼中金丝雀，挣开枷锁飞往自由</a>
+<ul>
+<li><a href="#%E8%A2%AB%E7%B2%BE%E7%A5%9E%E6%8E%A7%E5%88%B6%E7%9A%84%E6%97%A5%E5%AD%90">被精神控制的日子</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%BA%E5%89%8D%E5%AC%89%E7%9A%AE%E7%AC%91%E8%84%B8%E4%BA%BA%E5%90%8E%E7%8B%AC%E8%87%AA%E6%8A%B5%E6%8C%A1%E6%8A%91%E9%83%81">人前嬉皮笑脸，人后独自抵挡抑郁</a></li>
+<li><a href="#%E6%97%A2%E7%84%B6%E4%B8%8D%E7%88%B1%E6%88%91%E4%B8%BA%E4%BD%95%E5%BD%93%E5%88%9D%E7%94%9F%E4%B8%8B%E6%88%91">既然不爱我，为何当初生下我？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E8%99%BD%E7%84%B6%E6%8A%91%E9%83%81%E4%BA%86%E4%BD%86%E8%BF%98%E6%98%AF%E5%A5%BD%E6%83%B3%E7%88%B1%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C">第二部分 虽然抑郁了，但还是好想爱这个世界</a>
+<ul>
+<li><a href="#%E6%8A%91%E9%83%81%E6%98%AF%E6%9D%A1%E9%BB%91%E7%8B%97%E6%88%91%E8%A6%81%E7%89%B5%E7%9D%80%E5%AE%83%E8%B5%B0">抑郁是条黑狗，我要牵着它走</a></li>
+<li><a href="#%E4%B8%A4%E6%AC%A1%E5%9D%90%E8%BD%AE%E6%A4%85%E6%95%B0%E6%AC%A1%E8%87%AA%E6%9D%8070%E5%B2%81%E6%97%B6%E6%88%91%E8%BF%98%E6%83%B3%E7%BB%A7%E7%BB%AD%E6%B4%BB%E4%B8%8B%E5%8E%BB">两次坐轮椅，数次自杀，70岁时我还想继续活下去</a></li>
+<li><a href="#%E6%B2%BB%E5%A5%BD%E6%88%91%E7%9A%84%E4%BA%A7%E5%90%8E%E6%8A%91%E9%83%81%E6%9C%80%E5%A5%BD%E7%9A%84%E8%8D%AF%E7%89%A9%E6%98%AF%E7%88%B1%E5%95%8A">治好我的产后抑郁，最好的药物是爱啊</a></li>
+<li><a href="#%E6%9C%89%E9%92%B1%E6%9C%89%E9%97%B2%E7%9A%84%E5%AF%8C%E4%BA%8C%E4%BB%A3%E4%BD%A0%E6%8A%91%E9%83%81%E4%BB%80%E4%B9%88">有钱有闲的富二代，你抑郁什么？</a></li>
+<li><a href="#%E6%9C%88%E5%85%A5%E7%99%BE%E4%B8%87%E5%90%8E%E6%88%91%E7%BB%88%E4%BA%8E%E6%8A%8A%E7%88%B8%E7%88%B8%E4%B9%B0%E5%9B%9E%E6%9D%A5%E4%BA%86">月入百万后，我终于把爸爸“买”回来了</a></li>
+<li><a href="#%E7%A6%BB%E5%A9%9A%E5%90%8E%E6%88%91%E7%9A%84%E4%BA%BA%E7%94%9F%E6%89%8D%E5%BC%80%E5%A7%8B%E6%9C%89%E5%B0%8A%E4%B8%A5">离婚后，我的人生才开始有尊严</a></li>
+<li><a href="#%E6%95%8F%E6%84%9F%E8%87%AA%E5%8D%91%E4%B8%8D%E4%BC%9A%E6%98%AF%E6%B0%B8%E4%B9%85%E7%9A%84%E4%BE%9D%E6%97%A7%E6%84%9F%E8%B0%A2%E6%B8%A9%E6%9A%96%E8%BF%87%E6%88%91%E7%9A%84%E7%88%B1%E6%83%85">敏感自卑不会是永久的，依旧感谢温暖过我的爱情</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E5%A6%82%E6%9E%9C%E7%B4%AF%E4%BA%86%E6%88%91%E9%99%AA%E4%BD%A0%E5%95%8A">第三部分 如果累了，我陪你啊</a>
+<ul>
+<li><a href="#%E6%88%91%E6%8A%91%E9%83%81%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E">我抑郁了，怎么办？</a></li>
+<li><a href="#%E5%A6%82%E6%9E%9C%E7%B4%AF%E4%BA%86%E6%88%91%E9%99%AA%E4%BD%A0">如果累了，我陪你</a></li>
+<li><a href="#%E6%88%91%E6%83%B3%E9%99%AA%E4%BB%96%E8%B5%B0%E5%87%BA%E6%8A%91%E9%83%81%E8%AF%A5%E6%80%8E%E4%B9%88%E5%81%9A">我想陪他走出抑郁，该怎么做？</a></li>
+<li><a href="#%E5%9C%A8%E6%8A%91%E9%83%81%E8%BF%99%E4%BB%B6%E4%BA%8B%E4%B8%8A%E4%BD%A0%E5%B9%B6%E4%B8%8D%E5%AD%A4%E7%8B%AC-1">在抑郁这件事上，你并不孤独</a></li>
+<li><a href="#%E6%8A%91%E9%83%81%E6%A0%91%E6%B4%9E%E9%82%A3%E4%BA%9B%E6%9B%BE%E5%9C%A8%E9%BB%91%E6%9A%97%E4%B8%AD%E7%85%A7%E4%BA%AE%E8%BF%87%E4%BD%A0%E7%9A%84%E4%BA%BA">抑郁树洞：那些曾在黑暗中照亮过你的人</a></li>
+<li><a href="#%E6%88%91%E4%BB%AC%E6%9B%BE%E6%97%A0%E6%95%B0%E6%AC%A1%E4%B8%8E%E6%AD%BB%E7%A5%9E%E6%93%A6%E8%BA%AB">我们曾无数次与死神擦身</a></li>
+<li><a href="#%E5%BE%97%E4%BA%86%E6%8A%91%E9%83%81%E7%97%87%E5%90%8E%E6%88%91%E9%80%89%E6%8B%A9%E4%BA%86%E9%80%80%E5%AD%A6">得了抑郁症后，我选择了退学</a></li>
+<li><a href="#%E7%9C%9F%E6%AD%A3%E7%88%B1%E4%BD%A0%E7%9A%84%E4%BA%BA%E4%B8%8D%E4%BC%9A%E6%89%93%E4%BD%A0%E4%BC%9A%E7%B4%A7%E7%B4%A7%E6%8A%B1%E4%BD%8F%E4%BD%A0">真正爱你的人不会打你，会紧紧抱住你</a></li>
+<li><a href="#%E4%B8%8D%E6%98%AF%E5%8F%AA%E6%9C%89%E6%88%90%E5%B9%B4%E4%BA%BA%E4%BC%9A%E6%8A%91%E9%83%81%E5%AD%A9%E5%AD%90%E4%B9%9F%E4%BC%9A">不是只有成年人会抑郁，孩子也会</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%89%80%E9%95%BF%E6%8A%91%E9%83%81%E6%97%A5%E8%AE%B0">第四部分 所长抑郁日记</a>
+<ul>
+<li><a href="#%E5%BC%95%E8%A8%80">引言</a></li>
+<li><a href="#%E6%89%80%E9%95%BF%E6%8A%91%E9%83%81%E6%97%A5%E8%AE%B0%E4%B8%80%E5%8E%9F%E6%9D%A5%E7%94%B2%E5%A3%B3%E8%99%AB%E5%9A%BC%E8%B5%B7%E6%9D%A5%E5%83%8F%E8%8A%B1%E6%A4%B0%E8%8F%9C">所长抑郁日记一：原来甲壳虫嚼起来像花椰菜</a></li>
+<li><a href="#%E6%89%80%E9%95%BF%E6%8A%91%E9%83%81%E6%97%A5%E8%AE%B0%E4%BA%8C%E5%8C%BB%E7%94%9F%E8%AE%A9%E6%88%91%E5%8F%B3%E8%BD%AC%E5%8E%BB%E7%B2%BE%E7%A5%9E%E7%A7%91">所长抑郁日记二：医生让我右转去精神科</a></li>
+<li><a href="#%E6%89%80%E9%95%BF%E6%8A%91%E9%83%81%E6%97%A5%E8%AE%B0%E4%B8%89%E5%9B%9E%E5%AE%B6%E4%B8%BA%E7%AB%A5%E5%B9%B4%E5%A5%94%E4%B8%A7">所长抑郁日记三：回家为童年奔丧</a></li>
+<li><a href="#%E6%89%80%E9%95%BF%E6%8A%91%E9%83%81%E6%97%A5%E8%AE%B0%E5%9B%9B%E6%83%B3%E6%8A%8A%E7%8C%AB%E9%80%81%E8%B5%B0%E7%84%B6%E5%90%8E%E8%87%AA%E6%9D%80">所长抑郁日记四：想把猫送走，然后自杀</a></li>
+<li><a href="#%E6%89%80%E9%95%BF%E6%8A%91%E9%83%81%E6%97%A5%E8%AE%B0%E4%BA%94%E6%89%93%E5%BC%80%E9%82%AE%E7%AE%B1%E5%86%99%E9%81%97%E4%B9%A6">所长抑郁日记五：打开邮箱写遗书</a></li>
+<li><a href="#%E6%89%80%E9%95%BF%E6%8A%91%E9%83%81%E6%97%A5%E8%AE%B0%E5%85%AD%E6%AF%8F%E6%83%B3%E4%BD%A0%E4%B8%80%E6%AC%A1%E6%88%91%E5%B0%B1%E5%90%9E%E4%B8%8B%E4%B8%80%E7%B2%92%E5%AE%89%E7%9C%A0%E8%8D%AF">所长抑郁日记六：每想你一次，我就吞下一粒安眠药</a></li>
+<li><a href="#%E6%89%80%E9%95%BF%E6%8A%91%E9%83%81%E6%97%A5%E8%AE%B0%E4%B8%83%E6%8A%8A%E8%83%B8%E7%BB%99%E6%88%91%E7%9C%8B%E6%88%91%E5%B0%B1%E7%9B%B8%E4%BF%A1%E4%BD%A0%E5%BE%97%E4%BA%86%E4%B9%B3%E8%85%BA%E7%99%8C">所长抑郁日记七：把胸给我看，我就相信你得了乳腺癌</a></li>
+<li><a href="#%E6%89%80%E9%95%BF%E6%8A%91%E9%83%81%E6%97%A5%E8%AE%B0%E5%85%AB%E6%83%B3%E4%BD%A0%E6%83%B3%E4%BC%91%E5%81%87%E6%83%B3%E4%B8%BA%E4%BD%A0%E4%BC%91%E4%BA%A7%E5%81%87">所长抑郁日记八：想你，想休假，想为你休产假</a></li>
+<li><a href="#%E6%89%80%E9%95%BF%E6%8A%91%E9%83%81%E6%97%A5%E8%AE%B0%E4%B9%9D%E7%BB%83%E4%B9%A0%E6%8B%92%E7%BB%9D%E6%AD%BB%E4%BA%A1%E7%9A%84%E9%82%80%E7%BA%A6">所长抑郁日记九：练习拒绝死亡的邀约</a></li>
+</ul>
+</li>
+<li><a href="#%E6%83%B3%E5%AF%B9%E6%8A%91%E9%83%81%E4%BA%BA%E7%BE%A4%E8%AF%B4%E7%9A%84%E8%AF%9D">想对抑郁人群说的话</a></li>
+</ul>
+</div>
+            
+            
+        </body>
+        </html>
