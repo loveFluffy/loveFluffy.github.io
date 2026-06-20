@@ -1,0 +1,26 @@
+@charset "utf-8";
+@import "xstyles.css";
+@import "toc.css";
+@import "tocpatch.css";
+
+
+
+/* ======== 列表 ======== */
+
+/* 描述列表 */
+
+dl {
+	font-size: smaller;
+}
+
+dt {
+	display: list-item;
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+dd {
+	display: list-item;
+	list-style-type: circle;
+	list-style-position: inside;
+}

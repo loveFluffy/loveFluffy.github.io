@@ -78,8 +78,8 @@ iPad mini 5：2048*宽1536
 		overflow-y: auto;
 		/* 滚动条 */
 		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
+		/* thumb & track 使用默认颜色 */
+		/*scrollbar-color: rgb(178, 216, 232) #ededed;*/
 	}
 
 	div.toc ul {
@@ -183,3 +183,8 @@ div.toc ul>li>ul>li,
 div.toc ul>li>ul>li>ul>li,
 div.toc ul>li>ul>li>ul>li>ul>li {
 */
+
+/* 水平线分割线：增加上下空白 */
+div.toc hr {
+	margin: 0.75em 0;
+}

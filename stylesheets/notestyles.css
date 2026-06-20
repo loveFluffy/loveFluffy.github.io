@@ -7,11 +7,6 @@ body {
 	height: 100%;
 }
 
-/* 水平线分割线 */
-hr {
-	margin-bottom: 0.8em;
-}
-
 /*笔记中的普通图片*/
 img {
 	/* 必须同时指定block才能让居中生效 */
@@ -35,14 +30,13 @@ td {
 dl,
 ol,
 ul {
+	padding-left: 2em;
 	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
 }
 
 p {
 	margin: 0 0 1em;
-	line-height: 1.8;
+	line-height: 1.8em;
 	/*段落使用衬线字体，更好看*/
 	font-family: Georgia, Arial, "Microsoft YaHei", "微软雅黑", serif;
 	/*段落首行缩进2字符*/
@@ -60,7 +54,7 @@ blockquote {
 
 blockquote p {
 	margin: 0 0 1em;
-	line-height: 1.8;
+	line-height: 1.8em;
 }
 
 
@@ -80,54 +74,6 @@ p>code {
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-}
-
-
-
-
-/* ======== 笔记里插入封面图 ======== */
-
-table.covertitle {
-	border: none;
-	max-width: 90%;
-	/*列宽固定为设置值，不根据内容调整*/
-	table-layout: fixed;
-}
-
-table.covertitle td {
-	border: none;
-}
-
-table.covertitle td:nth-child(1) {
-	padding: 20px 5px 0px;
-	width: 20%;
-}
-
-table.covertitle td:nth-child(2) {
-	width: 80%;
-}
-
-table.covertitle img {
-	max-width: 240px;
-}
-
-
-
-
-/* ======== 笔记里插入我的评价 ======== */
-div.mycomment {
-	font-size: smaller;
-
-	padding: 20px 20px 5px 30px;
-	margin: 20px 5%;
-	background-color: #e5eecc;
-
-	border: solid 2px #8ca86d;
-	border-radius: 30px;
-}
-
-div.mycomment img {
-	max-height: 300px;
 }
 
 

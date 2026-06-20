@@ -60,13 +60,6 @@ ul p {
 
 /* ======== 列表 ======== */
 
-li {
-    margin-left: 0.75em;
-    line-height: 1.2em;
-    padding: 0.25em 0;
-    list-style: square inside;
-}
-
 /* 将内容分成两栏显示，用以显示链接列表之类的 */
 ul.list {
     column-count: 2;
@@ -76,6 +69,9 @@ ul.list {
 }
 
 ul.list li {
+    margin-left: 0.75em;
+    line-height: 1.2em;
+    padding: 0.25em 0;
     list-style-type: none;
     background-size: 1.4em;
     background-repeat: no-repeat;
@@ -85,6 +81,19 @@ ul.list li {
     break-inside: avoid;
 }
 
+/* 模拟 h5 的样式，作为列表内部的分类标题 */
+ul.list li.h5 {
+    font-weight: bold;
+    /*
+    font-size: 1.2em;
+    */
+    margin-left: 0;
+    text-indent: 0;
+    padding-left: 0.5em;
+    border-left: 4px solid #ffcc99;
+}
+
+/* 整理完people以后应删掉 */
 ul.peoplelist {
     column-count: 1;
 }
@@ -249,7 +258,7 @@ iframe.copyright {
 
 /* ======== 其他杂项 ======== */
 
-a img {
+table.toolbox img {
     width: 60px;
     height: 60px;
 }
@@ -266,12 +275,14 @@ h3 img {
 }
 
 h4 img {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
 }
 
-.gridtable td img,
-.list li img {
+/* 列表里开头的图标是背景，除此之外出现在行内的图片也需要限制大小 */
+ul.list li img,
+h5 img,
+table.gridtable td img {
     width: 20px;
     height: 20px;
 }
