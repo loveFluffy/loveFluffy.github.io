@@ -65,7 +65,7 @@ h3,
 h4,
 h5,
 h6 {
-	line-height: 1.3;
+	line-height: 1.3em;
 	margin-top: 1.2em;
 	margin-bottom: 0.6em;
 	font-weight: bold;
@@ -83,8 +83,8 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 30px 0 5px;
-	padding-left: 9px;
+	margin: 1em 0 0.25em;
+	padding-left: 0.25em;
 	/*
 	border-left: 6px solid #ff7e79;
 	border-bottom: 1px solid #ff7e79;
@@ -95,16 +95,16 @@ h3 {
 
 h4 {
 	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ffcccc;
+	margin: 0.4em 0 0.25em;
+	padding-left: 0.25em;
+	border-left: 0.25em solid #ffcccc;
 	border-bottom: 1px solid #ffcccc;
 }
 
 h5 {
 	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 4px solid #ffcc99;
+	padding-left: 0.25em;
+	border-left: 0.2em solid #ffcc99;
 }
 
 h6 {
@@ -163,10 +163,12 @@ th {
 
 
 
+
 /* ======== 列表 ======== */
 
 ul li,
-ol li {
+ol li,
+dl dd {
 	margin-left: 1em;
 	line-height: 1.2em;
 	list-style-position: inside;
@@ -177,9 +179,6 @@ dl dt {
 	margin: 0.5em 0;
 }
 
-dl dd {
-	margin-left: 1em;
-}
 
 
 
@@ -216,8 +215,8 @@ table.covertitle img {
 div.mycomment {
 	font-size: smaller;
 
-	padding: 20px 20px 5px 30px;
-	margin: 20px 5%;
+	padding: 1em;
+	margin: 0.75em 5%;
 	background-color: #e5eecc;
 
 	border: solid 2px #8ca86d;
@@ -225,7 +224,7 @@ div.mycomment {
 }
 
 div.mycomment img {
-	max-height: 300px;
+	max-height: 10em;
 }
 
 

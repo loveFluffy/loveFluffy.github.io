@@ -39,8 +39,8 @@ html {
 
 body {
     /* 上、右、下、左： 左右居中 */
-    margin: 0px auto 0px;
-    font-size: 16pt;
+    margin: 0px auto;
+    font-size: 1.6em;
 }
 
 div.content {
@@ -90,8 +90,55 @@ ul.list li.h5 {
     margin-left: 0;
     text-indent: 0;
     padding-left: 0.5em;
-    border-left: 4px solid #ffcc99;
+    border-left: 0.2em solid #ffcc99;
 }
+
+/* 小字备注的小技巧 */
+ol.tips {
+    font-size: smaller;
+}
+
+ol.tips b {
+    /* 作为标题使用 */
+    font-weight: bold;
+    display: block;
+    margin: 0.5em 0;
+}
+
+ol.tips b::before {
+    /*添加实心圆点*/
+    content: "•";
+    /*与文本间距*/
+    margin-right: 0.5em;
+    /*设置圆点颜色，默认就是黑色
+    color: #000;*/
+    /*圆点大小*/
+    font-size: 1em;
+}
+
+ol.tips p {
+    text-indent: 1em;
+}
+
+
+
+
+/* 描述列表 */
+dl {
+    font-size: smaller;
+    list-style-position: inside;
+}
+
+dt {
+    display: list-item;
+    list-style-type: disc;
+}
+
+dd {
+    display: list-item;
+    list-style-type: circle;
+}
+
 
 /* 整理完people以后应删掉 */
 ul.peoplelist {
@@ -104,7 +151,7 @@ ul.peoplelist {
 /* ======== 表格 ======== */
 
 table {
-    font-size: 14pt;
+    font-size: 0.8em;
 }
 
 
@@ -158,7 +205,7 @@ table.gridtable td:nth-child(4) {
 /*第3列、第4列用小号字体*/
 table.gridtable td:nth-child(3),
 table.gridtable td:nth-child(4) {
-    font-size: 9pt;
+    font-size: small;
 }
 
 
@@ -214,7 +261,7 @@ table.toolbox {
 
 table.toolbox td {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 1.5em;
 }
 
 table.toolbox td a {
@@ -250,7 +297,7 @@ iframe.menu {
 
 iframe.copyright {
     height: 200px;
-    margin-top: 30px;
+    margin-top: 1em;
 }
 
 
