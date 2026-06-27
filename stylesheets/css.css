@@ -59,6 +59,11 @@ body {
 	color: #333;
 }
 
+p {
+	margin: 0 0 0.5em;
+	line-height: 1.2em;
+}
+
 h1,
 h2,
 h3,
@@ -83,7 +88,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
-	margin: 1em 0 0.25em;
+	margin: 0.5em 0 0.25em;
 	padding-left: 0.25em;
 	/*
 	border-left: 6px solid #ff7e79;
@@ -114,32 +119,59 @@ h6 {
 h3 img,
 h4 img,
 h5 img,
-table td img {
+table td img,
+li img {
 	vertical-align: middle;
 }
 
+li img {
+	width: 20px;
+	height: 20px;
+}
 
 
 
 /* ======== 链接 ======== */
 
+a {
+	text-decoration-color: #a3a3a3;
+	text-decoration-thickness: 2px;
+	/*调整下划线离文字距离*/
+	text-underline-offset: 0.25em;
+}
+
 /*未访问过的链接*/
 a:link {
-	color: #000;
+	color: #333;
 }
 
 /*已访问的链接*/
 a:visited {
-	color: #575757;
+	color: #7c7c7c;
 }
 
 a:hover,
 a:active {
-	color: #9e0000;
+	/*#9e0000*/
+	color: #000;
+	text-decoration-color: #da5e0c;
 }
 
+/* 这是一个改变背景色的动画特效，目前没有用上
+a.btn {
+	/*背景变化：关键点，设置背景高度为原件的2倍，渐变色均分
+	background-size: 100% 200%;
+	background-image: linear-gradient(to bottom, transparent 50%, #ff9c6e 50%);
+	background-position: top;
+	/*背景变化：添加过渡动画
+	transition: all 0.25s ease;
+}
 
-
+a.btn:hover {
+	/*背景变化：背景位置上移，露出下半部分原本隐藏的颜色
+	background-position: bottom;
+}
+*/
 
 /* ======== 表格 ======== */
 table {
@@ -170,7 +202,8 @@ ul li,
 ol li,
 dl dd {
 	margin-left: 1em;
-	line-height: 1.2em;
+	margin-bottom: 0.25em;
+	line-height: 1.4em;
 	list-style-position: inside;
 }
 
@@ -215,7 +248,7 @@ table.covertitle img {
 div.mycomment {
 	font-size: smaller;
 
-	padding: 1em;
+	padding: 1em 1em 0;
 	margin: 0.75em 5%;
 	background-color: #e5eecc;
 

@@ -70,12 +70,13 @@ ul.list {
 
 ul.list li {
     margin-left: 0.75em;
-    line-height: 1.2em;
-    padding: 0.25em 0;
+    line-height: 1.4em;
+    padding-bottom: 0.25em;
     list-style-type: none;
     background-size: 1.4em;
     background-repeat: no-repeat;
-    background-position: 0 center;
+    /*图片在第一行的开头，垂直方向居中*/
+    background-position: 0 0;
     text-indent: 2em;
     /*避免分两栏的时候第一栏最后一项被拆开显示到第二栏顶部*/
     break-inside: avoid;
@@ -120,8 +121,9 @@ ol.tips p {
     text-indent: 1em;
 }
 
-
-
+ol.tips li {
+    margin-bottom: 0.5em;
+}
 
 /* 描述列表 */
 dl {
@@ -137,12 +139,6 @@ dt {
 dd {
     display: list-item;
     list-style-type: circle;
-}
-
-
-/* 整理完people以后应删掉 */
-ul.peoplelist {
-    column-count: 1;
 }
 
 

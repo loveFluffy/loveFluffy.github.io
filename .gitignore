@@ -15,8 +15,8 @@ music/video
 # 原始笔记 md 文件
 booknotes/notes*.md
 csbooknotes/notes*.md
-coursenotes/course*.md
-newstv/newstv*.md
+coursenotes/*.md
+newstv/nt*.md
 tools/*.md
 tips/*.md
 
@@ -30,5 +30,7 @@ stopdoing/
 findebook/myID.html
 newstv/pdf/
 newstv/historyNews.html
+newstv/nt*.html
+newstv/recent*.html
 offline/
 tools/jobs.html
