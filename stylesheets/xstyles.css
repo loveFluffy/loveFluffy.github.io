@@ -71,12 +71,19 @@ ul.list {
 ul.list li {
     margin-left: 0.75em;
     line-height: 1.4em;
+    /*padding-bottom是为了给下划线预留空间*/
     padding-bottom: 0.25em;
+
     list-style-type: none;
-    background-size: 1.4em;
     background-repeat: no-repeat;
-    /*图片在第一行的开头，垂直方向居中*/
-    background-position: 0 0;
+
+    /*仅设置背景宽度，高度自动，以维持图片长宽比不变形*/
+    background-size: 1.4em;
+
+    /*图片在第一行的开头，垂直方向居中：设置根据content-box定位，以排除上面padding-bottom设置的影响*/
+    background-origin: content-box;
+    background-position: left center;
+
     text-indent: 2em;
     /*避免分两栏的时候第一栏最后一项被拆开显示到第二栏顶部*/
     break-inside: avoid;
@@ -92,6 +99,11 @@ ul.list li.h5 {
     text-indent: 0;
     padding-left: 0.5em;
     border-left: 0.2em solid #ffcc99;
+}
+
+/* 列表里插入解释性文字 */
+ul p {
+    font-size: smaller;
 }
 
 /* 小字备注的小技巧 */
@@ -302,8 +314,8 @@ iframe.copyright {
 /* ======== 其他杂项 ======== */
 
 table.toolbox img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
 }
 
 a:hover img {
@@ -330,13 +342,21 @@ table.gridtable td img {
     height: 20px;
 }
 
+/* 提示信息 info.png */
+div.content img.info {
+    animation: none;
+    width: 15px;
+    height: 15px;
+    vertical-align: top;
+}
+
 
 /* 设置backtotop按钮 */
 #backtotop {
     position: fixed;
     /* Place the button at the bottom right of the page */
-    bottom: 40vh;
-    right: 5vw;
+    bottom: 10vh;
+    right: 40px;
     /* Make sure it does not overlap */
     z-index: 99;
     /* Hidden by default */
@@ -359,3 +379,9 @@ canvas {
     align-self: center;
 }
 */
+
+
+/* 水平线分割线：调节上下空白 */
+div.content ul hr {
+    margin: 1em 0 0.5em;
+}

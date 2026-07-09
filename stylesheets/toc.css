@@ -184,7 +184,7 @@ div.toc ul>li>ul>li>ul>li,
 div.toc ul>li>ul>li>ul>li>ul>li {
 */
 
-/* 水平线分割线：增加上下空白 */
+/* 水平线分割线：调节上下空白 */
 div.toc hr {
 	margin: 0.75em 0;
 }

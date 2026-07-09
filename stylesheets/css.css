@@ -5,6 +5,8 @@ html {
 	-ms-text-size-adjust: 100%;
 	text-rendering: optimizelegibility;
 	height: 100%;
+	/*调整整体网站的字号绝对大小*/
+	font-size: 12px;
 
 	scroll-behavior: smooth;
 }

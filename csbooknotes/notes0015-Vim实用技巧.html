@@ -131,7 +131,8 @@
         
         </head>
         <body class="vscode-body vscode-light">
-            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:true,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<link rel="stylesheet" href="../stylesheets/notestyles.css" />
 <link rel="icon" href="../favicon.ico" />
 <div class="content">
 <table class="covertitle"><tr><td><img src="cover/0015.jpg"></td><td>
@@ -147,8 +148,8 @@
 <p>x 命令会删除光标下的字符，在这种情况下使用 . 命令“重复上次修改”时，就会让Vim删除光标下的字符
 dd 命令也做删除操作，但它会把整行一起删掉。如果在dd后使用 . 命令，那么“重复上次修改”会让Vim删除当前行
 最后，&gt;G 命令会增加从当前行到文档末尾处的缩进层级。如果我们在此命令后使用 . 命令，那么“重复上次修改”会让Vim增加从当前行到文档末尾的缩进层级。</p>
-<p>x、dd 以及 &gt; 命令都是在普通模式中执行的命令，不过，每次我们进入插入模式时，也会形成一次修改。<strong>从进入插入模式的那一刻起（例如，输入 i），直到返回普通模式时为止（输入&lt;Esc&gt;），Vim会记录每一个按键操作</strong>。做出这样一个修改后再用 . 命令的话，它将会重新执行所有这些按键操作（参见技巧8中的“在插入模式中移动光标会重置修改状态”部分中的补充说明）。</p>
-<p><strong>.命令是一个微型的宏</strong></p>
+<p>x、dd 以及 &gt; 命令都是在普通模式中执行的命令，不过，每次我们进入插入模式时，也会形成一次修改。<em>从进入插入模式的那一刻起（例如，输入 i），直到返回普通模式时为止（输入&lt;Esc&gt;），Vim会记录每一个按键操作</em>。做出这样一个修改后再用 . 命令的话，它将会重新执行所有这些按键操作（参见技巧8中的“在插入模式中移动光标会重置修改状态”部分中的补充说明）。</p>
+<p><em>.命令是一个微型的宏</em></p>
 <h4 id="技巧2-不要自我重复">技巧2 不要自我重复</h4>
 <table>
 <thead>
@@ -188,7 +189,7 @@ dd 命令也做删除操作，但它会把整行一起删掉。如果在dd后使
 </tr>
 </tbody>
 </table>
-<p>你找出这些命令别的共同点了吗？它们全都会<strong>从普通模式切换到插入模式</strong>。仔细想想这一点，并想想这对 . 命令可能产生怎样的影响。</p>
+<p>你找出这些命令别的共同点了吗？它们全都会<em>从普通模式切换到插入模式</em>。仔细想想这一点，并想想这对 . 命令可能产生怎样的影响。</p>
 <h4 id="技巧3-以退为进">技巧3 以退为进</h4>
 <h4 id="技巧4-执行重复回退">技巧4 执行、重复、回退</h4>
 <h4 id="技巧5-查找并手动替换">技巧5 查找并手动替换</h4>
