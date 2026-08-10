@@ -240,7 +240,8 @@ table.covertitle td:nth-child(2) {
 }
 
 table.covertitle img {
-	max-width: 240px;
+	max-width: 100px;
+	max-height: 160px;
 }
 
 

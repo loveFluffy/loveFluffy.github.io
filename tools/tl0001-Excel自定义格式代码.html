@@ -130,7 +130,8 @@
         
         </head>
         <body class="vscode-body vscode-light">
-            <link rel="stylesheet" href="../stylesheets/notestyles.css" />
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:true,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<link rel="stylesheet" href="../stylesheets/notestyles.css" />
 <link rel="icon" href="../favicon.ico" />
 <div class="content">
 <table class="covertitle"><tr><td>
@@ -138,8 +139,18 @@
 <center><a href="https://zhuanlan.zhihu.com/p/334303598">原文链接：花了20小时整理的Excel自定义格式代码大全</a></center>
 </td></tr></table>
 <h2 id="常用的">常用的</h2>
-<p>0!.00,,&quot;亿&quot;</p>
+<h5 id="亿为单位">亿为单位</h5>
 <p>0!.00,,&quot;亿&quot;;-0!.00,,&quot;亿&quot;;&quot;-&quot;;@</p>
+<h5 id="万为单位">万为单位</h5>
+<p>0!.0,&quot;万&quot;;-0!.0,&quot;万&quot;;&quot;-&quot;;@</p>
+<h5 id="整数不显示小数位小数显示小数位负数显示横杠">整数不显示小数位、小数显示小数位、负数显示横杠</h5>
+<p>G/通用格式;G/通用格式;-;@</p>
+<p>“每10股转增数（股）”的格式。</p>
+<p>下面这种写法在低版本Excle里的时候，对于整数也会显示个小数点：</p>
+<p>0.##;-0.##;-;@</p>
+<h5 id="使用千分位分隔符负数显示横杠不保留小数">使用千分位分隔符、负数显示横杠、不保留小数：</h5>
+<p>#,##0;-#,##0;&quot;-&quot;;@</p>
+<p>员工人数的格式。</p>
 <h3 id="01-如何设置单元格格式">01 如何设置单元格格式</h3>
 <p>选中需要设置单元格格式的区域范围后，至少有三种方法可以设置单元格格式：</p>
 <h4 id="菜单栏按键法">菜单栏按键法</h4>
