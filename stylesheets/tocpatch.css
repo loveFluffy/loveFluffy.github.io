@@ -1,7 +1,9 @@
 /* ======== 侧边的目录基于toc.css进行微调，用于给非笔记页面也添加侧边目录 这部分还有bug ======== */
 
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
+/* 宽屏幕：电脑、手机横屏、iPad横屏
+@media (min-width: 1537px) { 
+改为直接判断是横屏还是竖屏 */
+@media screen and (orientation: landscape) {
 	div.content table.toolbox {
 		display: none;
 	}

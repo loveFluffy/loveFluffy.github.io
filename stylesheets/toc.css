@@ -1,4 +1,4 @@
-/* ======== 侧边的目录根据显示器的宽度决定是否显示 ======== */
+/* ======== 侧边的目录根据显示器的横屏/竖屏状态决定是否显示 ======== */
 
 div.content {
 	padding-left: 0.25em;
@@ -19,8 +19,11 @@ div.toc {
 iPad mini 5：2048*宽1536
 电脑：宽1920*1200 */
 
-/* 窄屏幕：手机竖屏、iPad竖屏 */
+/* 窄屏幕：手机竖屏、iPad竖屏
 @media (max-width: 1536px) {
+改为直接判断是横屏还是竖屏 */
+@media screen and (orientation: portrait) {
+
 
 	/* 暂改
 	body {
@@ -48,8 +51,10 @@ iPad mini 5：2048*宽1536
 	}
 }
 
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+/* 宽屏幕：电脑、手机横屏、iPad横屏
 @media (min-width: 1537px) {
+改为直接判断是横屏还是竖屏 */
+@media screen and (orientation: landscape) {
 	div.content {
 		float: right;
 		width: 80%;
