@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x6211;&#x771f;&#x7684;&#x5750;&#x4e0d;&#x4f4f;&#x4e86;&#xff1a;&#x9aa8;&#x79d1;&#x533b;&#x751f;&#x8ba9;&#x4f60;&#x4e0a;&#x73ed;&#x66f4;&#x8f7b;&#x677e;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="我真的坐不住了骨科医生让你上班更轻松">我真的坐不住了：骨科医生让你上班更轻松</h1>
+<h2 id="孙悦礼-著">孙悦礼 著</h2>
+<h3 id="授人以渔薪火相传">授人以渔，薪火相传</h3>
+<h3 id="第1章-颈痛篇">第1章 颈痛篇</h3>
+<h4 id="不了解病症">不了解病症</h4>
+<h4 id="颈椎曲度变直无伤大雅却又扰人心神">“颈椎曲度变直”，无伤大雅却又扰人心神</h4>
+<h4 id="肌肉劳损之后颈椎开始退变">肌肉劳损之后颈椎开始退变</h4>
+<h4 id="为什么颈椎病会导致手麻">为什么颈椎病会导致手麻？</h4>
+<h4 id="为什么颈椎病会引起头晕头痛">为什么颈椎病会引起头晕头痛？</h4>
+<h4 id="颈椎病也会影响血压和心率吗">颈椎病也会影响血压和心率吗？</h4>
+<h4 id="颈椎病也会引起瘫痪吗">颈椎病也会引起瘫痪吗？</h4>
+<h4 id="颈椎病的认识及对策">颈椎病的认识及对策</h4>
+<h4 id="不懂得保护">不懂得保护</h4>
+<h4 id="如何保养颈部的静态稳定">如何保养颈部的静态稳定？</h4>
+<h4 id="如何加强颈部的动态平衡">如何加强颈部的动态平衡？</h4>
+<h4 id="枕头和颈椎">枕头和颈椎</h4>
+<h4 id="颈托颈围和颈环">颈托、颈围和颈环</h4>
+<h4 id="颈椎病患者的日常注意事项">颈椎病患者的日常注意事项</h4>
+<h4 id="不清楚方法">不清楚方法</h4>
+<h4 id="颈部自查小贴士">颈部自查小贴士</h4>
+<h4 id="骨科医生在医院里是怎么查脖子的">骨科医生在医院里是怎么查脖子的</h4>
+<h4 id="解密颈椎x线片">解密颈椎X线片</h4>
+<h4 id="看颈椎核磁共振时我们在看什么">看颈椎核磁共振时，我们在看什么？</h4>
+<h4 id="颈部的动态平衡系统">颈部的动态平衡系统</h4>
+<h4 id="如何选择恰当的治脖子方法">如何选择恰当的治脖子方法？</h4>
+<h4 id="颈椎病是不是也药不能停">颈椎病是不是也“药不能停”？</h4>
+<h4 id="颈椎病到底要不要开刀">颈椎病到底要不要开刀？</h4>
+<h4 id="如何预防颈椎病的发生和加重">如何预防颈椎病的发生和加重？</h4>
+<h3 id="第2章-腰痛篇">第2章 腰痛篇</h3>
+<h4 id="不了解病症-1">不了解病症</h4>
+<h4 id="慢性腰痛的预警信号">慢性腰痛的预警信号</h4>
+<h4 id="那些眼熟的腰椎问题">那些眼熟的腰椎问题</h4>
+<h4 id="不懂得保护-1">不懂得保护</h4>
+<h4 id="容易引起腰痛的姿势">容易引起腰痛的姿势</h4>
+<h4 id="帆船桅杆和缆绳">帆船、桅杆和缆绳</h4>
+<h4 id="对腰友好的床垫如何选">对腰友好的床垫如何选？</h4>
+<h4 id="腰托是把双刃剑">腰托是把双刃剑</h4>
+<h4 id="不清楚方法-1">不清楚方法</h4>
+<h4 id="x线上看腰椎">X线上看腰椎</h4>
+<h4 id="核磁共振上看腰椎">核磁共振上看腰椎</h4>
+<h4 id="日常腰部自查说明">日常腰部自查说明</h4>
+<h4 id="祝您好孕产后腰痛预防手册">祝您好孕——产后腰痛预防手册</h4>
+<h4 id="关于腰痛的治疗保健误区">关于腰痛的治疗保健误区</h4>
+<h4 id="腰部锻炼推荐">腰部锻炼推荐</h4>
+<h3 id="第3章-膝关节痛篇">第3章 膝关节痛篇</h3>
+<h4 id="不了解病症-2">不了解病症</h4>
+<h4 id="膝关节的弹响声是哪里来的">膝关节的弹响声是哪里来的？</h4>
+<h4 id="膝关节有哪些不一样的疼痛">膝关节有哪些不一样的疼痛？</h4>
+<h4 id="秋裤防不住的关节炎">秋裤防不住的关节炎</h4>
+<h4 id="膝盖发凉怎么办">膝盖发凉怎么办？</h4>
+<h4 id="x型腿和o型腿">X型腿和O型腿</h4>
+<h4 id="交叉韧带撕裂手术后还能恢复运动吗">交叉韧带撕裂手术后，还能恢复运动吗？</h4>
+<h4 id="不懂得保护-2">不懂得保护</h4>
+<h4 id="跑步时怎么保护膝盖">跑步时怎么保护膝盖？</h4>
+<h4 id="怎么选一双适合跑步的鞋子">怎么选一双适合跑步的鞋子？</h4>
+<h4 id="徒步时怎么保护膝盖">徒步时怎么保护膝盖？</h4>
+<h4 id="如何骑行不伤膝">如何骑行不伤膝？</h4>
+<h4 id="选一对好护膝">选一对好护膝</h4>
+<h4 id="是时候给膝关节来一次大保养了">是时候给膝关节来一次大保养了</h4>
+<h4 id="不清楚方法-2">不清楚方法</h4>
+<h4 id="x线上看膝关节">X线上看膝关节</h4>
+<h4 id="核磁共振上看半月板">核磁共振上看半月板</h4>
+<h4 id="核磁共振上的韧带损伤和髌骨软化">核磁共振上的韧带损伤和髌骨软化</h4>
+<h4 id="膝关节的自查方法">膝关节的自查方法</h4>
+<h4 id="膝盖不舒服到底要锻炼还是静养">膝盖不舒服到底要锻炼还是静养？</h4>
+<h4 id="膝盖不适到底热敷还是冷敷">膝盖不适到底热敷还是冷敷？</h4>
+<h4 id="硫酸软骨素和氨糖对膝关节有用吗">硫酸软骨素和氨糖对膝关节有用吗？</h4>
+<h4 id="膝关节封闭注射的常用药物">膝关节封闭注射的常用药物</h4>
+<h4 id="膝关节的关节镜手术">膝关节的关节镜手术</h4>
+<h4 id="不同材料的人工膝关节置换术">不同材料的人工膝关节置换术</h4>
+<h4 id="膝关节手术后的康复">膝关节手术后的康复</h4>
+<h3 id="后记">后记</h3>
+
+        
+        
+    </body>
+    </html>

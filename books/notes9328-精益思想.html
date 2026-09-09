@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x7cbe;&#x76ca;&#x601d;&#x60f3;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="精益思想">精益思想</h1>
+<h2 id="美詹姆斯-p-沃麦克james-p-womack-英丹尼尔-t-琼斯daniel-t-jones-著沈希瑾-张文杰-李京生-译">[美]詹姆斯 P. 沃麦克（James P. Womack） [英]丹尼尔 T. 琼斯（Daniel T. Jones） 著|沈希瑾 张文杰 李京生 译</h2>
+<h3 id="修订版前言">修订版前言</h3>
+<h3 id="第一版前言从精益生产到精益企业">第一版前言　从精益生产到精益企业</h3>
+<h2 id="第一部分精益原则">第一部分　精益原则</h2>
+<h3 id="导论和浪费针锋相对的精益思想">导论　和浪费针锋相对的精益思想</h3>
+<h3 id="第1章价值">第1章　价值</h3>
+<h4 id="是一所房子还是一种没有麻烦的经历">是一所房子，还是一种没有麻烦的经历</h4>
+<h4 id="从向传统价值的定义挑战开始">从向传统“价值”的定义挑战开始</h4>
+<h4 id="按整个产品来定义价值">按整个产品来定义价值</h4>
+<h4 id="精益企业重新考虑价值时的关键所在">精益企业重新考虑价值时的关键所在</h4>
+<h4 id="价值定义的最后一个要素目标成本">价值定义的最后一个要素：目标成本</h4>
+<h3 id="第2章价值流">第2章　价值流</h3>
+<h4 id="从货架通道里观察">从货架通道里观察</h4>
+<h4 id="一提盒可乐的价值流">一提盒可乐的价值流</h4>
+<h4 id="生产可乐">生产可乐</h4>
+<h4 id="引起浪费的根本原因">引起浪费的根本原因</h4>
+<h4 id="订购可乐">订购可乐</h4>
+<h4 id="制成可乐">制成可乐</h4>
+<h4 id="让价值流分析发挥作用">让价值流分析发挥作用</h4>
+<h3 id="第3章流动">第3章　流动</h3>
+<h4 id="批量生产的世界">批量生产的世界</h4>
+<h4 id="流动的技术">流动的技术</h4>
+<h4 id="自行车从批量生产到流动生产">自行车从批量生产到流动生产</h4>
+<h4 id="把流动思想用于任意活动">把流动思想用于任意活动</h4>
+<h4 id="工作中的流动流动地工作">工作中的流动；流动地工作</h4>
+<h4 id="只有流动是不够的">只有流动是不够的</h4>
+<h3 id="第4章拉动">第4章　拉动</h3>
+<h4 id="过去糟糕的生产">过去糟糕的生产</h4>
+<h4 id="服务于拉动的精益生产方式">服务于拉动的精益生产方式</h4>
+<h4 id="过去糟糕的配送">过去糟糕的配送</h4>
+<h4 id="服务于拉动的精益配送">服务于拉动的精益配送</h4>
+<h4 id="从理论到实践">从理论到实践</h4>
+<h4 id="精益配送技术">精益配送技术</h4>
+<h4 id="均衡进度需要均衡销售">均衡进度需要均衡销售</h4>
+<h4 id="过去糟糕的轿车维修服务">过去糟糕的轿车维修服务</h4>
+<h4 id="从维修场地拉动">从维修场地拉动</h4>
+<h4 id="从维修场地到原材料的拉动">从维修场地到原材料的拉动</h4>
+<h4 id="仅仅是开始">仅仅是开始</h4>
+<h4 id="混乱是真的吗">混乱是真的吗</h4>
+<h4 id="是否真的必须有商业周期">是否真的必须有商业周期</h4>
+<h4 id="在追求尽善尽美中拉动价值">在追求尽善尽美中拉动价值</h4>
+<h3 id="第5章尽善尽美">第5章　尽善尽美</h3>
+<h4 id="增长的途径">增长的途径</h4>
+<h4 id="捷径">捷径</h4>
+<h4 id="持续进行根本性的不断的改善">持续进行根本性的、不断的改善</h4>
+<h4 id="尽善尽美的蓝图">尽善尽美的蓝图</h4>
+<h4 id="集中精力消灭浪费">集中精力消灭浪费</h4>
+<h4 id="去掉惰性开始起步">去掉惰性，开始起步</h4>
+<h2 id="第二部分从思想到行动精益的飞跃">第二部分　从思想到行动：精益的飞跃</h2>
+<h3 id="第6章简单事例">第6章　简单事例</h3>
+<h4 id="精益革命">精益革命</h4>
+<h4 id="最终结果">最终结果</h4>
+<h4 id="如流的工作">如“流”的工作</h4>
+<h4 id="最后步骤">最后步骤</h4>
+<h4 id="超越简单事例">超越简单事例</h4>
+<h3 id="第7章复杂事例">第7章　复杂事例</h3>
+<h4 id="我们差点让自己准时死亡">“我们差点让自己‘准时’死亡”</h4>
+<h4 id="变革代理人">变革代理人</h4>
+<h4 id="理论知识">理论知识</h4>
+<h4 id="线模公司的精益化">线模公司的精益化</h4>
+<h4 id="首先处理过剩人员和钉子户">首先处理过剩人员和“钉子户”</h4>
+<h4 id="教会人们如何去观察">教会人们如何去观察</h4>
+<h4 id="反复改善每一个价值流">反复改善每一个价值流</h4>
+<h4 id="再造生产组织为价值流开辟道路">再造生产组织，为价值流开辟道路</h4>
+<h4 id="引进精益财务系统和计分卡">引进精益财务系统和“计分卡”</h4>
+<h4 id="降低库存">降低库存</h4>
+<h4 id="创建一个精益部门">创建一个“精益”部门</h4>
+<h4 id="为获得灵活性而提供铁的工作保证">为获得灵活性而提供铁的工作保证</h4>
+<h4 id="再造产品开发系统为价值流开辟道路">再造产品开发系统，为价值流开辟道路</h4>
+<h4 id="整改接单过程">整改接单过程</h4>
+<h4 id="将工薪和利润联系起来">将工薪和利润联系起来</h4>
+<h4 id="改善供应商">改善供应商</h4>
+<h4 id="制定一项发展战略">制定一项发展战略</h4>
+<h4 id="五年后的成绩记录">五年后的成绩记录</h4>
+<h4 id="对问题更严重的企业怎么样呢">对问题更严重的企业怎么样呢</h4>
+<h3 id="第8章严峻的考验">第8章　严峻的考验</h3>
+<h4 id="从美国系统到批量生产">从美国系统到批量生产</h4>
+<h4 id="鹰的起飞">鹰的起飞</h4>
+<h4 id="第二次世界大战是形成批量生产方式的动力">第二次世界大战是形成批量生产方式的动力</h4>
+<h4 id="喷气推动的鹰">喷气推动的鹰</h4>
+<h4 id="鹰的第一次坠落">鹰的第一次坠落</h4>
+<h4 id="是较精益而非精益是必需而非足够">是较精益而非精益，是必需而非足够</h4>
+<h4 id="1991年创造出的危机">1991年创造出的危机</h4>
+<h4 id="从大到不太大从流程到流动">从大到不太大，从“流程”到流动</h4>
+<h4 id="仅有精益知识是不够的">仅有精益知识是不够的</h4>
+<h4 id="第二个变革代理人">第二个变革代理人</h4>
+<h4 id="拔掉钉子户">拔掉钉子户</h4>
+<h4 id="调整两项主要活动">调整两项主要活动</h4>
+<h4 id="10亿美元的房间">10亿美元的房间</h4>
+<h4 id="超大装备的遗迹">超大装备的遗迹</h4>
+<h4 id="连续流动发动机">连续流动发动机</h4>
+<h4 id="同时发生的质量危机">同时发生的质量危机</h4>
+<h4 id="实际生产的最终结果">实际生产的最终结果</h4>
+<h4 id="不能倒退之点">不能倒退之点</h4>
+<h4 id="下一步飞跃">下一步飞跃</h4>
+<h4 id="教训和下一步骤">教训和下一步骤</h4>
+<h4 id="精益思想对其他工业企业又如何呢">精益思想对其他工业企业又如何呢</h4>
+<h3 id="第9章精益思想和德国技术">第9章　精益思想和德国技术</h3>
+<h4 id="从贫穷到富有的初步成功">从贫穷到富有的初步成功</h4>
+<h4 id="保时捷一个典型的德国企业">保时捷：一个典型的德国企业</h4>
+<h4 id="出现危机">出现危机</h4>
+<h4 id="变革代理人-1">变革代理人</h4>
+<h4 id="进攻计划">进攻计划</h4>
+<h4 id="日本导师的到来">日本导师的到来</h4>
+<h4 id="处理就业问题">处理就业问题</h4>
+<h4 id="工人和工会的反应">工人和工会的反应</h4>
+<h4 id="整顿供货队伍">整顿供货队伍</h4>
+<h4 id="整顿全盘管理">整顿全盘管理</h4>
+<h4 id="整顿产品计划">整顿产品计划</h4>
+<h4 id="整顿产品开发系统">整顿产品开发系统</h4>
+<h4 id="业绩记录">业绩记录</h4>
+<h4 id="下一个挑战">下一个挑战</h4>
+<h4 id="对德国传统的暗示">对德国传统的暗示</h4>
+<h4 id="德国和日本">德国和日本</h4>
+<h3 id="第10章大丰田小昭和">第10章　大丰田，小昭和</h3>
+<h4 id="昭和的危机">昭和的危机</h4>
+<h4 id="最初的努力">最初的努力</h4>
+<h4 id="一个思想矛盾">一个思想矛盾</h4>
+<h4 id="支撑精益化的新型组织">支撑精益化的新型组织</h4>
+<h4 id="从硬改善到软改善">从硬改善到软改善</h4>
+<h4 id="最后因素重新思考订单接收和生产计划">最后因素：重新思考订单接收和生产计划</h4>
+<h4 id="最终结果精益的成功">最终结果：精益的成功</h4>
+<h4 id="日本的其他企业如何">日本的其他企业如何</h4>
+<h4 id="丰田的精益状况">丰田的精益状况</h4>
+<h4 id="不服输的好处">“……不服输的好处”</h4>
+<h4 id="创造性的危机">创造性的危机</h4>
+<h4 id="丰田的缓慢行进">丰田的缓慢行进</h4>
+<h4 id="相应的改革">相应的改革</h4>
+<h4 id="完善生产环节改革">完善生产环节改革</h4>
+<h4 id="完善平行化改革">完善平行化改革</h4>
+<h4 id="今日之丰田">今日之丰田</h4>
+<h4 id="精益思想在丰田公司之外的传播">精益思想在丰田公司之外的传播</h4>
+<h4 id="小昭和大丰田日本今日面临的挑战">小昭和，大丰田：日本今日面临的挑战</h4>
+<h4 id="一样的步骤">一样的步骤</h4>
+<h3 id="第11章行动计划">第11章　行动计划</h3>
+<h4 id="开始起步">开始起步</h4>
+<h4 id="创建一个组织机构引导你的价值流">创建一个组织机构，引导你的价值流</h4>
+<h4 id="建立鼓励精益思想的业务系统">建立鼓励精益思想的业务系统</h4>
+<h4 id="完成转型">完成转型</h4>
+<h4 id="五年承诺的必然结果">五年承诺的必然结果</h4>
+<h4 id="下一个飞跃">下一个飞跃</h4>
+<h2 id="第三部分精益企业">第三部分　精益企业</h2>
+<h3 id="第12章流动的渠道渠道的流域">第12章　流动的渠道，渠道的流域</h3>
+<h4 id="精益企业">精益企业</h4>
+<h4 id="结束工业冷战">结束工业冷战</h4>
+<h4 id="轮换职务">轮换职务</h4>
+<h4 id="未来的职能">未来的职能</h4>
+<h4 id="企业的作用">企业的作用</h4>
+<h4 id="三种工业传统中的精益企业">三种工业传统中的精益企业</h4>
+<h4 id="前面的路还很长">前面的路还很长</h4>
+<h3 id="第13章想象尽善尽美">第13章　想象尽善尽美</h3>
+<h4 id="长途旅行">长途旅行</h4>
+<h4 id="医疗">医疗</h4>
+<h4 id="食品生产和配送">食品生产和配送</h4>
+<h4 id="建筑业">建筑业</h4>
+<h4 id="短途内个人的出行机动性">短途内个人的出行机动性</h4>
+<h4 id="想象的力量">想象的力量</h4>
+<h4 id="我们马上就可以得到的好处">我们马上就可以得到的好处</h4>
+<h2 id="第四部分新的发展">第四部分　新的发展</h2>
+<h3 id="第14章精益思想的稳步发展">第14章　精益思想的稳步发展</h3>
+<h4 id="丰田的稳步发展">丰田的稳步发展</h4>
+<h4 id="保时捷的精益过程加卓越产品">保时捷的精益过程加卓越产品</h4>
+<h4 id="体现在大型货物包装机中的精益思想兰开公司">体现在大型货物包装机中的精益思想：兰开公司</h4>
+<h4 id="普惠困难时期困难行业中的精益思想">普惠：困难时期困难行业中的精益思想</h4>
+<h4 id="超越孤立的发展">超越孤立的发展</h4>
+<h3 id="第15章使变革制度化">第15章　使变革制度化</h3>
+<h4 id="充实后的行动计划">充实后的行动计划</h4>
+<h4 id="机会就在眼前">机会就在眼前</h4>
+<h3 id="后记精益网络">后记　精益网络</h3>
+<h3 id="注释">注释</h3>
+<h3 id="参考文献">参考文献</h3>
+<h3 id="译者后记">译者后记</h3>
+
+        
+        
+    </body>
+    </html>

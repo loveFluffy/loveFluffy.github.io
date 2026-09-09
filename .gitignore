@@ -4,9 +4,9 @@ tmp*
 tmp/
 
 # 大文件
-audio/
 video/
-books/
+books/books/
+books/audio/
 books-cs/
 books-neuroscience/
 music/audio

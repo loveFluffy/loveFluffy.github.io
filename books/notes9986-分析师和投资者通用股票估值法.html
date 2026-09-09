@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x5206;&#x6790;&#x5e08;&#x548c;&#x6295;&#x8d44;&#x8005;&#x901a;&#x7528;&#x80a1;&#x7968;&#x4f30;&#x503c;&#x6cd5;&#xff1a;&#x4e00;&#x4e2a;&#x72ec;&#x4e00;&#x65e0;&#x4e8c;&#x7684;&#x5bf9;&#x4e8e;&#x8d22;&#x52a1;&#x62a5;&#x8868;&#x5206;&#x6790;&#x548c;&#x5efa;&#x6a21;&#x7684;&#x5de5;&#x5177;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+	color: #000;
+	/*background-color: #f1e5c9;*/
+	background: #f1e5c9;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	height: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18pt;
+	color: #333;
+	background: #f1e5c9;
+	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	text-align: center;
+	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
+	border-bottom-style: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #ff7e79;
+	border-bottom: 1px solid #ff7e79;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 10px 0 5px;
+	padding-left: 9px;
+	border-left: 6px solid #666;
+}
+
+h5 {
+	font-size: 1.2em;
+	padding-left: 9px;
+	border-left: 6px double #666;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 15px;
+	height: auto;
+}
+
+dl,
+ol,
+ul {
+	margin-bottom: 1em;
+	padding-left: 5%;
+	line-height: 1.8;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.8;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #575757;
+}
+
+a:hover,
+a:active {
+	color: #d3595e;
+}
+
+/* 块/段落引用 */
+blockquote {
+	font-size: 0.9em;
+	line-height: 1.5;
+	position: relative;
+	color: #666;
+	border-left: 2px solid #fbb;
+	padding-left: 1em;
+	margin: 1em 3em 1em 2em;
+}
+
+blockquote p {
+	margin: 0 0 1em;
+}
+
+strong,
+dfn {
+	font-weight: 700;
+}
+
+em,
+dfn {
+	font-style: italic;
+	font-weight: 400;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+code {
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px;
+	font-size: 90%;
+}
+
+p>code {
+	color: #c7264e;
+	background-color: #f9f2f4;
+	font-size: .95em;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+figcaption {
+	font-size: 0.75em;
+	padding: 0.5em 2em;
+	margin-bottom: 2em;
+}
+
+figure img {
+	margin-bottom: 0px;
+}
+
+/* hr 用于创建一条水平线*/
+hr {
+	margin: 0.8em 0;
+	border: none;
+	border-bottom: 1px solid #cfcfcf;
+	height: 10px;
+}
+
+ol p,
+ul p {
+	margin-bottom: 0px;
+}
+
+/*
+li {
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+*/
+ol#footnotes {
+	font-size: 0.95em;
+	padding-top: 1em;
+	margin-top: 1em;
+	margin-left: 0;
+	border-top: 1px solid #eaeaea;
+	counter-reset: footer-counter;
+	list-style: none;
+	color: #555;
+	padding-left: 5%;
+	margin: 20px 0;
+}
+
+ol#footnotes li {
+	margin-bottom: 10px;
+	margin-left: 16px;
+	font-weight: 400;
+	line-height: 2;
+	list-style-type: none;
+}
+
+ol#footnotes li:before {
+	content: counter(footer-counter) ". ";
+	counter-increment: footer-counter;
+	font-weight: 800;
+	font-size: .95em;
+}
+
+@keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+@-webkit-keyframes highfade {
+	0% {
+		background-color: none;
+	}
+
+	20% {
+		background-color: yellow;
+	}
+
+	100% {
+		background-color: none;
+	}
+}
+
+a:target,
+ol#footnotes li:target,
+sup a:target {
+	animation-name: highfade;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: highfade;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {
+	border: 0;
+	outline: 0;
+}
+
+table {
+	align-self: center;
+}
+
+img {
+	align-self: center;
+	max-width: 1000px;
+	width: 1000px;
+}
+
+/* 选中后背景浅粉色 */
+::selection {
+	background-color: #fbb;
+}
+
+
+
+/* ======== 侧边的目录相关 ======== */
+
+.content {
+	float: right;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	/* 滚动条 */
+	scrollbar-width: thin;
+	/* thumb & track */
+	scrollbar-color: skyblue #ededed;
+
+	scroll-behavior: smooth;
+}
+
+/* 
+手机：2400*1080
+iPad mini 5：2048*1536
+电脑：1920*1200 
+*/
+/* 窄屏幕：手机竖屏、iPad竖屏 */
+@media (max-width: 1536px) {
+	.content {
+		width: 99.5%;
+		padding-left: 0.5%;
+	}
+
+	/* 不显示目录 */
+	div.toc {
+		display: none;
+	}
+}
+
+/* 宽屏幕：电脑、手机横屏、iPad横屏 */
+@media (min-width: 1537px) {
+	div.toc {
+		line-height: 1.2;
+		max-width: 24%;
+		height: 100vh;
+		padding-right: 0.5%;
+
+		float: left;
+		font-size: 0.7em;
+		overflow: auto;
+		overflow-x: hidden;
+
+		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
+		/* 现在因为toc与body等高，所以不起作用，也无须起作用
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;*/
+
+		/* 滚动条 */
+		scrollbar-width: thin;
+		/* thumb & track */
+		scrollbar-color: rgb(178, 216, 232) #ededed;
+	}
+
+	/*
+	div.toc ul,
+	div.toc li {
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid #f1e5c9;
+	}
+		*/
+	div.toc ul {
+		margin: 0;
+		padding: 0;
+		background-color: #f1e5c9;
+	}
+
+	div.toc li {
+		padding-left: 10px;
+		list-style-position: inside;
+	}
+
+	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
+	div.toc ul>li,
+	div.toc ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li,
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		/* Safari 及其他兼容 */
+		position: -webkit-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+	}
+
+	div.toc ul>li {
+		z-index: 1;
+		/*#ff7e79*/
+		background-color: skyblue;
+	}
+
+	div.toc ul>li>ul>li {
+		z-index: 2;
+		/*#ff7e79*/
+		background-color: rgb(178, 216, 232);
+	}
+
+	div.toc ul>li>ul>li>ul>li {
+		z-index: 3;
+		/*#fbb*/
+		background-color: rgb(210, 231, 239);
+	}
+
+	div.toc ul>li>ul>li>ul>li>ul>li {
+		z-index: 4;
+		background-color: rgb(228, 235, 238);
+	}
+
+	.content {
+		width: 75%;
+		padding-left: 0.5%;
+	}
+}
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="分析师和投资者通用股票估值法一个独一无二的对于财务报表分析和建模的工具">分析师和投资者通用股票估值法：一个独一无二的对于财务报表分析和建模的工具</h1>
+<h2 id="美科勒james-kelleher-著付沛-译">[美]科勒（James Kelleher） 著|付沛 译</h2>
+<h4 id="作者简介">作者简介</h4>
+<p>Jim Kelleher，注册金融分析师，是Argus研究公司的研究主管、高级分析师和投资政策委员会成员之一。Argus是一家拥有75年历史的，坐落于纽约的投资咨询公司。Jim于1993年加入Argus，在财务服务行业工作已经超过25年。他在建立Argus独有的估值模型中发挥了巨大的作用，是Argus六点系统的一个关键部分。</p>
+<p>担任研究主管期间，Jim已经帮助新分析师发展还有精细化投资分析过程和“模板”，和分析师保持联络，主持公司每个礼拜的投资会议和很多客户每个月的电话会议。Jim也管理几个模型的证券投资组合，联合管理公司的关注清单，准备和监管Argus每天的技术分析产品。他也参与Argus投资者忠告投资政策委员会中，公司的财务管理分区的工作。</p>
+<p>作为一个高级分析师，他是科技行业研究的主管，主要关注通讯科技（设备和半导体）和电子制造商服务。Jim还是一个CFA认证的持有者，并且三次赢得华尔街时报的全明星分析师调查中的“街最佳”。Jim在the street.com有一个投资专栏，他的文章常常被领先的财务出版物所引用。</p>
+<h2 id="第一部分收入报表介绍">第一部分　收入报表介绍</h2>
+<h3 id="第1章第1阶段收入报表和差额模型第1部分">第1章　第1阶段：收入报表和差额模型（第1部分）</h3>
+<p>在第一阶段中，我们有几个应该被持续演练的任务：我们将创造一个可视化的、吸引人的、有信息量的模板；我们也会收集过去几年或者几个季度的历史数据，调整历史数据得出的结论也能适应现在的情形；接下来调整历史时期来适应真实事件，比如那些一次性的，或者不会再次发生的事件的成本，这两类事件会影响调整后的或者非会计原则的收入；接下来，我们要建立一个8个季度的收入报表模型，能够同时适应会计原则和调整过的收入。我们也针对仅发布会计原则结果的公司建立单独的模型，任何资产损坏的事实，都会导致公司被重新估值。</p>
+<p>第二阶段，叫做“部门模拟”，会在第三章节中呈现，我们模拟公司发表的数据来合并主要收入项。第三阶段，也就是第四章节，我们讨论模拟部门操作收入，我们会用一个专有的技术来处理它。在一个标准百分比主要收入模拟的变化形式中，我们说明了如何建立利润及亏损的区别（在主要收入和部分操作费用）百分比模型。</p>
+<p>第五章节详细解释第四阶段，叫做“工作台”，来管理公司公布的消息、轶闻、各种渠道来的公众信息、购买来的信息和其他数据，将这些加入到模拟收入部分。这里我们也讨论成本的输入值，并且为将来复制模型。</p>
+<p>在第六章节，我们考虑了在对爱立信公司建模和模拟时遇到的几个特别挑战。这家公司在美国市场上的经历使我们有了几个新的议题，例如美国储蓄证券和股票的关系平衡的改变、股票的拆分、合资企业的模拟。第七章节中，我们完成模拟工具组合，通过引入标准化的收入和最小二乘法来精化我们的模拟，从而决定复合年增长率。</p>
+<p>我们在工作中发展和分析了更多种的估值方法，但是我们更在意的是收入模拟的精确度。一定要记住，收入并不是公司每天运营产生的赢利，它们不是一回事。</p>
+<p>分析师把收入看作是很容易改变和受不确定输入值影响的东西，如果不能熟练地使用，就会很棘手。这些输入值包括主要收入识别，详细目录识别决策，线性折旧，与基于税收和利息相反的会计。当改变股票基数时，每股收益（EPS）就会变得更加复杂了。为了获得一个更凝炼的EPS，净收入被划分为会随着输入值起伏的股票部分（包括净收入水平）和与各种普通股票等价的状态相关的股票价格。</p>
+<h4 id="在工作簿中模拟">在工作簿中模拟</h4>
+<h4 id="追踪历史数据资源">追踪历史数据资源</h4>
+<h4 id="改变现状">改变现状</h4>
+<h4 id="构造收入报表模型">构造收入报表模型</h4>
+<h4 id="半随意处理收入报表">半随意处理收入报表</h4>
+<h4 id="非重复发生项和非现金项">非重复发生项和非现金项</h4>
+<h4 id="修订历史收入报表数据">修订历史收入报表数据</h4>
+<h4 id="试算报表行">试算报表行</h4>
+<h4 id="给非重复发生项和非现金项留一些空间">给非重复发生项和非现金项留一些空间</h4>
+<h4 id="为股票期权报酬来调整历史季度">为股票期权报酬来调整历史季度</h4>
+<h4 id="对历史调整运营和税前收入进行修订">对历史调整运营和税前收入进行修订</h4>
+<h4 id="完成历史调整">完成历史调整</h4>
+<h3 id="第2章第1阶段收入报表和差额模型第2部分">第2章　第1阶段：收入报表和差额模型（第2部分）</h3>
+<h4 id="差额分析">差额分析</h4>
+<h4 id="模拟将来">模拟将来</h4>
+<h4 id="将历史模板应用于模拟的季度">将历史模板应用于模拟的季度</h4>
+<h4 id="模拟运营成本和运营收入">模拟运营成本和运营收入</h4>
+<h4 id="利息成本和利息收入初步的">利息成本和利息收入：初步的</h4>
+<h4 id="利息成本和利息收入调整">利息成本和利息收入：调整</h4>
+<h4 id="税前收入">税前收入</h4>
+<h4 id="标准和试算报表税务">标准和试算报表税务</h4>
+<h4 id="标准和试算报表净收入">标准和试算报表净收入</h4>
+<h4 id="每股收益">每股收益</h4>
+<h4 id="将一栏的处理方法推广到全年模型">将一栏的处理方法推广到全年模型</h4>
+<h4 id="编辑栏半年九个月和全年">编辑栏（半年、九个月和全年）</h4>
+<h3 id="第3章第二阶段部门收入模拟">第3章　第二阶段：部门收入模拟</h3>
+<h4 id="部门模拟讨论">部门模拟：讨论</h4>
+<h4 id="收入模拟两个案例">收入模拟：两个案例</h4>
+<h4 id="纯主要收入数据">纯主要收入数据</h4>
+<h4 id="部门收入模拟连续的还是年度的">部门收入模拟：连续的还是年度的？</h4>
+<h4 id="损益表中的产品和服务收入">损益表中的产品和服务收入</h4>
+<h3 id="第4章第3阶段部门运营收入和差额百分比模拟">第4章　第3阶段：部门运营收入和差额百分比模拟</h3>
+<h4 id="差额百分比从部门收入模拟损益表">“差额百分比”——从部门收入模拟损益表</h4>
+<h4 id="差额百分比概念">差额百分比：概念</h4>
+<h4 id="差额百分比基础">差额百分比：基础</h4>
+<h4 id="差额百分比执行">差额百分比：执行</h4>
+<h4 id="差额百分比从标准到试算报表">差额百分比：从标准到试算报表</h4>
+<h3 id="第5章第4阶段工作台第1部分">第5章　第4阶段：工作台（第1部分）</h3>
+<h4 id="为工作台剔除信息源">为工作台剔除信息源</h4>
+<h4 id="公司信息">公司信息</h4>
+<h4 id="公司信息的阻碍">公司信息的阻碍</h4>
+<h4 id="正式公司报告">正式公司报告</h4>
+<h4 id="报告公布后的问答">报告公布后的问答</h4>
+<h4 id="工作台技巧出货量">工作台技巧：出货量</h4>
+<h4 id="出货比">出货比</h4>
+<h4 id="地区色彩">地区色彩</h4>
+<h4 id="行业周刊和全行业数据">行业周刊和全行业数据</h4>
+<h4 id="对成本项的调整">对成本项的调整</h4>
+<h4 id="成本项研发和管理">成本项：研发和管理</h4>
+<h4 id="运营杠杆">运营杠杆</h4>
+<h3 id="第6章第4阶段工作台第2部分">第6章　第4阶段：工作台（第2部分）</h3>
+<h4 id="特殊考虑爱立信">特殊考虑：爱立信</h4>
+<h4 id="模拟外国公司">模拟外国公司</h4>
+<h4 id="币种转换决定">币种转换决定</h4>
+<h4 id="股票拆分和反向拆分概念">股票拆分和反向拆分：概念</h4>
+<h4 id="股票拆分和反向拆分执行">股票拆分和反向拆分：执行</h4>
+<h4 id="股权收益和少数股权的正式模拟">股权收益和少数股权的正式模拟</h4>
+<h4 id="模拟一个现存的合资公司">模拟一个现存的合资公司</h4>
+<h4 id="模拟新合资公司">模拟新合资公司</h4>
+<h4 id="新部门模拟报告">新部门模拟报告</h4>
+<h4 id="流程">流程</h4>
+<h3 id="第7章普通最小平方法和标准化收益">第7章　普通最小平方法和标准化收益</h3>
+<h4 id="静态增长动力周期">静态增长，动力周期</h4>
+<h4 id="未调整cagr的不足">未调整CAGR的不足</h4>
+<h4 id="普通最小平方法ols">普通最小平方法（OLS）</h4>
+<h4 id="标准化收益">标准化收益</h4>
+<h4 id="ols增长率工作表设置和方法">OLS增长率　工作表设置和方法</h4>
+<h4 id="阅读数据收入报表">阅读数据：收入报表</h4>
+<h4 id="读取数据资产负债表">读取数据：资产负债表</h4>
+<h4 id="标准化收入ne工作表概念">标准化收入　NE工作表概念</h4>
+<h4 id="标准化收入方法">标准化收入方法</h4>
+<h2 id="第二部分比率和估值工作表">第二部分　比率和估值工作表</h2>
+<h3 id="第8章比率分析一内部流动性和运行效率">第8章　比率分析（一）：内部流动性和运行效率</h3>
+<h4 id="年度财务报表">年度财务报表</h4>
+<h4 id="对数据输入或者链接的小贴士">对数据输入或者链接的小贴士</h4>
+<h4 id="用年度财务报表构造rv工作表">用年度财务报表构造R&amp;V工作表</h4>
+<h4 id="比率比率的使用">比率，比率的使用</h4>
+<h4 id="内部流动性比率">内部流动性比率</h4>
+<h4 id="工作资本">工作资本</h4>
+<h4 id="交易工作资本">交易工作资本</h4>
+<h4 id="当前比率">当前比率</h4>
+<h4 id="快速比率">快速比率</h4>
+<h4 id="工作资本与销售比率">工作资本与销售比率</h4>
+<h4 id="运营效率">运营效率</h4>
+<h4 id="应收款项周转">应收款项周转</h4>
+<h4 id="应收款项收集时期">应收款项收集时期</h4>
+<h4 id="总资产周转">总资产周转</h4>
+<h4 id="库存周转">库存周转</h4>
+<h4 id="库存收集时期">库存收集时期</h4>
+<h4 id="未还清天数销售">未还清天数销售</h4>
+<h4 id="固定资产周转">固定资产周转</h4>
+<h4 id="普通股周转">普通股周转</h4>
+<h4 id="应付账款周转">应付账款周转</h4>
+<h4 id="应付账款收集时期">应付账款收集时期</h4>
+<h4 id="现金循环">现金循环</h4>
+<h3 id="第9章比率分析二回报率和现金流率">第9章　比率分析（二）：回报率和现金流率</h3>
+<h4 id="差额率">差额率</h4>
+<h4 id="总差额">总差额</h4>
+<h4 id="运营差额">运营差额</h4>
+<h4 id="税前差额">税前差额</h4>
+<h4 id="净差额">净差额</h4>
+<h4 id="ebitda差额">EBITDA差额</h4>
+<h4 id="ebitda企业价值ev">EBITDA/企业价值（EV）</h4>
+<h4 id="企业价值evebitda">企业价值（EV）/EBITDA</h4>
+<h4 id="回报率">回报率</h4>
+<h4 id="投资资本回报roic">投资资本回报（ROIC）</h4>
+<h4 id="总资本回报">总资本回报</h4>
+<h4 id="资产回报">资产回报</h4>
+<h4 id="股票回报两个方法">股票回报：两个方法</h4>
+<h4 id="标准roe">标准ROE</h4>
+<h4 id="杜邦roe">杜邦ROE</h4>
+<h4 id="风险分析">风险分析</h4>
+<h4 id="运营杠杆-1">运营杠杆</h4>
+<h4 id="已获利息倍数利息偿付率">已获利息倍数（利息偿付率）</h4>
+<h4 id="债务股票">债务/股票</h4>
+<h4 id="债务比市值">债务比市值</h4>
+<h4 id="现金流比率">现金流比率</h4>
+<h4 id="现金流和收入">现金流和收入</h4>
+<h4 id="运营现金流">运营现金流</h4>
+<h4 id="自由现金流">自由现金流</h4>
+<h4 id="fcf负改变在工作资本">FCF负改变在工作资本</h4>
+<h4 id="交易工作资本中的自由现金流负改变">交易工作资本中的自由现金流负改变</h4>
+<h4 id="股息支付比率">股息支付比率</h4>
+<h4 id="保留收入比率">保留收入比率</h4>
+<h4 id="恒定增长率">恒定增长率</h4>
+<h4 id="完成比率部分">完成比率部分</h4>
+<h3 id="第10章历史比较估值">第10章　历史比较估值</h3>
+<h4 id="总揽">总揽</h4>
+<h4 id="一个范围还是一个精确的数字">一个范围还是一个精确的数字？</h4>
+<h4 id="比较估值的时间框架">比较估值的时间框架</h4>
+<h4 id="滞后吻合还是领先">滞后，吻合还是领先？</h4>
+<h4 id="准备历史比较网格">准备历史比较网格</h4>
+<h4 id="价格收入比率历史的">价格/收入比率：历史的</h4>
+<h4 id="价格收入比率将来">价格/收入比率：将来</h4>
+<h4 id="用比较法来获得资产美元价值">用比较法来获得资产美元价值</h4>
+<h4 id="价格销售额比率">价格/销售额比率</h4>
+<h4 id="价格账面价值">价格/账面价值</h4>
+<h4 id="价格现金流">价格/现金流</h4>
+<h4 id="价格自由现金流">价格/自由现金流</h4>
+<h4 id="相对市盈率">相对市盈率</h4>
+<h4 id="peg和pegy">PEG和PEGY</h4>
+<h4 id="完成网格基于比较法的资产美元价值">完成网格：基于比较法的资产美元价值</h4>
+<h4 id="年度更新">年度更新</h4>
+<h4 id="外国公司的adr的历史比较法">外国公司的ADR的历史比较法</h4>
+<h2 id="第三部分股票价值工作表">第三部分　股票价值工作表</h2>
+<h3 id="第11章当前价值模拟和股票价值工作表">第11章　当前价值模拟和股票价值工作表</h3>
+<h4 id="当前价值与比较历史估值">当前价值与比较历史估值</h4>
+<h4 id="贴现自由现金流的号角和荆棘">贴现自由现金流的号角和荆棘</h4>
+<h4 id="评估行为和股东权益的结构影响">评估行为和股东权益的结构影响</h4>
+<h4 id="股息贴现模型和财务结构决策">股息贴现模型和财务结构决策</h4>
+<h4 id="贴现给公司和贴现给股票">贴现给公司和贴现给股票</h4>
+<h4 id="贴现自由现金流估值的取舍">贴现自由现金流估值的取舍</h4>
+<h3 id="第12章贴现自由现金流整理桌子">第12章　贴现自由现金流：整理桌子</h3>
+<h4 id="贴现自由现金流估值的潜在概念">贴现自由现金流估值的潜在概念</h4>
+<h4 id="贴现率">贴现率</h4>
+<h4 id="测得平均资本成本wacc概念">测得平均资本成本（WACC）：概念</h4>
+<h4 id="股票成本">股票成本</h4>
+<h4 id="测得资本平均成本公式">测得资本平均成本：公式</h4>
+<h4 id="预测增长">预测增长</h4>
+<h4 id="杜邦roe的使用">杜邦ROE的使用</h4>
+<h4 id="模拟杜邦roe">模拟杜邦ROE</h4>
+<h4 id="恒定增长率g">恒定增长率（g）</h4>
+<h4 id="增长时期">增长时期</h4>
+<h4 id="增长时期报告">增长时期报告</h4>
+<h3 id="第13章贴现自由现金流两种方法">第13章　贴现自由现金流：两种方法</h3>
+<h4 id="计算dfcf估值">计算DFCF估值</h4>
+<h4 id="谨慎时期现金流">谨慎时期现金流</h4>
+<h4 id="最终价值">最终价值</h4>
+<h4 id="最终价值两步dfcf值">最终价值：两步DFCF值</h4>
+<h4 id="三步dfcf改变增长率">三步DFCF：改变增长率</h4>
+<h4 id="三步dfcf最终值和过程收尾">三步DFCF：最终值和过程收尾</h4>
+<h4 id="建立股票价值2工作表">建立股票价值2工作表</h4>
+<h4 id="根据组分的dfcf计算">根据组分的DFCF计算</h4>
+<h4 id="组分dfcf的最终价值">组分DFCF的最终价值</h4>
+<h4 id="dfcf估值的敏感性">DFCF估值的敏感性</h4>
+<h4 id="年度更新-1">年度更新</h4>
+<h4 id="完成股票价值工作表">完成股票价值工作表</h4>
+<h4 id="资产的混合价值">资产的混合价值</h4>
+<h4 id="混合价值的风险调整回报率">混合价值的风险调整回报率</h4>
+<h4 id="计算目标价格和风险调整回报率到目标">计算目标价格和风险调整回报率到目标</h4>
+<h2 id="第四部分相关估值行业矩阵工作簿和同侪衍生估值">第四部分　相关估值：行业矩阵工作簿和同侪衍生估值</h2>
+<h3 id="第14章价格和表现分析">第14章　价格和表现分析</h3>
+<h4 id="查询页和价格变形网">查询页和价格变形网</h4>
+<h4 id="总揽-1">总揽</h4>
+<h4 id="年度更新百分比改变">年度更新百分比改变</h4>
+<h4 id="买卖触发器">买卖触发器</h4>
+<h4 id="相对表现">相对表现</h4>
+<h4 id="市值测量回报">市值测量回报</h4>
+<h4 id="对于资产决策的绝对和相对回报率">对于资产决策的绝对和相对回报率</h4>
+<h4 id="复制行动表">复制行动表</h4>
+<h4 id="行业数据编译">行业数据编译</h4>
+<h3 id="第15章简单平均和市场测量比较">第15章　简单平均和市场测量比较</h3>
+<h4 id="公司比较工作表总揽">公司比较工作表　总揽</h4>
+<h4 id="设置网格从关系到预测值">设置网格：从关系到预测值</h4>
+<h4 id="驾驭联合收割机管理数据">驾驭联合收割机：管理数据</h4>
+<h4 id="收入">收入</h4>
+<h4 id="主要收入">主要收入</h4>
+<h4 id="资产负债表测量单位">资产负债表测量单位</h4>
+<h4 id="差额">差额</h4>
+<h4 id="回报率测量">回报率测量</h4>
+<h4 id="估值">估值</h4>
+<h4 id="部门工作表">部门工作表</h4>
+<h4 id="季度趋势工作表">季度趋势工作表</h4>
+<h4 id="衡量工作表">衡量工作表</h4>
+<h4 id="市值衡量过程">市值衡量：过程</h4>
+<h3 id="第16章同侪衍生价值">第16章　同侪衍生价值</h3>
+<h4 id="面临的同侪价值问题">面临的同侪价值问题</h4>
+<h4 id="pdv的元素">PDV的元素</h4>
+<h4 id="pdv工作表的结构">PDV工作表的结构</h4>
+<h4 id="测量平均的当前估值">测量平均的当前估值</h4>
+<h4 id="历史变化溢价贴现到将来的变化">历史变化溢价/贴现到将来的变化</h4>
+<h4 id="复制过程">复制过程</h4>
+<h4 id="pdv价格账面价值">PDV价格/账面价值</h4>
+<h4 id="pdv价格现金流比">PDV价格现金流比</h4>
+<h4 id="pdv价格收入比和相对pe">PDV价格收入比和相对P/E</h4>
+<h4 id="完成pdv计算">完成PDV计算</h4>
+<h4 id="通信科技组同侪衍生价值">通信科技组同侪衍生价值</h4>
+<h4 id="pdv过程的风险和局限">PDV过程的风险和局限</h4>
+<h4 id="pdv在估值和资产决策中">PDV在估值和资产决策中</h4>
+<h3 id="结论资产的美元价值">结论：资产的美元价值</h3>
+<h3 id="关于作者">关于作者</h3>
+<h3 id="致谢">致　谢</h3>
+<h3 id="引言">引　言</h3>
+<h4 id="找到并且定义方法">找到并且定义方法</h4>
+<h4 id="股票估值分析师和投资者的概述">股票估值分析师和投资者的概述</h4>
+<h4 id="怎样应用本书">怎样应用本书</h4>
+<h4 id="建模的使用">建模的使用</h4>
+<h3 id="后记">后　记</h3>
+
+        
+        
+    </body>
+    </html>
