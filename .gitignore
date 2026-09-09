@@ -14,14 +14,14 @@ music/video
 
 # 原始笔记 md 文件
 booknotes/notes*.md
-csbooknotes/notes*.md
-coursenotes/*.md
+csbook/notes*.md
+course/*.md
 newstv/nt*.md
 tools/*.md
 tips/*.md
 
 # 涉及隐私文件
-finance/
+company/
 business/
 people/
 neuroscience/

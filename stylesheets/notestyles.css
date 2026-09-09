@@ -1,10 +1,15 @@
 @charset "utf-8";
 @import "css.css";
-@import "toc.css";
 
 body {
-	font-size: 18pt;
-	height: 100%;
+	font-size: 1.6em;
+}
+
+/*竖屏：放大字号*/
+@media screen and (orientation: portrait) {
+	body {
+		font-size: 2em;
+	}
 }
 
 /*笔记中的普通图片*/
@@ -35,10 +40,6 @@ ul {
 }
 
 p {
-	margin: 0 0 1em;
-	line-height: 1.8em;
-	/*段落使用衬线字体，更好看*/
-	font-family: Georgia, Arial, "Microsoft YaHei", "微软雅黑", serif;
 	/*段落首行缩进2字符*/
 	text-indent: 2em;
 }
