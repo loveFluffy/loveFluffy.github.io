@@ -13,7 +13,7 @@ music/audio
 music/video
 
 # 原始笔记 md 文件
-booknotes/notes*.md
+books/notes*.md
 csbook/notes*.md
 course/*.md
 newstv/nt*.md
