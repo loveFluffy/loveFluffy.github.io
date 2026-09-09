@@ -14,8 +14,8 @@ music/video
 
 # 原始笔记 md 文件
 books/notes*.md
-csbook/notes*.md
-course/*.md
+csbooks/notes*.md
+courses/*.md
 newstv/nt*.md
 tools/*.md
 tips/*.md
