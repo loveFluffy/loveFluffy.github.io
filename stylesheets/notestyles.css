@@ -5,10 +5,25 @@ body {
 	font-size: 1.6em;
 }
 
-/*竖屏：放大字号*/
+iframe.menu,
+iframe.copyright {
+	/*让出左侧toc的宽度。注意不能用float功能，否则吸顶会失效*/
+	width: 80%;
+	margin-left: 20%;
+}
+
+/*竖屏*/
 @media screen and (orientation: portrait) {
+
+	/*放大字号*/
 	body {
 		font-size: 2em;
+	}
+
+	/* 隐藏顶部标题栏、底部页脚 */
+	iframe.menu,
+	iframe.copyright {
+		display: none;
 	}
 }
 

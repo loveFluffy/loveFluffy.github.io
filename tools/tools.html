@@ -8,7 +8,6 @@
 </head>
 <body>
 	<iframe src="../menu.html" class="menu"></iframe>
-
 	<div class="content">
 		<table class="toolbox">
 			<tr>
@@ -437,91 +436,15 @@
 
 		<h4 id="ITTips">IT 技巧</h4>
 		<ul class="list">
-			<li style="background-image: url(../icon/notes.png);"><a href="tl0001-Excel自定义格式代码.html">Excel自定义格式代码</a></li>
-			<li style="background-image: url(../icon/notes.png);"><a href="tl0002-各种快捷键.html">各种快捷键、腹灵F12键盘</a></li>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
+			<li style="background-image: url(../icon/notes.png);"><a href="tl0001-Excel小技巧.html">Excel小技巧</a></li>
+			<li style="background-image: url(../icon/notes.png);"><a href="tl0002-Word小技巧.html">Word小技巧</a></li>
+			<li style="background-image: url(../icon/notes.png);"><a href="tl0003-Windows小技巧.html">Windows小技巧</a></li>
+			<li style="background-image: url(../icon/notes.png);"><a href="tl0101-腹灵F12键盘.html">腹灵F12键盘</a></li>
 			<li><a href=""></a></li>
 			<li><a href=""></a></li>
 		</ul>
-		<ol class="tips">
-			<b>Excel仅复制筛选后可见的单元格</b>
-			<li>筛选完数据后，按 Ctrl + A 选中所有内容；</li>
-			<li>按键盘的 Alt + ; 键，此时表格会出现分隔线，代表仅选中了可见单元格；</li>
-			<li>按 Ctrl + C 复制，即可粘贴到目标位置；</li>
-			<li>也可以通过菜单栏操作：在主页选项卡点击“查找和选择”，选择“定位条件”，勾选“可见单元格”后确定，再进行复制就是仅复制可见的单元格了；</li>
-		</ol>
-		<ol class="tips">
-			<b>Word中显示并查找所有链接代码</b>
-			<li>按下快捷键Alt+F9，将文档视图切换为域代码模式；</li>
-			<li>按Ctrl+F打开查找框，输入HYPERLINK；</li>
-			<li>查看完毕后，再次按下Alt+F9即可恢复正常显示；</li>
-		</ol>
 
 		<h4 id="WindowsTips"><img src="icon/windows.png"> Windows 系统相关</h4>
-		<h5>Windows系统下操作相关</h5>
-		<ol class="tips">
-			<b>文件浏览器-导航-onedrive，隐藏</b>
-			<li>打开注册表编辑器：按 Win + R，输入 regedit，按回车。</li>
-			<li>定位到 OneDrive CLSID：输入或粘贴路径：HKEY_CLASSES_ROOT\CLSID{018D5C66-0C66-4086-8A3E-19C8376D3272} (注意，这可能是不同版本略有不同，或在 ...\Explorer\Desktop\NameSpace 找包含 OneDrive 条目)。</li>
-			<li>修改值：在右侧找到 System.IsPinnedToNameSpaceTree，双击将其值从 1 改为 0。</li>
-			<li>重启文件资源管理器：打开任务管理器 (Ctrl+Shift+Esc)，找到“Windows 资源管理器”，右键选择“重新启动”</li>
-		</ol>
-		<ol class="tips">
-			<b>在 Windows 10作系统和所有应用程序中禁用 OneDrive。</b>
-			<p>以下是有关如何在 Windows 10作系统和所有应用程序中禁用 OneDrive 的步骤。</p>
-			<li>按键盘上的 Win + R 以打开“运行”对话框。</li>
-			<li>键入 gpedit.msc ，然后按 Enter 或 OK 以打开本地组策略编辑器。</li>
-			<li>转到 本地计算机策略->计算机配置 ->管理模板 ->Windows 组件 ->OneDrive。</li>
-			<li>在右窗格中，双击名为 “阻止将 OneDrive 用于文件存储”的策略。</li>
-			<li>选择 Enabled单选按钮。</li>
-			<li>完成后，单击确定。</li>
-			<p>OneDrive 图标在资源管理器中隐藏，OneDrive 应用程序被禁用并阻止运行。阻止从任何桌面应用程序或现代应用程序访问或处理 OneDrive 上的文件。例如：</p>
-			<li>无法从 OneDrive 应用程序和文件选取器访问 OneDrive。</li>
-			<li>Windows 应用商店应用程序无法使用 WinRT API 访问 OneDrive。</li>
-			<li>OneDrive 未显示在文件资源管理器的导航窗格中。</li>
-			<li>OneDrive 文件不会与云保持同步。</li>
-			<li>无法自动从相机胶卷文件夹上传照片和视频。</li>
-			<p>注销然后再次登录或重新启动计算机。</p>
-		</ol>
-		<ol class="tips">
-			<b>Window下将多张图片转为一个PDF文件方法：</b>
-			<li>在文件夹中全选所有图片；</li>
-			<li>在第一张图片上单击鼠标右键，选“打印”。注意这里要在第一张图片上单击右键，否则打印时图片的排列顺序可能有问题；</li>
-			<li>在弹出的窗口中对打印文件的参数进行设置；</li>
-			<li>打印得到PDF文件</li>
-		</ol>
-
-		<ol class="tips">
-			<b>多个PDF合并为一个PDF文件：用Adobe Acrobat软件。</b>
-		</ol>
-
-		<ol class="tips">
-			<b>强制隐藏 window taskbar 任务栏：</b>
-			<li>安装 hide taskbar 软件</li>
-			<li>设置快捷键为 Win 键</li>
-		</ol>
-
-		<ol class="tips">
-			<b>Windows复制弹窗内容 <a href="https://www.howtogeek.com/how-to-copy-uncopyable-texts-on-windows/">原文链接</a>：</b>
-			<li>单击错误弹窗；</li>
-			<li>Ctrl+C 复制，此时系统不会有反馈信息，但其实已经进行了复制；</li>
-			<li>随便粘贴，会得到排版整齐的详实信息</li>
-		</ol>
-
-		<ol class="tips">
-			<b>在链接的title属性里添加换行</b>
-			<li>用 &#10; 或者 &#13;</li>
-			<li><a title="this is&#10;an example.">例子1</a></li>
-			<li><a title="this is&#13;an example.">例子2</a></li>
-		</ol>
-
-		<ol class="tips">
-			<b>批量重命名文件名</b>
-			<li>小工具软件：ReNamer Lite</li>
-		</ol>
-
-
 		<h5>Youtube</h5>
 		<ul>
 			<li>只要删除已有的观看历史记录，并且关闭历史记录，就可以得到一个干净的首页，没有任何推荐视频。</li>
@@ -535,7 +458,7 @@
 
 		<h4 id="OtherTips">其他小技巧</h4>
 		<ul class="list">
-			<li style="background-image: url(../icon/notes.png);"><a href="tl0003-日常英语.html">日常英语</a></li>
+			<li style="background-image: url(../icon/notes.png);"><a href="tl0100-日常英语.html">日常英语</a></li>
 			<li></li>
 		</ul>
 
@@ -587,7 +510,6 @@
 			<li>
 				<hr>
 			</li>
-			<li><a href="jokemotto.html"><img src="./icon/joke.png"> Mottoes + Jokes</a></li>
 			<li><a href="country.html"><img src="./icon/country.png"> Country</a></li>
 			<li><a href="./jobs.html"><img src="./icon/jobs.png"> Jobs</a></li>
 		</ul>

@@ -292,7 +292,9 @@ table.toolbox td a {
     }
 
     div.content {
+        /*注意：这里的尺寸单位用百分比，不要用vw，因为vw会把滚动条也算在内*/
         width: 85%;
+        margin-left: 15%;
     }
 
     div.toc {

@@ -17,8 +17,8 @@
 			width: 100%;
 			text-align: center;
 
-			/* 手机屏幕宽度1080px */
-			max-width: 1080px;
+			/* 手机屏幕宽度1080px 
+			max-width: 1080px;*/
 
 			/* 左右居中 */
 			margin: 0px auto;
@@ -34,22 +34,23 @@
 			font-weight: bold;
 		}
 
+		/* 当鼠标悬停时更改背景色 
 		td:hover {
-			/* 当鼠标悬停时更改背景色 */
-			background: linear-gradient(to top, rgb(255, 238, 238), rgb(221, 239, 187));
 			box-shadow: 2px 2px 5px gray;
+			background: linear-gradient(to top, rgb(255, 238, 238), rgb(221, 239, 187));
 		}
+		*/
 
 		td a {
 			/*将链接显示为块元素可以使整个链接区域都可单击（不仅是文本），而且允许我们指定填充（如果需要，还可以指定高度，宽度，边距等）*/
 			display: block;
 			text-decoration: none;
 			color: black;
-			filter: invert(20%);
+			filter: invert(30%);
 		}
 
 		td a:hover {
-			filter: invert(40%);
+			filter: invert(0%);
 		}
 
 		a img {
@@ -63,12 +64,19 @@
 	<table>
 		<tr>
 			<td><a href="./index.html"><img src="./icon/home.png" alt="Home"><br />HOME</a></td>
-			<td><a href="./company/company.html"><img src="./icon/company.png" alt="Company"><br />COMPANY</a></td>
+			<td><a href="./corporates/corporates.html"><img src="./icon/corporates.png" alt="Corporates"><br />CORPORATES</a></td>
 			<td><a href="./business/business.html"><img src="./icon/business.png" alt="Business"><br />BUSINESS</a></td>
 			<td><a href="./books/books.html"><img src="./icon/books.png" alt="Books"><br />BOOKS</a></td>
 			<td><a href="./csbooks/IT.html"><img src="./icon/IT.png" alt="IT"><br />IT</a></td>
 			<td><a href="./tools/tools.html"><img src="./icon/tools.png" alt="Tools"><br />TOOLS</a></td>
 			<!--
+			<td><a href="./index.html"><img src="./icon/home.png" alt="Home"></a></td>
+			<td><a href="./company/company.html"><img src="./icon/company.png" alt="Company"></a></td>
+			<td><a href="./business/business.html"><img src="./icon/business.png" alt="Business"></a></td>
+			<td><a href="./books/books.html"><img src="./icon/books.png" alt="Books"></a></td>
+			<td><a href="./csbooks/IT.html"><img src="./icon/IT.png" alt="IT"></a></td>
+			<td><a href="./tools/tools.html"><img src="./icon/tools.png" alt="Tools"></a></td>
+			
 			<td><a href="./index.html">HOME</a></td>
 			<td><a href="./books/books.html">BOOKS</a></td>
 			<td><a href="./csbooks/IT.html">IT</a></td>

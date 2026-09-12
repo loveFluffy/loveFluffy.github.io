@@ -335,12 +335,12 @@ iPad mini 5：2048*宽1536
 	}
 	*/
 
-	.content {
+	div.content {
 		width: 100%;
 	}
 
 	/* 不显示目录 */
-	.toc {
+	div.toc {
 		display: none;
 	}
 }
@@ -350,12 +350,12 @@ iPad mini 5：2048*宽1536
 改为直接判断是横屏还是竖屏：横屏 */
 @media screen and (orientation: landscape) {
 	div.content {
-		float: right;
+		/*注意：这里的尺寸单位用百分比，不要用vw，因为vw会把滚动条也算在内*/
 		width: 80%;
+		margin-left: 20%;
 	}
 
 	div.toc {
-		float: left;
 		width: 20%;
 		height: 100vh;
 

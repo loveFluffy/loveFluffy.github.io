@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Windows&#x5c0f;&#x6280;&#x5de7;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:true,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<div class="content">
+<table class="covertitle"><tr><td>
+<h1 id="windows小技巧">Windows小技巧</h1>
+</td></tr></table>
+<h3 id="windows操作">Windows操作</h3>
+<h4 id="文件浏览器-导航-onedrive隐藏">文件浏览器-导航-onedrive，隐藏</h4>
+<ul>
+<li>打开注册表编辑器：按 Win + R，输入 regedit，按回车。</li>
+<li>定位到 OneDrive CLSID：输入或粘贴路径：HKEY_CLASSES_ROOT\CLSID{018D5C66-0C66-4086-8A3E-19C8376D3272} (注意，这可能是不同版本略有不同，或在 ...\Explorer\Desktop\NameSpace 找包含 OneDrive 条目)。</li>
+<li>修改值：在右侧找到 System.IsPinnedToNameSpaceTree，双击将其值从 1 改为 0。</li>
+<li>重启文件资源管理器：打开任务管理器 (Ctrl+Shift+Esc)，找到“Windows 资源管理器”，右键选择“重新启动”</li>
+</ul>
+<h4 id="在-windows-10作系统和所有应用程序中禁用-onedrive">在 Windows 10作系统和所有应用程序中禁用 OneDrive。</h4>
+<ul>
+<li>以下是有关如何在 Windows 10作系统和所有应用程序中禁用 OneDrive 的步骤。</li>
+<li>按键盘上的 Win + R 以打开“运行”对话框。</li>
+<li>键入 gpedit.msc ，然后按 Enter 或 OK 以打开本地组策略编辑器。</li>
+<li>转到 本地计算机策略-&gt;计算机配置 -&gt;管理模板 -&gt;Windows 组件 -&gt;OneDrive。</li>
+<li>在右窗格中，双击名为 “阻止将 OneDrive 用于文件存储”的策略。</li>
+<li>选择 Enabled单选按钮。</li>
+<li>完成后，单击确定。</li>
+</ul>
+<p>OneDrive 图标在资源管理器中隐藏，OneDrive 应用程序被禁用并阻止运行。阻止从任何桌面应用程序或现代应用程序访问或处理 OneDrive 上的文件。例如：</p>
+<ul>
+<li>无法从 OneDrive 应用程序和文件选取器访问 OneDrive。</li>
+<li>Windows 应用商店应用程序无法使用 WinRT API 访问 OneDrive。</li>
+<li>OneDrive 未显示在文件资源管理器的导航窗格中。</li>
+<li>OneDrive 文件不会与云保持同步。</li>
+<li>无法自动从相机胶卷文件夹上传照片和视频。</li>
+</ul>
+<p>注销然后再次登录或重新启动计算机。</p>
+<h4 id="window下将多张图片转为一个pdf文件方法">Window下将多张图片转为一个PDF文件方法：</h4>
+<ul>
+<li>在文件夹中全选所有图片；</li>
+<li>在第一张图片上单击鼠标右键，选“打印”。注意这里要在第一张图片上单击右键，否则打印时图片的排列顺序可能有问题；</li>
+<li>在弹出的窗口中对打印文件的参数进行设置；</li>
+<li>打印得到PDF文件</li>
+</ul>
+<h4 id="多个pdf合并为一个pdf文件用adobe-acrobat软件">多个PDF合并为一个PDF文件：用Adobe Acrobat软件。</h4>
+<h4 id="强制隐藏-window-taskbar-任务栏">强制隐藏 window taskbar 任务栏：</h4>
+<ul>
+<li>安装 hide taskbar 软件</li>
+<li>设置快捷键为 Win 键</li>
+</ul>
+<h4 id="windows复制弹窗内容-原文链接">Windows复制弹窗内容 <a href="https://www.howtogeek.com/how-to-copy-uncopyable-texts-on-windows/">原文链接</a></h4>
+<ul>
+<li>单击错误弹窗；</li>
+<li>Ctrl+C 复制，此时系统不会有反馈信息，但其实已经进行了复制；</li>
+<li>随便粘贴，会得到排版整齐的详实信息</li>
+</ul>
+<h4 id="在链接的title属性里添加换行">在链接的title属性里添加换行</h4>
+<ul>
+<li>用 
+ 或者 </li>
+<li><a title="this is&#10;an example.">例子1</a></li>
+<li><a title="this is&#13;an example.">例子2</a></li>
+</ul>
+<h4 id="批量重命名文件名">批量重命名文件名</h4>
+<ul>
+<li>小工具软件：ReNamer Lite</li>
+</ul>
+<h3 id="windows快捷键">Windows快捷键</h3>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#windows%E6%93%8D%E4%BD%9C">Windows操作</a>
+<ul>
+<li><a href="#%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8-%E5%AF%BC%E8%88%AA-onedrive%E9%9A%90%E8%97%8F">文件浏览器-导航-onedrive，隐藏</a></li>
+<li><a href="#%E5%9C%A8-windows-10%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%92%8C%E6%89%80%E6%9C%89%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%A6%81%E7%94%A8-onedrive">在 Windows 10作系统和所有应用程序中禁用 OneDrive。</a></li>
+<li><a href="#window%E4%B8%8B%E5%B0%86%E5%A4%9A%E5%BC%A0%E5%9B%BE%E7%89%87%E8%BD%AC%E4%B8%BA%E4%B8%80%E4%B8%AApdf%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95">Window下将多张图片转为一个PDF文件方法：</a></li>
+<li><a href="#%E5%A4%9A%E4%B8%AApdf%E5%90%88%E5%B9%B6%E4%B8%BA%E4%B8%80%E4%B8%AApdf%E6%96%87%E4%BB%B6%E7%94%A8adobe-acrobat%E8%BD%AF%E4%BB%B6">多个PDF合并为一个PDF文件：用Adobe Acrobat软件。</a></li>
+<li><a href="#%E5%BC%BA%E5%88%B6%E9%9A%90%E8%97%8F-window-taskbar-%E4%BB%BB%E5%8A%A1%E6%A0%8F">强制隐藏 window taskbar 任务栏：</a></li>
+<li><a href="#windows%E5%A4%8D%E5%88%B6%E5%BC%B9%E7%AA%97%E5%86%85%E5%AE%B9-%E5%8E%9F%E6%96%87%E9%93%BE%E6%8E%A5">Windows复制弹窗内容 原文链接</a></li>
+<li><a href="#%E5%9C%A8%E9%93%BE%E6%8E%A5%E7%9A%84title%E5%B1%9E%E6%80%A7%E9%87%8C%E6%B7%BB%E5%8A%A0%E6%8D%A2%E8%A1%8C">在链接的title属性里添加换行</a></li>
+<li><a href="#%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%E5%90%8D">批量重命名文件名</a></li>
+</ul>
+</li>
+<li><a href="#windows%E5%BF%AB%E6%8D%B7%E9%94%AE">Windows快捷键</a></li>
+</ul>
+</div>
+
+            
+            
+        </body>
+        </html>

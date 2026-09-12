@@ -21,7 +21,8 @@ tools/*.md
 tips/*.md
 
 # 涉及隐私文件
-company/
+corporates/
+findcorporate/
 business/
 people/
 neuroscience/
