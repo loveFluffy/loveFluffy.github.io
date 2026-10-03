@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&#x5df4;&#x83f2;&#x7279;&#x81f4;&#x80a1;&#x4e1c;&#x7684;&#x4fe1;&#xff08;&#x7cbe;&#x534e;&#x7bc7;&#xff09;</title>
-        <style>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5df4;&#x83f2;&#x7279;&#x81f4;&#x80a1;&#x4e1c;&#x7684;&#x4fe1;&#xff08;&#x7cbe;&#x534e;&#x7bc7;&#xff09;</title>
+            <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -11,12 +11,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 .vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
 	display: none;
 }
 
 </style>
-        
+            
         
         <style>
 .task-list-item {
@@ -29,451 +31,116 @@
     pointer-events: none;
 }
 </style>
-        <style>
-@charset "utf-8";
-
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-	color: #000;
-	/*background-color: #f1e5c9;*/
-	background: #f1e5c9;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizelegibility;
-	height: 100%;
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-size: 18pt;
-	color: #333;
-	background: #f1e5c9;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.3;
-	margin-top: 1.2em;
-	margin-bottom: 0.6em;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 2em;
-	text-align: center;
-	/*这个属性如果不定义的话，在md转html的时候会莫名给赋值，导致h1下面出现一条线，所以这里定义一下*/
-	border-bottom-style: none;
-}
-
-h2 {
-	font-size: 1.8em;
-	text-align: center;
-}
-
-h3 {
-	font-size: 1.6em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	border-bottom: 1px solid #ff7e79;
-}
-
-h4 {
-	font-size: 1.4em;
-	margin: 10px 0 5px;
-	padding-left: 9px;
-	border-left: 6px solid #666;
-}
-
-h5 {
-	font-size: 1.2em;
-	padding-left: 9px;
-	border-left: 6px double #666;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-
-dl,
-ol,
-ul {
-	margin-bottom: 1em;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-
-p {
-	margin: 0 0 1em;
-	padding: 0;
-	line-height: 1.8;
-}
-
-a:link {
-	color: #000;
-}
-
-a:visited {
-	color: #575757;
-}
-
-a:hover,
-a:active {
-	color: #d3595e;
-}
-
-/* 块/段落引用 */
-blockquote {
-	font-size: 0.9em;
-	line-height: 1.5;
-	position: relative;
-	color: #666;
-	border-left: 2px solid #fbb;
-	padding-left: 1em;
-	margin: 1em 3em 1em 2em;
-}
-
-blockquote p {
-	margin: 0 0 1em;
-}
-
-strong,
-dfn {
-	font-weight: 700;
-}
-
-em,
-dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-figure {
-	margin: 1em 0;
-}
-
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-
-figure img {
-	margin-bottom: 0px;
-}
-
-/* hr 用于创建一条水平线*/
-hr {
-	margin: 0.8em 0;
-	border: none;
-	border-bottom: 1px solid #cfcfcf;
-	height: 10px;
-}
-
-ol p,
-ul p {
-	margin-bottom: 0px;
-}
-
-/*
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-*/
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-
-	20% {
-		background-color: yellow;
-	}
-
-	100% {
-		background-color: none;
-	}
-}
-
-a:target,
-ol#footnotes li:target,
-sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-
-a:target {
-	border: 0;
-	outline: 0;
-}
-
-table {
-	align-self: center;
-}
-
-img {
-	align-self: center;
-	max-width: 1000px;
-	width: 1000px;
-}
-
-/* 选中后背景浅粉色 */
-::selection {
-	background-color: #fbb;
-}
-
-
-
-/* ======== 侧边的目录相关 ======== */
-
-.content {
-	float: right;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden;
-
-	/* 滚动条 */
-	scrollbar-width: thin;
-	/* thumb & track */
-	scrollbar-color: skyblue #ededed;
-
-	scroll-behavior: smooth;
-}
-
-/* 
-手机：2400*1080
-iPad mini 5：2048*1536
-电脑：1920*1200 
-*/
-/* 窄屏幕：手机竖屏、iPad竖屏 */
-@media (max-width: 1536px) {
-	.content {
-		width: 99.5%;
-		padding-left: 0.5%;
-	}
-
-	/* 不显示目录 */
-	div.toc {
-		display: none;
-	}
-}
-
-/* 宽屏幕：电脑、手机横屏、iPad横屏 */
-@media (min-width: 1537px) {
-	div.toc {
-		line-height: 1.2;
-		max-width: 24%;
-		height: 100vh;
-		padding-right: 0.5%;
-
-		float: left;
-		font-size: 0.7em;
-		overflow: auto;
-		overflow-x: hidden;
-
-		/* 目录栏 滚动时固定在屏幕顶端：仅当父元素没有设置overflow、高度为确定数值且比toc高度更大的时候才起作用*/
-		/* 现在因为toc与body等高，所以不起作用，也无须起作用
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;*/
-
-		/* 滚动条 */
-		scrollbar-width: thin;
-		/* thumb & track */
-		scrollbar-color: rgb(178, 216, 232) #ededed;
-	}
-
-	/*
-	div.toc ul,
-	div.toc li {
-		margin: 0;
-		padding: 0;
-		border-bottom: 1px solid #f1e5c9;
-	}
-		*/
-	div.toc ul {
-		margin: 0;
-		padding: 0;
-		background-color: #f1e5c9;
-	}
-
-	div.toc li {
-		padding-left: 10px;
-		list-style-position: inside;
-	}
-
-	/*h1 h2 h3 h4滚动时固定在屏幕顶端*/
-	div.toc ul>li,
-	div.toc ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li,
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		/* Safari 及其他兼容 */
-		position: -webkit-sticky;
-		position: -ms-sticky;
-		position: -o-sticky;
-		position: sticky;
-		top: 0;
-	}
-
-	div.toc ul>li {
-		z-index: 1;
-		/*#ff7e79*/
-		background-color: skyblue;
-	}
-
-	div.toc ul>li>ul>li {
-		z-index: 2;
-		/*#ff7e79*/
-		background-color: rgb(178, 216, 232);
-	}
-
-	div.toc ul>li>ul>li>ul>li {
-		z-index: 3;
-		/*#fbb*/
-		background-color: rgb(210, 231, 239);
-	}
-
-	div.toc ul>li>ul>li>ul>li>ul>li {
-		z-index: 4;
-		background-color: rgb(228, 235, 238);
-	}
-
-	.content {
-		width: 75%;
-		padding-left: 0.5%;
-	}
-}
 </style>
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="巴菲特致股东的信精华篇">巴菲特致股东的信（精华篇）</h1>
-<h2 id="美lj瑞德豪斯l-j-rittenhouse-著王正林-王权-译">[美]L·J·瑞德豪斯（L. J. Rittenhouse） 著|王正林 王权 译</h2>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:true,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<link rel="stylesheet" href="../stylesheets/notestyles.css" />
+<link rel="icon" href="../favicon.ico" />
+<iframe src="../menu.html" class="menu"></iframe>
+<div class="content">
+<table class="covertitle"><tr><td><img src="cover/9530.jpg"></td><td>
+<h1 id="巴菲特致股东的信精华篇">巴菲特致股东的信（精华篇）</h1>
+<center>[美]L·J·瑞德豪斯（L. J. Rittenhouse） 著|王正林 王权 译</center>
+</td></tr></table>
+<div class="mycomment">
+</div>
 <h3 id="推荐序一-投资就是投人选股更要选人">推荐序一 投资就是投人，选股更要选人</h3>
 <p>在研究高管坦诚度方面，她成了著名的专家。瑞德豪斯创立了瑞德豪斯评级公司，每年进行一次首席执行官坦诚度调查，以便从总体上表明，那些首席执行官坦诚度排名最高的公司，业绩究竟比那些排名最低的公司高出多少。除此之外，她的研究还会判断当前企业文化的健康程度，从而表明公司账目的可信度。</p>
 <p>她和巴菲特合作的第一个项目在安然公司破产以及“9·11”恐怖袭击事件之后就着手实施了。2002年年初，巴菲特允许她从自己写给股东的信中进行摘录，写了一本名为《和你信任的人做生意》（Do Business with People You Can Trust）的书。该书于2002年在奥马哈召开的伯克希尔·哈撒韦公司股东大会上发布。巴菲特对自己所说的话一向采取谨慎保护的态度，几年后，瑞德豪斯问他为什么准许她引用他说的话。巴菲特说：“我信任你。”现在，巴菲特再次允许她引用他在致股东信中所说的话，对巴菲特致股东信的解读是她与巴菲特合作的第二个项目。在这本书中，她在多年研究巴菲特致股东信的基础上，总结出巴菲特信守承诺、保持坦诚，并且坚定地相信创造经济价值是首席执行官的黄金标准。</p>
@@ -494,8 +161,34 @@ iPad mini 5：2048*1536
 <h3 id="第九章-伯克希尔哈撒韦股东手册">第九章 伯克希尔·哈撒韦股东手册</h3>
 <h3 id="第十章-巴菲特的创新与反传统">第十章 巴菲特的创新与反传统</h3>
 <h3 id="第十一章-投资大师的传奇">第十一章 投资大师的传奇</h3>
-
-        
-        
-    </body>
-    </html>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%B8%80-%E6%8A%95%E8%B5%84%E5%B0%B1%E6%98%AF%E6%8A%95%E4%BA%BA%E9%80%89%E8%82%A1%E6%9B%B4%E8%A6%81%E9%80%89%E4%BA%BA">推荐序一 投资就是投人，选股更要选人</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%BA%8C-%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E7%A4%BC%E7%89%A9">推荐序二 巴菲特的礼物</a></li>
+<li><a href="#%E4%BD%9C%E8%80%85%E5%BA%8F">作者序</a></li>
+<li><a href="#%E5%BC%95%E8%A8%80">引言</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AF%87-%E8%AF%BB%E6%87%82%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%87%B4%E8%82%A1%E4%B8%9C%E7%9A%84%E4%BF%A1">第一篇 读懂巴菲特致股东的信</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E8%87%B4%E8%82%A1%E4%B8%9C%E7%9A%84%E4%BF%A1%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%85%AC%E5%8F%B8%E7%9A%84%E7%8B%AC%E7%89%B9%E6%A0%87%E5%BF%97">第一章 致股东的信：巴菲特公司的独特标志</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%80%8E%E6%A0%B7%E8%AF%BB%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%87%B4%E8%82%A1%E4%B8%9C%E7%9A%84%E4%BF%A1">第二章 怎样读巴菲特致股东的信</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%87%B4%E8%82%A1%E4%B8%9C%E7%9A%84%E4%BF%A1%E7%9A%84%E4%BB%B7%E5%80%BC">第三章 巴菲特致股东的信的价值</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94%E5%93%88%E6%92%92%E9%9F%A6%E5%A6%82%E4%BD%95%E7%82%B9%E7%9F%B3%E6%88%90%E9%87%91">第四章 伯克希尔·哈撒韦如何点石成金</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E6%8A%95%E8%B5%84%E5%8E%9F%E5%88%99">第五章 巴菲特的投资原则</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%A6%82%E4%BD%95%E4%B8%BA%E8%87%AA%E5%B7%B1%E6%89%93%E5%B7%A5">第六章 巴菲特如何为自己打工</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AF%87-%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%8A%95%E8%B5%84%E7%A7%98%E8%AF%8025%E5%A4%A7%E7%B2%BE%E5%BD%A9%E8%A7%A3%E8%AF%BB">第二篇 巴菲特投资秘诀25大精彩解读</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%95%99%E4%BD%A0%E5%81%9A%E8%81%AA%E6%98%8E%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85">第七章 巴菲特教你做聪明的投资者</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E5%B7%B4%E8%8F%B2%E7%89%B9%E6%80%8E%E6%A0%B7%E6%8C%91%E9%80%89%E6%8A%95%E8%B5%84%E5%AF%B9%E8%B1%A1">第八章 巴菲特怎样挑选投资对象</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AF%87-%E5%88%9B%E9%80%A0%E6%8C%81%E4%B9%85%E7%9A%84%E8%B4%A2%E5%AF%8C">第三篇 创造持久的财富</a></li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E4%BC%AF%E5%85%8B%E5%B8%8C%E5%B0%94%E5%93%88%E6%92%92%E9%9F%A6%E8%82%A1%E4%B8%9C%E6%89%8B%E5%86%8C">第九章 伯克希尔·哈撒韦股东手册</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%9A%84%E5%88%9B%E6%96%B0%E4%B8%8E%E5%8F%8D%E4%BC%A0%E7%BB%9F">第十章 巴菲特的创新与反传统</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E6%8A%95%E8%B5%84%E5%A4%A7%E5%B8%88%E7%9A%84%E4%BC%A0%E5%A5%87">第十一章 投资大师的传奇</a></li>
+</ul>
+</div>
+<iframe src="../copyright.html" class="copyright"></iframe>
+<div id="backtotop"><a href="#"><img src="../icon/backtotop.png"></a></div>
+<script src="../js/x.js"></script>
+<script src="../js/note.js"></script>
+            
+            
+        </body>
+        </html>

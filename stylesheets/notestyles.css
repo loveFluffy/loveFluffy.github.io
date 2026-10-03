@@ -1,15 +1,18 @@
 @charset "utf-8";
 @import "css.css";
 
-body {
-	font-size: 1.6em;
-}
+/*横屏*/
+@media screen and (orientation: landscape) {
+	body {
+		font-size: 1.6em;
+	}
 
-iframe.menu,
-iframe.copyright {
-	/*让出左侧toc的宽度。注意不能用float功能，否则吸顶会失效*/
-	width: 80%;
-	margin-left: 20%;
+	iframe.menu,
+	iframe.copyright {
+		/*让出左侧toc的宽度。注意不能用float功能，否则吸顶会失效*/
+		width: 80%;
+		margin-left: 20%;
+	}
 }
 
 /*竖屏*/
@@ -25,6 +28,47 @@ iframe.copyright {
 	iframe.copyright {
 		display: none;
 	}
+
+	/* 横向多列显示 */
+	html,
+	body {
+		margin: 0;
+		height: 100%;
+		/* body不滚动，交给content */
+		overflow: hidden;
+	}
+
+	.content {
+		/* 多列 */
+		height: 100vh;
+		overflow-x: auto;
+		overflow-y: hidden;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+
+		/* 由 JS 写入 --page-w 
+		column-width: var(--page-w);
+		*/
+		column-width: 100vw;
+		column-gap: 0;
+		column-fill: auto;
+		width: max-content;
+		padding: 0;
+		scrollbar-width: none;
+	}
+
+	.content::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* 让每列对齐吸附（可选，配合 scroll-snap-align） */
+	/*
+	.content>* {
+		scroll-snap-align: start;
+		break-inside: avoid;
+		box-sizing: border-box;
+	}
+	*/
 }
 
 /*笔记中的普通图片*/

@@ -253,12 +253,12 @@ table.covertitle img {
 div.mycomment {
 	font-size: smaller;
 
-	padding: 1em 1em 0;
-	margin: 0.75em 5%;
+	padding: 1em 5em;
+	margin: 0;
 	background-color: #e5eecc;
 
-	border: solid 2px #8ca86d;
-	border-radius: 30px;
+	border-top: solid 2px #8ca86d;
+	border-bottom: solid 2px #8ca86d;
 }
 
 div.mycomment img {
@@ -290,7 +290,7 @@ iframe.menu {
 
 iframe.copyright {
 	height: 120px;
-	margin-top: 4em;
+	margin-top: 2em;
 }
 
 
@@ -299,8 +299,6 @@ iframe.copyright {
 /* ======== toc 侧边目录，根据显示器的横屏/竖屏状态决定是否显示 ======== */
 
 div.content {
-	padding-left: 0.25em;
-
 	/*水平方向禁止显示滚动条、竖直平方向超出屏幕时会显示滚动条*/
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -321,20 +319,6 @@ iPad mini 5：2048*宽1536
 @media (max-width: 1536px) {
 改为直接判断是横屏还是竖屏：竖屏 */
 @media screen and (orientation: portrait) {
-
-	/* 暂改
-	body {
-		height: 100vh;
-		overflow: hidden;
-		margin: 0 16px;
-	}
-	.content {
-		columns: calc(100vw - 32px) 1;
-		column-gap: 16px;
-		transition: 0.4s;
-	}
-	*/
-
 	div.content {
 		width: 100%;
 	}
@@ -353,6 +337,7 @@ iPad mini 5：2048*宽1536
 		/*注意：这里的尺寸单位用百分比，不要用vw，因为vw会把滚动条也算在内*/
 		width: 80%;
 		margin-left: 20%;
+		padding-left: 0.25em;
 	}
 
 	div.toc {
@@ -413,6 +398,13 @@ iPad mini 5：2048*宽1536
 	/* 鼠标指向目录的时候变色 */
 	div.toc a:hover {
 		color: black;
+	}
+
+	/* 高亮状态 */
+	div.toc a.active {
+		color: #1a73e8;
+		background: #f0f6ff;
+		font-weight: 600;
 	}
 
 	div.toc ul>li>a:hover {
@@ -548,11 +540,21 @@ hr {
 }
 
 
+/* checkbox */
+input[type="checkbox"] {
+	width: 2em;
+	height: 2em;
+	border: 2px solid #94a3b8;
+}
+
+
 /* 网站整体变灰色 */
-/* html {
+/* 
+html {
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
-} */
+} 
+*/
